@@ -8,13 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
-		462BEDEA1C8682E300E451E4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE91C8682E300E451E4 /* FirstViewController.swift */; };
 		462BEDEC1C8682E300E451E4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDEB1C8682E300E451E4 /* SecondViewController.swift */; };
 		462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462BEDED1C8682E300E451E4 /* Main.storyboard */; };
 		462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462BEDF01C8682E300E451E4 /* Assets.xcassets */; };
 		462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462BEDF21C8682E300E451E4 /* LaunchScreen.storyboard */; };
 		462BEDFF1C8682E300E451E4 /* SportsBallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDFE1C8682E300E451E4 /* SportsBallTests.swift */; };
 		462BEE0A1C8682E300E451E4 /* SportsBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE091C8682E300E451E4 /* SportsBallUITests.swift */; };
+		462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE171C86861D00E451E4 /* StartViewController.swift */; };
+		462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462BEE181C86861D00E451E4 /* StartViewController.xib */; };
+		462BEE1D1C86958000E451E4 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE1C1C86958000E451E4 /* Other.swift */; };
+		462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */; };
+		462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE231C86C1C700E451E4 /* LoginViewController.swift */; };
+		462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462BEE241C86C1C700E451E4 /* LoginViewController.xib */; };
+		462BEE2B1C881BB800E451E4 /* AnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE2A1C881BB800E451E4 /* AnimationTabBarController.swift */; };
+		462BEE2D1C881D8A00E451E4 /* ShopCarRedDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE2C1C881D8A00E451E4 /* ShopCarRedDotView.swift */; };
+		462BEE321C88215700E451E4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE311C88215700E451E4 /* Color+Extension.swift */; };
+		462BEE341C88221E00E451E4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE331C88221E00E451E4 /* UIView+Extension.swift */; };
+		462BEE361C88237300E451E4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE351C88237300E451E4 /* BaseNavigationController.swift */; };
+		462BEE381C88288100E451E4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE371C88288100E451E4 /* MainController.swift */; };
+		462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE391C89276900E451E4 /* MainViewController.swift */; };
+		462BEE3E1C895A8700E451E4 /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE3D1C895A8700E451E4 /* CirCleView.swift */; };
+		46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */; };
+		46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DED1C8E780F007F6A50 /* ResultViewController.swift */; };
+		46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */; };
+		46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DF11C8E789F007F6A50 /* GameHelpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +54,6 @@
 /* Begin PBXFileReference section */
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462BEDE71C8682E300E451E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		462BEDE91C8682E300E451E4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		462BEDEB1C8682E300E451E4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		462BEDEE1C8682E300E451E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		462BEDF01C8682E300E451E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +65,24 @@
 		462BEE051C8682E300E451E4 /* SportsBallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsBallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		462BEE091C8682E300E451E4 /* SportsBallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsBallUITests.swift; sourceTree = "<group>"; };
 		462BEE0B1C8682E300E451E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		462BEE171C86861D00E451E4 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		462BEE181C86861D00E451E4 /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		462BEE1C1C86958000E451E4 /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+		462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		462BEE231C86C1C700E451E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		462BEE241C86C1C700E451E4 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		462BEE2A1C881BB800E451E4 /* AnimationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationTabBarController.swift; path = "../../../../../Downloads/LoveFreshBeen-master-2/LoveFreshBeen/Class/LFBBase/AnimationTabBarController.swift"; sourceTree = "<group>"; };
+		462BEE2C1C881D8A00E451E4 /* ShopCarRedDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopCarRedDotView.swift; path = "../../../../../Downloads/LoveFreshBeen-master-2/LoveFreshBeen/Class/LFBBase/ShopCarRedDotView.swift"; sourceTree = "<group>"; };
+		462BEE311C88215700E451E4 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Color+Extension.swift"; path = "../../../../../Downloads/LoveFreshBeen-master/LoveFreshBeen/Class/Extension/Color+Extension.swift"; sourceTree = "<group>"; };
+		462BEE331C88221E00E451E4 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "../../../../../Downloads/LoveFreshBeen-master/LoveFreshBeen/Class/Extension/UIView+Extension.swift"; sourceTree = "<group>"; };
+		462BEE351C88237300E451E4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = "../../../../../Downloads/LoveFreshBeen-master/LoveFreshBeen/Class/LFBBase/BaseNavigationController.swift"; sourceTree = "<group>"; };
+		462BEE371C88288100E451E4 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		462BEE391C89276900E451E4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		462BEE3D1C895A8700E451E4 /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CirCleView.swift; path = "../../../../../Downloads/GLCircleScrollView-master-2/GLCircleScrollVeiw/CirCleView.swift"; sourceTree = "<group>"; };
+		46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCenterView.swift; sourceTree = "<group>"; };
+		46C02DED1C8E780F007F6A50 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		46C02DF11C8E789F007F6A50 /* GameHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +133,18 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
+				462BEE291C881B8700E451E4 /* Common */,
+				462BEE201C86BF0E00E451E4 /* Class */,
+				462BEE1B1C86955800E451E4 /* Other */,
 				462BEDE71C8682E300E451E4 /* AppDelegate.swift */,
-				462BEDE91C8682E300E451E4 /* FirstViewController.swift */,
+				462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */,
 				462BEDEB1C8682E300E451E4 /* SecondViewController.swift */,
 				462BEDED1C8682E300E451E4 /* Main.storyboard */,
 				462BEDF01C8682E300E451E4 /* Assets.xcassets */,
 				462BEDF21C8682E300E451E4 /* LaunchScreen.storyboard */,
 				462BEDF51C8682E300E451E4 /* Info.plist */,
+				462BEE171C86861D00E451E4 /* StartViewController.swift */,
+				462BEE181C86861D00E451E4 /* StartViewController.xib */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
@@ -126,6 +165,50 @@
 				462BEE0B1C8682E300E451E4 /* Info.plist */,
 			);
 			path = SportsBallUITests;
+			sourceTree = "<group>";
+		};
+		462BEE1B1C86955800E451E4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				462BEE1C1C86958000E451E4 /* Other.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		462BEE201C86BF0E00E451E4 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				462BEE231C86C1C700E451E4 /* LoginViewController.swift */,
+				462BEE241C86C1C700E451E4 /* LoginViewController.xib */,
+				462BEE371C88288100E451E4 /* MainController.swift */,
+				462BEE391C89276900E451E4 /* MainViewController.swift */,
+				46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */,
+				46C02DED1C8E780F007F6A50 /* ResultViewController.swift */,
+				46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */,
+				46C02DF11C8E789F007F6A50 /* GameHelpViewController.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		462BEE291C881B8700E451E4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				462BEE3D1C895A8700E451E4 /* CirCleView.swift */,
+				462BEE351C88237300E451E4 /* BaseNavigationController.swift */,
+				462BEE301C88210800E451E4 /* Extension */,
+				462BEE2C1C881D8A00E451E4 /* ShopCarRedDotView.swift */,
+				462BEE2A1C881BB800E451E4 /* AnimationTabBarController.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		462BEE301C88210800E451E4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				462BEE331C88221E00E451E4 /* UIView+Extension.swift */,
+				462BEE311C88215700E451E4 /* Color+Extension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
+				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +344,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462BEE341C88221E00E451E4 /* UIView+Extension.swift in Sources */,
+				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
+				462BEE2D1C881D8A00E451E4 /* ShopCarRedDotView.swift in Sources */,
+				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
+				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
+				462BEE321C88215700E451E4 /* Color+Extension.swift in Sources */,
+				462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */,
+				46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */,
 				462BEDEC1C8682E300E451E4 /* SecondViewController.swift in Sources */,
+				462BEE2B1C881BB800E451E4 /* AnimationTabBarController.swift in Sources */,
+				462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */,
+				462BEE3E1C895A8700E451E4 /* CirCleView.swift in Sources */,
+				462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */,
+				462BEE361C88237300E451E4 /* BaseNavigationController.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
-				462BEDEA1C8682E300E451E4 /* FirstViewController.swift in Sources */,
+				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
+				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
+				462BEE381C88288100E451E4 /* MainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +586,7 @@
 				462BEE101C8682E300E451E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		462BEE111C8682E300E451E4 /* Build configuration list for PBXNativeTarget "SportsBallTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +595,7 @@
 				462BEE131C8682E300E451E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		462BEE141C8682E300E451E4 /* Build configuration list for PBXNativeTarget "SportsBallUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +604,7 @@
 				462BEE161C8682E300E451E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

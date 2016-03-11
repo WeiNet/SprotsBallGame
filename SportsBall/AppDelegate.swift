@@ -12,9 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+   
 
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+//        setAppSubject()
+        addNotification()
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window?.makeKeyAndVisible()
+        
+        
+        let firstVC = LoginViewController()
+        let naviVC = UINavigationController(rootViewController: firstVC)
+        self.window?.rootViewController = naviVC
         // Override point for customization after application launch.
         return true
     }
@@ -40,7 +53,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    func addNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showLoginControllerSucess:", name: ADImageLoadSecussed, object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMainController:", name: ShowMainController, object: nil)
+            }
+    func showMainController(noti: NSNotification){
+        let mainTabBar = MainController()
+        window?.rootViewController = mainTabBar
+    }
+    // MARK: - Action
+    func showLoginControllerSucess(noti: NSNotification) {
 
-
+        let mainTabBar = MainController()
+        window?.rootViewController = mainTabBar
+    }
+    // MARK:- privete Method
+    // MARK:主题设置
+    private func setAppSubject() {
+        let tabBarAppearance = UITabBar.appearance()
+        tabBarAppearance.backgroundColor = UIColor.whiteColor()
+        tabBarAppearance.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        
+        let navBarnAppearance = UINavigationBar.appearance()
+        navBarnAppearance.translucent = false
+    }
 }
 

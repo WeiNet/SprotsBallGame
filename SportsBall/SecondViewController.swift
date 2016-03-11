@@ -9,9 +9,11 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationItem.backBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: nil, action: "showMain")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
