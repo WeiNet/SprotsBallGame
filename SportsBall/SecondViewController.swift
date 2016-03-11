@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var b:String = "BBBBB"
+    var b:String = "BBBBB1111"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.backBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: nil, action: "showMain")
