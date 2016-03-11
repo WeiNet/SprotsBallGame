@@ -8,7 +8,7 @@
 
 import UIKit
 public let GuideViewControllerDidFinish = "GuideViewControllerDidFinish"
-
+var str="dfdfdf"
 // MARK: - 广告页通知
 public let ADImageLoadSecussed = "ADImageLoadSecussed"
 public let IntoMainSecussed = "IntoMainSecussed"
