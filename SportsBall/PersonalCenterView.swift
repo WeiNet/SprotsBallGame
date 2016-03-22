@@ -12,7 +12,7 @@ class PersonalCenterView: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBOutlet weak var setTable: UITableView!
 var setNameArry=["dfdf","dfdf","ddd","df"]
-    var setImge=["m1","m2","m3","m4"]
+    var setImge=["m1","m2","m3","m4eefefef"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTable.dataSource=self
