@@ -57,16 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showLoginControllerSucess:", name: ADImageLoadSecussed, object: nil)
          NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMainController:", name: ShowMainController, object: nil)
             }
-    func showMainController(noti: NSNotification){
-        let mainTabBar = MainController()
-        window?.rootViewController = mainTabBar
-    }
-    // MARK: - Action
-    func showLoginControllerSucess(noti: NSNotification) {
-
-        let mainTabBar = MainController()
-        window?.rootViewController = mainTabBar
-    }
+    
+    
     // MARK:- privete Method
     // MARK:主题设置
     private func setAppSubject() {

@@ -8,12 +8,15 @@
 
 import UIKit
 public let GuideViewControllerDidFinish = "GuideViewControllerDidFinish"
-var str="dfdfdf"
+
 // MARK: - 广告页通知
 public let ADImageLoadSecussed = "ADImageLoadSecussed"
 public let IntoMainSecussed = "IntoMainSecussed"
 public let ADImageLoadFail = "ADImageLoadFail"
 public let ShowMainController = "ShowMainController"
+//登录画面通知
+public let GetLoginResult = "GetLoginResult"
+public let ASConnection = "ASConnection"
 
 // MARK: - 全局常用属性
 public let NavigationH: CGFloat = 64
@@ -21,12 +24,14 @@ public let ScreenWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
 public let ScreenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
 public let ScreenBounds: CGRect = UIScreen.mainScreen().bounds
 public let ShopCarRedDotAnimationDuration: NSTimeInterval = 0.2
-public let LFBNavigationBarWhiteBackgroundColor = UIColor.colorWithCustom(249, g: 250, b: 253)
+
 
 // MARK: - Home 属性
 public let HotViewMargin: CGFloat = 10
 public let HomeCollectionViewCellMargin: CGFloat = 10
 public let HomeCollectionTextFont = UIFont.systemFontOfSize(14)
 public let HomeCollectionCellAnimationDuration: NSTimeInterval = 1.0
+//webservice配置地址
+public let WebServiceAddress="http://gttest16.com/MobileApp.asmx"
 
 

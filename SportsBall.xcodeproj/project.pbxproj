@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
+		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
 		462BEDEC1C8682E300E451E4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDEB1C8682E300E451E4 /* SecondViewController.swift */; };
 		462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462BEDED1C8682E300E451E4 /* Main.storyboard */; };
@@ -20,14 +22,8 @@
 		462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */; };
 		462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE231C86C1C700E451E4 /* LoginViewController.swift */; };
 		462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462BEE241C86C1C700E451E4 /* LoginViewController.xib */; };
-		462BEE2B1C881BB800E451E4 /* AnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE2A1C881BB800E451E4 /* AnimationTabBarController.swift */; };
-		462BEE2D1C881D8A00E451E4 /* ShopCarRedDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE2C1C881D8A00E451E4 /* ShopCarRedDotView.swift */; };
-		462BEE321C88215700E451E4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE311C88215700E451E4 /* Color+Extension.swift */; };
-		462BEE341C88221E00E451E4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE331C88221E00E451E4 /* UIView+Extension.swift */; };
-		462BEE361C88237300E451E4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE351C88237300E451E4 /* BaseNavigationController.swift */; };
-		462BEE381C88288100E451E4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE371C88288100E451E4 /* MainController.swift */; };
 		462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE391C89276900E451E4 /* MainViewController.swift */; };
-		462BEE3E1C895A8700E451E4 /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE3D1C895A8700E451E4 /* CirCleView.swift */; };
+		4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */; };
 		46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */; };
 		46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DED1C8E780F007F6A50 /* ResultViewController.swift */; };
 		46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */; };
@@ -52,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
+		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462BEDE71C8682E300E451E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462BEDEB1C8682E300E451E4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -71,14 +69,8 @@
 		462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		462BEE231C86C1C700E451E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		462BEE241C86C1C700E451E4 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		462BEE2A1C881BB800E451E4 /* AnimationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationTabBarController.swift; path = "../../../../../Downloads/LoveFreshBeen-master-2/LoveFreshBeen/Class/LFBBase/AnimationTabBarController.swift"; sourceTree = "<group>"; };
-		462BEE2C1C881D8A00E451E4 /* ShopCarRedDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopCarRedDotView.swift; path = "../../../../../Downloads/LoveFreshBeen-master-2/LoveFreshBeen/Class/LFBBase/ShopCarRedDotView.swift"; sourceTree = "<group>"; };
-		462BEE311C88215700E451E4 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Color+Extension.swift"; path = "../../../../../Downloads/LoveFreshBeen-master/LoveFreshBeen/Class/Extension/Color+Extension.swift"; sourceTree = "<group>"; };
-		462BEE331C88221E00E451E4 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "../../../../../Downloads/LoveFreshBeen-master/LoveFreshBeen/Class/Extension/UIView+Extension.swift"; sourceTree = "<group>"; };
-		462BEE351C88237300E451E4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = "../../../../../Downloads/LoveFreshBeen-master/LoveFreshBeen/Class/LFBBase/BaseNavigationController.swift"; sourceTree = "<group>"; };
-		462BEE371C88288100E451E4 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		462BEE391C89276900E451E4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		462BEE3D1C895A8700E451E4 /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CirCleView.swift; path = "../../../../../Downloads/GLCircleScrollView-master-2/GLCircleScrollVeiw/CirCleView.swift"; sourceTree = "<group>"; };
+		4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultDelegate.swift; sourceTree = "<group>"; };
 		46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCenterView.swift; sourceTree = "<group>"; };
 		46C02DED1C8E780F007F6A50 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +172,6 @@
 			children = (
 				462BEE231C86C1C700E451E4 /* LoginViewController.swift */,
 				462BEE241C86C1C700E451E4 /* LoginViewController.xib */,
-				462BEE371C88288100E451E4 /* MainController.swift */,
 				462BEE391C89276900E451E4 /* MainViewController.swift */,
 				46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */,
 				46C02DED1C8E780F007F6A50 /* ResultViewController.swift */,
@@ -193,22 +184,11 @@
 		462BEE291C881B8700E451E4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				462BEE3D1C895A8700E451E4 /* CirCleView.swift */,
-				462BEE351C88237300E451E4 /* BaseNavigationController.swift */,
-				462BEE301C88210800E451E4 /* Extension */,
-				462BEE2C1C881D8A00E451E4 /* ShopCarRedDotView.swift */,
-				462BEE2A1C881BB800E451E4 /* AnimationTabBarController.swift */,
+				46290ED01CA2332F0028F1BF /* CirCleView.swift */,
+				46290ED11CA2332F0028F1BF /* CommonParameter.swift */,
+				4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */,
 			);
 			name = Common;
-			sourceTree = "<group>";
-		};
-		462BEE301C88210800E451E4 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				462BEE331C88221E00E451E4 /* UIView+Extension.swift */,
-				462BEE311C88215700E451E4 /* Color+Extension.swift */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,24 +324,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462BEE341C88221E00E451E4 /* UIView+Extension.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
-				462BEE2D1C881D8A00E451E4 /* ShopCarRedDotView.swift in Sources */,
+				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
-				462BEE321C88215700E451E4 /* Color+Extension.swift in Sources */,
 				462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */,
 				46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */,
 				462BEDEC1C8682E300E451E4 /* SecondViewController.swift in Sources */,
-				462BEE2B1C881BB800E451E4 /* AnimationTabBarController.swift in Sources */,
 				462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */,
-				462BEE3E1C895A8700E451E4 /* CirCleView.swift in Sources */,
+				4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */,
 				462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */,
-				462BEE361C88237300E451E4 /* BaseNavigationController.swift in Sources */,
+				46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
-				462BEE381C88288100E451E4 /* MainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
