@@ -87,9 +87,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
         
         switch(strRequestType){
         case "LoginType":
-//            let objLoginView=LoginViewController()
-//        objLoginView.tmpString=strResult
-//            NSNotificationCenter.defaultCenter().postNotificationName(GetLoginResult, object: nil)
+
            
             delegate?.setResult(strResult)
             
