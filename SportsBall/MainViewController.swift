@@ -30,7 +30,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         self.automaticallyAdjustsScrollViewInsets = false
         let imageArray: [UIImage!] = [UIImage(named: "ad2"), UIImage(named: "loop2"), UIImage(named: "loop3")]
         
-        self.circleView = CirCleView(frame: CGRectMake(0, 20, self.view.frame.size.width, 200), imageArray: imageArray)
+        self.circleView = CirCleView(frame: CGRectMake(0, 20, self.view.frame.size.width, 150), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
                self.view.addSubview(circleView)

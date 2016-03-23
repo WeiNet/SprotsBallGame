@@ -18,7 +18,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addLoginNotification()//注册通知
+       
         common.delegate=self
         
         
@@ -50,10 +50,6 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate{
         strParam.appendContentsOf("<strIp>192.160.30.34</strIp>")
         strParam.appendContentsOf("</Login>")
         common.getResult(strParam,strType: "LoginType",strResultName: "LoginResult")
-        
-    }
-    func addLoginNotification(){
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"getLoginData", name: GetLoginResult, object: nil)
         
     }
     

@@ -138,13 +138,13 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6q-xm-fv4">
                                                     <rect key="frame" x="146" y="42" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrD-Vg-Uw9">
                                                     <rect key="frame" x="146" y="63" width="145" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -162,7 +162,7 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="j9p-3R-Nru" firstAttribute="top" secondItem="Ail-H6-Iev" secondAttribute="bottom" constant="210" id="6I8-E1-egS"/>
+                            <constraint firstItem="j9p-3R-Nru" firstAttribute="top" secondItem="Ail-H6-Iev" secondAttribute="bottom" constant="160" id="6I8-E1-egS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VGL-Xy-yhq" secondAttribute="trailing" id="Ae3-Fn-i8b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j9p-3R-Nru" secondAttribute="trailing" constant="80" id="E9o-jc-wpo"/>
                             <constraint firstItem="j9p-3R-Nru" firstAttribute="leading" secondItem="Z5I-Pi-Bhx" secondAttribute="leadingMargin" constant="80" id="PMn-oj-o8m"/>
