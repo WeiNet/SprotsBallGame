@@ -27,10 +27,6 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
         soapMsg.appendContentsOf("xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">")
         soapMsg.appendContentsOf("<soap12:Body>")
         soapMsg.appendContentsOf(strParame)
-        //        soapMsg.appendContentsOf("<strUser>rerer</strUser>")
-        //        soapMsg.appendContentsOf("<strPwd>fgfg</strPwd>")
-        //        soapMsg.appendContentsOf("<strIp>192.160.30.34</strIp>")
-        //        soapMsg.appendContentsOf("</Login>")
         soapMsg.appendContentsOf("</soap12:Body>")
         soapMsg.appendContentsOf("</soap12:Envelope>")
         
