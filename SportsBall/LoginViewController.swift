@@ -49,7 +49,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate{
         strParam.appendContentsOf("<strPwd>fgfg</strPwd>")
         strParam.appendContentsOf("<strIp>192.160.30.34</strIp>")
         strParam.appendContentsOf("</Login>")
-        common.getResult(strParam,strType: "LoginType")
+        common.getResult(strParam,strType: "LoginType",strResultName: "LoginResult")
         
     }
     func addLoginNotification(){
