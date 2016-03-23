@@ -118,8 +118,8 @@
                                     <segment title="足球早盘"/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="167" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VGL-Xy-yhq">
-                                <rect key="frame" x="9" y="245" width="566" height="369"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="167" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VGL-Xy-yhq">
+                                <rect key="frame" x="9" y="245" width="566" height="276"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -167,6 +167,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="j9p-3R-Nru" secondAttribute="trailing" constant="80" id="E9o-jc-wpo"/>
                             <constraint firstItem="j9p-3R-Nru" firstAttribute="leading" secondItem="Z5I-Pi-Bhx" secondAttribute="leadingMargin" constant="80" id="PMn-oj-o8m"/>
                             <constraint firstItem="VGL-Xy-yhq" firstAttribute="top" secondItem="j9p-3R-Nru" secondAttribute="bottom" constant="10" id="eMH-Fh-0w0"/>
+                            <constraint firstItem="Kfd-He-Slr" firstAttribute="top" secondItem="VGL-Xy-yhq" secondAttribute="bottom" id="iRO-p4-gJR"/>
                             <constraint firstItem="VGL-Xy-yhq" firstAttribute="leading" secondItem="Z5I-Pi-Bhx" secondAttribute="leadingMargin" id="ssF-vU-yVm"/>
                         </constraints>
                     </view>
