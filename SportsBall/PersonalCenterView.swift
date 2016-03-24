@@ -8,67 +8,50 @@
 
 import UIKit
 
-class PersonalCenterView: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var setTable: UITableView!
-var setNameArry=["dfdf","dfdf","ddd","df"]
-    var setImge=["m1","m2","m3","m4"]
+    @IBOutlet weak var tableViewList: UITableView!
+    
+    var setNameArry=["问题反馈","关于"]
+    var setImge=["feedback_log","about_log"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setTable.dataSource=self
-        self.setTable.delegate=self
-        // Do any additional setup after loading the view.
-    }
+        self.title="个人中心"
+        self.navigationController?.navigationBarHidden=true
+        self.tableViewList.dataSource=self
+        self.tableViewList.delegate=self
+        
+        
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return setNameArry.count
     }
     
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cellName="setCell"
-        var cell=tableView.dequeueReusableCellWithIdentifier(cellName)
+        var cell=tableView.dequeueReusableCellWithIdentifier("SportCell")
         if(cell==nil){
-            cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellName)
+             cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SportCell")
         }
-        var image=cell!.viewWithTag(1) as! UIImageView
+        var image=cell?.viewWithTag(1)as! UIImageView
+        var name=cell?.viewWithTag(2)as! UILabel
         image.image=UIImage(named: setImge[indexPath.row])
-        var labText=cell!.viewWithTag(2)as! UILabel
-       
-        
-        //        cell!.imageView?.image=UIImage(named: gameImage[indexPath.row])
-        //        cell!.textLabel?.text=gameName[indexPath.row]
-        //
-        //        cell!.detailTextLabel?.text="有态度，实时比赛"
-        //        cell!.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
-        //        var view11=UIView(frame:CGRect(x: 0, y: 0, width: 320, height: 20))
-        //        view11.backgroundColor=UIColor.greenColor()
-        //        cell?.contentView.addSubview(view11)
+        name.text=setNameArry[indexPath.row]
+        cell?.separatorInset.bottom
         return cell!
-        
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-        
-        return 90;
+    return 80.0
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
+    
 }

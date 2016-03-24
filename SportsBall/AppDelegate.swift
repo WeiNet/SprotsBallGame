@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let firstVC = LoginViewController()
+        
         let naviVC = UINavigationController(rootViewController: firstVC)
         self.window?.rootViewController = naviVC
         // Override point for customization after application launch.

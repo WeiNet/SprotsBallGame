@@ -20,6 +20,8 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate{
         super.viewDidLoad()
        
         common.delegate=self
+       
+        self.navigationController?.navigationBarHidden=true
         
         
         // Do any additional setup after loading the view.
