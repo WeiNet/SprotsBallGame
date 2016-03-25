@@ -33,7 +33,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
         return soapMsg
     
     }
-    func getResult(strParam:String,strType:String,strResultName:String){
+    func getResult(strParam:String ,strResultName:String){
         let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
         self.strRequestType=strType//设置请求类型
         self.resultName=strResultName
@@ -84,22 +84,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
         elementIsFound = false;
         // 强制放弃解析
         self.xmlParser.abortParsing()
-        
-        switch(strRequestType){
-        case "LoginType":
-
-           
             delegate?.setResult(strResult)
-            
-            
-            break
-        default:
-            NSLog("Other Request")
-        
-        }
-        
-        
-        
     }
 
     

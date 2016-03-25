@@ -16,6 +16,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     
     var gameName=["足球竞赛","篮球竞赛","棒球竞赛","排球竞赛"]
     var gameImage=["football","baseketball","baseball","vallyball"]
+    var viewName = ["Roll","Roll","Roll","Roll"]
     //当前屏幕对象
     var screenObject=UIScreen.mainScreen().bounds
 
@@ -111,4 +112,10 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         return 90;
     }
     
+    //Item点击事件
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var storyboard = UIStoryboard(name: "Main", bundle:nil)
+        var uiView:RollViewContrller = storyboard.instantiateViewControllerWithIdentifier("RollViewContrller") as! RollViewContrller
+        self.navigationController?.pushViewController(uiView, animated: true)
+    }
 }
