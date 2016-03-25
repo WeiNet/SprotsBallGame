@@ -31,7 +31,8 @@ class RollViewContrller:MyTableViewController,ResultDelegate {
         //把NSData对象转换回JSON对象
         let json : AnyObject! = try? NSJSONSerialization
             .JSONObjectWithData(data, options:NSJSONReadingOptions.AllowFragments)
-//        print("Json Object:"); print(json）
+        print("Json Object:")
+        print(json)
         
         
         
