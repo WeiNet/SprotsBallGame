@@ -17,7 +17,7 @@ class RollViewContrller:MyTableViewController,ResultDelegate {
         strNewResult = (strNewResult as NSString).substringToIndex(1)
         //首先判断能不能转换
         if (!NSJSONSerialization.isValidJSONObject(strNewResult)) {
-            print("is not a valid json object")
+            print("is not a valid json object。。。。")
             return
         }
         //利用OC的json库转换成OC的NSData，
