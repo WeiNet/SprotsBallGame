@@ -34,6 +34,9 @@ class RollViewContrller:MyTableViewController,ResultDelegate {
 //        print("Json Object:"); print(json）
         
         
+        
+        
+        
         //验证JSON对象可用性
 //        let uname : AnyObject = json.objectForKey("uname")!
 //        let mobile : AnyObject = json.objectForKey("tel")!.objectForKey("mobile")!
