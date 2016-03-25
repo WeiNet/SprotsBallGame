@@ -9,6 +9,7 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    var name=""
     private lazy var backImageView: UIImageView = {
         let backImageView = UIImageView()
         backImageView.frame = ScreenBounds
