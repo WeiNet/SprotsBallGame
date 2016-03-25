@@ -12,7 +12,37 @@ class RollViewContrller:MyTableViewController,ResultDelegate {
     var common=CommonParameter()//网络请求
     
     func setResult(strResult: String)  {
-        NSLog(strResult)
+        print(strResult)
+        var strNewResult = (strResult as NSString).substringFromIndex(1)
+        strNewResult = (strNewResult as NSString).substringToIndex(1)
+        //首先判断能不能转换
+        if (!NSJSONSerialization.isValidJSONObject(strNewResult)) {
+            print("is not a valid json object")
+            return
+        }
+        //利用OC的json库转换成OC的NSData，
+        //如果设置options为NSJSONWritingOptions.PrettyPrinted，则打印格式更好阅读
+        let data : NSData! = try? NSJSONSerialization.dataWithJSONObject(strNewResult, options: [])
+        //NSData转换成NSString打印输出
+        let str = NSString(data:data, encoding: NSUTF8StringEncoding)
+        //输出json字符串
+        print("Json Str:"); print(str)
+        
+        //把NSData对象转换回JSON对象
+        let json : AnyObject! = try? NSJSONSerialization
+            .JSONObjectWithData(data, options:NSJSONReadingOptions.AllowFragments)
+        print("Json Object:")
+        print(json)
+        
+        
+        
+        
+        
+        //验证JSON对象可用性
+//        let uname : AnyObject = json.objectForKey("uname")!
+//        let mobile : AnyObject = json.objectForKey("tel")!.objectForKey("mobile")!
+//        print("get Json Object:"); print("uname: \(uname), mobile: \(mobile)")
+//        NSLog(strResult)
     }
     
     override func viewDidLoad() {
