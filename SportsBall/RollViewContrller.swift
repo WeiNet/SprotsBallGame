@@ -32,6 +32,9 @@ class RollViewContrller:MyTableViewController,ResultDelegate {
         let json : AnyObject! = try? NSJSONSerialization
             .JSONObjectWithData(data, options:NSJSONReadingOptions.AllowFragments)
         print("Json Object:"); print(json)
+        
+        
+        
         //验证JSON对象可用性
 //        let uname : AnyObject = json.objectForKey("uname")!
 //        let mobile : AnyObject = json.objectForKey("tel")!.objectForKey("mobile")!
