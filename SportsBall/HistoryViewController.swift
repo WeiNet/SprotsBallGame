@@ -8,17 +8,30 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
-    
+class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource ,ResultDelegate{
+var refresh=UIRefreshControl()
+    var conn=CommonParameter()
     @IBOutlet weak var tableViewList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewList.delegate=self
         tableViewList.dataSource=self
-       
+        conn.delegate=self
+        refresh.attributedTitle=NSAttributedString(string: "下拉刷新")
+        refresh.addTarget(self, action: "funcRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableViewList.addSubview(refresh)
     }
-
+    func funcRefresh(){
+     
+        var strParam:String = "<GetUncountBet xmlns=\"http://tempuri.org/\">";
+        strParam.appendContentsOf("<strUser>FUNTESTFZ-GT006</strUser>")
+        strParam.appendContentsOf("<iPageindex>1</iPageindex>")
+        strParam.appendContentsOf("<iPageSize>1</iPageSize>")
+        strParam.appendContentsOf("</GetUncountBet>")
+        conn.getResult(strParam,strResultName: "GetUncountBetResult")
+refresh.endRefreshing()
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,6 +56,9 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
+    }
+    func setResult(strResult: String) {
+        NSLog(strResult)
     }
 
 }

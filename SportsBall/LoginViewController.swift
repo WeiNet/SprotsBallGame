@@ -64,7 +64,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate{
         
     }
     func setResult(strResult: String)  {
-         NSLog(strResult)
+//         NSLog(strResult)
         btnLog.titleLabel?.text=""
     }
     
