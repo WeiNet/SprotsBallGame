@@ -8,32 +8,41 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    @IBOutlet weak var navigationHistory: UINavigationBar!
+    
+    @IBOutlet weak var tableViewList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var itme=UINavigationItem(title: "nihao")
-        itme.backBarButtonItem=UIBarButtonItem(title: "add", style:UIBarButtonItemStyle.Bordered, target: nil, action: "addClick")
-        navigationHistory.pushNavigationItem(itme, animated: true)
-        
-        // Do any additional setup after loading the view.
+        tableViewList.delegate=self
+        tableViewList.dataSource=self
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
-    */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       var identify="sportBall"
+        var cell=tableViewList.dequeueReusableCellWithIdentifier(identify)
+        if(cell==nil){
+        cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: identify)
+        }
+        var image=cell!.viewWithTag(7)as!UIImageView
+        var labTime=cell!.viewWithTag(2)as! UILabel
+        var labDetil=cell!.viewWithTag(3)as! UILabel
+        var labType=cell!.viewWithTag(4)as! UILabel
+        var labOut=cell!.viewWithTag(5)as! UILabel
+        var labin=cell!.viewWithTag(6)as! UILabel
+        
+        return cell!
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 150
+    }
 
 }
