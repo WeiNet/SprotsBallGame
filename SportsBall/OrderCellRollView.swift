@@ -17,6 +17,13 @@ class OrderCellRollView: UITableViewCell {
     @IBOutlet var titleView: UIView!
     @IBOutlet var order: UIView!
     
+    /*******************************title标题控件*******************************/
+    @IBOutlet var N_VISIT_NAME: UILabel!
+    @IBOutlet var N_HOME_NAME: UILabel!
+    @IBOutlet var N_GAMEDATE: UILabel!
+     
+    /*******************************title标题控件*******************************/
+    
     var myUpViewDelegate: UpViewDelegate!
     var section: Int!//当前操作的行号
     var row:Int!

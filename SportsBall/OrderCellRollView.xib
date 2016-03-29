@@ -450,6 +450,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="N_GAMEDATE" destination="mHL-HI-fFR" id="ngG-9l-r3E"/>
+                <outlet property="N_HOME_NAME" destination="ZCg-hb-Gwh" id="xeB-xy-Ks8"/>
+                <outlet property="N_VISIT_NAME" destination="Qwb-6p-ywT" id="9Ku-Mk-9TZ"/>
                 <outlet property="order" destination="iY1-q7-6FS" id="dqx-gu-ah2"/>
                 <outlet property="titleView" destination="wf4-hb-ynt" id="4OF-qN-3l5"/>
             </connections>

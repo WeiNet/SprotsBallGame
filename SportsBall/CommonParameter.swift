@@ -11,6 +11,7 @@ import UIKit
 class CommonParameter: NSObject ,NSXMLParserDelegate{
     var xmlParser=NSXMLParser()
     var strRequestType=""
+    var resultName=""
     var isFind=false
     var strResult=""
     var matchingElement="LoginResult"
@@ -35,7 +36,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
     func getResult(strParam:String ,strResultName:String){
         let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
 //        self.strRequestType=strType//设置请求类型
-        self.matchingElement=strResultName
+        self.resultName=strResultName
         var request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         
