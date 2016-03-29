@@ -9,7 +9,7 @@
 import UIKit
 
 class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableViewDataSource,UITableViewDelegate {
-    
+    var test = "ttt"
     let tableViewCellIdentifier = "tableViewCellIdentifier"//默认的
     let unionTitleViewIdentifier = "unionTitleViewIdentifier"//联盟Identifier
     var heihtg:CGFloat = 200//赛事的注单高度

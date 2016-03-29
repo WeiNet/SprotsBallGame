@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1749F4D21CAA8102001391A4 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */; };
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
-		177E76F21CA3E9B300141CBF /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76EA1CA3E9B300141CBF /* MyTableViewController.swift */; };
+		177E76F21CA3E9B300141CBF /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76EA1CA3E9B300141CBF /* MyTableView.swift */; };
 		177E76F31CA3E9B300141CBF /* UnionTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */; };
 		177E76F41CA3E9B300141CBF /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */; };
 		177E76F51CA3E9B300141CBF /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */; };
@@ -58,8 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
-		177E76EA1CA3E9B300141CBF /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		177E76EA1CA3E9B300141CBF /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
 		177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleInfo.swift; sourceTree = "<group>"; };
 		177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
 		177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
@@ -158,8 +160,9 @@
 				462BEE171C86861D00E451E4 /* StartViewController.swift */,
 				462BEE181C86861D00E451E4 /* StartViewController.xib */,
 				177E69461CA3E5D300141CBF /* RollViewContrller.swift */,
-				177E76EA1CA3E9B300141CBF /* MyTableViewController.swift */,
+				177E76EA1CA3E9B300141CBF /* MyTableView.swift */,
 				177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */,
+				1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */,
 				177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */,
 				177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */,
 				177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */,
@@ -374,7 +377,8 @@
 				46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
-				177E76F21CA3E9B300141CBF /* MyTableViewController.swift in Sources */,
+				1749F4D21CAA8102001391A4 /* UnionTitleVO.swift in Sources */,
+				177E76F21CA3E9B300141CBF /* MyTableView.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
 				177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */,
 				177E76F91CA3E9B300141CBF /* OrderCellRollModel.swift in Sources */,
