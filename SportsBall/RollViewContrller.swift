@@ -14,7 +14,25 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate {
     var myTable:MyTableView!
     
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
+        orderCellRollView.N_LDYPL.text = String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue)
+        orderCellRollView.N_HJPL.text = String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue)
+        orderCellRollView.N_RDYPL.text = String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue)
         
+        orderCellRollView.N_LRFPL.text = String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue)
+        orderCellRollView.N_RRFPL.text = String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue)
+        
+        orderCellRollView.N_DXDPL.text = String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue)
+        orderCellRollView.N_DXXPL.text = String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue)
+        
+        orderCellRollView.N_LDYPL2.text = String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue)
+        orderCellRollView.N_HJPL2.text = String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue)
+        orderCellRollView.N_RDYPL2.text = String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue)
+        
+        orderCellRollView.N_LRFPL2.text = String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue)
+        orderCellRollView.N_RRFPL2.text = String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue)
+        
+        orderCellRollView.N_DXDPL2.text = String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue)
+        orderCellRollView.N_DXXPL2.text = String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue)
     }
     
     func setResult(strResult: String)  {
@@ -59,6 +77,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate {
         var height = self.myContent.frame.size.height - 20
         myTable = MyTableView(frame: CGRect(x: 0, y: 25, width: width, height: height))
         myTable.matchCells = showUnion
+        myTable.bindDataTable = self
         myTable.setDelegate()
         myContent.addSubview(myTable)
     }

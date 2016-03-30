@@ -91,8 +91,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3.700" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-yB-Pmz">
-                                <rect key="frame" x="50" y="1" width="80" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3.400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfx-GG-fzi">
+                                <rect key="frame" x="131" y="1" width="56" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -371,8 +371,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3.400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfx-GG-fzi">
-                                <rect key="frame" x="131" y="1" width="56" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3.700" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-yB-Pmz">
+                                <rect key="frame" x="50" y="1" width="80" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -450,13 +450,43 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="L_RFView" destination="Lof-kA-fQ8" id="aET-Rg-i4V"/>
+                <outlet property="L_RFView2" destination="D5p-Hs-CZG" id="yeI-21-fwd"/>
+                <outlet property="N_DXDPL" destination="04T-5w-hn6" id="IzY-8k-jIJ"/>
+                <outlet property="N_DXDPL2" destination="Rm5-G1-Gje" id="oIy-QB-C37"/>
+                <outlet property="N_DXXPL" destination="dwb-Ya-J7n" id="eU9-NN-k6w"/>
+                <outlet property="N_DXXPL2" destination="uRk-iL-ORk" id="vp6-AZ-VgG"/>
                 <outlet property="N_GAMEDATE" destination="mHL-HI-fFR" id="ngG-9l-r3E"/>
+                <outlet property="N_HJPL" destination="qfx-GG-fzi" id="DgY-Sp-P8w"/>
+                <outlet property="N_HJPL2" destination="khj-rh-AXg" id="UxJ-7e-Jqo"/>
                 <outlet property="N_HOME_NAME" destination="ZCg-hb-Gwh" id="xeB-xy-Ks8"/>
+                <outlet property="N_LDXBL" destination="LkN-cz-Raa" id="bIY-rO-rtf"/>
+                <outlet property="N_LDXBL2" destination="pY9-6u-tqx" id="83s-5e-dvX"/>
+                <outlet property="N_LDXBLView" destination="XoK-WK-d4V" id="DX2-Bg-Fq1"/>
+                <outlet property="N_LDXBLView2" destination="gCW-jx-VlK" id="2O2-hj-qhT"/>
+                <outlet property="N_LDYPL" destination="s1S-yB-Pmz" id="3Nl-2d-mzH"/>
+                <outlet property="N_LDYPL2" destination="ia8-0c-aHf" id="a4Z-Ab-4rO"/>
+                <outlet property="N_LRFBL" destination="Dp4-76-poL" id="gpd-UB-YLu"/>
+                <outlet property="N_LRFBL2" destination="In7-BK-cHZ" id="oqo-Hc-1O6"/>
+                <outlet property="N_LRFPL" destination="gM1-ZB-fCB" id="SWI-Cd-YHi"/>
+                <outlet property="N_LRFPL2" destination="6x8-FW-UAk" id="yDz-IN-tiE"/>
+                <outlet property="N_RDXBL" destination="eCg-4A-PN6" id="cuB-5F-axN"/>
+                <outlet property="N_RDXBL2" destination="mtD-wU-nwa" id="lS8-ke-IIh"/>
+                <outlet property="N_RDXBLView" destination="ZcM-Ar-IuZ" id="WB8-gx-G7P"/>
+                <outlet property="N_RDXBLView2" destination="DYK-EZ-gXW" id="4wN-OD-ucl"/>
+                <outlet property="N_RDYPL" destination="Wk6-i0-kcH" id="C0f-1i-EFa"/>
+                <outlet property="N_RDYPL2" destination="p8R-Jt-KPx" id="MNH-iM-qLl"/>
+                <outlet property="N_RRFBL" destination="Tca-zs-Poa" id="UoF-Hs-DNr"/>
+                <outlet property="N_RRFBL2" destination="WOL-Tj-RSW" id="v9d-Wt-7Oa"/>
+                <outlet property="N_RRFPL" destination="MzL-RF-hQd" id="GeB-T9-FUX"/>
+                <outlet property="N_RRFPL2" destination="QFk-gY-Qjk" id="I72-z0-SkI"/>
                 <outlet property="N_VISIT_NAME" destination="Qwb-6p-ywT" id="9Ku-Mk-9TZ"/>
+                <outlet property="R_RFView" destination="QOm-LZ-qpe" id="A5l-bw-fyy"/>
+                <outlet property="R_RFView2" destination="OrR-9t-zlt" id="cmt-hZ-dVL"/>
                 <outlet property="order" destination="iY1-q7-6FS" id="dqx-gu-ah2"/>
                 <outlet property="titleView" destination="wf4-hb-ynt" id="4OF-qN-3l5"/>
             </connections>
-            <point key="canvasLocation" x="380.5" y="497.5"/>
+            <point key="canvasLocation" x="760.5" y="503.5"/>
         </tableViewCell>
     </objects>
 </document>

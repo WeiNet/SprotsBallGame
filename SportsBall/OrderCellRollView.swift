@@ -25,6 +25,39 @@ class OrderCellRollView: UITableViewCell {
     @IBOutlet var N_HOME_NAME: UILabel!
     @IBOutlet var N_GAMEDATE: UILabel!
     /*******************************title标题控件*******************************/
+    /*******************************注单控件*******************************/
+    @IBOutlet var N_LDYPL: UILabel!
+    @IBOutlet var N_HJPL: UILabel!
+    @IBOutlet var N_RDYPL: UILabel!
+    @IBOutlet var L_RFView: UIView!
+    @IBOutlet var N_LRFBL: UILabel!
+    @IBOutlet var N_LRFPL: UILabel!
+    @IBOutlet var R_RFView: UIView!
+    @IBOutlet var N_RRFBL: UILabel!
+    @IBOutlet var N_RRFPL: UILabel!
+    @IBOutlet var N_LDXBLView: UIView!
+    @IBOutlet var N_LDXBL: UILabel!
+    @IBOutlet var N_DXDPL: UILabel!
+    @IBOutlet var N_RDXBLView: UIView!
+    @IBOutlet var N_RDXBL: UILabel!
+    @IBOutlet var N_DXXPL: UILabel!
+    
+    @IBOutlet var N_LDYPL2: UILabel!
+    @IBOutlet var N_HJPL2: UILabel!
+    @IBOutlet var N_RDYPL2: UILabel!
+    @IBOutlet var L_RFView2: UIView!
+    @IBOutlet var N_LRFBL2: UILabel!
+    @IBOutlet var N_LRFPL2: UILabel!
+    @IBOutlet var R_RFView2: UIView!
+    @IBOutlet var N_RRFBL2: UILabel!
+    @IBOutlet var N_RRFPL2: UILabel!
+    @IBOutlet var N_LDXBLView2: UIView!
+    @IBOutlet var N_LDXBL2: UILabel!
+    @IBOutlet var N_DXDPL2: UILabel!
+    @IBOutlet var N_RDXBLView2: UIView!
+    @IBOutlet var N_RDXBL2: UILabel!
+    @IBOutlet var N_DXXPL2: UILabel!
+    /*******************************注单控件*******************************/
     
     var myUpViewDelegate: UpViewDelegate!
     var section: Int!//当前操作的行号
