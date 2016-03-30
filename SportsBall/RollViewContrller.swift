@@ -8,10 +8,14 @@
 
 import UIKit
 
-class RollViewContrller:UIViewController,ResultDelegate {
+class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate {
     @IBOutlet var myContent: UIView!
     var common=CommonParameter()//网络请求
     var myTable:MyTableView!
+    
+    func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
+        
+    }
     
     func setResult(strResult: String)  {
         

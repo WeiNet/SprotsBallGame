@@ -9,7 +9,7 @@
 import UIKit
 
 class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableViewDataSource,UITableViewDelegate {
-    var test = "ttt"
+    
     let tableViewCellIdentifier = "tableViewCellIdentifier"//默认的
     let unionTitleViewIdentifier = "unionTitleViewIdentifier"//联盟Identifier
     var heihtg:CGFloat = 200//赛事的注单高度
@@ -17,6 +17,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     var matchCells:NSArray!//与UnionTitleModel的数组对应
     var section:Int!//所在的联盟组
     var row:Int!//所在的赛事组
+    var bindDataTable:bindDataDelegate!
         
     func setDelegate(){
         self.dataSource = self
@@ -146,9 +147,11 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[indexPath.section] as! UnionTitleInfo
         var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[indexPath.row] as! OrderCellRollModel
         
+        //绑定资料有实现接口的方法自己实现
         cell.N_VISIT_NAME.text = orderCellRollModel.N_VISIT_NAME
         cell.N_HOME_NAME.text = orderCellRollModel.N_HOME_NAME
         cell.N_GAMEDATE.text = orderCellRollModel.N_GAMEDATE
+        bindDataTable.bindData(cell, orderCellRollModel: orderCellRollModel)
         
         cell.section = indexPath.section
         cell.row = indexPath.row

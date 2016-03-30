@@ -12,6 +12,9 @@ import UIKit
 protocol UpViewDelegate: NSObjectProtocol {
     func upView(orderCellRollView:OrderCellRollView)
 }
+protocol bindDataDelegate: NSObjectProtocol {
+    func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel)
+}
 
 class OrderCellRollView: UITableViewCell {
     @IBOutlet var titleView: UIView!
@@ -21,7 +24,6 @@ class OrderCellRollView: UITableViewCell {
     @IBOutlet var N_VISIT_NAME: UILabel!
     @IBOutlet var N_HOME_NAME: UILabel!
     @IBOutlet var N_GAMEDATE: UILabel!
-     
     /*******************************title标题控件*******************************/
     
     var myUpViewDelegate: UpViewDelegate!
