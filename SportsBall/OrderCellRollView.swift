@@ -82,17 +82,38 @@ class OrderCellRollView: UITableViewCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: "btnTap:")
         //self.removeGestureRecognizer(tapGesture)
         titleView.addGestureRecognizer(tapGesture)
+        
+        // 单击手势识别
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: "btnTap2:")
+        N_LDYPL.addGestureRecognizer(tapGesture2)
+        N_HJPL.addGestureRecognizer(tapGesture2)
+        N_RDYPL.addGestureRecognizer(tapGesture2)
+        L_RFView.addGestureRecognizer(tapGesture2)
+        N_LRFBL.addGestureRecognizer(tapGesture2)
+        
+        order.canBecomeFirstResponder()
     }
     
     func btnTap(sender: UIButton) {
         self.toggleOpen(true)
     }
-    
+    func btnTap2(sender: UIButton) {
+        self.toggleOpen2(true)
+    }
+    //不是第一响应者
+    override func canResignFirstResponder() -> Bool {
+        return false
+    }
     func toggleOpen(userAction: Bool) {
         if userAction {
             order.hidden = !order.hidden
             headerClose = order.hidden
             myUpViewDelegate.upView(self)
+        }
+    }
+    func toggleOpen2(userAction: Bool) {
+        if userAction {
+            print("我是点击的按钮事件响应的！！！！！！")
         }
     }
 }
