@@ -16,6 +16,7 @@ protocol UnionTitleViewDelegate: NSObjectProtocol {
 
 class UnionTitleView: UITableViewHeaderFooterView {
     
+    @IBOutlet var BtnDisclosure: UIButton!
     @IBOutlet var name: UILabel!
     @IBOutlet var count: UILabel!
     @IBOutlet var icon: UIButton!
@@ -25,8 +26,8 @@ class UnionTitleView: UITableViewHeaderFooterView {
     var HeaderOpen: Bool = true  // 标记HeaderView是否展开
     
     override func awakeFromNib() {
-        // 设置disclosure 按钮的图片（被打开）
-        //self.BtnDisclosure.setImage(UIImage(named: "carat-open"), forState: UIControlState.Selected)
+        // 设置disclosure 按钮的图片（被关闭）down
+        self.BtnDisclosure.setImage(UIImage(named: "up"), forState: UIControlState.Selected)
         
         // 单击手势识别
         let tapGesture = UITapGestureRecognizer(target: self, action: "btnTap:")
@@ -39,7 +40,7 @@ class UnionTitleView: UITableViewHeaderFooterView {
     }
     
     func toggleOpen(userAction: Bool) {
-        //        BtnDisclosure.selected = !BtnDisclosure.selected
+        BtnDisclosure.selected = !BtnDisclosure.selected
         // 如果userAction传入的值为真，将给委托传递相应的消息
         if userAction {
             if HeaderOpen {

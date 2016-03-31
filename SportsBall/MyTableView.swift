@@ -117,8 +117,8 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         unionTitleInfo.unionTitleView = unionTitleView
         unionTitleView.frame.size.width = self.frame.width
         
-        unionTitleView.name.text = unionTitleInfo.unionTitleModel.name
-        unionTitleView.count.text = unionTitleInfo.unionTitleModel.count
+        unionTitleView.name.text = "★\(unionTitleInfo.unionTitleModel.name!)"
+        unionTitleView.count.text = "X\(unionTitleInfo.unionTitleModel.count!)"
         
         return unionTitleView
     }

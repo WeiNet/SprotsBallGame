@@ -8,49 +8,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="g2y-4N-YrK" customClass="UnionTitleView" customModule="SportsBall" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="326" height="24"/>
+            <rect key="frame" x="0.0" y="0.0" width="326" height="36"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="★纳威甲组联赛" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rd-Yt-BCg">
-                    <rect key="frame" x="0.0" y="0.0" width="195" height="24"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="X99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-Dz-VrV">
+                    <rect key="frame" x="221" y="0.0" width="45" height="36"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="195" id="5z1-wc-vFm"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="195" id="hnB-mE-OeD"/>
+                        <constraint firstAttribute="height" constant="36" id="SGS-21-3Qe"/>
+                        <constraint firstAttribute="width" constant="45" id="pie-Be-Tu3"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yf-66-gye">
-                    <rect key="frame" x="280" y="0.0" width="46" height="24"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="V"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-LY-8ol">
+                    <rect key="frame" x="266" y="0.0" width="60" height="36"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="2sp-sZ-whw"/>
+                        <constraint firstAttribute="width" constant="60" id="vxC-BM-Dxc"/>
+                    </constraints>
+                    <state key="normal" image="down"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="X2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-Dz-VrV">
-                    <rect key="frame" x="195" y="0.0" width="131" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="★纳威甲组联赛" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rd-Yt-BCg">
+                    <rect key="frame" x="0.0" y="0.0" width="221" height="36"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Qce-Dz-VrV" secondAttribute="trailing" id="KUy-gd-z8q"/>
-                <constraint firstItem="1rd-Yt-BCg" firstAttribute="leading" secondItem="g2y-4N-YrK" secondAttribute="leading" id="QtG-bW-u9c"/>
-                <constraint firstItem="2Yf-66-gye" firstAttribute="trailing" secondItem="Qce-Dz-VrV" secondAttribute="trailing" id="T7V-fY-NGg"/>
-                <constraint firstItem="Qce-Dz-VrV" firstAttribute="height" secondItem="1rd-Yt-BCg" secondAttribute="height" id="TH2-MB-NjQ"/>
-                <constraint firstItem="2Yf-66-gye" firstAttribute="height" secondItem="1rd-Yt-BCg" secondAttribute="height" id="Xqv-tF-V6L"/>
-                <constraint firstItem="Qce-Dz-VrV" firstAttribute="leading" secondItem="1rd-Yt-BCg" secondAttribute="trailing" id="zSX-6G-ykR"/>
+                <constraint firstItem="Twe-LY-8ol" firstAttribute="bottom" secondItem="1rd-Yt-BCg" secondAttribute="bottom" id="LdP-wy-5wR"/>
+                <constraint firstItem="1rd-Yt-BCg" firstAttribute="leading" secondItem="g2y-4N-YrK" secondAttribute="leading" id="PWh-xk-hW8"/>
+                <constraint firstItem="Twe-LY-8ol" firstAttribute="top" secondItem="1rd-Yt-BCg" secondAttribute="top" id="TMI-Wu-rAP"/>
+                <constraint firstItem="Qce-Dz-VrV" firstAttribute="bottom" secondItem="1rd-Yt-BCg" secondAttribute="bottom" id="dOT-X4-nZ3"/>
+                <constraint firstItem="Twe-LY-8ol" firstAttribute="leading" secondItem="Qce-Dz-VrV" secondAttribute="trailing" id="eq9-mx-zCt"/>
+                <constraint firstAttribute="trailing" secondItem="Twe-LY-8ol" secondAttribute="trailing" id="jLC-VO-rKk"/>
+                <constraint firstItem="Qce-Dz-VrV" firstAttribute="leading" secondItem="1rd-Yt-BCg" secondAttribute="trailing" id="oRp-zs-YhH"/>
+                <constraint firstItem="Qce-Dz-VrV" firstAttribute="top" secondItem="1rd-Yt-BCg" secondAttribute="top" id="oyq-tn-Iiu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="BtnDisclosure" destination="Twe-LY-8ol" id="QgO-Vc-5wb"/>
                 <outlet property="count" destination="Qce-Dz-VrV" id="6bI-hN-IaC"/>
-                <outlet property="icon" destination="2Yf-66-gye" id="HU1-fS-em0"/>
                 <outlet property="name" destination="1rd-Yt-BCg" id="S2C-KX-t98"/>
             </connections>
-            <point key="canvasLocation" x="292" y="38"/>
+            <point key="canvasLocation" x="327" y="49"/>
         </view>
     </objects>
+    <resources>
+        <image name="down" width="60" height="36"/>
+    </resources>
 </document>
