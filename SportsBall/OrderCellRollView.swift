@@ -67,6 +67,7 @@ class OrderCellRollView: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        userInteractionEnabled()
     }
     
     func showView(close:Bool){
@@ -79,41 +80,222 @@ class OrderCellRollView: UITableViewCell {
         // Configure the view for the selected state
         
         // 单击手势识别
-        let tapGesture = UITapGestureRecognizer(target: self, action: "btnTap:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: "titleTap:")
         //self.removeGestureRecognizer(tapGesture)
         titleView.addGestureRecognizer(tapGesture)
         
-        // 单击手势识别
-        let tapGesture2 = UITapGestureRecognizer(target: self, action: "btnTap2:")
-        N_LDYPL.addGestureRecognizer(tapGesture2)
-        N_HJPL.addGestureRecognizer(tapGesture2)
-        N_RDYPL.addGestureRecognizer(tapGesture2)
-        L_RFView.addGestureRecognizer(tapGesture2)
-        N_LRFBL.addGestureRecognizer(tapGesture2)
-        
-        order.canBecomeFirstResponder()
     }
     
-    func btnTap(sender: UIButton) {
+    func titleTap(sender: UITapGestureRecognizer) {
         self.toggleOpen(true)
     }
-    func btnTap2(sender: UIButton) {
-        self.toggleOpen2(true)
+    func orderTap(sender: UITapGestureRecognizer) {
+        var view = sender.view! as UIView
+        var iTag = view.tag
+        test1 = !test1
+        if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
+            setLblFontBackground(view as! UILabel,selected: test1)
+        }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){
+            var lbl0 = view.subviews[0] as! UILabel
+            var lbl1 = view.subviews[1] as! UILabel
+            setLblFontBackground2(lbl0,selected: test1)
+            setLblFontBackground(lbl1,selected: test1)
+        }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
+            var lbl0 = view.subviews[0] as! UILabel
+            var lbl1 = view.subviews[1] as! UILabel
+            var lbl2 = view.subviews[2] as! UILabel
+            setLblFontBackground(lbl0,selected: test1)
+            setLblFontBackground2(lbl1,selected: test1)
+            setLblFontBackground(lbl2,selected: test1)
+        }
+        self.placeOrder(true)
     }
-    //不是第一响应者
-    override func canResignFirstResponder() -> Bool {
-        return false
+    var test1 = true
+    func setLblFontBackground(lable:UILabel,selected: Bool){
+        if selected {
+            lable.textColor = hexStringToColor("#FFFFFF")
+            lable.backgroundColor = hexStringToColor("#FF4646")
+        }else{
+            lable.textColor = hexStringToColor("#464646")
+            lable.backgroundColor = hexStringToColor("#FAFAFA")
+        }
+    }
+    func setLblFontBackground2(lable:UILabel,selected: Bool){
+        if selected {
+            lable.textColor = hexStringToColor("#FFFF00")
+            lable.backgroundColor = hexStringToColor("#FF4646")
+        }else{
+            lable.textColor = hexStringToColor("#008C23")
+            lable.backgroundColor = hexStringToColor("#FAFAFA")
+        }
     }
     func toggleOpen(userAction: Bool) {
         if userAction {
+            if order.hidden {
+                // 单击手势识别
+                myAddGestureRecognizer()
+            }
             order.hidden = !order.hidden
             headerClose = order.hidden
             myUpViewDelegate.upView(self)
         }
     }
-    func toggleOpen2(userAction: Bool) {
-        if userAction {
-            print("我是点击的按钮事件响应的！！！！！！")
-        }
+    func placeOrder(userAction: Bool) {
+        print("我是点击的按钮事件响应的！！！！！！")
     }
+    //***************************用于区分点击那个赔率***************************//
+    var LDYPL:Int = 56661
+    var HJPL:Int = 56662
+    var RDYPL:Int = 56663
+    var LRFView:Int = 56664
+    var RRFView:Int = 56665
+    var LDXBLView:Int = 56666
+    var RDXBLView:Int = 56667
+    
+    var LDYPL2:Int = 56668
+    var HJPL2:Int = 56669
+    var RDYPL2:Int = 56670
+    var LRFView2:Int = 56671
+    var RRFView2:Int = 56672
+    var LDXBLView2:Int = 56673
+    var RDXBLView2:Int = 56674
+    //***************************用于区分点击那个赔率***************************//
+    //启动用户交互事件，设定Tag用于区别点击时所在的控件
+    func userInteractionEnabled(){
+        N_LDYPL.userInteractionEnabled = true
+        N_HJPL.userInteractionEnabled = true
+        N_RDYPL.userInteractionEnabled = true
+        L_RFView.userInteractionEnabled = true
+        R_RFView.userInteractionEnabled = true
+        N_LDXBLView.userInteractionEnabled = true
+        N_RDXBLView.userInteractionEnabled = true
+        
+        N_LDYPL.tag = LDYPL
+        N_HJPL.tag = HJPL
+        N_RDYPL.tag = RDYPL
+        L_RFView.tag = LRFView
+        R_RFView.tag = RRFView
+        N_LDXBLView.tag = LDXBLView
+        N_RDXBLView.tag = RDXBLView
+        
+        N_LDYPL2.userInteractionEnabled = true
+        N_HJPL2.userInteractionEnabled = true
+        N_RDYPL2.userInteractionEnabled = true
+        L_RFView2.userInteractionEnabled = true
+        R_RFView2.userInteractionEnabled = true
+        N_LDXBLView2.userInteractionEnabled = true
+        N_RDXBLView2.userInteractionEnabled = true
+        
+        N_LDYPL2.tag = LDYPL2
+        N_HJPL2.tag = HJPL2
+        N_RDYPL2.tag = RDYPL2
+        L_RFView2.tag = LRFView2
+        R_RFView2.tag = RRFView2
+        N_LDXBLView2.tag = LDXBLView2
+        N_RDXBLView2.tag = RDXBLView2
+    }
+    //注册点击事件
+    func myAddGestureRecognizer(){
+        N_LDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_HJPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_RDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        L_RFView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        R_RFView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_LDXBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_RDXBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        
+        
+        N_LDYPL2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_HJPL2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_RDYPL2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        L_RFView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        R_RFView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_LDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_RDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+    }
+    func hexStringToColor(strColor:String)->UIColor{
+        var cString: String = strColor.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        
+        if cString.characters.count < 6 {return UIColor.blackColor()}
+        if cString.hasPrefix("0X") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(2))}
+        if cString.hasPrefix("#") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))}
+        if cString.characters.count != 6 {return UIColor.blackColor()}
+        
+        var range: NSRange = NSMakeRange(0, 2)
+        
+        let rString = (cString as NSString).substringWithRange(range)
+        range.location = 2
+        let gString = (cString as NSString).substringWithRange(range)
+        range.location = 4
+        let bString = (cString as NSString).substringWithRange(range)
+        
+        var r: UInt32 = 0x0
+        var g: UInt32 = 0x0
+        var b: UInt32 = 0x0
+        NSScanner.init(string: rString).scanHexInt(&r)
+        NSScanner.init(string: gString).scanHexInt(&g)
+        NSScanner.init(string: bString).scanHexInt(&b)
+        
+        return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
+        
+    }
+}
+//N_LDYPL
+//N_HJPL
+//N_RDYPL
+//L_RFView
+//N_LRFBL
+//N_LRFPL
+//R_RFView
+//N_RRFBL
+//N_RRFPL
+//N_LDXBLView
+//N_LDXBL
+//N_DXDPL
+//N_RDXBLView
+//N_RDXBL
+//N_DXXPL
+//
+//N_LDYPL2
+//N_HJPL2
+//N_RDYPL2
+//L_RFView2
+//N_LRFBL2
+//N_LRFPL2
+//R_RFView2
+//N_RRFBL2
+//N_RRFPL2
+//N_LDXBLView2
+//N_LDXBL2
+//N_DXDPL2
+//N_RDXBLView2
+//N_RDXBL2
+//N_DXXPL2
+extension UIColor {
+//    public func hexStringToColor(strColor:String)->UIColor{
+//        var cString: String = strColor.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+//        
+//        if cString.characters.count < 6 {return UIColor.blackColor()}
+//        if cString.hasPrefix("0X") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(2))}
+//        if cString.hasPrefix("#") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))}
+//        if cString.characters.count != 6 {return UIColor.blackColor()}
+//        
+//        var range: NSRange = NSMakeRange(0, 2)
+//        
+//        let rString = (cString as NSString).substringWithRange(range)
+//        range.location = 2
+//        let gString = (cString as NSString).substringWithRange(range)
+//        range.location = 4
+//        let bString = (cString as NSString).substringWithRange(range)
+//        
+//        var r: UInt32 = 0x0
+//        var g: UInt32 = 0x0
+//        var b: UInt32 = 0x0
+//        NSScanner.init(string: rString).scanHexInt(&r)
+//        NSScanner.init(string: gString).scanHexInt(&g)
+//        NSScanner.init(string: bString).scanHexInt(&b)
+//        
+//        return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
+//        
+//    }
 }

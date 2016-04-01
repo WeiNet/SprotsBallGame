@@ -12,7 +12,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     
     let tableViewCellIdentifier = "tableViewCellIdentifier"//默认的
     let unionTitleViewIdentifier = "unionTitleViewIdentifier"//联盟Identifier
-    var heihtg:CGFloat = 200//赛事的注单高度
+    var heihtg:CGFloat = 217//赛事的注单高度
     var unionTitleInfoArray:NSMutableArray!//与UnionTitleInfo的数组对应
     var matchCells:NSArray!//与UnionTitleModel的数组对应
     var section:Int!//所在的联盟组
@@ -38,7 +38,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         }
         
         // 联盟高度
-        self.sectionHeaderHeight = CGFloat(30)
+        self.sectionHeaderHeight = CGFloat(36)
         
         //联盟xib加载
         let unionTitleViewNib: UINib = UINib(nibName: "UnionTitleView", bundle: nil)
@@ -102,9 +102,9 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[indexPath.section] as! UnionTitleInfo
         var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[indexPath.row] as! OrderCellRollModel
         if orderCellRollModel.close == true {
-            return 242 - heihtg
+            return 258 - heihtg
         }
-        return 242
+        return 258
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -158,6 +158,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         cell.showView(orderCellRollModel.close)
         cell.myUpViewDelegate = self
         cell.frame.size.width = self.frame.width
+        cell.canResignFirstResponder()
         return cell
     }
 }
