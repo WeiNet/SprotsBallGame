@@ -63,6 +63,7 @@ class OrderCellRollView: UITableViewCell {
     var section: Int!//当前操作的行号
     var row:Int!
     var headerClose: Bool = false  // 标记HeaderView是否展开
+    var orderCellRollModel:OrderCellRollModel!//当前View对应的资料
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -91,22 +92,25 @@ class OrderCellRollView: UITableViewCell {
     }
     func orderTap(sender: UITapGestureRecognizer) {
         var view = sender.view! as UIView
+//        var ff = view.isKindOfClass(UILabel)
         var iTag = view.tag
-        test1 = !test1
+        var name = ToolsCode.codeBy(iTag)
+        var select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
+        orderCellRollModel.setValue(!select, forKey: "\(name)_SEL")
         if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
-            setLblFontBackground(view as! UILabel,selected: test1)
+            setLblFontBackground(view as! UILabel,selected: !select)
         }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){
             var lbl0 = view.subviews[0] as! UILabel
             var lbl1 = view.subviews[1] as! UILabel
-            setLblFontBackground2(lbl0,selected: test1)
-            setLblFontBackground(lbl1,selected: test1)
+            setLblFontBackground2(lbl0,selected: !select)
+            setLblFontBackground(lbl1,selected: !select)
         }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
             var lbl0 = view.subviews[0] as! UILabel
             var lbl1 = view.subviews[1] as! UILabel
             var lbl2 = view.subviews[2] as! UILabel
-            setLblFontBackground(lbl0,selected: test1)
-            setLblFontBackground2(lbl1,selected: test1)
-            setLblFontBackground(lbl2,selected: test1)
+            setLblFontBackground(lbl0,selected: !select)
+            setLblFontBackground2(lbl1,selected: !select)
+            setLblFontBackground(lbl2,selected: !select)
         }
         self.placeOrder(true)
     }
@@ -143,23 +147,7 @@ class OrderCellRollView: UITableViewCell {
     func placeOrder(userAction: Bool) {
         print("我是点击的按钮事件响应的！！！！！！")
     }
-    //***************************用于区分点击那个赔率***************************//
-    var LDYPL:Int = 56661
-    var HJPL:Int = 56662
-    var RDYPL:Int = 56663
-    var LRFView:Int = 56664
-    var RRFView:Int = 56665
-    var LDXBLView:Int = 56666
-    var RDXBLView:Int = 56667
     
-    var LDYPL2:Int = 56668
-    var HJPL2:Int = 56669
-    var RDYPL2:Int = 56670
-    var LRFView2:Int = 56671
-    var RRFView2:Int = 56672
-    var LDXBLView2:Int = 56673
-    var RDXBLView2:Int = 56674
-    //***************************用于区分点击那个赔率***************************//
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     func userInteractionEnabled(){
         N_LDYPL.userInteractionEnabled = true
@@ -170,13 +158,13 @@ class OrderCellRollView: UITableViewCell {
         N_LDXBLView.userInteractionEnabled = true
         N_RDXBLView.userInteractionEnabled = true
         
-        N_LDYPL.tag = LDYPL
-        N_HJPL.tag = HJPL
-        N_RDYPL.tag = RDYPL
-        L_RFView.tag = LRFView
-        R_RFView.tag = RRFView
-        N_LDXBLView.tag = LDXBLView
-        N_RDXBLView.tag = RDXBLView
+        N_LDYPL.tag = ToolsCode.LDYPL
+        N_HJPL.tag = ToolsCode.HJPL
+        N_RDYPL.tag = ToolsCode.RDYPL
+        L_RFView.tag = ToolsCode.LRFView
+        R_RFView.tag = ToolsCode.RRFView
+        N_LDXBLView.tag = ToolsCode.LDXBLView
+        N_RDXBLView.tag = ToolsCode.RDXBLView
         
         N_LDYPL2.userInteractionEnabled = true
         N_HJPL2.userInteractionEnabled = true
@@ -186,13 +174,13 @@ class OrderCellRollView: UITableViewCell {
         N_LDXBLView2.userInteractionEnabled = true
         N_RDXBLView2.userInteractionEnabled = true
         
-        N_LDYPL2.tag = LDYPL2
-        N_HJPL2.tag = HJPL2
-        N_RDYPL2.tag = RDYPL2
-        L_RFView2.tag = LRFView2
-        R_RFView2.tag = RRFView2
-        N_LDXBLView2.tag = LDXBLView2
-        N_RDXBLView2.tag = RDXBLView2
+        N_LDYPL2.tag = ToolsCode.LDYPL2
+        N_HJPL2.tag = ToolsCode.HJPL2
+        N_RDYPL2.tag = ToolsCode.RDYPL2
+        L_RFView2.tag = ToolsCode.LRFView2
+        R_RFView2.tag = ToolsCode.RRFView2
+        N_LDXBLView2.tag = ToolsCode.LDXBLView2
+        N_RDXBLView2.tag = ToolsCode.RDXBLView2
     }
     //注册点击事件
     func myAddGestureRecognizer(){
@@ -213,6 +201,7 @@ class OrderCellRollView: UITableViewCell {
         N_LDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
+    //16进制转UIColor
     func hexStringToColor(strColor:String)->UIColor{
         var cString: String = strColor.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
@@ -237,7 +226,6 @@ class OrderCellRollView: UITableViewCell {
         NSScanner.init(string: bString).scanHexInt(&b)
         
         return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
-        
     }
 }
 //N_LDYPL

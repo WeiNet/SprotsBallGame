@@ -12,7 +12,9 @@ class OrderCellRollModel: NSObject {
     var close:Bool = true//当前的注单是张开还是关闭
     
     var N_HJPL:NSNumber!//和局赔率
+    var N_HJPL_SEL:Bool = false
     var N_HJPL2:NSNumber!
+    var N_HJPL2_SEL:Bool = false
     var N_RFLX:NSNumber!//让分类型
     var N_RFLX2:NSNumber!
     var N_RFFS:NSNumber!//让分方式
@@ -20,9 +22,13 @@ class OrderCellRollModel: NSObject {
     var N_RFBL:NSNumber!//让分比率
     var N_RFBL2:NSNumber!
     var N_LRFPL:NSNumber!//左队让分赔率
+    var N_LRFPL_SEL:Bool = false
     var N_LRFPL2:NSNumber!
+    var N_LRFPL2_SEL:Bool = false
     var N_RRFPL:NSNumber!//右队让分赔率
+    var N_RRFPL_SEL:Bool = false
     var N_RRFPL2:NSNumber!
+    var N_RRFPL2_SEL:Bool = false
     var N_RF_OPEN:NSNumber!//让分是否开放
     var N_RF_OPEN2:NSNumber!
     var N_RF_LOCK_V:NSNumber!//主队让分是否锁定
@@ -35,10 +41,14 @@ class OrderCellRollModel: NSObject {
     var N_DXFS2:NSNumber!
     var N_DXBL:NSNumber!//大小比率
     var N_DXDPL:NSNumber!//左队大小赔率
+    var N_DXDPL_SEL:Bool = false
     var N_DXXPL:NSNumber!//右队大小赔率
+    var N_DXXPL_SEL:Bool = false
     var N_DXBL2:NSNumber!
     var N_DXDPL2:NSNumber!
+    var N_DXDPL2_SEL:Bool = false
     var N_DXXPL2:NSNumber!
+    var N_DXXPL2_SEL:Bool = false
     var N_DX_OPEN:NSNumber!//大小是否开放
     var N_DX_OPEN2:NSNumber!
     var N_DX_LOCK_V:NSNumber!//主队大小是否锁定
@@ -46,9 +56,13 @@ class OrderCellRollModel: NSObject {
     var N_DX_LOCK_V2:NSNumber!
     var N_DX_LOCK_H2:NSNumber!
     var N_LDYPL:NSNumber!//左队赌赢赔率
+    var N_LDYPL_SEL:Bool = false
     var N_RDYPL:NSNumber!//右队赌赢赔率
+    var N_RDYPL_SEL:Bool = false
     var N_LDYPL2:NSNumber!
+    var N_LDYPL2_SEL:Bool = false
     var N_RDYPL2:NSNumber!
+    var N_RDYPL2_SEL:Bool = false
     var N_DY_OPEN:NSNumber!//赌赢是否开放
     var N_DY_OPEN2:NSNumber!
     var N_DY_LOCK_V:NSNumber!//主队赌赢是否锁定

@@ -153,6 +153,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         cell.N_GAMEDATE.text = orderCellRollModel.N_GAMEDATE
         bindDataTable.bindData(cell, orderCellRollModel: orderCellRollModel)
         
+        cell.orderCellRollModel = orderCellRollModel
         cell.section = indexPath.section
         cell.row = indexPath.row
         cell.showView(orderCellRollModel.close)

@@ -18,6 +18,7 @@
 		177E76F81CA3E9B300141CBF /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */; };
 		177E76F91CA3E9B300141CBF /* OrderCellRollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
+		179CB0EC1CAE5792001D80D5 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
 		177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollModel.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 				177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */,
 				177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */,
 				177E76FA1CA3ED8400141CBF /* PropertyList.plist */,
+				179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				177E76F81CA3E9B300141CBF /* OrderCellRollView.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
 				462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */,
+				179CB0EC1CAE5792001D80D5 /* ToolsCode.swift in Sources */,
 				177E76F31CA3E9B300141CBF /* UnionTitleInfo.swift in Sources */,
 				177E76F51CA3E9B300141CBF /* UnionTitleView.swift in Sources */,
 				46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */,
