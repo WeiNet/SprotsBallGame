@@ -11,7 +11,6 @@ import UIKit
 class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate{
     var xmlParser=NSXMLParser()
     var strRequestType=""
-   
     var isFind=false
     var strResult=""
     var matchingElement="LoginResult"
@@ -19,7 +18,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
     var url:NSURL=NSURL(string:WebServiceAddress)!
     var delegate:ResultDelegate?
     func getSoapMsg(strParame:String)->String{
-    
+        
         var soapMsg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
         soapMsg.appendContentsOf("<soap12:Envelope ")
         soapMsg.appendContentsOf("xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" ")
@@ -31,13 +30,13 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         soapMsg.appendContentsOf("</soap12:Envelope>")
         
         return soapMsg
-    
+        
     }
     func getResult(strParam:String ,strResultName:String){
         let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
-//        self.strRequestType=strType//设置请求类型
-       
-        var request = NSMutableURLRequest(URL: url)
+        //        self.strRequestType=strType//设置请求类型
+        self.matchingElement=strResultName
+        let request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         
         request.HTTPMethod = "POST"
@@ -57,8 +56,8 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
                 self.xmlParser.shouldResolveExternalEntities = true
             }
         }
-
-    
+        
+        
     }
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if(elementName==matchingElement){
@@ -84,8 +83,9 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         elementIsFound = false;
         // 强制放弃解析
         self.xmlParser.abortParsing()
-         delegate?.setResult(strResult,strType: "")
+        delegate?.setResult(strResult,strType: "")
     }
+    
     //http请求
     func getHttpResult (strApiName:String,strBody:String)
     {
@@ -123,6 +123,6 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
     {
         print("请求成功2！");
     }
-
+    
     
 }

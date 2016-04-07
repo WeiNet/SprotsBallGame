@@ -8,9 +8,16 @@
 
 import UIKit
 
-class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSource,ResultDelegate {
+  	var conn=CommonParameter()
     
+    @IBOutlet weak var resultText: UILabel!
     @IBOutlet weak var tableViewList: UITableView!
+   
+  		@IBAction func btnRefresh(sender: UIButton) {
+            
+            getResult()
+    }
     
     var setNameArry=["问题反馈","关于"]
     var setImge=["feedback_log","about_log"]
@@ -20,7 +27,8 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBarHidden=true
         self.tableViewList.dataSource=self
         self.tableViewList.delegate=self
-        
+        self.conn.delegate=self
+      	getResult()
         
 
     }
@@ -50,7 +58,27 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
     return 80.0
     }
+    func getResult(){
+        
+        var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
+        strParam.appendContentsOf("<strUser>FUNTESTFZ-GT006</strUser>")
+        strParam.appendContentsOf("</GetCredit>")
+        conn.getResult(strParam,strResultName: "GetCreditResult")
+        
+    }
+    func setResult(strResult: String,strType:String) {
+        resultText.text=strResult
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var sb = UIStoryboard(name: "Main", bundle:nil)
+        var vc = sb.instantiateViewControllerWithIdentifier("ProblemController") as! ProblemController
+        self.navigationController?.pushViewController(vc, animated: true)    }
     
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+    }
+
     
     
     
