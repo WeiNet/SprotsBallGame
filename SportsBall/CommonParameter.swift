@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CommonParameter: NSObject ,NSXMLParserDelegate{
+class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate{
     var xmlParser=NSXMLParser()
     var strRequestType=""
-    var resultName=""
+   
     var isFind=false
     var strResult=""
     var matchingElement="LoginResult"
@@ -36,7 +36,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
     func getResult(strParam:String ,strResultName:String){
         let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
 //        self.strRequestType=strType//设置请求类型
-        self.resultName=strResultName
+       
         var request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         
@@ -84,7 +84,44 @@ class CommonParameter: NSObject ,NSXMLParserDelegate{
         elementIsFound = false;
         // 强制放弃解析
         self.xmlParser.abortParsing()
-            delegate?.setResult(strResult)
+         delegate?.setResult(strResult,strType: "")
+    }
+    //http请求
+    func getHttpResult (strApiName:String,strBody:String)
+    {
+        let urlString:String = httpAddress+strApiName
+        var url:NSURL!
+        url = NSURL(string:urlString)
+        var request = NSMutableURLRequest(URL:url)
+        var body=strBody
+        //编码POST数据
+        var postData = body.dataUsingEncoding(NSUTF8StringEncoding)
+        //保用 POST 提交
+        request.HTTPMethod = "POST"
+        request.HTTPBody = postData
+        var conn:NSURLConnection!
+        conn = NSURLConnection(request: request,delegate: self)
+        conn.start()
+        print(conn)
+    }
+    
+    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse)
+    {
+        print("请求成功！");
+        //            print(response)
+    }
+    
+    func connection(connection: NSURLConnection, didReceiveData data: NSData!)
+    {
+        print("请求成功1！");
+        var datastring = NSString(data:data, encoding: NSUTF8StringEncoding)
+        print(datastring!)
+        delegate?.setResult(datastring as! String,strType: "")
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection)
+    {
+        print("请求成功2！");
     }
 
     
