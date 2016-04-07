@@ -68,7 +68,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         orderCellRollView.setBackground2(orderCellRollView.N_RDXBLView2,select: orderCellRollModel.N_DXXPL2_SEL)
     }
     //远端回传资料响应协议
-    func setResult(strResult: String)  {
+    func setResult(strResult: String,strType:String)  {
         
         var allUnionArr:Array<UnionTitleVO> = Array()
         var info = toJsonArray(strResult)

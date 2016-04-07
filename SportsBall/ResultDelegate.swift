@@ -10,5 +10,5 @@ import Foundation
 
 public protocol ResultDelegate{
     
-    func setResult(strResult:String)
+    func setResult(strResult:String,strType:String)
 }
