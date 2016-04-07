@@ -144,6 +144,39 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         
         return jsonArr
     }
+    func fullBetInfo(){
+        var betInfo:BetInfoModel = BetInfoModel()
+        betInfo.strUser = ""
+        betInfo.lr = ""
+        betInfo.ballType = ""
+        betInfo.playType = ""
+        betInfo.id = ""
+        betInfo.tid = ""
+        betInfo.rate = ""
+        betInfo.vh = ""
+        betInfo.let1 = ""
+        betInfo.hfs = ""
+        betInfo.hlx = ""
+        betInfo.hbl = ""
+    }
+    func checkBet(){
+        common.matchingElement = "CheckBet"
+        var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
+        strParam.appendContentsOf("<strUser>string</strUser>")
+        strParam.appendContentsOf("<lr>string</lr>")
+        strParam.appendContentsOf("<ballType>string</ballType>")
+        strParam.appendContentsOf("<playType>string</playType>")
+        strParam.appendContentsOf("<id>int</id>")
+        strParam.appendContentsOf("<tid>int</tid>")
+        strParam.appendContentsOf("<rate>decimal</rate>")
+        strParam.appendContentsOf("<vh>int<h>")
+        strParam.appendContentsOf("<let>int</let>")
+        strParam.appendContentsOf("<hfs>int</hfs>")
+        strParam.appendContentsOf("<hlx>int</hlx>")
+        strParam.appendContentsOf("<hbl>int</hbl>")
+        strParam.appendContentsOf("</CheckBet>")
+        common.getResult(strParam,strResultName: "CheckBet")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

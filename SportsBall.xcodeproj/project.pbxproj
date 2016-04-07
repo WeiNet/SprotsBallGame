@@ -21,6 +21,7 @@
 		179CB0EC1CAE5792001D80D5 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */; };
 		179CB0F21CB38F53001D80D5 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */; };
 		179CB0F41CB390B7001D80D5 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */; };
+		179CB0FD1CB6035B001D80D5 /* BetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 		179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
 		179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
 		179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
+		179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfoModel.swift; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 				179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */,
 				179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */,
 				179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */,
+				179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
 				1749F4D21CAA8102001391A4 /* UnionTitleVO.swift in Sources */,
+				179CB0FD1CB6035B001D80D5 /* BetInfoModel.swift in Sources */,
 				177E76F21CA3E9B300141CBF /* MyTableView.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
 				177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */,
