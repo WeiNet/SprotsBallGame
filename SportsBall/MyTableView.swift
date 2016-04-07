@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MyTableViewDelegate: NSObjectProtocol {
+    func orderCliCk()
+}
+
 class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableViewDataSource,UITableViewDelegate {
     
     let tableViewCellIdentifier = "tableViewCellIdentifier"//默认的
@@ -18,6 +22,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     var section:Int!//所在的联盟组
     var row:Int!//所在的赛事组
     var bindDataTable:bindDataDelegate!
+    var tableDelegate:MyTableViewDelegate!
         
     func setDelegate(){
         self.dataSource = self
@@ -87,7 +92,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
             self.deleteRowsAtIndexPaths(indexPathsToDelete as! [NSIndexPath], withRowAnimation: UITableViewRowAnimation.Top)
         }
     }
-    
+    //关闭打开注单，显示的高度由
     func upView(orderCellRollView:OrderCellRollView){
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[orderCellRollView.section] as! UnionTitleInfo
         var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[orderCellRollView.row] as! OrderCellRollModel
@@ -95,6 +100,10 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         
         self.beginUpdates()
         self.endUpdates()
+    }
+    
+    func orderCliCk(){
+        tableDelegate.orderCliCk()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

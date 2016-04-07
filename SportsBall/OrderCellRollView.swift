@@ -11,6 +11,7 @@ import UIKit
 // 该协议将被用户组的委托实现； 当赛事被打开/关闭时，它将通知发送给委托，来告知Xcode调用何方法
 protocol UpViewDelegate: NSObjectProtocol {
     func upView(orderCellRollView:OrderCellRollView)
+    func orderCliCk()
 }
 protocol bindDataDelegate: NSObjectProtocol {
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel)
@@ -100,21 +101,29 @@ class OrderCellRollView: UITableViewCell {
         if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
             setLblFontBackground(view as! UILabel,selected: !select)
         }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){
-            var lbl0 = view.subviews[0] as! UILabel
-            var lbl1 = view.subviews[1] as! UILabel
-            setLblFontBackground2(lbl0,selected: !select)
-            setLblFontBackground(lbl1,selected: !select)
+            setBackground(view,select:!select)
         }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
-            var lbl0 = view.subviews[0] as! UILabel
-            var lbl1 = view.subviews[1] as! UILabel
-            var lbl2 = view.subviews[2] as! UILabel
-            setLblFontBackground(lbl0,selected: !select)
-            setLblFontBackground2(lbl1,selected: !select)
-            setLblFontBackground(lbl2,selected: !select)
+            setBackground2(view,select: !select)
         }
         self.placeOrder(true)
+//        var singBetView:SingBetView = SingBetView()
     }
-    var test1 = true
+    //让分的背景设定
+    func setBackground(view:UIView,select: Bool){
+        var lbl0 = view.subviews[0] as! UILabel
+        var lbl1 = view.subviews[1] as! UILabel
+        setLblFontBackground2(lbl0,selected: select)
+        setLblFontBackground(lbl1,selected: select)
+    }
+    //大小球的背景设定
+    func setBackground2(view:UIView,select: Bool){
+        var lbl0 = view.subviews[0] as! UILabel
+        var lbl1 = view.subviews[1] as! UILabel
+        var lbl2 = view.subviews[2] as! UILabel
+        setLblFontBackground(lbl0,selected: select)
+        setLblFontBackground2(lbl1,selected: select)
+        setLblFontBackground(lbl2,selected: select)
+    }
     func setLblFontBackground(lable:UILabel,selected: Bool){
         if selected {
             lable.textColor = hexStringToColor("#FFFFFF")
@@ -145,6 +154,7 @@ class OrderCellRollView: UITableViewCell {
         }
     }
     func placeOrder(userAction: Bool) {
+        myUpViewDelegate.orderCliCk()
         print("我是点击的按钮事件响应的！！！！！！")
     }
     
