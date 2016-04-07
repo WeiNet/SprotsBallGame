@@ -14,7 +14,7 @@ class BetInfoModel: NSObject {
     var dMoney:String!
     var yssj:String!
     var playType:String!
-    var lr:String!
+    var lr:String!//选中的左右，ZKG
     var ballType:String!
     var id:String!
     var courtType:String!
