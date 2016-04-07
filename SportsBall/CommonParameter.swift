@@ -83,7 +83,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         elementIsFound = false;
         // 强制放弃解析
         self.xmlParser.abortParsing()
-        delegate?.setResult(strResult,strType: "")
+        delegate?.setResult(strResult,strType: matchingElement)
     }
     
     //http请求
