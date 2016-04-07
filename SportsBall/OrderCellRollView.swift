@@ -11,7 +11,7 @@ import UIKit
 // 该协议将被用户组的委托实现； 当赛事被打开/关闭时，它将通知发送给委托，来告知Xcode调用何方法
 protocol UpViewDelegate: NSObjectProtocol {
     func upView(orderCellRollView:OrderCellRollView)
-    func orderCliCk()
+    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)
 }
 protocol bindDataDelegate: NSObjectProtocol {
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel)
@@ -83,7 +83,6 @@ class OrderCellRollView: UITableViewCell {
         
         // 单击手势识别
         let tapGesture = UITapGestureRecognizer(target: self, action: "titleTap:")
-        //self.removeGestureRecognizer(tapGesture)
         titleView.addGestureRecognizer(tapGesture)
         
     }
@@ -105,7 +104,7 @@ class OrderCellRollView: UITableViewCell {
         }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
             setBackground2(view,select: !select)
         }
-        self.placeOrder(true)
+        self.placeOrder(true,toolsCode: iTag)
 //        var singBetView:SingBetView = SingBetView()
     }
     //让分的背景设定
@@ -153,8 +152,8 @@ class OrderCellRollView: UITableViewCell {
             myUpViewDelegate.upView(self)
         }
     }
-    func placeOrder(userAction: Bool) {
-        myUpViewDelegate.orderCliCk()
+    func placeOrder(userAction: Bool,toolsCode: Int) {
+        myUpViewDelegate.orderCliCk(orderCellRollModel,toolsCode: toolsCode)
         print("我是点击的按钮事件响应的！！！！！！")
     }
     

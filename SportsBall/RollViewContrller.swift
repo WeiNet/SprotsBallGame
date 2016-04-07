@@ -21,9 +21,10 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         print("selecttCancelButtonAlertView")
     }
     //点击赔率点击事件的协议
-    func orderCliCk(){
+    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int){
         let alertView = SwiftCustomAlertView()
         alertView.show(self)
+        fullBetInfo(orderCellRollModel,toolsCode:toolsCode)
     }
     //注单的资料绑定协议
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
@@ -144,36 +145,74 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         
         return jsonArr
     }
-    func fullBetInfo(){
+    func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int){
+        var id:String!
+        var tid:String!
+        var let1:String!
+        var hfs:String!
+        var hlx:String!
+        var hbl:String!
+        if(toolsCode>=56661 && toolsCode<=56667){//全场控件
+            id = String(orderCellRollModel.N_ID)
+            let1 = String(orderCellRollModel.N_LET)
+            var tempType = ToolsCode.codeByPlayType(toolsCode)
+            hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL")!)
+            hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS")!)
+            hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX")!)
+            var tempLRH = ToolsCode.codeByLRH(toolsCode)
+            if tempLRH == "L" {
+                tid = String(orderCellRollModel.N_VISIT)
+            }else if tempLRH == "R" {
+                tid = String(orderCellRollModel.N_HOME)
+            }else{
+                tid = "0"
+            }
+        }else if(toolsCode>=56668 && toolsCode<=56674){//半场控件
+            id = String(orderCellRollModel.N_ID2)
+            let1 = String(orderCellRollModel.N_LET2)
+            var tempType = ToolsCode.codeByPlayType(toolsCode)
+            hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL2")!)
+            hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS2")!)
+            hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX2")!)
+            var tempLRH = ToolsCode.codeByLRH(toolsCode)
+            if tempLRH == "L" {
+                tid = String(orderCellRollModel.N_VISIT2)
+            }else if tempLRH == "R" {
+                tid = String(orderCellRollModel.N_HOME2)
+            }else{
+                tid = "0"
+            }
+        }
+        var tempRate = ToolsCode.codeBy(toolsCode)
         var betInfo:BetInfoModel = BetInfoModel()
         betInfo.strUser = ""
-        betInfo.lr = ""
-        betInfo.ballType = ""
-        betInfo.playType = ""
-        betInfo.id = ""
-        betInfo.tid = ""
-        betInfo.rate = ""
-        betInfo.vh = ""
-        betInfo.let1 = ""
-        betInfo.hfs = ""
-        betInfo.hlx = ""
-        betInfo.hbl = ""
+        betInfo.lr = ToolsCode.codeByLRH(toolsCode)
+        betInfo.ballType = orderCellRollModel.N_LX
+        betInfo.playType = ToolsCode.codeByPlayType(toolsCode)
+        betInfo.id = id
+        betInfo.tid = tid
+        betInfo.rate = String(orderCellRollModel.valueForKey(tempRate)!)
+        betInfo.vh = String(orderCellRollModel.N_VH)
+        betInfo.let1 = let1
+        betInfo.hfs = hfs
+        betInfo.hlx = hlx
+        betInfo.hbl = hbl
     }
-    func checkBet(){
+    func checkBet(betInfo:BetInfoModel){
         common.matchingElement = "CheckBet"
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
-        strParam.appendContentsOf("<strUser>string</strUser>")
-        strParam.appendContentsOf("<lr>string</lr>")
-        strParam.appendContentsOf("<ballType>string</ballType>")
-        strParam.appendContentsOf("<playType>string</playType>")
-        strParam.appendContentsOf("<id>int</id>")
-        strParam.appendContentsOf("<tid>int</tid>")
-        strParam.appendContentsOf("<rate>decimal</rate>")
-        strParam.appendContentsOf("<vh>int<h>")
-        strParam.appendContentsOf("<let>int</let>")
-        strParam.appendContentsOf("<hfs>int</hfs>")
-        strParam.appendContentsOf("<hlx>int</hlx>")
-        strParam.appendContentsOf("<hbl>int</hbl>")
+        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<lr>\(betInfo.lr)</lr>")
+        strParam.appendContentsOf("<ballType>\(betInfo.ballType)</ballType>")
+        strParam.appendContentsOf("<playType>\(betInfo.playType)</playType>")
+        strParam.appendContentsOf("<id>\(betInfo.id)</id>")
+        strParam.appendContentsOf("<tid>\(betInfo.tid)</tid>")
+        strParam.appendContentsOf("<rate>\(betInfo.rate)</rate>")
+        strParam.appendContentsOf("<vh>\(betInfo.vh)<h>")
+        strParam.appendContentsOf("<let>\(betInfo.let1)</let>")
+        strParam.appendContentsOf("<hfs>\(betInfo.hfs)</hfs>")
+        strParam.appendContentsOf("<hlx>\(betInfo.hlx)</hlx>")
+        strParam.appendContentsOf("<hbl>\(betInfo.hbl)</hbl>")
         strParam.appendContentsOf("</CheckBet>")
         common.getResult(strParam,strResultName: "CheckBet")
     }
