@@ -12,6 +12,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     @IBOutlet var myContent: UIView!
     var common=CommonParameter()//网络请求
     var myTable:MyTableView!
+    var checkBetResult:String = "CheckBetResult"
+    var getFootballMatchResult:String = "GetFootballMatchResult"
     //即时下注付款协议
     func selectOkButtonalertView(){
         print("selectOkButtonalertView")
@@ -72,7 +74,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         
         var allUnionArr:Array<UnionTitleVO> = Array()
         var info = toJsonArray(strResult)
-        
+        if strResult == ""{
+            return
+        }
         var unionAllJson = info[1]
         var objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
@@ -138,6 +142,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     //转成json数组格式
     //格式：[{"ID":1,"Name":"元台禅寺","LineID":1},{"ID":2,"Name":"田坞里山塘","LineID":1},{"ID":3,"Name":"滴水石","LineID":1}]
     func toJsonArray(strResult:String)->AnyObject{
+        if strResult == ""{
+            return ""
+        }
         let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
         
         let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
@@ -149,16 +156,18 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         var id:String!
         var tid:String!
         var let1:String!
-        var hfs:String!
-        var hlx:String!
-        var hbl:String!
+        var hfs:String = "0"//赌赢为0
+        var hlx:String = "0"
+        var hbl:String = "0"
         if(toolsCode>=56661 && toolsCode<=56667){//全场控件
             id = String(orderCellRollModel.N_ID)
             let1 = String(orderCellRollModel.N_LET)
             var tempType = ToolsCode.codeByPlayType(toolsCode)
-            hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL")!)
-            hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS")!)
-            hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX")!)
+            if (tempType != "DY") && (tempType != "H") {
+                hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL")!)
+                hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS")!)
+                hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX")!)
+            }
             var tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
                 tid = String(orderCellRollModel.N_VISIT)
@@ -171,9 +180,11 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             id = String(orderCellRollModel.N_ID2)
             let1 = String(orderCellRollModel.N_LET2)
             var tempType = ToolsCode.codeByPlayType(toolsCode)
-            hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL2")!)
-            hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS2")!)
-            hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX2")!)
+            if (tempType != "DY") && (tempType != "H") {
+                hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL2")!)
+                hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS2")!)
+                hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX2")!)
+            }
             var tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
                 tid = String(orderCellRollModel.N_VISIT2)
@@ -197,9 +208,10 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         betInfo.hfs = hfs
         betInfo.hlx = hlx
         betInfo.hbl = hbl
+        checkBet(betInfo)
     }
     func checkBet(betInfo:BetInfoModel){
-        common.matchingElement = "CheckBet"
+        common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
         strParam.appendContentsOf("<lr>\(betInfo.lr)</lr>")
@@ -214,14 +226,14 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<hlx>\(betInfo.hlx)</hlx>")
         strParam.appendContentsOf("<hbl>\(betInfo.hbl)</hbl>")
         strParam.appendContentsOf("</CheckBet>")
-        common.getResult(strParam,strResultName: "CheckBet")
+        common.getResult(strParam,strResultName: checkBetResult)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         common.delegate = self
-        common.matchingElement = "GetFootballMatchResult"
+        common.matchingElement = getFootballMatchResult
         var strParam:String = "<GetFootballMatch xmlns=\"http://tempuri.org/\">";
         strParam.appendContentsOf("<strLM></strLM>")
         strParam.appendContentsOf("<strSort>0</strSort>")
@@ -230,7 +242,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<strUser></strUser>")
         strParam.appendContentsOf("<strType>0</strType>")
         strParam.appendContentsOf("</GetFootballMatch>")
-        common.getResult(strParam,strResultName: "LoginResult")
+        common.getResult(strParam,strResultName: getFootballMatchResult)
     }
 
     override func didReceiveMemoryWarning() {
