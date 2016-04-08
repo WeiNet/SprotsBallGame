@@ -74,31 +74,31 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     func setResult(strResult: String,strType:String)  {
         
         var allUnionArr:Array<UnionTitleVO> = Array()
-        var info = ToolsCode.toJsonArray(strResult)
+        let info = ToolsCode.toJsonArray(strResult)
         if strResult == ""{
             return
         }
-        var unionAllJson = info[1]
-        var objCount:Int = unionAllJson.count - 1
+        let unionAllJson = info[1]
+        let objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
-            var model:UnionTitleVO = UnionTitleVO()
+            let model:UnionTitleVO = UnionTitleVO()
             model.N_NO = String(unionAllJson[index].objectForKey("N_NO")!)
             model.N_LMMC = String(unionAllJson[index].objectForKey("N_LMMC")!)
             allUnionArr.append(model)
         }
         
-        var showUnion:NSMutableArray = NSMutableArray()
-        var matchAllJson = info[0]
-        var matchCount:Int = matchAllJson.count - 1
+        let showUnion:NSMutableArray = NSMutableArray()
+        let matchAllJson = info[0]
+        let matchCount:Int = matchAllJson.count - 1
         for union in allUnionArr {
-            var unionTitleModel:UnionTitleModel = UnionTitleModel()
+            let unionTitleModel:UnionTitleModel = UnionTitleModel()
             unionTitleModel.id = String(union.N_NO)
             unionTitleModel.name = String(union.N_LMMC)
             
             var order:Array<OrderCellRollModel> = Array()
             for index in 0...matchCount{
                 if union.N_NO == String(matchAllJson[index].objectForKey("N_LMNO")!) {
-                    var orderCellRollModel:OrderCellRollModel = OrderCellRollModel()
+                    let orderCellRollModel:OrderCellRollModel = OrderCellRollModel()
                     //给注单属性赋值
                     orderCellRollModel.setValuesForKeysWithDictionary(matchAllJson[index] as! [String : AnyObject])
                     order.append(orderCellRollModel)
@@ -111,8 +111,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             }
         }
         
-        var width = self.myContent.frame.size.width
-        var height = self.myContent.frame.size.height - 20
+        let width = self.myContent.frame.size.width
+        let height = self.myContent.frame.size.height - 20
         myTable = MyTableView(frame: CGRect(x: 0, y: 25, width: width, height: height))
         myTable.matchCells = showUnion
         myTable.bindDataTable = self
@@ -131,13 +131,13 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         if(toolsCode>=56661 && toolsCode<=56667){//全场控件
             id = String(orderCellRollModel.N_ID)
             let1 = String(orderCellRollModel.N_LET)
-            var tempType = ToolsCode.codeByPlayType(toolsCode)
+            let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
                 hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL")!)
                 hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS")!)
                 hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX")!)
             }
-            var tempLRH = ToolsCode.codeByLRH(toolsCode)
+            let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
                 tid = String(orderCellRollModel.N_VISIT)
             }else if tempLRH == "R" {
@@ -148,13 +148,13 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         }else if(toolsCode>=56668 && toolsCode<=56674){//半场控件
             id = String(orderCellRollModel.N_ID2)
             let1 = String(orderCellRollModel.N_LET2)
-            var tempType = ToolsCode.codeByPlayType(toolsCode)
+            let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
                 hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL2")!)
                 hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS2")!)
                 hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX2")!)
             }
-            var tempLRH = ToolsCode.codeByLRH(toolsCode)
+            let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
                 tid = String(orderCellRollModel.N_VISIT2)
             }else if tempLRH == "R" {
@@ -163,8 +163,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
                 tid = "0"
             }
         }
-        var tempRate = ToolsCode.codeBy(toolsCode)
-        var betInfo:BetInfoModel = BetInfoModel()
+        let tempRate = ToolsCode.codeBy(toolsCode)
+        let betInfo:BetInfoModel = BetInfoModel()
         betInfo.strUser = ""
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
         betInfo.ballType = orderCellRollModel.N_LX

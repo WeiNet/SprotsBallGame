@@ -150,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */,
-				1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */,
 				177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */,
 				177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */,
 				177E76EF1CA3E9B300141CBF /* OrderCellRollView.xib */,
@@ -172,6 +171,7 @@
 		1734124C1CB78DCA002DC425 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */,
 				177E76EA1CA3E9B300141CBF /* MyTableView.swift */,
 				177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */,
 				177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */,

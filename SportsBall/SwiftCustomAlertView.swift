@@ -47,15 +47,15 @@ class SwiftCustomAlertView: UIView {
     }
     
     func showWin(view: UIView,viewDelegate myDelegate: SwiftCustomAlertViewDelegate) {
-        var viewWin = view.frame.size
+        let viewWin = view.frame.size
         viewX = (Double(viewWin.width) - viewWidth)/2
         viewY = (Double(viewWin.height) - viewHeight)/2
-        var myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as? SwiftCustomAlertView
+        let myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as? SwiftCustomAlertView
         
         myView?.layer.cornerRadius = CGFloat(cornerRadius)
         myView?.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
         
-        var bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
         bottom.alpha = 0.8
         view.addSubview(bottom)
