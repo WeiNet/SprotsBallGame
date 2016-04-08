@@ -25,8 +25,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     //点击赔率点击事件的协议
     func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int){
         let alertView = SwiftCustomAlertView()
-        alertView.show(self)
-        fullBetInfo(orderCellRollModel,toolsCode:toolsCode)
+        alertView.show(self)//显示即时下注popuWin
+        let betInfoVO = fullBetInfo(orderCellRollModel,toolsCode:toolsCode)
+        checkBet(betInfoVO)//检验选取的赔率是不是最新的
     }
     //注单的资料绑定协议
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
@@ -71,11 +72,12 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
+        
+        var allUnionArr:Array<UnionTitleVO> = Array()
+        var info = ToolsCode.toJsonArray(strResult)
         if strResult == ""{
             return
         }
-        var allUnionArr:Array<UnionTitleVO> = Array()
-        var info = toJsonArray(strResult)
         var unionAllJson = info[1]
         var objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
@@ -119,39 +121,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         myContent.addSubview(myTable)
     }
     
-    //转成json格式
-    //格式：{"uname":"张三","tel":{"home":"010","mobile":"138"}}
-    func toJson(strResult:String)->AnyObject{
-        let error:AnyObject = "is not a valid json object"
-        //首先判断能不能转换
-        if (!NSJSONSerialization.isValidJSONObject(strResult)) {
-            print("is not a valid json object")
-            return error
-        }
-        //利用OC的json库转换成OC的NSData，
-        //如果设置options为NSJSONWritingOptions.PrettyPrinted，则打印格式更好阅读
-        let data : NSData! = try? NSJSONSerialization.dataWithJSONObject(strResult, options: [])
-        
-        //把NSData对象转换回JSON对象
-        let json : AnyObject! = try? NSJSONSerialization
-            .JSONObjectWithData(data, options:NSJSONReadingOptions.AllowFragments)
-        return json
-    }
-    
-    //转成json数组格式
-    //格式：[{"ID":1,"Name":"元台禅寺","LineID":1},{"ID":2,"Name":"田坞里山塘","LineID":1},{"ID":3,"Name":"滴水石","LineID":1}]
-    func toJsonArray(strResult:String)->AnyObject{
-        if strResult == ""{
-            return ""
-        }
-        let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-            options: NSJSONReadingOptions.MutableContainers) as! NSArray
-        
-        return jsonArr
-    }
-    func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int){
+    func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
         var id:String!
         var tid:String!
         var let1:String!
@@ -207,7 +177,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         betInfo.hfs = hfs
         betInfo.hlx = hlx
         betInfo.hbl = hbl
-        checkBet(betInfo)
+        return betInfo
     }
     func checkBet(betInfo:BetInfoModel){
         common.matchingElement = checkBetResult
