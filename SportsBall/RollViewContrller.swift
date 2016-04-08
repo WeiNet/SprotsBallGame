@@ -71,12 +71,11 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
-        
-        var allUnionArr:Array<UnionTitleVO> = Array()
-        var info = toJsonArray(strResult)
         if strResult == ""{
             return
         }
+        var allUnionArr:Array<UnionTitleVO> = Array()
+        var info = toJsonArray(strResult)
         var unionAllJson = info[1]
         var objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
