@@ -91,11 +91,11 @@ class OrderCellRollView: UITableViewCell {
         self.toggleOpen(true)
     }
     func orderTap(sender: UITapGestureRecognizer) {
-        var view = sender.view! as UIView
+        let view = sender.view! as UIView
 //        var ff = view.isKindOfClass(UILabel)
-        var iTag = view.tag
-        var name = ToolsCode.codeBy(iTag)
-        var select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
+        let iTag = view.tag
+        let name = ToolsCode.codeBy(iTag)
+        let select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
         orderCellRollModel.setValue(!select, forKey: "\(name)_SEL")
         if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
             setLblFontBackground(view as! UILabel,selected: !select)
@@ -109,16 +109,16 @@ class OrderCellRollView: UITableViewCell {
     }
     //让分的背景设定
     func setBackground(view:UIView,select: Bool){
-        var lbl0 = view.subviews[0] as! UILabel
-        var lbl1 = view.subviews[1] as! UILabel
+        let lbl0 = view.subviews[0] as! UILabel
+        let lbl1 = view.subviews[1] as! UILabel
         setLblFontBackground2(lbl0,selected: select)
         setLblFontBackground(lbl1,selected: select)
     }
     //大小球的背景设定
     func setBackground2(view:UIView,select: Bool){
-        var lbl0 = view.subviews[0] as! UILabel
-        var lbl1 = view.subviews[1] as! UILabel
-        var lbl2 = view.subviews[2] as! UILabel
+        let lbl0 = view.subviews[0] as! UILabel
+        let lbl1 = view.subviews[1] as! UILabel
+        let lbl2 = view.subviews[2] as! UILabel
         setLblFontBackground(lbl0,selected: select)
         setLblFontBackground2(lbl1,selected: select)
         setLblFontBackground(lbl2,selected: select)

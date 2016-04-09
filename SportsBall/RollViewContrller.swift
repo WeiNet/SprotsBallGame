@@ -25,8 +25,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     //点击赔率点击事件的协议
     func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int){
         let alertView = SwiftCustomAlertView()
-        alertView.show(self)
-        fullBetInfo(orderCellRollModel,toolsCode:toolsCode)
+        alertView.show(self)//显示即时下注popuWin
+        let betInfoVO = fullBetInfo(orderCellRollModel,toolsCode:toolsCode)
+        checkBet(betInfoVO)//检验选取的赔率是不是最新的
     }
     //注单的资料绑定协议
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
@@ -73,31 +74,31 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     func setResult(strResult: String,strType:String)  {
         
         var allUnionArr:Array<UnionTitleVO> = Array()
-        var info = toJsonArray(strResult)
+        let info = ToolsCode.toJsonArray(strResult)
         if strResult == ""{
             return
         }
-        var unionAllJson = info[1]
-        var objCount:Int = unionAllJson.count - 1
+        let unionAllJson = info[1]
+        let objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
-            var model:UnionTitleVO = UnionTitleVO()
+            let model:UnionTitleVO = UnionTitleVO()
             model.N_NO = String(unionAllJson[index].objectForKey("N_NO")!)
             model.N_LMMC = String(unionAllJson[index].objectForKey("N_LMMC")!)
             allUnionArr.append(model)
         }
         
-        var showUnion:NSMutableArray = NSMutableArray()
-        var matchAllJson = info[0]
-        var matchCount:Int = matchAllJson.count - 1
+        let showUnion:NSMutableArray = NSMutableArray()
+        let matchAllJson = info[0]
+        let matchCount:Int = matchAllJson.count - 1
         for union in allUnionArr {
-            var unionTitleModel:UnionTitleModel = UnionTitleModel()
+            let unionTitleModel:UnionTitleModel = UnionTitleModel()
             unionTitleModel.id = String(union.N_NO)
             unionTitleModel.name = String(union.N_LMMC)
             
             var order:Array<OrderCellRollModel> = Array()
             for index in 0...matchCount{
                 if union.N_NO == String(matchAllJson[index].objectForKey("N_LMNO")!) {
-                    var orderCellRollModel:OrderCellRollModel = OrderCellRollModel()
+                    let orderCellRollModel:OrderCellRollModel = OrderCellRollModel()
                     //给注单属性赋值
                     orderCellRollModel.setValuesForKeysWithDictionary(matchAllJson[index] as! [String : AnyObject])
                     order.append(orderCellRollModel)
@@ -110,8 +111,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             }
         }
         
-        var width = self.myContent.frame.size.width
-        var height = self.myContent.frame.size.height - 20
+        let width = self.myContent.frame.size.width
+        let height = self.myContent.frame.size.height - 20
         myTable = MyTableView(frame: CGRect(x: 0, y: 25, width: width, height: height))
         myTable.matchCells = showUnion
         myTable.bindDataTable = self
@@ -120,39 +121,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         myContent.addSubview(myTable)
     }
     
-    //转成json格式
-    //格式：{"uname":"张三","tel":{"home":"010","mobile":"138"}}
-    func toJson(strResult:String)->AnyObject{
-        let error:AnyObject = "is not a valid json object"
-        //首先判断能不能转换
-        if (!NSJSONSerialization.isValidJSONObject(strResult)) {
-            print("is not a valid json object")
-            return error
-        }
-        //利用OC的json库转换成OC的NSData，
-        //如果设置options为NSJSONWritingOptions.PrettyPrinted，则打印格式更好阅读
-        let data : NSData! = try? NSJSONSerialization.dataWithJSONObject(strResult, options: [])
-        
-        //把NSData对象转换回JSON对象
-        let json : AnyObject! = try? NSJSONSerialization
-            .JSONObjectWithData(data, options:NSJSONReadingOptions.AllowFragments)
-        return json
-    }
-    
-    //转成json数组格式
-    //格式：[{"ID":1,"Name":"元台禅寺","LineID":1},{"ID":2,"Name":"田坞里山塘","LineID":1},{"ID":3,"Name":"滴水石","LineID":1}]
-    func toJsonArray(strResult:String)->AnyObject{
-        if strResult == ""{
-            return ""
-        }
-        let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-            options: NSJSONReadingOptions.MutableContainers) as! NSArray
-        
-        return jsonArr
-    }
-    func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int){
+    func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
         var id:String!
         var tid:String!
         var let1:String!
@@ -162,13 +131,13 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         if(toolsCode>=56661 && toolsCode<=56667){//全场控件
             id = String(orderCellRollModel.N_ID)
             let1 = String(orderCellRollModel.N_LET)
-            var tempType = ToolsCode.codeByPlayType(toolsCode)
+            let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
                 hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL")!)
                 hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS")!)
                 hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX")!)
             }
-            var tempLRH = ToolsCode.codeByLRH(toolsCode)
+            let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
                 tid = String(orderCellRollModel.N_VISIT)
             }else if tempLRH == "R" {
@@ -179,13 +148,13 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         }else if(toolsCode>=56668 && toolsCode<=56674){//半场控件
             id = String(orderCellRollModel.N_ID2)
             let1 = String(orderCellRollModel.N_LET2)
-            var tempType = ToolsCode.codeByPlayType(toolsCode)
+            let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
                 hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL2")!)
                 hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS2")!)
                 hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX2")!)
             }
-            var tempLRH = ToolsCode.codeByLRH(toolsCode)
+            let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
                 tid = String(orderCellRollModel.N_VISIT2)
             }else if tempLRH == "R" {
@@ -194,8 +163,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
                 tid = "0"
             }
         }
-        var tempRate = ToolsCode.codeBy(toolsCode)
-        var betInfo:BetInfoModel = BetInfoModel()
+        let tempRate = ToolsCode.codeBy(toolsCode)
+        let betInfo:BetInfoModel = BetInfoModel()
         betInfo.strUser = ""
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
         betInfo.ballType = orderCellRollModel.N_LX
@@ -208,7 +177,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         betInfo.hfs = hfs
         betInfo.hlx = hlx
         betInfo.hbl = hbl
-        checkBet(betInfo)
+        return betInfo
     }
     func checkBet(betInfo:BetInfoModel){
         common.matchingElement = checkBetResult

@@ -159,7 +159,8 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         //绑定资料有实现接口的方法自己实现
         cell.N_VISIT_NAME.text = orderCellRollModel.N_VISIT_NAME
         cell.N_HOME_NAME.text = orderCellRollModel.N_HOME_NAME
-        cell.N_GAMEDATE.text = orderCellRollModel.N_GAMEDATE
+        let gameDate = orderCellRollModel.N_GAMEDATE
+        cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate)
         bindDataTable.bindData(cell, orderCellRollModel: orderCellRollModel)
         
         cell.orderCellRollModel = orderCellRollModel

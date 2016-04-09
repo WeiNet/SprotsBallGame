@@ -138,6 +138,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		173412491CB78DAB002DC425 /* Roll */ = {
+			isa = PBXGroup;
+			children = (
+				1734124B1CB78DC1002DC425 /* Tools */,
+				1734124A1CB78DB5002DC425 /* View */,
+				1734124C1CB78DCA002DC425 /* Model */,
+			);
+			name = Roll;
+			sourceTree = "<group>";
+		};
+		1734124A1CB78DB5002DC425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */,
+				177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */,
+				177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */,
+				177E76EF1CA3E9B300141CBF /* OrderCellRollView.xib */,
+				177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */,
+				179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */,
+				179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1734124B1CB78DC1002DC425 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		1734124C1CB78DCA002DC425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */,
+				177E76EA1CA3E9B300141CBF /* MyTableView.swift */,
+				177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */,
+				177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */,
+				179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		462BEDDB1C8682E300E451E4 = {
 			isa = PBXGroup;
 			children = (
@@ -175,20 +219,7 @@
 				462BEE171C86861D00E451E4 /* StartViewController.swift */,
 				462BEE181C86861D00E451E4 /* StartViewController.xib */,
 				177E69461CA3E5D300141CBF /* RollViewContrller.swift */,
-				177E76EA1CA3E9B300141CBF /* MyTableView.swift */,
-				177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */,
-				1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */,
-				177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */,
-				177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */,
-				177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */,
-				177E76EF1CA3E9B300141CBF /* OrderCellRollView.xib */,
-				177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */,
-				177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */,
 				177E76FA1CA3ED8400141CBF /* PropertyList.plist */,
-				179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */,
-				179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */,
-				179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */,
-				179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
