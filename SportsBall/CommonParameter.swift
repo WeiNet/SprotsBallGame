@@ -65,8 +65,10 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         }
     }
     func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
+        
         if (strResult != "") {
             strResult = ""
+            delegate?.setResult(parseError.debugDescription,strType: "Error")
         }
     }
     func parser(parser: NSXMLParser, foundCharacters string: String) {
