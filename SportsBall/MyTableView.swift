@@ -23,7 +23,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     var row:Int!//所在的赛事组
     var bindDataTable:bindDataDelegate!
     var tableDelegate:MyTableViewDelegate!
-        
+    
     func setDelegate(){
         self.dataSource = self
         self.delegate = self
@@ -140,7 +140,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         // #warning Incomplete implementation, return the number of sections
         return Int(unionTitleInfoArray.count)
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //这里决定显示否、、修改这里改成联盟和注单一起的
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[section] as! UnionTitleInfo

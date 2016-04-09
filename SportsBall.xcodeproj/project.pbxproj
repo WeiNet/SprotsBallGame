@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1749F4D21CAA8102001391A4 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */; };
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
-		177E76F21CA3E9B300141CBF /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76EA1CA3E9B300141CBF /* MyTableView.swift */; };
-		177E76F31CA3E9B300141CBF /* UnionTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */; };
-		177E76F41CA3E9B300141CBF /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */; };
-		177E76F51CA3E9B300141CBF /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */; };
-		177E76F61CA3E9B300141CBF /* UnionTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */; };
-		177E76F71CA3E9B300141CBF /* OrderCellRollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177E76EF1CA3E9B300141CBF /* OrderCellRollView.xib */; };
-		177E76F81CA3E9B300141CBF /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */; };
-		177E76F91CA3E9B300141CBF /* OrderCellRollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
-		179CB0EC1CAE5792001D80D5 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */; };
-		179CB0F21CB38F53001D80D5 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */; };
-		179CB0F41CB390B7001D80D5 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */; };
-		179CB0FD1CB6035B001D80D5 /* BetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */; };
+		17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */; };
+		17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */; };
+		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
+		17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */; };
+		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
+		17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */; };
+		17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */; };
+		17DA62221CB8CDDC009070E6 /* OrderCellRollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */; };
+		17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */; };
+		17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */; };
+		17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */; };
+		17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62261CB8CDEE009070E6 /* ToolsCode.swift */; };
+		17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62281CB8CE22009070E6 /* MyTableView.swift */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -66,21 +66,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
-		177E76EA1CA3E9B300141CBF /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
-		177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleInfo.swift; sourceTree = "<group>"; };
-		177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
-		177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
-		177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleModel.swift; sourceTree = "<group>"; };
-		177E76EF1CA3E9B300141CBF /* OrderCellRollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCellRollView.xib; sourceTree = "<group>"; };
-		177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
-		177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollModel.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
-		179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
-		179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
-		179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
-		179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfoModel.swift; sourceTree = "<group>"; };
+		17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
+		17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCellRollView.xib; sourceTree = "<group>"; };
+		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
+		17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
+		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
+		17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
+		17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfoModel.swift; sourceTree = "<group>"; };
+		17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollModel.swift; sourceTree = "<group>"; };
+		17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleInfo.swift; sourceTree = "<group>"; };
+		17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleModel.swift; sourceTree = "<group>"; };
+		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
+		17DA62261CB8CDEE009070E6 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
+		17DA62281CB8CE22009070E6 /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,46 +138,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		173412491CB78DAB002DC425 /* Roll */ = {
+		17DA620C1CB8CC61009070E6 /* Roll */ = {
 			isa = PBXGroup;
 			children = (
-				1734124B1CB78DC1002DC425 /* Tools */,
-				1734124A1CB78DB5002DC425 /* View */,
-				1734124C1CB78DCA002DC425 /* Model */,
+				17DA620F1CB8CC7A009070E6 /* Model */,
+				17DA620E1CB8CC74009070E6 /* View */,
+				17DA620D1CB8CC6B009070E6 /* Tools */,
 			);
 			name = Roll;
 			sourceTree = "<group>";
 		};
-		1734124A1CB78DB5002DC425 /* View */ = {
+		17DA620D1CB8CC6B009070E6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				177E76EB1CA3E9B300141CBF /* UnionTitleInfo.swift */,
-				177E76EC1CA3E9B300141CBF /* UnionTitleView.xib */,
-				177E76ED1CA3E9B300141CBF /* UnionTitleView.swift */,
-				177E76EF1CA3E9B300141CBF /* OrderCellRollView.xib */,
-				177E76F01CA3E9B300141CBF /* OrderCellRollView.swift */,
-				179CB0F31CB390B7001D80D5 /* SwiftCustomAlertView.xib */,
-				179CB0F11CB38F53001D80D5 /* SwiftCustomAlertView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		1734124B1CB78DC1002DC425 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				179CB0EB1CAE5792001D80D5 /* ToolsCode.swift */,
+				17DA62261CB8CDEE009070E6 /* ToolsCode.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
 		};
-		1734124C1CB78DCA002DC425 /* Model */ = {
+		17DA620E1CB8CC74009070E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1749F4D11CAA8102001391A4 /* UnionTitleVO.swift */,
-				177E76EA1CA3E9B300141CBF /* MyTableView.swift */,
-				177E76EE1CA3E9B300141CBF /* UnionTitleModel.swift */,
-				177E76F11CA3E9B300141CBF /* OrderCellRollModel.swift */,
-				179CB0FC1CB6035B001D80D5 /* BetInfoModel.swift */,
+				17DA62281CB8CE22009070E6 /* MyTableView.swift */,
+				17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */,
+				17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */,
+				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
+				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
+				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
+				17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DA620F1CB8CC7A009070E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
+				17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */,
+				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
+				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
+				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -205,6 +205,7 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
+				17DA620C1CB8CC61009070E6 /* Roll */,
 				462E11F51CB75C6200619A55 /* Mode */,
 				462BEE291C881B8700E451E4 /* Common */,
 				462BEE201C86BF0E00E451E4 /* Class */,
@@ -391,10 +392,10 @@
 				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
-				177E76F41CA3E9B300141CBF /* UnionTitleView.xib in Resources */,
-				177E76F71CA3E9B300141CBF /* OrderCellRollView.xib in Resources */,
-				179CB0F41CB390B7001D80D5 /* SwiftCustomAlertView.xib in Resources */,
 				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,
+				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
+				17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */,
+				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
 			);
@@ -421,34 +422,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177E76F61CA3E9B300141CBF /* UnionTitleModel.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
+				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
-				177E76F81CA3E9B300141CBF /* OrderCellRollView.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
-				179CB0F21CB38F53001D80D5 /* SwiftCustomAlertView.swift in Sources */,
+				17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */,
 				464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */,
 				462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */,
-				179CB0EC1CAE5792001D80D5 /* ToolsCode.swift in Sources */,
-				177E76F31CA3E9B300141CBF /* UnionTitleInfo.swift in Sources */,
-				177E76F51CA3E9B300141CBF /* UnionTitleView.swift in Sources */,
+				17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */,
 				46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */,
+				17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */,
 				462BEDEC1C8682E300E451E4 /* SecondViewController.swift in Sources */,
 				462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */,
 				4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */,
 				462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */,
 				46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */,
+				17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
+				17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
-				1749F4D21CAA8102001391A4 /* UnionTitleVO.swift in Sources */,
-				179CB0FD1CB6035B001D80D5 /* BetInfoModel.swift in Sources */,
 				464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */,
+				17DA62221CB8CDDC009070E6 /* OrderCellRollModel.swift in Sources */,
+				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
+				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
-				177E76F21CA3E9B300141CBF /* MyTableView.swift in Sources */,
+				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
 				177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */,
-				177E76F91CA3E9B300141CBF /* OrderCellRollModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
