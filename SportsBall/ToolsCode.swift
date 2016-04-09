@@ -128,14 +128,14 @@ struct ToolsCode {
         return jsonArr
     }
     //格式化赛事时间
-    static func formatterDate(game:String)->String{
+    static func formatterDate(game:String,format:String)->String{
         var gameDate:String!
         gameDate = game.stringByReplacingOccurrencesOfString("/Date(", withString: "")
         gameDate = gameDate.stringByReplacingOccurrencesOfString(")/", withString: "")
         let double = (gameDate as NSString).doubleValue
         let date:NSDate = NSDate(timeIntervalSince1970: double/1000.0)
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd HH:mm"
+        dateFormatter.dateFormat = format
         return dateFormatter.stringFromDate(date)
     }
 }

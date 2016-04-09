@@ -120,7 +120,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         myTable.setDelegate()
         myContent.addSubview(myTable)
     }
-    
+    //构造BetInfo用于下注、检验最新赔率
     func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
         var id:String!
         var tid:String!
@@ -128,6 +128,22 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         var hfs:String = "0"//赌赢为0
         var hlx:String = "0"
         var hbl:String = "0"
+        var courtType:String = "1"
+        var gameDate:String = orderCellRollModel.N_GAMEDATE
+        gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/ddd")
+        let playType:String = ToolsCode.codeByPlayType(toolsCode)
+        var betteamName:String!
+        let tempBetName = ToolsCode.codeByLRH(toolsCode)
+        if tempBetName == "L" {
+            betteamName = String(orderCellRollModel.N_VISIT_NAME)
+        }else if tempBetName == "R" {
+            betteamName = String(orderCellRollModel.N_HOME_NAME)
+        }else{
+            betteamName = "和局"
+        }
+        if playType == "DX"{
+            betteamName = tempBetName == "L" ? "大" : "小"
+        }
         if(toolsCode>=56661 && toolsCode<=56667){//全场控件
             id = String(orderCellRollModel.N_ID)
             let1 = String(orderCellRollModel.N_LET)
@@ -162,24 +178,38 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             }else{
                 tid = "0"
             }
+            courtType = "2"
         }
         let tempRate = ToolsCode.codeBy(toolsCode)
         let betInfo:BetInfoModel = BetInfoModel()
-        betInfo.strUser = ""
+        
+        betInfo.strUser = ""//USER??????????????????????????????????????????????????????????????
+        betInfo.playType = playType
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
         betInfo.ballType = orderCellRollModel.N_LX
-        betInfo.playType = ToolsCode.codeByPlayType(toolsCode)
+        betInfo.courtType = courtType
         betInfo.id = id
         betInfo.tid = tid
         betInfo.rate = String(orderCellRollModel.valueForKey(tempRate)!)
         betInfo.vh = String(orderCellRollModel.N_VH)
         betInfo.let1 = let1
+        betInfo.hbl = hbl
         betInfo.hfs = hfs
         betInfo.hlx = hlx
-        betInfo.hbl = hbl
+        betInfo.homename = String(orderCellRollModel.N_HOME_NAME)
+        betInfo.visitname = String(orderCellRollModel.N_VISIT_NAME)
+        betInfo.betteamName = betteamName
+        betInfo.date = gameDate
+        betInfo.dzxx = "10"//USER??????????????????????????????????????????????????????????????
+//        betInfo.yssj = ""
+//        betInfo.jzf = ""
+//        betInfo.isLive = ""
+        betInfo.dMoney = "10"
         return betInfo
     }
+    //检验赔率是不是最新的
     func checkBet(betInfo:BetInfoModel){
+        common.delegate = self
         common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
@@ -187,9 +217,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<ballType>\(betInfo.ballType)</ballType>")
         strParam.appendContentsOf("<playType>\(betInfo.playType)</playType>")
         strParam.appendContentsOf("<id>\(betInfo.id)</id>")
-        strParam.appendContentsOf("<tid>\(betInfo.tid)</tid>")
+        strParam.appendContentsOf("<tid>\(betInfo.tid)<tid>")
         strParam.appendContentsOf("<rate>\(betInfo.rate)</rate>")
-        strParam.appendContentsOf("<vh>\(betInfo.vh)<h>")
+        strParam.appendContentsOf("<vh>\(betInfo.vh)</vh>")
         strParam.appendContentsOf("<let>\(betInfo.let1)</let>")
         strParam.appendContentsOf("<hfs>\(betInfo.hfs)</hfs>")
         strParam.appendContentsOf("<hlx>\(betInfo.hlx)</hlx>")

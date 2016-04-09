@@ -32,8 +32,8 @@ public let HomeCollectionViewCellMargin: CGFloat = 10
 public let HomeCollectionTextFont = UIFont.systemFontOfSize(14)
 public let HomeCollectionCellAnimationDuration: NSTimeInterval = 1.0
 //webservice配置地址
-public let WebServiceAddress="http://192.168.30.9:302/MobileApp.asmx"
+//public let WebServiceAddress="http://192.168.30.9:302/MobileApp.asmx"
 public let httpAddress="http://192.168.30.134:8080/Sports_Betting/"
-//public let WebServiceAddress="http://gttest16.com/MobileApp.asmx"
+public let WebServiceAddress="http://gttest16.com/MobileApp.asmx"
 
 

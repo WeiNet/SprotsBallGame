@@ -39,4 +39,5 @@ class BetInfoModel: NSObject {
     var dcsx:String!
     var kyje:String!
     var ballhead:String!
+    var betteamName:String!
 }

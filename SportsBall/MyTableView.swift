@@ -160,7 +160,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         cell.N_VISIT_NAME.text = orderCellRollModel.N_VISIT_NAME
         cell.N_HOME_NAME.text = orderCellRollModel.N_HOME_NAME
         let gameDate = orderCellRollModel.N_GAMEDATE
-        cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate)
+        cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
         bindDataTable.bindData(cell, orderCellRollModel: orderCellRollModel)
         
         cell.orderCellRollModel = orderCellRollModel
