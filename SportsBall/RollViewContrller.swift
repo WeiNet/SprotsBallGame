@@ -72,12 +72,12 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
+        if(strType == "Error" || strResult == ""){
+            return
+        }
         
         var allUnionArr:Array<UnionTitleVO> = Array()
         let info = ToolsCode.toJsonArray(strResult)
-        if strResult == ""{
-            return
-        }
         let unionAllJson = info[1]
         let objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
