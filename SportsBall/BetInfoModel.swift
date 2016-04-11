@@ -48,7 +48,7 @@ class BetInfoModel: NSObject {
     var betteamName:String!
     
     func toString()->String{
-        var strBetInfoModel:String = "{"
+        var strBetInfoModel:String = "{ "
         if Index != nil { strBetInfoModel.appendContentsOf("\"Index\":\"\(Index)\",") }
         if strUser != nil { strBetInfoModel.appendContentsOf("\"strUser\":\"\(strUser)\",") }
         if dMoney != nil { strBetInfoModel.appendContentsOf("\"dMoney\":\"\(dMoney)\",") }
