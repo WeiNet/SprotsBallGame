@@ -27,7 +27,7 @@
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viL-x5-EfN">
                             <rect key="frame" x="0.0" y="41" width="482" height="32"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="青岛中能[主]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsP-XL-S5M">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="青岛中能[主]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsP-XL-S5M">
                                     <rect key="frame" x="0.0" y="0.0" width="228" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="dAR-mh-YRd"/>
@@ -36,7 +36,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv1-8T-0hM">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv1-8T-0hM">
                                     <rect key="frame" x="220" y="0.0" width="26" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="FqY-Vs-gCA"/>
@@ -47,10 +47,12 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="上海绿地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-Gk-KdK">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="上海绿地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-Gk-KdK">
                                     <rect key="frame" x="254" y="0.0" width="228" height="32"/>
                                     <constraints>
+                                        <constraint firstAttribute="width" constant="228" id="6TY-se-wkD"/>
                                         <constraint firstAttribute="height" constant="32" id="guZ-TH-Wa7"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="228" id="w1L-G5-72n"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -233,8 +235,16 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
+                <outlet property="betText" destination="UGC-fc-HSv" id="WWu-1h-RDX"/>
                 <outlet property="cancelButton" destination="VZ0-so-9jL" id="8Y7-c0-65u"/>
+                <outlet property="gain" destination="hzr-4T-yE3" id="sZx-DV-GHi"/>
+                <outlet property="home" destination="2HH-Gk-KdK" id="xeL-uS-D4u"/>
+                <outlet property="limits" destination="izx-VD-qBA" id="uvF-oL-eQy"/>
+                <outlet property="max" destination="3wO-wp-3WH" id="hI8-H0-Nrm"/>
+                <outlet property="money" destination="iMb-9e-5c7" id="5R8-RQ-ydc"/>
                 <outlet property="okButton" destination="UxX-CQ-KKK" id="ChJ-LT-tOc"/>
+                <outlet property="rate" destination="wHn-9Z-F0R" id="Bmu-v7-sgf"/>
+                <outlet property="visit" destination="PsP-XL-S5M" id="niL-Zj-YiH"/>
             </connections>
         </view>
     </objects>

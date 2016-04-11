@@ -23,7 +23,9 @@ class OrderCellRollView: UITableViewCell {
     
     /*******************************title标题控件*******************************/
     @IBOutlet var N_VISIT_NAME: UILabel!
+    @IBOutlet var N_VISIT_JZF: UILabel!
     @IBOutlet var N_HOME_NAME: UILabel!
+    @IBOutlet var N_HOME_JZF: UILabel!
     @IBOutlet var N_GAMEDATE: UILabel!
     /*******************************title标题控件*******************************/
     /*******************************注单控件*******************************/

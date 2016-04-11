@@ -15,6 +15,18 @@ import UIKit
 //即时下注popuWin
 class SwiftCustomAlertView: UIView {
     
+    @IBOutlet var visit: UILabel!
+    @IBOutlet var home: UILabel!
+    
+    
+    @IBOutlet var betText: UILabel!
+    @IBOutlet var rate: UILabel!
+    @IBOutlet var gain: UILabel!
+    @IBOutlet var money: UITextField!
+    
+    @IBOutlet var max: UILabel!
+    @IBOutlet var limits: UILabel!
+    
     private var viewX:Double!
     private var viewY:Double!
     private var viewWidth: Double = 350.0
@@ -25,6 +37,7 @@ class SwiftCustomAlertView: UIView {
     
     var cornerRadius: Double = 40.0
     var bottom:UIView!
+    var myView:SwiftCustomAlertView!
     
     weak var delegate: SwiftCustomAlertViewDelegate? // delegate
     
@@ -51,7 +64,7 @@ class SwiftCustomAlertView: UIView {
         viewX = (Double(viewWin.width) - viewWidth)/2
         viewY = (Double(viewWin.height) - viewHeight)/2
         //加载设计好的XIB
-        let myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as? SwiftCustomAlertView
+        myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as? SwiftCustomAlertView
         
         myView?.layer.cornerRadius = CGFloat(cornerRadius)
         myView?.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
