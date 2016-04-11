@@ -14,6 +14,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     var myTable:MyTableView!
     let betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
+    var mPlayType = "2"//0早餐2滚球
     let checkBetResult:String = "CheckBetResult"
     let getFootballMatchResult:String = "GetFootballMatchResult"
     let addBetResult:String = "AddBetResult"
@@ -221,7 +222,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         let tempRate = ToolsCode.codeBy(toolsCode)
         
         betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
-        betInfo.playType = playType
+        betInfo.playType = mPlayType == "2" ? "ZD"+playType : playType
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
         betInfo.ballType = orderCellRollModel.N_LX
         betInfo.courtType = courtType
@@ -280,7 +281,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>20</strPageSize>")
         strParam.appendContentsOf("<strUser></strUser>")
-        strParam.appendContentsOf("<strType>2</strType>")//0早2滚
+        strParam.appendContentsOf("<strType>\(mPlayType)</strType>")//0早2滚
         strParam.appendContentsOf("</GetFootballMatch>")
         common.getResult(strParam,strResultName: getFootballMatchResult)
     }

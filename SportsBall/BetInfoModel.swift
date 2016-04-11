@@ -55,7 +55,7 @@ class BetInfoModel: NSObject {
         if yssj != nil { strBetInfoModel.appendContentsOf("\"yssj\":\"\(yssj)\",") }
         if playType != nil { strBetInfoModel.appendContentsOf("\"playType\":\"\(playType)\",") }
         
-        if Index != nil { strBetInfoModel.appendContentsOf("\"lr\":\"\(lr)\",") }
+        if lr != nil { strBetInfoModel.appendContentsOf("\"lr\":\"\(lr)\",") }
         if ballType != nil { strBetInfoModel.appendContentsOf("\"ballType\":\"\(ballType)\",") }
         if id != nil { strBetInfoModel.appendContentsOf("\"id\":\"\(id)\",") }
         if courtType != nil { strBetInfoModel.appendContentsOf("\"courtType\":\"\(courtType)\",") }
