@@ -12,7 +12,7 @@ import UIKit
     optional func  selectOkButtonalertView()
     optional func  selecttCancelButtonAlertView()
 }
-
+//即时下注popuWin
 class SwiftCustomAlertView: UIView {
     
     private var viewX:Double!
@@ -50,11 +50,12 @@ class SwiftCustomAlertView: UIView {
         let viewWin = view.frame.size
         viewX = (Double(viewWin.width) - viewWidth)/2
         viewY = (Double(viewWin.height) - viewHeight)/2
+        //加载设计好的XIB
         let myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as? SwiftCustomAlertView
         
         myView?.layer.cornerRadius = CGFloat(cornerRadius)
         myView?.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
-        
+        //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
         bottom.alpha = 0.8
