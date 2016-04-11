@@ -117,6 +117,7 @@ struct ToolsCode {
     //转成json数组格式
     //格式：[{"ID":1,"Name":"元台禅寺","LineID":1},{"ID":2,"Name":"田坞里山塘","LineID":1},{"ID":3,"Name":"滴水石","LineID":1}]
     static func toJsonArray(strResult:String)->AnyObject{
+        
         if strResult == ""{
             return ""
         }

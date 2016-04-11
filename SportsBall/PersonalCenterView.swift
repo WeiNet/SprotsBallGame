@@ -61,18 +61,35 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     func getResult(){
         
         var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strUser>FUNTESTFZ-GT006</strUser>")
+        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
         strParam.appendContentsOf("</GetCredit>")
         conn.getResult(strParam,strResultName: "GetCreditResult")
         
     }
     func setResult(strResult: String,strType:String) {
-        resultText.text=strResult
+        if(strType=="Error"){
+        return
+        }
+        if(strResult==""){
+        return
+        }
+         var result = ( strResult as NSString ).floatValue;
+        resultText.text="\(result*10000)"
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var sb = UIStoryboard(name: "Main", bundle:nil)
+        if(indexPath.row==0){
         var vc = sb.instantiateViewControllerWithIdentifier("ProblemController") as! ProblemController
-        self.navigationController?.pushViewController(vc, animated: true)    }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if(indexPath.row==1){
+        var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
+            self.navigationController?.pushViewController(vcAbout, animated: true)
+
+        }
+        
+    
+    }
     
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
