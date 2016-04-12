@@ -169,7 +169,6 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
             cell.N_GAMEDATE.text = orderCellRollModel.N_ZDTIME
             cell.N_VISIT_JZF.text = String(orderCellRollModel.N_VISIT_JZF)
             cell.N_HOME_JZF.text = String(orderCellRollModel.N_HOME_JZF)
-            var i = ""
         }
         
         //绑定资料有实现接口的方法自己实现
