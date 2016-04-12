@@ -83,7 +83,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if(indexPath.row==1){
-        var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
+        var vcAbout = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
             self.navigationController?.pushViewController(vcAbout, animated: true)
 
         }
