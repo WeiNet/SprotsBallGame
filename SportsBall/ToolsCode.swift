@@ -139,4 +139,42 @@ struct ToolsCode {
         dateFormatter.dateFormat = format
         return dateFormatter.stringFromDate(date)
     }
+    //让球的赔率头部
+    static func getBallHead(fs:Int,bl:Int,lx:Int)->String{
+        var strResule:String = ""
+        switch(lx){
+        case 1:
+            if(bl < 100 && bl > 0){
+                let str1 = fs - 1
+                let str2 = Double(bl)/100.0
+                let str3 = Double(str1)+str2
+                strResule = "\(str3)/\(fs)"
+            }else if(bl == 100){
+                let str1 = Double(fs) - 0.5
+                strResule = String(str1)
+            }else if(bl == 0){
+                strResule = String(fs)
+            }else{
+                strResule = "\(fs)+\(bl)"
+            }
+            break;
+        case 0:
+            strResule = String(fs)
+            break;
+        case -1:
+            if (bl < 100 && bl > 0){
+                let str1 = (Double(fs) + Double(bl) / 100.0)
+                strResule = "\(fs)/\(str1)"
+            }else{
+                strResule = "\(fs)-\(bl)"
+            }
+            break;
+        case -2:
+            strResule = String(Double(fs) + 0.5)
+            break;
+        default:
+            strResule = ""
+        }
+        return strResule
+    }
 }

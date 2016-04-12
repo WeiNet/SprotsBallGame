@@ -41,21 +41,81 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //资料的显示
     func showData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
-        orderCellRollView.N_LDYPL.text = orderCellRollModel.N_LDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue) : ""
-        orderCellRollView.N_HJPL.text = orderCellRollModel.N_HJPL != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue) : ""
-        orderCellRollView.N_RDYPL.text = orderCellRollModel.N_RDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue) : ""
-        orderCellRollView.N_LRFPL.text = orderCellRollModel.N_LRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue) : ""
-        orderCellRollView.N_RRFPL.text = orderCellRollModel.N_RRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue) : ""
-        orderCellRollView.N_DXDPL.text = orderCellRollModel.N_DXDPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue) : ""
-        orderCellRollView.N_DXXPL.text = orderCellRollModel.N_DXXPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue) : ""
+        //全场赌赢不允许下注
+        if (orderCellRollModel.N_DY_OPEN == nil || String(orderCellRollModel.N_DY_OPEN) == "0"){
+            orderCellRollView.N_LDYPL.text = ""
+            orderCellRollView.N_HJPL.text = ""
+            orderCellRollView.N_RDYPL.text = ""
+        }else{
+            orderCellRollView.N_LDYPL.text = orderCellRollModel.N_LDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue) : ""
+            orderCellRollView.N_HJPL.text = orderCellRollModel.N_HJPL != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue) : ""
+            orderCellRollView.N_RDYPL.text = orderCellRollModel.N_RDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue) : ""
+        }
+        //全场让分不允许下注
+        if(orderCellRollModel.N_RF_OPEN == nil || String(orderCellRollModel.N_RF_OPEN) == "0"){
+            orderCellRollView.N_LRFBL.text = ""
+            orderCellRollView.N_RRFBL.text = ""
+            orderCellRollView.N_LRFPL.text = ""
+            orderCellRollView.N_RRFPL.text = ""
+        }else{
+            if(orderCellRollModel.N_LET == nil || String(orderCellRollModel.N_LET) == "0"){
+                orderCellRollView.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS), bl: Int(orderCellRollModel.N_RFBL), lx: Int(orderCellRollModel.N_RFLX))
+            }else{
+                orderCellRollView.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS), bl: Int(orderCellRollModel.N_RFBL), lx: Int(orderCellRollModel.N_RFLX))
+            }
+            orderCellRollView.N_LRFPL.text = orderCellRollModel.N_LRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue) : ""
+            orderCellRollView.N_RRFPL.text = orderCellRollModel.N_RRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue) : ""
+        }
+        //全场大小不允许下注
+        if(orderCellRollModel.N_DX_OPEN == nil || String(orderCellRollModel.N_DX_OPEN) == "0"){
+            orderCellRollView.N_LDXBL.text = ""
+            orderCellRollView.N_RDXBL.text = ""
+            orderCellRollView.N_DXDPL.text = ""
+            orderCellRollView.N_DXXPL.text = ""
+        }else{
+            orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
+            orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
+            orderCellRollView.N_DXDPL.text = orderCellRollModel.N_DXDPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue) : ""
+            orderCellRollView.N_DXXPL.text = orderCellRollModel.N_DXXPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue) : ""
+        }
         
-        orderCellRollView.N_LDYPL2.text = orderCellRollModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue) : ""
-        orderCellRollView.N_HJPL2.text = orderCellRollModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue) : ""
-        orderCellRollView.N_RDYPL2.text = orderCellRollModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue) : ""
-        orderCellRollView.N_LRFPL2.text = orderCellRollModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue) : ""
-        orderCellRollView.N_RRFPL2.text = orderCellRollModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue) : ""
-        orderCellRollView.N_DXDPL2.text = orderCellRollModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue) : ""
-        orderCellRollView.N_DXXPL2.text = orderCellRollModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue) : ""
+        //半场赌赢不允许下注
+        if (orderCellRollModel.N_DY_OPEN2 == nil || String(orderCellRollModel.N_DY_OPEN2) == "0"){
+            orderCellRollView.N_LDYPL2.text = ""
+            orderCellRollView.N_HJPL2.text = ""
+            orderCellRollView.N_RDYPL2.text = ""
+        }else{
+            orderCellRollView.N_LDYPL2.text = orderCellRollModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue) : ""
+            orderCellRollView.N_HJPL2.text = orderCellRollModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue) : ""
+            orderCellRollView.N_RDYPL2.text = orderCellRollModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue) : ""
+        }
+        //半场让分不允许下注
+        if(orderCellRollModel.N_RF_OPEN2 == nil || String(orderCellRollModel.N_RF_OPEN2) == "0"){
+            orderCellRollView.N_LRFBL2.text = ""
+            orderCellRollView.N_RRFBL2.text = ""
+            orderCellRollView.N_LRFPL2.text = ""
+            orderCellRollView.N_RRFPL2.text = ""
+        }else{
+            if(orderCellRollModel.N_LET2 == nil || String(orderCellRollModel.N_LET2) == "0"){
+                orderCellRollView.N_LRFBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS2), bl: Int(orderCellRollModel.N_RFBL2), lx: Int(orderCellRollModel.N_RFLX2))
+            }else{
+                orderCellRollView.N_RRFBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS2), bl: Int(orderCellRollModel.N_RFBL2), lx: Int(orderCellRollModel.N_RFLX2))
+            }
+            orderCellRollView.N_LRFPL2.text = orderCellRollModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue) : ""
+            orderCellRollView.N_RRFPL2.text = orderCellRollModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue) : ""
+        }
+        //半场大小不允许下注
+        if(orderCellRollModel.N_DX_OPEN2 == nil || String(orderCellRollModel.N_DX_OPEN2) == "0"){
+            orderCellRollView.N_LDXBL2.text = ""
+            orderCellRollView.N_RDXBL2.text = ""
+            orderCellRollView.N_DXDPL2.text = ""
+            orderCellRollView.N_DXXPL2.text = ""
+        }else{
+            orderCellRollView.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
+            orderCellRollView.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
+            orderCellRollView.N_DXDPL2.text = orderCellRollModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue) : ""
+            orderCellRollView.N_DXXPL2.text = orderCellRollModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue) : ""
+        }
     }
     //背景的填充
     func fillBackground(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
