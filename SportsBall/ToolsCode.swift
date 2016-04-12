@@ -173,7 +173,7 @@ struct ToolsCode {
             strResule = String(Double(fs) + 0.5)
             break;
         default:
-            strResule = ""
+            strResule = " "
         }
         return strResule
     }
