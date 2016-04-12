@@ -27,7 +27,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func funcRefresh(){
         intIndexPage++
         var strParam:String = "<GetUncountBet xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strUser>FUNTESTFZ-GT006</strUser>")
+        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
         strParam.appendContentsOf("<iPageindex>\(intIndexPage)</iPageindex>")
         strParam.appendContentsOf("<iPageSize>5</iPageSize>")
         strParam.appendContentsOf("</GetUncountBet>")
@@ -92,6 +92,12 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 150
     }
     func setResult(strResult: String,strType:String) {
+        if(strType=="Error"){
+        return
+        }
+        if(strResult==""){
+        return
+        }
         refresh.endRefreshing()
         NSLog(strResult)
         let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
