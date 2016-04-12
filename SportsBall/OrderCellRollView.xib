@@ -641,6 +641,7 @@
                 <outlet property="N_GAMEDATE" destination="mHL-HI-fFR" id="ngG-9l-r3E"/>
                 <outlet property="N_HJPL" destination="qfx-GG-fzi" id="DgY-Sp-P8w"/>
                 <outlet property="N_HJPL2" destination="khj-rh-AXg" id="UxJ-7e-Jqo"/>
+                <outlet property="N_HOME_JZF" destination="2sD-0b-gc2" id="epc-Ob-82w"/>
                 <outlet property="N_HOME_NAME" destination="ZCg-hb-Gwh" id="xeB-xy-Ks8"/>
                 <outlet property="N_LDXBL" destination="LkN-cz-Raa" id="bIY-rO-rtf"/>
                 <outlet property="N_LDXBL2" destination="pY9-6u-tqx" id="83s-5e-dvX"/>
@@ -662,6 +663,7 @@
                 <outlet property="N_RRFBL2" destination="WOL-Tj-RSW" id="v9d-Wt-7Oa"/>
                 <outlet property="N_RRFPL" destination="MzL-RF-hQd" id="GeB-T9-FUX"/>
                 <outlet property="N_RRFPL2" destination="QFk-gY-Qjk" id="I72-z0-SkI"/>
+                <outlet property="N_VISIT_JZF" destination="e9G-fV-Hvt" id="vin-u0-woo"/>
                 <outlet property="N_VISIT_NAME" destination="Qwb-6p-ywT" id="9Ku-Mk-9TZ"/>
                 <outlet property="R_RFView" destination="QOm-LZ-qpe" id="A5l-bw-fyy"/>
                 <outlet property="R_RFView2" destination="OrR-9t-zlt" id="cmt-hZ-dVL"/>

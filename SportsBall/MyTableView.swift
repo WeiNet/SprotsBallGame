@@ -156,12 +156,24 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[indexPath.section] as! UnionTitleInfo
         var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[indexPath.row] as! OrderCellRollModel
         
-        //绑定资料有实现接口的方法自己实现
+        
+        //绑定注单标题资料
         cell.N_VISIT_NAME.text = orderCellRollModel.N_VISIT_NAME
         cell.N_HOME_NAME.text = orderCellRollModel.N_HOME_NAME
-        let gameDate = orderCellRollModel.N_GAMEDATE
-        cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
+        if orderCellRollModel.N_ZDTIME == nil {
+            let gameDate = orderCellRollModel.N_GAMEDATE
+            cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
+            cell.N_VISIT_JZF.text = ""
+            cell.N_HOME_JZF.text = ""
+        }else{
+            cell.N_GAMEDATE.text = orderCellRollModel.N_ZDTIME
+            cell.N_VISIT_JZF.text = String(orderCellRollModel.N_VISIT_JZF)
+            cell.N_HOME_JZF.text = String(orderCellRollModel.N_HOME_JZF)
+        }
+        
+        //绑定资料有实现接口的方法自己实现
         bindDataTable.bindData(cell, orderCellRollModel: orderCellRollModel)
+        
         
         cell.orderCellRollModel = orderCellRollModel
         cell.section = indexPath.section

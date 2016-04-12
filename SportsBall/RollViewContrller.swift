@@ -12,10 +12,16 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     @IBOutlet var myContent: UIView!
     var common=CommonParameter()//网络请求
     var myTable:MyTableView!
-    var checkBetResult:String = "CheckBetResult"
-    var getFootballMatchResult:String = "GetFootballMatchResult"
+    let betInfo:BetInfoModel = BetInfoModel()//下注model
+    let alertView = SwiftCustomAlertView()//即时下注popu页面
+    var mPlayType = "2"//0早餐2滚球
+    let checkBetResult:String = "CheckBetResult"
+    let getFootballMatchResult:String = "GetFootballMatchResult"
+    let addBetResult:String = "AddBetResult"
     //即时下注付款协议
     func selectOkButtonalertView(){
+        betInfo.dMoney = alertView.myView.money.text
+        AddBet()
         print("selectOkButtonalertView")
     }
     //即时下注付款取消协议
@@ -24,33 +30,32 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //点击赔率点击事件的协议
     func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int){
-        let alertView = SwiftCustomAlertView()
         alertView.show(self)//显示即时下注popuWin
-        let betInfoVO = fullBetInfo(orderCellRollModel,toolsCode:toolsCode)
+        let betInfoVO = fullBetInfo1(orderCellRollModel,toolsCode:toolsCode)
         checkBet(betInfoVO)//检验选取的赔率是不是最新的
     }
-    //注单的资料绑定协议
+    //注单的资料绑定协议（Cell的显示）
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
         showData(orderCellRollView,orderCellRollModel:orderCellRollModel)
         fillBackground(orderCellRollView,orderCellRollModel:orderCellRollModel)
     }
     //资料的显示
     func showData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
-        orderCellRollView.N_LDYPL.text = String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue)
-        orderCellRollView.N_HJPL.text = String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue)
-        orderCellRollView.N_RDYPL.text = String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue)
-        orderCellRollView.N_LRFPL.text = String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue)
-        orderCellRollView.N_RRFPL.text = String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue)
-        orderCellRollView.N_DXDPL.text = String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue)
-        orderCellRollView.N_DXXPL.text = String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue)
+        orderCellRollView.N_LDYPL.text = orderCellRollModel.N_LDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue) : ""
+        orderCellRollView.N_HJPL.text = orderCellRollModel.N_HJPL != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue) : ""
+        orderCellRollView.N_RDYPL.text = orderCellRollModel.N_RDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue) : ""
+        orderCellRollView.N_LRFPL.text = orderCellRollModel.N_LRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue) : ""
+        orderCellRollView.N_RRFPL.text = orderCellRollModel.N_RRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue) : ""
+        orderCellRollView.N_DXDPL.text = orderCellRollModel.N_DXDPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue) : ""
+        orderCellRollView.N_DXXPL.text = orderCellRollModel.N_DXXPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue) : ""
         
-        orderCellRollView.N_LDYPL2.text = String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue)
-        orderCellRollView.N_HJPL2.text = String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue)
-        orderCellRollView.N_RDYPL2.text = String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue)
-        orderCellRollView.N_LRFPL2.text = String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue)
-        orderCellRollView.N_RRFPL2.text = String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue)
-        orderCellRollView.N_DXDPL2.text = String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue)
-        orderCellRollView.N_DXXPL2.text = String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue)
+        orderCellRollView.N_LDYPL2.text = orderCellRollModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue) : ""
+        orderCellRollView.N_HJPL2.text = orderCellRollModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue) : ""
+        orderCellRollView.N_RDYPL2.text = orderCellRollModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue) : ""
+        orderCellRollView.N_LRFPL2.text = orderCellRollModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue) : ""
+        orderCellRollView.N_RRFPL2.text = orderCellRollModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue) : ""
+        orderCellRollView.N_DXDPL2.text = orderCellRollModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue) : ""
+        orderCellRollView.N_DXXPL2.text = orderCellRollModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue) : ""
     }
     //背景的填充
     func fillBackground(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
@@ -75,10 +80,44 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         if(strType == "Error" || strResult == ""){
             return
         }
-        
+        if(strType == getFootballMatchResult){//页面首次加载获取资料
+            showTableView(strResult)
+        }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
+            let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
+            fullBetInfo2(betInfoJson)
+        }else if(strType == addBetResult){
+            
+        }
+    }
+    //第二次设定BetInfo属性，主要填入限额等
+    func fullBetInfo2(betInfoJson:AnyObject){
+        betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)
+        betInfo.yssj = String(betInfoJson[0].objectForKey("yssj")!)
+        betInfo.isjzf = String(betInfoJson[0].objectForKey("isjzf")!)
+        betInfo.jzf = String(betInfoJson[0].objectForKey("jzf")!)
+        betInfo.allianceName = String(betInfoJson[0].objectForKey("allianceName")!)
+        let dzxx = String(betInfoJson[0].objectForKey("dzxx")!)
+        betInfo.dzxx = dzxx
+        let dzsx = String(betInfoJson[0].objectForKey("dzsx")!)
+        betInfo.dzsx = dzsx
+        betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
+//        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
+        alertView.myView.visit.text = betInfo.homename
+        alertView.myView.home.text = betInfo.visitname
+        let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+        alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
+        alertView.myView.limits.text = dzxx + "~" + dzsx
+        alertView.myView.max.text = dzsx
+    }
+    //显示赛事（联盟、赛事队伍）
+    func showTableView(strResult: String){
         var allUnionArr:Array<UnionTitleVO> = Array()
         let info = ToolsCode.toJsonArray(strResult)
         let unionAllJson = info[1]
+        if unionAllJson.count == 0 {//没有资料
+            print("没有资料")
+            return
+        }
         let objCount:Int = unionAllJson.count - 1
         for index in 0...objCount {
             let model:UnionTitleVO = UnionTitleVO()
@@ -107,7 +146,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             unionTitleModel.count = String(order.count)
             unionTitleModel.orderCellRollModels = order
             if order.count > 0 {
-               showUnion.addObject(unionTitleModel)
+                showUnion.addObject(unionTitleModel)
             }
         }
         
@@ -120,8 +159,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         myTable.setDelegate()
         myContent.addSubview(myTable)
     }
-    //构造BetInfo用于下注、检验最新赔率
-    func fullBetInfo(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
+    //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
+    func fullBetInfo1(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
         var id:String!
         var tid:String!
         var let1:String!
@@ -130,7 +169,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         var hbl:String = "0"
         var courtType:String = "1"
         var gameDate:String = orderCellRollModel.N_GAMEDATE
-        gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/ddd")
+        gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/dd")
         let playType:String = ToolsCode.codeByPlayType(toolsCode)
         var betteamName:String!
         let tempBetName = ToolsCode.codeByLRH(toolsCode)
@@ -181,10 +220,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             courtType = "2"
         }
         let tempRate = ToolsCode.codeBy(toolsCode)
-        let betInfo:BetInfoModel = BetInfoModel()
         
-        betInfo.strUser = ""//USER??????????????????????????????????????????????????????????????
-        betInfo.playType = playType
+        betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
+        betInfo.playType = mPlayType == "2" ? "ZD"+playType : playType
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
         betInfo.ballType = orderCellRollModel.N_LX
         betInfo.courtType = courtType
@@ -201,15 +239,11 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         betInfo.betteamName = betteamName
         betInfo.date = gameDate
         betInfo.dzxx = "10"//USER??????????????????????????????????????????????????????????????
-//        betInfo.yssj = ""
-//        betInfo.jzf = ""
-//        betInfo.isLive = ""
         betInfo.dMoney = "10"
         return betInfo
     }
     //检验赔率是不是最新的
     func checkBet(betInfo:BetInfoModel){
-        common.delegate = self
         common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
@@ -217,7 +251,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<ballType>\(betInfo.ballType)</ballType>")
         strParam.appendContentsOf("<playType>\(betInfo.playType)</playType>")
         strParam.appendContentsOf("<id>\(betInfo.id)</id>")
-        strParam.appendContentsOf("<tid>\(betInfo.tid)<tid>")
+        strParam.appendContentsOf("<tid>\(betInfo.tid)</tid>")
         strParam.appendContentsOf("<rate>\(betInfo.rate)</rate>")
         strParam.appendContentsOf("<vh>\(betInfo.vh)</vh>")
         strParam.appendContentsOf("<let>\(betInfo.let1)</let>")
@@ -227,7 +261,15 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("</CheckBet>")
         common.getResult(strParam,strResultName: checkBetResult)
     }
-    
+    //向远端添加注单
+    func AddBet(){
+        common.matchingElement = addBetResult
+        var strParam:String = "<AddBet xmlns=\"http://tempuri.org/\">"
+        strParam.appendContentsOf("<strpara>\(betInfo.toString())</strpara>")
+        print(betInfo.toString())
+        strParam.appendContentsOf("</AddBet>")
+        common.getResult(strParam,strResultName: addBetResult)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -239,7 +281,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>20</strPageSize>")
         strParam.appendContentsOf("<strUser></strUser>")
-        strParam.appendContentsOf("<strType>0</strType>")
+        strParam.appendContentsOf("<strType>\(mPlayType)</strType>")//0早2滚
         strParam.appendContentsOf("</GetFootballMatch>")
         common.getResult(strParam,strResultName: getFootballMatchResult)
     }

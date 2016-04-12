@@ -93,4 +93,12 @@ class OrderCellRollModel: NSObject {
     var N_HOME_NO:NSNumber!//场次编号B
     var N_VH:NSNumber!//主场代号
     var N_REMARK:String!//备注
+    
+    var N_ZDUPTIME:String!  
+    var N_HOME_JZF:NSNumber!//客队得分
+    var N_ZDTIME:String!//赛事进行了时间
+    var N_VISIT_JZF:NSNumber!//主队得分
+    var N_HOME_REDCARD:NSNumber!
+    var N_ZDFLAG:String!
+    var N_VISIT_REDCARD:NSNumber!
 }
