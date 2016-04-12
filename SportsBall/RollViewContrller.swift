@@ -149,6 +149,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             
         }
     }
+    
     //第二次设定BetInfo属性，主要填入限额等
     func fullBetInfo2(betInfoJson:AnyObject){
         betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)
