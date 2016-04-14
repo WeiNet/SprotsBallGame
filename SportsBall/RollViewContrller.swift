@@ -36,8 +36,40 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //注单的资料绑定协议（Cell的显示）
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
+        clear(orderCellRollView)
         showData(orderCellRollView,orderCellRollModel:orderCellRollModel)
         fillBackground(orderCellRollView,orderCellRollModel:orderCellRollModel)
+    }
+    //注单赋值前清空重用控件
+    func clear(orderCellRollView:OrderCellRollView){
+        orderCellRollView.N_LDYPL.text = ""
+        orderCellRollView.N_HJPL.text = ""
+        orderCellRollView.N_RDYPL.text = ""
+        
+        orderCellRollView.N_LRFBL.text = ""
+        orderCellRollView.N_RRFBL.text = ""
+        orderCellRollView.N_LRFPL.text = ""
+        orderCellRollView.N_RRFPL.text = ""
+        
+        orderCellRollView.N_LDXBL.text = ""
+        orderCellRollView.N_RDXBL.text = ""
+        orderCellRollView.N_DXDPL.text = ""
+        orderCellRollView.N_DXXPL.text = ""
+        
+        
+        orderCellRollView.N_LDYPL2.text = ""
+        orderCellRollView.N_HJPL2.text = ""
+        orderCellRollView.N_RDYPL2.text = ""
+        
+        orderCellRollView.N_LRFBL2.text = ""
+        orderCellRollView.N_RRFBL2.text = ""
+        orderCellRollView.N_LRFPL2.text = ""
+        orderCellRollView.N_RRFPL2.text = ""
+        
+        orderCellRollView.N_LDXBL2.text = ""
+        orderCellRollView.N_RDXBL2.text = ""
+        orderCellRollView.N_DXDPL2.text = ""
+        orderCellRollView.N_DXXPL2.text = ""
     }
     //资料的显示
     func showData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
@@ -46,12 +78,8 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             orderCellRollView.N_LDYPL.text = orderCellRollModel.N_LDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue) : ""
             orderCellRollView.N_HJPL.text = orderCellRollModel.N_HJPL != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue) : ""
             orderCellRollView.N_RDYPL.text = orderCellRollModel.N_RDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue) : ""
-        }else{
-            orderCellRollView.N_LDYPL.text = ""
-            orderCellRollView.N_HJPL.text = ""
-            orderCellRollView.N_RDYPL.text = ""
         }
-        //全场让分不允许下注-->OPEN 该盘口不锁定
+        //全场让分不允许下注-->OPEN 该盘口不锁定 N_LRFBL N_RRFBL
         if(orderCellRollModel.N_RF_OPEN == nil || String(orderCellRollModel.N_RF_OPEN) == "0"){
             if(orderCellRollModel.N_LET == nil || String(orderCellRollModel.N_LET) == "0"){
                 orderCellRollView.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS), bl: Int(orderCellRollModel.N_RFBL), lx: Int(orderCellRollModel.N_RFLX))
@@ -60,23 +88,13 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             }
             orderCellRollView.N_LRFPL.text = orderCellRollModel.N_LRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue) : ""
             orderCellRollView.N_RRFPL.text = orderCellRollModel.N_RRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue) : ""
-        }else{
-            orderCellRollView.N_LRFBL.text = ""
-            orderCellRollView.N_RRFBL.text = ""
-            orderCellRollView.N_LRFPL.text = ""
-            orderCellRollView.N_RRFPL.text = ""
         }
-        //全场大小不允许下注-->OPEN 该盘口不锁定
+        //全场大小不允许下注-->OPEN 该盘口不锁定 N_LDXBL N_RDXBL
         if(orderCellRollModel.N_DX_OPEN == nil || String(orderCellRollModel.N_DX_OPEN) == "0"){
             orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
-            orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
+            orderCellRollView.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
             orderCellRollView.N_DXDPL.text = orderCellRollModel.N_DXDPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue) : ""
             orderCellRollView.N_DXXPL.text = orderCellRollModel.N_DXXPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue) : ""
-        }else{
-            orderCellRollView.N_LDXBL.text = ""
-            orderCellRollView.N_RDXBL.text = ""
-            orderCellRollView.N_DXDPL.text = ""
-            orderCellRollView.N_DXXPL.text = ""
         }
         
         //半场赌赢不允许下注-->OPEN 该盘口不锁定
@@ -84,10 +102,6 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             orderCellRollView.N_LDYPL2.text = orderCellRollModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue) : ""
             orderCellRollView.N_HJPL2.text = orderCellRollModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue) : ""
             orderCellRollView.N_RDYPL2.text = orderCellRollModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue) : ""
-        }else{
-            orderCellRollView.N_LDYPL2.text = ""
-            orderCellRollView.N_HJPL2.text = ""
-            orderCellRollView.N_RDYPL2.text = ""
         }
         //半场让分不允许下注-->OPEN 该盘口不锁定
         if(orderCellRollModel.N_RF_OPEN2 == nil || String(orderCellRollModel.N_RF_OPEN2) == "0"){
@@ -98,23 +112,13 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             }
             orderCellRollView.N_LRFPL2.text = orderCellRollModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue) : ""
             orderCellRollView.N_RRFPL2.text = orderCellRollModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue) : ""
-        }else{
-            orderCellRollView.N_LRFBL2.text = ""
-            orderCellRollView.N_RRFBL2.text = ""
-            orderCellRollView.N_LRFPL2.text = ""
-            orderCellRollView.N_RRFPL2.text = ""
         }
         //半场大小不允许下注-->OPEN 该盘口不锁定
         if(orderCellRollModel.N_DX_OPEN2 == nil || String(orderCellRollModel.N_DX_OPEN2) == "0"){
             orderCellRollView.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
-            orderCellRollView.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
+            orderCellRollView.N_RDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
             orderCellRollView.N_DXDPL2.text = orderCellRollModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue) : ""
             orderCellRollView.N_DXXPL2.text = orderCellRollModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue) : ""
-        }else{
-            orderCellRollView.N_LDXBL2.text = ""
-            orderCellRollView.N_RDXBL2.text = ""
-            orderCellRollView.N_DXDPL2.text = ""
-            orderCellRollView.N_DXXPL2.text = ""
         }
     }
     //背景的填充
