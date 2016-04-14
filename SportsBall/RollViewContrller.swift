@@ -29,10 +29,11 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         print("selecttCancelButtonAlertView")
     }
     //点击赔率点击事件的协议
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int){
+    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool{
         alertView.show(self)//显示即时下注popuWin
         let betInfoVO = fullBetInfo1(orderCellRollModel,toolsCode:toolsCode)
         checkBet(betInfoVO)//检验选取的赔率是不是最新的
+        return false
     }
     //注单的资料绑定协议（Cell的显示）
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
@@ -79,7 +80,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             orderCellRollView.N_HJPL.text = orderCellRollModel.N_HJPL != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue) : ""
             orderCellRollView.N_RDYPL.text = orderCellRollModel.N_RDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue) : ""
         }
-        //全场让分不允许下注-->OPEN 该盘口不锁定 N_LRFBL N_RRFBL
+        //全场让分不允许下注-->OPEN 该盘口不锁定
         if(orderCellRollModel.N_RF_OPEN == nil || String(orderCellRollModel.N_RF_OPEN) == "0"){
             if(orderCellRollModel.N_LET == nil || String(orderCellRollModel.N_LET) == "0"){
                 orderCellRollView.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS), bl: Int(orderCellRollModel.N_RFBL), lx: Int(orderCellRollModel.N_RFLX))
@@ -89,7 +90,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             orderCellRollView.N_LRFPL.text = orderCellRollModel.N_LRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue) : ""
             orderCellRollView.N_RRFPL.text = orderCellRollModel.N_RRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue) : ""
         }
-        //全场大小不允许下注-->OPEN 该盘口不锁定 N_LDXBL N_RDXBL
+        //全场大小不允许下注-->OPEN 该盘口不锁定
         if(orderCellRollModel.N_DX_OPEN == nil || String(orderCellRollModel.N_DX_OPEN) == "0"){
             orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
             orderCellRollView.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
