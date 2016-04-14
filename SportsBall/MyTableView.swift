@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MyTableViewDelegate: NSObjectProtocol {
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)
+    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool
 }
 
 class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableViewDataSource,UITableViewDelegate {
@@ -102,8 +102,8 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         self.endUpdates()
     }
     
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int){
-        tableDelegate.orderCliCk(orderCellRollModel,toolsCode: toolsCode)
+    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool{
+        return tableDelegate.orderCliCk(orderCellRollModel,toolsCode: toolsCode)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
