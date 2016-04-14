@@ -11,7 +11,7 @@ import UIKit
 // 该协议将被用户组的委托实现； 当赛事被打开/关闭时，它将通知发送给委托，来告知Xcode调用何方法
 protocol UpViewDelegate: NSObjectProtocol {
     func upView(orderCellRollView:OrderCellRollView)
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)
+    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool
 }
 protocol bindDataDelegate: NSObjectProtocol {
     func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel)
@@ -93,20 +93,24 @@ class OrderCellRollView: UITableViewCell {
         self.toggleOpen(true)
     }
     func orderTap(sender: UITapGestureRecognizer) {
+        
         let view = sender.view! as UIView
 //        var ff = view.isKindOfClass(UILabel)
         let iTag = view.tag
-        let name = ToolsCode.codeBy(iTag)
-        let select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
-        orderCellRollModel.setValue(!select, forKey: "\(name)_SEL")
-        if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
-            setLblFontBackground(view as! UILabel,selected: !select)
-        }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){
-            setBackground(view,select:!select)
-        }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
-            setBackground2(view,select: !select)
+        let isMore:Bool = myUpViewDelegate.orderCliCk(orderCellRollModel,toolsCode: iTag)
+        if isMore {
+            let name = ToolsCode.codeBy(iTag)
+            let select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
+            orderCellRollModel.setValue(!select, forKey: "\(name)_SEL")
+            if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
+                setLblFontBackground(view as! UILabel,selected: !select)
+            }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){
+                setBackground(view,select:!select)
+            }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
+                setBackground2(view,select: !select)
+            }
         }
-        self.placeOrder(true,toolsCode: iTag)
+//        self.placeOrder(true,toolsCode: iTag)
 //        var singBetView:SingBetView = SingBetView()
     }
     //让分的背景设定
@@ -154,10 +158,10 @@ class OrderCellRollView: UITableViewCell {
             myUpViewDelegate.upView(self)
         }
     }
-    func placeOrder(userAction: Bool,toolsCode: Int) {
-        myUpViewDelegate.orderCliCk(orderCellRollModel,toolsCode: toolsCode)
-        print("我是点击的按钮事件响应的！！！！！！")
-    }
+//    func placeOrder(userAction: Bool,toolsCode: Int) {
+//        myUpViewDelegate.orderCliCk(orderCellRollModel,toolsCode: toolsCode)
+//        print("我是点击的按钮事件响应的！！！！！！")
+//    }
     
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     func userInteractionEnabled(){
