@@ -83,7 +83,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         unionTitleInfo.unionTitleModel.headerClose = true
         
         let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.section)
-        
+        print("----->countOfRowsToDelete:\(countOfRowsToDelete)")
         if countOfRowsToDelete > 0 {
             var indexPathsToDelete = NSMutableArray()
             for (var i = 0; i < countOfRowsToDelete; i++) {
@@ -128,6 +128,12 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         
         unionTitleView.name.text = "★\(unionTitleInfo.unionTitleModel.name!)"
         unionTitleView.count.text = "X\(unionTitleInfo.unionTitleModel.count!)"
+        unionTitleView.HeaderOpen = !unionTitleInfo.unionTitleModel.headerClose
+//        if(unionTitleView.HeaderOpen){
+//            unionTitleView.BtnDisclosure.setImage(UIImage(named: "up"), forState: UIControlState.Disabled)
+//        }else{
+//            unionTitleView.BtnDisclosure.setImage(UIImage(named: "down"), forState: UIControlState.Selected)
+//        }
         
         return unionTitleView
     }
