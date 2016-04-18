@@ -7,17 +7,44 @@
 //
 
 import UIKit
-
-class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTableViewDelegate,SwiftCustomAlertViewDelegate {
-    @IBOutlet var myContent: UIView!
+//足球赛事页面 mPlayType=0:早盘；1：单式；2：滚球
+class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTableViewDelegate,SwiftCustomAlertViewDelegate,HeaderViewDelegate {
+    
+    @IBOutlet var mHeader: HeaderView!
+    @IBOutlet var mHeader1: UIView!
+    @IBOutlet var mContent: UIView!
     var common=CommonParameter()//网络请求
     var myTable:MyTableView!
     let betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
-    var mPlayType = "2"//0早餐2滚球
+    var mPlayType = "2"//0:早盘；1：单式；2：滚球
     let checkBetResult:String = "CheckBetResult"
     let getFootballMatchResult:String = "GetFootballMatchResult"
     let addBetResult:String = "AddBetResult"
+    //返回
+    func backClick(){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    //刷新
+    func refreshClick(){
+        if mContent.subviews.count > 0 {
+            mContent.subviews[0].removeFromSuperview()
+        }
+        getFootballMatch()
+    }
+    //标题点击，玩法选取
+    func titleViewClick(){
+        
+    }
+    //联盟打开
+    func unionClick(){
+        
+    }
+    //规则说明
+    func explainClick(){
+        
+    }
+    
     //即时下注付款协议
     func selectOkButtonalertView(){
         betInfo.dMoney = alertView.myView.money.text
@@ -216,14 +243,14 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             }
         }
         
-        let width = self.myContent.frame.size.width
-        let height = self.myContent.frame.size.height - 20
-        myTable = MyTableView(frame: CGRect(x: 0, y: 25, width: width, height: height))
+        let width = self.mContent.frame.size.width
+        let height = self.mContent.frame.size.height - 20
+        myTable = MyTableView(frame: CGRect(x: 0, y: 0, width: width, height: height + 20))
         myTable.matchCells = showUnion
         myTable.bindDataTable = self
         myTable.tableDelegate = self
         myTable.setDelegate()
-        myContent.addSubview(myTable)
+        self.mContent.addSubview(myTable)
     }
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
     func fullBetInfo1(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
@@ -339,6 +366,18 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //头部
+        var headerView = NSBundle.mainBundle().loadNibNamed("HeaderView" , owner: nil, options: nil).first as? HeaderView
+        headerView?.frame.size.height = 48
+        headerView?.delegate = self
+        mHeader.addSubview(headerView!)
+        
+        //赛事注单
+        getFootballMatch()
+        
+    }
+    //取得赛事注单赔率
+    func getFootballMatch(){
         common.delegate = self
         common.matchingElement = getFootballMatchResult
         var strParam:String = "<GetFootballMatch xmlns=\"http://tempuri.org/\">";
@@ -347,7 +386,9 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>20</strPageSize>")
         strParam.appendContentsOf("<strUser></strUser>")
-        strParam.appendContentsOf("<strType>\(mPlayType)</strType>")//0早2滚
+        //0:早盘；1：单式；2：滚球
+        //        strParam.appendContentsOf("<strType>2</strType>")
+        strParam.appendContentsOf("<strType>\(mPlayType)</strType>")
         strParam.appendContentsOf("</GetFootballMatch>")
         common.getResult(strParam,strResultName: getFootballMatchResult)
     }
@@ -355,5 +396,10 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    //ios隐藏状态栏
+    override func prefersStatusBarHidden() -> Bool {
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        return true
     }
 }
