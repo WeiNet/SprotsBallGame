@@ -254,7 +254,7 @@
                                 <rect key="frame" x="0.0" y="49" width="600" height="336"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-1V-zFF">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-1V-zFF" customClass="HeaderView" customModule="SportsBall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -265,14 +265,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4yb-1V-zFF" secondAttribute="trailing" constant="-20" id="Zub-qf-4Yh"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="cx1-CR-SUz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LWU-om-YqL" secondAttribute="trailing" constant="-20" id="kgf-WR-K4f"/>
-                            <constraint firstItem="LWU-om-YqL" firstAttribute="top" secondItem="4yb-1V-zFF" secondAttribute="bottom" id="mOT-yH-iiC"/>
                             <constraint firstItem="4yb-1V-zFF" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="rfu-BH-2ga"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="mContent" destination="LWU-om-YqL" id="Vd3-Iv-zGh"/>
-                        <outlet property="mHeader" destination="4yb-1V-zFF" id="O3A-eg-dP4"/>
+                        <outlet property="mHeader" destination="4yb-1V-zFF" id="9Lx-Pf-gf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8v-JT-hVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
