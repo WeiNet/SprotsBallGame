@@ -83,7 +83,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         unionTitleInfo.unionTitleModel.headerClose = true
         
         let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.section)
-        print("----->countOfRowsToDelete:\(countOfRowsToDelete)")
+        
         if countOfRowsToDelete > 0 {
             var indexPathsToDelete = NSMutableArray()
             for (var i = 0; i < countOfRowsToDelete; i++) {
