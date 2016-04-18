@@ -266,6 +266,7 @@
                             <constraint firstItem="LWU-om-YqL" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="cx1-CR-SUz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LWU-om-YqL" secondAttribute="trailing" constant="-20" id="kgf-WR-K4f"/>
                             <constraint firstItem="4yb-1V-zFF" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="rfu-BH-2ga"/>
+                            <constraint firstItem="LWU-om-YqL" firstAttribute="top" secondItem="4yb-1V-zFF" secondAttribute="bottom" id="wuW-DZ-BCA"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
