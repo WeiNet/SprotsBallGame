@@ -238,10 +238,31 @@
             </objects>
             <point key="canvasLocation" x="89" y="-650.99999999999977"/>
         </scene>
-        <!--Roll View Contrller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="GgW-HM-mMk">
+            <objects>
+                <tabBarController storyboardIdentifier="RollView" id="Eid-lf-qkx" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="V06-Hy-bVp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="LGg-hk-5ZB" kind="relationship" relationship="viewControllers" id="0qg-12-YQL"/>
+                        <segue destination="Sz8-dp-biC" kind="relationship" relationship="viewControllers" id="3FA-iG-otP"/>
+                        <segue destination="hDp-MU-1AP" kind="relationship" relationship="viewControllers" id="DKO-ak-B9D"/>
+                        <segue destination="9mB-SF-irS" kind="relationship" relationship="viewControllers" id="nFh-RW-C1Z"/>
+                        <segue destination="HqO-bv-K1a" kind="relationship" relationship="viewControllers" id="Iug-yp-AMS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwn-2o-n8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946" y="497"/>
+        </scene>
+        <!--首页-->
         <scene sceneID="34f-ad-Nrb">
             <objects>
-                <viewController storyboardIdentifier="RollView" id="LGg-hk-5ZB" customClass="RollViewContrller" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LGg-hk-5ZB" customClass="RollViewContrller" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5RO-JV-vCE"/>
                         <viewControllerLayoutGuide type="bottom" id="iwS-79-YK8"/>
@@ -251,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-om-YqL">
-                                <rect key="frame" x="0.0" y="49" width="600" height="336"/>
+                                <rect key="frame" x="0.0" y="49" width="600" height="502"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-1V-zFF">
@@ -265,10 +286,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4yb-1V-zFF" secondAttribute="trailing" constant="-20" id="Zub-qf-4Yh"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="cx1-CR-SUz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LWU-om-YqL" secondAttribute="trailing" constant="-20" id="kgf-WR-K4f"/>
+                            <constraint firstItem="iwS-79-YK8" firstAttribute="top" secondItem="LWU-om-YqL" secondAttribute="bottom" id="lmH-Ih-JGH"/>
                             <constraint firstItem="4yb-1V-zFF" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="rfu-BH-2ga"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="top" secondItem="4yb-1V-zFF" secondAttribute="bottom" id="wuW-DZ-BCA"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="首页" image="m1" id="r81-wU-C74"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="mContent" destination="LWU-om-YqL" id="Vd3-Iv-zGh"/>
@@ -277,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8v-JT-hVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2211" y="-1854"/>
+            <point key="canvasLocation" x="439" y="398"/>
         </scene>
         <!--游戏说明-->
         <scene sceneID="efM-Ev-6dE">
@@ -1095,4 +1118,10 @@
         <image name="m4" width="24" height="24"/>
         <image name="m5" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3FA-iG-otP"/>
+        <segue reference="DKO-ak-B9D"/>
+        <segue reference="Iug-yp-AMS"/>
+        <segue reference="nFh-RW-C1Z"/>
+    </inferredMetricsTieBreakers>
 </document>
