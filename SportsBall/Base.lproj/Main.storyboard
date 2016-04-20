@@ -271,24 +271,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-om-YqL">
-                                <rect key="frame" x="0.0" y="49" width="600" height="502"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-1V-zFF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-g1-4ae">
+                                <rect key="frame" x="0.0" y="513" width="600" height="30"/>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-om-YqL">
+                                <rect key="frame" x="0.0" y="48" width="600" height="457"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4yb-1V-zFF" firstAttribute="top" secondItem="5RO-JV-vCE" secondAttribute="bottom" id="ULl-3y-Z2A"/>
+                            <constraint firstItem="iwS-79-YK8" firstAttribute="top" secondItem="TWJ-g1-4ae" secondAttribute="bottom" id="ZWN-gC-Nhh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4yb-1V-zFF" secondAttribute="trailing" constant="-20" id="Zub-qf-4Yh"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="cx1-CR-SUz"/>
+                            <constraint firstItem="TWJ-g1-4ae" firstAttribute="top" secondItem="LWU-om-YqL" secondAttribute="bottom" constant="-20" id="fy5-13-54U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TWJ-g1-4ae" secondAttribute="trailing" id="h15-8F-S4r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LWU-om-YqL" secondAttribute="trailing" constant="-20" id="kgf-WR-K4f"/>
-                            <constraint firstItem="iwS-79-YK8" firstAttribute="top" secondItem="LWU-om-YqL" secondAttribute="bottom" id="lmH-Ih-JGH"/>
                             <constraint firstItem="4yb-1V-zFF" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="rfu-BH-2ga"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="top" secondItem="4yb-1V-zFF" secondAttribute="bottom" id="wuW-DZ-BCA"/>
+                            <constraint firstItem="TWJ-g1-4ae" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="yDl-01-bFN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" image="m1" id="r81-wU-C74"/>
@@ -296,6 +303,7 @@
                     <connections>
                         <outlet property="mContent" destination="LWU-om-YqL" id="Vd3-Iv-zGh"/>
                         <outlet property="mHeader" destination="4yb-1V-zFF" id="9Lx-Pf-gf7"/>
+                        <outlet property="mSegmenView" destination="TWJ-g1-4ae" id="XiN-lg-84U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8v-JT-hVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
