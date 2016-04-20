@@ -10,9 +10,10 @@ import UIKit
 //足球赛事页面 mPlayType=0:早盘；1：单式；2：滚球
 class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTableViewDelegate,SwiftCustomAlertViewDelegate,HeaderViewDelegate {
     
-    @IBOutlet var mHeader: HeaderView!
-    @IBOutlet var mHeader1: UIView!
+    @IBOutlet var mHeader: UIView!
+//    @IBOutlet var mHeader1: UIView!
     @IBOutlet var mContent: UIView!
+    @IBOutlet var mSegmenView: UIView!
     var common=CommonParameter()//网络请求
     var myTable:MyTableView!
     let betInfo:BetInfoModel = BetInfoModel()//下注model
@@ -242,15 +243,52 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
                 showUnion.addObject(unionTitleModel)
             }
         }
-        
+        addcontrols(showUnion)
+    }
+    //主窗体添加购物车、赛事列表、即时/复合下注
+    func addcontrols(showUnion:NSMutableArray){
+        var startY:CGFloat = 0
         let width = self.mContent.frame.size.width
         let height = self.mContent.frame.size.height - 20
-        myTable = MyTableView(frame: CGRect(x: 0, y: 0, width: width, height: height + 20))
+        
+        var cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
+        cartButtonView?.frame.size.width = width
+        cartButtonView?.frame.size.height = 48
+        mContent.addSubview(cartButtonView!)
+        //添加购物车控件后Y轴空出
+        startY = startY + 48
+        
+        //先创建一个数组用于设置分段控件的标题
+        let appsArray:[String] = ["即时下注","复合下注"]
+        let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
+        segment.frame = CGRect(x: (width-180)/2, y: 0, width: 180, height: 20)
+        //默认选中下标为0的
+        segment.selectedSegmentIndex = 0
+        //设置标题颜色
+//        segment.tintColor = UIColor.redColor()
+        //添加事件，当segment改变时，触发
+        segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
+        mSegmenView.frame.size.height = 20
+        mSegmenView.addSubview(segment)
+
+        let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20)
+        myTable = MyTableView(frame: cgr)
         myTable.matchCells = showUnion
         myTable.bindDataTable = self
         myTable.tableDelegate = self
         myTable.setDelegate()
-        self.mContent.addSubview(myTable)
+        mContent.addSubview(myTable)
+    }
+    //即时/复合下注选择改变事件
+    func segmentChange(sender: UISegmentedControl){
+        switch sender.selectedSegmentIndex {
+        case 0 :
+            print("000")
+        case 1 :
+            print("11111")
+        default:
+            print("default")
+        }
     }
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
     func fullBetInfo1(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{

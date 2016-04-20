@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
+		17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B181091CC6152800CF3054 /* CartButtonView.xib */; };
+		17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1810B1CC618EA00CF3054 /* CartButtonView.swift */; };
 		17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3445C1CC0903D002638FC /* HeaderView.swift */; };
 		17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B3445E1CC0906F002638FC /* HeaderView.xib */; };
 		17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		17B181091CC6152800CF3054 /* CartButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartButtonView.xib; sourceTree = "<group>"; };
+		17B1810B1CC618EA00CF3054 /* CartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButtonView.swift; sourceTree = "<group>"; };
 		17B3445C1CC0903D002638FC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		17B3445E1CC0906F002638FC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 			children = (
 				17B3445C1CC0903D002638FC /* HeaderView.swift */,
 				17B3445E1CC0906F002638FC /* HeaderView.xib */,
+				17B181091CC6152800CF3054 /* CartButtonView.xib */,
+				17B1810B1CC618EA00CF3054 /* CartButtonView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 			files = (
 				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
+				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,
@@ -463,6 +470,7 @@
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
+				17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */,
 				17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */,
 				17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */,
 				464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */,
