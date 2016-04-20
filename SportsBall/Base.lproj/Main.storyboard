@@ -279,9 +279,12 @@
                                 <rect key="frame" x="0.0" y="48" width="600" height="457"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-g1-4ae">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-g1-4ae">
                                 <rect key="frame" x="0.0" y="513" width="600" height="30"/>
-                                <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9vG-KE-bKK"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -292,7 +295,7 @@
                             <constraint firstItem="iwS-79-YK8" firstAttribute="top" secondItem="TWJ-g1-4ae" secondAttribute="bottom" id="ZWN-gC-Nhh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4yb-1V-zFF" secondAttribute="trailing" constant="-20" id="Zub-qf-4Yh"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="cx1-CR-SUz"/>
-                            <constraint firstItem="TWJ-g1-4ae" firstAttribute="top" secondItem="LWU-om-YqL" secondAttribute="bottom" id="fy5-13-54U"/>
+                            <constraint firstItem="TWJ-g1-4ae" firstAttribute="top" secondItem="LWU-om-YqL" secondAttribute="bottom" constant="15" id="fy5-13-54U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LWU-om-YqL" secondAttribute="trailing" constant="-20" id="kgf-WR-K4f"/>
                             <constraint firstItem="4yb-1V-zFF" firstAttribute="leading" secondItem="2cs-ic-jBo" secondAttribute="leadingMargin" constant="-20" id="rfu-BH-2ga"/>
                             <constraint firstItem="LWU-om-YqL" firstAttribute="top" secondItem="4yb-1V-zFF" secondAttribute="bottom" id="wuW-DZ-BCA"/>
