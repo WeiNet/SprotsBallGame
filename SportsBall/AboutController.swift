@@ -12,9 +12,10 @@ class AboutController: UIViewController {
     
     override func viewDidLoad() {
         self.title="关于"
-       
+        
         
     }
     override func viewWillAppear(animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: animated)    }
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }

@@ -79,11 +79,11 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var sb = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row==0){
-        var vc = sb.instantiateViewControllerWithIdentifier("ProblemController") as! ProblemController
+        var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if(indexPath.row==1){
-        var vcAbout = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+        var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
             self.navigationController?.pushViewController(vcAbout, animated: true)
 
         }
