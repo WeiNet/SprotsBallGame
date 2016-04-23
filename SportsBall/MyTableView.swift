@@ -188,6 +188,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         cell.myUpViewDelegate = self
         cell.frame.size.width = self.frame.width
         cell.canResignFirstResponder()
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
 }
