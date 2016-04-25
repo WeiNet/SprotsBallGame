@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "PersonalCenterView.tableView(UITableView, didSelectRowAtIndexPath : NSIndexPath) -&gt; ():PersonalCenterView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "betList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -9,11 +9,11 @@
 import UIKit
 
 class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSource,ResultDelegate {
-  	var conn=CommonParameter()
+    var conn=CommonParameter()
     
     @IBOutlet weak var resultText: UILabel!
     @IBOutlet weak var tableViewList: UITableView!
-   
+    
   		@IBAction func btnRefresh(sender: UIButton) {
             
             getResult()
@@ -28,9 +28,9 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.tableViewList.dataSource=self
         self.tableViewList.delegate=self
         self.conn.delegate=self
-      	getResult()
+        getResult()
         
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,7 +46,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell=tableView.dequeueReusableCellWithIdentifier("SportCell")
         if(cell==nil){
-             cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SportCell")
+            cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SportCell")
         }
         var image=cell?.viewWithTag(1)as! UIImageView
         var name=cell?.viewWithTag(2)as! UILabel
@@ -56,7 +56,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell!
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-    return 80.0
+        return 80.0
     }
     func getResult(){
         
@@ -68,35 +68,43 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     func setResult(strResult: String,strType:String) {
         if(strType=="Error"){
-        return
+            return
         }
         if(strResult==""){
-        return
+            return
         }
-         var result = ( strResult as NSString ).floatValue;
+        var result = ( strResult as NSString ).floatValue;
         resultText.text="\(result*10000)"
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       var str=toJSONString()
         var sb = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row==0){
-        var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+            var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if(indexPath.row==1){
-        var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
+            
+            
+            var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
             self.navigationController?.pushViewController(vcAbout, animated: true)
-
+            
         }
         
-    
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
     }
-
     
-    
+    func toJSONString()->NSString{
+        
+        
+        return ""
+        
+        
+    }
     
 }
