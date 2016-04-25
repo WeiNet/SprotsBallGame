@@ -44,6 +44,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
         var cell=tableView.dequeueReusableCellWithIdentifier("SportCell")
         if(cell==nil){
             cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SportCell")
@@ -77,7 +78,16 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         resultText.text="\(result*10000)"
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       var str=toJSONString()
+        var objInfo1=BetInfo()
+        objInfo1.dMoney="10"
+        objInfo1.dzsx="11"
+        objInfo1.dzxx="45"
+        objInfo1.homename="dfdf"
+        var jsonObject: [AnyObject] = []
+        jsonObject.append(objInfo1)
+        let jsonString = JSONStringify(jsonObject)
+        print(jsonString)
+        
         var sb = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row==0){
             var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
@@ -100,11 +110,39 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func toJSONString()->NSString{
+        var dict=[BetInfo]()
+        var objInfo1=BetInfo()
+        objInfo1.dMoney="10"
+        objInfo1.dzsx="11"
+        objInfo1.dzxx="45"
+        objInfo1.homename="dfdf"
+        dict.append(objInfo1)
         
-        
-        return ""
-        
-        
-    }
+        //        let dict = ["name":"Jobs","friends":["Ive","Cook"]]
+        let data = try!NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted)
+        var strJson=NSString(data: data, encoding: NSUTF8StringEncoding)
+        return strJson!}
     
+    func JSONStringify(value: AnyObject,prettyPrinted:Bool = false) -> String{
+            
+            let options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : NSJSONWritingOptions(rawValue: 0)
+            
+            
+            if NSJSONSerialization.isValidJSONObject(value) {
+            
+            do{
+            let data = try NSJSONSerialization.dataWithJSONObject(value, options: options)
+            if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+            return string as String
+            }
+        }catch {
+            
+            print("error")
+            //Access error here
+            }
+            
+            }
+            return ""
+            
+    }
 }
