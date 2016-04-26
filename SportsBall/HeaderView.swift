@@ -24,7 +24,7 @@ import UIKit
     @IBOutlet var title: UILabel!
     
     @IBAction func back(sender: UIButton) {
-        print("用户点击back")
+        print("点击back")
         delegate.backClick!()
     }
     

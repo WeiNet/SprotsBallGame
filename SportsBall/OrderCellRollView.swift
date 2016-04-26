@@ -11,10 +11,10 @@ import UIKit
 // 该协议将被用户组的委托实现； 当赛事被打开/关闭时，它将通知发送给委托，来告知Xcode调用何方法
 protocol UpViewDelegate: NSObjectProtocol {
     func upView(orderCellRollView:OrderCellRollView)
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool
+    func orderCliCk(orderCellModel:OrderCellModel,toolsCode: Int)->Bool
 }
 protocol bindDataDelegate: NSObjectProtocol {
-    func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel)
+    func bindData(orderCellRollView:OrderCellRollView,orderCellModel:OrderCellModel)
 }
 
 class OrderCellRollView: UITableViewCell {
@@ -66,7 +66,7 @@ class OrderCellRollView: UITableViewCell {
     var section: Int!//当前操作的行号
     var row:Int!
     var headerClose: Bool = false  // 标记HeaderView是否展开
-    var orderCellRollModel:OrderCellRollModel!//当前View对应的资料
+    var orderCellModel:OrderCellModel!//当前View对应的资料
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -97,11 +97,11 @@ class OrderCellRollView: UITableViewCell {
         let view = sender.view! as UIView
 //        var ff = view.isKindOfClass(UILabel)
         let iTag = view.tag
-        let isMore:Bool = myUpViewDelegate.orderCliCk(orderCellRollModel,toolsCode: iTag)
+        let isMore:Bool = myUpViewDelegate.orderCliCk(orderCellModel,toolsCode: iTag)
         if isMore {
             let name = ToolsCode.codeBy(iTag)
-            let select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
-            orderCellRollModel.setValue(!select, forKey: "\(name)_SEL")
+            let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
+            orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
                 setLblFontBackground(view as! UILabel,selected: !select)
             }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){

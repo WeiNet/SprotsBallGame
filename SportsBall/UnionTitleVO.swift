@@ -9,6 +9,6 @@
 import UIKit
 
 class UnionTitleVO: NSObject {
-    var N_NO: NSString!
+    var N_NO: NSString!//联盟编号
     var N_LMMC: NSString!
 }

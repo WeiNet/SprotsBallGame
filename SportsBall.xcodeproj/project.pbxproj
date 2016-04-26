@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA511CCEF6BD002A62DC /* Cell.swift */; };
+		1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA521CCEF6BD002A62DC /* Cell.xib */; };
+		1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA551CCEF707002A62DC /* BreakfastView.swift */; };
+		1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA561CCEF707002A62DC /* BreakfastView.xib */; };
+		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
 		17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B181091CC6152800CF3054 /* CartButtonView.xib */; };
@@ -20,7 +25,7 @@
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
 		17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */; };
 		17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */; };
-		17DA62221CB8CDDC009070E6 /* OrderCellRollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */; };
+		17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */; };
 		17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */; };
 		17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */; };
 		17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */; };
@@ -74,6 +79,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		1779BA551CCEF707002A62DC /* BreakfastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
+		1779BA561CCEF707002A62DC /* BreakfastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreakfastView.xib; sourceTree = "<group>"; };
+		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		17B181091CC6152800CF3054 /* CartButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartButtonView.xib; sourceTree = "<group>"; };
@@ -87,7 +97,7 @@
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
 		17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
 		17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfoModel.swift; sourceTree = "<group>"; };
-		17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollModel.swift; sourceTree = "<group>"; };
+		17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellModel.swift; sourceTree = "<group>"; };
 		17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleInfo.swift; sourceTree = "<group>"; };
 		17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleModel.swift; sourceTree = "<group>"; };
 		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
@@ -154,15 +164,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17B3445A1CC08F91002638FC /* Header */ = {
+		1779BA491CCEF38F002A62DC /* match */ = {
 			isa = PBXGroup;
 			children = (
-				17B3445B1CC08FA8002638FC /* View */,
+				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
+				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
+				17B3445A1CC08F91002638FC /* header */,
+				1779BA4B1CCEF3F2002A62DC /* football */,
 			);
-			name = Header;
+			name = match;
 			sourceTree = "<group>";
 		};
-		17B3445B1CC08FA8002638FC /* View */ = {
+		1779BA4A1CCEF3C3002A62DC /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				17DA62261CB8CDEE009070E6 /* ToolsCode.swift */,
+			);
+			name = tools;
+			sourceTree = "<group>";
+		};
+		1779BA4B1CCEF3F2002A62DC /* football */ = {
+			isa = PBXGroup;
+			children = (
+				1779BA4C1CCEF409002A62DC /* model */,
+				1779BA4D1CCEF413002A62DC /* breakfast */,
+			);
+			name = football;
+			sourceTree = "<group>";
+		};
+		1779BA4C1CCEF409002A62DC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
+				17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		1779BA4D1CCEF413002A62DC /* breakfast */ = {
+			isa = PBXGroup;
+			children = (
+				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
+				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
+			);
+			name = breakfast;
+			sourceTree = "<group>";
+		};
+		1779BA4E1CCEF445002A62DC /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				1779BA591CCEF8E3002A62DC /* TableView.swift */,
+				1779BA4F1CCEF452002A62DC /* header */,
+				1779BA501CCEF45E002A62DC /* cell */,
+			);
+			name = tableview;
+			sourceTree = "<group>";
+		};
+		1779BA4F1CCEF452002A62DC /* header */ = {
+			isa = PBXGroup;
+			children = (
+				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
+				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
+				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
+				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
+				17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */,
+			);
+			name = header;
+			sourceTree = "<group>";
+		};
+		1779BA501CCEF45E002A62DC /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				1779BA511CCEF6BD002A62DC /* Cell.swift */,
+				1779BA521CCEF6BD002A62DC /* Cell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		17B3445A1CC08F91002638FC /* header */ = {
+			isa = PBXGroup;
+			children = (
+				17B3445B1CC08FA8002638FC /* view */,
+				1779BA4A1CCEF3C3002A62DC /* tools */,
+			);
+			name = header;
+			sourceTree = "<group>";
+		};
+		17B3445B1CC08FA8002638FC /* view */ = {
 			isa = PBXGroup;
 			children = (
 				17B3445C1CC0903D002638FC /* HeaderView.swift */,
@@ -170,7 +258,7 @@
 				17B181091CC6152800CF3054 /* CartButtonView.xib */,
 				17B1810B1CC618EA00CF3054 /* CartButtonView.swift */,
 			);
-			name = View;
+			name = view;
 			sourceTree = "<group>";
 		};
 		17DA620C1CB8CC61009070E6 /* Roll */ = {
@@ -178,17 +266,8 @@
 			children = (
 				17DA620F1CB8CC7A009070E6 /* Model */,
 				17DA620E1CB8CC74009070E6 /* View */,
-				17DA620D1CB8CC6B009070E6 /* Tools */,
 			);
 			name = Roll;
-			sourceTree = "<group>";
-		};
-		17DA620D1CB8CC6B009070E6 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				17DA62261CB8CDEE009070E6 /* ToolsCode.swift */,
-			);
-			name = Tools;
 			sourceTree = "<group>";
 		};
 		17DA620E1CB8CC74009070E6 /* View */ = {
@@ -197,10 +276,6 @@
 				17DA62281CB8CE22009070E6 /* MyTableView.swift */,
 				17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */,
 				17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */,
-				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
-				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
-				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
-				17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -208,11 +283,16 @@
 		17DA620F1CB8CC7A009070E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+
 				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
 				17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */,
 				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
 				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
+
+				463295DA1CBB7F46000EFEA9 /* BetList.swift */,
+				463295DC1CBB847A000EFEA9 /* BetInfo.swift */,
+
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -240,7 +320,8 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
-				17B3445A1CC08F91002638FC /* Header */,
+				1779BA491CCEF38F002A62DC /* match */,
+				1779BA4E1CCEF445002A62DC /* tableview */,
 				17DA620C1CB8CC61009070E6 /* Roll */,
 				462E11F51CB75C6200619A55 /* Mode */,
 				462BEE291C881B8700E451E4 /* Common */,
@@ -430,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
+				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
 				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
@@ -438,6 +520,7 @@
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
 				17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */,
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
+				1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
 			);
@@ -466,7 +549,10 @@
 			files = (
 				463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
+				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
+				1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */,
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
+				1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
@@ -490,7 +576,7 @@
 				17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
 				464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */,
-				17DA62221CB8CDDC009070E6 /* OrderCellRollModel.swift in Sources */,
+				17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */,
 				462EAD771CB8DF1F00B5D14F /* AboutController.swift in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,

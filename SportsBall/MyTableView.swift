@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MyTableViewDelegate: NSObjectProtocol {
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool
+    func orderCliCk(orderCellModel:OrderCellModel,toolsCode: Int)->Bool
 }
 
 class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableViewDataSource,UITableViewDelegate {
@@ -35,7 +35,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
             for matchCell in matchCells {
                 var unionTitleInfo:UnionTitleInfo = UnionTitleInfo()
                 unionTitleInfo.unionTitleModel = matchCell as! UnionTitleModel
-                unionTitleInfo.unionTitleView.HeaderOpen = true
+                unionTitleInfo.unionTitleView.headerOpen = true
                 
                 infoArray.addObject(unionTitleInfo)
             }
@@ -55,12 +55,12 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     }
     
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionOpened: Int){
-        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.section] as! UnionTitleInfo
-        unionTitleInfo.unionTitleView.HeaderOpen = true
-        unionTitleInfo.unionTitleModel.headerClose = false
+        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.unionIndex] as! UnionTitleInfo
+        unionTitleInfo.unionTitleView.headerOpen = true
+        unionTitleInfo.unionTitleModel.unionOpen = false
         
         //创建一个包含单元格索引路径的数组来实现插入单元格的操作：这些路径对应当前节的每个单元格
-        let countOfRowsToInsert = unionTitleInfo.unionTitleModel.orderCellRollModels.count
+        let countOfRowsToInsert = unionTitleInfo.unionTitleModel.orderCellModels.count
         let indexPathsToInsert = NSMutableArray()
         
         for (var i = 0; i < countOfRowsToInsert; i++) {
@@ -78,16 +78,16 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionClosed: Int){
         // 在表格关闭的时候，创建一个包含单元格索引路径的数组，接下来从表格中删除这些行
-        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.section] as! UnionTitleInfo
-        unionTitleInfo.unionTitleView.HeaderOpen = false
-        unionTitleInfo.unionTitleModel.headerClose = true
+        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.unionIndex] as! UnionTitleInfo
+        unionTitleInfo.unionTitleView.headerOpen = false
+        unionTitleInfo.unionTitleModel.unionOpen = true
         
-        let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.section)
+        let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.unionIndex)
         
         if countOfRowsToDelete > 0 {
             var indexPathsToDelete = NSMutableArray()
             for (var i = 0; i < countOfRowsToDelete; i++) {
-                indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: unionTitleView.section))
+                indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: unionTitleView.unionIndex))
             }
             self.deleteRowsAtIndexPaths(indexPathsToDelete as! [NSIndexPath], withRowAnimation: UITableViewRowAnimation.Top)
         }
@@ -95,22 +95,22 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     //关闭打开注单，显示的高度由
     func upView(orderCellRollView:OrderCellRollView){
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[orderCellRollView.section] as! UnionTitleInfo
-        var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[orderCellRollView.row] as! OrderCellRollModel
-        orderCellRollModel.close = !orderCellRollModel.close
+        var orderCellModel:OrderCellModel = unionTitleInfo.unionTitleModel.orderCellModels[orderCellRollView.row] as! OrderCellModel
+        orderCellModel.orderOpen = !orderCellModel.orderOpen
         
         self.beginUpdates()
         self.endUpdates()
     }
     
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool{
-        return tableDelegate.orderCliCk(orderCellRollModel,toolsCode: toolsCode)
+    func orderCliCk(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
+        return tableDelegate.orderCliCk(orderCellModel,toolsCode: toolsCode)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         //根据关闭的注单的数量设定cell的高度，没有关闭的高度242，关闭的42
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[indexPath.section] as! UnionTitleInfo
-        var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[indexPath.row] as! OrderCellRollModel
-        if orderCellRollModel.close == true {
+        var orderCellModel:OrderCellModel = unionTitleInfo.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
+        if orderCellModel.orderOpen == true {
             return 258 - heihtg
         }
         return 258
@@ -121,14 +121,14 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         let unionTitleView: UnionTitleView = self.dequeueReusableHeaderFooterViewWithIdentifier(unionTitleViewIdentifier) as! UnionTitleView
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[section] as! UnionTitleInfo
         
-        unionTitleView.section = section
+        unionTitleView.unionIndex = section
         unionTitleView.delegate = self
         unionTitleInfo.unionTitleView = unionTitleView
         unionTitleView.frame.size.width = self.frame.width
         
         unionTitleView.name.text = "★\(unionTitleInfo.unionTitleModel.name!)"
         unionTitleView.count.text = "X\(unionTitleInfo.unionTitleModel.count!)"
-        unionTitleView.HeaderOpen = !unionTitleInfo.unionTitleModel.headerClose
+        unionTitleView.headerOpen = !unionTitleInfo.unionTitleModel.unionOpen
 //        if(unionTitleView.HeaderOpen){
 //            unionTitleView.BtnDisclosure.setImage(UIImage(named: "up"), forState: UIControlState.Disabled)
 //        }else{
@@ -150,8 +150,8 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //这里决定显示否、、修改这里改成联盟和注单一起的
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[section] as! UnionTitleInfo
-        var sectionOpen = unionTitleInfo.unionTitleModel.headerClose
-        var count = unionTitleInfo.unionTitleModel.orderCellRollModels.count
+        var sectionOpen = unionTitleInfo.unionTitleModel.unionOpen
+        var count = unionTitleInfo.unionTitleModel.orderCellModels.count
         
         return sectionOpen ? 0 : Int(count)
     }
@@ -160,31 +160,31 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         // 返回指定的section Cell视图
         var cell:OrderCellRollView = tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier) as! OrderCellRollView
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[indexPath.section] as! UnionTitleInfo
-        var orderCellRollModel:OrderCellRollModel = unionTitleInfo.unionTitleModel.orderCellRollModels[indexPath.row] as! OrderCellRollModel
+        var orderCellModel:OrderCellModel = unionTitleInfo.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
         
         
         //绑定注单标题资料
-        cell.N_VISIT_NAME.text = orderCellRollModel.N_VISIT_NAME
-        cell.N_HOME_NAME.text = orderCellRollModel.N_HOME_NAME
-        if orderCellRollModel.N_ZDTIME == nil {
-            let gameDate = orderCellRollModel.N_GAMEDATE
+        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME
+        cell.N_HOME_NAME.text = orderCellModel.N_HOME_NAME
+        if orderCellModel.N_ZDTIME == nil {
+            let gameDate = orderCellModel.N_GAMEDATE
             cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
             cell.N_VISIT_JZF.text = ""
             cell.N_HOME_JZF.text = ""
         }else{
-            cell.N_GAMEDATE.text = orderCellRollModel.N_ZDTIME
-            cell.N_VISIT_JZF.text = String(orderCellRollModel.N_VISIT_JZF)
-            cell.N_HOME_JZF.text = String(orderCellRollModel.N_HOME_JZF)
+            cell.N_GAMEDATE.text = orderCellModel.N_ZDTIME
+            cell.N_VISIT_JZF.text = String(orderCellModel.N_VISIT_JZF)
+            cell.N_HOME_JZF.text = String(orderCellModel.N_HOME_JZF)
         }
         
         //绑定资料有实现接口的方法自己实现
-        bindDataTable.bindData(cell, orderCellRollModel: orderCellRollModel)
+        bindDataTable.bindData(cell, orderCellModel: orderCellModel)
         
         
-        cell.orderCellRollModel = orderCellRollModel
+        cell.orderCellModel = orderCellModel
         cell.section = indexPath.section
         cell.row = indexPath.row
-        cell.showView(orderCellRollModel.close)
+        cell.showView(orderCellModel.orderOpen)
         cell.myUpViewDelegate = self
         cell.frame.size.width = self.frame.width
         cell.canResignFirstResponder()

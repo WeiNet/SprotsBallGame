@@ -15,9 +15,11 @@ import UIKit
 
 class CartButtonView: UIView {
     var delegate:CartButtonDelegate!
+    
     @IBAction func clear(sender: UIButton) {
         delegate.cartClear!()
     }
+    
     @IBAction func show(sender: UIButton) {
         delegate.cartShow!()
     }

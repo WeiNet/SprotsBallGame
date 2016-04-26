@@ -13,7 +13,8 @@ class UnionTitleModel: NSObject {
     var name: String?
     var count: String?
     var icon: String?
-    var headerClose: Bool = false
+    var unionOpen: Bool = true
     
-    var orderCellRollModels:NSArray = NSArray()//包含赛事标题与注单数据
+    //注单数据
+    var orderCellModels:NSArray = NSArray()
 }
