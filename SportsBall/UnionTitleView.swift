@@ -43,9 +43,9 @@ class UnionTitleView: UITableViewHeaderFooterView {
         // 如果userAction传入的值为真，将给委托传递相应的消息
         if userAction {
             if headerOpen {
-                delegate.sectionHeaderUnion(self, sectionClosed: unionIndex)
-            }else{
                 delegate.sectionHeaderUnion(self, sectionOpened: unionIndex)
+            }else{
+                delegate.sectionHeaderUnion(self, sectionClosed: unionIndex)
             }
         }
     }

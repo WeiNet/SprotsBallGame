@@ -204,45 +204,45 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
     }
     //显示赛事（联盟、赛事队伍）
     func showTableView(strResult: String){
-        var allUnionArr:Array<UnionTitleVO> = Array()
+        var aryUnionVO:Array<UnionTitleVO> = Array()
         let info = ToolsCode.toJsonArray(strResult)
-        let unionAllJson = info[1]
-        if unionAllJson.count == 0 {//没有资料
+        let unionJson = info[1]
+        if unionJson.count == 0 {//没有资料
             print("没有资料")
             return
         }
-        let objCount:Int = unionAllJson.count - 1
+        let objCount:Int = unionJson.count - 1
         for index in 0...objCount {
-            let model:UnionTitleVO = UnionTitleVO()
-            model.N_NO = String(unionAllJson[index].objectForKey("N_NO")!)
-            model.N_LMMC = String(unionAllJson[index].objectForKey("N_LMMC")!)
-            allUnionArr.append(model)
+            let unionVO:UnionTitleVO = UnionTitleVO()
+            unionVO.N_NO = String(unionJson[index].objectForKey("N_NO")!)
+            unionVO.N_LMMC = String(unionJson[index].objectForKey("N_LMMC")!)
+            aryUnionVO.append(unionVO)
         }
         
-        let showUnion:NSMutableArray = NSMutableArray()
-        let matchAllJson = info[0]
-        let matchCount:Int = matchAllJson.count - 1
-        for union in allUnionArr {
+        let aryUnionInfo:NSMutableArray = NSMutableArray()
+        let matchJson = info[0]
+        let matchCount:Int = matchJson.count - 1
+        for union in aryUnionVO {
             let unionTitleModel:UnionTitleModel = UnionTitleModel()
             unionTitleModel.id = String(union.N_NO)
             unionTitleModel.name = String(union.N_LMMC)
             
-            var order:Array<OrderCellModel> = Array()
+            var aryOrderCellModel:Array<OrderCellModel> = Array()
             for index in 0...matchCount{
-                if union.N_NO == String(matchAllJson[index].objectForKey("N_LMNO")!) {
+                if union.N_NO == String(matchJson[index].objectForKey("N_LMNO")!) {
                     let orderCellModel:OrderCellModel = OrderCellModel()
                     //给注单属性赋值
-                    orderCellModel.setValuesForKeysWithDictionary(matchAllJson[index] as! [String : AnyObject])
-                    order.append(orderCellModel)
+                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
+                    aryOrderCellModel.append(orderCellModel)
                 }
             }
-            unionTitleModel.count = String(order.count)
-            unionTitleModel.orderCellModels = order
-            if order.count > 0 {
-                showUnion.addObject(unionTitleModel)
+            unionTitleModel.count = String(aryOrderCellModel.count)
+            unionTitleModel.orderCellModels = aryOrderCellModel
+            if aryOrderCellModel.count > 0 {
+                aryUnionInfo.addObject(unionTitleModel)
             }
         }
-        addcontrols(showUnion)
+        addcontrols(aryUnionInfo)
     }
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addcontrols(showUnion:NSMutableArray){

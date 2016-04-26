@@ -17,7 +17,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     let orderHeight:CGFloat = 216
     
     //初始化TableView
-    func initDelegate(matchArray:NSArray){
+    func initDelegate(aryUnionInfo:NSArray){
         self.dataSource = self
         self.delegate = self
         
@@ -26,9 +26,9 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
             // 对于每个用户组来说，需要为每个单元格设立一个一致的infoArray对象
             var infos: NSMutableArray = NSMutableArray()
             
-            for match in matchArray {
+            for unionInfo in aryUnionInfo {
                 var info:UnionTitleInfo = UnionTitleInfo()
-                info.unionTitleModel = match as! UnionTitleModel
+                info.unionTitleModel = unionInfo as! UnionTitleModel
                 info.unionTitleView.headerOpen = true
                 
                 infos.addObject(info)
@@ -72,7 +72,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionOpened: Int){
         let infos:UnionTitleInfo = infoArray[unionTitleView.unionIndex] as! UnionTitleInfo
         infos.unionTitleView.headerOpen = true
-        infos.unionTitleModel.unionOpen = false
+        infos.unionTitleModel.unionOpen = true
         
         //创建一个包含单元格索引路径的数组来实现插入单元格的操作：这些路径对应当前节的每个单元格
         let countOfRowsToInsert = infos.unionTitleModel.orderCellModels.count
@@ -95,7 +95,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionClosed: Int){
         let infos:UnionTitleInfo = infoArray[unionTitleView.unionIndex] as! UnionTitleInfo
         infos.unionTitleView.headerOpen = false
-        infos.unionTitleModel.unionOpen = true
+        infos.unionTitleModel.unionOpen = false
         
         // 在表格关闭的时候，创建一个包含单元格索引路径的数组，接下来从表格中删除这些行
         let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.unionIndex)
@@ -122,12 +122,11 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         
         union.unionIndex = section
         union.delegate = self
-        infos.unionTitleView = union
         union.frame.size.width = self.frame.width
-        
         union.name.text = "★\(infos.unionTitleModel.name!)"
         union.count.text = "X\(infos.unionTitleModel.count!)"
-        union.headerOpen = !infos.unionTitleModel.unionOpen
+        union.headerOpen = infos.unionTitleModel.unionOpen
+        infos.unionTitleView = union
         
         return union
     }
@@ -138,7 +137,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         let sectionOpen = infos.unionTitleModel.unionOpen
         let count = infos.unionTitleModel.orderCellModels.count
         
-        return sectionOpen ? 0 : Int(count)
+        return sectionOpen ? Int(count) : 0
     }
     
     //设定每个Cell的高度
@@ -161,13 +160,16 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         cell.unionIndex = indexPath.section
         cell.matchIndex = indexPath.row
         cell.showDelegate = self
-        var breakfastView = NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView
-        breakfastView?.frame.size.height = orderHeight
-        breakfastView!.userInteractionEnabled()
-        //加载时赔率是打开的就要立即添加手势事件
-        breakfastView!.addGestureRecognizer()
-        cell.gestureDelegate = breakfastView!
-        cell.orderView.addSubview(breakfastView!)
+        if(cell.orderView.subviews.count == 0){
+            var breakfastView = NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView
+            breakfastView?.frame.size.height = orderHeight
+            breakfastView!.userInteractionEnabled()
+            //加载时赔率是打开的就要立即添加手势事件
+            breakfastView!.addGestureRecognizer()
+            cell.gestureDelegate = breakfastView!
+            cell.orderView.addSubview(breakfastView!)
+        }
+        print(cell.orderView.subviews.count)
         //点击不改变整行Cell的颜色
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
