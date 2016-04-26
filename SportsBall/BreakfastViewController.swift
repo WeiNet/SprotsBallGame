@@ -10,11 +10,11 @@ import UIKit
 
 class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate {
     
-    @IBOutlet var mMainView: UIView!
-    @IBOutlet var mHeader: UIView!
-    @IBOutlet var mContent: UIView!
+    @IBOutlet var mainView: UIView!
+    @IBOutlet var headerView: UIView!
+    @IBOutlet var contentView: UIView!
+    
     var common=CommonParameter()//网络请求
-    var myTable:MyTableView!
     let betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//0:早盘；1：单式；2：滚球
@@ -28,7 +28,8 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             return
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
-            showTableView(strResult)
+            let aryUnionInfo:NSMutableArray = showTableView(strResult)
+            addcontrols(aryUnionInfo)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
@@ -42,8 +43,8 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //刷新
     func refreshClick(){
-        if mContent.subviews.count > 0 {
-            mContent.subviews[0].removeFromSuperview()
+        if contentView.subviews.count > 0 {
+            contentView.subviews[0].removeFromSuperview()
         }
         getFootballMatch()
     }
@@ -82,6 +83,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         breakfastView!.userInteractionEnabled()
         //加载时赔率是打开的就要立即添加手势事件
         breakfastView!.addGestureRecognizer()
+        breakfastView!.delegate = self
         return breakfastView!
     }
     //绑定注单赔率
@@ -256,13 +258,13 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addcontrols(showUnion:NSMutableArray){
         var startY:CGFloat = 0
-        let width = self.mContent.frame.size.width
-        let height = self.mContent.frame.size.height - 20
+        let width = contentView.frame.size.width
+        let height = contentView.frame.size.height - 20
         
         let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
         cartButtonView?.frame.size.width = width
         cartButtonView?.frame.size.height = 48
-        mContent.addSubview(cartButtonView!)
+        contentView.addSubview(cartButtonView!)
         //添加购物车控件后Y轴空出
         startY = startY + 48
         
@@ -276,12 +278,13 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
 //        segment.tintColor = UIColor.redColor()
         //添加事件，当segment改变时，触发 Parent
         segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
-        mMainView.addSubview(segment)
+        mainView.addSubview(segment)
         
         let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20 - 36)
         let tableView = TableView(frame: cgr)
         tableView.initDelegate(showUnion)
-        mContent.addSubview(tableView)
+        tableView.bindDelegate = self
+        contentView.addSubview(tableView)
     }
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
@@ -442,7 +445,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         var headerView = NSBundle.mainBundle().loadNibNamed("HeaderView" , owner: nil, options: nil).first as? HeaderView
         headerView?.frame.size.height = 48
         headerView?.delegate = self
-        mHeader.addSubview(headerView!)
+        self.headerView.addSubview(headerView!)
         //赛事注单
         getFootballMatch()
     }
