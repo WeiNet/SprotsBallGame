@@ -8,6 +8,16 @@
 
 import UIKit
 
+//页面 实例化
+protocol BindDelegate: NSObjectProtocol {
+    //绑定队伍标题
+    func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel)
+    //添加注单赔率View
+    func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView
+    //绑定注单赔率
+    func bindorderDelegate(view:BreakfastView,orderCellModel:OrderCellModel)
+}
+
 class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDelegate,UnionTitleViewDelegate {
     
     var infoArray:NSMutableArray!//与UnionTitleInfo的数组对应
@@ -15,6 +25,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     let unionIdentifier = "unionIdentifier"
     let matchHeight:CGFloat = 40
     let orderHeight:CGFloat = 216
+    var bindDelegate:BindDelegate!
+    
     
     //初始化TableView
     func initDelegate(aryUnionInfo:NSArray){
@@ -156,19 +168,29 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     //tableView中的Cell视图的创建加载--------由页面自己写
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // 返回指定的section Cell视图
-        var cell:Cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! Cell
+        let cell:Cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! Cell
+        let infos:UnionTitleInfo = infoArray[indexPath.section] as! UnionTitleInfo
+        let orderCellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
+        
+        //赛事标题绑定
+        bindDelegate.bindMatchDelegate(cell, orderCellModel: orderCellModel)
         
         cell.unionIndex = indexPath.section
         cell.matchIndex = indexPath.row
         cell.showDelegate = self
         if(cell.orderView.subviews.count == 0){
-            var breakfastView = NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView
-            breakfastView?.frame.size.height = orderHeight
-            breakfastView!.userInteractionEnabled()
-            //加载时赔率是打开的就要立即添加手势事件
-            breakfastView!.addGestureRecognizer()
-            cell.gestureDelegate = breakfastView!
-            cell.orderView.addSubview(breakfastView!)
+            //注单赔率绑定
+            let breakfastView:BreakfastView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! BreakfastView
+            
+            breakfastView.frame.size.height = orderHeight
+            cell.gestureDelegate = breakfastView
+            cell.orderView.addSubview(breakfastView)
+            breakfastView.orderCellModel = orderCellModel
+            bindDelegate.bindorderDelegate(breakfastView, orderCellModel: orderCellModel)
+        }else{
+            let breakfastView:BreakfastView = cell.orderView.subviews[0] as! BreakfastView
+            breakfastView.orderCellModel = orderCellModel
+            bindDelegate.bindorderDelegate(breakfastView, orderCellModel: orderCellModel)
         }
         print(cell.orderView.subviews.count)
         //点击不改变整行Cell的颜色

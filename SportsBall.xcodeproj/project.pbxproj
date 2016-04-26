@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */; };
 		1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA511CCEF6BD002A62DC /* Cell.swift */; };
 		1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA521CCEF6BD002A62DC /* Cell.xib */; };
 		1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA551CCEF707002A62DC /* BreakfastView.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastViewController.swift; sourceTree = "<group>"; };
 		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		1779BA551CCEF707002A62DC /* BreakfastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
@@ -195,8 +197,6 @@
 		1779BA4C1CCEF409002A62DC /* model */ = {
 			isa = PBXGroup;
 			children = (
-				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
-				17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -204,6 +204,7 @@
 		1779BA4D1CCEF413002A62DC /* breakfast */ = {
 			isa = PBXGroup;
 			children = (
+				1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */,
 				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
 				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
 			);
@@ -223,9 +224,6 @@
 		1779BA4F1CCEF452002A62DC /* header */ = {
 			isa = PBXGroup;
 			children = (
-				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
-				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
-				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
 				17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */,
 			);
@@ -283,16 +281,11 @@
 		17DA620F1CB8CC7A009070E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-
 				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
-				17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */,
+				17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */,
 				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
 				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
-
-				463295DA1CBB7F46000EFEA9 /* BetList.swift */,
-				463295DC1CBB847A000EFEA9 /* BetInfo.swift */,
-
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -547,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */,
 				463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
 				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
