@@ -124,7 +124,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     //联盟显示多少行
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         throwError()
-        return Int(infoArray.count)
+        return infoArray.count
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
