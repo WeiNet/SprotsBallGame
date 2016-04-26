@@ -178,6 +178,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         cell.unionIndex = indexPath.section
         cell.matchIndex = indexPath.row
         cell.showDelegate = self
+        cell.orderView.hidden = orderCellModel.orderOpen
         if(cell.orderView.subviews.count == 0){
             //注单赔率绑定
             let breakfastView:BreakfastView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! BreakfastView
