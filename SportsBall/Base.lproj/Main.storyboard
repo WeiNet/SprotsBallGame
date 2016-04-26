@@ -395,10 +395,10 @@
                                     <constraint firstItem="uxl-DO-69J" firstAttribute="top" secondItem="E4A-sV-5ct" secondAttribute="top" id="5SG-AS-dY2"/>
                                     <constraint firstAttribute="width" secondItem="E4A-sV-5ct" secondAttribute="height" multiplier="49:25" id="6nN-wp-A5Q"/>
                                     <constraint firstAttribute="trailing" secondItem="uxl-DO-69J" secondAttribute="trailing" id="AVD-Hw-Yco"/>
-                                    <constraint firstItem="uxl-DO-69J" firstAttribute="leading" secondItem="E4A-sV-5ct" secondAttribute="leading" id="LsJ-m1-qxL"/>
+                                    <constraint firstItem="uxl-DO-69J" firstAttribute="leading" secondItem="E4A-sV-5ct" secondAttribute="leading" constant="10" id="LsJ-m1-qxL"/>
                                     <constraint firstItem="7YV-5s-wYA" firstAttribute="top" secondItem="uxl-DO-69J" secondAttribute="bottom" constant="5" id="Qu2-ex-R2Q"/>
                                     <constraint firstAttribute="width" constant="106" id="YBQ-LU-Z6z"/>
-                                    <constraint firstItem="7YV-5s-wYA" firstAttribute="leading" secondItem="E4A-sV-5ct" secondAttribute="leading" id="b4T-pk-3VE"/>
+                                    <constraint firstItem="7YV-5s-wYA" firstAttribute="leading" secondItem="E4A-sV-5ct" secondAttribute="leading" constant="10" id="b4T-pk-3VE"/>
                                     <constraint firstAttribute="bottom" secondItem="7YV-5s-wYA" secondAttribute="bottom" id="cJe-iI-dVU"/>
                                     <constraint firstAttribute="trailing" secondItem="uxl-DO-69J" secondAttribute="trailing" constant="32" id="cWW-Co-ocK"/>
                                     <constraint firstItem="uxl-DO-69J" firstAttribute="leading" secondItem="E4A-sV-5ct" secondAttribute="leading" constant="32" id="faw-Dg-wEV"/>
@@ -466,13 +466,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="66k-yI-Nm4"/>
                                     <constraint firstAttribute="width" constant="106" id="Aeh-8c-HJL"/>
-                                    <constraint firstItem="VJC-65-KZM" firstAttribute="leading" secondItem="YPY-X0-are" secondAttribute="leading" id="Aiu-4X-r5v"/>
+                                    <constraint firstItem="VJC-65-KZM" firstAttribute="leading" secondItem="YPY-X0-are" secondAttribute="leading" constant="10" id="Aiu-4X-r5v"/>
                                     <constraint firstItem="VJC-65-KZM" firstAttribute="top" secondItem="YPY-X0-are" secondAttribute="top" constant="-10" id="Ern-ZS-DQo"/>
                                     <constraint firstAttribute="width" secondItem="YPY-X0-are" secondAttribute="height" multiplier="39:25" id="PLb-p4-Ybr"/>
                                     <constraint firstAttribute="trailing" secondItem="v68-cF-1kb" secondAttribute="trailing" id="R59-Tz-PfJ"/>
                                     <constraint firstAttribute="trailing" secondItem="v68-cF-1kb" secondAttribute="trailing" constant="38" id="Y3o-sj-9VV"/>
                                     <constraint firstItem="v68-cF-1kb" firstAttribute="leading" secondItem="YPY-X0-are" secondAttribute="leading" constant="37" id="ZkV-1X-cMl"/>
-                                    <constraint firstItem="v68-cF-1kb" firstAttribute="leading" secondItem="YPY-X0-are" secondAttribute="leading" id="eE1-ub-mEk"/>
+                                    <constraint firstItem="v68-cF-1kb" firstAttribute="leading" secondItem="YPY-X0-are" secondAttribute="leading" constant="10" id="eE1-ub-mEk"/>
                                     <constraint firstItem="VJC-65-KZM" firstAttribute="leading" secondItem="YPY-X0-are" secondAttribute="leading" constant="37" id="gTe-BZ-5er"/>
                                     <constraint firstAttribute="trailing" secondItem="VJC-65-KZM" secondAttribute="trailing" constant="38" id="iJh-2z-lK1"/>
                                     <constraint firstAttribute="trailing" secondItem="VJC-65-KZM" secondAttribute="trailing" id="sXl-ly-EHi"/>
@@ -544,12 +544,12 @@
                                     <constraint firstAttribute="bottom" secondItem="E1a-v6-khs" secondAttribute="bottom" id="Tfv-rw-B8T"/>
                                     <constraint firstAttribute="trailing" secondItem="7cX-UC-jGW" secondAttribute="trailing" constant="36" id="TqI-wC-Hk5"/>
                                     <constraint firstAttribute="trailing" secondItem="E1a-v6-khs" secondAttribute="trailing" id="VAm-vy-2bD"/>
-                                    <constraint firstItem="7cX-UC-jGW" firstAttribute="leading" secondItem="dq8-qJ-RjC" secondAttribute="leading" id="dJO-pm-uyb"/>
+                                    <constraint firstItem="7cX-UC-jGW" firstAttribute="leading" secondItem="dq8-qJ-RjC" secondAttribute="leading" constant="10" id="dJO-pm-uyb"/>
                                     <constraint firstAttribute="trailing" secondItem="7cX-UC-jGW" secondAttribute="trailing" id="gdX-1s-1mJ"/>
                                     <constraint firstAttribute="height" constant="90" id="o9i-Rk-zzD"/>
                                     <constraint firstAttribute="width" secondItem="dq8-qJ-RjC" secondAttribute="height" multiplier="134:75" id="oZr-aO-xOd"/>
                                     <constraint firstItem="7cX-UC-jGW" firstAttribute="leading" secondItem="dq8-qJ-RjC" secondAttribute="leading" constant="36" id="pvM-Cx-Tib"/>
-                                    <constraint firstItem="E1a-v6-khs" firstAttribute="leading" secondItem="dq8-qJ-RjC" secondAttribute="leading" id="xJp-Sv-2yD"/>
+                                    <constraint firstItem="E1a-v6-khs" firstAttribute="leading" secondItem="dq8-qJ-RjC" secondAttribute="leading" constant="10" id="xJp-Sv-2yD"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">

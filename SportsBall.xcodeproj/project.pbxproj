@@ -213,8 +213,6 @@
 				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
 				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
-				463295DA1CBB7F46000EFEA9 /* BetList.swift */,
-				463295DC1CBB847A000EFEA9 /* BetInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,6 +318,8 @@
 		462E11F51CB75C6200619A55 /* Mode */ = {
 			isa = PBXGroup;
 			children = (
+				463295DC1CBB847A000EFEA9 /* BetInfo.swift */,
+				463295DA1CBB7F46000EFEA9 /* BetList.swift */,
 				462E11F81CB786BA00619A55 /* Bean_Questions.swift */,
 			);
 			name = Mode;

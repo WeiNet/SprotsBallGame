@@ -8,19 +8,17 @@
 
 import UIKit
 
-class BetList: NSObject {
-    var betList: [BetInfo]?
-    class var sharedInstance: BetList {
-        get {
-            
-            struct SingletonStruct {
-                static let singleton: BetList = BetList()
-            }
-            return SingletonStruct.singleton
-        }
-        
+class BetListManager: NSObject {
+      var  betList:[BetInfo]=[]
+    private static let instance = BetListManager()
+    /// 全局统一访问入口
+    public class var sharedManager: BetListManager {
+        return instance
     }
+    func getBetList()->[BetInfo]{
+        return betList
 
+    }
 
 
 

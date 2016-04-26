@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "PersonalCenterView.tableView(UITableView, didSelectRowAtIndexPath : NSIndexPath) -&gt; ():PersonalCenterView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "betList">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "ShopingViewController.viewDidLoad() -&gt; ():ShopingViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
