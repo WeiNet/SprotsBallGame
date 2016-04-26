@@ -17,8 +17,8 @@ protocol GestureDelegate: NSObjectProtocol {
 }
 class Cell: UITableViewCell {
     
-    var section: Int!//当前操作的行号
-    var row: Int!
+    var unionIndex: Int!//当前操作联盟
+    var matchIndex: Int!//当前操作联盟下面的赛事
     var showDelegate:ShowDelegate!
     var gestureDelegate:GestureDelegate!
     

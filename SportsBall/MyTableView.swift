@@ -35,7 +35,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
             for matchCell in matchCells {
                 var unionTitleInfo:UnionTitleInfo = UnionTitleInfo()
                 unionTitleInfo.unionTitleModel = matchCell as! UnionTitleModel
-                unionTitleInfo.unionTitleView.HeaderOpen = true
+                unionTitleInfo.unionTitleView.headerOpen = true
                 
                 infoArray.addObject(unionTitleInfo)
             }
@@ -55,8 +55,8 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     }
     
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionOpened: Int){
-        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.section] as! UnionTitleInfo
-        unionTitleInfo.unionTitleView.HeaderOpen = true
+        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.unionIndex] as! UnionTitleInfo
+        unionTitleInfo.unionTitleView.headerOpen = true
         unionTitleInfo.unionTitleModel.unionOpen = false
         
         //创建一个包含单元格索引路径的数组来实现插入单元格的操作：这些路径对应当前节的每个单元格
@@ -78,16 +78,16 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionClosed: Int){
         // 在表格关闭的时候，创建一个包含单元格索引路径的数组，接下来从表格中删除这些行
-        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.section] as! UnionTitleInfo
-        unionTitleInfo.unionTitleView.HeaderOpen = false
+        var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[unionTitleView.unionIndex] as! UnionTitleInfo
+        unionTitleInfo.unionTitleView.headerOpen = false
         unionTitleInfo.unionTitleModel.unionOpen = true
         
-        let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.section)
+        let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.unionIndex)
         
         if countOfRowsToDelete > 0 {
             var indexPathsToDelete = NSMutableArray()
             for (var i = 0; i < countOfRowsToDelete; i++) {
-                indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: unionTitleView.section))
+                indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: unionTitleView.unionIndex))
             }
             self.deleteRowsAtIndexPaths(indexPathsToDelete as! [NSIndexPath], withRowAnimation: UITableViewRowAnimation.Top)
         }
@@ -96,7 +96,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
     func upView(orderCellRollView:OrderCellRollView){
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[orderCellRollView.section] as! UnionTitleInfo
         var orderCellModel:OrderCellModel = unionTitleInfo.unionTitleModel.orderCellModels[orderCellRollView.row] as! OrderCellModel
-        orderCellModel.orderClose = !orderCellModel.orderClose
+        orderCellModel.orderOpen = !orderCellModel.orderOpen
         
         self.beginUpdates()
         self.endUpdates()
@@ -110,7 +110,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         //根据关闭的注单的数量设定cell的高度，没有关闭的高度242，关闭的42
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[indexPath.section] as! UnionTitleInfo
         var orderCellModel:OrderCellModel = unionTitleInfo.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
-        if orderCellModel.orderClose == true {
+        if orderCellModel.orderOpen == true {
             return 258 - heihtg
         }
         return 258
@@ -121,14 +121,14 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         let unionTitleView: UnionTitleView = self.dequeueReusableHeaderFooterViewWithIdentifier(unionTitleViewIdentifier) as! UnionTitleView
         var unionTitleInfo:UnionTitleInfo = unionTitleInfoArray[section] as! UnionTitleInfo
         
-        unionTitleView.section = section
+        unionTitleView.unionIndex = section
         unionTitleView.delegate = self
         unionTitleInfo.unionTitleView = unionTitleView
         unionTitleView.frame.size.width = self.frame.width
         
         unionTitleView.name.text = "★\(unionTitleInfo.unionTitleModel.name!)"
         unionTitleView.count.text = "X\(unionTitleInfo.unionTitleModel.count!)"
-        unionTitleView.HeaderOpen = !unionTitleInfo.unionTitleModel.unionOpen
+        unionTitleView.headerOpen = !unionTitleInfo.unionTitleModel.unionOpen
 //        if(unionTitleView.HeaderOpen){
 //            unionTitleView.BtnDisclosure.setImage(UIImage(named: "up"), forState: UIControlState.Disabled)
 //        }else{
@@ -184,7 +184,7 @@ class MyTableView: UITableView,UnionTitleViewDelegate,UpViewDelegate,UITableView
         cell.orderCellModel = orderCellModel
         cell.section = indexPath.section
         cell.row = indexPath.row
-        cell.showView(orderCellModel.orderClose)
+        cell.showView(orderCellModel.orderOpen)
         cell.myUpViewDelegate = self
         cell.frame.size.width = self.frame.width
         cell.canResignFirstResponder()

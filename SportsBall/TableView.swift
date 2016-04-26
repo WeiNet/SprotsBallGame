@@ -29,7 +29,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
             for match in matchArray {
                 var info:UnionTitleInfo = UnionTitleInfo()
                 info.unionTitleModel = match as! UnionTitleModel
-                info.unionTitleView.HeaderOpen = true
+                info.unionTitleView.headerOpen = true
                 
                 infos.addObject(info)
             }
@@ -57,12 +57,12 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     
     //关闭打开赔率View，显示的高度由 heightForRowAtIndexPath决定
     func upOrderViewShow(cellView:Cell){
-        if(cellView.section == nil || cellView.row == nil){
+        if(cellView.unionIndex == nil || cellView.matchIndex == nil){
             fatalError("section或row 没有初始化")
         }
-        let infos:UnionTitleInfo = infoArray[cellView.section] as! UnionTitleInfo
-        let cellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[cellView.row] as! OrderCellModel
-        cellModel.orderClose = !cellModel.orderClose
+        let infos:UnionTitleInfo = infoArray[cellView.unionIndex] as! UnionTitleInfo
+        let cellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[cellView.matchIndex] as! OrderCellModel
+        cellModel.orderOpen = !cellModel.orderOpen
         
         self.beginUpdates()
         self.endUpdates()
@@ -70,8 +70,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     
     //联盟展开
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionOpened: Int){
-        let infos:UnionTitleInfo = infoArray[unionTitleView.section] as! UnionTitleInfo
-        infos.unionTitleView.HeaderOpen = true
+        let infos:UnionTitleInfo = infoArray[unionTitleView.unionIndex] as! UnionTitleInfo
+        infos.unionTitleView.headerOpen = true
         infos.unionTitleModel.unionOpen = false
         
         //创建一个包含单元格索引路径的数组来实现插入单元格的操作：这些路径对应当前节的每个单元格
@@ -93,17 +93,17 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     
     //联盟关闭
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionClosed: Int){
-        let infos:UnionTitleInfo = infoArray[unionTitleView.section] as! UnionTitleInfo
-        infos.unionTitleView.HeaderOpen = false
+        let infos:UnionTitleInfo = infoArray[unionTitleView.unionIndex] as! UnionTitleInfo
+        infos.unionTitleView.headerOpen = false
         infos.unionTitleModel.unionOpen = true
         
         // 在表格关闭的时候，创建一个包含单元格索引路径的数组，接下来从表格中删除这些行
-        let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.section)
+        let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.unionIndex)
         
         if countOfRowsToDelete > 0 {
             let indexPathsToDelete = NSMutableArray()
             for(var i = 0; i < countOfRowsToDelete; i++) {
-                indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: unionTitleView.section))
+                indexPathsToDelete.addObject(NSIndexPath(forRow: i, inSection: unionTitleView.unionIndex))
             }
             self.deleteRowsAtIndexPaths(indexPathsToDelete as! [NSIndexPath], withRowAnimation: UITableViewRowAnimation.Top)
         }
@@ -120,14 +120,14 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         let union: UnionTitleView = self.dequeueReusableHeaderFooterViewWithIdentifier(unionIdentifier) as! UnionTitleView
         let infos:UnionTitleInfo = infoArray[section] as! UnionTitleInfo
         
-        union.section = section
+        union.unionIndex = section
         union.delegate = self
         infos.unionTitleView = union
         union.frame.size.width = self.frame.width
         
         union.name.text = "★\(infos.unionTitleModel.name!)"
         union.count.text = "X\(infos.unionTitleModel.count!)"
-        union.HeaderOpen = !infos.unionTitleModel.unionOpen
+        union.headerOpen = !infos.unionTitleModel.unionOpen
         
         return union
     }
@@ -146,7 +146,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         //赛事标题View的高度是40，下注赔率View的高度是216
         let infos:UnionTitleInfo = infoArray[indexPath.section] as! UnionTitleInfo
         let cellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
-        if cellModel.orderClose {
+        if cellModel.orderOpen {
             return (matchHeight + 1)
         }else{
             return (matchHeight + orderHeight + 2)
@@ -158,8 +158,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         // 返回指定的section Cell视图
         var cell:Cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! Cell
         
-        cell.section = indexPath.section
-        cell.row = indexPath.row
+        cell.unionIndex = indexPath.section
+        cell.matchIndex = indexPath.row
         cell.showDelegate = self
         var breakfastView = NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView
         breakfastView?.frame.size.height = orderHeight
