@@ -36,10 +36,10 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         // 检查infoArray是否已被创建，如果已被创建，则检查组的数量是否匹配当前实际组的数量。通常情况下，您需要保持infoArray与组、单元格信息保持同步。如果扩展功能以让用户能够在表视图中编辑信息，那么需要在编辑操作中适当更新infoArray
         if infoArray == nil || infoArray.count != self.numberOfSectionsInTableView(self) {
             // 对于每个用户组来说，需要为每个单元格设立一个一致的infoArray对象
-            var infos: NSMutableArray = NSMutableArray()
+            let infos: NSMutableArray = NSMutableArray()
             
             for unionInfo in aryUnionInfo {
-                var info:UnionTitleInfo = UnionTitleInfo()
+                let info:UnionTitleInfo = UnionTitleInfo()
                 info.unionTitleModel = unionInfo as! UnionTitleModel
                 info.unionTitleView.headerOpen = true
                 
