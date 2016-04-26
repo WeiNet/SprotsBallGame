@@ -70,6 +70,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="btnDisclosure" destination="Twe-LY-8ol" id="3Fl-0S-glv"/>
                 <outlet property="count" destination="Qce-Dz-VrV" id="6bI-hN-IaC"/>
                 <outlet property="name" destination="1rd-Yt-BCg" id="S2C-KX-t98"/>
             </connections>
