@@ -10,11 +10,11 @@ import UIKit
 
 //页面 实例化
 protocol OrderMainDelegate: NSObjectProtocol {
-    func orderMainDelegate(orderCellRollModel:OrderCellRollModel,unionIndex:Int,matchIndex:Int)->Bool//赔率点击事件,返回true为多选
+    func orderMainDelegate(orderCellModel:OrderCellModel,unionIndex:Int,matchIndex:Int)->Bool//赔率点击事件,返回true为多选
 }
 
 class BreakfastView: UIView ,GestureDelegate{
-    var orderCellRollModel:OrderCellRollModel!//当前View对应的资料
+    var orderCellModel:OrderCellModel!//当前View对应的资料
     var delegate:OrderMainDelegate!
     let unionIndex:Int = 0
     let matchIndex:Int = 0
@@ -110,11 +110,11 @@ class BreakfastView: UIView ,GestureDelegate{
         let view = sender.view! as UIView
         let iTag = view.tag
         //赔率点击回调方法
-        let isMore:Bool = delegate.orderMainDelegate(orderCellRollModel,unionIndex:unionIndex,matchIndex:matchIndex)
+        let isMore:Bool = delegate.orderMainDelegate(orderCellModel,unionIndex:unionIndex,matchIndex:matchIndex)
         if isMore {
             let name = ToolsCode.codeBy(iTag)
-            let select = orderCellRollModel.valueForKey("\(name)_SEL") as! Bool
-            orderCellRollModel.setValue(!select, forKey: "\(name)_SEL")
+            let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
+            orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
                 setLblFontBackground(view as! UILabel,selected: !select)
             }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){

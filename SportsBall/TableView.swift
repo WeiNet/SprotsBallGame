@@ -61,8 +61,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
             fatalError("section或row 没有初始化")
         }
         let infos:UnionTitleInfo = infoArray[cellView.section] as! UnionTitleInfo
-        let cellModel:OrderCellRollModel = infos.unionTitleModel.orderCellRollModels[cellView.row] as! OrderCellRollModel
-        cellModel.close = !cellModel.close
+        let cellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[cellView.row] as! OrderCellModel
+        cellModel.orderClose = !cellModel.orderClose
         
         self.beginUpdates()
         self.endUpdates()
@@ -72,10 +72,10 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionOpened: Int){
         let infos:UnionTitleInfo = infoArray[unionTitleView.section] as! UnionTitleInfo
         infos.unionTitleView.HeaderOpen = true
-        infos.unionTitleModel.headerClose = false
+        infos.unionTitleModel.unionOpen = false
         
         //创建一个包含单元格索引路径的数组来实现插入单元格的操作：这些路径对应当前节的每个单元格
-        let countOfRowsToInsert = infos.unionTitleModel.orderCellRollModels.count
+        let countOfRowsToInsert = infos.unionTitleModel.orderCellModels.count
         let indexPathsToInsert = NSMutableArray()
         
         for(var i = 0; i < countOfRowsToInsert; i++) {
@@ -95,7 +95,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionClosed: Int){
         let infos:UnionTitleInfo = infoArray[unionTitleView.section] as! UnionTitleInfo
         infos.unionTitleView.HeaderOpen = false
-        infos.unionTitleModel.headerClose = true
+        infos.unionTitleModel.unionOpen = true
         
         // 在表格关闭的时候，创建一个包含单元格索引路径的数组，接下来从表格中删除这些行
         let countOfRowsToDelete = self.numberOfRowsInSection(unionTitleView.section)
@@ -127,7 +127,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         
         union.name.text = "★\(infos.unionTitleModel.name!)"
         union.count.text = "X\(infos.unionTitleModel.count!)"
-        union.HeaderOpen = !infos.unionTitleModel.headerClose
+        union.HeaderOpen = !infos.unionTitleModel.unionOpen
         
         return union
     }
@@ -135,8 +135,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     //每个联盟下面Cell显示多少行，有联盟的打开和关闭决定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let infos:UnionTitleInfo = infoArray[section] as! UnionTitleInfo
-        let sectionOpen = infos.unionTitleModel.headerClose
-        let count = infos.unionTitleModel.orderCellRollModels.count
+        let sectionOpen = infos.unionTitleModel.unionOpen
+        let count = infos.unionTitleModel.orderCellModels.count
         
         return sectionOpen ? 0 : Int(count)
     }
@@ -145,8 +145,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         //赛事标题View的高度是40，下注赔率View的高度是216
         let infos:UnionTitleInfo = infoArray[indexPath.section] as! UnionTitleInfo
-        let cellModel:OrderCellRollModel = infos.unionTitleModel.orderCellRollModels[indexPath.row] as! OrderCellRollModel
-        if cellModel.close {
+        let cellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
+        if cellModel.orderClose {
             return (matchHeight + 1)
         }else{
             return (matchHeight + orderHeight + 2)

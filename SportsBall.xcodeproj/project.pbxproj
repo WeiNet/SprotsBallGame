@@ -25,7 +25,7 @@
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
 		17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */; };
 		17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */; };
-		17DA62221CB8CDDC009070E6 /* OrderCellRollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */; };
+		17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */; };
 		17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */; };
 		17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */; };
 		17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */; };
@@ -97,7 +97,7 @@
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
 		17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
 		17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfoModel.swift; sourceTree = "<group>"; };
-		17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollModel.swift; sourceTree = "<group>"; };
+		17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellModel.swift; sourceTree = "<group>"; };
 		17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleInfo.swift; sourceTree = "<group>"; };
 		17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleModel.swift; sourceTree = "<group>"; };
 		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
@@ -196,10 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
-				17DA621D1CB8CDDC009070E6 /* OrderCellRollModel.swift */,
-				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
-				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
-				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
+				17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -226,6 +223,9 @@
 		1779BA4F1CCEF452002A62DC /* header */ = {
 			isa = PBXGroup;
 			children = (
+				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
+				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
+				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
 				17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */,
 			);
@@ -566,7 +566,7 @@
 				17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
 				464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */,
-				17DA62221CB8CDDC009070E6 /* OrderCellRollModel.swift in Sources */,
+				17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */,
 				462EAD771CB8DF1F00B5D14F /* AboutController.swift in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,

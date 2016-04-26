@@ -56,17 +56,17 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         print("selecttCancelButtonAlertView")
     }
     //点击赔率点击事件的协议
-    func orderCliCk(orderCellRollModel:OrderCellRollModel,toolsCode: Int)->Bool{
+    func orderCliCk(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
         alertView.show(self)//显示即时下注popuWin
-        let betInfoVO = fullBetInfo1(orderCellRollModel,toolsCode:toolsCode)
+        let betInfoVO = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfoVO)//检验选取的赔率是不是最新的
         return false
     }
     //注单的资料绑定协议（Cell的显示）
-    func bindData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
+    func bindData(orderCellRollView:OrderCellRollView,orderCellModel:OrderCellModel){
         clear(orderCellRollView)
-        showData(orderCellRollView,orderCellRollModel:orderCellRollModel)
-        fillBackground(orderCellRollView,orderCellRollModel:orderCellRollModel)
+        showData(orderCellRollView,orderCellModel:orderCellModel)
+        fillBackground(orderCellRollView,orderCellModel:orderCellModel)
     }
     //注单赋值前清空重用控件
     func clear(orderCellRollView:OrderCellRollView){
@@ -100,72 +100,72 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         orderCellRollView.N_DXXPL2.text = ""
     }
     //资料的显示
-    func showData(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
+    func showData(orderCellRollView:OrderCellRollView,orderCellModel:OrderCellModel){
         //全场赌赢不允许下注-->OPEN 该盘口不锁定
-        if (orderCellRollModel.N_DY_OPEN == nil || String(orderCellRollModel.N_DY_OPEN) == "0"){
-            orderCellRollView.N_LDYPL.text = orderCellRollModel.N_LDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL.floatValue) : ""
-            orderCellRollView.N_HJPL.text = orderCellRollModel.N_HJPL != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL.floatValue) : ""
-            orderCellRollView.N_RDYPL.text = orderCellRollModel.N_RDYPL != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL.floatValue) : ""
+        if (orderCellModel.N_DY_OPEN == nil || String(orderCellModel.N_DY_OPEN) == "0"){
+            orderCellRollView.N_LDYPL.text = orderCellModel.N_LDYPL != nil ? String(format: "%.3f", orderCellModel.N_LDYPL.floatValue) : ""
+            orderCellRollView.N_HJPL.text = orderCellModel.N_HJPL != nil ? String(format: "%.3f", orderCellModel.N_HJPL.floatValue) : ""
+            orderCellRollView.N_RDYPL.text = orderCellModel.N_RDYPL != nil ? String(format: "%.3f", orderCellModel.N_RDYPL.floatValue) : ""
         }
         //全场让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellRollModel.N_RF_OPEN == nil || String(orderCellRollModel.N_RF_OPEN) == "0"){
-            if(orderCellRollModel.N_LET == nil || String(orderCellRollModel.N_LET) == "0"){
-                orderCellRollView.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS), bl: Int(orderCellRollModel.N_RFBL), lx: Int(orderCellRollModel.N_RFLX))
+        if(orderCellModel.N_RF_OPEN == nil || String(orderCellModel.N_RF_OPEN) == "0"){
+            if(orderCellModel.N_LET == nil || String(orderCellModel.N_LET) == "0"){
+                orderCellRollView.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
             }else{
-                orderCellRollView.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS), bl: Int(orderCellRollModel.N_RFBL), lx: Int(orderCellRollModel.N_RFLX))
+                orderCellRollView.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
             }
-            orderCellRollView.N_LRFPL.text = orderCellRollModel.N_LRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL.floatValue) : ""
-            orderCellRollView.N_RRFPL.text = orderCellRollModel.N_RRFPL != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL.floatValue) : ""
+            orderCellRollView.N_LRFPL.text = orderCellModel.N_LRFPL != nil ? String(format: "%.3f", orderCellModel.N_LRFPL.floatValue) : ""
+            orderCellRollView.N_RRFPL.text = orderCellModel.N_RRFPL != nil ? String(format: "%.3f", orderCellModel.N_RRFPL.floatValue) : ""
         }
         //全场大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellRollModel.N_DX_OPEN == nil || String(orderCellRollModel.N_DX_OPEN) == "0"){
-            orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
-            orderCellRollView.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS), bl: Int(orderCellRollModel.N_DXBL), lx: Int(orderCellRollModel.N_DXLX))
-            orderCellRollView.N_DXDPL.text = orderCellRollModel.N_DXDPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL.floatValue) : ""
-            orderCellRollView.N_DXXPL.text = orderCellRollModel.N_DXXPL != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL.floatValue) : ""
+        if(orderCellModel.N_DX_OPEN == nil || String(orderCellModel.N_DX_OPEN) == "0"){
+            orderCellRollView.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
+            orderCellRollView.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
+            orderCellRollView.N_DXDPL.text = orderCellModel.N_DXDPL != nil ? String(format: "%.3f", orderCellModel.N_DXDPL.floatValue) : ""
+            orderCellRollView.N_DXXPL.text = orderCellModel.N_DXXPL != nil ? String(format: "%.3f", orderCellModel.N_DXXPL.floatValue) : ""
         }
         
         //半场赌赢不允许下注-->OPEN 该盘口不锁定
-        if (orderCellRollModel.N_DY_OPEN2 == nil || String(orderCellRollModel.N_DY_OPEN2) == "0"){
-            orderCellRollView.N_LDYPL2.text = orderCellRollModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LDYPL2.floatValue) : ""
-            orderCellRollView.N_HJPL2.text = orderCellRollModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_HJPL2.floatValue) : ""
-            orderCellRollView.N_RDYPL2.text = orderCellRollModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RDYPL2.floatValue) : ""
+        if (orderCellModel.N_DY_OPEN2 == nil || String(orderCellModel.N_DY_OPEN2) == "0"){
+            orderCellRollView.N_LDYPL2.text = orderCellModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_LDYPL2.floatValue) : ""
+            orderCellRollView.N_HJPL2.text = orderCellModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellModel.N_HJPL2.floatValue) : ""
+            orderCellRollView.N_RDYPL2.text = orderCellModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_RDYPL2.floatValue) : ""
         }
         //半场让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellRollModel.N_RF_OPEN2 == nil || String(orderCellRollModel.N_RF_OPEN2) == "0"){
-            if(orderCellRollModel.N_LET2 == nil || String(orderCellRollModel.N_LET2) == "0"){
-                orderCellRollView.N_LRFBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS2), bl: Int(orderCellRollModel.N_RFBL2), lx: Int(orderCellRollModel.N_RFLX2))
+        if(orderCellModel.N_RF_OPEN2 == nil || String(orderCellModel.N_RF_OPEN2) == "0"){
+            if(orderCellModel.N_LET2 == nil || String(orderCellModel.N_LET2) == "0"){
+                orderCellRollView.N_LRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
             }else{
-                orderCellRollView.N_RRFBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_RFFS2), bl: Int(orderCellRollModel.N_RFBL2), lx: Int(orderCellRollModel.N_RFLX2))
+                orderCellRollView.N_RRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
             }
-            orderCellRollView.N_LRFPL2.text = orderCellRollModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_LRFPL2.floatValue) : ""
-            orderCellRollView.N_RRFPL2.text = orderCellRollModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_RRFPL2.floatValue) : ""
+            orderCellRollView.N_LRFPL2.text = orderCellModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_LRFPL2.floatValue) : ""
+            orderCellRollView.N_RRFPL2.text = orderCellModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_RRFPL2.floatValue) : ""
         }
         //半场大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellRollModel.N_DX_OPEN2 == nil || String(orderCellRollModel.N_DX_OPEN2) == "0"){
-            orderCellRollView.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
-            orderCellRollView.N_RDXBL2.text = ToolsCode.getBallHead(Int(orderCellRollModel.N_DXFS2), bl: Int(orderCellRollModel.N_DXBL2), lx: Int(orderCellRollModel.N_DXLX2))
-            orderCellRollView.N_DXDPL2.text = orderCellRollModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXDPL2.floatValue) : ""
-            orderCellRollView.N_DXXPL2.text = orderCellRollModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellRollModel.N_DXXPL2.floatValue) : ""
+        if(orderCellModel.N_DX_OPEN2 == nil || String(orderCellModel.N_DX_OPEN2) == "0"){
+            orderCellRollView.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
+            orderCellRollView.N_RDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
+            orderCellRollView.N_DXDPL2.text = orderCellModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXDPL2.floatValue) : ""
+            orderCellRollView.N_DXXPL2.text = orderCellModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXXPL2.floatValue) : ""
         }
     }
     //背景的填充
-    func fillBackground(orderCellRollView:OrderCellRollView,orderCellRollModel:OrderCellRollModel){
-        orderCellRollView.setLblFontBackground(orderCellRollView.N_LDYPL, selected: orderCellRollModel.N_LDYPL_SEL)
-        orderCellRollView.setLblFontBackground(orderCellRollView.N_HJPL, selected: orderCellRollModel.N_HJPL_SEL)
-        orderCellRollView.setLblFontBackground(orderCellRollView.N_RDYPL, selected: orderCellRollModel.N_RDYPL_SEL)
-        orderCellRollView.setBackground(orderCellRollView.L_RFView,select: orderCellRollModel.N_LRFPL_SEL)
-        orderCellRollView.setBackground(orderCellRollView.R_RFView,select: orderCellRollModel.N_RRFPL_SEL)
-        orderCellRollView.setBackground2(orderCellRollView.N_LDXBLView,select: orderCellRollModel.N_DXDPL_SEL)
-        orderCellRollView.setBackground2(orderCellRollView.N_RDXBLView,select: orderCellRollModel.N_DXXPL_SEL)
+    func fillBackground(orderCellRollView:OrderCellRollView,orderCellModel:OrderCellModel){
+        orderCellRollView.setLblFontBackground(orderCellRollView.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        orderCellRollView.setLblFontBackground(orderCellRollView.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        orderCellRollView.setLblFontBackground(orderCellRollView.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        orderCellRollView.setBackground(orderCellRollView.L_RFView,select: orderCellModel.N_LRFPL_SEL)
+        orderCellRollView.setBackground(orderCellRollView.R_RFView,select: orderCellModel.N_RRFPL_SEL)
+        orderCellRollView.setBackground2(orderCellRollView.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
+        orderCellRollView.setBackground2(orderCellRollView.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        orderCellRollView.setLblFontBackground(orderCellRollView.N_LDYPL2, selected: orderCellRollModel.N_LDYPL2_SEL)
-        orderCellRollView.setLblFontBackground(orderCellRollView.N_HJPL2, selected: orderCellRollModel.N_HJPL2_SEL)
-        orderCellRollView.setLblFontBackground(orderCellRollView.N_RDYPL2, selected: orderCellRollModel.N_RDYPL2_SEL)
-        orderCellRollView.setBackground(orderCellRollView.L_RFView2,select: orderCellRollModel.N_LRFPL2_SEL)
-        orderCellRollView.setBackground(orderCellRollView.R_RFView2,select: orderCellRollModel.N_RRFPL2_SEL)
-        orderCellRollView.setBackground2(orderCellRollView.N_LDXBLView2,select: orderCellRollModel.N_DXDPL2_SEL)
-        orderCellRollView.setBackground2(orderCellRollView.N_RDXBLView2,select: orderCellRollModel.N_DXXPL2_SEL)
+        orderCellRollView.setLblFontBackground(orderCellRollView.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
+        orderCellRollView.setLblFontBackground(orderCellRollView.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
+        orderCellRollView.setLblFontBackground(orderCellRollView.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
+        orderCellRollView.setBackground(orderCellRollView.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
+        orderCellRollView.setBackground(orderCellRollView.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
+        orderCellRollView.setBackground2(orderCellRollView.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
+        orderCellRollView.setBackground2(orderCellRollView.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
@@ -227,17 +227,17 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             unionTitleModel.id = String(union.N_NO)
             unionTitleModel.name = String(union.N_LMMC)
             
-            var order:Array<OrderCellRollModel> = Array()
+            var order:Array<OrderCellModel> = Array()
             for index in 0...matchCount{
                 if union.N_NO == String(matchAllJson[index].objectForKey("N_LMNO")!) {
-                    let orderCellRollModel:OrderCellRollModel = OrderCellRollModel()
+                    let orderCellModel:OrderCellModel = OrderCellModel()
                     //给注单属性赋值
-                    orderCellRollModel.setValuesForKeysWithDictionary(matchAllJson[index] as! [String : AnyObject])
-                    order.append(orderCellRollModel)
+                    orderCellModel.setValuesForKeysWithDictionary(matchAllJson[index] as! [String : AnyObject])
+                    order.append(orderCellModel)
                 }
             }
             unionTitleModel.count = String(order.count)
-            unionTitleModel.orderCellRollModels = order
+            unionTitleModel.orderCellModels = order
             if order.count > 0 {
                 showUnion.addObject(unionTitleModel)
             }
@@ -292,7 +292,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         }
     }
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
-    func fullBetInfo1(orderCellRollModel:OrderCellRollModel,toolsCode:Int)->BetInfoModel{
+    func fullBetInfo1(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
         var id:String!
         var tid:String!
         var let1:String!
@@ -300,15 +300,15 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         var hlx:String = "0"
         var hbl:String = "0"
         var courtType:String = "1"
-        var gameDate:String = orderCellRollModel.N_GAMEDATE
+        var gameDate:String = orderCellModel.N_GAMEDATE
         gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/dd")
         let playType:String = ToolsCode.codeByPlayType(toolsCode)
         var betteamName:String!
         let tempBetName = ToolsCode.codeByLRH(toolsCode)
         if tempBetName == "L" {
-            betteamName = String(orderCellRollModel.N_VISIT_NAME)
+            betteamName = String(orderCellModel.N_VISIT_NAME)
         }else if tempBetName == "R" {
-            betteamName = String(orderCellRollModel.N_HOME_NAME)
+            betteamName = String(orderCellModel.N_HOME_NAME)
         }else{
             betteamName = "和局"
         }
@@ -316,36 +316,36 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
             betteamName = tempBetName == "L" ? "大" : "小"
         }
         if(toolsCode>=56661 && toolsCode<=56667){//全场控件
-            id = String(orderCellRollModel.N_ID)
-            let1 = String(orderCellRollModel.N_LET)
+            id = String(orderCellModel.N_ID)
+            let1 = String(orderCellModel.N_LET)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
-                hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL")!)
-                hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS")!)
-                hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX")!)
+                hfs = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
             }
             let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
-                tid = String(orderCellRollModel.N_VISIT)
+                tid = String(orderCellModel.N_VISIT)
             }else if tempLRH == "R" {
-                tid = String(orderCellRollModel.N_HOME)
+                tid = String(orderCellModel.N_HOME)
             }else{
                 tid = "0"
             }
         }else if(toolsCode>=56668 && toolsCode<=56674){//半场控件
-            id = String(orderCellRollModel.N_ID2)
-            let1 = String(orderCellRollModel.N_LET2)
+            id = String(orderCellModel.N_ID2)
+            let1 = String(orderCellModel.N_LET2)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
-                hfs = String(orderCellRollModel.valueForKey("N_\(tempType)BL2")!)
-                hlx = String(orderCellRollModel.valueForKey("N_\(tempType)FS2")!)
-                hbl = String(orderCellRollModel.valueForKey("N_\(tempType)LX2")!)
+                hfs = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
             }
             let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
-                tid = String(orderCellRollModel.N_VISIT2)
+                tid = String(orderCellModel.N_VISIT2)
             }else if tempLRH == "R" {
-                tid = String(orderCellRollModel.N_HOME2)
+                tid = String(orderCellModel.N_HOME2)
             }else{
                 tid = "0"
             }
@@ -356,18 +356,18 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
         betInfo.playType = mPlayType == "2" ? "ZD"+playType : playType
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
-        betInfo.ballType = orderCellRollModel.N_LX
+        betInfo.ballType = orderCellModel.N_LX
         betInfo.courtType = courtType
         betInfo.id = id
         betInfo.tid = tid
-        betInfo.rate = String(orderCellRollModel.valueForKey(tempRate)!)
-        betInfo.vh = String(orderCellRollModel.N_VH)
+        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
+        betInfo.vh = String(orderCellModel.N_VH)
         betInfo.let1 = let1
         betInfo.hbl = hbl
         betInfo.hfs = hfs
         betInfo.hlx = hlx
-        betInfo.homename = String(orderCellRollModel.N_HOME_NAME)
-        betInfo.visitname = String(orderCellRollModel.N_VISIT_NAME)
+        betInfo.homename = String(orderCellModel.N_HOME_NAME)
+        betInfo.visitname = String(orderCellModel.N_VISIT_NAME)
         betInfo.betteamName = betteamName
         betInfo.date = gameDate
         betInfo.dzxx = "10"//USER??????????????????????????????????????????????????????????????

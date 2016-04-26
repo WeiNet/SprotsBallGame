@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OrderCellRollModel: NSObject {
-    var close:Bool = true//当前的注单是张开还是关闭
+class OrderCellModel: NSObject {
+    var orderClose:Bool = true//当前的注单赔率是张开还是关闭
     
     var N_HJPL:NSNumber!//和局赔率
     var N_HJPL_SEL:Bool = false

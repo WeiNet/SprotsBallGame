@@ -11,6 +11,6 @@ import UIKit
 class UnionTitleInfo: NSObject {
     //联盟标题数据
     var unionTitleView:UnionTitleView = UnionTitleView()
-    //联盟下的赛事数据
+    //联盟与联盟下的赛事数据
     var unionTitleModel:UnionTitleModel = UnionTitleModel()
 }
