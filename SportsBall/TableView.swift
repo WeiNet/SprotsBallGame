@@ -126,6 +126,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         union.name.text = "★\(infos.unionTitleModel.name!)"
         union.count.text = "X\(infos.unionTitleModel.count!)"
         union.headerOpen = infos.unionTitleModel.unionOpen
+        union.btnDisclosure.selected = !infos.unionTitleModel.unionOpen
         infos.unionTitleView = union
         
         return union
