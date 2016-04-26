@@ -18,7 +18,6 @@ class SwiftCustomAlertView: UIView {
     @IBOutlet var visit: UILabel!
     @IBOutlet var home: UILabel!
     
-    
     @IBOutlet var betText: UILabel!
     @IBOutlet var rate: UILabel!
     @IBOutlet var gain: UILabel!

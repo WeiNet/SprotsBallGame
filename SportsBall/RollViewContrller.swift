@@ -194,7 +194,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         let dzsx = String(betInfoJson[0].objectForKey("dzsx")!)
         betInfo.dzsx = dzsx
         betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
-//        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
+        //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
         alertView.myView.visit.text = betInfo.homename
         alertView.myView.home.text = betInfo.visitname
         let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
@@ -264,18 +264,21 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         //默认选中下标为0的
         segment.selectedSegmentIndex = 0
         //设置标题颜色
-//        segment.tintColor = UIColor.redColor()
+        //        segment.tintColor = UIColor.redColor()
         //添加事件，当segment改变时，触发 Parent
         segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
         mMainView.addSubview(segment)
-
+        
         let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20 - 36)
-        myTable = MyTableView(frame: cgr)
-        myTable.matchCells = showUnion
-        myTable.bindDataTable = self
-        myTable.tableDelegate = self
-        myTable.setDelegate()
-        mContent.addSubview(myTable)
+        //        myTable = MyTableView(frame: cgr)
+        //        myTable.matchCells = showUnion
+        //        myTable.bindDataTable = self
+        //        myTable.tableDelegate = self
+        //        myTable.setDelegate()
+        //        mContent.addSubview(myTable)
+        var tableView = TableView(frame: cgr)
+        tableView.initDelegate(showUnion)
+        mContent.addSubview(tableView)
     }
     //即时/复合下注选择改变事件
     func segmentChange(sender: UISegmentedControl){
@@ -428,7 +431,7 @@ class RollViewContrller:UIViewController,ResultDelegate,bindDataDelegate,MyTable
         strParam.appendContentsOf("</GetFootballMatch>")
         common.getResult(strParam,strResultName: getFootballMatchResult)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

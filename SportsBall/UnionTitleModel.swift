@@ -15,5 +15,6 @@ class UnionTitleModel: NSObject {
     var icon: String?
     var headerClose: Bool = false
     
-    var orderCellRollModels:NSArray = NSArray()//包含赛事标题与注单数据
+    //包含赛事标题与注单数据
+    var orderCellRollModels:NSArray = NSArray()
 }

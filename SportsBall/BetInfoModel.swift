@@ -45,7 +45,7 @@ class BetInfoModel: NSObject {
     var kyje:String!
     var ballhead:String!
     
-    var betteamName:String!
+    var betteamName:String!//下注队伍
     
     func toString()->String{
         var strBetInfoModel:String = "{"

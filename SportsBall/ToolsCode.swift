@@ -29,66 +29,68 @@ struct ToolsCode {
     static func codeBy(code : Int) -> String {
         var controlName:String = ""
         switch(code){
-        case 56661:
+        case LDYPL:
             controlName = "N_LDYPL"
-        case 56662:
+        case HJPL:
             controlName = "N_HJPL"
-        case 56663:
+        case RDYPL:
             controlName = "N_RDYPL"
-        case 56664:
+        case LRFView:
             controlName = "N_LRFPL"
-        case 56665:
+        case RRFView:
             controlName = "N_RRFPL"
-        case 56666:
+        case LDXBLView:
             controlName = "N_DXDPL"
-        case 56667:
+        case RDXBLView:
             controlName = "N_DXXPL"
             
-        case 56668:
+        case LDYPL2:
             controlName = "N_LDYPL2"
-        case 56669:
+        case HJPL2:
             controlName = "N_HJPL2"
-        case 56670:
+        case RDYPL2:
             controlName = "N_RDYPL2"
-        case 56671:
+        case LRFView2:
             controlName = "N_LRFPL2"
-        case 56672:
+        case RRFView2:
             controlName = "N_RRFPL2"
-        case 56673:
+        case LDXBLView2:
             controlName = "N_DXDPL2"
-        case 56674:
+        case RDXBLView2:
             controlName = "N_DXXPL2"
         default:
             controlName = ""
         }
         return controlName
     }
+    
     //根据code得到是在左右和局
     static func codeByLRH(code : Int) -> String {
         var controlLRH:String = ""
         switch(code){
-        case 56661,56664,56666,56668,56671,56673:
+        case LDYPL,LRFView,LDXBLView,LDYPL2,LRFView2,LDXBLView2:
             controlLRH = "L"
-        case 56662,56669:
+        case HJPL,HJPL2:
             controlLRH = "H"
-        case 56663,56665,56667,56670,56672,56674:
+        case RDYPL,RRFView,RDXBLView,RDYPL2,RRFView2,RDXBLView2:
             controlLRH = "R"
         default:
             controlLRH = ""
         }
         return controlLRH
     }
+    
     //根据code得到是玩法
     static func codeByPlayType(code : Int) -> String {
         var controlPlayType:String = ""
         switch(code){
-        case 56661,56663,56668,56670:
+        case LDYPL,RDYPL,LDYPL2,RDYPL2:
             controlPlayType = "DY"
-        case 56662,56669:
+        case HJPL,HJPL2:
             controlPlayType = "H"
-        case 56664,56665,56671,56672:
+        case LRFView,RRFView,LRFView2,RRFView2:
             controlPlayType = "RF"
-        case 56666,56667,56673,56674:
+        case LDXBLView,RDXBLView,LDXBLView2,RDXBLView2:
             controlPlayType = "DX"
         default:
             controlPlayType = ""
@@ -124,7 +126,7 @@ struct ToolsCode {
         let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
         
         let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
-            options: NSJSONReadingOptions.MutableContainers) as! NSArray
+                                                                  options: NSJSONReadingOptions.MutableContainers) as! NSArray
         
         return jsonArr
     }

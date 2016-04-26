@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA511CCEF6BD002A62DC /* Cell.swift */; };
+		1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA521CCEF6BD002A62DC /* Cell.xib */; };
+		1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA551CCEF707002A62DC /* BreakfastView.swift */; };
+		1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA561CCEF707002A62DC /* BreakfastView.xib */; };
+		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
 		17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B181091CC6152800CF3054 /* CartButtonView.xib */; };
@@ -74,6 +79,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		1779BA551CCEF707002A62DC /* BreakfastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
+		1779BA561CCEF707002A62DC /* BreakfastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreakfastView.xib; sourceTree = "<group>"; };
+		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		17B181091CC6152800CF3054 /* CartButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartButtonView.xib; sourceTree = "<group>"; };
@@ -159,9 +169,8 @@
 			children = (
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
-				1779BA4B1CCEF3F2002A62DC /* football */,
-				1779BA4A1CCEF3C3002A62DC /* tools */,
 				17B3445A1CC08F91002638FC /* header */,
+				1779BA4B1CCEF3F2002A62DC /* football */,
 			);
 			name = match;
 			sourceTree = "<group>";
@@ -177,8 +186,8 @@
 		1779BA4B1CCEF3F2002A62DC /* football */ = {
 			isa = PBXGroup;
 			children = (
-				1779BA4D1CCEF413002A62DC /* breakfast */,
 				1779BA4C1CCEF409002A62DC /* model */,
+				1779BA4D1CCEF413002A62DC /* breakfast */,
 			);
 			name = football;
 			sourceTree = "<group>";
@@ -198,6 +207,8 @@
 		1779BA4D1CCEF413002A62DC /* breakfast */ = {
 			isa = PBXGroup;
 			children = (
+				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
+				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
 			);
 			name = breakfast;
 			sourceTree = "<group>";
@@ -205,8 +216,9 @@
 		1779BA4E1CCEF445002A62DC /* tableview */ = {
 			isa = PBXGroup;
 			children = (
-				1779BA501CCEF45E002A62DC /* cell */,
+				1779BA591CCEF8E3002A62DC /* TableView.swift */,
 				1779BA4F1CCEF452002A62DC /* header */,
+				1779BA501CCEF45E002A62DC /* cell */,
 			);
 			name = tableview;
 			sourceTree = "<group>";
@@ -223,6 +235,8 @@
 		1779BA501CCEF45E002A62DC /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				1779BA511CCEF6BD002A62DC /* Cell.swift */,
+				1779BA521CCEF6BD002A62DC /* Cell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -231,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				17B3445B1CC08FA8002638FC /* view */,
+				1779BA4A1CCEF3C3002A62DC /* tools */,
 			);
 			name = header;
 			sourceTree = "<group>";
@@ -297,8 +312,8 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
-				1779BA4E1CCEF445002A62DC /* tableview */,
 				1779BA491CCEF38F002A62DC /* match */,
+				1779BA4E1CCEF445002A62DC /* tableview */,
 				17DA620C1CB8CC61009070E6 /* Roll */,
 				462E11F51CB75C6200619A55 /* Mode */,
 				462BEE291C881B8700E451E4 /* Common */,
@@ -486,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
+				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
 				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
@@ -494,6 +510,7 @@
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
 				17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */,
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
+				1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
 			);
@@ -522,7 +539,10 @@
 			files = (
 				463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
+				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
+				1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */,
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
+				1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
