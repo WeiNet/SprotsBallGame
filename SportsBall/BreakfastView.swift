@@ -9,13 +9,13 @@
 import UIKit
 
 //页面 实例化
-protocol OrderMainDelegate: NSObjectProtocol {
-    func orderMainDelegate(orderCellModel:OrderCellModel,unionIndex:Int,matchIndex:Int)->Bool//赔率点击事件,返回true为多选
+protocol OrderDelegate: NSObjectProtocol {
+    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool//赔率点击事件,返回true为多选
 }
 
 class BreakfastView: UIView ,GestureDelegate{
     var orderCellModel:OrderCellModel!//当前View对应的资料
-    var delegate:OrderMainDelegate!
+    var delegate:OrderDelegate!
     let unionIndex:Int = 0
     let matchIndex:Int = 0
     /*******************************注单控件*******************************/
@@ -110,7 +110,7 @@ class BreakfastView: UIView ,GestureDelegate{
         let view = sender.view! as UIView
         let iTag = view.tag
         //赔率点击回调方法
-        let isMore:Bool = delegate.orderMainDelegate(orderCellModel,unionIndex:unionIndex,matchIndex:matchIndex)
+        let isMore:Bool = delegate.orderClickDelegate(orderCellModel, toolsCode: iTag)
         if isMore {
             let name = ToolsCode.codeBy(iTag)
             let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
