@@ -15,7 +15,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     @IBOutlet var contentView: UIView!
     
     var common=CommonParameter()//网络请求
-    let betInfo:BetInfoModel = BetInfoModel()//下注model
+    var betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//0:早盘；1：单式；2：滚球
     let checkBetResult:String = "CheckBetResult"
@@ -29,12 +29,14 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = showTableView(strResult)
-            addcontrols(aryUnionInfo)
+            addControls(aryUnionInfo)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
         }else if(strType == addBetResult){
-            
+            let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
+            let message = String(resultJson[0].objectForKey("sErroMessage")!)
+            alertMessage(message)
         }
     }
     //返回
@@ -95,9 +97,9 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //点击赔率点击事件的协议
     func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
+        betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
+        checkBet(betInfo)//检验选取的赔率是不是最新的
         alertView.show(self)//显示即时下注popuWin
-        let betInfoVO = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
-        checkBet(betInfoVO)//检验选取的赔率是不是最新的
         return false
     }
     
@@ -256,7 +258,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         return aryUnionInfo
     }
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addcontrols(showUnion:NSMutableArray){
+    func addControls(showUnion:NSMutableArray){
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20
@@ -285,6 +287,18 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         tableView.initDelegate(showUnion)
         tableView.bindDelegate = self
         contentView.addSubview(tableView)
+    }
+    
+    //即时/复合下注选择改变事件
+    func segmentChange(sender: UISegmentedControl){
+        switch sender.selectedSegmentIndex {
+        case 0 :
+            print("000")
+        case 1 :
+            print("11111")
+        default:
+            print("default")
+        }
     }
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
@@ -349,6 +363,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         }
         let tempRate = ToolsCode.codeBy(toolsCode)
         
+        let betInfo:BetInfoModel = BetInfoModel()//下注model
         betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
         betInfo.playType = mPlayType == "2" ? "ZD"+playType : playType
         betInfo.lr = ToolsCode.codeByLRH(toolsCode)
@@ -442,7 +457,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         //头部
-        var headerView = NSBundle.mainBundle().loadNibNamed("HeaderView" , owner: nil, options: nil).first as? HeaderView
+        let headerView = NSBundle.mainBundle().loadNibNamed("HeaderView" , owner: nil, options: nil).first as? HeaderView
         headerView?.frame.size.height = 48
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
@@ -452,6 +467,23 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    func alertMessage(message:String){
+        alertMessage("",message:message)
+    }
+    func alertMessage(title:String,message:String){
+        var titleTemp = "系统提示"
+        if(title != ""){
+            titleTemp = title
+        }
+        let alert:UIAlertController = UIAlertController(title: titleTemp, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        // 定义 ok 的 UIAlertAction
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
+            (action: UIAlertAction!) -> Void in
+            print("you choose ok")
+        }
+        alert.addAction(okAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     //ios隐藏状态栏
     override func prefersStatusBarHidden() -> Bool {
