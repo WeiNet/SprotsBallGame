@@ -19,6 +19,7 @@
 		17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1810B1CC618EA00CF3054 /* CartButtonView.swift */; };
 		17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3445C1CC0903D002638FC /* HeaderView.swift */; };
 		17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B3445E1CC0906F002638FC /* HeaderView.xib */; };
+		17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */; };
 		17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */; };
 		17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
@@ -92,6 +93,7 @@
 		17B1810B1CC618EA00CF3054 /* CartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButtonView.swift; sourceTree = "<group>"; };
 		17B3445C1CC0903D002638FC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		17B3445E1CC0906F002638FC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
 		17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCellRollView.xib; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		1779BA491CCEF38F002A62DC /* match */ = {
 			isa = PBXGroup;
 			children = (
+				17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */,
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
 				17B3445A1CC08F91002638FC /* header */,
@@ -576,6 +579,7 @@
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
+				17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
 				177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */,
 			);

@@ -24,6 +24,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
+        clearAllNotice()
         if(strType == "Error" || strResult == ""){
             return
         }
@@ -105,6 +106,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //即时下注付款协议
     func selectOkButtonalertView(){
+        pleaseWait()
         betInfo.dMoney = alertView.myView.money.text
         AddBet()
         print("selectOkButtonalertView")
@@ -439,6 +441,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //取得赛事注单赔率
     func getFootballMatch(){
+        pleaseWait()
         common.delegate = self
         common.matchingElement = getFootballMatchResult
         var strParam:String = "<GetFootballMatch xmlns=\"http://tempuri.org/\">";
