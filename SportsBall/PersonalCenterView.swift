@@ -93,11 +93,8 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         objInfo2.dzxx="45"
         objInfo2.homename="dfdf"
         betManger.betList.append(objInfo2)
-        var betManger1=BetListManager.sharedManager
-        if(betManger==betManger1){
+      
         
-        print("dfdf")
-        }
         var sb = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row==0){
             var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
