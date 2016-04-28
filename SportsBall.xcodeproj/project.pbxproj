@@ -22,6 +22,7 @@
 		17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */; };
 		17C6EC091CD197F000DF71E1 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC081CD197F000DF71E1 /* RollViewController.swift */; };
 		17C6EC0B1CD1982E00DF71E1 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C6EC0A1CD1982E00DF71E1 /* RollView.xib */; };
+		17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */; };
 		17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */; };
 		17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
@@ -98,6 +99,7 @@
 		17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		17C6EC081CD197F000DF71E1 /* RollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
 		17C6EC0A1CD1982E00DF71E1 /* RollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollView.xib; sourceTree = "<group>"; };
+		17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
 		17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCellRollView.xib; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				17C6EC081CD197F000DF71E1 /* RollViewController.swift */,
+				17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */,
 				17C6EC0A1CD1982E00DF71E1 /* RollView.xib */,
 			);
 			name = basketball;
@@ -573,6 +576,7 @@
 				17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
 				464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */,
+				17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */,
 				17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */,
 				462EAD771CB8DF1F00B5D14F /* AboutController.swift in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
