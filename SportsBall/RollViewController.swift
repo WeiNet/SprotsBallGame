@@ -8,11 +8,8 @@
 
 import UIKit
 
-class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate {
-//    @IBOutlet var mainView: UIView!
-//    @IBOutlet var headerView: UIView!
-//    @IBOutlet var contentView: UIView!
-    //@IBOutlet var headerView: UIView!
+class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate {
+    
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
     @IBOutlet var contentView: UIView!
@@ -29,9 +26,27 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate {
         }
         if(strType == getOtherMatchResult){
             print(strResult)
-            let basket = ToolsCode.toJsonArray(strResult)
-            var ooo = ""
+            let basketInfo:NSMutableArray = Ball().stringToDictionary(strResult)
+            Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self)
         }
+    }
+    //绑定队伍标题
+    func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
+        
+    }
+    //添加注单赔率View
+    func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView{
+        let breakfastView = NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView
+        breakfastView!.userInteractionEnabled()
+        //加载时赔率是打开的就要立即添加手势事件
+        breakfastView!.addGestureRecognizer()
+//        breakfastView!.delegate = self
+        cell.gestureDelegate = breakfastView
+        return breakfastView!
+    }
+    //绑定注单赔率
+    func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel){
+        
     }
     
     func getOtherMatch(){

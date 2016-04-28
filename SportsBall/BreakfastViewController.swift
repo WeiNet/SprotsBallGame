@@ -30,7 +30,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            addControls(aryUnionInfo)
+            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
@@ -67,18 +67,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
-        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME
-        cell.N_HOME_NAME.text = orderCellModel.N_HOME_NAME
-        if orderCellModel.N_ZDTIME == nil {
-            let gameDate = orderCellModel.N_GAMEDATE
-            cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
-            cell.N_VISIT_JZF.text = ""
-            cell.N_HOME_JZF.text = ""
-        }else{
-            cell.N_GAMEDATE.text = orderCellModel.N_ZDTIME
-            cell.N_VISIT_JZF.text = String(orderCellModel.N_VISIT_JZF)
-            cell.N_HOME_JZF.text = String(orderCellModel.N_HOME_JZF)
-        }
+        Ball().bindMatchDelegate(cell,orderCellModel:orderCellModel)
     }
     //添加注单赔率View
     func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView{
@@ -87,13 +76,16 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         //加载时赔率是打开的就要立即添加手势事件
         breakfastView!.addGestureRecognizer()
         breakfastView!.delegate = self
+        cell.gestureDelegate = breakfastView
         return breakfastView!
     }
     //绑定注单赔率
-    func bindorderDelegate(view:BreakfastView,orderCellModel:OrderCellModel){
-        clear(view)
-        showData(view,orderCellModel:orderCellModel)
-        fillBackground(view,orderCellModel:orderCellModel)
+    func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel){
+        let viewTemp:BreakfastView = view as! BreakfastView
+        clear(viewTemp)
+        showData(viewTemp,orderCellModel:orderCellModel)
+        fillBackground(viewTemp,orderCellModel:orderCellModel)
+        viewTemp.orderCellModel = orderCellModel
     }
     
     //点击赔率点击事件的协议
@@ -217,7 +209,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
 
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls(showUnion:NSMutableArray){
+    func addControls1(showUnion:NSMutableArray){
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20
