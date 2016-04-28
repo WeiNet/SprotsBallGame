@@ -29,7 +29,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             return
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
-            let aryUnionInfo:NSMutableArray = showTableView(strResult)
+            let aryUnionInfo:NSMutableArray = Ball().stringToDictionary(strResult)
             addControls(aryUnionInfo)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
@@ -215,50 +215,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         view.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
         view.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
-    
-    //显示赛事（联盟、赛事队伍）
-    func showTableView(strResult: String)->NSMutableArray{
-        let aryUnionInfo:NSMutableArray = NSMutableArray()
-        
-        var aryUnionVO:Array<UnionTitleVO> = Array()
-        let info = ToolsCode.toJsonArray(strResult)
-        let unionJson = info[1]
-        if unionJson.count == 0 {//没有资料
-            print("没有资料")
-            return aryUnionInfo
-        }
-        let objCount:Int = unionJson.count - 1
-        for index in 0...objCount {
-            let unionVO:UnionTitleVO = UnionTitleVO()
-            unionVO.N_NO = String(unionJson[index].objectForKey("N_NO")!)
-            unionVO.N_LMMC = String(unionJson[index].objectForKey("N_LMMC")!)
-            aryUnionVO.append(unionVO)
-        }
-        
-        let matchJson = info[0]
-        let matchCount:Int = matchJson.count - 1
-        for union in aryUnionVO {
-            let unionTitleModel:UnionTitleModel = UnionTitleModel()
-            unionTitleModel.id = String(union.N_NO)
-            unionTitleModel.name = String(union.N_LMMC)
-            
-            var aryOrderCellModel:Array<OrderCellModel> = Array()
-            for index in 0...matchCount{
-                if union.N_NO == String(matchJson[index].objectForKey("N_LMNO")!) {
-                    let orderCellModel:OrderCellModel = OrderCellModel()
-                    //给注单属性赋值
-                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
-                    aryOrderCellModel.append(orderCellModel)
-                }
-            }
-            unionTitleModel.count = String(aryOrderCellModel.count)
-            unionTitleModel.orderCellModels = aryOrderCellModel
-            if aryOrderCellModel.count > 0 {
-                aryUnionInfo.addObject(unionTitleModel)
-            }
-        }
-        return aryUnionInfo
-    }
+
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray){
         var startY:CGFloat = 0
