@@ -119,7 +119,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
             var uiView:UITabBarController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView") as! UITabBarController
             self.navigationController?.pushViewController(uiView, animated: true)
         }else if(indexPath.row == 1){
-            var uiView:UITabBarController = storyboard.instantiateViewControllerWithIdentifier("RollView") as! UITabBarController
+            var uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("RollView") as! UIViewController
             self.navigationController?.pushViewController(uiView, animated: true)
         }
     }
