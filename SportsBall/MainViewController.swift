@@ -115,7 +115,12 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     //Item点击事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var storyboard = UIStoryboard(name: "Main", bundle:nil)
-        var uiView:UITabBarController = storyboard.instantiateViewControllerWithIdentifier("RollView") as! UITabBarController
-        self.navigationController?.pushViewController(uiView, animated: true)
+        if(indexPath.section == 0){
+            var uiView:UITabBarController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView") as! UITabBarController
+            self.navigationController?.pushViewController(uiView, animated: true)
+        }else if(indexPath.section == 1){
+            var uiView:UITabBarController = storyboard.instantiateViewControllerWithIdentifier("RollView") as! UITabBarController
+            self.navigationController?.pushViewController(uiView, animated: true)
+        }
     }
 }
