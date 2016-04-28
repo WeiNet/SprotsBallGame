@@ -23,6 +23,7 @@
 		17C6EC091CD197F000DF71E1 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC081CD197F000DF71E1 /* RollViewController.swift */; };
 		17C6EC0B1CD1982E00DF71E1 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C6EC0A1CD1982E00DF71E1 /* RollView.xib */; };
 		17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */; };
+		17C6EC101CD1B42C00DF71E1 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */; };
 		17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */; };
 		17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
@@ -100,6 +101,7 @@
 		17C6EC081CD197F000DF71E1 /* RollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
 		17C6EC0A1CD1982E00DF71E1 /* RollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollView.xib; sourceTree = "<group>"; };
 		17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
+		17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
 		17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCellRollView.xib; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */,
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
+				17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */,
 				17B3445A1CC08F91002638FC /* header */,
 				1779BA4B1CCEF3F2002A62DC /* football */,
 				17C6EC071CD196CF00DF71E1 /* basketball */,
@@ -557,6 +560,7 @@
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
 				17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */,
 				17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */,
+				17C6EC101CD1B42C00DF71E1 /* Ball.swift in Sources */,
 				17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */,
 				464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */,
 				463295DB1CBB7F46000EFEA9 /* BetList.swift in Sources */,
