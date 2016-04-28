@@ -191,21 +191,22 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //背景的填充
     func fillBackground(view:BreakfastView,orderCellModel:OrderCellModel){
-        view.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
-        view.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
-        view.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
-        view.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
-        view.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
-        view.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
-        view.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
+        let ball:Ball = Ball()
+        ball.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        ball.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        ball.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        ball.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
+        ball.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
+        ball.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
+        ball.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        view.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
-        view.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
-        view.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
-        view.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
-        view.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
-        view.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
-        view.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
+        ball.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
+        ball.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
+        ball.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
+        ball.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
+        ball.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
+        ball.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
+        ball.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
 
     //主窗体添加购物车、赛事列表、即时/复合下注

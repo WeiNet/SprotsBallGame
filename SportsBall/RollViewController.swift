@@ -15,7 +15,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     @IBOutlet var contentView: UIView!
 
     var common=CommonParameter()//网络请求
-    var mPlayType = "2"//0:早盘；1：单式；2：滚球
+    var mPlayType = "2"//2：滚球；3：让球、综合过关
     let getOtherMatchResult = "GetOtherMatchResult"
     
     //远端回传资料响应协议
@@ -59,7 +59,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>1</strPageSize>")
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
-        strParam.appendContentsOf("<strType>2</strType>")
+        strParam.appendContentsOf("<strType>3</strType>")
         strParam.appendContentsOf("<strCourtType>1</strCourtType>")
         strParam.appendContentsOf("<strBall>b_bk</strBall>")
         strParam.appendContentsOf("</GetOtherMatch>")

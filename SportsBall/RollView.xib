@@ -189,12 +189,16 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="N_LDSBLView" destination="W3z-IF-85V" id="ppp-yw-07d"/>
                 <outlet property="N_LDXBL" destination="dko-wz-ufL" id="ypT-Qr-BJ2"/>
                 <outlet property="N_LDXBLView" destination="565-kw-mAL" id="5qN-hI-Vxx"/>
                 <outlet property="N_LDXDPL" destination="DwG-MD-WWL" id="nDt-09-EEL"/>
                 <outlet property="N_LRFBL" destination="HC8-zP-Dim" id="YaF-ta-r3k"/>
                 <outlet property="N_LRFBLView" destination="jKi-ws-K1k" id="owk-kb-lqS"/>
                 <outlet property="N_LRFPL" destination="0Mf-qH-jiz" id="8zc-Uj-B2G"/>
+                <outlet property="N_RDSBLView" destination="BxJ-li-xt9" id="lF0-Kq-HnY"/>
+                <outlet property="N_RDSDPL" destination="CrG-JC-Mfq" id="NI1-2s-W4R"/>
+                <outlet property="N_RDSSPL" destination="nnZ-fH-kPG" id="jLT-Pk-fWp"/>
                 <outlet property="N_RDXBL" destination="cIJ-gn-DuY" id="FIv-Pf-eOZ"/>
                 <outlet property="N_RDXBLView" destination="Paw-TE-GQf" id="2fH-Wg-1kO"/>
                 <outlet property="N_RDXXPL" destination="sgc-oJ-mof" id="F65-rp-MEj"/>
