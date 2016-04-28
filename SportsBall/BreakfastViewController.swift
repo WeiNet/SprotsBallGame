@@ -37,7 +37,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
-            alertMessage(message)
+            alertMessage(message, carrier: self)
         }
     }
     //返回
@@ -421,23 +421,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    func alertMessage(message:String){
-        alertMessage("",message:message)
-    }
-    func alertMessage(title:String,message:String){
-        var titleTemp = "系统提示"
-        if(title != ""){
-            titleTemp = title
-        }
-        let alert:UIAlertController = UIAlertController(title: titleTemp, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        // 定义 ok 的 UIAlertAction
-        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
-            (action: UIAlertAction!) -> Void in
-            print("you choose ok")
-        }
-        alert.addAction(okAction)
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
+    
     //ios隐藏状态栏
     override func prefersStatusBarHidden() -> Bool {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)

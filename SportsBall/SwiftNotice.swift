@@ -52,6 +52,9 @@ extension UIViewController {
     func clearAllNotice() {
         SwiftNotice.clear()
     }
+    func alertMessage(message:String,carrier:UIViewController){
+        SwiftNotice.alertMessage(message,carrier:carrier)
+    }
 }
 
 enum NoticeType{
@@ -260,6 +263,24 @@ class SwiftNotice: NSObject {
         } else {
             return rv.center
         }
+    }
+    
+    static func alertMessage(message:String,carrier:UIViewController){
+        alertMessage("",message:message,carrier:carrier)
+    }
+    static func alertMessage(title:String,message:String,carrier:UIViewController){
+        var titleTemp = "系统提示"
+        if(title != ""){
+            titleTemp = title
+        }
+        let alert:UIAlertController = UIAlertController(title: titleTemp, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        // 定义 ok 的 UIAlertAction
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
+            (action: UIAlertAction!) -> Void in
+            print("you choose ok")
+        }
+        alert.addAction(okAction)
+        carrier.presentViewController(alert, animated: true, completion: nil)
     }
 }
 

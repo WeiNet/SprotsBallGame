@@ -75,7 +75,7 @@ class RollView: UIView,GestureDelegate {
             }else if((iTag>=ToolsCode.LDXBLView && iTag<=ToolsCode.RDXBLView)){
                 ball.setBackground2(view,select: !select)
             }else if((iTag>=ToolsCode.LDSBLView && iTag<=ToolsCode.RDSBLView)){
-                ball.setBackground2(view,select: !select)
+                ball.setBackground(view,select: !select)
             }
         }
     }
