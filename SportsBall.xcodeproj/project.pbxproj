@@ -176,6 +176,7 @@
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
 				17B3445A1CC08F91002638FC /* header */,
 				1779BA4B1CCEF3F2002A62DC /* football */,
+				17C6EC071CD196CF00DF71E1 /* basketball */,
 			);
 			name = match;
 			sourceTree = "<group>";
@@ -191,27 +192,11 @@
 		1779BA4B1CCEF3F2002A62DC /* football */ = {
 			isa = PBXGroup;
 			children = (
-				1779BA4C1CCEF409002A62DC /* model */,
-				1779BA4D1CCEF413002A62DC /* breakfast */,
-			);
-			name = football;
-			sourceTree = "<group>";
-		};
-		1779BA4C1CCEF409002A62DC /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
-		1779BA4D1CCEF413002A62DC /* breakfast */ = {
-			isa = PBXGroup;
-			children = (
 				1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */,
 				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
 				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
 			);
-			name = breakfast;
+			name = football;
 			sourceTree = "<group>";
 		};
 		1779BA4E1CCEF445002A62DC /* tableview */ = {
@@ -260,6 +245,13 @@
 				17B1810B1CC618EA00CF3054 /* CartButtonView.swift */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		17C6EC071CD196CF00DF71E1 /* basketball */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = basketball;
 			sourceTree = "<group>";
 		};
 		17DA620C1CB8CC61009070E6 /* Roll */ = {
