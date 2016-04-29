@@ -159,9 +159,9 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         let infos:UnionTitleInfo = infoArray[indexPath.section] as! UnionTitleInfo
         let cellModel:OrderCellModel = infos.unionTitleModel.orderCellModels[indexPath.row] as! OrderCellModel
         if cellModel.orderOpen {
-            return (matchHeight + 1)
-        }else{
             return (matchHeight + orderHeight + 2)
+        }else{
+            return (matchHeight + 1)
         }
     }
     
@@ -190,7 +190,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
             let view:UIView = cell.orderView
             bindDelegate.bindorderDelegate(view, orderCellModel: orderCellModel)
         }
-        cell.orderView.hidden = orderCellModel.orderOpen
+        cell.orderView.hidden = !orderCellModel.orderOpen
         //点击不改变整行Cell的颜色
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell

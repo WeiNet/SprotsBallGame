@@ -30,6 +30,30 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
             Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,orderHeight: 109)
         }
     }
+    
+    //返回
+    func backClick(){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    //刷新
+    func refreshClick(){
+        if contentView.subviews.count > 0 {
+            contentView.subviews[0].removeFromSuperview()
+        }
+    }
+    //标题点击，玩法选取
+    func titleViewClick(){
+        
+    }
+    //联盟打开
+    func unionClick(){
+        
+    }
+    //规则说明
+    func explainClick(){
+        
+    }
+    
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         
