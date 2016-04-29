@@ -55,7 +55,7 @@ class Ball: NSObject {
     }
     
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,orderHeight:CGFloat){
+    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat){
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20
@@ -63,6 +63,7 @@ class Ball: NSObject {
         let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
         cartButtonView?.frame.size.width = width
         cartButtonView?.frame.size.height = 48
+        cartButtonView?.delegate = cartDelegate
         contentView.addSubview(cartButtonView!)
         //添加购物车控件后Y轴空出
         startY = startY + 48

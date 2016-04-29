@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate {
+class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
@@ -27,7 +27,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         if(strType == getOtherMatchResult){
             print(strResult)
             let basketInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,orderHeight: 109)
+            Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: 109)
         }
     }
     
