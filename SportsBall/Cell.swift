@@ -23,7 +23,7 @@ class Cell: UITableViewCell {
     var gestureDelegate:GestureDelegate!
     
     @IBOutlet var titleView: UIView!
-    @IBOutlet var orderView: UIView!
+    var orderView: UIView!
     /*******************************title标题控件*******************************/
     @IBOutlet var N_VISIT_NAME: UILabel!
     @IBOutlet var N_VISIT_JZF: UILabel!

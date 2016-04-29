@@ -55,7 +55,7 @@ class Ball: NSObject {
     }
     
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate){
+    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,orderHeight:CGFloat){
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20
@@ -82,6 +82,7 @@ class Ball: NSObject {
         let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20 - 36)
         let tableView = TableView(frame: cgr)
         tableView.initDelegate(showUnion)
+        tableView.orderHeight = orderHeight
         tableView.bindDelegate = delegate
         contentView.addSubview(tableView)
     }

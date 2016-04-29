@@ -23,8 +23,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     var infoArray:NSMutableArray!//与UnionTitleInfo的数组对应
     let cellIdentifier = "cellIdentifier"
     let unionIdentifier = "unionIdentifier"
-    let matchHeight:CGFloat = 40
-    let orderHeight:CGFloat = 216
+    var matchHeight:CGFloat = 40
+    var orderHeight:CGFloat = 216
     var bindDelegate:BindDelegate!
     
     
@@ -178,19 +178,19 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         cell.unionIndex = indexPath.section
         cell.matchIndex = indexPath.row
         cell.showDelegate = self
-        cell.orderView.hidden = orderCellModel.orderOpen
-        if(cell.orderView.subviews.count == 0){
+        if(cell.orderView == nil){
             //注单赔率绑定
             let view:UIView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! UIView
             
-            view.frame.size.height = orderHeight
-            cell.orderView.addSubview(view)
+            view.frame = CGRectMake(0, matchHeight, 326, orderHeight)
+            cell.orderView = view
+            cell.addSubview(view)
             bindDelegate.bindorderDelegate(view, orderCellModel: orderCellModel)
         }else{
-            let view:UIView = cell.orderView.subviews[0] as! UIView
+            let view:UIView = cell.orderView
             bindDelegate.bindorderDelegate(view, orderCellModel: orderCellModel)
         }
-        print(cell.orderView.subviews.count)
+        cell.orderView.hidden = orderCellModel.orderOpen
         //点击不改变整行Cell的颜色
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell

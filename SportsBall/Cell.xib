@@ -56,10 +56,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3XS-A7-j8b">
-                        <rect key="frame" x="0.0" y="40" width="326" height="217"/>
-                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
@@ -69,7 +65,6 @@
                 <outlet property="N_HOME_NAME" destination="dH6-i8-we1" id="Iik-XH-ceh"/>
                 <outlet property="N_VISIT_JZF" destination="qAI-n9-XF5" id="7CH-Nf-M20"/>
                 <outlet property="N_VISIT_NAME" destination="gFJ-qj-a9D" id="V4L-Zy-Vgl"/>
-                <outlet property="orderView" destination="3XS-A7-j8b" id="8rV-nS-L0q"/>
                 <outlet property="titleView" destination="Bo4-3K-Sit" id="b46-DZ-WTv"/>
             </connections>
             <point key="canvasLocation" x="343.5" y="276.5"/>

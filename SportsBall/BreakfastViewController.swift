@@ -30,7 +30,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self)
+            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,orderHeight: 216)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)

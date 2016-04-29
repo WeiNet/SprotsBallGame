@@ -27,7 +27,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         if(strType == getOtherMatchResult){
             print(strResult)
             let basketInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self)
+            Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,orderHeight: 109)
         }
     }
     //绑定队伍标题
