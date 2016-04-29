@@ -375,12 +375,14 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.dzsx = dzsx
         betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
         //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
-        alertView.myView.visit.text = betInfo.homename
-        alertView.myView.home.text = betInfo.visitname
-        let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
-        alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
-        alertView.myView.limits.text = dzxx + "~" + dzsx
-        alertView.myView.max.text = dzsx
+        if(!isMultiselect){
+            alertView.myView.visit.text = betInfo.homename
+            alertView.myView.home.text = betInfo.visitname
+            let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
+            alertView.myView.limits.text = dzxx + "~" + dzsx
+            alertView.myView.max.text = dzsx
+        }
     }
     
     //向远端添加注单

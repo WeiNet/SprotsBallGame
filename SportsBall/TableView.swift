@@ -178,6 +178,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         cell.unionIndex = indexPath.section
         cell.matchIndex = indexPath.row
         cell.showDelegate = self
+        cell.frame.size.width = self.frame.width
         if(cell.orderView == nil){
             //注单赔率绑定
             let view:UIView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! UIView
