@@ -29,15 +29,15 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             return
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
-            let aryUnionInfo:NSMutableArray = showTableView(strResult)
-            addControls(aryUnionInfo)
+            let aryUnionInfo:NSMutableArray = Ball().stringToDictionary(strResult)
+            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
-            alertMessage(message)
+            alertMessage(message, carrier: self)
         }
     }
     //返回
@@ -67,18 +67,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
-        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME
-        cell.N_HOME_NAME.text = orderCellModel.N_HOME_NAME
-        if orderCellModel.N_ZDTIME == nil {
-            let gameDate = orderCellModel.N_GAMEDATE
-            cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
-            cell.N_VISIT_JZF.text = ""
-            cell.N_HOME_JZF.text = ""
-        }else{
-            cell.N_GAMEDATE.text = orderCellModel.N_ZDTIME
-            cell.N_VISIT_JZF.text = String(orderCellModel.N_VISIT_JZF)
-            cell.N_HOME_JZF.text = String(orderCellModel.N_HOME_JZF)
-        }
+        Ball().bindMatchDelegate(cell,orderCellModel:orderCellModel)
     }
     //添加注单赔率View
     func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView{
@@ -87,13 +76,16 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         //加载时赔率是打开的就要立即添加手势事件
         breakfastView!.addGestureRecognizer()
         breakfastView!.delegate = self
+        cell.gestureDelegate = breakfastView
         return breakfastView!
     }
     //绑定注单赔率
-    func bindorderDelegate(view:BreakfastView,orderCellModel:OrderCellModel){
-        clear(view)
-        showData(view,orderCellModel:orderCellModel)
-        fillBackground(view,orderCellModel:orderCellModel)
+    func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel){
+        let viewTemp:BreakfastView = view as! BreakfastView
+        clear(viewTemp)
+        showData(viewTemp,orderCellModel:orderCellModel)
+        fillBackground(viewTemp,orderCellModel:orderCellModel)
+        viewTemp.orderCellModel = orderCellModel
     }
     
     //点击赔率点击事件的协议
@@ -199,68 +191,26 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //背景的填充
     func fillBackground(view:BreakfastView,orderCellModel:OrderCellModel){
-        view.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
-        view.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
-        view.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
-        view.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
-        view.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
-        view.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
-        view.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
+        let ball:Ball = Ball()
+        ball.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        ball.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        ball.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        ball.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
+        ball.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
+        ball.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
+        ball.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        view.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
-        view.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
-        view.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
-        view.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
-        view.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
-        view.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
-        view.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
+        ball.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
+        ball.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
+        ball.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
+        ball.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
+        ball.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
+        ball.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
+        ball.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
-    
-    //显示赛事（联盟、赛事队伍）
-    func showTableView(strResult: String)->NSMutableArray{
-        let aryUnionInfo:NSMutableArray = NSMutableArray()
-        
-        var aryUnionVO:Array<UnionTitleVO> = Array()
-        let info = ToolsCode.toJsonArray(strResult)
-        let unionJson = info[1]
-        if unionJson.count == 0 {//没有资料
-            print("没有资料")
-            return aryUnionInfo
-        }
-        let objCount:Int = unionJson.count - 1
-        for index in 0...objCount {
-            let unionVO:UnionTitleVO = UnionTitleVO()
-            unionVO.N_NO = String(unionJson[index].objectForKey("N_NO")!)
-            unionVO.N_LMMC = String(unionJson[index].objectForKey("N_LMMC")!)
-            aryUnionVO.append(unionVO)
-        }
-        
-        let matchJson = info[0]
-        let matchCount:Int = matchJson.count - 1
-        for union in aryUnionVO {
-            let unionTitleModel:UnionTitleModel = UnionTitleModel()
-            unionTitleModel.id = String(union.N_NO)
-            unionTitleModel.name = String(union.N_LMMC)
-            
-            var aryOrderCellModel:Array<OrderCellModel> = Array()
-            for index in 0...matchCount{
-                if union.N_NO == String(matchJson[index].objectForKey("N_LMNO")!) {
-                    let orderCellModel:OrderCellModel = OrderCellModel()
-                    //给注单属性赋值
-                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
-                    aryOrderCellModel.append(orderCellModel)
-                }
-            }
-            unionTitleModel.count = String(aryOrderCellModel.count)
-            unionTitleModel.orderCellModels = aryOrderCellModel
-            if aryOrderCellModel.count > 0 {
-                aryUnionInfo.addObject(unionTitleModel)
-            }
-        }
-        return aryUnionInfo
-    }
+
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls(showUnion:NSMutableArray){
+    func addControls1(showUnion:NSMutableArray){
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20
@@ -471,23 +421,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    func alertMessage(message:String){
-        alertMessage("",message:message)
-    }
-    func alertMessage(title:String,message:String){
-        var titleTemp = "系统提示"
-        if(title != ""){
-            titleTemp = title
-        }
-        let alert:UIAlertController = UIAlertController(title: titleTemp, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        // 定义 ok 的 UIAlertAction
-        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
-            (action: UIAlertAction!) -> Void in
-            print("you choose ok")
-        }
-        alert.addAction(okAction)
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
+    
     //ios隐藏状态栏
     override func prefersStatusBarHidden() -> Bool {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)

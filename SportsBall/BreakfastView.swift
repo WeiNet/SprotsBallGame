@@ -16,8 +16,9 @@ protocol OrderDelegate: NSObjectProtocol {
 class BreakfastView: UIView ,GestureDelegate{
     var orderCellModel:OrderCellModel!//当前View对应的资料
     var delegate:OrderDelegate!
-    let unionIndex:Int = 0
-    let matchIndex:Int = 0
+//    let unionIndex:Int = 0
+//    let matchIndex:Int = 0
+    var ball:Ball = Ball()
     /*******************************注单控件*******************************/
     @IBOutlet var N_LDYPL: UILabel!
     @IBOutlet var N_HJPL: UILabel!
@@ -115,75 +116,16 @@ class BreakfastView: UIView ,GestureDelegate{
             let name = ToolsCode.codeBy(iTag)
             let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
             orderCellModel.setValue(!select, forKey: "\(name)_SEL")
-            if ((iTag>=56661 && iTag<56664) || (iTag>=56668 && iTag<56671)){
-                setLblFontBackground(view as! UILabel,selected: !select)
-            }else if((iTag>=56664 && iTag<56666) || (iTag>=56671 && iTag<56673)){
-                setBackground(view,select:!select)
-            }else if((iTag>=56666 && iTag<56668) || (iTag>=56673 && iTag<56675)){
-                setBackground2(view,select: !select)
+            if ((iTag>=ToolsCode.LDYPL && iTag<=ToolsCode.RDYPL)
+                || (iTag>=ToolsCode.LDYPL2 && iTag<=ToolsCode.RDYPL2)){
+                ball.setLblFontBackground(view as! UILabel,selected: !select)
+            }else if((iTag>=ToolsCode.LRFView && iTag<=ToolsCode.RRFView)
+                || (iTag>=ToolsCode.LRFView2 && iTag<=ToolsCode.RRFView2)){
+                ball.setBackground(view,select:!select)
+            }else if((iTag>=ToolsCode.LDXBLView && iTag<=ToolsCode.RDXBLView)
+                || (iTag>=ToolsCode.LDXBLView2 && iTag<=ToolsCode.RDXBLView2)){
+                ball.setBackground2(view,select: !select)
             }
         }
-    }
-    //让分的背景设定
-    func setBackground(view:UIView,select: Bool){
-        let lbl0 = view.subviews[0] as! UILabel
-        let lbl1 = view.subviews[1] as! UILabel
-        setLblFontBackground2(lbl0,selected: select)
-        setLblFontBackground(lbl1,selected: select)
-    }
-    //大小球的背景设定
-    func setBackground2(view:UIView,select: Bool){
-        let lbl0 = view.subviews[0] as! UILabel
-        let lbl1 = view.subviews[1] as! UILabel
-        let lbl2 = view.subviews[2] as! UILabel
-        setLblFontBackground(lbl0,selected: select)
-        setLblFontBackground2(lbl1,selected: select)
-        setLblFontBackground(lbl2,selected: select)
-    }
-    //白色红底
-    func setLblFontBackground(lable:UILabel,selected: Bool){
-        if selected {
-            lable.textColor = hexStringToColor("#FFFFFF")
-            lable.backgroundColor = hexStringToColor("#FF4646")
-        }else{
-            lable.textColor = hexStringToColor("#464646")
-            lable.backgroundColor = hexStringToColor("#FAFAFA")
-        }
-    }
-    //金色红底
-    func setLblFontBackground2(lable:UILabel,selected: Bool){
-        if selected {
-            lable.textColor = hexStringToColor("#FFFF00")
-            lable.backgroundColor = hexStringToColor("#FF4646")
-        }else{
-            lable.textColor = hexStringToColor("#008C23")
-            lable.backgroundColor = hexStringToColor("#FAFAFA")
-        }
-    }
-    //16进制转UIColor
-    func hexStringToColor(strColor:String)->UIColor{
-        var cString: String = strColor.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        
-        if cString.characters.count < 6 {return UIColor.blackColor()}
-        if cString.hasPrefix("0X") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(2))}
-        if cString.hasPrefix("#") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))}
-        if cString.characters.count != 6 {return UIColor.blackColor()}
-        
-        var range: NSRange = NSMakeRange(0, 2)
-        
-        let rString = (cString as NSString).substringWithRange(range)
-        range.location = 2
-        let gString = (cString as NSString).substringWithRange(range)
-        range.location = 4
-        let bString = (cString as NSString).substringWithRange(range)
-        
-        var r: UInt32 = 0x0
-        var g: UInt32 = 0x0
-        var b: UInt32 = 0x0
-        NSScanner.init(string: rString).scanHexInt(&r)
-        NSScanner.init(string: gString).scanHexInt(&g)
-        NSScanner.init(string: bString).scanHexInt(&b)
-        
-        return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
     }
 }

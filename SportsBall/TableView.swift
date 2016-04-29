@@ -15,7 +15,7 @@ protocol BindDelegate: NSObjectProtocol {
     //添加注单赔率View
     func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView
     //绑定注单赔率
-    func bindorderDelegate(view:BreakfastView,orderCellModel:OrderCellModel)
+    func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel)
 }
 
 class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDelegate,UnionTitleViewDelegate {
@@ -181,17 +181,14 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         cell.orderView.hidden = orderCellModel.orderOpen
         if(cell.orderView.subviews.count == 0){
             //注单赔率绑定
-            let breakfastView:BreakfastView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! BreakfastView
+            let view:UIView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! UIView
             
-            breakfastView.frame.size.height = orderHeight
-            cell.gestureDelegate = breakfastView
-            cell.orderView.addSubview(breakfastView)
-            breakfastView.orderCellModel = orderCellModel
-            bindDelegate.bindorderDelegate(breakfastView, orderCellModel: orderCellModel)
+            view.frame.size.height = orderHeight
+            cell.orderView.addSubview(view)
+            bindDelegate.bindorderDelegate(view, orderCellModel: orderCellModel)
         }else{
-            let breakfastView:BreakfastView = cell.orderView.subviews[0] as! BreakfastView
-            breakfastView.orderCellModel = orderCellModel
-            bindDelegate.bindorderDelegate(breakfastView, orderCellModel: orderCellModel)
+            let view:UIView = cell.orderView.subviews[0] as! UIView
+            bindDelegate.bindorderDelegate(view, orderCellModel: orderCellModel)
         }
         print(cell.orderView.subviews.count)
         //点击不改变整行Cell的颜色

@@ -101,4 +101,38 @@ class OrderCellModel: NSObject {
     var N_HOME_REDCARD:NSNumber!
     var N_ZDFLAG:String!//走地标志
     var N_VISIT_REDCARD:NSNumber!
+    
+    var N_DSSPL:NSNumber!
+    var N_RDSSPL_SEL:Bool = false
+    var N_DSDPL:NSNumber!
+    var N_RDSDPL_SEL:Bool = false
+    
+    var N_HJGGCJ:NSNumber!
+    var N_LRFCJ:NSNumber!
+    var N_RRFCJ:NSNumber!
+    var N_RF_GG:NSNumber!
+    var N_DXDCJ:NSNumber!
+    var N_DXXCJ:NSNumber!
+    var N_DX_GG:NSNumber!
+    var N_DSDCJ:NSNumber!
+    var N_DSSCJ:NSNumber!
+    var N_DS_OPEN:NSNumber!
+    var N_DS_LOCK_V:NSNumber!
+    var N_DS_LOCK_H:NSNumber!
+    var N_DS_GG:NSNumber!
+    var N_LDYCJ:NSNumber!
+    var N_RDYCJ:NSNumber!
+    var N_DY_GG:NSNumber!
+    var N_SAMETEAM:String!
+    var N_RFL:String!
+    var N_RFR:String!
+    var N_DSL:String!
+    var N_DSR:String!
+    var N_DXL:String!
+    var N_DXR:String!
+    var N_DYL:String!
+    var N_DYR:String!
+    var N_HJ:String!
+    var N_SYL:String!
+    var N_SYR:String!
 }

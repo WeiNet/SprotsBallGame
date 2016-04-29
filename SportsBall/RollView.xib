@@ -27,18 +27,18 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jKi-ws-K1k">
                                     <rect key="frame" x="109" y="1" width="108" height="35"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC8-zP-Dim">
-                                            <rect key="frame" x="0.0" y="0.0" width="108" height="17"/>
-                                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.5490196078431373" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.850" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-qH-jiz">
                                             <rect key="frame" x="0.0" y="17" width="108" height="18"/>
                                             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC8-zP-Dim">
+                                            <rect key="frame" x="0.0" y="0.0" width="108" height="17"/>
+                                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.5490196078431373" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -189,6 +189,22 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="N_LDSBLView" destination="W3z-IF-85V" id="ppp-yw-07d"/>
+                <outlet property="N_LDXBL" destination="dko-wz-ufL" id="ypT-Qr-BJ2"/>
+                <outlet property="N_LDXBLView" destination="565-kw-mAL" id="5qN-hI-Vxx"/>
+                <outlet property="N_LDXDPL" destination="DwG-MD-WWL" id="nDt-09-EEL"/>
+                <outlet property="N_LRFBL" destination="HC8-zP-Dim" id="YaF-ta-r3k"/>
+                <outlet property="N_LRFBLView" destination="jKi-ws-K1k" id="owk-kb-lqS"/>
+                <outlet property="N_LRFPL" destination="0Mf-qH-jiz" id="8zc-Uj-B2G"/>
+                <outlet property="N_RDSBLView" destination="BxJ-li-xt9" id="lF0-Kq-HnY"/>
+                <outlet property="N_RDSDPL" destination="CrG-JC-Mfq" id="NI1-2s-W4R"/>
+                <outlet property="N_RDSSPL" destination="nnZ-fH-kPG" id="jLT-Pk-fWp"/>
+                <outlet property="N_RDXBL" destination="cIJ-gn-DuY" id="FIv-Pf-eOZ"/>
+                <outlet property="N_RDXBLView" destination="Paw-TE-GQf" id="2fH-Wg-1kO"/>
+                <outlet property="N_RDXXPL" destination="sgc-oJ-mof" id="F65-rp-MEj"/>
+                <outlet property="N_RRFBL" destination="dOa-BK-nIS" id="kzI-TA-cW9"/>
+                <outlet property="N_RRFBLView" destination="xxs-YG-mwT" id="rD9-kc-zgi"/>
+                <outlet property="N_RRFPL" destination="IX4-Oi-7Jl" id="91O-8j-8bc"/>
                 <outlet property="belowView" destination="CHJ-N0-iOb" id="lrX-fj-wcN"/>
                 <outlet property="upperView" destination="TXc-5A-aUH" id="upm-G1-QtK"/>
             </connections>
