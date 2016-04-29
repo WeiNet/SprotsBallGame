@@ -104,7 +104,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //即时下注付款协议
     func selectOkButtonalertView(){
         pleaseWait()
-        betInfo.dMoney = alertView.myView.money.text
+        betInfo.dMoney = alertView.myView.money.text!
         AddBet()
         print("selectOkButtonalertView")
     }
@@ -330,7 +330,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.tid = tid
         betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
         betInfo.vh = String(orderCellModel.N_VH)
-        betInfo.let1 = let1
+        betInfo.strlet = let1
         betInfo.hbl = hbl
         betInfo.hfs = hfs
         betInfo.hlx = hlx
@@ -386,7 +386,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         strParam.appendContentsOf("<tid>\(betInfo.tid)</tid>")
         strParam.appendContentsOf("<rate>\(betInfo.rate)</rate>")
         strParam.appendContentsOf("<vh>\(betInfo.vh)</vh>")
-        strParam.appendContentsOf("<let>\(betInfo.let1)</let>")
+        strParam.appendContentsOf("<let>\(betInfo.strlet)</let>")
         strParam.appendContentsOf("<hfs>\(betInfo.hfs)</hfs>")
         strParam.appendContentsOf("<hlx>\(betInfo.hlx)</hlx>")
         strParam.appendContentsOf("<hbl>\(betInfo.hbl)</hbl>")
