@@ -8,16 +8,30 @@
     
     import UIKit
     
-    class ShopingViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    class ShopingViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,ResultDelegate {
         var betManger:BetListManager?
         var betList:[BetInfo]?
+        var comm=CommonParameter()
         @IBOutlet weak var tableList: UITableView!
+        
+        @IBAction func payChlick(sender: UIButton) {
+            var jsonObject: [AnyObject] = []
+            
+            for objbet in betList!{
+                jsonObject.append(objbet.toDict())
+            }
+            
+            var str=toJSONString(jsonObject)
+            
+            addBet(str)
+        }
         override func viewDidLoad() {
             self.title="购物车"
             betManger=BetListManager.sharedManager
             betList=betManger!.getBetList()
             self.tableList.dataSource=self
             self.tableList.delegate=self
+            comm.delegate=self
             
         }
         override func viewWillAppear(animated: Bool) {
@@ -36,22 +50,28 @@
             if(cell==nil){
                 cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "shopingcell")
             }
+            var lableV=cell?.viewWithTag(5) as! UILabel
+            var lableH=cell?.viewWithTag(6) as! UILabel
+            var lableBetTeam=cell?.viewWithTag(7) as! UILabel
+            var lableRate=cell?.viewWithTag(10) as! UILabel
+            var lableKY=cell?.viewWithTag(11) as! UILabel
+            var lableDC=cell?.viewWithTag(12) as! UILabel
+            var lableDZ=cell?.viewWithTag(13) as! UILabel
+            lableV.text=betList![indexPath.row].visitname
+            lableH.text=betList![indexPath.row].homename
+            lableBetTeam.text=betList![indexPath.row].betteamName
+            lableRate.text=betList![indexPath.row].visitname
+            lableDC.text=betList![indexPath.row].dcsx
+            lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
             
-                       return cell!
+            
+            return cell!
         }
         
         
-        func toJSONString()->NSString{
-            var dict=[BetInfo]()
-            var objInfo1=BetInfo()
-            objInfo1.dMoney="10"
-            objInfo1.dzsx="11"
-            objInfo1.dzxx="45"
-            objInfo1.homename="dfdf"
-            dict.append(objInfo1)
+        func toJSONString(jsonObject: [AnyObject])->NSString{
             
-            //        let dict = ["name":"Jobs","friends":["Ive","Cook"]]
-            let data = try!NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted)
+            let data = try!NSJSONSerialization.dataWithJSONObject(jsonObject, options: NSJSONWritingOptions.PrettyPrinted)
             var strJson=NSString(data: data, encoding: NSUTF8StringEncoding)
             return strJson!
         }
@@ -59,4 +79,14 @@
             return 190.0
         }
         
+        func setResult(strResult: String, strType: String) {
+            NSLog(strResult)
+            
+        }
+        func addBet(strParam:NSString){
+            var strParam:String = "<BatchAddBet xmlns=\"http://tempuri.org/\">";
+            strParam.appendContentsOf("<strpara>\(strParam)</strpara>")
+            strParam.appendContentsOf("<isBeting>false</iPageindex>")
+            strParam.appendContentsOf("</BatchAddBet>")
+            comm.getResult(strParam,strResultName: "BatchAddBetResult")        }
     }

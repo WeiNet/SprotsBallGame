@@ -82,16 +82,15 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         var objInfo1=BetInfo()
         objInfo1.dMoney="10"
-        objInfo1.dzsx="11"
-        objInfo1.dzxx="45"
-        objInfo1.homename="dfdf"
-        
+        objInfo1.strUser="dfdf"
+        objInfo1.Index="dfdfs"
+        objInfo1.visitname="A11"
         betManger.betList.append(objInfo1)
         var objInfo2=BetInfo()
-        objInfo2.dMoney="10"
-        objInfo2.dzsx="11"
-        objInfo2.dzxx="45"
-        objInfo2.homename="dfdf"
+        objInfo2.dMoney="101"
+        objInfo2.strUser="dfdf"
+        objInfo2.Index="dfdfs"
+        objInfo2.visitname="B11"
         betManger.betList.append(objInfo2)
       
         
