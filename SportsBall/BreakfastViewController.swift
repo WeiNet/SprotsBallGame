@@ -92,6 +92,11 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
         betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
+        
+        var betManger=BetListManager.sharedManager
+        var objInfo = betInfo
+        betManger.betList.append(objInfo)
+        
         alertView.show(self)//显示即时下注popuWin
         return false
     }

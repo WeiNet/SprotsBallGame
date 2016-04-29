@@ -45,4 +45,47 @@ class BetInfo: NSObject {
         return dics
     }
     
+    func toString()->String{
+        var strBetInfoModel:String = "{"
+        strBetInfoModel.appendContentsOf("\"Index\":\"\(Index)\",")
+        strBetInfoModel.appendContentsOf("\"strUser\":\"\(strUser)\",")
+        strBetInfoModel.appendContentsOf("\"dMoney\":\"\(dMoney)\",")
+        strBetInfoModel.appendContentsOf("\"yssj\":\"\(yssj)\",")
+        strBetInfoModel.appendContentsOf("\"playType\":\"\(playType)\",")
+        
+        strBetInfoModel.appendContentsOf("\"lr\":\"\(lr)\",")
+        strBetInfoModel.appendContentsOf("\"ballType\":\"\(ballType)\",")
+        strBetInfoModel.appendContentsOf("\"id\":\"\(id)\",")
+        strBetInfoModel.appendContentsOf("\"courtType\":\"\(courtType)\",")
+        strBetInfoModel.appendContentsOf("\"tid\":\"\(tid)\",")
+        
+        strBetInfoModel.appendContentsOf("\"rate\":\"\(rate)\",")
+        strBetInfoModel.appendContentsOf("\"vh\":\"\(vh)\",")
+        strBetInfoModel.appendContentsOf("\"let\":\"\(strlet)\",")
+        strBetInfoModel.appendContentsOf("\"hfs\":\"\(hfs)\",")
+        strBetInfoModel.appendContentsOf("\"hlx\":\"\(hlx)\",")
+        
+        strBetInfoModel.appendContentsOf("\"hbl\":\"\(hbl)\",")
+        strBetInfoModel.appendContentsOf("\"strbet\":\"\(strbet)\",")
+        strBetInfoModel.appendContentsOf("\"visitname\":\"\(visitname)\",")
+        strBetInfoModel.appendContentsOf("\"homename\":\"\(homename)\",")
+        strBetInfoModel.appendContentsOf("\"jzf\":\"\(jzf)\",")
+        
+        strBetInfoModel.appendContentsOf("\"isLive\":\"\(isLive)\",")
+        strBetInfoModel.appendContentsOf("\"allianceName\":\"\(allianceName)\",")
+        strBetInfoModel.appendContentsOf("\"date\":\"\(date)\",")
+        strBetInfoModel.appendContentsOf("\"isjzf\":\"\(isjzf)\",")
+        strBetInfoModel.appendContentsOf("\"score\":\"\(score)\",")
+        
+        strBetInfoModel.appendContentsOf("\"dzxx\":\"\(dzxx)\",")
+        strBetInfoModel.appendContentsOf("\"dzsx\":\"\(dzsx)\",")
+        strBetInfoModel.appendContentsOf("\"dcsx\":\"\(dcsx)\",")
+        strBetInfoModel.appendContentsOf("\"kyje\":\"\(kyje)\",")
+        strBetInfoModel.appendContentsOf("\"ballhead\":\"\(ballhead)\",")
+        
+        strBetInfoModel.appendContentsOf("\"betteamName\":\"\(betteamName)\"")
+        strBetInfoModel.appendContentsOf("}")
+        return strBetInfoModel
+    }
+    
 }
