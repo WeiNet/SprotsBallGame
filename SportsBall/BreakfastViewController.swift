@@ -22,6 +22,32 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     let checkBetResult:String = "CheckBetResult"
     let getFootballMatchResult:String = "GetFootballMatchResult"
     let addBetResult:String = "AddBetResult"
+    var alertMenu:UIAlertController!
+    var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["2":"滚球"],["1":"单式"],["3":"波胆"],["4":"入球数"],["5":"半全场"],["6":"综合过关"]]
+    
+    //创建玩法菜单
+    func createMenu(menuArray: Array<Dictionary<String,String>>){
+        if(menuArray.count <= 0){
+            return
+        }
+        alertMenu = UIAlertController(title: "足球玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+        for menu in menuArray {
+            for (key,value) in menu {
+                let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                    self.clickMenuItem(key)
+                })
+                alertMenu.addAction(item)
+            }
+        }
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertMenu.addAction(cancel)
+    }
+    //玩法菜单选项响应事件
+    func clickMenuItem(key:String){
+        mPlayType = key
+        getFootballMatch()
+        print(key)
+    }
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
@@ -47,14 +73,11 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //刷新
     func refreshClick(){
-        if contentView.subviews.count > 0 {
-            contentView.subviews[0].removeFromSuperview()
-        }
         getFootballMatch()
     }
     //标题点击，玩法选取
     func titleViewClick(){
-        
+        self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //联盟打开
     func unionClick(){
@@ -417,6 +440,9 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //取得赛事注单赔率
     func getFootballMatch(){
+        if contentView.subviews.count > 0 {
+            contentView.subviews[0].removeFromSuperview()
+        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getFootballMatchResult
@@ -440,17 +466,19 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         headerView?.frame.size.height = 48
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
+        
+        createMenu(menuArray)
         //赛事注单
         getFootballMatch()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     //ios隐藏状态栏
     override func prefersStatusBarHidden() -> Bool {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
         return true
+    }
+    //ios隐藏导航栏
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

@@ -91,7 +91,7 @@ class Ball: NSObject {
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
-        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME
+        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME + "[主]"
         cell.N_HOME_NAME.text = orderCellModel.N_HOME_NAME
         if orderCellModel.N_ZDTIME == nil {
             let gameDate = orderCellModel.N_GAMEDATE

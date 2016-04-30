@@ -40,21 +40,26 @@
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJu-YZ-Ynr">
                     <rect key="frame" x="84" y="0.0" width="432" height="48"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="滚球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Z-LI-pLB">
-                            <rect key="frame" x="0.0" y="0.0" width="432" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lO-cr-Be7">
+                            <rect key="frame" x="0.0" y="0.0" width="432" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <state key="normal" title="滚球">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="title:" destination="iN0-l3-epB" eventType="touchUpInside" id="JCz-sg-UrQ"/>
+                            </connections>
+                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="gfw-sB-NtN">
                             <rect key="frame" x="210" y="40" width="12" height="8"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="O7Z-LI-pLB" secondAttribute="trailing" id="GX2-gb-LEX"/>
-                        <constraint firstItem="O7Z-LI-pLB" firstAttribute="leading" secondItem="AJu-YZ-Ynr" secondAttribute="leading" id="Izk-4M-FF5"/>
                         <constraint firstItem="gfw-sB-NtN" firstAttribute="centerX" secondItem="AJu-YZ-Ynr" secondAttribute="centerX" id="eCQ-3E-Mpx"/>
+                        <constraint firstItem="2lO-cr-Be7" firstAttribute="leading" secondItem="AJu-YZ-Ynr" secondAttribute="leading" id="fCv-aI-4Kc"/>
+                        <constraint firstAttribute="trailing" secondItem="2lO-cr-Be7" secondAttribute="trailing" id="pd7-3H-54J"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaZ-TD-St4">
@@ -92,8 +97,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="title" destination="O7Z-LI-pLB" id="oI0-zz-39g"/>
-                <outlet property="titleView" destination="AJu-YZ-Ynr" id="yyE-h7-MrV"/>
+                <outlet property="btnTitle" destination="2lO-cr-Be7" id="wkk-Bq-uu1"/>
             </connections>
         </view>
     </objects>

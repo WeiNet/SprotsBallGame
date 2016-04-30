@@ -17,6 +17,32 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     var common=CommonParameter()//网络请求
     var mPlayType = "2"//2：滚球；3：让球、综合过关
     let getOtherMatchResult = "GetOtherMatchResult"
+    var alertMenu:UIAlertController!
+    var menuArray: Array<Dictionary<String,String>> = [["2":"滚球"],["3":"让球"],["3":"综合过关"]]
+    
+    //创建玩法菜单
+    func createMenu(menuArray: Array<Dictionary<String,String>>){
+        if(menuArray.count <= 0){
+            return
+        }
+        alertMenu = UIAlertController(title: "足球玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+        for menu in menuArray {
+            for (key,value) in menu {
+                let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                    self.clickMenuItem(key)
+                })
+                alertMenu.addAction(item)
+            }
+        }
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertMenu.addAction(cancel)
+    }
+    //玩法菜单选项响应事件
+    func clickMenuItem(key:String){
+        mPlayType = key
+        getOtherMatch()
+        print(key)
+    }
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
@@ -37,13 +63,11 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     }
     //刷新
     func refreshClick(){
-        if contentView.subviews.count > 0 {
-            contentView.subviews[0].removeFromSuperview()
-        }
+        getOtherMatch()
     }
     //标题点击，玩法选取
     func titleViewClick(){
-        
+        self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //联盟打开
     func unionClick(){
@@ -56,7 +80,8 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
-        
+        //绑定注单标题资料
+        Ball().bindMatchDelegate(cell,orderCellModel:orderCellModel)
     }
     //添加注单赔率View
     func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView{
@@ -151,6 +176,9 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     }
     
     func getOtherMatch(){
+        if contentView.subviews.count > 0 {
+            contentView.subviews[0].removeFromSuperview()
+        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getOtherMatchResult
@@ -160,7 +188,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>1000</strPageSize>")
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
-        strParam.appendContentsOf("<strType>3</strType>")
+        strParam.appendContentsOf("<strType>\(mPlayType)</strType>")
         strParam.appendContentsOf("<strCourtType>1</strCourtType>")
         strParam.appendContentsOf("<strBall>b_bk</strBall>")
         strParam.appendContentsOf("</GetOtherMatch>")
@@ -175,11 +203,19 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
+        createMenu(menuArray)
+        
         getOtherMatch()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //ios隐藏状态栏
+    override func prefersStatusBarHidden() -> Bool {
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        return true
+    }
+    //ios隐藏导航栏
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
 }
