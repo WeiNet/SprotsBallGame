@@ -66,6 +66,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         rollView!.addGestureRecognizer()
         rollView!.delegate = self
         rollView!.orderCellModel = orderCellModel
+        rollView?.frame.size.width = contentView.frame.size.width
         cell.gestureDelegate = rollView
         return rollView!
     }

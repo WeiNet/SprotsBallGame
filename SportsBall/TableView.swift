@@ -183,7 +183,7 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
             //注单赔率绑定
             let view:UIView = bindDelegate.addOrderDelegate(cell, orderCellModel: orderCellModel) as! UIView
             
-            view.frame = CGRectMake(0, matchHeight, 326, orderHeight)
+            view.frame = CGRectMake(0, matchHeight, self.frame.width, orderHeight)
             cell.orderView = view
             cell.addSubview(view)
             bindDelegate.bindorderDelegate(view, orderCellModel: orderCellModel)
