@@ -324,7 +324,6 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
-				464157381CD98D3800838F32 /* HTML */,
 				1779BA491CCEF38F002A62DC /* match */,
 				1779BA4E1CCEF445002A62DC /* tableview */,
 				17DA620C1CB8CC61009070E6 /* Roll */,
@@ -520,7 +519,6 @@
 				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
 				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
-				464157391CD98D3800838F32 /* HTML in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,
