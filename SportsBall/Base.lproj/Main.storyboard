@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -349,17 +349,60 @@
         <!--游戏说明-->
         <scene sceneID="efM-Ev-6dE">
             <objects>
-                <viewController id="HqO-bv-K1a" sceneMemberID="viewController">
+                <viewController id="HqO-bv-K1a" customClass="HelpController" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EAZ-Cq-SI9"/>
                         <viewControllerLayoutGuide type="bottom" id="0M0-37-aLu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aCR-WJ-nxR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ab-fS-Pcb">
+                                <rect key="frame" x="0.0" y="72" width="414" height="620"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Ab-fS-Pcb" secondAttribute="height" multiplier="23:36" id="buV-91-5i5"/>
+                                </constraints>
+                            </webView>
+                            <navigationBar contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25o-oZ-vMy">
+                                <rect key="frame" x="0.0" y="15" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="25o-oZ-vMy" secondAttribute="height" multiplier="207:22" id="04d-PV-g4P"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.83898237180000002" green="0.0" blue="0.0078543478689999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="游戏说明" id="mKE-Jt-Xoa">
+                                        <barButtonItem key="rightBarButtonItem" image="hamburb" style="plain" id="HvF-Rc-2yH">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="showAlert:" destination="HqO-bv-K1a" id="6gE-WG-UdX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ab-fS-Pcb" firstAttribute="top" secondItem="EAZ-Cq-SI9" secondAttribute="bottom" constant="10" id="Kce-Mf-Bhp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="25o-oZ-vMy" secondAttribute="trailing" constant="-20" id="OLc-Fb-zEf"/>
+                            <constraint firstItem="25o-oZ-vMy" firstAttribute="leading" secondItem="aCR-WJ-nxR" secondAttribute="leadingMargin" constant="-20" id="RFx-z1-pRd"/>
+                            <constraint firstItem="25o-oZ-vMy" firstAttribute="top" secondItem="aCR-WJ-nxR" secondAttribute="topMargin" constant="16" id="bVO-rd-DLk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Ab-fS-Pcb" secondAttribute="trailing" constant="-20" id="wh4-hO-HG3"/>
+                            <constraint firstItem="6Ab-fS-Pcb" firstAttribute="leading" secondItem="aCR-WJ-nxR" secondAttribute="leadingMargin" constant="-20" id="zly-rN-ndS"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="游戏说明" image="m5" id="srP-u8-y6g"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="webView" destination="6Ab-fS-Pcb" id="KVD-Ol-E2i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q06-pn-cxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1275,6 +1318,7 @@
         <image name="about_log" width="48" height="36"/>
         <image name="baseball" width="60" height="60"/>
         <image name="football" width="60" height="60"/>
+        <image name="hamburb" width="48" height="72"/>
         <image name="ibtn_delete_item" width="72" height="72"/>
         <image name="loginlogo" width="360" height="192"/>
         <image name="m1" width="24" height="24"/>

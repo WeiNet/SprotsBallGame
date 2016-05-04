@@ -123,4 +123,8 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(uiView, animated: true)
         }
     }
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
 }

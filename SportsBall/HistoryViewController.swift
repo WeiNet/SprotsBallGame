@@ -16,6 +16,8 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var tableViewList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="游戏纪录"
+       self.navigationItem.leftBarButtonItem = nil
         tableViewList.delegate=self
         tableViewList.dataSource=self
         conn.delegate=self
@@ -124,5 +126,9 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         
     }
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     
 }

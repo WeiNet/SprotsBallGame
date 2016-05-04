@@ -68,7 +68,9 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate{
         btnLog.titleLabel?.text=""
     }
     
-    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
 }
 
