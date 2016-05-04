@@ -13,7 +13,6 @@
         var betList:[BetInfo]?
         var comm=CommonParameter()
         @IBOutlet weak var tableList: UITableView!
-        
         @IBAction func payChlick(sender: UIButton) {
             var jsonObject: [AnyObject] = []
             
@@ -24,6 +23,9 @@
             var str=toJSONString(jsonObject)
             
             addBet(str)
+        }
+        @IBAction func controlTouchDown(sender: AnyObject) {
+            
         }
         override func viewDidLoad() {
             self.title="购物车"
@@ -57,16 +59,23 @@
             var lableKY=cell?.viewWithTag(11) as! UILabel
             var lableDC=cell?.viewWithTag(12) as! UILabel
             var lableDZ=cell?.viewWithTag(13) as! UILabel
+            var textMoney=cell?.viewWithTag(8) as! UITextField
             lableV.text=betList![indexPath.row].visitname
             lableH.text=betList![indexPath.row].homename
             lableBetTeam.text=betList![indexPath.row].betteamName
             lableRate.text=betList![indexPath.row].visitname
             lableDC.text=betList![indexPath.row].dcsx
             lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
-            
+          
+            textMoney.addTarget(self, action:"changeMoney:", forControlEvents: UIControlEvents.EditingChanged)
             
             return cell!
         }
+        func changeMoney(sender:AnyObject){
+            var tag=sender.tag
+           
+        }
+        
         
         
         func toJSONString(jsonObject: [AnyObject])->NSString{
@@ -88,5 +97,7 @@
             strParam.appendContentsOf("<strpara>\(strParam)</strpara>")
             strParam.appendContentsOf("<isBeting>false</iPageindex>")
             strParam.appendContentsOf("</BatchAddBet>")
-            comm.getResult(strParam,strResultName: "BatchAddBetResult")        }
+            comm.getResult(strParam,strResultName: "BatchAddBetResult")
+        }
+        
     }
