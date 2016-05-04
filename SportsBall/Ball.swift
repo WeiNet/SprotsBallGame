@@ -55,7 +55,7 @@ class Ball: NSObject {
     }
     
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate){
+    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat){
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20
@@ -63,6 +63,7 @@ class Ball: NSObject {
         let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
         cartButtonView?.frame.size.width = width
         cartButtonView?.frame.size.height = 48
+        cartButtonView?.delegate = cartDelegate
         contentView.addSubview(cartButtonView!)
         //添加购物车控件后Y轴空出
         startY = startY + 48
@@ -82,6 +83,7 @@ class Ball: NSObject {
         let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20 - 36)
         let tableView = TableView(frame: cgr)
         tableView.initDelegate(showUnion)
+        tableView.orderHeight = orderHeight
         tableView.bindDelegate = delegate
         contentView.addSubview(tableView)
     }
@@ -89,7 +91,7 @@ class Ball: NSObject {
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
-        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME
+        cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME + "[主]"
         cell.N_HOME_NAME.text = orderCellModel.N_HOME_NAME
         if orderCellModel.N_ZDTIME == nil {
             let gameDate = orderCellModel.N_GAMEDATE

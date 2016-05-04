@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate {
+class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
@@ -18,9 +18,36 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     var betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//0:早盘；1：单式；2：滚球
+    var isMultiselect = false//即时下注
     let checkBetResult:String = "CheckBetResult"
     let getFootballMatchResult:String = "GetFootballMatchResult"
     let addBetResult:String = "AddBetResult"
+    var alertMenu:UIAlertController!
+    var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["2":"滚球"],["1":"单式"],["3":"波胆"],["4":"入球数"],["5":"半全场"],["6":"综合过关"]]
+    
+    //创建玩法菜单
+    func createMenu(menuArray: Array<Dictionary<String,String>>){
+        if(menuArray.count <= 0){
+            return
+        }
+        alertMenu = UIAlertController(title: "足球玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+        for menu in menuArray {
+            for (key,value) in menu {
+                let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                    self.clickMenuItem(key)
+                })
+                alertMenu.addAction(item)
+            }
+        }
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertMenu.addAction(cancel)
+    }
+    //玩法菜单选项响应事件
+    func clickMenuItem(key:String){
+        mPlayType = key
+        getFootballMatch()
+        print(key)
+    }
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
@@ -30,7 +57,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self)
+            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: 216)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
@@ -46,14 +73,11 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //刷新
     func refreshClick(){
-        if contentView.subviews.count > 0 {
-            contentView.subviews[0].removeFromSuperview()
-        }
         getFootballMatch()
     }
     //标题点击，玩法选取
     func titleViewClick(){
-        
+        self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //联盟打开
     func unionClick(){
@@ -62,6 +86,23 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //规则说明
     func explainClick(){
         
+    }
+    //清空购物清单
+    func cartClear(){
+        
+    }
+    //显示购物车
+    func cartShow(){
+        if(isMultiselect){
+            var betManger = BetListManager.sharedManager
+            if(betManger.betList.count > 0){
+                var sb = UIStoryboard(name: "Main", bundle:nil)
+                var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                alertMessage("至少选择一场比赛", carrier: self)
+            }
+        }
     }
     
     //绑定队伍标题
@@ -92,14 +133,20 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
         betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
-        alertView.show(self)//显示即时下注popuWin
-        return false
+        if(isMultiselect){
+            var betManger = BetListManager.sharedManager
+            var objInfo = betInfo
+            betManger.betList.append(objInfo)
+        }else{
+            alertView.show(self)//显示即时下注popuWin
+        }
+        return isMultiselect
     }
     
     //即时下注付款协议
     func selectOkButtonalertView(){
         pleaseWait()
-        betInfo.dMoney = alertView.myView.money.text
+        betInfo.dMoney = alertView.myView.money.text!
         AddBet()
         print("selectOkButtonalertView")
     }
@@ -210,44 +257,44 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
 
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls1(showUnion:NSMutableArray){
-        var startY:CGFloat = 0
-        let width = contentView.frame.size.width
-        let height = contentView.frame.size.height - 20
-        
-        let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
-        cartButtonView?.frame.size.width = width
-        cartButtonView?.frame.size.height = 48
-        contentView.addSubview(cartButtonView!)
-        //添加购物车控件后Y轴空出
-        startY = startY + 48
-        
-        //先创建一个数组用于设置分段控件的标题
-        let appsArray:[String] = ["即时下注","复合下注"]
-        let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
-        segment.frame = CGRect(x: (width-180)/2, y: height+45, width: 180, height: 20)
-        //默认选中下标为0的
-        segment.selectedSegmentIndex = 0
-        //设置标题颜色
-//        segment.tintColor = UIColor.redColor()
-        //添加事件，当segment改变时，触发 Parent
-        segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
-        mainView.addSubview(segment)
-        
-        let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20 - 36)
-        let tableView = TableView(frame: cgr)
-        tableView.initDelegate(showUnion)
-        tableView.bindDelegate = self
-        contentView.addSubview(tableView)
-    }
+//    func addControls1(showUnion:NSMutableArray){
+//        var startY:CGFloat = 0
+//        let width = contentView.frame.size.width
+//        let height = contentView.frame.size.height - 20
+//        
+//        let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
+//        cartButtonView?.frame.size.width = width
+//        cartButtonView?.frame.size.height = 48
+//        contentView.addSubview(cartButtonView!)
+//        //添加购物车控件后Y轴空出
+//        startY = startY + 48
+//        
+//        //先创建一个数组用于设置分段控件的标题
+//        let appsArray:[String] = ["即时下注","复合下注"]
+//        let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
+//        segment.frame = CGRect(x: (width-180)/2, y: height+45, width: 180, height: 20)
+//        //默认选中下标为0的
+//        segment.selectedSegmentIndex = 0
+//        //设置标题颜色
+////        segment.tintColor = UIColor.redColor()
+//        //添加事件，当segment改变时，触发 Parent
+//        segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
+//        mainView.addSubview(segment)
+//        
+//        let cgr = CGRect(x: 0, y: startY, width: width, height: height - 20 - 36)
+//        let tableView = TableView(frame: cgr)
+//        tableView.initDelegate(showUnion)
+//        tableView.bindDelegate = self
+//        contentView.addSubview(tableView)
+//    }
     
     //即时/复合下注选择改变事件
     func segmentChange(sender: UISegmentedControl){
         switch sender.selectedSegmentIndex {
         case 0 :
-            print("000")
+            isMultiselect = false
         case 1 :
-            print("11111")
+            isMultiselect = true
         default:
             print("default")
         }
@@ -325,7 +372,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.tid = tid
         betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
         betInfo.vh = String(orderCellModel.N_VH)
-        betInfo.let1 = let1
+        betInfo.strlet = let1
         betInfo.hbl = hbl
         betInfo.hfs = hfs
         betInfo.hlx = hlx
@@ -351,12 +398,14 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.dzsx = dzsx
         betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
         //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
-        alertView.myView.visit.text = betInfo.homename
-        alertView.myView.home.text = betInfo.visitname
-        let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
-        alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
-        alertView.myView.limits.text = dzxx + "~" + dzsx
-        alertView.myView.max.text = dzsx
+        if(!isMultiselect){
+            alertView.myView.visit.text = betInfo.homename
+            alertView.myView.home.text = betInfo.visitname
+            let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
+            alertView.myView.limits.text = dzxx + "~" + dzsx
+            alertView.myView.max.text = dzsx
+        }
     }
     
     //向远端添加注单
@@ -381,7 +430,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         strParam.appendContentsOf("<tid>\(betInfo.tid)</tid>")
         strParam.appendContentsOf("<rate>\(betInfo.rate)</rate>")
         strParam.appendContentsOf("<vh>\(betInfo.vh)</vh>")
-        strParam.appendContentsOf("<let>\(betInfo.let1)</let>")
+        strParam.appendContentsOf("<let>\(betInfo.strlet)</let>")
         strParam.appendContentsOf("<hfs>\(betInfo.hfs)</hfs>")
         strParam.appendContentsOf("<hlx>\(betInfo.hlx)</hlx>")
         strParam.appendContentsOf("<hbl>\(betInfo.hbl)</hbl>")
@@ -391,6 +440,9 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //取得赛事注单赔率
     func getFootballMatch(){
+        if contentView.subviews.count > 0 {
+            contentView.subviews[0].removeFromSuperview()
+        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getFootballMatchResult
@@ -414,17 +466,19 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         headerView?.frame.size.height = 48
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
+        
+        createMenu(menuArray)
         //赛事注单
         getFootballMatch()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     //ios隐藏状态栏
     override func prefersStatusBarHidden() -> Bool {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
         return true
+    }
+    //ios隐藏导航栏
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }
