@@ -217,9 +217,9 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         }
         let tempType = ToolsCode.codeByPlayType(toolsCode)
         if (tempType != "DY") && (tempType != "H") {
-            hfs = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
-            hlx = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
-            hbl = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+            hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
+            hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+            hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
         }
         var gameDate:String = orderCellModel.N_GAMEDATE
         gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/dd")
@@ -242,7 +242,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         betInfo.courtType = "1"
         betInfo.id = String(orderCellModel.N_ID)
         betInfo.tid = tid
-        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
+        betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
         betInfo.vh = String(orderCellModel.N_VH)
         betInfo.strlet = String(orderCellModel.N_LET)
         betInfo.hbl = hbl

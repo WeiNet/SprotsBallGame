@@ -299,9 +299,9 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             let1 = String(orderCellModel.N_LET)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+                hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
             }
             let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
@@ -316,9 +316,9 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             let1 = String(orderCellModel.N_LET2)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
             if (tempType != "DY") && (tempType != "H") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
+                hfs = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
             }
             let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
@@ -340,7 +340,8 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.courtType = courtType
         betInfo.id = id
         betInfo.tid = tid
-        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
+        betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
+        //        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
         betInfo.vh = String(orderCellModel.N_VH)
         betInfo.strlet = let1
         betInfo.hbl = hbl
