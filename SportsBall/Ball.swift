@@ -54,6 +54,7 @@ class Ball: NSObject {
         return aryUnionInfo
     }
     
+    
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat){
         var startY:CGFloat = 0
@@ -93,7 +94,7 @@ class Ball: NSObject {
         //绑定注单标题资料
         cell.N_VISIT_NAME.text = orderCellModel.N_VISIT_NAME + "[主]"
         cell.N_HOME_NAME.text = orderCellModel.N_HOME_NAME
-        if orderCellModel.N_ZDTIME == nil {
+        if (orderCellModel.N_ZDFLAG != "Y") {
             let gameDate = orderCellModel.N_GAMEDATE
             cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
             cell.N_VISIT_JZF.text = ""
