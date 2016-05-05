@@ -59,8 +59,8 @@
 		463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463295DC1CBB847A000EFEA9 /* BetInfo.swift */; };
 		463295DF1CBB8C4D000EFEA9 /* ShopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463295DE1CBB8C4D000EFEA9 /* ShopingViewController.swift */; };
 		4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */; };
-		464157391CD98D3800838F32 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 464157381CD98D3800838F32 /* HTML */; };
 		4641573B1CD9909F00838F32 /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641573A1CD9909F00838F32 /* HelpController.swift */; };
+		4641573D1CD9F0A900838F32 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 4641573C1CD9F0A900838F32 /* HTML */; };
 		464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464245D91CB63EA900C77849 /* ProblemController.swift */; };
 		464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */; };
 		46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */; };
@@ -145,8 +145,8 @@
 		463295DC1CBB847A000EFEA9 /* BetInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfo.swift; sourceTree = "<group>"; };
 		463295DE1CBB8C4D000EFEA9 /* ShopingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopingViewController.swift; sourceTree = "<group>"; };
 		4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultDelegate.swift; sourceTree = "<group>"; };
-		464157381CD98D3800838F32 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		4641573A1CD9909F00838F32 /* HelpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
+		4641573C1CD9F0A900838F32 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		464245D91CB63EA900C77849 /* ProblemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemController.swift; sourceTree = "<group>"; };
 		464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemFeedbackViewController.swift; sourceTree = "<group>"; };
 		46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCenterView.swift; sourceTree = "<group>"; };
@@ -324,6 +324,7 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
+				4641573C1CD9F0A900838F32 /* HTML */,
 				1779BA491CCEF38F002A62DC /* match */,
 				1779BA4E1CCEF445002A62DC /* tableview */,
 				17DA620C1CB8CC61009070E6 /* Roll */,
@@ -519,6 +520,7 @@
 				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
 				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
+				4641573D1CD9F0A900838F32 /* HTML in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,

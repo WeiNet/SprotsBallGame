@@ -388,6 +388,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0M0-37-aLu" firstAttribute="top" secondItem="6Ab-fS-Pcb" secondAttribute="bottom" id="9n8-bl-lvN"/>
                             <constraint firstItem="6Ab-fS-Pcb" firstAttribute="top" secondItem="EAZ-Cq-SI9" secondAttribute="bottom" constant="10" id="Kce-Mf-Bhp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="25o-oZ-vMy" secondAttribute="trailing" constant="-20" id="OLc-Fb-zEf"/>
                             <constraint firstItem="25o-oZ-vMy" firstAttribute="leading" secondItem="aCR-WJ-nxR" secondAttribute="leadingMargin" constant="-20" id="RFx-z1-pRd"/>
@@ -915,8 +916,8 @@
                                     <navigationItem title="派彩记录" id="wLb-S1-d7b"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="epa-9C-Frb">
-                                <rect key="frame" x="8" y="77" width="585" height="474"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="epa-9C-Frb">
+                                <rect key="frame" x="8" y="77" width="585" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sportBall" rowHeight="196" id="qf0-rd-WGq">
@@ -978,14 +979,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Awd-Xf-oWB">
+                                <rect key="frame" x="262" y="523" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Awd-Xf-oWB" firstAttribute="centerX" secondItem="dPc-cU-TRs" secondAttribute="centerX" id="5jh-Fk-4RA"/>
                             <constraint firstItem="epa-9C-Frb" firstAttribute="leading" secondItem="dPc-cU-TRs" secondAttribute="leadingMargin" constant="-12" id="8hI-xY-BA0"/>
                             <constraint firstItem="Ojx-Ou-YRl" firstAttribute="leading" secondItem="dPc-cU-TRs" secondAttribute="leadingMargin" constant="-20" id="GgC-zk-3tP"/>
                             <constraint firstItem="Ojx-Ou-YRl" firstAttribute="top" secondItem="Ako-Nh-jTR" secondAttribute="bottom" id="NnP-LJ-9K5"/>
                             <constraint firstItem="paN-yS-2cE" firstAttribute="top" secondItem="epa-9C-Frb" secondAttribute="bottom" id="UgE-K7-8Yo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ojx-Ou-YRl" secondAttribute="trailing" constant="-20" id="WSG-IE-f9M"/>
+                            <constraint firstItem="Awd-Xf-oWB" firstAttribute="centerY" secondItem="dPc-cU-TRs" secondAttribute="centerY" id="Zmz-a7-RKa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="epa-9C-Frb" secondAttribute="trailing" constant="-13" id="qkQ-Mu-gON"/>
                             <constraint firstItem="epa-9C-Frb" firstAttribute="top" secondItem="Ako-Nh-jTR" secondAttribute="bottom" constant="57" id="rdn-0x-na2"/>
                         </constraints>
@@ -993,6 +999,7 @@
                     <tabBarItem key="tabBarItem" title="派彩记录" image="m4" id="6BP-uC-1JX"/>
                     <navigationItem key="navigationItem" title="Title" id="Dim-4g-4fT"/>
                     <connections>
+                        <outlet property="activityView" destination="Awd-Xf-oWB" id="RXK-f1-6am"/>
                         <outlet property="tableViewList" destination="epa-9C-Frb" id="DLe-7o-LBT"/>
                     </connections>
                 </viewController>

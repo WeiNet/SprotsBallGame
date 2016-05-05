@@ -13,14 +13,19 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var conn=CommonParameter()
     var jsonResult:NSMutableArray=[]
     var intIndexPage=0
+    
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var tableViewList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityView.startAnimating()
+        activityView.hidesWhenStopped=true
         self.title="游戏纪录"
        self.navigationItem.leftBarButtonItem = nil
         tableViewList.delegate=self
         tableViewList.dataSource=self
         conn.delegate=self
+        
         refresh.attributedTitle=NSAttributedString(string: "下拉刷新")
         refresh.addTarget(self, action: "funcRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableViewList.addSubview(refresh)
@@ -100,6 +105,8 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if(strResult==""){
         return
         }
+       
+        activityView.stopAnimating()
         refresh.endRefreshing()
         NSLog(strResult)
         let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
