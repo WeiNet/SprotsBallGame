@@ -31,7 +31,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         if(menuArray.count <= 0){
             return
         }
-        alertMenu = UIAlertController(title: "足球玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+        alertMenu = UIAlertController(title: "蓝球玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
         for menu in menuArray {
             for (key,value) in menu {
                 let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
