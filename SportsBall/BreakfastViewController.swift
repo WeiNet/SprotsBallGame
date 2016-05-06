@@ -82,7 +82,15 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //联盟打开
     func unionClick(){
+        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: nil, options: nil).first as? UnionCustomAlertView
         
+        myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
+        myView?.center = self.view.center
+        
+        if myView != nil {
+            self.view.addSubview(myView!)
+            self.view.bringSubviewToFront(myView!)
+        }
     }
     //规则说明
     func explainClick(){
