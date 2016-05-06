@@ -298,7 +298,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             id = String(orderCellModel.N_ID)
             let1 = String(orderCellModel.N_LET)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType != "DY") && (tempType != "H") {
+            if (tempType != "DY") && (tempType != "HJ") {
                 hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
                 hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
                 hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
@@ -315,7 +315,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             id = String(orderCellModel.N_ID2)
             let1 = String(orderCellModel.N_LET2)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType != "DY") && (tempType != "H") {
+            if (tempType != "DY") && (tempType != "HJ") {
                 hfs = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
                 hlx = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
                 hbl = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
