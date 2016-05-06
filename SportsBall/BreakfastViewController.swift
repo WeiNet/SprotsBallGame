@@ -82,7 +82,15 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //联盟打开
     func unionClick(){
+        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: nil, options: nil).first as? UnionCustomAlertView
         
+        myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
+        myView?.center = self.view.center
+        
+        if myView != nil {
+            self.view.addSubview(myView!)
+            self.view.bringSubviewToFront(myView!)
+        }
     }
     //规则说明
     func explainClick(){
@@ -298,10 +306,10 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             id = String(orderCellModel.N_ID)
             let1 = String(orderCellModel.N_LET)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType != "DY") && (tempType != "H") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+            if (tempType != "DY") && (tempType != "HJ") {
+                hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
             }
             let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
@@ -315,10 +323,10 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             id = String(orderCellModel.N_ID2)
             let1 = String(orderCellModel.N_LET2)
             let tempType = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType != "DY") && (tempType != "H") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
+            if (tempType != "DY") && (tempType != "HJ") {
+                hfs = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
             }
             let tempLRH = ToolsCode.codeByLRH(toolsCode)
             if tempLRH == "L" {
@@ -340,7 +348,8 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.courtType = courtType
         betInfo.id = id
         betInfo.tid = tid
-        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
+        betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
+        //        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
         betInfo.vh = String(orderCellModel.N_VH)
         betInfo.strlet = let1
         betInfo.hbl = hbl

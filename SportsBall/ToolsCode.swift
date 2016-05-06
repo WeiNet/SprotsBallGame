@@ -95,7 +95,7 @@ struct ToolsCode {
         case LDYPL,RDYPL,LDYPL2,RDYPL2:
             controlPlayType = "DY"
         case HJPL,HJPL2:
-            controlPlayType = "H"
+            controlPlayType = "HJ"
         case LRFView,RRFView,LRFView2,RRFView2:
             controlPlayType = "RF"
         case LDXBLView,RDXBLView,LDXBLView2,RDXBLView2:
