@@ -12,6 +12,7 @@
         var betManger:BetListManager?
         var betList:[BetInfo]?
         var comm=CommonParameter()
+        var intRowIndex:Int = 0
         @IBOutlet weak var tableList: UITableView!
         @IBAction func payChlick(sender: UIButton) {
             var jsonObject: [AnyObject] = []
@@ -63,16 +64,17 @@
             lableV.text=betList![indexPath.row].visitname
             lableH.text=betList![indexPath.row].homename
             lableBetTeam.text=betList![indexPath.row].betteamName
-            lableRate.text=betList![indexPath.row].visitname
+            lableRate.text=betList![indexPath.row].rate
             lableDC.text=betList![indexPath.row].dcsx
             lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
           
-            textMoney.addTarget(self, action:"changeMoney:", forControlEvents: UIControlEvents.EditingChanged)
+           textMoney.addTarget(self, action:"changeMoney:", forControlEvents: UIControlEvents.EditingChanged)
             
             return cell!
         }
         func changeMoney(sender:AnyObject){
-            var tag=sender.tag
+          
+         
            
         }
         
