@@ -82,8 +82,9 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //联盟打开
     func unionClick(){
-        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: nil, options: nil).first as? UnionCustomAlertView
-        
+//        var externalObjects:Dictionary = ["externalObjects" : "externalObjects"]
+        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: nil, options: ["externalObjects" : "externalObjects"]).first as? UnionCustomAlertView
+//        NSBundle.mainBundle().loadNibNamed("", owner: nil, options: ["externalObjects" : "externalObjects"])
         myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
         myView?.center = self.view.center
         

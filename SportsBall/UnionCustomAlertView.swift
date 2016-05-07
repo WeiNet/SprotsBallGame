@@ -8,12 +8,9 @@
 
 import UIKit
 
-class UnionCustomAlertView: UIView {
+public var externalObjects:String?
 
-    private var viewX:Double!
-    private var viewY:Double!
-    private var viewWidth: Double = 350.0
-    private var viewHeight: Double = 600.0
+class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet var unionTable: UITableView!
     @IBOutlet var selAllView: UIView!
@@ -21,16 +18,47 @@ class UnionCustomAlertView: UIView {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var okButton: UIButton!
     
+//    public var externalObjects:String?
     
-    var cornerRadius: Double = 40.0
-    var bottom:UIView!
-    var myView:UnionCustomAlertView!
     
-    @IBAction func canel(sender: UIButton) {
-        print("canel")
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 2
     }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell:UITableViewCell = UITableViewCell(frame: CGRect(x: 0, y: 0, width: 350, height: 48))
+        let image = UIImage(named:"checkbox_on")
+        cell.imageView?.image = image
+        cell.textLabel?.text = "tttttttt\(indexPath.row)"
+        //点击不改变整行Cell的颜色
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+//        self.awakeFromNib()
+//        NSBundle.mainBundle().loadNibNamed
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+        var image:UIImage?
+        if cell.selected {
+            image = UIImage(named:"checkbox_off")
+        } else {
+            image = UIImage(named:"checkbox_on")
+        }
+        cell.selected = !cell.selected
+        
+        cell.imageView?.image = image
+        print("gggggggggggg")
+    }
+
+    @IBAction func canel(sender: UIButton) {
+        self.removeFromSuperview()
+    }
+    
     @IBAction func ok(sender: UIButton) {
-      print("ok")
+        print("ok")
     }
     
     func checkboxClick(sender: UITapGestureRecognizer) {
@@ -44,5 +72,9 @@ class UnionCustomAlertView: UIView {
         // 单击手势识别
         let tapGesture = UITapGestureRecognizer(target: self, action: "checkboxClick:")
         selAllView.addGestureRecognizer(tapGesture)
+        
+        unionTable.userInteractionEnabled = true
+        unionTable.dataSource = self
+        unionTable.delegate = self
     }
 }
