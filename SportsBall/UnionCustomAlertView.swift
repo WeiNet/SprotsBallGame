@@ -8,7 +8,7 @@
 
 import UIKit
 
-public var externalObjects:String?
+var externalObjects:String?
 
 class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     
@@ -18,7 +18,7 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var okButton: UIButton!
     
-//    public var externalObjects:String?
+    @IBInspectable var externalObjects:String?
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -66,6 +66,7 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     }
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         selAllButton.setImage(UIImage(named: "checkbox_on"), forState: UIControlState.Normal)
         selAllButton.setImage(UIImage(named: "checkbox_off"), forState: UIControlState.Selected)
         selAllView.userInteractionEnabled = true
@@ -76,5 +77,6 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
         unionTable.userInteractionEnabled = true
         unionTable.dataSource = self
         unionTable.delegate = self
+        self.superclass
     }
 }
