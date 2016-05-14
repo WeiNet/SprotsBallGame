@@ -60,6 +60,7 @@ class Ball: NSObject {
     
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat){
+        
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
         let height = contentView.frame.size.height - 20

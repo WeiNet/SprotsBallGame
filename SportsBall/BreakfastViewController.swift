@@ -97,15 +97,16 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //清空购物清单
     func cartClear(){
-        
+        let betManger = BetListManager.sharedManager
+        betManger.betList.removeAll(keepCapacity: false)
     }
     //显示购物车
     func cartShow(){
         if(isMultiselect){
-            var betManger = BetListManager.sharedManager
+            let betManger = BetListManager.sharedManager
             if(betManger.betList.count > 0){
-                var sb = UIStoryboard(name: "Main", bundle:nil)
-                var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 alertMessage("至少选择一场比赛", carrier: self)
@@ -156,7 +157,6 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         pleaseWait()
         betInfo.dMoney = alertView.myView.money.text!
         AddBet()
-        print("selectOkButtonalertView")
     }
     //即时下注付款取消协议
     func  selecttCancelButtonAlertView(){
@@ -197,14 +197,14 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //资料的显示
     func showData(view:BreakfastView,orderCellModel:OrderCellModel){
         //全场赌赢不允许下注-->OPEN 该盘口不锁定
-        if (orderCellModel.N_DY_OPEN == nil || String(orderCellModel.N_DY_OPEN) == "0"){
+        if (orderCellModel.N_DY_OPEN != nil && String(orderCellModel.N_DY_OPEN) != "1"){
             view.N_LDYPL.text = orderCellModel.N_LDYPL != nil ? String(format: "%.3f", orderCellModel.N_LDYPL.floatValue) : ""
             view.N_HJPL.text = orderCellModel.N_HJPL != nil ? String(format: "%.3f", orderCellModel.N_HJPL.floatValue) : ""
             view.N_RDYPL.text = orderCellModel.N_RDYPL != nil ? String(format: "%.3f", orderCellModel.N_RDYPL.floatValue) : ""
         }
         //全场让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_RF_OPEN == nil || String(orderCellModel.N_RF_OPEN) == "0"){
-            if(orderCellModel.N_LET == nil || String(orderCellModel.N_LET) == "0"){
+        if(orderCellModel.N_RF_OPEN != nil && String(orderCellModel.N_RF_OPEN) != "1"){
+            if(orderCellModel.N_LET != nil && String(orderCellModel.N_LET) != "1"){
                 view.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
             }else{
                 view.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
@@ -213,7 +213,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             view.N_RRFPL.text = orderCellModel.N_RRFPL != nil ? String(format: "%.3f", orderCellModel.N_RRFPL.floatValue) : ""
         }
         //全场大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DX_OPEN == nil || String(orderCellModel.N_DX_OPEN) == "0"){
+        if(orderCellModel.N_DX_OPEN != nil && String(orderCellModel.N_DX_OPEN) != "1"){
             view.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
             view.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
             view.N_DXDPL.text = orderCellModel.N_DXDPL != nil ? String(format: "%.3f", orderCellModel.N_DXDPL.floatValue) : ""
@@ -222,14 +222,14 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         
         
         //半场赌赢不允许下注-->OPEN 该盘口不锁定
-        if (orderCellModel.N_DY_OPEN2 == nil || String(orderCellModel.N_DY_OPEN2) == "0"){
+        if (orderCellModel.N_DY_OPEN2 != nil && String(orderCellModel.N_DY_OPEN2) != "1"){
             view.N_LDYPL2.text = orderCellModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_LDYPL2.floatValue) : ""
             view.N_HJPL2.text = orderCellModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellModel.N_HJPL2.floatValue) : ""
             view.N_RDYPL2.text = orderCellModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_RDYPL2.floatValue) : ""
         }
         //半场让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_RF_OPEN2 == nil || String(orderCellModel.N_RF_OPEN2) == "0"){
-            if(orderCellModel.N_LET2 == nil || String(orderCellModel.N_LET2) == "0"){
+        if(orderCellModel.N_RF_OPEN2 != nil && String(orderCellModel.N_RF_OPEN2) != "1"){
+            if(orderCellModel.N_LET2 != nil && String(orderCellModel.N_LET2) != "1"){
                 view.N_LRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
             }else{
                 view.N_RRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
@@ -238,7 +238,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             view.N_RRFPL2.text = orderCellModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_RRFPL2.floatValue) : ""
         }
         //半场大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DX_OPEN2 == nil || String(orderCellModel.N_DX_OPEN2) == "0"){
+        if(orderCellModel.N_DX_OPEN2 != nil && String(orderCellModel.N_DX_OPEN2) != "1"){
             view.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
             view.N_RDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
             view.N_DXDPL2.text = orderCellModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXDPL2.floatValue) : ""
@@ -419,7 +419,10 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //取得赛事注单赔率
     func getFootballMatch(){
         if contentView.subviews.count > 0 {
-            contentView.subviews[0].removeFromSuperview()
+            for view in contentView.subviews {
+                view.removeFromSuperview()
+            }
+//            contentView.subviews[0].removeFromSuperview()
         }
         pleaseWait()
         common.delegate = self
@@ -428,7 +431,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         strParam.appendContentsOf("<strLM></strLM>")
         strParam.appendContentsOf("<strSort>0</strSort>")
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
-        strParam.appendContentsOf("<strPageSize>20</strPageSize>")
+        strParam.appendContentsOf("<strPageSize>20000</strPageSize>")
         strParam.appendContentsOf("<strUser></strUser>")
         //0:早盘；1：单式；2：滚球
         //        strParam.appendContentsOf("<strType>2</strType>")
@@ -446,7 +449,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         self.headerView.addSubview(headerView!)
         
         createMenu(menuArray)
-        //赛事注单
+        //赛事资料
         getFootballMatch()
     }
     

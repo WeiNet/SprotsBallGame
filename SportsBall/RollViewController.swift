@@ -49,7 +49,6 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
         getOtherMatch()
-        print(key)
     }
     
     //远端回传资料响应协议
@@ -159,8 +158,8 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     //资料的显示
     func showData(view:RollView,orderCellModel:OrderCellModel){
         //让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_RF_OPEN == nil || String(orderCellModel.N_RF_OPEN) == "0"){
-            if(orderCellModel.N_LET == nil || String(orderCellModel.N_LET) == "0"){
+        if(orderCellModel.N_RF_OPEN != nil && String(orderCellModel.N_RF_OPEN) != "1"){
+            if(String(orderCellModel.N_LET) != "1"){
                 view.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
             }else{
                 view.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
@@ -169,14 +168,14 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
             view.N_RRFPL.text = orderCellModel.N_RRFPL != nil ? String(format: "%.3f", orderCellModel.N_RRFPL.floatValue) : ""
         }
         //大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DX_OPEN == nil || String(orderCellModel.N_DX_OPEN) == "0"){
+        if(orderCellModel.N_DX_OPEN != nil && String(orderCellModel.N_DX_OPEN) != "1"){
             view.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
             view.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
             view.N_LDXDPL.text = orderCellModel.N_DXDPL != nil ? String(format: "%.3f", orderCellModel.N_DXDPL.floatValue) : ""
             view.N_RDXXPL.text = orderCellModel.N_DXXPL != nil ? String(format: "%.3f", orderCellModel.N_DXXPL.floatValue) : ""
         }
         //单双不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DS_OPEN == nil || String(orderCellModel.N_DS_OPEN) == "0"){
+        if(orderCellModel.N_DS_OPEN != nil && String(orderCellModel.N_DS_OPEN) != "1"){
             view.N_RDSSPL.text = orderCellModel.N_DSSPL != nil ? String(format: "%.3f", orderCellModel.N_DSSPL.floatValue) : ""
             view.N_RDSDPL.text = orderCellModel.N_DSDPL != nil ? String(format: "%.3f", orderCellModel.N_DSDPL.floatValue) : ""
         }
@@ -294,7 +293,6 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         pleaseWait()
         betInfo.dMoney = alertView.myView.money.text!
         AddBet()
-        print("selectOkButtonalertView")
     }
     //即时下注付款取消协议
     func  selecttCancelButtonAlertView(){
@@ -317,7 +315,10 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     
     func getOtherMatch(){
         if contentView.subviews.count > 0 {
-            contentView.subviews[0].removeFromSuperview()
+            for view in contentView.subviews {
+                view.removeFromSuperview()
+            }
+//            contentView.subviews[0].removeFromSuperview()
         }
         pleaseWait()
         common.delegate = self
@@ -374,7 +375,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         self.headerView.addSubview(headerView!)
         
         createMenu(menuArray)
-        
+        //赛事资料
         getOtherMatch()
     }
     
