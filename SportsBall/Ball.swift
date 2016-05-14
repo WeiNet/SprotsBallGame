@@ -14,6 +14,8 @@ class Ball: NSObject {
     func stringToDictionary(strResult: String)->NSMutableArray{
         let aryUnionInfo:NSMutableArray = NSMutableArray()
         
+        let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
+        allUnionVO.arrayUnionVO.removeAll(keepCapacity: false)
         var aryUnionVO:Array<UnionTitleVO> = Array()
         let info = ToolsCode.toJsonArray(strResult)
         let unionJson = info[1]
@@ -28,6 +30,7 @@ class Ball: NSObject {
             unionVO.N_LMMC = String(unionJson[index].objectForKey("N_LMMC")!)
             aryUnionVO.append(unionVO)
         }
+        allUnionVO.arrayUnionVO = aryUnionVO
         
         let matchJson = info[0]
         let matchCount:Int = matchJson.count - 1

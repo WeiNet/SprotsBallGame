@@ -81,6 +81,7 @@
                 <outlet property="unionTable" destination="e6s-Z6-3Au" id="cCQ-Eh-nS1"/>
             </connections>
         </view>
+        <placeholder placeholderIdentifier="allUnionVO" id="5WG-pd-2s9" customClass="allUnionVO" customModule="SportsBall" customModuleProvider="target"/>
     </objects>
     <resources>
         <image name="checkbox_on" width="24" height="24"/>
