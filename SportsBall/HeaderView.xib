@@ -11,12 +11,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-YC-rQT">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-YC-rQT">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNW-oA-FgD">
                     <rect key="frame" x="0.0" y="0.0" width="32" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="e21-yK-bcL"/>
                         <constraint firstAttribute="height" constant="48" id="oPS-CG-fas"/>
@@ -28,6 +29,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-eG-QwY">
                     <rect key="frame" x="42" y="0.0" width="32" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="OL5-W5-ap4"/>
                         <constraint firstAttribute="height" constant="48" id="c3O-om-DBB"/>
@@ -64,6 +66,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaZ-TD-St4">
                     <rect key="frame" x="526" y="0.0" width="32" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="MtX-qA-ZcC"/>
                         <constraint firstAttribute="width" constant="32" id="bnl-1G-bZd"/>
@@ -75,6 +78,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-pc-doA">
                     <rect key="frame" x="568" y="0.0" width="32" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="03s-O1-neG"/>
                         <constraint firstAttribute="height" constant="48" id="sxn-nF-QSw"/>
@@ -85,7 +89,6 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eNW-oA-FgD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5AS-Ej-Gdi"/>
                 <constraint firstAttribute="trailing" secondItem="FYW-pc-doA" secondAttribute="trailing" id="HiV-4k-TCI"/>
@@ -106,7 +109,6 @@
         <image name="hamburb" width="48" height="72"/>
         <image name="legen" width="48" height="72"/>
         <image name="refresh" width="48" height="72"/>
-        <image name="title" width="10" height="74"/>
         <image name="triangle" width="12" height="6"/>
     </resources>
 </document>
