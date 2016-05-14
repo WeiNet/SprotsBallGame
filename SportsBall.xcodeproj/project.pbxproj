@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		170226DA1CDC375D00EA6AF6 /* UnionCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */; };
 		170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */; };
-		170226E01CE5B6D000EA6AF6 /* allUnionVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170226DF1CE5B6D000EA6AF6 /* allUnionVO.swift */; };
 		1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */; };
 		1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA511CCEF6BD002A62DC /* Cell.swift */; };
 		1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA521CCEF6BD002A62DC /* Cell.xib */; };
@@ -92,7 +91,6 @@
 /* Begin PBXFileReference section */
 		170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionCustomAlertView.xib; sourceTree = "<group>"; };
 		170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionCustomAlertView.swift; sourceTree = "<group>"; };
-		170226DF1CE5B6D000EA6AF6 /* allUnionVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allUnionVO.swift; sourceTree = "<group>"; };
 		1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastViewController.swift; sourceTree = "<group>"; };
 		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */,
 				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
 				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
-				170226DF1CE5B6D000EA6AF6 /* allUnionVO.swift */,
 				17B3445A1CC08F91002638FC /* header */,
 				1779BA4B1CCEF3F2002A62DC /* football */,
 				17C6EC071CD196CF00DF71E1 /* basketball */,
@@ -574,7 +571,6 @@
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
 				1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
-				170226E01CE5B6D000EA6AF6 /* allUnionVO.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
 				17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */,
