@@ -337,11 +337,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         return betInfo
     }
     
-    //第二次设定BetInfo属性，主要填入限额等
-    func fullBetInfoLimit(betInfoJson:AnyObject){
-        fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
-    }
-    
     //向远端添加注单
     func AddBet(){
         common.matchingElement = addBetResult

@@ -125,6 +125,37 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         viewTemp.orderCellModel = orderCellModel
     }
     
+    //点击赔率点击事件的协议
+    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
+        let tempRate = ToolsCode.codeBy(toolsCode)
+        let rate = orderCellModel.valueForKey(tempRate)?.floatValue
+        if (rate == 0){
+            return false
+        }
+        
+        betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
+        checkBet(betInfo)//检验选取的赔率是不是最新的
+        if(isMultiselect){
+            let betManger = BetListManager.sharedManager
+            let objInfo = betInfo
+            betManger.betList.append(objInfo)
+        }else{
+            alertView.show(self)//显示即时下注popuWin
+        }
+        return isMultiselect
+    }
+    
+    //即时下注付款协议
+    func selectOkButtonalertView(){
+        pleaseWait()
+        betInfo.dMoney = alertView.myView.money.text!
+        AddBet()
+    }
+    //即时下注付款取消协议
+    func  selecttCancelButtonAlertView(){
+        print("selecttCancelButtonAlertView")
+    }
+    
     //注单赋值前清空重用控件
     func clear(view:RollView){
         
@@ -248,37 +279,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         betInfo.dMoney = "10"
         betInfo.score = ToolsCode.getBallHead((orderCellModel.valueForKey("N_\(tempType)FS")?.integerValue)!, bl: (orderCellModel.valueForKey("N_\(tempType)BL")?.integerValue)!, lx: (orderCellModel.valueForKey("N_\(tempType)LX")?.integerValue)!)
         return betInfo
-    }
-    
-    //即时下注付款协议
-    func selectOkButtonalertView(){
-        pleaseWait()
-        betInfo.dMoney = alertView.myView.money.text!
-        AddBet()
-    }
-    //即时下注付款取消协议
-    func  selecttCancelButtonAlertView(){
-        print("selecttCancelButtonAlertView")
-    }
-    
-    //点击赔率点击事件的协议
-    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
-        let tempRate = ToolsCode.codeBy(toolsCode)
-        let rate = orderCellModel.valueForKey(tempRate)?.floatValue
-        if (rate == 0){
-            return false
-        }
-        
-        betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
-        checkBet(betInfo)//检验选取的赔率是不是最新的
-        if(isMultiselect){
-            let betManger = BetListManager.sharedManager
-            let objInfo = betInfo
-            betManger.betList.append(objInfo)
-        }else{
-            alertView.show(self)//显示即时下注popuWin
-        }
-        return isMultiselect
     }
     
     func getOtherMatch(){
