@@ -25,7 +25,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     var alertMenu:UIAlertController!
     var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["2":"滚球"],["3":"让球"],["3":"综合过关"]]
-     var orderHeight:CGFloat = 109
+    var orderHeight:CGFloat = 109
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
@@ -48,7 +48,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
                 orderHeight = 109
             }
             let basketInfo:NSMutableArray = stringToDictionary(strResult)
-            addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight)
+            addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType)
         }else if(strType == checkBetResult){
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
@@ -282,12 +282,12 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     func getOtherMatch(){
-        if contentView.subviews.count > 0 {
-            for view in contentView.subviews {
-                view.removeFromSuperview()
-            }
-//            contentView.subviews[0].removeFromSuperview()
-        }
+//        if contentView.subviews.count > 0 {
+//            for view in contentView.subviews {
+//                view.removeFromSuperview()
+//            }
+////            contentView.subviews[0].removeFromSuperview()
+//        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getOtherMatchResult
