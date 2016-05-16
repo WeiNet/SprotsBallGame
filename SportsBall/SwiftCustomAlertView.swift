@@ -62,6 +62,7 @@ class SwiftCustomAlertView: UIView {
         }
     }
     
+    
     func showWin(view: UIView,viewDelegate myDelegate: SwiftCustomAlertViewDelegate) {
         let viewWin = view.frame.size
         viewX = (Double(viewWin.width) - viewWidth)/2
