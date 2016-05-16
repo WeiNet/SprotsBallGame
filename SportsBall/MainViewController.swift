@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSource,UITableViewDelegate{
      var circleView: CirCleView!
     
- var ddd=""
+ 
     @IBOutlet weak var tableData: UITableView!
     
     var gameName=["足球竞赛","篮球竞赛","棒球竞赛","排球竞赛"]
