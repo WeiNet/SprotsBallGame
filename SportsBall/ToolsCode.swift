@@ -190,4 +190,66 @@ struct ToolsCode {
         return strResule
     }
     
+    //让分的背景设定
+    static func setBackground(view:UIView,select: Bool){
+        let lbl0 = view.subviews[0] as! UILabel
+        let lbl1 = view.subviews[1] as! UILabel
+        setLblFontBackground2(lbl0,selected: select)
+        setLblFontBackground(lbl1,selected: select)
+    }
+    //大小球的背景设定
+    static func setBackground2(view:UIView,select: Bool){
+        let lbl0 = view.subviews[0] as! UILabel
+        let lbl1 = view.subviews[1] as! UILabel
+        let lbl2 = view.subviews[2] as! UILabel
+        setLblFontBackground(lbl0,selected: select)
+        setLblFontBackground2(lbl1,selected: select)
+        setLblFontBackground(lbl2,selected: select)
+    }
+    //白色红底
+    static func setLblFontBackground(lable:UILabel,selected: Bool){
+        if selected {
+            lable.textColor = hexStringToColor("#FFFFFF")
+            lable.backgroundColor = hexStringToColor("#FF4646")
+        }else{
+            lable.textColor = hexStringToColor("#464646")
+            lable.backgroundColor = hexStringToColor("#FAFAFA")
+        }
+    }
+    //金色红底
+    static func setLblFontBackground2(lable:UILabel,selected: Bool){
+        if selected {
+            lable.textColor = hexStringToColor("#FFFF00")
+            lable.backgroundColor = hexStringToColor("#FF4646")
+        }else{
+            lable.textColor = hexStringToColor("#008C23")
+            lable.backgroundColor = hexStringToColor("#FAFAFA")
+        }
+    }
+    //16进制转UIColor
+    static func hexStringToColor(strColor:String)->UIColor{
+        var cString: String = strColor.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        
+        if cString.characters.count < 6 {return UIColor.blackColor()}
+        if cString.hasPrefix("0X") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(2))}
+        if cString.hasPrefix("#") {cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))}
+        if cString.characters.count != 6 {return UIColor.blackColor()}
+        
+        var range: NSRange = NSMakeRange(0, 2)
+        
+        let rString = (cString as NSString).substringWithRange(range)
+        range.location = 2
+        let gString = (cString as NSString).substringWithRange(range)
+        range.location = 4
+        let bString = (cString as NSString).substringWithRange(range)
+        
+        var r: UInt32 = 0x0
+        var g: UInt32 = 0x0
+        var b: UInt32 = 0x0
+        NSScanner.init(string: rString).scanHexInt(&r)
+        NSScanner.init(string: gString).scanHexInt(&g)
+        NSScanner.init(string: bString).scanHexInt(&b)
+        
+        return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
+    }
 }

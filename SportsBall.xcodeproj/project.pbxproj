@@ -40,6 +40,7 @@
 		17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */; };
 		17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62261CB8CDEE009070E6 /* ToolsCode.swift */; };
 		17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62281CB8CE22009070E6 /* MyTableView.swift */; };
+		17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E287321CE96FC500B26CA6 /* BallViewController.swift */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -123,6 +124,7 @@
 		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
 		17DA62261CB8CDEE009070E6 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
 		17DA62281CB8CE22009070E6 /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
+		17E287321CE96FC500B26CA6 /* BallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallViewController.swift; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
 				17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */,
+				17E287321CE96FC500B26CA6 /* BallViewController.swift */,
 				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
 				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
 				170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */,
@@ -608,6 +611,7 @@
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
 				170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */,
 				17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */,
+				17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
 				177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */,
 			);

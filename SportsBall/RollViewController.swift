@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
+class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
@@ -64,8 +64,8 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
             }else{
                 orderHeight = 109
             }
-            let basketInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            Ball().addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight)
+            let basketInfo:NSMutableArray = stringToDictionary(strResult)
+            addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight)
         }else if(strType == checkBetResult){
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
@@ -144,7 +144,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
-        Ball().bindMatchDelegate(cell,orderCellModel:orderCellModel)
+        bindCommonMatchDelegate(cell,orderCellModel:orderCellModel)
         if(mPlayType == "2"){
             let gameDate = orderCellModel.N_ZDUPTIME
             cell.N_GAMEDATE.text = ToolsCode.formatterDate(gameDate,format: "MM/dd HH:mm")
@@ -221,15 +221,14 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     
     //背景的填充
     func fillBackground(view:RollView,orderCellModel:OrderCellModel){
-        let ball:Ball = Ball()
-        ball.setBackground(view.N_LRFBLView,select: orderCellModel.N_LRFPL_SEL)
-        ball.setBackground(view.N_RRFBLView,select: orderCellModel.N_RRFPL_SEL)
+        ToolsCode.setBackground(view.N_LRFBLView,select: orderCellModel.N_LRFPL_SEL)
+        ToolsCode.setBackground(view.N_RRFBLView,select: orderCellModel.N_RRFPL_SEL)
         
-        ball.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
-        ball.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
+        ToolsCode.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
+        ToolsCode.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        ball.setBackground(view.N_LDSBLView,select: orderCellModel.N_RDSSPL_SEL)
-        ball.setBackground(view.N_RDSBLView,select: orderCellModel.N_RDSDPL_SEL)
+        ToolsCode.setBackground(view.N_LDSBLView,select: orderCellModel.N_RDSSPL_SEL)
+        ToolsCode.setBackground(view.N_RDSBLView,select: orderCellModel.N_RDSDPL_SEL)
     }
     
     //即时/复合下注选择改变事件

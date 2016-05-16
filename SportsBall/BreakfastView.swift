@@ -18,7 +18,7 @@ class BreakfastView: UIView ,GestureDelegate{
     var delegate:OrderDelegate!
 //    let unionIndex:Int = 0
 //    let matchIndex:Int = 0
-    var ball:Ball = Ball()
+//    var ball:Ball = Ball()
     /*******************************注单控件*******************************/
     @IBOutlet var N_LDYPL: UILabel!
     @IBOutlet var N_HJPL: UILabel!
@@ -118,13 +118,13 @@ class BreakfastView: UIView ,GestureDelegate{
             orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if ((iTag>=ToolsCode.LDYPL && iTag<=ToolsCode.RDYPL)
                 || (iTag>=ToolsCode.LDYPL2 && iTag<=ToolsCode.RDYPL2)){
-                ball.setLblFontBackground(view as! UILabel,selected: !select)
+                ToolsCode.setLblFontBackground(view as! UILabel,selected: !select)
             }else if((iTag>=ToolsCode.LRFView && iTag<=ToolsCode.RRFView)
                 || (iTag>=ToolsCode.LRFView2 && iTag<=ToolsCode.RRFView2)){
-                ball.setBackground(view,select:!select)
+                ToolsCode.setBackground(view,select:!select)
             }else if((iTag>=ToolsCode.LDXBLView && iTag<=ToolsCode.RDXBLView)
                 || (iTag>=ToolsCode.LDXBLView2 && iTag<=ToolsCode.RDXBLView2)){
-                ball.setBackground2(view,select: !select)
+                ToolsCode.setBackground2(view,select: !select)
             }
         }
     }

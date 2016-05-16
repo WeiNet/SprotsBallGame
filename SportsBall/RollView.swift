@@ -11,7 +11,7 @@ import UIKit
 class RollView: UIView,GestureDelegate {
     var orderCellModel:OrderCellModel!//当前View对应的资料
     var delegate:OrderDelegate!
-    var ball:Ball = Ball()
+//    var ball:Ball = Ball()
     
     @IBOutlet var upperView: UIView!
     @IBOutlet var belowView: UIView!
@@ -71,11 +71,11 @@ class RollView: UIView,GestureDelegate {
             let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
             orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if((iTag>=ToolsCode.LRFView && iTag<=ToolsCode.RRFView)){
-                ball.setBackground(view,select:!select)
+                ToolsCode.setBackground(view,select:!select)
             }else if((iTag>=ToolsCode.LDXBLView && iTag<=ToolsCode.RDXBLView)){
-                ball.setBackground2(view,select: !select)
+                ToolsCode.setBackground2(view,select: !select)
             }else if((iTag>=ToolsCode.LDSBLView && iTag<=ToolsCode.RDSBLView)){
-                ball.setBackground(view,select: !select)
+                ToolsCode.setBackground(view,select: !select)
             }
         }
     }

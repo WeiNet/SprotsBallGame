@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
+class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
@@ -58,8 +58,8 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
             return
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
-            let aryUnionInfo:NSMutableArray = Ball().stringToDictionary(strResult)
-            Ball().addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: 216)
+            let aryUnionInfo:NSMutableArray = stringToDictionary(strResult)
+            addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: 216)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson)
@@ -137,7 +137,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
-        Ball().bindMatchDelegate(cell,orderCellModel:orderCellModel)
+        bindCommonMatchDelegate(cell,orderCellModel:orderCellModel)
     }
     //添加注单赔率View
     func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView{
@@ -273,22 +273,21 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //背景的填充
     func fillBackground(view:BreakfastView,orderCellModel:OrderCellModel){
-        let ball:Ball = Ball()
-        ball.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
-        ball.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
-        ball.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
-        ball.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
-        ball.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
-        ball.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
-        ball.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
+        ToolsCode.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        ToolsCode.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        ToolsCode.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        ToolsCode.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
+        ToolsCode.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
+        ToolsCode.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
+        ToolsCode.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        ball.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
-        ball.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
-        ball.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
-        ball.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
-        ball.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
-        ball.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
-        ball.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
+        ToolsCode.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
+        ToolsCode.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
+        ToolsCode.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
+        ToolsCode.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
+        ToolsCode.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
+        ToolsCode.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
+        ToolsCode.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
     
     //即时/复合下注选择改变事件
