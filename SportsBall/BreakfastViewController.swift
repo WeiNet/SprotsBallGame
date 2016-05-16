@@ -23,6 +23,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     let getFootballMatchResult:String = "GetFootballMatchResult"
     let addBetResult:String = "AddBetResult"
     var alertMenu:UIAlertController!
+    var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["2":"滚球"],["1":"单式"],["3":"波胆"],["4":"入球数"],["5":"半全场"],["6":"综合过关"]]
     
     //创建玩法菜单
@@ -82,11 +83,18 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //联盟打开
     func unionClick(){
+        //在XIB的后面加入一个透明的View
+        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        bottom.backgroundColor = UIColor.blackColor()
+        bottom.alpha = 0.8
+        
         let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
         myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
         myView?.center = self.view.center
         
         if myView != nil {
+            self.view.addSubview(bottom)
+            myView?.backgroundView = bottom
             self.view.addSubview(myView!)
             self.view.bringSubviewToFront(myView!)
         }
@@ -97,8 +105,20 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     }
     //清空购物清单
     func cartClear(){
-        let betManger = BetListManager.sharedManager
-        betManger.betList.removeAll(keepCapacity: false)
+        self.presentViewController(alertCart, animated: true, completion: nil)
+    }
+    //初始化购物车清空Alert
+    func initCartClear(){
+        alertCart = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
+            let betManger = BetListManager.sharedManager
+            betManger.betList.removeAll(keepCapacity: false)
+        }
+        let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        alertCart.addAction(ok)
+        alertCart.addAction(cancel)
     }
     //显示购物车
     func cartShow(){
@@ -467,6 +487,7 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         self.headerView.addSubview(headerView!)
         
         createMenu(menuArray)
+        initCartClear()
         //赛事资料
         getFootballMatch()
     }

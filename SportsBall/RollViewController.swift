@@ -24,6 +24,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     var isMultiselect = false//即时下注
     var orderHeight:CGFloat = 109
     var alertMenu:UIAlertController!
+    var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["2":"滚球"],["3":"让球"],["3":"综合过关"]]
     
     //创建玩法菜单
@@ -89,11 +90,18 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     }
     //联盟打开
     func unionClick(){
+        //在XIB的后面加入一个透明的View
+        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        bottom.backgroundColor = UIColor.blackColor()
+        bottom.alpha = 0.8
+        
         let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
         myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
         myView?.center = self.view.center
         
         if myView != nil {
+            self.view.addSubview(bottom)
+            myView?.backgroundView = bottom
             self.view.addSubview(myView!)
             self.view.bringSubviewToFront(myView!)
         }
@@ -101,6 +109,36 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
     //规则说明
     func explainClick(){
         
+    }
+    //初始化购物车清空Alert
+    func initCartClear(){
+        alertCart = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
+            let betManger = BetListManager.sharedManager
+            betManger.betList.removeAll(keepCapacity: false)
+        }
+        let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        alertCart.addAction(ok)
+        alertCart.addAction(cancel)
+    }
+    //清空购物清单
+    func cartClear(){
+        self.presentViewController(alertCart, animated: true, completion: nil)
+    }
+    //显示购物车
+    func cartShow(){
+        if(isMultiselect){
+            let betManger = BetListManager.sharedManager
+            if(betManger.betList.count > 0){
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                alertMessage("至少选择一场比赛", carrier: self)
+            }
+        }
     }
     
     //绑定队伍标题
@@ -393,6 +431,7 @@ class RollViewController: UIViewController,ResultDelegate,HeaderViewDelegate,Bin
         self.headerView.addSubview(headerView!)
         
         createMenu(menuArray)
+        initCartClear()
         //赛事资料
         getOtherMatch()
     }

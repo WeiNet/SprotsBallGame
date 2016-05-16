@@ -9,6 +9,7 @@
 import UIKit
 
 class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
+    var backgroundView:UIView!
     
     @IBOutlet var unionTable: UITableView!
     @IBOutlet var selAllView: UIView!
@@ -59,11 +60,13 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     }
 
     @IBAction func canel(sender: UIButton) {
+        backgroundView.removeFromSuperview()
         dicUnionNO.removeAll(keepCapacity: false)
         self.removeFromSuperview()
     }
     
     @IBAction func ok(sender: UIButton) {
+        backgroundView.removeFromSuperview()
         print("ok")
     }
     
