@@ -21,6 +21,32 @@ class BallViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //创建玩法菜单
+    func createMenu(title:String,message:String,menuArray: Array<Dictionary<String,String>>)->UIAlertController{
+//        if(menuArray.count <= 0){
+//            return nil
+//        }
+        let alertMenu:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        for menu in menuArray {
+            for (key,value) in menu {
+                let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                    self.clickMenuItem(key, value: value)
+                })
+                alertMenu.addAction(item)
+            }
+        }
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertMenu.addAction(cancel)
+        return alertMenu
+    }
+    
+    //玩法菜单选项响应事件
+    func clickMenuItem(key:String,value:String){
+//        mPlayType = key
+//        let view:HeaderView = headerView.subviews[0] as! HeaderView
+//        view.btnTitle.setTitle(value, forState: UIControlState.Normal)
+//        getFootballMatch()
+    }
     
     //显示赛事（联盟、赛事队伍）
     func stringToDictionary(strResult: String)->NSMutableArray{
@@ -122,4 +148,85 @@ class BallViewController: UIViewController {
         }
     }
     
+    //显示联盟选择页面
+    func showUnion(){
+        //在XIB的后面加入一个透明的View
+        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        bottom.backgroundColor = UIColor.blackColor()
+        bottom.alpha = 0.8
+        
+        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
+        myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
+        myView?.center = self.view.center
+        
+        if myView != nil {
+            let window: UIWindow = UIApplication.sharedApplication().keyWindow!
+            window.addSubview(bottom)
+            myView?.backgroundView = bottom
+            window.addSubview(myView!)
+            window.bringSubviewToFront(myView!)
+        }
+    }
+    
+    //初始化购物车清空Alert
+    func initCartClear()->UIAlertController{
+        let alertCart:UIAlertController = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
+            let betManger = BetListManager.sharedManager
+            betManger.betList.removeAll(keepCapacity: false)
+        }
+        let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        alertCart.addAction(ok)
+        alertCart.addAction(cancel)
+        return alertCart
+    }
+    
+    //显示购物车
+    func showCart(){
+        let betManger = BetListManager.sharedManager
+        if(betManger.betList.count > 0){
+            let sb = UIStoryboard(name: "Main", bundle:nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            alertMessage("至少选择一场比赛", carrier: self)
+        }
+    }
+    
+    //第二次设定BetInfo属性，主要填入限额等
+    func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfoModel,alertView:SwiftCustomAlertView,isMultiselect:Bool){
+        betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)
+        betInfo.yssj = String(betInfoJson[0].objectForKey("yssj")!)
+        betInfo.isjzf = String(betInfoJson[0].objectForKey("isjzf")!)
+        betInfo.jzf = String(betInfoJson[0].objectForKey("jzf")!)
+        betInfo.allianceName = String(betInfoJson[0].objectForKey("allianceName")!)
+        let dzxx = String(betInfoJson[0].objectForKey("dzxx")!)
+        betInfo.dzxx = dzxx
+        let dzsx = String(betInfoJson[0].objectForKey("dzsx")!)
+        betInfo.dzsx = dzsx
+        betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
+        //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
+        if(!isMultiselect){
+            alertView.myView.visit.text = betInfo.visitname + "[主]"
+            let isScore = String(betInfoJson[0].objectForKey("isjzf")!)
+            if isScore == "1" {
+                let score = String(betInfoJson[0].objectForKey("jzf")!)
+                let ayrScore = score.componentsSeparatedByString(":")
+                alertView.myView.N_VISIT_JZF.text = ayrScore[0]
+                alertView.myView.N_HOME_JZF.text = ayrScore[1]
+            } else {
+                alertView.myView.N_VISIT_JZF.text = ""
+                alertView.myView.N_HOME_JZF.text = ""
+            }
+            alertView.myView.home.text = betInfo.homename
+            let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            let betteamName = String(betInfoJson[0].objectForKey("betteamName")!)
+            alertView.myView.betText.text =  betteamName+"  @ "+String(format: "%.3f", newRate.floatValue)
+            alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
+            alertView.myView.limits.text = dzxx + "~" + dzsx
+            alertView.myView.max.text = dzsx
+        }
+    }
 }

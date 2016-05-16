@@ -25,26 +25,9 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     var alertMenu:UIAlertController!
     var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["2":"滚球"],["1":"单式"],["3":"波胆"],["4":"入球数"],["5":"半全场"],["6":"综合过关"]]
-    
-    //创建玩法菜单
-    func createMenu(menuArray: Array<Dictionary<String,String>>){
-        if(menuArray.count <= 0){
-            return
-        }
-        alertMenu = UIAlertController(title: "足球玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
-        for menu in menuArray {
-            for (key,value) in menu {
-                let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
-                    self.clickMenuItem(key, value: value)
-                })
-                alertMenu.addAction(item)
-            }
-        }
-        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
-        alertMenu.addAction(cancel)
-    }
+
     //玩法菜单选项响应事件
-    func clickMenuItem(key:String,value:String){
+    override func clickMenuItem(key:String,value:String){
         mPlayType = key
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
@@ -62,7 +45,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: 216)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
-            fullBetInfo2(betInfoJson)
+            fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
@@ -83,21 +66,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //联盟打开
     func unionClick(){
-        //在XIB的后面加入一个透明的View
-        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-        bottom.backgroundColor = UIColor.blackColor()
-        bottom.alpha = 0.8
-        
-        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
-        myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
-        myView?.center = self.view.center
-        
-        if myView != nil {
-            self.view.addSubview(bottom)
-            myView?.backgroundView = bottom
-            self.view.addSubview(myView!)
-            self.view.bringSubviewToFront(myView!)
-        }
+        showUnion()
     }
     //规则说明
     func explainClick(){
@@ -107,30 +76,10 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     func cartClear(){
         self.presentViewController(alertCart, animated: true, completion: nil)
     }
-    //初始化购物车清空Alert
-    func initCartClear(){
-        alertCart = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
-            let betManger = BetListManager.sharedManager
-            betManger.betList.removeAll(keepCapacity: false)
-        }
-        let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
-        
-        alertCart.addAction(ok)
-        alertCart.addAction(cancel)
-    }
     //显示购物车
     func cartShow(){
         if(isMultiselect){
-            let betManger = BetListManager.sharedManager
-            if(betManger.betList.count > 0){
-                let sb = UIStoryboard(name: "Main", bundle:nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-            }else{
-                alertMessage("至少选择一场比赛", carrier: self)
-            }
+            showCart()
         }
     }
     
@@ -389,38 +338,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     
     //第二次设定BetInfo属性，主要填入限额等
-    func fullBetInfo2(betInfoJson:AnyObject){
-        betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)
-        betInfo.yssj = String(betInfoJson[0].objectForKey("yssj")!)
-        betInfo.isjzf = String(betInfoJson[0].objectForKey("isjzf")!)
-        betInfo.jzf = String(betInfoJson[0].objectForKey("jzf")!)
-        betInfo.allianceName = String(betInfoJson[0].objectForKey("allianceName")!)
-        let dzxx = String(betInfoJson[0].objectForKey("dzxx")!)
-        betInfo.dzxx = dzxx
-        let dzsx = String(betInfoJson[0].objectForKey("dzsx")!)
-        betInfo.dzsx = dzsx
-        betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
-        //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
-        if(!isMultiselect){
-            alertView.myView.visit.text = betInfo.visitname + "[主]"
-            let isScore = String(betInfoJson[0].objectForKey("isjzf")!)
-            if isScore == "1" {
-                let score = String(betInfoJson[0].objectForKey("jzf")!)
-                let ayrScore = score.componentsSeparatedByString(":")
-                alertView.myView.N_VISIT_JZF.text = ayrScore[0]
-                alertView.myView.N_HOME_JZF.text = ayrScore[1]
-            } else {
-                alertView.myView.N_VISIT_JZF.text = ""
-                alertView.myView.N_HOME_JZF.text = ""
-            }
-            alertView.myView.home.text = betInfo.homename
-            let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
-            let betteamName = String(betInfoJson[0].objectForKey("betteamName")!)
-            alertView.myView.betText.text =  betteamName+"  @ "+String(format: "%.3f", newRate.floatValue)
-            alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
-            alertView.myView.limits.text = dzxx + "~" + dzsx
-            alertView.myView.max.text = dzsx
-        }
+    func fullBetInfoLimit(betInfoJson:AnyObject){
+        fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
     }
     
     //向远端添加注单
@@ -485,8 +404,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
-        createMenu(menuArray)
-        initCartClear()
+        alertMenu = createMenu("足球玩法", message: "请选择玩法", menuArray: menuArray)
+        alertCart = initCartClear()
         //赛事资料
         getFootballMatch()
     }
