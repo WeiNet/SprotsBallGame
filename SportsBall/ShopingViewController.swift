@@ -91,7 +91,7 @@
             lableDC.text=betList![indexPath.row].dcsx
             textMoney.text=betList![indexPath.row].dMoney
             lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
-            textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingChanged)
+            textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingDidEnd)
             return cell!
             
         }
@@ -105,10 +105,10 @@
         func changeMoney(sender:UITextField){
             var intTag=sender.tag
             var objBet=betList![intTag]
+            objBet.dMoney=sender.text!
             var betMoney=Double(objBet.dMoney)
             var dRate=Double(objBet.rate)
             var winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
-            objBet.dMoney=sender.text!
             objBet.kyje="\(winMoney)"
             betList![intTag]=objBet
             print(sender.tag)
