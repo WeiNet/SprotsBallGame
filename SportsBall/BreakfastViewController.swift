@@ -25,6 +25,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     var alertMenu:UIAlertController!
     var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["2":"滚球"],["1":"单式"],["3":"波胆"],["4":"入球数"],["5":"半全场"],["6":"综合过关"]]
+    var orderHeight:CGFloat = 216
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
@@ -42,7 +43,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = stringToDictionary(strResult)
-            addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: 216)
+            addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
@@ -369,12 +370,12 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     
     //取得赛事注单赔率
     func getFootballMatch(){
-        if contentView.subviews.count > 0 {
-            for view in contentView.subviews {
-                view.removeFromSuperview()
-            }
-//            contentView.subviews[0].removeFromSuperview()
-        }
+//        if contentView.subviews.count > 0 {
+//            for view in contentView.subviews {
+//                view.removeFromSuperview()
+//            }
+////            contentView.subviews[0].removeFromSuperview()
+//        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getFootballMatchResult

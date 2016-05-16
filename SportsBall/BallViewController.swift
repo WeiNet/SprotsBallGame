@@ -98,7 +98,6 @@ class BallViewController: UIViewController {
     
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat,playType:String){
-        
         if contentView.subviews.count > 0 {
             for view in contentView.subviews {
                 view.removeFromSuperview()

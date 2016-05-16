@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -943,10 +943,10 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="yc5-NH-UHe"/>
                                         <exclude reference="xtT-9i-36P"/>
-                                        <exclude reference="Te3-Js-74O"/>
+                                        <exclude reference="yc5-NH-UHe"/>
                                         <exclude reference="6EJ-Ly-p34"/>
+                                        <exclude reference="Te3-Js-74O"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -968,9 +968,9 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="KJb-5I-a68"/>
                                                 <exclude reference="hHX-d8-RJQ"/>
                                                 <exclude reference="tAk-PU-e8H"/>
-                                                <exclude reference="KJb-5I-a68"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -989,9 +989,9 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="aEF-lW-uQl"/>
-                                                <exclude reference="UO9-Nm-wg6"/>
                                                 <exclude reference="3ez-Nz-EEX"/>
+                                                <exclude reference="UO9-Nm-wg6"/>
+                                                <exclude reference="aEF-lW-uQl"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -1040,8 +1040,8 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Dih-f5-j2S"/>
                                                 <exclude reference="88h-lK-lfi"/>
+                                                <exclude reference="Dih-f5-j2S"/>
                                                 <exclude reference="yjZ-oF-vrB"/>
                                             </mask>
                                         </variation>
@@ -1061,8 +1061,8 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="g4Q-Fv-r4R"/>
                                                 <exclude reference="0it-RN-Vze"/>
+                                                <exclude reference="g4Q-Fv-r4R"/>
                                                 <exclude reference="zEl-4B-kRU"/>
                                             </mask>
                                         </variation>
@@ -1089,8 +1089,8 @@
                                     <mask key="constraints">
                                         <exclude reference="MRm-fZ-0c0"/>
                                         <exclude reference="RKg-st-lmk"/>
-                                        <exclude reference="h3n-kd-mMC"/>
                                         <exclude reference="0I9-tm-3hA"/>
+                                        <exclude reference="h3n-kd-mMC"/>
                                     </mask>
                                 </variation>
                             </view>
