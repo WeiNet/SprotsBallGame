@@ -27,8 +27,8 @@
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viL-x5-EfN">
                             <rect key="frame" x="0.0" y="41" width="482" height="32"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="青岛中能[主]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsP-XL-S5M">
-                                    <rect key="frame" x="0.0" y="0.0" width="228" height="32"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="青岛中能[主]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsP-XL-S5M">
+                                    <rect key="frame" x="0.0" y="0.0" width="198" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="dAR-mh-YRd"/>
                                     </constraints>
@@ -36,19 +36,41 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv1-8T-0hM">
-                                    <rect key="frame" x="220" y="0.0" width="26" height="32"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXE-aM-9zH">
+                                    <rect key="frame" x="198" y="0.0" width="30" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="gIV-2G-SK8"/>
+                                        <constraint firstAttribute="height" constant="32" id="pb6-ds-KNf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv1-8T-0hM">
+                                    <rect key="frame" x="228" y="0.0" width="26" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="FqY-Vs-gCA"/>
                                         <constraint firstAttribute="width" constant="26" id="Ys9-Br-ax1"/>
                                         <constraint firstAttribute="height" constant="32" id="gqk-6S-Y3w"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="mlL-tD-pp2"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="32" id="wfJ-9g-rDz"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="上海绿地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-Gk-KdK">
-                                    <rect key="frame" x="254" y="0.0" width="228" height="32"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR1-O1-xKv">
+                                    <rect key="frame" x="254" y="0.0" width="30" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="2Tp-Gq-WgI"/>
+                                        <constraint firstAttribute="width" constant="30" id="Btz-Qf-xwt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="上海绿地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-Gk-KdK">
+                                    <rect key="frame" x="284" y="0.0" width="198" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="228" id="6TY-se-wkD"/>
                                         <constraint firstAttribute="height" constant="32" id="guZ-TH-Wa7"/>
@@ -62,10 +84,13 @@
                             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="0as-1K-Q7C"/>
-                                <constraint firstItem="gv1-8T-0hM" firstAttribute="leading" secondItem="PsP-XL-S5M" secondAttribute="trailing" constant="-8" id="4JM-w4-7LY"/>
-                                <constraint firstItem="2HH-Gk-KdK" firstAttribute="leading" secondItem="gv1-8T-0hM" secondAttribute="trailing" constant="8" id="GaB-WR-oi5"/>
+                                <constraint firstItem="gv1-8T-0hM" firstAttribute="leading" secondItem="uXE-aM-9zH" secondAttribute="trailing" id="5R6-NX-YrY"/>
+                                <constraint firstItem="uXE-aM-9zH" firstAttribute="leading" secondItem="PsP-XL-S5M" secondAttribute="trailing" id="5x6-XP-RRc"/>
+                                <constraint firstItem="iR1-O1-xKv" firstAttribute="width" secondItem="uXE-aM-9zH" secondAttribute="width" id="Ibl-l2-qDK"/>
                                 <constraint firstItem="PsP-XL-S5M" firstAttribute="leading" secondItem="viL-x5-EfN" secondAttribute="leading" id="Yze-oy-VEk"/>
                                 <constraint firstAttribute="trailing" secondItem="2HH-Gk-KdK" secondAttribute="trailing" id="lMb-6e-lrr"/>
+                                <constraint firstItem="2HH-Gk-KdK" firstAttribute="leading" secondItem="iR1-O1-xKv" secondAttribute="trailing" id="mzC-Rm-nvN"/>
+                                <constraint firstItem="iR1-O1-xKv" firstAttribute="leading" secondItem="gv1-8T-0hM" secondAttribute="trailing" id="pCc-Ka-4nB"/>
                                 <constraint firstItem="2HH-Gk-KdK" firstAttribute="width" secondItem="PsP-XL-S5M" secondAttribute="width" id="ssB-Hr-JcL"/>
                             </constraints>
                         </view>
@@ -235,6 +260,8 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
+                <outlet property="N_HOME_JZF" destination="iR1-O1-xKv" id="RAe-zw-zPq"/>
+                <outlet property="N_VISIT_JZF" destination="uXE-aM-9zH" id="pWh-5q-gOV"/>
                 <outlet property="betText" destination="UGC-fc-HSv" id="WWu-1h-RDX"/>
                 <outlet property="cancelButton" destination="VZ0-so-9jL" id="8Y7-c0-65u"/>
                 <outlet property="gain" destination="hzr-4T-yE3" id="sZx-DV-GHi"/>

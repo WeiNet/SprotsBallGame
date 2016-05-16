@@ -140,6 +140,12 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
     
     //点击赔率点击事件的协议
     func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
+        let tempRate = ToolsCode.codeBy(toolsCode)
+        let rate = orderCellModel.valueForKey(tempRate)?.floatValue
+        if (rate == 0){
+            return false
+        }
+        
         betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
@@ -377,9 +383,21 @@ class BreakfastViewController: UIViewController,ResultDelegate,HeaderViewDelegat
         betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
         //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
         if(!isMultiselect){
-            alertView.myView.visit.text = betInfo.visitname
+            alertView.myView.visit.text = betInfo.visitname + "[主]"
+            let isScore = String(betInfoJson[0].objectForKey("isjzf")!)
+            if isScore == "1" {
+                let score = String(betInfoJson[0].objectForKey("jzf")!)
+                let ayrScore = score.componentsSeparatedByString(":")
+                alertView.myView.N_VISIT_JZF.text = ayrScore[0]
+                alertView.myView.N_HOME_JZF.text = ayrScore[1]
+            } else {
+                alertView.myView.N_VISIT_JZF.text = ""
+                alertView.myView.N_HOME_JZF.text = ""
+            }
             alertView.myView.home.text = betInfo.homename
             let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            let betteamName = String(betInfoJson[0].objectForKey("betteamName")!)
+            alertView.myView.betText.text =  betteamName+"  @ "+String(format: "%.3f", newRate.floatValue)
             alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
             alertView.myView.limits.text = dzxx + "~" + dzsx
             alertView.myView.max.text = dzsx

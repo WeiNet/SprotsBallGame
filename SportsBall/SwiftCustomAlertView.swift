@@ -16,6 +16,10 @@ import UIKit
 class SwiftCustomAlertView: UIView {
     
     @IBOutlet var visit: UILabel!
+    @IBOutlet var N_VISIT_JZF: UILabel!
+//    @IBOutlet var N_VISIT_JZF: UILabel!
+//    @IBOutlet var N_HOME_JZF: UILabel!
+    @IBOutlet var N_HOME_JZF: UILabel!
     @IBOutlet var home: UILabel!
     
     @IBOutlet var betText: UILabel!
