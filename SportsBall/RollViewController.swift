@@ -184,7 +184,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
             tid = String(orderCellModel.N_HOME)
         }
         let tempType = ToolsCode.codeByPlayType(toolsCode)
-        if (tempType != "DY") && (tempType != "H") {
+        if ((tempType != "DY") && (tempType != "H") && (tempType != "DS")) {
             hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
             hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
             hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
@@ -222,7 +222,11 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         betInfo.date = gameDate
         betInfo.dzxx = "10"//USER??????????????????????????????????????????????????????????????
         betInfo.dMoney = "10"
-        betInfo.score = ToolsCode.getBallHead((orderCellModel.valueForKey("N_\(tempType)FS")?.integerValue)!, bl: (orderCellModel.valueForKey("N_\(tempType)BL")?.integerValue)!, lx: (orderCellModel.valueForKey("N_\(tempType)LX")?.integerValue)!)
+        if ((tempType != "DY") && (tempType != "H") && (tempType != "DS")) {
+            betInfo.score = ToolsCode.getBallHead((orderCellModel.valueForKey("N_\(tempType)FS")?.integerValue)!, bl: (orderCellModel.valueForKey("N_\(tempType)BL")?.integerValue)!, lx: (orderCellModel.valueForKey("N_\(tempType)LX")?.integerValue)!)
+        }else{
+            betInfo.score = "0"
+        }
         return betInfo
     }
     

@@ -63,9 +63,9 @@ struct ToolsCode {
             controlName = "N_DXXPL2"
             
         case LDSBLView:
-            controlName = "N_RDSSPL"
+            controlName = "N_DSSPL"
         case RDSBLView:
-            controlName = "N_RDSDPL"
+            controlName = "N_DSDPL"
         default:
             controlName = ""
         }
