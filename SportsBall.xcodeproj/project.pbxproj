@@ -72,6 +72,7 @@
 		4641573D1CD9F0A900838F32 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 4641573C1CD9F0A900838F32 /* HTML */; };
 		464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464245D91CB63EA900C77849 /* ProblemController.swift */; };
 		464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */; };
+		46B9A02D1CEB1C1D006A5F4C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9A02C1CEB1C1D006A5F4C /* Reachability.swift */; };
 		46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */; };
 		46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DED1C8E780F007F6A50 /* ResultViewController.swift */; };
 		46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */; };
@@ -167,6 +168,7 @@
 		4641573C1CD9F0A900838F32 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		464245D91CB63EA900C77849 /* ProblemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemController.swift; sourceTree = "<group>"; };
 		464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemFeedbackViewController.swift; sourceTree = "<group>"; };
+		46B9A02C1CEB1C1D006A5F4C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCenterView.swift; sourceTree = "<group>"; };
 		46C02DED1C8E780F007F6A50 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				46290ED01CA2332F0028F1BF /* CirCleView.swift */,
 				46290ED11CA2332F0028F1BF /* CommonParameter.swift */,
 				4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */,
+				46B9A02C1CEB1C1D006A5F4C /* Reachability.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */,
 				17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */,
 				17C6EC101CD1B42C00DF71E1 /* Ball.swift in Sources */,
+				46B9A02D1CEB1C1D006A5F4C /* Reachability.swift in Sources */,
 				17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */,
 				464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */,
 				463295DB1CBB7F46000EFEA9 /* BetList.swift in Sources */,
