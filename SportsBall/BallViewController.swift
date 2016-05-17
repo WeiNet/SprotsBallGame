@@ -132,7 +132,7 @@ class BallViewController: UIViewController {
             //默认选中下标为0的
             segment.selectedSegmentIndex = 0
             //设置标题颜色
-            //segment.tintColor = UIColor.redColor()
+            segment.tintColor = UIColor.redColor()
             //添加事件，当segment改变时，触发 Parent
             segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
             mainView.addSubview(segment)

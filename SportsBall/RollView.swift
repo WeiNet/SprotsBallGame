@@ -130,7 +130,7 @@ class RollView: UIView,GestureDelegate {
         ToolsCode.setBackground2(N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
         ToolsCode.setBackground2(N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        ToolsCode.setBackground(N_LDSBLView,select: orderCellModel.N_RDSSPL_SEL)
-        ToolsCode.setBackground(N_RDSBLView,select: orderCellModel.N_RDSDPL_SEL)
+        ToolsCode.setBackground(N_LDSBLView,select: orderCellModel.N_DSSPL_SEL)
+        ToolsCode.setBackground(N_RDSBLView,select: orderCellModel.N_DSDPL_SEL)
     }
 }
