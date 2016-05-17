@@ -15,6 +15,35 @@
         var intRowIndex:Int = 0
         let button = UIButton(type: UIButtonType.Custom)
         var textViewMoney=UITextField()
+        
+        @IBAction func btnSelectClick(sender: UIBarButtonItem) {
+        }
+        //清除按钮
+        @IBAction func btnClear(sender: AnyObject) {
+            let alertView = UIAlertView()
+            alertView.title = "系统提示"
+            alertView.message = "确定要清除吗？"
+            alertView.addButtonWithTitle("取消")
+            alertView.addButtonWithTitle("确定")
+            alertView.cancelButtonIndex=0
+            alertView.delegate=self;
+            alertView.show()
+        }
+        //弹出框
+        func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+            if(buttonIndex==alertView.cancelButtonIndex){
+                print("点击了取消")
+            }
+            else
+            {
+                if(betList?.isEmpty==false){
+                    betList?.removeAll()
+                    self.tableList.reloadData()
+                    textBetMoneyt.text="0.0"
+                    textKyje.text="0.0"
+                }
+            }
+        }
         @IBOutlet weak var tableList: UITableView!
         
         @IBOutlet weak var textBetMoneyt: UILabel!
@@ -69,6 +98,10 @@
             }
             cell?.backgroundColor=UIColor.whiteColor()
             var textMoney=UITextField(frame: CGRect(x: 170, y: 71, width: 97, height: 30))
+            var btnDel=UIButton(frame: CGRect(x: 316, y: 80, width: 73, height: 53))
+            btnDel.setImage(UIImage(named: "ibtn_delete_item"), forState: UIControlState.Normal)
+            btnDel.setImage(UIImage(named: "ibtn_delete_select"), forState: UIControlState.Selected)
+            btnDel.tag=indexPath.row
             textMoney.clearButtonMode=UITextFieldViewMode.WhileEditing
             textMoney.tag=indexPath.row
             textMoney.keyboardType=UIKeyboardType.NumberPad
@@ -76,6 +109,7 @@
             textMoney.backgroundColor=UIColor.whiteColor()
             textMoney.delegate=self
             cell!.addSubview(textMoney)
+            cell?.addSubview(btnDel)
             var lableV=cell?.viewWithTag(5) as! UILabel
             var lableH=cell?.viewWithTag(6) as! UILabel
             var lableBetTeam=cell?.viewWithTag(7) as! UILabel
@@ -83,6 +117,7 @@
             var lableKY=cell?.viewWithTag(11) as! UILabel
             var lableDC=cell?.viewWithTag(12) as! UILabel
             var lableDZ=cell?.viewWithTag(13) as! UILabel
+            
             lableV.text=betList![indexPath.row].visitname
             lableH.text=betList![indexPath.row].homename
             lableBetTeam.text=betList![indexPath.row].betteamName
@@ -92,6 +127,7 @@
             textMoney.text=betList![indexPath.row].dMoney
             lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
             textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingDidEnd)
+             btnDel.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchDown)
             return cell!
             
         }
@@ -102,6 +138,15 @@
             self.textViewMoney.backgroundColor=UIColor.whiteColor()
             self.textViewMoney.resignFirstResponder()
         }
+        //删除方法
+        func deleteRow(sender:UIButton){
+        
+            var intTag=sender.tag
+            betList?.removeAtIndex(intTag)
+            self.tableList.reloadData()
+        
+        }
+        //计算可赢金额方法
         func changeMoney(sender:UITextField){
             var intTag=sender.tag
             var objBet=betList![intTag]
@@ -132,7 +177,7 @@
             textKyje.text="\(betKYJE)"
         }
         
-        
+        //转json方法
         func toJSONString(jsonObject: [AnyObject])->NSString{
             
             let data = try!NSJSONSerialization.dataWithJSONObject(jsonObject, options: NSJSONWritingOptions.PrettyPrinted)
@@ -142,7 +187,7 @@
         func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
             return 190.0
         }
-        
+        //结果返回
         func setResult(strResult: String, strType: String) {
             if(strType=="Error"){
                 return
@@ -161,7 +206,7 @@
             }
             
         }
-        
+        //批次下注方法
         func addBet(strParam:NSString){
             
             var strParam:String = "<BatchAddBet xmlns=\"http://tempuri.org/\">";
@@ -170,11 +215,12 @@
             strParam.appendContentsOf("</BatchAddBet>")
             comm.getResult(strParam,strResultName: "BatchAddBetResult")
         }
+        //软键盘return方法
         func textFieldShouldReturn(textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
         }
-        
+        //文本框开始输入方法
         func textFieldDidBeginEditing(textField: UITextField) {
             textViewMoney=textField
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
