@@ -102,10 +102,10 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     //绑定注单赔率
     func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel){
         let viewTemp:BreakfastView = view as! BreakfastView
-        clear(viewTemp)
-        showData(viewTemp,orderCellModel:orderCellModel)
-        fillBackground(viewTemp,orderCellModel:orderCellModel)
         viewTemp.orderCellModel = orderCellModel
+        viewTemp.clear()
+        viewTemp.showData()
+        viewTemp.fillBackground()
     }
     
     //点击赔率点击事件的协议
@@ -137,107 +137,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     //即时下注付款取消协议
     func  selecttCancelButtonAlertView(){
         print("selecttCancelButtonAlertView")
-    }
-    
-    //注单赋值前清空重用控件
-    func clear(view:BreakfastView){
-        view.N_LDYPL.text = ""
-        view.N_HJPL.text = ""
-        view.N_RDYPL.text = ""
-        
-        view.N_LRFBL.text = ""
-        view.N_RRFBL.text = ""
-        view.N_LRFPL.text = ""
-        view.N_RRFPL.text = ""
-        
-        view.N_LDXBL.text = ""
-        view.N_RDXBL.text = ""
-        view.N_DXDPL.text = ""
-        view.N_DXXPL.text = ""
-        
-        
-        view.N_LDYPL2.text = ""
-        view.N_HJPL2.text = ""
-        view.N_RDYPL2.text = ""
-        
-        view.N_LRFBL2.text = ""
-        view.N_RRFBL2.text = ""
-        view.N_LRFPL2.text = ""
-        view.N_RRFPL2.text = ""
-        
-        view.N_LDXBL2.text = ""
-        view.N_RDXBL2.text = ""
-        view.N_DXDPL2.text = ""
-        view.N_DXXPL2.text = ""
-    }
-    //资料的显示
-    func showData(view:BreakfastView,orderCellModel:OrderCellModel){
-        //全场赌赢不允许下注-->OPEN 该盘口不锁定
-        if (orderCellModel.N_DY_OPEN != nil && String(orderCellModel.N_DY_OPEN) != "1"){
-            view.N_LDYPL.text = orderCellModel.N_LDYPL != nil ? String(format: "%.3f", orderCellModel.N_LDYPL.floatValue) : ""
-            view.N_HJPL.text = orderCellModel.N_HJPL != nil ? String(format: "%.3f", orderCellModel.N_HJPL.floatValue) : ""
-            view.N_RDYPL.text = orderCellModel.N_RDYPL != nil ? String(format: "%.3f", orderCellModel.N_RDYPL.floatValue) : ""
-        }
-        //全场让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_RF_OPEN != nil && String(orderCellModel.N_RF_OPEN) != "1"){
-            if(orderCellModel.N_LET != nil && String(orderCellModel.N_LET) != "1"){
-                view.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
-            }else{
-                view.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
-            }
-            view.N_LRFPL.text = orderCellModel.N_LRFPL != nil ? String(format: "%.3f", orderCellModel.N_LRFPL.floatValue) : ""
-            view.N_RRFPL.text = orderCellModel.N_RRFPL != nil ? String(format: "%.3f", orderCellModel.N_RRFPL.floatValue) : ""
-        }
-        //全场大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DX_OPEN != nil && String(orderCellModel.N_DX_OPEN) != "1"){
-            view.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
-            view.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
-            view.N_DXDPL.text = orderCellModel.N_DXDPL != nil ? String(format: "%.3f", orderCellModel.N_DXDPL.floatValue) : ""
-            view.N_DXXPL.text = orderCellModel.N_DXXPL != nil ? String(format: "%.3f", orderCellModel.N_DXXPL.floatValue) : ""
-        }
-        
-        
-        //半场赌赢不允许下注-->OPEN 该盘口不锁定
-        if (orderCellModel.N_DY_OPEN2 != nil && String(orderCellModel.N_DY_OPEN2) != "1"){
-            view.N_LDYPL2.text = orderCellModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_LDYPL2.floatValue) : ""
-            view.N_HJPL2.text = orderCellModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellModel.N_HJPL2.floatValue) : ""
-            view.N_RDYPL2.text = orderCellModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_RDYPL2.floatValue) : ""
-        }
-        //半场让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_RF_OPEN2 != nil && String(orderCellModel.N_RF_OPEN2) != "1"){
-            if(orderCellModel.N_LET2 != nil && String(orderCellModel.N_LET2) != "1"){
-                view.N_LRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
-            }else{
-                view.N_RRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
-            }
-            view.N_LRFPL2.text = orderCellModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_LRFPL2.floatValue) : ""
-            view.N_RRFPL2.text = orderCellModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_RRFPL2.floatValue) : ""
-        }
-        //半场大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DX_OPEN2 != nil && String(orderCellModel.N_DX_OPEN2) != "1"){
-            view.N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
-            view.N_RDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
-            view.N_DXDPL2.text = orderCellModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXDPL2.floatValue) : ""
-            view.N_DXXPL2.text = orderCellModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXXPL2.floatValue) : ""
-        }
-    }
-    //背景的填充
-    func fillBackground(view:BreakfastView,orderCellModel:OrderCellModel){
-        ToolsCode.setLblFontBackground(view.N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
-        ToolsCode.setLblFontBackground(view.N_HJPL, selected: orderCellModel.N_HJPL_SEL)
-        ToolsCode.setLblFontBackground(view.N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
-        ToolsCode.setBackground(view.L_RFView,select: orderCellModel.N_LRFPL_SEL)
-        ToolsCode.setBackground(view.R_RFView,select: orderCellModel.N_RRFPL_SEL)
-        ToolsCode.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
-        ToolsCode.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
-        
-        ToolsCode.setLblFontBackground(view.N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
-        ToolsCode.setLblFontBackground(view.N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
-        ToolsCode.setLblFontBackground(view.N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
-        ToolsCode.setBackground(view.L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
-        ToolsCode.setBackground(view.R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
-        ToolsCode.setBackground2(view.N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
-        ToolsCode.setBackground2(view.N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
     
     //即时/复合下注选择改变事件
@@ -370,12 +269,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     
     //取得赛事注单赔率
     func getFootballMatch(){
-//        if contentView.subviews.count > 0 {
-//            for view in contentView.subviews {
-//                view.removeFromSuperview()
-//            }
-////            contentView.subviews[0].removeFromSuperview()
-//        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getFootballMatchResult
