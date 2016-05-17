@@ -119,10 +119,10 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     //绑定注单赔率
     func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel){
         let viewTemp:RollView = view as! RollView
-        clear(viewTemp)
-        showData(viewTemp,orderCellModel:orderCellModel)
-        fillBackground(viewTemp,orderCellModel:orderCellModel)
         viewTemp.orderCellModel = orderCellModel
+        viewTemp.clear()
+        viewTemp.showData()
+        viewTemp.fillBackground()
     }
     
     //点击赔率点击事件的协议
@@ -154,61 +154,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     //即时下注付款取消协议
     func  selecttCancelButtonAlertView(){
         print("selecttCancelButtonAlertView")
-    }
-    
-    //注单赋值前清空重用控件
-    func clear(view:RollView){
-        
-        view.N_LRFBL.text = ""
-        view.N_LRFPL.text = ""
-        view.N_RRFBL.text = ""
-        view.N_RRFPL.text = ""
-        
-        view.N_LDXBL.text = ""
-        view.N_LDXDPL.text = ""
-        view.N_RDXBL.text = ""
-        view.N_RDXXPL.text = ""
-        
-        view.N_RDSSPL.text = ""
-        view.N_RDSDPL.text = ""
-    }
-    
-    //资料的显示
-    func showData(view:RollView,orderCellModel:OrderCellModel){
-        //让分不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_RF_OPEN != nil && String(orderCellModel.N_RF_OPEN) != "1"){
-            if(String(orderCellModel.N_LET) != "1"){
-                view.N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
-            }else{
-                view.N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
-            }
-            view.N_LRFPL.text = orderCellModel.N_LRFPL != nil ? String(format: "%.3f", orderCellModel.N_LRFPL.floatValue) : ""
-            view.N_RRFPL.text = orderCellModel.N_RRFPL != nil ? String(format: "%.3f", orderCellModel.N_RRFPL.floatValue) : ""
-        }
-        //大小不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DX_OPEN != nil && String(orderCellModel.N_DX_OPEN) != "1"){
-            view.N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
-            view.N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
-            view.N_LDXDPL.text = orderCellModel.N_DXDPL != nil ? String(format: "%.3f", orderCellModel.N_DXDPL.floatValue) : ""
-            view.N_RDXXPL.text = orderCellModel.N_DXXPL != nil ? String(format: "%.3f", orderCellModel.N_DXXPL.floatValue) : ""
-        }
-        //单双不允许下注-->OPEN 该盘口不锁定
-        if(orderCellModel.N_DS_OPEN != nil && String(orderCellModel.N_DS_OPEN) != "1"){
-            view.N_RDSSPL.text = orderCellModel.N_DSSPL != nil ? String(format: "%.3f", orderCellModel.N_DSSPL.floatValue) : ""
-            view.N_RDSDPL.text = orderCellModel.N_DSDPL != nil ? String(format: "%.3f", orderCellModel.N_DSDPL.floatValue) : ""
-        }
-    }
-    
-    //背景的填充
-    func fillBackground(view:RollView,orderCellModel:OrderCellModel){
-        ToolsCode.setBackground(view.N_LRFBLView,select: orderCellModel.N_LRFPL_SEL)
-        ToolsCode.setBackground(view.N_RRFBLView,select: orderCellModel.N_RRFPL_SEL)
-        
-        ToolsCode.setBackground2(view.N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
-        ToolsCode.setBackground2(view.N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
-        
-        ToolsCode.setBackground(view.N_LDSBLView,select: orderCellModel.N_RDSSPL_SEL)
-        ToolsCode.setBackground(view.N_RDSBLView,select: orderCellModel.N_RDSDPL_SEL)
     }
     
     //即时/复合下注选择改变事件
@@ -282,12 +227,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     func getOtherMatch(){
-//        if contentView.subviews.count > 0 {
-//            for view in contentView.subviews {
-//                view.removeFromSuperview()
-//            }
-////            contentView.subviews[0].removeFromSuperview()
-//        }
         pleaseWait()
         common.delegate = self
         common.matchingElement = getOtherMatchResult

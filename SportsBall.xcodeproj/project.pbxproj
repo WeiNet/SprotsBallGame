@@ -18,6 +18,7 @@
 		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
+		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
 		17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B181091CC6152800CF3054 /* CartButtonView.xib */; };
 		17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1810B1CC618EA00CF3054 /* CartButtonView.swift */; };
 		17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3445C1CC0903D002638FC /* HeaderView.swift */; };
@@ -102,6 +103,7 @@
 		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
 		17B181091CC6152800CF3054 /* CartButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartButtonView.xib; sourceTree = "<group>"; };
 		17B1810B1CC618EA00CF3054 /* CartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButtonView.swift; sourceTree = "<group>"; };
 		17B3445C1CC0903D002638FC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */,
 				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
 				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
+				179DBF631CEAAAD200CA0384 /* FluctuantView.xib */,
 			);
 			name = football;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				4641573D1CD9F0A900838F32 /* HTML in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
+				179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */,
 				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
 				17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */,

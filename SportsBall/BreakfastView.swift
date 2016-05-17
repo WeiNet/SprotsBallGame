@@ -16,9 +16,7 @@ protocol OrderDelegate: NSObjectProtocol {
 class BreakfastView: UIView ,GestureDelegate{
     var orderCellModel:OrderCellModel!//当前View对应的资料
     var delegate:OrderDelegate!
-//    let unionIndex:Int = 0
-//    let matchIndex:Int = 0
-//    var ball:Ball = Ball()
+    
     /*******************************注单控件*******************************/
     @IBOutlet var N_LDYPL: UILabel!
     @IBOutlet var N_HJPL: UILabel!
@@ -127,5 +125,105 @@ class BreakfastView: UIView ,GestureDelegate{
                 ToolsCode.setBackground2(view,select: !select)
             }
         }
+    }
+    //注单赋值前清空重用控件
+    func clear(){
+        N_LDYPL.text = ""
+        N_HJPL.text = ""
+        N_RDYPL.text = ""
+        
+        N_LRFBL.text = ""
+        N_RRFBL.text = ""
+        N_LRFPL.text = ""
+        N_RRFPL.text = ""
+        
+        N_LDXBL.text = ""
+        N_RDXBL.text = ""
+        N_DXDPL.text = ""
+        N_DXXPL.text = ""
+        
+        
+        N_LDYPL2.text = ""
+        N_HJPL2.text = ""
+        N_RDYPL2.text = ""
+        
+        N_LRFBL2.text = ""
+        N_RRFBL2.text = ""
+        N_LRFPL2.text = ""
+        N_RRFPL2.text = ""
+        
+        N_LDXBL2.text = ""
+        N_RDXBL2.text = ""
+        N_DXDPL2.text = ""
+        N_DXXPL2.text = ""
+    }
+    //资料的显示
+    func showData(){
+        //全场赌赢不允许下注-->OPEN 该盘口不锁定
+        if (orderCellModel.N_DY_OPEN != nil && String(orderCellModel.N_DY_OPEN) != "1"){
+            N_LDYPL.text = orderCellModel.N_LDYPL != nil ? String(format: "%.3f", orderCellModel.N_LDYPL.floatValue) : ""
+            N_HJPL.text = orderCellModel.N_HJPL != nil ? String(format: "%.3f", orderCellModel.N_HJPL.floatValue) : ""
+            N_RDYPL.text = orderCellModel.N_RDYPL != nil ? String(format: "%.3f", orderCellModel.N_RDYPL.floatValue) : ""
+        }
+        //全场让分不允许下注-->OPEN 该盘口不锁定
+        if(orderCellModel.N_RF_OPEN != nil && String(orderCellModel.N_RF_OPEN) != "1"){
+            if(orderCellModel.N_LET != nil && String(orderCellModel.N_LET) != "1"){
+                N_LRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
+            }else{
+                N_RRFBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS), bl: Int(orderCellModel.N_RFBL), lx: Int(orderCellModel.N_RFLX))
+            }
+            N_LRFPL.text = orderCellModel.N_LRFPL != nil ? String(format: "%.3f", orderCellModel.N_LRFPL.floatValue) : ""
+            N_RRFPL.text = orderCellModel.N_RRFPL != nil ? String(format: "%.3f", orderCellModel.N_RRFPL.floatValue) : ""
+        }
+        //全场大小不允许下注-->OPEN 该盘口不锁定
+        if(orderCellModel.N_DX_OPEN != nil && String(orderCellModel.N_DX_OPEN) != "1"){
+            N_LDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
+            N_RDXBL.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS), bl: Int(orderCellModel.N_DXBL), lx: Int(orderCellModel.N_DXLX))
+            N_DXDPL.text = orderCellModel.N_DXDPL != nil ? String(format: "%.3f", orderCellModel.N_DXDPL.floatValue) : ""
+            N_DXXPL.text = orderCellModel.N_DXXPL != nil ? String(format: "%.3f", orderCellModel.N_DXXPL.floatValue) : ""
+        }
+        
+        
+        //半场赌赢不允许下注-->OPEN 该盘口不锁定
+        if (orderCellModel.N_DY_OPEN2 != nil && String(orderCellModel.N_DY_OPEN2) != "1"){
+            N_LDYPL2.text = orderCellModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_LDYPL2.floatValue) : ""
+            N_HJPL2.text = orderCellModel.N_HJPL2 != nil ? String(format: "%.3f", orderCellModel.N_HJPL2.floatValue) : ""
+            N_RDYPL2.text = orderCellModel.N_RDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_RDYPL2.floatValue) : ""
+        }
+        //半场让分不允许下注-->OPEN 该盘口不锁定
+        if(orderCellModel.N_RF_OPEN2 != nil && String(orderCellModel.N_RF_OPEN2) != "1"){
+            if(orderCellModel.N_LET2 != nil && String(orderCellModel.N_LET2) != "1"){
+                N_LRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
+            }else{
+                N_RRFBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_RFFS2), bl: Int(orderCellModel.N_RFBL2), lx: Int(orderCellModel.N_RFLX2))
+            }
+            N_LRFPL2.text = orderCellModel.N_LRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_LRFPL2.floatValue) : ""
+            N_RRFPL2.text = orderCellModel.N_RRFPL2 != nil ? String(format: "%.3f", orderCellModel.N_RRFPL2.floatValue) : ""
+        }
+        //半场大小不允许下注-->OPEN 该盘口不锁定
+        if(orderCellModel.N_DX_OPEN2 != nil && String(orderCellModel.N_DX_OPEN2) != "1"){
+            N_LDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
+            N_RDXBL2.text = ToolsCode.getBallHead(Int(orderCellModel.N_DXFS2), bl: Int(orderCellModel.N_DXBL2), lx: Int(orderCellModel.N_DXLX2))
+            N_DXDPL2.text = orderCellModel.N_DXDPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXDPL2.floatValue) : ""
+            N_DXXPL2.text = orderCellModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXXPL2.floatValue) : ""
+        }
+    }
+    //背景的填充
+    func fillBackground(){
+        ToolsCode.setLblFontBackground(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        ToolsCode.setLblFontBackground(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        ToolsCode.setLblFontBackground(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        ToolsCode.setBackground(L_RFView,select: orderCellModel.N_LRFPL_SEL)
+        ToolsCode.setBackground(R_RFView,select: orderCellModel.N_RRFPL_SEL)
+        ToolsCode.setBackground2(N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
+        ToolsCode.setBackground2(N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
+        
+        ToolsCode.setLblFontBackground(N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
+        ToolsCode.setLblFontBackground(N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
+        ToolsCode.setLblFontBackground(N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
+        ToolsCode.setBackground(L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
+        ToolsCode.setBackground(R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
+        ToolsCode.setBackground2(N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)
+        ToolsCode.setBackground2(N_RDXBLView2,select: orderCellModel.N_DXXPL2_SEL)
     }
 }
