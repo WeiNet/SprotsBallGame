@@ -15,6 +15,33 @@
         var intRowIndex:Int = 0
         let button = UIButton(type: UIButtonType.Custom)
         var textViewMoney=UITextField()
+        
+        @IBAction func btnSelectClick(sender: UIBarButtonItem) {
+        }
+        //清除按钮
+        @IBAction func btnClear(sender: AnyObject) {
+           let alertView = UIAlertView()
+            alertView.title = "系统提示"
+            alertView.message = "确定要清除吗？"
+            alertView.addButtonWithTitle("取消")
+            alertView.addButtonWithTitle("确定")
+            alertView.cancelButtonIndex=0
+            alertView.delegate=self;
+            alertView.show()
+        }
+        //弹出框
+        func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+            if(buttonIndex==alertView.cancelButtonIndex){
+                print("点击了取消")
+            }
+            else
+            {
+                if(betList?.isEmpty==false){
+                    betList?.removeAll()
+                    self.tableList.reloadData()
+                }
+            }
+        }
         @IBOutlet weak var tableList: UITableView!
         
         @IBOutlet weak var textBetMoneyt: UILabel!
