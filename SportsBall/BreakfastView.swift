@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//早盘、单式、滚球
 //页面 实例化
 protocol OrderDelegate: NSObjectProtocol {
     func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool//赔率点击事件,返回true为多选

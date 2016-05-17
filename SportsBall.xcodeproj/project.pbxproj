@@ -19,6 +19,9 @@
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
 		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
+		179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF651CEAC9FD00CA0384 /* FieldView.xib */; };
+		179DBF681CEAF50500CA0384 /* GoalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF671CEAF50500CA0384 /* GoalsView.xib */; };
+		179DBF6A1CEB048100CA0384 /* PassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF691CEB048100CA0384 /* PassView.xib */; };
 		17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B181091CC6152800CF3054 /* CartButtonView.xib */; };
 		17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1810B1CC618EA00CF3054 /* CartButtonView.swift */; };
 		17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3445C1CC0903D002638FC /* HeaderView.swift */; };
@@ -104,6 +107,9 @@
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
+		179DBF651CEAC9FD00CA0384 /* FieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
+		179DBF671CEAF50500CA0384 /* GoalsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalsView.xib; sourceTree = "<group>"; };
+		179DBF691CEB048100CA0384 /* PassView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassView.xib; sourceTree = "<group>"; };
 		17B181091CC6152800CF3054 /* CartButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartButtonView.xib; sourceTree = "<group>"; };
 		17B1810B1CC618EA00CF3054 /* CartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButtonView.swift; sourceTree = "<group>"; };
 		17B3445C1CC0903D002638FC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -223,6 +229,9 @@
 				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
 				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
 				179DBF631CEAAAD200CA0384 /* FluctuantView.xib */,
+				179DBF651CEAC9FD00CA0384 /* FieldView.xib */,
+				179DBF671CEAF50500CA0384 /* GoalsView.xib */,
+				179DBF691CEB048100CA0384 /* PassView.xib */,
 			);
 			name = football;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 			files = (
 				170226DA1CDC375D00EA6AF6 /* UnionCustomAlertView.xib in Resources */,
 				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
+				179DBF681CEAF50500CA0384 /* GoalsView.xib in Resources */,
 				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
 				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
@@ -540,6 +550,7 @@
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */,
+				179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */,
 				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
 				17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */,
@@ -548,6 +559,7 @@
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
 				17C6EC0B1CD1982E00DF71E1 /* RollView.xib in Resources */,
+				179DBF6A1CEB048100CA0384 /* PassView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
