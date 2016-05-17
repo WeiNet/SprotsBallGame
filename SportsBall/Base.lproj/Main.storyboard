@@ -969,7 +969,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="shopingcell" rowHeight="191" id="cCL-A5-ZfK">
                                         <rect key="frame" x="0.0" y="28" width="414" height="191"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="cCL-A5-ZfK" id="91d-pJ-M3g">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cCL-A5-ZfK" id="91d-pJ-M3g">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -1033,15 +1033,6 @@
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="9" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-D5-aaH">
-                                                    <rect key="frame" x="320" y="59" width="69" height="53"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="ISz-9q-0NP"/>
-                                                        <constraint firstAttribute="height" constant="50" id="vBE-Ci-bP5"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                    <state key="normal" image="ibtn_delete_item"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="本场比赛可下注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-Ge-2FS">
                                                     <rect key="frame" x="19" y="161" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1055,12 +1046,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3Jd-D5-aaH" secondAttribute="bottom" id="1il-zy-ALx"/>
-                                                <constraint firstItem="3Jd-D5-aaH" firstAttribute="top" secondItem="91d-pJ-M3g" secondAttribute="topMargin" constant="20" id="PJc-jo-J6x"/>
-                                                <constraint firstItem="3Jd-D5-aaH" firstAttribute="centerY" secondItem="91d-pJ-M3g" secondAttribute="centerY" id="QJZ-Dz-fI2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3Jd-D5-aaH" secondAttribute="trailing" id="V4g-YB-Dlt"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -1568,7 +1553,6 @@
         <image name="baseball" width="60" height="60"/>
         <image name="football" width="60" height="60"/>
         <image name="hamburb" width="48" height="72"/>
-        <image name="ibtn_delete_item" width="72" height="72"/>
         <image name="loginlogo" width="360" height="192"/>
         <image name="m1" width="24" height="24"/>
         <image name="m2" width="24" height="24"/>
