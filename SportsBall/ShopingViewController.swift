@@ -144,6 +144,7 @@
             var intTag=sender.tag
             betList?.removeAtIndex(intTag)
             self.tableList.reloadData()
+            countMoney()
         
         }
         //计算可赢金额方法
