@@ -111,7 +111,7 @@ class BallViewController: UIViewController {
         
         var startY:CGFloat = 0
         let width = contentView.frame.size.width
-        var height = contentView.frame.size.height + 20
+        var height = contentView.frame.size.height
         
         if (playType != "2") {
             let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
@@ -146,7 +146,6 @@ class BallViewController: UIViewController {
         tableView.orderHeight = orderHeight
         tableView.bindDelegate = delegate
         contentView.addSubview(tableView)
-        var tttt:String = "ttt"
     }
     
     //绑定队伍标题

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FieldView" customModule="SportsBall" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="326" height="101"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -189,6 +189,26 @@
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="N_BQCHH" destination="949-xC-0uN" id="Xf4-O8-Lb3"/>
+                <outlet property="N_BQCHHView" destination="8fC-wo-lQF" id="Gbo-y0-pWQ"/>
+                <outlet property="N_BQCHK" destination="NDY-LL-ajs" id="hZ6-35-fjy"/>
+                <outlet property="N_BQCHKView" destination="sje-6t-jZi" id="fdC-Kq-46F"/>
+                <outlet property="N_BQCHZ" destination="7fX-aE-DwI" id="8vO-Fw-6m8"/>
+                <outlet property="N_BQCHZView" destination="4UN-Zf-dof" id="3yu-8n-N2C"/>
+                <outlet property="N_BQCKH" destination="yKh-W7-UHF" id="P2z-6E-lPX"/>
+                <outlet property="N_BQCKHView" destination="aFD-6F-xf5" id="GrJ-fs-TgQ"/>
+                <outlet property="N_BQCKK" destination="h8p-MH-j7h" id="Cra-0O-YTd"/>
+                <outlet property="N_BQCKKView" destination="pdr-O1-SVk" id="uH2-FW-nVR"/>
+                <outlet property="N_BQCKZ" destination="1Vm-uZ-YCr" id="uF9-Th-yo9"/>
+                <outlet property="N_BQCKZView" destination="ezO-em-xaM" id="rfo-1A-cGg"/>
+                <outlet property="N_BQCZH" destination="fYi-Fn-0NK" id="F8r-4k-KFk"/>
+                <outlet property="N_BQCZHView" destination="d4h-Nx-Pbb" id="FZ8-n4-gJK"/>
+                <outlet property="N_BQCZK" destination="QUm-hT-IAB" id="84k-ho-XP8"/>
+                <outlet property="N_BQCZKView" destination="q7g-Vu-ebg" id="zmS-ma-bT8"/>
+                <outlet property="N_BQCZZ" destination="XKl-un-Zks" id="kiE-yJ-zcV"/>
+                <outlet property="N_BQCZZView" destination="xjS-rs-2MM" id="pWk-bW-vx5"/>
+            </connections>
         </view>
     </objects>
 </document>

@@ -116,7 +116,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var storyboard = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row == 0){
-            var uiView:UITabBarController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView") as! UITabBarController
+            var uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView") as! UIViewController
             self.navigationController?.pushViewController(uiView, animated: true)
         }else if(indexPath.row == 1){
             var uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("RollView") as! UIViewController

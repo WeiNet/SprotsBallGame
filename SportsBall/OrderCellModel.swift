@@ -135,4 +135,34 @@ class OrderCellModel: NSObject {
     var N_HJ:String!
     var N_SYL:String!
     var N_SYR:String!
+    
+    //入球数
+    var N_RQSPL01:NSNumber!//入球数0-1
+    var N_RQSPL01_SEL:Bool = false
+    var N_RQSPL23:NSNumber!//入球数2-3
+    var N_RQSPL23_SEL:Bool = false
+    var N_RQSPL46:NSNumber!//入球数4-6
+    var N_RQSPL46_SEL:Bool = false
+    var N_RQSPL7:NSNumber!//入球数>=7
+    var N_RQSPL7_SEL:Bool = false
+    
+    //半全场
+    var N_BQCZZ:NSNumber!//主主
+    var N_BQCZZ_SEL:Bool = false
+    var N_BQCZH:NSNumber!//主和
+    var N_BQCZH_SEL:Bool = false
+    var N_BQCZK:NSNumber!//主客
+    var N_BQCZK_SEL:Bool = false
+    var N_BQCHZ:NSNumber!//和主
+    var N_BQCHZ_SEL:Bool = false
+    var N_BQCHH:NSNumber!//和和
+    var N_BQCHH_SEL:Bool = false
+    var N_BQCHK:NSNumber!//和客
+    var N_BQCHK_SEL:Bool = false
+    var N_BQCKZ:NSNumber!//客主
+    var N_BQCKZ_SEL:Bool = false
+    var N_BQCKH:NSNumber!//客和
+    var N_BQCKH_SEL:Bool = false
+    var N_BQCKK:NSNumber!//客客
+    var N_BQCKK_SEL:Bool = false
 }
