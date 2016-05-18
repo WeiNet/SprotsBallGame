@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1347,14 +1347,16 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gab-cw-a81">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gab-cw-a81">
                                         <rect key="frame" x="101" y="14" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gab-cw-a81" secondAttribute="height" multiplier="49:31" id="Hwr-6l-KeH"/>
                                             <constraint firstAttribute="width" constant="49" id="Z1L-qZ-g3N"/>
                                             <constraint firstAttribute="height" constant="31" id="pW8-bb-oCa"/>
                                         </constraints>
-                                        <color key="onTintColor" red="0.87293976545333862" green="0.91275471448898315" blue="0.27923989295959473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchChanged:" destination="ngf-pj-N8w" eventType="valueChanged" id="FKs-bw-3nh"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1511,6 +1513,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="switchStatus" destination="gab-cw-a81" id="COU-7i-OVh"/>
                         <outlet property="tableList" destination="CtG-dX-cHV" id="pZz-J2-Wyl"/>
                         <outlet property="textBalance" destination="7YV-5s-wYA" id="AXy-Fr-yFu"/>
                         <outlet property="textBetMoneyt" destination="v68-cF-1kb" id="he8-TE-yOD"/>

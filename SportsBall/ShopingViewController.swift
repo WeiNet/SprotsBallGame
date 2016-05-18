@@ -13,10 +13,26 @@
         var betList:[BetInfo]?
         var comm=CommonParameter()
         var intRowIndex:Int = 0
+        var flag=false
         let button = UIButton(type: UIButtonType.Custom)
         var textViewMoney=UITextField()
         
+        
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
+        }
+        
+        @IBOutlet weak var switchStatus: UISwitch!
+        @IBAction func switchChanged(sender: UISwitch) {
+            
+            if(flag){
+                flag=false
+               
+            }else{
+                flag=true
+                
+            }
+            print(flag)
+            
         }
         //清除按钮
         @IBAction func btnClear(sender: AnyObject) {
@@ -65,6 +81,7 @@
         }
         override func viewDidLoad() {
             self.title="购物车"
+            
             betManger=BetListManager.sharedManager
             betList=betManger!.getBetList()
             self.tableList.dataSource=self
@@ -79,7 +96,10 @@
             countMoney()//计算投注金额和可赢金额
         }
         override func viewWillAppear(animated: Bool) {
-            navigationController?.setNavigationBarHidden(false, animated: animated)    }
+            navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
+        
+        
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
         {
@@ -212,7 +232,7 @@
                     alertView.title = "系统提示"
                     alertView.message = msg
                     alertView.addButtonWithTitle("确定")
-                   
+                    
                     alertView.show()
                 }else{
                     
