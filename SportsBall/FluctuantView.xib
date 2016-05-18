@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FluctuantView" customModule="SportsBall" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="296" height="192"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -500,18 +500,18 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIc-95-yra">
                     <rect key="frame" x="254" y="55" width="42" height="82"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="94" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49G-SQ-Vkn">
-                            <rect key="frame" x="1" y="51" width="40" height="30"/>
-                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="其他N:N" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbh-nj-kux">
                             <rect key="frame" x="1" y="1" width="40" height="50"/>
                             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.0" green="0.5490196078431373" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="94" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49G-SQ-Vkn">
+                            <rect key="frame" x="1" y="51" width="40" height="30"/>
+                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -521,6 +521,60 @@
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="N_BDGPL00" destination="FWd-mz-8fd" id="ZZb-m2-tTZ"/>
+                <outlet property="N_BDGPL00View" destination="Vi4-7q-oYS" id="zW3-mW-5K2"/>
+                <outlet property="N_BDGPL11" destination="rx7-HI-pY5" id="Xgm-4K-ekr"/>
+                <outlet property="N_BDGPL11View" destination="YDo-Ne-kWu" id="DWq-k4-TIl"/>
+                <outlet property="N_BDGPL22" destination="qhE-G8-LSC" id="Bzq-Yr-qhp"/>
+                <outlet property="N_BDGPL22View" destination="yBX-ML-SZa" id="zlD-EE-p1g"/>
+                <outlet property="N_BDGPL33" destination="bjq-ha-CBE" id="idc-gp-h1G"/>
+                <outlet property="N_BDGPL33View" destination="HVV-gb-3V5" id="iAY-bD-r15"/>
+                <outlet property="N_BDGPL44" destination="ve7-Kx-u6a" id="zwz-07-jSz"/>
+                <outlet property="N_BDGPL44View" destination="SZ8-QT-yIW" id="Ths-1M-FHK"/>
+                <outlet property="N_BDKPL10" destination="qb7-Ik-17l" id="5iy-G9-Ydz"/>
+                <outlet property="N_BDKPL10View" destination="tfg-CT-TkX" id="EBM-kr-z5i"/>
+                <outlet property="N_BDKPL20" destination="3x8-ZC-ZjL" id="pic-W4-ebE"/>
+                <outlet property="N_BDKPL20View" destination="NLd-V1-c8X" id="Zqi-EW-tCb"/>
+                <outlet property="N_BDKPL21" destination="7Nf-EQ-01M" id="PYx-s9-zDg"/>
+                <outlet property="N_BDKPL21View" destination="fq2-bT-YGP" id="F5k-xm-MBI"/>
+                <outlet property="N_BDKPL30" destination="pMd-hh-df0" id="dRH-dO-UMV"/>
+                <outlet property="N_BDKPL30View" destination="3RJ-7q-t81" id="hjK-M5-fTH"/>
+                <outlet property="N_BDKPL31" destination="ywL-KF-GyC" id="HCe-Zg-C1Q"/>
+                <outlet property="N_BDKPL31View" destination="LUY-QJ-zhC" id="cp8-9g-hyP"/>
+                <outlet property="N_BDKPL32" destination="aQT-Da-J8j" id="l9K-4c-sLh"/>
+                <outlet property="N_BDKPL32View" destination="FdM-QQ-dnc" id="qh9-g9-lz2"/>
+                <outlet property="N_BDKPL40" destination="4xr-fp-Nm6" id="2Pc-KN-ngw"/>
+                <outlet property="N_BDKPL40View" destination="9ml-TO-ZYY" id="HFs-yl-7O6"/>
+                <outlet property="N_BDKPL41" destination="LJN-Tc-rJh" id="cUw-Tx-32b"/>
+                <outlet property="N_BDKPL41View" destination="yad-Se-BVJ" id="Zzm-zG-gpS"/>
+                <outlet property="N_BDKPL42" destination="Yvi-7K-9HR" id="Ml5-Dv-4es"/>
+                <outlet property="N_BDKPL42View" destination="tiU-Jb-NBL" id="4qC-1p-qpO"/>
+                <outlet property="N_BDKPL43" destination="2ad-u5-exz" id="Opd-p0-343"/>
+                <outlet property="N_BDKPL43View" destination="OL0-U6-Opg" id="LIw-5g-Dts"/>
+                <outlet property="N_BDZPL10" destination="MR5-kd-DKu" id="F9R-dg-A4z"/>
+                <outlet property="N_BDZPL10View" destination="hqt-KG-4t6" id="tKZ-n0-bf3"/>
+                <outlet property="N_BDZPL20" destination="49N-l6-G9j" id="apt-ys-4Cd"/>
+                <outlet property="N_BDZPL20View" destination="1ch-wx-Re9" id="EbU-se-nYN"/>
+                <outlet property="N_BDZPL21" destination="m7g-i0-mrR" id="egC-TI-AzJ"/>
+                <outlet property="N_BDZPL21View" destination="h28-Ob-hQc" id="uyL-CO-g7g"/>
+                <outlet property="N_BDZPL30" destination="n0r-mD-vEF" id="tZa-v0-geZ"/>
+                <outlet property="N_BDZPL30View" destination="MpB-im-NP1" id="AOa-AJ-XC2"/>
+                <outlet property="N_BDZPL31" destination="jZt-kD-2sT" id="UC5-rA-ooo"/>
+                <outlet property="N_BDZPL31View" destination="Smu-0t-9r3" id="aen-8Y-trV"/>
+                <outlet property="N_BDZPL32" destination="Ihz-5Z-SeK" id="hjU-vv-q2m"/>
+                <outlet property="N_BDZPL32View" destination="ehS-vI-O9N" id="mOS-fs-VoF"/>
+                <outlet property="N_BDZPL40" destination="blO-TC-AWV" id="UOC-xl-xao"/>
+                <outlet property="N_BDZPL40View" destination="Gee-fr-lUz" id="8Xj-oS-MZ9"/>
+                <outlet property="N_BDZPL41" destination="Ii8-Iu-RyA" id="C8t-2b-SXG"/>
+                <outlet property="N_BDZPL41View" destination="8TP-tz-7YP" id="C0V-WV-TEw"/>
+                <outlet property="N_BDZPL42" destination="iOa-ZP-BXL" id="szU-vX-7sV"/>
+                <outlet property="N_BDZPL42View" destination="A5c-pX-yr0" id="IFR-AW-RLs"/>
+                <outlet property="N_BDZPL43" destination="iqy-Qm-Fzz" id="HH3-ot-NWk"/>
+                <outlet property="N_BDZPL43View" destination="Mdl-DU-ET9" id="0Tg-qU-Zij"/>
+                <outlet property="N_BDZPL5" destination="49G-SQ-Vkn" id="KvE-YH-Ii4"/>
+                <outlet property="N_BDZPL5View" destination="wIc-95-yra" id="ulJ-9b-4Cp"/>
+            </connections>
             <point key="canvasLocation" x="342" y="428"/>
         </view>
     </objects>

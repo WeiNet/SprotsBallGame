@@ -165,4 +165,61 @@ class OrderCellModel: NSObject {
     var N_BQCKH_SEL:Bool = false
     var N_BQCKK:NSNumber!//客客
     var N_BQCKK_SEL:Bool = false
+    
+    //波胆
+    var N_BDZPL10:NSNumber!
+    var N_BDZPL10_SEL:Bool = false
+    var N_BDZPL20:NSNumber!
+    var N_BDZPL20_SEL:Bool = false
+    var N_BDZPL21:NSNumber!
+    var N_BDZPL21_SEL:Bool = false
+    var N_BDZPL30:NSNumber!
+    var N_BDZPL30_SEL:Bool = false
+    var N_BDZPL31:NSNumber!
+    var N_BDZPL31_SEL:Bool = false
+    var N_BDZPL32:NSNumber!
+    var N_BDZPL32_SEL:Bool = false
+    var N_BDZPL40:NSNumber!
+    var N_BDZPL40_SEL:Bool = false
+    var N_BDZPL41:NSNumber!
+    var N_BDZPL41_SEL:Bool = false
+    var N_BDZPL42:NSNumber!
+    var N_BDZPL42_SEL:Bool = false
+    var N_BDZPL43:NSNumber!
+    var N_BDZPL43_SEL:Bool = false
+    
+    var N_BDKPL10:NSNumber!
+    var N_BDKPL10_SEL:Bool = false
+    var N_BDKPL20:NSNumber!
+    var N_BDKPL20_SEL:Bool = false
+    var N_BDKPL21:NSNumber!
+    var N_BDKPL21_SEL:Bool = false
+    var N_BDKPL30:NSNumber!
+    var N_BDKPL30_SEL:Bool = false
+    var N_BDKPL31:NSNumber!
+    var N_BDKPL31_SEL:Bool = false
+    var N_BDKPL32:NSNumber!
+    var N_BDKPL32_SEL:Bool = false
+    var N_BDKPL40:NSNumber!
+    var N_BDKPL40_SEL:Bool = false
+    var N_BDKPL41:NSNumber!
+    var N_BDKPL41_SEL:Bool = false
+    var N_BDKPL42:NSNumber!
+    var N_BDKPL42_SEL:Bool = false
+    var N_BDKPL43:NSNumber!
+    var N_BDKPL43_SEL:Bool = false
+    
+    var N_BDGPL00:NSNumber!
+    var N_BDGPL00_SEL:Bool = false
+    var N_BDGPL11:NSNumber!
+    var N_BDGPL11_SEL:Bool = false
+    var N_BDGPL22:NSNumber!
+    var N_BDGPL22_SEL:Bool = false
+    var N_BDGPL33:NSNumber!
+    var N_BDGPL33_SEL:Bool = false
+    var N_BDGPL44:NSNumber!
+    var N_BDGPL44_SEL:Bool = false
+    
+    var N_BDZPL5:NSNumber!
+    var N_BDZPL5_SEL:Bool = false
 }

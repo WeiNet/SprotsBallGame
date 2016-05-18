@@ -18,6 +18,7 @@
 		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
 		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
+		1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A11CEC406400D356D0 /* FluctuantView.swift */; };
 		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
 		179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF651CEAC9FD00CA0384 /* FieldView.xib */; };
 		179DBF681CEAF50500CA0384 /* GoalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF671CEAF50500CA0384 /* GoalsView.xib */; };
@@ -111,6 +112,7 @@
 		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
 		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		1798F2A11CEC406400D356D0 /* FluctuantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluctuantView.swift; sourceTree = "<group>"; };
 		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
 		179DBF651CEAC9FD00CA0384 /* FieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
 		179DBF671CEAF50500CA0384 /* GoalsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalsView.xib; sourceTree = "<group>"; };
@@ -236,13 +238,14 @@
 			isa = PBXGroup;
 			children = (
 				1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */,
-				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
 				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
+				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
 				179DBF631CEAAAD200CA0384 /* FluctuantView.xib */,
-				17D751D31CEC07DB00A52040 /* FieldView.swift */,
+				1798F2A11CEC406400D356D0 /* FluctuantView.swift */,
 				179DBF651CEAC9FD00CA0384 /* FieldView.xib */,
-				17D751D11CEBFF7D00A52040 /* GoalsView.swift */,
+				17D751D31CEC07DB00A52040 /* FieldView.swift */,
 				179DBF671CEAF50500CA0384 /* GoalsView.xib */,
+				17D751D11CEBFF7D00A52040 /* GoalsView.swift */,
 				179DBF691CEB048100CA0384 /* PassView.xib */,
 			);
 			name = football;
@@ -642,6 +645,7 @@
 				170226E21CE6B19E00EA6AF6 /* AllUnionVO.swift in Sources */,
 				463EEB921CEAA99800708630 /* PayController.swift in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
+				1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
