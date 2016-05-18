@@ -42,6 +42,36 @@ struct ToolsCode {
     static var BQCKZView:Int = 56687//客主
     static var BQCKHView:Int = 56688//客和
     static var BQCKKView:Int = 56689//客客
+    
+    static var BDZPL10View:Int = 56690
+    static var BDZPL20View:Int = 56691
+    static var BDZPL21View:Int = 56692
+    static var BDZPL30View:Int = 56693
+    static var BDZPL31View:Int = 56694
+    static var BDZPL32View:Int = 56695
+    static var BDZPL40View:Int = 56696
+    static var BDZPL41View:Int = 56697
+    static var BDZPL42View:Int = 56698
+    static var BDZPL43View:Int = 56699
+    
+    static var BDKPL10View:Int = 56700
+    static var BDKPL20View:Int = 56701
+    static var BDKPL21View:Int = 56702
+    static var BDKPL30View:Int = 56703
+    static var BDKPL31View:Int = 56704
+    static var BDKPL32View:Int = 56705
+    static var BDKPL40View:Int = 56706
+    static var BDKPL41View:Int = 56707
+    static var BDKPL42View:Int = 56708
+    static var BDKPL43View:Int = 56709
+    
+    static var BDGPL00View:Int = 56710
+    static var BDGPL11View:Int = 56711
+    static var BDGPL22View:Int = 56712
+    static var BDGPL33View:Int = 56713
+    static var BDGPL44View:Int = 56714
+    
+    static var BDZPL5View:Int = 56715
     //***************************用于区分点击那个赔率***************************//
     
     static func codeBy(code : Int) -> String {
@@ -109,6 +139,63 @@ struct ToolsCode {
             controlName = "N_BQCKH"
         case BQCKKView:
             controlName = "N_BQCKK"
+            
+        case BDZPL10View:
+            controlName = "N_BDZPL10"
+        case BDZPL20View:
+            controlName = "N_BDZPL20"
+        case BDZPL21View:
+            controlName = "N_BDZPL21"
+        case BDZPL30View:
+            controlName = "N_BDZPL30"
+        case BDZPL31View:
+            controlName = "N_BDZPL31"
+        case BDZPL32View:
+            controlName = "N_BDZPL32"
+        case BDZPL40View:
+            controlName = "N_BDZPL40"
+        case BDZPL41View:
+            controlName = "N_BDZPL41"
+        case BDZPL42View:
+            controlName = "N_BDZPL42"
+        case BDZPL43View:
+            controlName = "N_BDZPL43"
+            
+        case BDKPL10View:
+            controlName = "N_BDKPL10"
+        case BDKPL20View:
+            controlName = "N_BDKPL20"
+        case BDKPL21View:
+            controlName = "N_BDKPL21"
+        case BDKPL30View:
+            controlName = "N_BDKPL30"
+        case BDKPL31View:
+            controlName = "N_BDKPL31"
+        case BDKPL32View:
+            controlName = "N_BDKPL32"
+        case BDKPL40View:
+            controlName = "N_BDKPL40"
+        case BDKPL41View:
+            controlName = "N_BDKPL41"
+        case BDKPL42View:
+            controlName = "N_BDKPL42"
+        case BDKPL43View:
+            controlName = "N_BDKPL43"
+            
+        case BDGPL00View:
+            controlName = "N_BDGPL00"
+        case BDGPL11View:
+            controlName = "N_BDGPL11"
+        case BDGPL22View:
+            controlName = "N_BDGPL22"
+        case BDGPL33View:
+            controlName = "N_BDGPL33"
+        case BDGPL44View:
+            controlName = "N_BDGPL44"
+            
+        case BDZPL5View:
+            controlName = "N_BDZPL5"
+            
         default:
             controlName = ""
         }
