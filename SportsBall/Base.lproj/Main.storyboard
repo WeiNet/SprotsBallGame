@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -255,17 +255,19 @@
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hV4-m0-iE7">
-                                <rect key="frame" x="0.0" y="48" width="600" height="503"/>
+                                <rect key="frame" x="0.0" y="48" width="600" height="552"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hV4-m0-iE7" firstAttribute="top" secondItem="Hye-dS-JVj" secondAttribute="bottom" constant="48" id="MGq-i2-pFJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hV4-m0-iE7" secondAttribute="trailing" constant="-20" id="VO7-Y2-UUb"/>
-                            <constraint firstItem="hV4-m0-iE7" firstAttribute="leading" secondItem="PdF-Pa-MLf" secondAttribute="leadingMargin" constant="-20" id="f94-B2-TAG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tOR-kk-sCb" secondAttribute="trailing" constant="-20" id="gh4-ew-LE0"/>
-                            <constraint firstItem="tOR-kk-sCb" firstAttribute="leading" secondItem="PdF-Pa-MLf" secondAttribute="leadingMargin" constant="-20" id="zQz-qe-Wcx"/>
+                            <constraint firstItem="hV4-m0-iE7" firstAttribute="top" secondItem="tOR-kk-sCb" secondAttribute="bottom" id="5ZU-TI-x1K"/>
+                            <constraint firstItem="hV4-m0-iE7" firstAttribute="leading" secondItem="PdF-Pa-MLf" secondAttribute="leadingMargin" constant="-20" id="Dl8-v4-SvF"/>
+                            <constraint firstItem="tOR-kk-sCb" firstAttribute="leading" secondItem="PdF-Pa-MLf" secondAttribute="leadingMargin" constant="-20" id="P65-06-yyD"/>
+                            <constraint firstItem="bt7-55-bCU" firstAttribute="top" secondItem="hV4-m0-iE7" secondAttribute="bottom" id="cc1-8r-Wwm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hV4-m0-iE7" secondAttribute="trailing" constant="-20" id="ecS-Kl-UD5"/>
+                            <constraint firstItem="tOR-kk-sCb" firstAttribute="top" secondItem="Hye-dS-JVj" secondAttribute="bottom" id="qlt-E8-sep"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tOR-kk-sCb" secondAttribute="trailing" constant="-20" id="wQM-ZT-60D"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -279,33 +281,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6v8-R3-hGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1750" y="686"/>
+            <point key="canvasLocation" x="765" y="90"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="GgW-HM-mMk">
-            <objects>
-                <tabBarController storyboardIdentifier="BreakfastView" id="Eid-lf-qkx" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="V06-Hy-bVp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="LGg-hk-5ZB" kind="relationship" relationship="viewControllers" id="0qg-12-YQL"/>
-                        <segue destination="Sz8-dp-biC" kind="relationship" relationship="viewControllers" id="3FA-iG-otP"/>
-                        <segue destination="hDp-MU-1AP" kind="relationship" relationship="viewControllers" id="DKO-ak-B9D"/>
-                        <segue destination="9mB-SF-irS" kind="relationship" relationship="viewControllers" id="nFh-RW-C1Z"/>
-                        <segue destination="HqO-bv-K1a" kind="relationship" relationship="viewControllers" id="Iug-yp-AMS"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rwn-2o-n8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-946" y="497"/>
-        </scene>
-        <!--首页-->
+        <!--Breakfast View Controller-->
         <scene sceneID="34f-ad-Nrb">
             <objects>
-                <viewController id="LGg-hk-5ZB" customClass="BreakfastViewController" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BreakfastView" id="LGg-hk-5ZB" customClass="BreakfastViewController" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5RO-JV-vCE"/>
                         <viewControllerLayoutGuide type="bottom" id="iwS-79-YK8"/>
@@ -319,7 +300,7 @@
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-om-YqL">
-                                <rect key="frame" x="0.0" y="48" width="600" height="503"/>
+                                <rect key="frame" x="0.0" y="48" width="600" height="552"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -334,7 +315,6 @@
                             <constraint firstItem="LWU-om-YqL" firstAttribute="top" secondItem="4yb-1V-zFF" secondAttribute="bottom" id="wuW-DZ-BCA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首页" image="m1" id="r81-wU-C74"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="LWU-om-YqL" id="3vO-y0-iJJ"/>
@@ -344,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8v-JT-hVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="398"/>
+            <point key="canvasLocation" x="135" y="90"/>
         </scene>
         <!--游戏说明-->
         <scene sceneID="efM-Ev-6dE">
@@ -720,8 +700,8 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="olR-Tg-qwQ"/>
                                                 <exclude reference="BjV-92-omV"/>
+                                                <exclude reference="olR-Tg-qwQ"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -745,10 +725,10 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="lLX-u1-gco"/>
                                         <exclude reference="257-AO-Vbc"/>
-                                        <exclude reference="kFS-0s-bYk"/>
+                                        <exclude reference="lLX-u1-gco"/>
                                         <exclude reference="Icu-c8-sP1"/>
+                                        <exclude reference="kFS-0s-bYk"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -795,8 +775,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="qGi-PA-GGd"/>
                                         <exclude reference="9of-mq-6wC"/>
+                                        <exclude reference="qGi-PA-GGd"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -840,8 +820,8 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="1b2-bH-wFc"/>
-                                                <exclude reference="gtl-wC-8r1"/>
                                                 <exclude reference="Gv0-tP-u2k"/>
+                                                <exclude reference="gtl-wC-8r1"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -865,8 +845,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Dx1-Ft-Fch"/>
                                         <exclude reference="4sZ-Rf-8Bd"/>
+                                        <exclude reference="Dx1-Ft-Fch"/>
                                         <exclude reference="9Kx-fL-K7H"/>
                                         <exclude reference="nbl-on-iFv"/>
                                     </mask>
@@ -929,8 +909,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Ox1-WK-8VR"/>
                                         <exclude reference="7NY-zg-EVN"/>
+                                        <exclude reference="Ox1-WK-8VR"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2001,10 +1981,4 @@
         <image name="m4" width="24" height="24"/>
         <image name="m5" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="IwV-Ex-sdm"/>
-        <segue reference="d4c-V8-ycq"/>
-        <segue reference="XuA-J7-Kpa"/>
-        <segue reference="K09-HP-CPE"/>
-    </inferredMetricsTieBreakers>
 </document>
