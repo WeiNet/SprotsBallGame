@@ -103,9 +103,9 @@ class OrderCellModel: NSObject {
     var N_VISIT_REDCARD:NSNumber!
     
     var N_DSSPL:NSNumber!
-    var N_RDSSPL_SEL:Bool = false
+    var N_DSSPL_SEL:Bool = false
     var N_DSDPL:NSNumber!
-    var N_RDSDPL_SEL:Bool = false
+    var N_DSDPL_SEL:Bool = false
     
     var N_HJGGCJ:NSNumber!
     var N_LRFCJ:NSNumber!
