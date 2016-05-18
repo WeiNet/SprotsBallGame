@@ -127,7 +127,7 @@
             textMoney.text=betList![indexPath.row].dMoney
             lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
             textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingDidEnd)
-             btnDel.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchDown)
+            btnDel.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchDown)
             return cell!
             
         }
@@ -140,12 +140,12 @@
         }
         //删除方法
         func deleteRow(sender:UIButton){
-        
+            
             var intTag=sender.tag
             betList?.removeAtIndex(intTag)
             self.tableList.reloadData()
             countMoney()
-        
+            
         }
         //计算可赢金额方法
         func changeMoney(sender:UITextField){
@@ -198,7 +198,27 @@
             }
             
             if(strType=="BatchAddBetResult"){
+                var msg=""
+                var strSuccess=""
                 NSLog(strResult)
+                let infoArr = ToolsCode.toJsonArray(strResult)
+                var intCountRow=infoArr.count
+                for index in 0..<intCountRow{
+                    msg=String(infoArr[index].objectForKey("sErroMessage")!)
+                    strSuccess=String(infoArr[index].objectForKey("bSucceed")!)
+                }
+                if(strSuccess=="0"){
+                    let alertView = UIAlertView()
+                    alertView.title = "系统提示"
+                    alertView.message = msg
+                    alertView.addButtonWithTitle("确定")
+                   
+                    alertView.show()
+                }else{
+                    
+                    jumpPage()
+                }
+                
             }
             if(strType=="GetCreditResult"){
                 NSLog(strResult)
@@ -208,10 +228,10 @@
             
         }
         //批次下注方法
-        func addBet(strParam:NSString){
+        func addBet(strPar:NSString){
             
             var strParam:String = "<BatchAddBet xmlns=\"http://tempuri.org/\">";
-            strParam.appendContentsOf("<strpara>\(strParam)</strpara>")
+            strParam.appendContentsOf("<strpara>\(strPar)</strpara>")
             strParam.appendContentsOf("<isBeting>false</isBeting>")
             strParam.appendContentsOf("</BatchAddBet>")
             comm.getResult(strParam,strResultName: "BatchAddBetResult")
@@ -284,5 +304,12 @@
             strParam.appendContentsOf("</GetCredit>")
             comm.getResult(strParam,strResultName: "GetCreditResult")
         }
+        func jumpPage(){
+            var sb = UIStoryboard(name: "Main", bundle:nil)
+            var vcAbout = sb.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
+            self.navigationController?.pushViewController(vcAbout, animated: true)
+            
+        }
+        
         
     }

@@ -1565,7 +1565,7 @@
         <!--Title-->
         <scene sceneID="qyQ-gf-5mE">
             <objects>
-                <viewController id="9mB-SF-irS" customClass="HistoryViewController" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" id="9mB-SF-irS" customClass="HistoryViewController" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ako-Nh-jTR"/>
                         <viewControllerLayoutGuide type="bottom" id="paN-yS-2cE"/>

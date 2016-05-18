@@ -38,6 +38,7 @@ class BallViewController: UIViewController {
         let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
         alertMenu.addAction(cancel)
         return alertMenu
+        
     }
     
     //玩法菜单选项响应事件
