@@ -36,6 +36,26 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
         //        self.strRequestType=strType//设置请求类型
         self.matchingElement=strResultName
+        let reachability = Reachability.reachabilityForInternetConnection()
+        
+        //判断连接状态
+        if reachability!.isReachable(){
+           
+        }else{
+            delegate?.setResult("WebError",strType: "Error")
+
+        }
+        
+        //判断连接类型
+        if reachability!.isReachableViaWiFi() {
+            
+           
+        }else if reachability!.isReachableViaWWAN() {
+           
+        }else {
+            delegate?.setResult("WebError",strType: "Error")
+        }
+       
         let request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         
