@@ -33,16 +33,7 @@ class FluctuantView: UIView {
     @IBOutlet var N_BDZPL42: UILabel!
     @IBOutlet var N_BDZPL43View: UIView!
     @IBOutlet var N_BDZPL43: UILabel!
-//    N_BDZPL10
-//    N_BDZPL20
-//    N_BDZPL21
-//    N_BDZPL30
-//    N_BDZPL31
-//    N_BDZPL32
-//    N_BDZPL40
-//    N_BDZPL41
-//    N_BDZPL42
-//    N_BDZPL43
+    
     @IBOutlet var N_BDKPL10View: UIView!
     @IBOutlet var N_BDKPL10: UILabel!
     @IBOutlet var N_BDKPL20View: UIView!
@@ -63,16 +54,7 @@ class FluctuantView: UIView {
     @IBOutlet var N_BDKPL42: UILabel!
     @IBOutlet var N_BDKPL43View: UIView!
     @IBOutlet var N_BDKPL43: UILabel!
-//    N_BDKPL10
-//    N_BDKPL20
-//    N_BDKPL21
-//    N_BDKPL30
-//    N_BDKPL31
-//    N_BDKPL32
-//    N_BDKPL40
-//    N_BDKPL41
-//    N_BDKPL42
-//    N_BDKPL43
+    
     @IBOutlet var N_BDGPL00View: UIView!
     @IBOutlet var N_BDGPL00: UILabel!
     @IBOutlet var N_BDGPL11View: UIView!
@@ -83,14 +65,9 @@ class FluctuantView: UIView {
     @IBOutlet var N_BDGPL33: UILabel!
     @IBOutlet var N_BDGPL44View: UIView!
     @IBOutlet var N_BDGPL44: UILabel!
-//    N_BDGPL00
-//    N_BDGPL11
-//    N_BDGPL22
-//    N_BDGPL33
-//    N_BDGPL44
+    
     @IBOutlet var N_BDZPL5View: UIView!
     @IBOutlet var N_BDZPL5: UILabel!
-//    N_BDZPL5
     /*******************************注单控件*******************************/
     
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
