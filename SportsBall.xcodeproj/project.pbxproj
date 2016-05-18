@@ -79,6 +79,7 @@
 		46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DED1C8E780F007F6A50 /* ResultViewController.swift */; };
 		46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */; };
 		46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DF11C8E789F007F6A50 /* GameHelpViewController.swift */; };
+		46DC74021CEC0E8600604D9B /* PassShopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC74011CEC0E8600604D9B /* PassShopingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +178,7 @@
 		46C02DED1C8E780F007F6A50 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		46C02DEF1C8E7844007F6A50 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		46C02DF11C8E789F007F6A50 /* GameHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelpViewController.swift; sourceTree = "<group>"; };
+		46DC74011CEC0E8600604D9B /* PassShopingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassShopingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 				463295DE1CBB8C4D000EFEA9 /* ShopingViewController.swift */,
 				4641573A1CD9909F00838F32 /* HelpController.swift */,
 				463EEB911CEAA99800708630 /* PayController.swift */,
+				46DC74011CEC0E8600604D9B /* PassShopingViewController.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */,
 				463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */,
 				4641573B1CD9909F00838F32 /* HelpController.swift in Sources */,
+				46DC74021CEC0E8600604D9B /* PassShopingViewController.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
 				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
 				1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */,
