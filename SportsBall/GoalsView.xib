@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GoalsView" customModule="SportsBall" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="326" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -113,7 +113,7 @@
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAY-Ui-N4O">
                             <rect key="frame" x="206" y="1" width="40" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-3w-zR9">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="≥7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-3w-zR9">
                                     <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.0" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -135,6 +135,20 @@
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="N_LDSBLView" destination="ohe-uW-Dvj" id="72f-oP-nsD"/>
+                <outlet property="N_RDSBLView" destination="gh9-HA-3SV" id="5Hz-XD-Weq"/>
+                <outlet property="N_RDSDPL" destination="heh-M3-AYZ" id="mmz-9r-TLc"/>
+                <outlet property="N_RDSSPL" destination="aHU-nI-942" id="0fF-zx-0xb"/>
+                <outlet property="N_RQSPL01" destination="Oc2-6T-Kku" id="45k-aY-qHo"/>
+                <outlet property="N_RQSPL01View" destination="5Le-0Z-hdy" id="Z77-Hx-hKL"/>
+                <outlet property="N_RQSPL23" destination="K1u-6t-UQO" id="feg-MX-fup"/>
+                <outlet property="N_RQSPL23View" destination="Inf-gH-Pxk" id="eQc-xp-MfC"/>
+                <outlet property="N_RQSPL46" destination="zNn-sp-Kse" id="zn7-J2-Kh8"/>
+                <outlet property="N_RQSPL46View" destination="FQj-dd-QAE" id="atd-Gb-Y4k"/>
+                <outlet property="N_RQSPL7" destination="EQO-N4-D3r" id="EqX-tx-Wxk"/>
+                <outlet property="N_RQSPL7View" destination="hAY-Ui-N4O" id="Cz6-vF-yei"/>
+            </connections>
         </view>
     </objects>
 </document>

@@ -27,6 +27,21 @@ struct ToolsCode {
     
     static var LDSBLView:Int = 56675//单双、左队、双
     static var RDSBLView:Int = 56676//单双、右队、单
+    
+    static var RQSPL01View:Int = 56677//入球数0-1
+    static var RQSPL23View:Int = 56678//入球数2-3
+    static var RQSPL46View:Int = 56679//入球数4-6
+    static var RQSPL7View:Int = 56680//入球数>=7
+    
+    static var BQCZZView:Int = 56681//主主
+    static var BQCZHView:Int = 56682//主和
+    static var BQCZKView:Int = 56683//主客
+    static var BQCHZView:Int = 56684//和主
+    static var BQCHHView:Int = 56685//和和
+    static var BQCHKView:Int = 56686//和客
+    static var BQCKZView:Int = 56687//客主
+    static var BQCKHView:Int = 56688//客和
+    static var BQCKKView:Int = 56689//客客
     //***************************用于区分点击那个赔率***************************//
     
     static func codeBy(code : Int) -> String {
@@ -66,6 +81,34 @@ struct ToolsCode {
             controlName = "N_DSSPL"
         case RDSBLView:
             controlName = "N_DSDPL"
+            
+        case RQSPL01View:
+            controlName = "N_RQSPL01"
+        case RQSPL23View:
+            controlName = "N_RQSPL23"
+        case RQSPL46View:
+            controlName = "N_RQSPL46"
+        case RQSPL7View:
+            controlName = "N_RQSPL7"
+            
+        case BQCZZView:
+            controlName = "N_BQCZZ"
+        case BQCZHView:
+            controlName = "N_BQCZH"
+        case BQCZKView:
+            controlName = "N_BQCZK"
+        case BQCHZView:
+            controlName = "N_BQCHZ"
+        case BQCHHView:
+            controlName = "N_BQCHH"
+        case BQCHKView:
+            controlName = "N_BQCHK"
+        case BQCKZView:
+            controlName = "N_BQCKZ"
+        case BQCKHView:
+            controlName = "N_BQCKH"
+        case BQCKKView:
+            controlName = "N_BQCKK"
         default:
             controlName = ""
         }
