@@ -20,66 +20,93 @@
                     <rect key="frame" x="136" y="113" width="264" height="128"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="用户名" adjustsFontSizeToFit="NO" minimumFontSize="40" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-tq-hx8">
-                    <rect key="frame" x="118" y="285" width="300" height="30"/>
+                    <rect key="frame" x="124" y="321" width="300" height="30"/>
                     <attributedString key="attributedText"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf0-Ui-c4H">
-                    <rect key="frame" x="43" y="289" width="34" height="21"/>
+                    <rect key="frame" x="43" y="325" width="34" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSW-Yg-tGe">
-                    <rect key="frame" x="43" y="348" width="34" height="21"/>
+                    <rect key="frame" x="43" y="385" width="34" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-KF-tUi">
+                    <rect key="frame" x="124" y="381" width="300" height="30"/>
+                    <attributedString key="attributedText"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO1-Gh-nmK">
-                    <rect key="frame" x="118" y="430" width="284" height="30"/>
+                    <rect key="frame" x="116" y="442" width="284" height="30"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="kBD-GB-kZD"/>
+                        <constraint firstAttribute="width" constant="284" id="tRf-bA-gZc"/>
+                    </constraints>
                     <state key="normal" title="登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="kBD-GB-kZD"/>
+                            <exclude reference="tRf-bA-gZc"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="T1G-Sr-iFx"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-KF-tUi">
-                    <rect key="frame" x="118" y="348" width="300" height="30"/>
-                    <attributedString key="attributedText"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="zK8-v0-vDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="1Oj-QW-HUB"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="top" secondItem="oSW-Yg-tGe" secondAttribute="top" id="2Cu-bJ-ppl"/>
+                <constraint firstAttribute="bottom" secondItem="lO1-Gh-nmK" secondAttribute="bottom" constant="250" id="5VF-Op-QOQ"/>
+                <constraint firstItem="zK8-v0-vDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="6Qc-gW-pR4"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Bym-u6-P9y"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="leading" secondItem="ulp-tq-hx8" secondAttribute="leading" id="CF3-lg-62N"/>
                 <constraint firstItem="lO1-Gh-nmK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Fki-v3-p1c"/>
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Fna-nE-l67"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="GZF-Fn-XQQ"/>
                 <constraint firstAttribute="trailing" secondItem="Qco-KF-tUi" secondAttribute="trailing" constant="30" id="Ifd-6y-Yyi"/>
+                <constraint firstItem="oSW-Yg-tGe" firstAttribute="top" secondItem="Bf0-Ui-c4H" secondAttribute="bottom" id="J12-uP-ZbM"/>
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="top" secondItem="Bf0-Ui-c4H" secondAttribute="top" id="LXZ-pA-Uj5"/>
+                <constraint firstItem="Qco-KF-tUi" firstAttribute="centerY" secondItem="oSW-Yg-tGe" secondAttribute="centerY" id="Mqw-H1-1eO"/>
+                <constraint firstItem="Qco-KF-tUi" firstAttribute="top" secondItem="ulp-tq-hx8" secondAttribute="bottom" constant="20" id="NS3-vL-SM4"/>
+                <constraint firstItem="lO1-Gh-nmK" firstAttribute="top" secondItem="Qco-KF-tUi" secondAttribute="bottom" constant="55" id="QDD-VK-27V"/>
                 <constraint firstAttribute="trailing" secondItem="zK8-v0-vDz" secondAttribute="trailing" constant="20" id="Uhg-Zz-Ee6"/>
                 <constraint firstItem="Bf0-Ui-c4H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="UvG-fG-F8I"/>
-                <constraint firstItem="lO1-Gh-nmK" firstAttribute="top" secondItem="Qco-KF-tUi" secondAttribute="bottom" constant="60" id="ZhX-7Q-tNf"/>
+                <constraint firstItem="lO1-Gh-nmK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="400" id="Wwp-kn-0zH"/>
+                <constraint firstItem="ulp-tq-hx8" firstAttribute="centerY" secondItem="Bf0-Ui-c4H" secondAttribute="centerY" id="YtH-IG-Npo"/>
                 <constraint firstAttribute="trailing" secondItem="lO1-Gh-nmK" secondAttribute="trailing" constant="30" id="bPu-JH-6n9"/>
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="leading" secondItem="Bf0-Ui-c4H" secondAttribute="trailing" constant="41" id="nDg-YS-vCK"/>
+                <constraint firstItem="ulp-tq-hx8" firstAttribute="top" secondItem="zK8-v0-vDz" secondAttribute="bottom" constant="60" id="uPT-vY-z7s"/>
                 <constraint firstAttribute="trailing" secondItem="ulp-tq-hx8" secondAttribute="trailing" constant="30" id="uho-vw-ux2"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="leading" secondItem="oSW-Yg-tGe" secondAttribute="trailing" constant="41" id="unw-YC-IMb"/>
-                <constraint firstItem="Qco-KF-tUi" firstAttribute="top" secondItem="ulp-tq-hx8" secondAttribute="bottom" constant="10" id="waB-oJ-7sR"/>
+                <constraint firstItem="oSW-Yg-tGe" firstAttribute="top" secondItem="Bf0-Ui-c4H" secondAttribute="bottom" constant="20" id="vQd-zk-vmP"/>
                 <constraint firstItem="oSW-Yg-tGe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="xbS-p5-nwf"/>
                 <constraint firstItem="zK8-v0-vDz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zYs-tp-BAi"/>
-                <constraint firstItem="ulp-tq-hx8" firstAttribute="top" secondItem="zK8-v0-vDz" secondAttribute="bottom" constant="80" id="zjc-SM-8vc"/>
+                <constraint firstItem="ulp-tq-hx8" firstAttribute="top" secondItem="zK8-v0-vDz" secondAttribute="bottom" constant="60" id="zjc-SM-8vc"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="1Oj-QW-HUB"/>
                     <exclude reference="Fna-nE-l67"/>
+                    <exclude reference="LXZ-pA-Uj5"/>
+                    <exclude reference="zjc-SM-8vc"/>
+                    <exclude reference="J12-uP-ZbM"/>
+                    <exclude reference="2Cu-bJ-ppl"/>
                     <exclude reference="Bym-u6-P9y"/>
+                    <exclude reference="CF3-lg-62N"/>
                     <exclude reference="GZF-Fn-XQQ"/>
+                    <exclude reference="NS3-vL-SM4"/>
+                    <exclude reference="5VF-Op-QOQ"/>
+                    <exclude reference="Wwp-kn-0zH"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="305" y="301"/>

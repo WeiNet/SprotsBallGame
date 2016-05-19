@@ -224,20 +224,30 @@
             if(strType=="BatchAddBetResult"){
                 var msg=""
                 var strSuccess=""
+                var strErrorCode=""
                 NSLog(strResult)
                 let infoArr = ToolsCode.toJsonArray(strResult)
                 var intCountRow=infoArr.count
                 for index in 0..<intCountRow{
                     msg=String(infoArr[index].objectForKey("sErroMessage")!)
                     strSuccess=String(infoArr[index].objectForKey("bSucceed")!)
+                    strErrorCode=String(infoArr[index].objectForKey("iErroCode")!)
+                }
+                if(strErrorCode=="24"){
+                    let alertView = UIAlertView()
+                    alertView.title = "系统提示"
+                    alertView.message = "余额不足"
+                    alertView.addButtonWithTitle("确定")
+                     alertView.show()
+                    return
                 }
                 if(strSuccess=="0"){
                     let alertView = UIAlertView()
                     alertView.title = "系统提示"
                     alertView.message = msg
                     alertView.addButtonWithTitle("确定")
-                    
                     alertView.show()
+                    return
                 }else{
                     
                     jumpPage()
