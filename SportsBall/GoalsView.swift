@@ -8,10 +8,9 @@
 
 import UIKit
 
-class GoalsView: UIView {
+class GoalsView: OrderView {
 
     var orderCellModel:OrderCellModel!//当前View对应的资料
-    var delegate:OrderDelegate!
     
     /*******************************注单控件*******************************/
     @IBOutlet var N_RDSBLView: UIView!
@@ -28,7 +27,7 @@ class GoalsView: UIView {
     @IBOutlet var N_RQSPL7: UILabel!
     /*******************************注单控件*******************************/
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
-    func userInteractionEnabled(){
+    override func userInteractionEnabled(){
         N_RDSBLView.userInteractionEnabled = true
         N_LDSBLView.userInteractionEnabled = true
         N_RQSPL01View.userInteractionEnabled = true
@@ -45,7 +44,7 @@ class GoalsView: UIView {
         
     }
     //注册点击事件
-    func addGestureRecognizer(){
+    override func addGestureRecognizer(){
         N_RDSBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_LDSBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RQSPL01View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -53,7 +52,7 @@ class GoalsView: UIView {
         N_RQSPL46View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RQSPL7View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
-    func orderTap(sender: UITapGestureRecognizer) {
+    override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
         //赔率点击回调方法
@@ -66,7 +65,7 @@ class GoalsView: UIView {
         }
     }
     //注单赋值前清空重用控件
-    func clear(){
+    override func clear(){
         N_RDSDPL.text = ""
         N_RDSSPL.text = ""
         N_RQSPL01.text = ""
@@ -75,7 +74,7 @@ class GoalsView: UIView {
         N_RQSPL7.text = ""
     }
     //资料的显示
-    func showData(){
+    override func showData(){
         N_RDSDPL.text = orderCellModel.N_DSSPL != nil ? String(orderCellModel.N_DSSPL.floatValue) : ""
         N_RDSSPL.text = orderCellModel.N_DSDPL != nil ? String(orderCellModel.N_DSDPL.floatValue) : ""
         N_RQSPL01.text = orderCellModel.N_RQSPL01 != nil ? String(orderCellModel.N_RQSPL01.floatValue) : ""
@@ -84,7 +83,7 @@ class GoalsView: UIView {
         N_RQSPL7.text = orderCellModel.N_RQSPL7 != nil ? String(orderCellModel.N_RQSPL7.floatValue) : ""
     }
     //背景的填充
-    func fillBackground(){
+    override func fillBackground(){
         ToolsCode.setBackground(N_RDSBLView,select: orderCellModel.N_DSDPL_SEL)
         ToolsCode.setBackground(N_LDSBLView,select: orderCellModel.N_DSSPL_SEL)
         ToolsCode.setBackground(N_RQSPL01View,select: orderCellModel.N_RQSPL01_SEL)

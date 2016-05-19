@@ -30,6 +30,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
         mPlayType = key
+        isMultiselect = false
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
         getOtherMatch()

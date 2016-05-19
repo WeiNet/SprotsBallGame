@@ -136,6 +136,8 @@ class OrderCellModel: NSObject {
     var N_SYL:String!
     var N_SYR:String!
     
+    var N_RQ_OPEN:NSNumber!
+    
     //入球数
     var N_RQSPL01:NSNumber!//入球数0-1
     var N_RQSPL01_SEL:Bool = false
@@ -145,6 +147,8 @@ class OrderCellModel: NSObject {
     var N_RQSPL46_SEL:Bool = false
     var N_RQSPL7:NSNumber!//入球数>=7
     var N_RQSPL7_SEL:Bool = false
+    var N_BD_OPEN:NSNumber!
+    var N_BDZPL5:NSNumber!
     
     //半全场
     var N_BQCZZ:NSNumber!//主主
@@ -165,6 +169,7 @@ class OrderCellModel: NSObject {
     var N_BQCKH_SEL:Bool = false
     var N_BQCKK:NSNumber!//客客
     var N_BQCKK_SEL:Bool = false
+    var N_BQC_OPEN:NSNumber!
     
     //波胆
     var N_BDZPL10:NSNumber!
@@ -220,6 +225,6 @@ class OrderCellModel: NSObject {
     var N_BDGPL44:NSNumber!
     var N_BDGPL44_SEL:Bool = false
     
-    var N_BDZPL5:NSNumber!
-    var N_BDZPL5_SEL:Bool = false
+    var N_BDKPL5:NSNumber!
+    var N_BDKPL5_SEL:Bool = false
 }

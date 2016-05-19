@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PassView" customModule="SportsBall" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="501" height="260"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -151,8 +151,58 @@
                     </subviews>
                     <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="单双" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6p-Gj-AaI">
+                    <rect key="frame" x="0.0" y="100" width="48" height="32"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-lW-j1D">
+                    <rect key="frame" x="49" y="100" width="80" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="e" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-n7-ogL">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.980" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-kg-G4u">
+                            <rect key="frame" x="30" y="0.0" width="50" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i60-yI-Dor">
+                    <rect key="frame" x="130" y="100" width="56" height="32"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HfK-jg-sqc">
+                    <rect key="frame" x="187" y="100" width="80" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i7-5M-Iv7">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.860" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHE-Dl-s6S">
+                            <rect key="frame" x="30" y="0.0" width="50" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbF-MS-387">
-                    <rect key="frame" x="268" y="1" width="56" height="98"/>
+                    <rect key="frame" x="268" y="1" width="56" height="131"/>
                     <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -162,6 +212,27 @@
             <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="L_RFView" destination="ueP-R0-hIV" id="tGx-BM-VU1"/>
+                <outlet property="N_DSDPL" destination="PHE-Dl-s6S" id="BmM-jo-jrX"/>
+                <outlet property="N_DSDPLView" destination="HfK-jg-sqc" id="a9z-5s-JAq"/>
+                <outlet property="N_DSSPL" destination="2vc-kg-G4u" id="iOc-Xz-Fky"/>
+                <outlet property="N_DSSPLView" destination="6Hb-lW-j1D" id="evZ-gv-3gX"/>
+                <outlet property="N_DXDPL" destination="0QM-B3-2jv" id="PvT-vl-Y12"/>
+                <outlet property="N_DXXPL" destination="s8F-wk-7b3" id="lAM-Ju-Oqv"/>
+                <outlet property="N_HJPL" destination="q9g-Vg-VhL" id="KHj-ce-BFD"/>
+                <outlet property="N_LDXBL" destination="jmR-v6-qSO" id="Vp2-7v-68Z"/>
+                <outlet property="N_LDXBLView" destination="0EJ-Kv-0YP" id="GRu-7s-XP1"/>
+                <outlet property="N_LDYPL" destination="5uk-R7-0oJ" id="esh-Mo-72k"/>
+                <outlet property="N_LRFBL" destination="Yfo-jN-8lq" id="hEd-bh-Nmr"/>
+                <outlet property="N_LRFPL" destination="Ndw-8a-nZ5" id="31o-8Z-VCZ"/>
+                <outlet property="N_RDXBL" destination="dGI-ys-fu4" id="1S0-O2-Yf9"/>
+                <outlet property="N_RDXBLView" destination="5dA-Nh-CAQ" id="FgB-ak-FUw"/>
+                <outlet property="N_RDYPL" destination="qrA-qj-QFq" id="IIY-On-oVy"/>
+                <outlet property="N_RRFBL" destination="IUF-qp-WmM" id="x97-m2-GJ6"/>
+                <outlet property="N_RRFPL" destination="uVX-cK-cv8" id="6ry-VF-7TD"/>
+                <outlet property="R_RFView" destination="D7K-25-cNU" id="4iR-sa-g6i"/>
+            </connections>
             <point key="canvasLocation" x="267.5" y="87"/>
         </view>
     </objects>
