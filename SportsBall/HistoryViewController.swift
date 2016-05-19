@@ -14,6 +14,14 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var jsonResult:NSMutableArray=[]
     var intIndexPage=0
     
+    @IBAction func backClick(sender: AnyObject) {
+        
+        var sb = UIStoryboard(name: "Main", bundle:nil)
+       
+            var vc = sb.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
+            self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var tableViewList: UITableView!
     override func viewDidLoad() {
@@ -36,7 +44,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         var strParam:String = "<GetUncountBet xmlns=\"http://tempuri.org/\">";
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
         strParam.appendContentsOf("<iPageindex>\(intIndexPage)</iPageindex>")
-        strParam.appendContentsOf("<iPageSize>5</iPageSize>")
+        strParam.appendContentsOf("<iPageSize>100</iPageSize>")
         strParam.appendContentsOf("</GetUncountBet>")
         conn.getResult(strParam,strResultName: "GetUncountBetResult")
         

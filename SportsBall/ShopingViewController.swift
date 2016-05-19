@@ -9,8 +9,8 @@
     import UIKit
     
     class ShopingViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,ResultDelegate,UITextFieldDelegate {
-        var betManger:BetListManager?
-        var betList:[BetInfo]?
+//        var betManger:BetListManager?
+//        var betList:[BetInfo]?
         var comm=CommonParameter()
         var intRowIndex:Int = 0
         var flag=false
@@ -52,12 +52,11 @@
             }
             else
             {
-                if(betList?.isEmpty==false){
-                    betList?.removeAll()
-                    self.tableList.reloadData()
-                    textBetMoneyt.text="0.0"
-                    textKyje.text="0.0"
-                }
+                BetListManager.sharedManager.clearBetList()
+                self.tableList.reloadData()
+                textBetMoneyt.text="0.0"
+                textKyje.text="0.0"
+               
             }
         }
         @IBOutlet weak var tableList: UITableView!
@@ -70,7 +69,7 @@
         @IBAction func payChlick(sender: UIButton) {
             var jsonObject: [AnyObject] = []
             
-            for objbet in betList!{
+            for objbet in BetListManager.sharedManager.getBetList(){
                 jsonObject.append(objbet.toDict())
             }
             var str=toJSONString(jsonObject)
@@ -82,8 +81,7 @@
         override func viewDidLoad() {
             self.title="购物车"
             
-            betManger=BetListManager.sharedManager
-            betList=betManger!.getBetList()
+           
             self.tableList.dataSource=self
             self.tableList.delegate=self
             comm.delegate=self
@@ -104,7 +102,7 @@
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
         {
             
-            return (betList?.count)!
+            return (BetListManager.sharedManager.getBetList().count)
         }
         
         
@@ -138,14 +136,14 @@
             var lableDC=cell?.viewWithTag(12) as! UILabel
             var lableDZ=cell?.viewWithTag(13) as! UILabel
             
-            lableV.text=betList![indexPath.row].visitname
-            lableH.text=betList![indexPath.row].homename
-            lableBetTeam.text=betList![indexPath.row].betteamName
-            lableRate.text=betList![indexPath.row].rate
-            lableKY.text=betList![indexPath.row].kyje
-            lableDC.text=betList![indexPath.row].dcsx
-            textMoney.text=betList![indexPath.row].dMoney
-            lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
+            lableV.text=BetListManager.sharedManager.getBetList()[indexPath.row].visitname
+            lableH.text=BetListManager.sharedManager.getBetList()[indexPath.row].homename
+            lableBetTeam.text=BetListManager.sharedManager.getBetList()[indexPath.row].betteamName
+            lableRate.text=BetListManager.sharedManager.getBetList()[indexPath.row].rate
+            lableKY.text=BetListManager.sharedManager.getBetList()[indexPath.row].kyje
+            lableDC.text=BetListManager.sharedManager.getBetList()[indexPath.row].dcsx
+            textMoney.text=BetListManager.sharedManager.getBetList()[indexPath.row].dMoney
+            lableDZ.text=BetListManager.sharedManager.getBetList()[indexPath.row].dzxx+"-"+BetListManager.sharedManager.getBetList()[indexPath.row].dzsx
             textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingDidEnd)
             btnDel.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchDown)
             return cell!
@@ -161,8 +159,8 @@
         //删除方法
         func deleteRow(sender:UIButton){
             
-            var intTag=sender.tag
-            betList?.removeAtIndex(intTag)
+            var intTag:Int=sender.tag
+            BetListManager.sharedManager.delectListRow(intTag)
             self.tableList.reloadData()
             countMoney()
             
@@ -170,13 +168,15 @@
         //计算可赢金额方法
         func changeMoney(sender:UITextField){
             var intTag=sender.tag
-            var objBet=betList![intTag]
+            var objList=BetListManager.sharedManager.getBetList()
+            var objBet=objList[intTag]
             objBet.dMoney=sender.text!
             var betMoney=Double(objBet.dMoney)
             var dRate=Double(objBet.rate)
             var winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
             objBet.kyje="\(winMoney)"
-            betList![intTag]=objBet
+            objList[intTag]=objBet
+            BetListManager.sharedManager.setList(objList)
             print(sender.tag)
             countMoney()
             
@@ -185,7 +185,11 @@
         func countMoney(){
             var betMoney:Double=0
             var betKYJE:Double=0
-            for objBet in betList!{
+            if(BetListManager.sharedManager.getBetList().isEmpty){
+            
+            return
+            }
+            for objBet in  BetListManager.sharedManager.getBetList(){
                 if(objBet.dMoney != ""){
                     betMoney += Double(objBet.dMoney)!
                 }
