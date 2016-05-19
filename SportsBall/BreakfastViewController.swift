@@ -24,12 +24,13 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     let addBetResult:String = "AddBetResult"
     var alertMenu:UIAlertController!
     var alertCart:UIAlertController!
-    var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["2":"滚球"],["1":"单式"],["3":"波胆"],["4":"入球数"],["5":"半全场"],["6":"综合过关"]]
+    var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["1":"单式"],["2":"滚球"],["3":"综合过关"],["4":"波胆"],["5":"半全场"],["6":"入球数"]]
     var orderHeight:CGFloat = 216
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
         mPlayType = key
+        isMultiselect = false
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
         getFootballMatch()
@@ -91,21 +92,52 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //添加注单赔率View
     func addOrderDelegate(cell:Cell,orderCellModel:OrderCellModel)->UIView{
-        let breakfastView = NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView
-        breakfastView!.userInteractionEnabled()
+        var orderView:OrderView
+        if (mPlayType == "0" || mPlayType == "1" || mPlayType == "2") {//早盘/单式/滚球
+            orderView = (NSBundle.mainBundle().loadNibNamed("BreakfastView" , owner: nil, options: nil).first as? BreakfastView)!
+        } else if (mPlayType == "3") {//综合过关
+            orderView = (NSBundle.mainBundle().loadNibNamed("PassView" , owner: nil, options: nil).first as? PassView)!
+        } else if (mPlayType == "4") {//波胆
+            orderView = (NSBundle.mainBundle().loadNibNamed("FluctuantView" , owner: nil, options: nil).first as? FluctuantView)!
+        } else if (mPlayType == "5") {//半全场
+            orderView = (NSBundle.mainBundle().loadNibNamed("FieldView" , owner: nil, options: nil).first as? FieldView)!
+        } else{//入球数
+            orderView = (NSBundle.mainBundle().loadNibNamed("GoalsView" , owner: nil, options: nil).first as? GoalsView)!
+        }
+        orderView.userInteractionEnabled()
         //加载时赔率是打开的就要立即添加手势事件
-        breakfastView!.addGestureRecognizer()
-        breakfastView!.delegate = self
-        cell.gestureDelegate = breakfastView
-        return breakfastView!
+        orderView.addGestureRecognizer()
+        orderView.delegate = self
+        cell.gestureDelegate = orderView
+        return orderView
     }
     //绑定注单赔率
     func bindorderDelegate(view:UIView,orderCellModel:OrderCellModel){
-        let viewTemp:BreakfastView = view as! BreakfastView
-        viewTemp.orderCellModel = orderCellModel
-        viewTemp.clear()
-        viewTemp.showData()
-        viewTemp.fillBackground()
+        var orderView:OrderView
+        if (mPlayType == "0" || mPlayType == "1" || mPlayType == "2") {//早盘/单式/滚球
+            let orderViewTemp = view as! BreakfastView
+            orderViewTemp.orderCellModel = orderCellModel
+            orderView = orderViewTemp
+        } else if (mPlayType == "3") {//综合过关
+            let orderViewTemp = view as! PassView
+            orderViewTemp.orderCellModel = orderCellModel
+            orderView = orderViewTemp
+        } else if (mPlayType == "4") {//波胆
+            let orderViewTemp = view as! FluctuantView
+            orderViewTemp.orderCellModel = orderCellModel
+            orderView = orderViewTemp
+        } else if (mPlayType == "5") {//半全场
+            let orderViewTemp = view as! FieldView
+            orderViewTemp.orderCellModel = orderCellModel
+            orderView = orderViewTemp
+        } else{//入球数
+            let orderViewTemp = view as! GoalsView
+            orderViewTemp.orderCellModel = orderCellModel
+            orderView = orderViewTemp
+        }
+        orderView.clear()
+        orderView.showData()
+        orderView.fillBackground()
     }
     
     //点击赔率点击事件的协议

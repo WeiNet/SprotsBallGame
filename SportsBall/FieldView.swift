@@ -8,9 +8,8 @@
 
 import UIKit
 
-class FieldView: UIView {
+class FieldView: OrderView {
     var orderCellModel:OrderCellModel!//当前View对应的资料
-    var delegate:OrderDelegate!
     
     /*******************************注单控件*******************************/
     @IBOutlet var N_BQCZZView: UIView!
@@ -33,7 +32,7 @@ class FieldView: UIView {
     @IBOutlet var N_BQCKK: UILabel!
     /*******************************注单控件*******************************/
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
-    func userInteractionEnabled(){
+    override func userInteractionEnabled(){
         N_BQCZZView.userInteractionEnabled = true
         N_BQCZHView.userInteractionEnabled = true
         N_BQCZKView.userInteractionEnabled = true
@@ -55,7 +54,7 @@ class FieldView: UIView {
         N_BQCKKView.tag = ToolsCode.BQCKKView
     }
     //注册点击事件
-    func addGestureRecognizer(){
+    override func addGestureRecognizer(){
         N_BQCZZView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_BQCZHView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_BQCZKView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -66,7 +65,7 @@ class FieldView: UIView {
         N_BQCKHView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_BQCKKView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
-    func orderTap(sender: UITapGestureRecognizer) {
+    override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
         //赔率点击回调方法
@@ -79,7 +78,7 @@ class FieldView: UIView {
         }
     }
     //注单赋值前清空重用控件
-    func clear(){
+    override func clear(){
         N_BQCZZ.text = ""
         N_BQCZH.text = ""
         N_BQCZK.text = ""
@@ -91,7 +90,7 @@ class FieldView: UIView {
         N_BQCKK.text = ""
     }
     //资料的显示
-    func showData(){
+    override func showData(){
         N_BQCZZ.text = orderCellModel.N_BQCZZ != nil ? String(orderCellModel.N_BQCZZ.floatValue) : ""
         N_BQCZH.text = orderCellModel.N_BQCZH != nil ? String(orderCellModel.N_BQCZH.floatValue) : ""
         N_BQCZK.text = orderCellModel.N_BQCZK != nil ? String(orderCellModel.N_BQCZK.floatValue) : ""
@@ -103,7 +102,7 @@ class FieldView: UIView {
         N_BQCKK.text = orderCellModel.N_BQCKK != nil ? String(orderCellModel.N_BQCKK.floatValue) : ""
     }
     //背景的填充
-    func fillBackground(){
+    override func fillBackground(){
         ToolsCode.setBackground(N_BQCZZView,select: orderCellModel.N_BQCZZ_SEL)
         ToolsCode.setBackground(N_BQCZHView,select: orderCellModel.N_BQCZH_SEL)
         ToolsCode.setBackground(N_BQCZKView,select: orderCellModel.N_BQCZK_SEL)

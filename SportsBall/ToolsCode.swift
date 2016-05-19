@@ -194,7 +194,7 @@ struct ToolsCode {
             controlName = "N_BDGPL44"
             
         case BDZPL5View:
-            controlName = "N_BDZPL5"
+            controlName = "N_BDKPL5"
             
         default:
             controlName = ""

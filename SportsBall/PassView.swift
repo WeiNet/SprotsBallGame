@@ -8,9 +8,8 @@
 
 import UIKit
 
-class PassView: UIView {
+class PassView: OrderView {
     var orderCellModel:OrderCellModel!//当前View对应的资料
-    var delegate:OrderDelegate!
     
     /*******************************注单控件*******************************/
     @IBOutlet var N_LDYPL: UILabel!
@@ -37,7 +36,7 @@ class PassView: UIView {
     @IBOutlet var N_DSDPL: UILabel!
     /*******************************注单控件*******************************/
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
-    func userInteractionEnabled(){
+    override func userInteractionEnabled(){
         N_LDYPL.userInteractionEnabled = true
         N_HJPL.userInteractionEnabled = true
         N_RDYPL.userInteractionEnabled = true
@@ -59,7 +58,7 @@ class PassView: UIView {
         N_DSDPLView.tag = ToolsCode.RDSBLView
     }
     //注册点击事件
-    func addGestureRecognizer(){
+    override func addGestureRecognizer(){
         N_LDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_HJPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -70,7 +69,7 @@ class PassView: UIView {
         N_DSSPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_DSDPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
-    func orderTap(sender: UITapGestureRecognizer) {
+    override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
         //赔率点击回调方法
@@ -90,7 +89,7 @@ class PassView: UIView {
         }
     }
     //注单赋值前清空重用控件
-    func clear(){
+    override func clear(){
         N_LDYPL.text = ""
         N_HJPL.text = ""
         N_RDYPL.text = ""
@@ -109,7 +108,7 @@ class PassView: UIView {
         N_DSDPL.text = ""
     }
     //资料的显示
-    func showData(){
+    override func showData(){
         //全场赌赢不允许下注-->OPEN 该盘口不锁定
         if (orderCellModel.N_DY_OPEN != nil && String(orderCellModel.N_DY_OPEN) != "1"){
             N_LDYPL.text = orderCellModel.N_LDYPL != nil ? String(format: "%.3f", orderCellModel.N_LDYPL.floatValue) : ""
@@ -140,7 +139,7 @@ class PassView: UIView {
         }
     }
     //背景的填充
-    func fillBackground(){
+    override func fillBackground(){
         ToolsCode.setLblFontBackground(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
         ToolsCode.setLblFontBackground(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
         ToolsCode.setLblFontBackground(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)

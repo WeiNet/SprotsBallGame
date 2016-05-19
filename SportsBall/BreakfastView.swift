@@ -8,14 +8,8 @@
 
 import UIKit
 //早盘、单式、滚球
-//页面 实例化
-protocol OrderDelegate: NSObjectProtocol {
-    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool//赔率点击事件,返回true为多选
-}
-
-class BreakfastView: UIView ,GestureDelegate{
+class BreakfastView: OrderView {
     var orderCellModel:OrderCellModel!//当前View对应的资料
-    var delegate:OrderDelegate!
     
     /*******************************注单控件*******************************/
     @IBOutlet var N_LDYPL: UILabel!
@@ -53,7 +47,7 @@ class BreakfastView: UIView ,GestureDelegate{
     /*******************************注单控件*******************************/
     
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
-    func userInteractionEnabled(){
+    override func userInteractionEnabled(){
         N_LDYPL.userInteractionEnabled = true
         N_HJPL.userInteractionEnabled = true
         N_RDYPL.userInteractionEnabled = true
@@ -87,7 +81,7 @@ class BreakfastView: UIView ,GestureDelegate{
         N_RDXBLView2.tag = ToolsCode.RDXBLView2
     }
     //注册点击事件
-    func addGestureRecognizer(){
+    override func addGestureRecognizer(){
         N_LDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_HJPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -105,7 +99,7 @@ class BreakfastView: UIView ,GestureDelegate{
         N_LDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
-    func orderTap(sender: UITapGestureRecognizer) {
+    override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
         //赔率点击回调方法
@@ -127,7 +121,7 @@ class BreakfastView: UIView ,GestureDelegate{
         }
     }
     //注单赋值前清空重用控件
-    func clear(){
+    override func clear(){
         N_LDYPL.text = ""
         N_HJPL.text = ""
         N_RDYPL.text = ""
@@ -158,7 +152,7 @@ class BreakfastView: UIView ,GestureDelegate{
         N_DXXPL2.text = ""
     }
     //资料的显示
-    func showData(){
+    override func showData(){
         //全场赌赢不允许下注-->OPEN 该盘口不锁定
         if (orderCellModel.N_DY_OPEN != nil && String(orderCellModel.N_DY_OPEN) != "1"){
             N_LDYPL.text = orderCellModel.N_LDYPL != nil ? String(format: "%.3f", orderCellModel.N_LDYPL.floatValue) : ""
@@ -209,7 +203,7 @@ class BreakfastView: UIView ,GestureDelegate{
         }
     }
     //背景的填充
-    func fillBackground(){
+    override func fillBackground(){
         ToolsCode.setLblFontBackground(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
         ToolsCode.setLblFontBackground(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
         ToolsCode.setLblFontBackground(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
