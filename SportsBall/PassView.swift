@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//综合过关
 class PassView: OrderView {
     var orderCellModel:OrderCellModel!//当前View对应的资料
     
@@ -30,10 +30,10 @@ class PassView: OrderView {
     @IBOutlet var N_RDXBL: UILabel!
     @IBOutlet var N_DXXPL: UILabel!
     
-    @IBOutlet var N_DSSPLView: UIView!
-    @IBOutlet var N_DSSPL: UILabel!
     @IBOutlet var N_DSDPLView: UIView!
     @IBOutlet var N_DSDPL: UILabel!
+    @IBOutlet var N_DSSPLView: UIView!
+    @IBOutlet var N_DSSPL: UILabel!
     /*******************************注单控件*******************************/
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     override func userInteractionEnabled(){

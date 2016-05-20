@@ -323,7 +323,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         strParam.appendContentsOf("<strLM>\(mUnionID)</strLM>")
         strParam.appendContentsOf("<strSort>0</strSort>")
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
-        strParam.appendContentsOf("<strPageSize>1</strPageSize>")
+        strParam.appendContentsOf("<strPageSize>20000</strPageSize>")
         strParam.appendContentsOf("<strUser></strUser>")
         //0:早盘；1：单式；2：滚球
         //        strParam.appendContentsOf("<strType>2</strType>")

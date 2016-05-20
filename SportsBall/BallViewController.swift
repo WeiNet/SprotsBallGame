@@ -84,7 +84,6 @@ class BallViewController: UIViewController {
                     let orderCellModel:OrderCellModel = OrderCellModel()
                     //给注单属性赋值
                     orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
-                    print(matchJson)
                     aryOrderCellModel.append(orderCellModel)
                 }
             }
@@ -120,26 +119,27 @@ class BallViewController: UIViewController {
 //            cartButtonView?.frame.size.height = 48
             cartButtonView?.frame = CGRect(x: 0, y: 0, width: width, height: 48)
             cartButtonView?.delegate = cartDelegate
+            cartButtonView?.segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
             contentView.addSubview(cartButtonView!)
             //添加购物车控件后Y轴空出
             startY = startY + 48
             height = height - 48
         }
         
-        if (playType != "2") {
-            //先创建一个数组用于设置分段控件的标题
-            let appsArray:[String] = ["即时下注","复合下注"]
-            let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
-            segment.frame = CGRect(x: (width-180)/2, y: height + 75, width: 180, height: 20)
-            //默认选中下标为0的
-            segment.selectedSegmentIndex = 0
-            //设置标题颜色
-            segment.tintColor = UIColor.redColor()
-            //添加事件，当segment改变时，触发 Parent
-            segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
-            mainView.addSubview(segment)
-            height = height - 26
-        }
+//        if (playType != "2") {
+//            //先创建一个数组用于设置分段控件的标题
+//            let appsArray:[String] = ["即时下注","复合下注"]
+//            let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
+//            segment.frame = CGRect(x: (width-180)/2, y: height + 75, width: 180, height: 20)
+//            //默认选中下标为0的
+//            segment.selectedSegmentIndex = 0
+//            //设置标题颜色
+//            segment.tintColor = UIColor.redColor()
+//            //添加事件，当segment改变时，触发 Parent
+//            segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
+//            mainView.addSubview(segment)
+//            height = height - 26
+//        }
         
         let cgr = CGRect(x: 0, y: startY, width: width, height: height)// - 20 - 36)
         let tableView = TableView(frame: cgr)

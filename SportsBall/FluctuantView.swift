@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//波胆
 class FluctuantView: OrderView {
     var orderCellModel:OrderCellModel!//当前View对应的资料
     
