@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
+class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate,UnionDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
@@ -18,6 +18,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     var betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//0:早盘；1：单式；2：滚球
+    var mUnionID = ""
     var isMultiselect = false//即时下注
     let checkBetResult:String = "CheckBetResult"
     let getFootballMatchResult:String = "GetFootballMatchResult"
@@ -30,9 +31,21 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
         mPlayType = key
+        mUnionID = ""
         isMultiselect = false
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
+        if (mPlayType == "0" || mPlayType == "1" || mPlayType == "2") {//早盘/单式/滚球
+            orderHeight = 216
+        } else if (mPlayType == "3") {//综合过关
+            orderHeight = 131
+        } else if (mPlayType == "4") {//波胆
+            orderHeight = 192
+        } else if (mPlayType == "5") {//半全场
+            orderHeight = 101
+        } else{//入球数
+            orderHeight = 60
+        }
         getFootballMatch()
     }
     
@@ -68,7 +81,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //联盟打开
     func unionClick(){
-        showUnion()
+        showUnion(self)
     }
     //规则说明
     func explainClick(){
@@ -84,7 +97,11 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             showCart()
         }
     }
-    
+    //联盟选择
+    func unionClickDelegate(keys:String){
+        mUnionID = keys
+        getFootballMatch()
+    }
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
@@ -207,36 +224,36 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         if playType == "DX"{
             betteamName = tempBetName == "L" ? "大" : "小"
         }
-        if(toolsCode>=56661 && toolsCode<=56667){//全场控件
-            id = String(orderCellModel.N_ID)
-            let1 = String(orderCellModel.N_LET)
-            let tempType = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType != "DY") && (tempType != "HJ") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
-            }
-            let tempLRH = ToolsCode.codeByLRH(toolsCode)
-            if tempLRH == "L" {
-                tid = String(orderCellModel.N_VISIT)
-            }else if tempLRH == "R" {
-                tid = String(orderCellModel.N_HOME)
-            }else{
-                tid = "0"
-            }
-        }else if(toolsCode>=56668 && toolsCode<=56674){//半场控件
+        //全场控件
+        id = String(orderCellModel.N_ID)
+        let1 = String(orderCellModel.N_LET)
+        let tempType = ToolsCode.codeByPlayType(toolsCode)
+        if (tempType == "RF") && (tempType == "DX") {
+            hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
+            hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+            hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
+        }
+        let tempLRH = ToolsCode.codeByLRH(toolsCode)
+        if tempLRH == "L" {
+            tid = String(orderCellModel.N_VISIT)
+        }else if tempLRH == "R" {
+            tid = String(orderCellModel.N_HOME)
+        }else{
+            tid = "0"
+        }
+        if(toolsCode>=56668 && toolsCode<=56674){//半场控件
             id = String(orderCellModel.N_ID2)
             let1 = String(orderCellModel.N_LET2)
-            let tempType = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType != "DY") && (tempType != "HJ") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType)FS2")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType)LX2")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType)BL2")!)
+            let tempType2 = ToolsCode.codeByPlayType(toolsCode)
+            if (tempType == "RF") && (tempType == "DX") {
+                hfs = String(orderCellModel.valueForKey("N_\(tempType2)FS2")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType2)LX2")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType2)BL2")!)
             }
-            let tempLRH = ToolsCode.codeByLRH(toolsCode)
-            if tempLRH == "L" {
+            let tempLRH2 = ToolsCode.codeByLRH(toolsCode)
+            if tempLRH2 == "L" {
                 tid = String(orderCellModel.N_VISIT2)
-            }else if tempLRH == "R" {
+            }else if tempLRH2 == "R" {
                 tid = String(orderCellModel.N_HOME2)
             }else{
                 tid = "0"
@@ -254,7 +271,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         betInfo.id = id
         betInfo.tid = tid
         betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
-        //        betInfo.rate = String(orderCellModel.valueForKey(tempRate)!)
         betInfo.vh = String(orderCellModel.N_VH)
         betInfo.strlet = let1
         betInfo.hbl = hbl
@@ -264,7 +280,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         betInfo.visitname = String(orderCellModel.N_VISIT_NAME)
         betInfo.betteamName = betteamName
         betInfo.date = gameDate
-        betInfo.dzxx = "10"//USER??????????????????????????????????????????????????????????????
         betInfo.dMoney = "10"
         return betInfo
     }
@@ -305,7 +320,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         common.delegate = self
         common.matchingElement = getFootballMatchResult
         var strParam:String = "<GetFootballMatch xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strLM></strLM>")
+        strParam.appendContentsOf("<strLM>\(mUnionID)</strLM>")
         strParam.appendContentsOf("<strSort>0</strSort>")
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>20000</strPageSize>")

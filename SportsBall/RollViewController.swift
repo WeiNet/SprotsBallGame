@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate {
+class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,BindDelegate,OrderDelegate,SwiftCustomAlertViewDelegate,CartButtonDelegate,UnionDelegate {
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var headerView: UIView!
@@ -18,6 +18,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     var betInfo:BetInfoModel = BetInfoModel()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//2：滚球；3：让球、综合过关
+    var mUnionID = ""
     var isMultiselect = false//即时下注
     let checkBetResult:String = "CheckBetResult"
     let getOtherMatchResult:String = "GetOtherMatchResult"
@@ -30,6 +31,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
         mPlayType = key
+        mUnionID = ""
         isMultiselect = false
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
@@ -74,7 +76,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     //联盟打开
     func unionClick(){
-        showUnion()
+        showUnion(self)
     }
     //规则说明
     func explainClick(){
@@ -90,7 +92,11 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
             showCart()
         }
     }
-    
+    //联盟选择
+    func unionClickDelegate(keys:String){
+        mUnionID = keys
+        getOtherMatch()
+    }
     //绑定队伍标题
     func bindMatchDelegate(cell:Cell,orderCellModel:OrderCellModel){
         //绑定注单标题资料
@@ -236,7 +242,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         common.delegate = self
         common.matchingElement = getOtherMatchResult
         var strParam:String = "<GetOtherMatch xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strLM></strLM>")
+        strParam.appendContentsOf("<strLM>\(mUnionID)</strLM>")
         strParam.appendContentsOf("<strSort>0</strSort>")
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>1000</strPageSize>")
