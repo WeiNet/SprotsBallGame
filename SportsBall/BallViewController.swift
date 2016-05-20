@@ -166,7 +166,7 @@ class BallViewController: UIViewController {
     }
     
     //显示联盟选择页面
-    func showUnion(){
+    func showUnion(delegate:UnionDelegate){
         //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
@@ -180,6 +180,7 @@ class BallViewController: UIViewController {
             let window: UIWindow = UIApplication.sharedApplication().keyWindow!
             window.addSubview(bottom)
             myView?.backgroundView = bottom
+            myView?.delegate = delegate
             window.addSubview(myView!)
             window.bringSubviewToFront(myView!)
         }

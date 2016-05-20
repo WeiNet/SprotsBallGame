@@ -8,8 +8,13 @@
 
 import UIKit
 
+//页面 实例化
+protocol UnionDelegate: NSObjectProtocol {
+    //联盟点击事件
+    func unionClickDelegate(keys:String)
+}
+
 class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
-    var backgroundView:UIView!
     
     @IBOutlet var unionTable: UITableView!
     @IBOutlet var selAllView: UIView!
@@ -17,8 +22,10 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var okButton: UIButton!
     
+    var backgroundView:UIView!
     var arrayUnionVO:Array<UnionTitleVO>!
     var dicUnionNO:Dictionary<String ,Bool> = Dictionary<String ,Bool>()
+    var delegate:UnionDelegate!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return arrayUnionVO.count
@@ -67,7 +74,14 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     
     @IBAction func ok(sender: UIButton) {
         backgroundView.removeFromSuperview()
-        print("ok")
+        var blank:String = ""
+        var keys:String = ""
+        for keysTemp in dicUnionNO.keys {
+            keys += blank + keysTemp
+            blank = ","
+        }
+        delegate.unionClickDelegate(keys)
+        self.removeFromSuperview()
     }
     
     func checkboxClick(sender: UITapGestureRecognizer) {
