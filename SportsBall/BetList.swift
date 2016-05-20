@@ -19,6 +19,19 @@ class BetListManager: NSObject {
         return betList
 
     }
+    func clearBetList(){
+        if(betList.isEmpty==false){
+         betList.removeAll()         }
+   
+    }
+    func setList(objlist:[BetInfo]){
+    betList=objlist
+    
+    }
+    func delectListRow(introw:Int){
+    betList.removeAtIndex(introw)
+    
+    }
 
 
 

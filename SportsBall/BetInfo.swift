@@ -41,7 +41,7 @@ class BetInfo: NSObject {
     var  ballhead:String=""
     var betteamName:String=""
     func toDict() -> [String : String] {
-        var dics:Dictionary<String,String>=["Index":"\(Index)","strUser":"\(strUser)","dMoney":"\(dMoney)","yssj":"\(yssj)","playType":"\(playType)","lr":"\(lr)","ballType":"\(ballType)","id":"\(id)","courtType":"\(courtType)","tid":"\(tid)","rate":"\(rate)","vh":"\(vh)","strlet":"\(strlet)","hfs":"\(hfs)","hlx":"\(hlx)","hbl":"\(hbl)","strbet":"\(strbet)","visitname":"\(visitname)","homename":"\(homename)","jzf":"\(jzf)","isLive":"\(isLive)","allianceName":"\(allianceName)","date":"\(date)","isjzf":"\(isjzf)","score":"\(score)","dzxx":"\(dzxx)","dzsx":"\(dzsx)","dcsx":"\(dcsx)","kyje":"\(kyje)","ballhead":"\(ballhead)","betteamName":"\(betteamName)"]
+        var dics:Dictionary<String,String>=["Index":"\(Index)","strUser":"\(strUser)","dMoney":"\(dMoney)","yssj":"\(yssj)","playType":"\(playType)","lr":"\(lr)","ballType":"\(ballType)","id":"\(id)","courtType":"\(courtType)","tid":"\(tid)","rate":"\(rate)","vh":"\(vh)","let":"\(strlet)","hfs":"\(hfs)","hlx":"\(hlx)","hbl":"\(hbl)","strbet":"\(strbet)","visitname":"\(visitname)","homename":"\(homename)","jzf":"\(jzf)","isLive":"\(isLive)","allianceName":"\(allianceName)","date":"\(date)","isjzf":"\(isjzf)","score":"\(score)","dzxx":"\(dzxx)","dzsx":"\(dzsx)","dcsx":"\(dcsx)","kyje":"\(kyje)","ballhead":"\(ballhead)","betteamName":"\(betteamName)"]
         return dics
     }
     
