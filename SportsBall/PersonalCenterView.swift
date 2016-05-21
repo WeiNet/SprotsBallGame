@@ -78,25 +78,12 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         resultText.text="\(result*10000)"
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var betManger=BetListManager.sharedManager
-        
-        var objInfo1=BetInfo()
-        objInfo1.dMoney="10"
-        objInfo1.strUser="dfdf"
-        objInfo1.Index="dfdfs"
-        objInfo1.visitname="A11"
-        betManger.betList.append(objInfo1)
-        var objInfo2=BetInfo()
-        objInfo2.dMoney="101"
-        objInfo2.strUser="dfdf"
-        objInfo2.Index="dfdfs"
-        objInfo2.visitname="B11"
-        betManger.betList.append(objInfo2)
+       
       
         
         var sb = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row==0){
-            var vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
+            var vc = sb.instantiateViewControllerWithIdentifier("PayController") as! PayController
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if(indexPath.row==1){

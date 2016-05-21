@@ -11,6 +11,7 @@ import UIKit
 class PayController: UIViewController {
     
     override func viewDidLoad() {
+        
     
     }
 
