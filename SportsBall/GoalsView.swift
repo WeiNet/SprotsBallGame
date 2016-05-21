@@ -7,16 +7,16 @@
 //
 
 import UIKit
-
+//入球数
 class GoalsView: OrderView {
 
     var orderCellModel:OrderCellModel!//当前View对应的资料
     
     /*******************************注单控件*******************************/
-    @IBOutlet var N_RDSBLView: UIView!
-    @IBOutlet var N_RDSDPL: UILabel!
-    @IBOutlet var N_LDSBLView: UIView!
-    @IBOutlet var N_RDSSPL: UILabel!
+    @IBOutlet var N_DSDPLView: UIView!
+    @IBOutlet var N_DSDPL: UILabel!
+    @IBOutlet var N_DSSPLView: UIView!
+    @IBOutlet var N_DSSPL: UILabel!
     @IBOutlet var N_RQSPL01View: UIView!
     @IBOutlet var N_RQSPL01: UILabel!
     @IBOutlet var N_RQSPL23View: UIView!
@@ -28,15 +28,15 @@ class GoalsView: OrderView {
     /*******************************注单控件*******************************/
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     override func userInteractionEnabled(){
-        N_RDSBLView.userInteractionEnabled = true
-        N_LDSBLView.userInteractionEnabled = true
+        N_DSSPLView.userInteractionEnabled = true
+        N_DSDPLView.userInteractionEnabled = true
         N_RQSPL01View.userInteractionEnabled = true
         N_RQSPL23View.userInteractionEnabled = true
         N_RQSPL46View.userInteractionEnabled = true
         N_RQSPL7View.userInteractionEnabled = true
         
-        N_RDSBLView.tag = ToolsCode.RDSBLView
-        N_LDSBLView.tag = ToolsCode.LDSBLView
+        N_DSSPLView.tag = ToolsCode.RDSBLView
+        N_DSDPLView.tag = ToolsCode.LDSBLView
         N_RQSPL01View.tag = ToolsCode.RQSPL01View
         N_RQSPL23View.tag = ToolsCode.RQSPL23View
         N_RQSPL46View.tag = ToolsCode.RQSPL46View
@@ -45,8 +45,8 @@ class GoalsView: OrderView {
     }
     //注册点击事件
     override func addGestureRecognizer(){
-        N_RDSBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
-        N_LDSBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_DSSPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_DSDPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RQSPL01View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RQSPL23View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RQSPL46View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -66,8 +66,8 @@ class GoalsView: OrderView {
     }
     //注单赋值前清空重用控件
     override func clear(){
-        N_RDSDPL.text = ""
-        N_RDSSPL.text = ""
+        N_DSSPL.text = ""
+        N_DSDPL.text = ""
         N_RQSPL01.text = ""
         N_RQSPL23.text = ""
         N_RQSPL46.text = ""
@@ -75,8 +75,8 @@ class GoalsView: OrderView {
     }
     //资料的显示
     override func showData(){
-        N_RDSDPL.text = orderCellModel.N_DSSPL != nil ? String(orderCellModel.N_DSSPL.floatValue) : ""
-        N_RDSSPL.text = orderCellModel.N_DSDPL != nil ? String(orderCellModel.N_DSDPL.floatValue) : ""
+        N_DSSPL.text = orderCellModel.N_DSSPL != nil ? String(orderCellModel.N_DSSPL.floatValue) : ""
+        N_DSDPL.text = orderCellModel.N_DSDPL != nil ? String(orderCellModel.N_DSDPL.floatValue) : ""
         N_RQSPL01.text = orderCellModel.N_RQSPL01 != nil ? String(orderCellModel.N_RQSPL01.floatValue) : ""
         N_RQSPL23.text = orderCellModel.N_RQSPL23 != nil ? String(orderCellModel.N_RQSPL23.floatValue) : ""
         N_RQSPL46.text = orderCellModel.N_RQSPL46 != nil ? String(orderCellModel.N_RQSPL46.floatValue) : ""
@@ -84,8 +84,8 @@ class GoalsView: OrderView {
     }
     //背景的填充
     override func fillBackground(){
-        ToolsCode.setBackground(N_RDSBLView,select: orderCellModel.N_DSDPL_SEL)
-        ToolsCode.setBackground(N_LDSBLView,select: orderCellModel.N_DSSPL_SEL)
+        ToolsCode.setBackground(N_DSSPLView,select: orderCellModel.N_DSDPL_SEL)
+        ToolsCode.setBackground(N_DSDPLView,select: orderCellModel.N_DSSPL_SEL)
         ToolsCode.setBackground(N_RQSPL01View,select: orderCellModel.N_RQSPL01_SEL)
         ToolsCode.setBackground(N_RQSPL23View,select: orderCellModel.N_RQSPL23_SEL)
         ToolsCode.setBackground(N_RQSPL46View,select: orderCellModel.N_RQSPL46_SEL)

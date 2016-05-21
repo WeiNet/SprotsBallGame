@@ -11,8 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-fh-loK">
-                    <rect key="frame" x="0.0" y="0.0" width="70" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-fh-loK">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="49j-oj-FfS"/>
                         <constraint firstAttribute="width" constant="70" id="gKL-48-jz8"/>
@@ -49,17 +49,20 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="MQp-6O-xSI" firstAttribute="top" secondItem="Uuu-fh-loK" secondAttribute="top" id="0n1-Dd-J9G"/>
-                <constraint firstItem="L1J-zl-esp" firstAttribute="leading" secondItem="MQp-6O-xSI" secondAttribute="trailing" constant="20" id="LZh-fi-mgN"/>
-                <constraint firstItem="L1J-zl-esp" firstAttribute="top" secondItem="Uuu-fh-loK" secondAttribute="top" id="OwM-Se-wa4"/>
-                <constraint firstAttribute="trailing" secondItem="L1J-zl-esp" secondAttribute="trailing" id="Pcw-xB-NVd"/>
-                <constraint firstItem="MQp-6O-xSI" firstAttribute="bottom" secondItem="Uuu-fh-loK" secondAttribute="bottom" id="Ttr-9r-jdf"/>
-                <constraint firstItem="MQp-6O-xSI" firstAttribute="leading" secondItem="Uuu-fh-loK" secondAttribute="trailing" constant="20" id="Vro-RF-HxL"/>
-                <constraint firstItem="Uuu-fh-loK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dxJ-Ar-Pnz"/>
-                <constraint firstItem="L1J-zl-esp" firstAttribute="bottom" secondItem="Uuu-fh-loK" secondAttribute="bottom" id="r9J-Gs-IT7"/>
+                <constraint firstAttribute="bottom" secondItem="L1J-zl-esp" secondAttribute="bottom" id="4mJ-ZL-Sfv"/>
+                <constraint firstItem="JQy-kz-ssS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ato-5h-2YR"/>
+                <constraint firstItem="JQy-kz-ssS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Hmh-hM-HyZ"/>
+                <constraint firstItem="Uuu-fh-loK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I5a-1e-Sjc"/>
+                <constraint firstItem="L1J-zl-esp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="L8U-iL-1nY"/>
+                <constraint firstAttribute="bottom" secondItem="Uuu-fh-loK" secondAttribute="bottom" id="Mvy-7d-xnV"/>
+                <constraint firstAttribute="trailing" secondItem="L1J-zl-esp" secondAttribute="trailing" id="ZxB-NV-s01"/>
+                <constraint firstItem="Uuu-fh-loK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dQu-SE-rWk"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="segment" destination="JQy-kz-ssS" id="QDD-FT-GPo"/>
+            </connections>
             <point key="canvasLocation" x="362" y="360"/>
         </view>
     </objects>

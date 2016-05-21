@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -136,10 +136,10 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="N_LDSBLView" destination="ohe-uW-Dvj" id="72f-oP-nsD"/>
-                <outlet property="N_RDSBLView" destination="gh9-HA-3SV" id="5Hz-XD-Weq"/>
-                <outlet property="N_RDSDPL" destination="heh-M3-AYZ" id="mmz-9r-TLc"/>
-                <outlet property="N_RDSSPL" destination="aHU-nI-942" id="0fF-zx-0xb"/>
+                <outlet property="N_DSDPL" destination="heh-M3-AYZ" id="g4N-jH-MaC"/>
+                <outlet property="N_DSDPLView" destination="gh9-HA-3SV" id="LdV-gz-sdv"/>
+                <outlet property="N_DSSPL" destination="aHU-nI-942" id="ND9-eQ-bVr"/>
+                <outlet property="N_DSSPLView" destination="ohe-uW-Dvj" id="6cr-R2-pf6"/>
                 <outlet property="N_RQSPL01" destination="Oc2-6T-Kku" id="45k-aY-qHo"/>
                 <outlet property="N_RQSPL01View" destination="5Le-0Z-hdy" id="Z77-Hx-hKL"/>
                 <outlet property="N_RQSPL23" destination="K1u-6t-UQO" id="feg-MX-fup"/>

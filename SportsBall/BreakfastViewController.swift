@@ -85,7 +85,12 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //规则说明
     func explainClick(){
-        
+        let navigationViews = self.navigationController!.viewControllers
+        let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
+        tabBar.selectedIndex = 3
+        let helpVC:HelpController = tabBar.viewControllers![3] as! HelpController
+        helpVC.loadWebView("rule_zq")
+        self.navigationController?.popViewControllerAnimated(true)
     }
     //清空购物清单
     func cartClear(){

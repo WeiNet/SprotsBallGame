@@ -15,6 +15,7 @@ import UIKit
 
 class CartButtonView: UIView {
     var delegate:CartButtonDelegate!
+    @IBOutlet var segment: UISegmentedControl!
     
     @IBAction func clear(sender: UIButton) {
         delegate.cartClear!()
