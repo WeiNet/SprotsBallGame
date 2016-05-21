@@ -29,25 +29,25 @@ class RollView: UIView,GestureDelegate {
     @IBOutlet var N_RDXBL: UILabel!
     @IBOutlet var N_RDXXPL: UILabel!
     
-    @IBOutlet var N_LDSBLView: UIView!
-    @IBOutlet var N_RDSSPL: UILabel!
-    @IBOutlet var N_RDSBLView: UIView!
-    @IBOutlet var N_RDSDPL: UILabel!
+    @IBOutlet var N_DSSPLView: UIView!
+    @IBOutlet var N_DSSPL: UILabel!
+    @IBOutlet var N_DSDPLView: UIView!
+    @IBOutlet var N_DSDPL: UILabel!
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     func userInteractionEnabled(){
         N_LRFBLView.userInteractionEnabled = true
         N_RRFBLView.userInteractionEnabled = true
         N_LDXBLView.userInteractionEnabled = true
         N_RDXBLView.userInteractionEnabled = true
-        N_LDSBLView.userInteractionEnabled = true
-        N_RDSBLView.userInteractionEnabled = true
+        N_DSSPLView.userInteractionEnabled = true
+        N_DSDPLView.userInteractionEnabled = true
         
         N_LRFBLView.tag = ToolsCode.LRFView
         N_RRFBLView.tag = ToolsCode.RRFView
         N_LDXBLView.tag = ToolsCode.LDXBLView
         N_RDXBLView.tag = ToolsCode.RDXBLView
-        N_LDSBLView.tag = ToolsCode.LDSBLView
-        N_RDSBLView.tag = ToolsCode.RDSBLView
+        N_DSSPLView.tag = ToolsCode.LDSBLView
+        N_DSDPLView.tag = ToolsCode.RDSBLView
     }
     
     //注册点击事件
@@ -56,8 +56,8 @@ class RollView: UIView,GestureDelegate {
         N_RRFBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_LDXBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RDXBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
-        N_LDSBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
-        N_RDSBLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_DSSPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
+        N_DSDPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
     
     func orderTap(sender: UITapGestureRecognizer) {
@@ -92,8 +92,8 @@ class RollView: UIView,GestureDelegate {
         N_RDXBL.text = ""
         N_RDXXPL.text = ""
         
-        N_RDSSPL.text = ""
-        N_RDSDPL.text = ""
+        N_DSSPL.text = ""
+        N_DSDPL.text = ""
     }
     
     //资料的显示
@@ -117,8 +117,8 @@ class RollView: UIView,GestureDelegate {
         }
         //单双不允许下注-->OPEN 该盘口不锁定
         if(orderCellModel.N_DS_OPEN != nil && String(orderCellModel.N_DS_OPEN) != "1"){
-            N_RDSSPL.text = orderCellModel.N_DSSPL != nil ? String(format: "%.3f", orderCellModel.N_DSSPL.floatValue) : ""
-            N_RDSDPL.text = orderCellModel.N_DSDPL != nil ? String(format: "%.3f", orderCellModel.N_DSDPL.floatValue) : ""
+            N_DSSPL.text = orderCellModel.N_DSSPL != nil ? String(format: "%.3f", orderCellModel.N_DSSPL.floatValue) : ""
+            N_DSDPL.text = orderCellModel.N_DSDPL != nil ? String(format: "%.3f", orderCellModel.N_DSDPL.floatValue) : ""
         }
     }
     
@@ -130,7 +130,7 @@ class RollView: UIView,GestureDelegate {
         ToolsCode.setBackground2(N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
         ToolsCode.setBackground2(N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        ToolsCode.setBackground(N_LDSBLView,select: orderCellModel.N_DSSPL_SEL)
-        ToolsCode.setBackground(N_RDSBLView,select: orderCellModel.N_DSDPL_SEL)
+        ToolsCode.setBackground(N_DSSPLView,select: orderCellModel.N_DSSPL_SEL)
+        ToolsCode.setBackground(N_DSDPLView,select: orderCellModel.N_DSDPL_SEL)
     }
 }
