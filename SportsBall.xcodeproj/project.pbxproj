@@ -72,6 +72,7 @@
 		463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463295DC1CBB847A000EFEA9 /* BetInfo.swift */; };
 		463295DF1CBB8C4D000EFEA9 /* ShopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463295DE1CBB8C4D000EFEA9 /* ShopingViewController.swift */; };
 		4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */; };
+		463E26341CF2D97100CE6F01 /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 463E26331CF2D97100CE6F01 /* NirKxMenu.m */; };
 		463EEB921CEAA99800708630 /* PayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463EEB911CEAA99800708630 /* PayController.swift */; };
 		4641573B1CD9909F00838F32 /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641573A1CD9909F00838F32 /* HelpController.swift */; };
 		4641573D1CD9F0A900838F32 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 4641573C1CD9F0A900838F32 /* HTML */; };
@@ -174,6 +175,9 @@
 		463295DC1CBB847A000EFEA9 /* BetInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfo.swift; sourceTree = "<group>"; };
 		463295DE1CBB8C4D000EFEA9 /* ShopingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopingViewController.swift; sourceTree = "<group>"; };
 		4635A90A1CA1350E00CFBBC8 /* ResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultDelegate.swift; sourceTree = "<group>"; };
+		463E26311CF2D97100CE6F01 /* SportsBall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportsBall-Bridging-Header.h"; sourceTree = "<group>"; };
+		463E26321CF2D97100CE6F01 /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NirKxMenu.h; sourceTree = "<group>"; };
+		463E26331CF2D97100CE6F01 /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NirKxMenu.m; sourceTree = "<group>"; };
 		463EEB911CEAA99800708630 /* PayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayController.swift; sourceTree = "<group>"; };
 		4641573A1CD9909F00838F32 /* HelpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
 		4641573C1CD9F0A900838F32 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 		462BEDDB1C8682E300E451E4 = {
 			isa = PBXGroup;
 			children = (
+				463E26301CF2D88500CE6F01 /* OC */,
 				462BEDE61C8682E300E451E4 /* SportsBall */,
 				462BEDFD1C8682E300E451E4 /* SportsBallTests */,
 				462BEE081C8682E300E451E4 /* SportsBallUITests */,
@@ -458,6 +463,16 @@
 				462E11F81CB786BA00619A55 /* Bean_Questions.swift */,
 			);
 			name = Mode;
+			sourceTree = "<group>";
+		};
+		463E26301CF2D88500CE6F01 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				463E26321CF2D97100CE6F01 /* NirKxMenu.h */,
+				463E26331CF2D97100CE6F01 /* NirKxMenu.m */,
+				463E26311CF2D97100CE6F01 /* SportsBall-Bridging-Header.h */,
+			);
+			name = OC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -651,6 +666,7 @@
 				170226E21CE6B19E00EA6AF6 /* AllUnionVO.swift in Sources */,
 				1798F2A41CEC5C5F00D356D0 /* PassView.swift in Sources */,
 				463EEB921CEAA99800708630 /* PayController.swift in Sources */,
+				463E26341CF2D97100CE6F01 /* NirKxMenu.m in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
 				1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
@@ -801,10 +817,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SportsBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportBall.SportsBall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportsBall-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -812,11 +831,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				INFOPLIST_FILE = SportsBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportBall.SportsBall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportsBall-Bridging-Header.h";
 			};
 			name = Release;
 		};
