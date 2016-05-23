@@ -319,6 +319,7 @@ class BallViewController: UIViewController {
             alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
             alertView.myView.limits.text = dzxx + "~" + dzsx
             alertView.myView.max.text = dzsx
+            alertView.myView.strPlayType = betInfo.playType
         }
     }
 }

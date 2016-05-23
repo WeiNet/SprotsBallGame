@@ -17,8 +17,6 @@ class SwiftCustomAlertView: UIView {
     
     @IBOutlet var visit: UILabel!
     @IBOutlet var N_VISIT_JZF: UILabel!
-//    @IBOutlet var N_VISIT_JZF: UILabel!
-//    @IBOutlet var N_HOME_JZF: UILabel!
     @IBOutlet var N_HOME_JZF: UILabel!
     @IBOutlet var home: UILabel!
     
@@ -41,8 +39,9 @@ class SwiftCustomAlertView: UIView {
     var cornerRadius: Double = 40.0
     var bottom:UIView!
     var myView:SwiftCustomAlertView!
+    var strPlayType:String!
     
-    weak var delegate: SwiftCustomAlertViewDelegate? // delegate
+    weak var delegate: SwiftCustomAlertViewDelegate?
     
     @IBAction func cancelButtonClicked(sender: UIButton) {
         bottom.removeFromSuperview()
@@ -68,19 +67,45 @@ class SwiftCustomAlertView: UIView {
         viewX = (Double(viewWin.width) - viewWidth)/2
         viewY = (Double(viewWin.height) - viewHeight)/2
         //加载设计好的XIB
-        myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as? SwiftCustomAlertView
+        myView = NSBundle.mainBundle().loadNibNamed("SwiftCustomAlertView" , owner: nil, options: nil).first as! SwiftCustomAlertView
         
-        myView?.layer.cornerRadius = CGFloat(cornerRadius)
-        myView?.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
+        myView.layer.cornerRadius = CGFloat(cornerRadius)
+        myView.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
         //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
         bottom.alpha = 0.8
         view.addSubview(bottom)
-        myView?.bottom = bottom
-        myView?.delegate = myDelegate
+        myView.bottom = bottom
+        myView.delegate = myDelegate
+        myView.money.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingChanged)
         
         view.addSubview(myView!)
         view.bringSubviewToFront(myView!)
+    }
+    
+    //计算可赢金额方法
+    func changeMoney(sender:UITextField){
+        let money = (myView.money.text == "" ? "0" : myView.money.text)
+        let betMoney = Double(money!)
+        let dRate = Double(myView.rate.text!)
+        myView.gain.text = String(calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!))
+    }
+    
+    //计算可赢金额
+    func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->Double{
+        var winbet:Double=0.0
+        switch(strPlayType){
+        case "ZDRF","ZDDX","RF","DX":
+            winbet = intBet * dRale;
+            break
+        case "ZDDS","ZDDY","DS","DY","HJ":
+            winbet = intBet * dRale - intBet;
+            break
+        default:
+            winbet = intBet * dRale - intBet;
+            break
+        }
+        return winbet
     }
 }
