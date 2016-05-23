@@ -170,7 +170,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             return false
         }
         
-        betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
+        betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
             let betManger = BetListManager.sharedManager
@@ -206,86 +206,186 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
-    func fullBetInfo1(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
-        var id:String!
-        var tid:String!
-        var let1:String!
-        var hfs:String = "0"//赌赢为0
-        var hlx:String = "0"
-        var hbl:String = "0"
-        var courtType:String = "1"
-        var gameDate:String = orderCellModel.N_GAMEDATE
-        gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/dd")
-        let playType:String = ToolsCode.codeByPlayType(toolsCode)
-        var betteamName:String!
-        let tempBetName = ToolsCode.codeByLRH(toolsCode)
-        if tempBetName == "L" {
-            betteamName = String(orderCellModel.N_VISIT_NAME)
-        }else if tempBetName == "R" {
-            betteamName = String(orderCellModel.N_HOME_NAME)
-        }else{
-            betteamName = "和局"
-        }
-        if playType == "DX"{
-            betteamName = tempBetName == "L" ? "大" : "小"
-        }
-        //全场控件
-        id = String(orderCellModel.N_ID)
-        let1 = String(orderCellModel.N_LET)
-        let tempType = ToolsCode.codeByPlayType(toolsCode)
-        if (tempType == "RF") && (tempType == "DX") {
-            hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
-            hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
-            hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
-        }
-        let tempLRH = ToolsCode.codeByLRH(toolsCode)
-        if tempLRH == "L" {
-            tid = String(orderCellModel.N_VISIT)
-        }else if tempLRH == "R" {
-            tid = String(orderCellModel.N_HOME)
-        }else{
-            tid = "0"
-        }
-        if(toolsCode>=56668 && toolsCode<=56674){//半场控件
-            id = String(orderCellModel.N_ID2)
-            let1 = String(orderCellModel.N_LET2)
-            let tempType2 = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType == "RF") && (tempType == "DX") {
-                hfs = String(orderCellModel.valueForKey("N_\(tempType2)FS2")!)
-                hlx = String(orderCellModel.valueForKey("N_\(tempType2)LX2")!)
-                hbl = String(orderCellModel.valueForKey("N_\(tempType2)BL2")!)
+    override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
+        var betInfo:BetInfoModel = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
+        if (mPlayType == "0" || mPlayType == "1") {//早盘/单式
+            
+        } else if (mPlayType == "2") {//滚球
+            betInfo.playType = "ZD" + betInfo.playType
+        } else if (mPlayType == "3") {//综合过关
+            if (betInfo.playType == "DS") {
+                let tempBetName = ToolsCode.codeByLRH(toolsCode)
+                if (tempBetName == "L") {
+                    betInfo.betteamName = "单"
+                } else {
+                    betInfo.betteamName = "双"
+                }
             }
-            let tempLRH2 = ToolsCode.codeByLRH(toolsCode)
-            if tempLRH2 == "L" {
-                tid = String(orderCellModel.N_VISIT2)
-            }else if tempLRH2 == "R" {
-                tid = String(orderCellModel.N_HOME2)
-            }else{
-                tid = "0"
+        } else if (mPlayType == "4") {//波胆
+            switch(toolsCode){
+            case ToolsCode.BDZPL10View:
+                betInfo.ballhead = "1:0"
+                betInfo.playType = "BD10"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL20View:
+                betInfo.ballhead = "2:0"
+                betInfo.playType = "BD20"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL21View:
+                betInfo.ballhead = "2:1"
+                betInfo.playType = "BD21"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL30View:
+                betInfo.ballhead = "3:0"
+                betInfo.playType = "BD30"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL31View:
+                betInfo.ballhead = "3:1"
+                betInfo.playType = "BD31"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL32View:
+                betInfo.ballhead = "3:2"
+                betInfo.playType = "BD32"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL40View:
+                betInfo.ballhead = "4:0"
+                betInfo.playType = "BD40"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL41View:
+                betInfo.ballhead = "4:1"
+                betInfo.playType = "BD41"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL42View:
+                betInfo.ballhead = "4:2"
+                betInfo.playType = "BD42"
+                betInfo.lr = "Z"
+            case ToolsCode.BDZPL43View:
+                betInfo.ballhead = "4:3"
+                betInfo.playType = "BD43"
+                betInfo.lr = "Z"
+                
+            case ToolsCode.BDKPL10View:
+                betInfo.ballhead = "0:1"
+                betInfo.playType = "BD01"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL20View:
+                betInfo.ballhead = "0:2"
+                betInfo.playType = "BD02"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL21View:
+                betInfo.ballhead = "1:2"
+                betInfo.playType = "BD12"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL30View:
+                betInfo.ballhead = "0:3"
+                betInfo.playType = "BD03"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL31View:
+                betInfo.ballhead = "1:3"
+                betInfo.playType = "BD13"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL32View:
+                betInfo.ballhead = "2:3"
+                betInfo.playType = "BD23"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL40View:
+                betInfo.ballhead = "0:4"
+                betInfo.playType = "BD04"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL41View:
+                betInfo.ballhead = "1:4"
+                betInfo.playType = "BD14"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL42View:
+                betInfo.ballhead = "2:4"
+                betInfo.playType = "BD24"
+                betInfo.lr = "K"
+            case ToolsCode.BDKPL43View:
+                betInfo.ballhead = "3:4"
+                betInfo.playType = "BD34"
+                betInfo.lr = "K"
+                
+            case ToolsCode.BDGPL00View:
+                betInfo.ballhead = "0:0"
+                betInfo.playType = "BD00"
+                betInfo.lr = "G"
+            case ToolsCode.BDGPL11View:
+                betInfo.ballhead = "1:1"
+                betInfo.playType = "BD11"
+                betInfo.lr = "G"
+            case ToolsCode.BDGPL22View:
+                betInfo.ballhead = "2:2"
+                betInfo.playType = "BD22"
+                betInfo.lr = "G"
+            case ToolsCode.BDGPL33View:
+                betInfo.ballhead = "3:3"
+                betInfo.playType = "BD33"
+                betInfo.lr = "G"
+            case ToolsCode.BDGPL44View:
+                betInfo.ballhead = "4:4"
+                betInfo.playType = "BD44"
+                betInfo.lr = "G"
+                
+            case ToolsCode.BDZPL5View:
+                betInfo.playType = "5"
+                betInfo.ballhead = ":5"
+                betInfo.lr = "Z"
+            default:
+                betInfo.playType = ""
+                betInfo.ballhead = ""
+                betInfo.lr = ""
             }
-            courtType = "2"
+        } else if (mPlayType == "5") {//半全场
+            switch(toolsCode){
+            case ToolsCode.BQCZZView:
+                betInfo.betteamName = "主/主"
+                betInfo.lr = "ZZ"
+            case ToolsCode.BQCZHView:
+                betInfo.betteamName = "主/和"
+                betInfo.lr = "ZH"
+            case ToolsCode.BQCZKView:
+                betInfo.betteamName = "主/客"
+                betInfo.lr = "ZK"
+            case ToolsCode.BQCHZView:
+                betInfo.betteamName = "和/主"
+                betInfo.lr = "HZ"
+            case ToolsCode.BQCHHView:
+                betInfo.betteamName = "和/和"
+                betInfo.lr = "HH"
+            case ToolsCode.BQCHKView:
+                betInfo.betteamName = "和/客"
+                betInfo.lr = "HK"
+            case ToolsCode.BQCKZView:
+                betInfo.betteamName = "客/主"
+                betInfo.lr = "KZ"
+            case ToolsCode.BQCKHView:
+                betInfo.betteamName = "客/和"
+                betInfo.lr = "KH"
+            case ToolsCode.BQCKKView:
+                betInfo.betteamName = "客/客"
+                betInfo.lr = "KK"
+            default:
+                betInfo.betteamName = ""
+                betInfo.lr = ""
+            }
+        } else{//入球数
+            switch(toolsCode){
+            case ToolsCode.LDSBLView:
+                betInfo.ballhead = "s"
+            case ToolsCode.RDSBLView:
+                betInfo.ballhead = "d"
+            case ToolsCode.RQSPL01View:
+                betInfo.ballhead = "0-1"
+            case ToolsCode.RQSPL23View:
+                betInfo.ballhead = "2-3"
+            case ToolsCode.RQSPL46View:
+                betInfo.ballhead = "4-6"
+            case ToolsCode.RQSPL7View:
+                betInfo.ballhead = ">=7"
+            default:
+                betInfo.ballhead = ""
+            }
         }
-        let tempRate = ToolsCode.codeBy(toolsCode)
-        
-        let betInfo:BetInfoModel = BetInfoModel()//下注model
-        betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
-        betInfo.playType = mPlayType == "2" ? "ZD"+playType : playType
-        betInfo.lr = ToolsCode.codeByLRH(toolsCode)
-        betInfo.ballType = orderCellModel.N_LX
-        betInfo.courtType = courtType
-        betInfo.id = id
-        betInfo.tid = tid
-        betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
-        betInfo.vh = String(orderCellModel.N_VH)
-        betInfo.strlet = let1
-        betInfo.hbl = hbl
-        betInfo.hfs = hfs
-        betInfo.hlx = hlx
-        betInfo.homename = String(orderCellModel.N_HOME_NAME)
-        betInfo.visitname = String(orderCellModel.N_VISIT_NAME)
-        betInfo.betteamName = betteamName
-        betInfo.date = gameDate
-        betInfo.dMoney = "10"
         return betInfo
     }
     
