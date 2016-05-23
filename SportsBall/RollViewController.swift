@@ -183,7 +183,14 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
     override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
         let betInfo:BetInfoModel = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
-        
+        if (betInfo.playType == "DS") {
+            let tempBetName = ToolsCode.codeByLRH(toolsCode)
+            if (tempBetName == "L") {
+                betInfo.betteamName = "单"
+            } else {
+                betInfo.betteamName = "双"
+            }
+        }
         if ((betInfo.playType == "RF") || (betInfo.playType == "DX")) {
             let tempType:String = ToolsCode.codeByPlayType(toolsCode)
             betInfo.score = ToolsCode.getBallHead((orderCellModel.valueForKey("N_\(tempType)FS")?.integerValue)!, bl: (orderCellModel.valueForKey("N_\(tempType)BL")?.integerValue)!, lx: (orderCellModel.valueForKey("N_\(tempType)LX")?.integerValue)!)
