@@ -214,6 +214,79 @@ class BallViewController: UIViewController {
         }
     }
     
+    //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
+    func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
+        var id:String = String(orderCellModel.N_ID)
+        var let1:String = String(orderCellModel.N_LET)
+        var courtType:String = "1"
+        var gameDate:String = orderCellModel.N_GAMEDATE
+        gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/dd")
+        let playType:String = ToolsCode.codeByPlayType(toolsCode)
+        var betteamName:String!
+        var tid:String!
+        let tempBetName = ToolsCode.codeByLRH(toolsCode)
+        if tempBetName == "L" {
+            betteamName = String(orderCellModel.N_VISIT_NAME)
+            tid = String(orderCellModel.N_VISIT)
+        }else if tempBetName == "R" {
+            betteamName = String(orderCellModel.N_HOME_NAME)
+            tid = String(orderCellModel.N_HOME)
+        }else{
+            betteamName = "和局"
+            tid = "0"
+        }
+        if playType == "DX"{
+            betteamName = (tempBetName == "L") ? "大" : "小"
+        }
+        var hfs:String = "0"//赌赢为0
+        var hlx:String = "0"
+        var hbl:String = "0"
+        let tempType = ToolsCode.codeByPlayType(toolsCode)
+        if (tempType == "RF") && (tempType == "DX") {
+            hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
+            hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
+            hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
+        }
+        if(toolsCode>=ToolsCode.LDYPL2 && toolsCode<=ToolsCode.RDXBLView2){//半场控件
+            id = String(orderCellModel.N_ID2)
+            let1 = String(orderCellModel.N_LET2)
+            let tempType2 = ToolsCode.codeByPlayType(toolsCode)
+            if (tempType == "RF") && (tempType == "DX") {
+                hfs = String(orderCellModel.valueForKey("N_\(tempType2)FS2")!)
+                hlx = String(orderCellModel.valueForKey("N_\(tempType2)LX2")!)
+                hbl = String(orderCellModel.valueForKey("N_\(tempType2)BL2")!)
+            }
+            if tempBetName == "L" {
+                tid = String(orderCellModel.N_VISIT2)
+            }else if tempBetName == "R" {
+                tid = String(orderCellModel.N_HOME2)
+            }
+            courtType = "2"
+        }
+        let tempRate = ToolsCode.codeBy(toolsCode)
+        
+        let betInfo:BetInfoModel = BetInfoModel()//下注model
+        betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
+        betInfo.playType = playType
+        betInfo.lr = ToolsCode.codeByLRH(toolsCode)
+        betInfo.ballType = orderCellModel.N_LX
+        betInfo.courtType = courtType
+        betInfo.id = id
+        betInfo.tid = tid
+        betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
+        betInfo.vh = String(orderCellModel.N_VH)
+        betInfo.strlet = let1
+        betInfo.hbl = hbl
+        betInfo.hfs = hfs
+        betInfo.hlx = hlx
+        betInfo.homename = String(orderCellModel.N_HOME_NAME)
+        betInfo.visitname = String(orderCellModel.N_VISIT_NAME)
+        betInfo.betteamName = betteamName
+        betInfo.date = gameDate
+        betInfo.dMoney = "10"
+        return betInfo
+    }
+    
     //第二次设定BetInfo属性，主要填入限额等
     func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfoModel,alertView:SwiftCustomAlertView,isMultiselect:Bool){
         betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)

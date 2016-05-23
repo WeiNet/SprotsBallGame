@@ -145,7 +145,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
             return false
         }
         
-        betInfo = fullBetInfo1(orderCellModel,toolsCode:toolsCode)
+        betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
             let betManger = BetListManager.sharedManager
@@ -181,60 +181,11 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
-    func fullBetInfo1(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
-        let playType:String = ToolsCode.codeByPlayType(toolsCode)
-        var tid:String!
-        var hfs:String = "0"//赌赢为0
-        var hlx:String = "0"
-        var hbl:String = "0"
-        let tempRate = ToolsCode.codeBy(toolsCode)
+    override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
+        let betInfo:BetInfoModel = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
         
-        let tempLRH = ToolsCode.codeByLRH(toolsCode)
-        if tempLRH == "L" {
-            tid = String(orderCellModel.N_VISIT)
-        }else if tempLRH == "R" {
-            tid = String(orderCellModel.N_HOME)
-        }
-        let tempType = ToolsCode.codeByPlayType(toolsCode)
-        if ((tempType != "DY") && (tempType != "H") && (tempType != "DS")) {
-            hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
-            hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
-            hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
-        }
-        var gameDate:String = orderCellModel.N_GAMEDATE
-        gameDate = ToolsCode.formatterDate(gameDate, format: "yyyy/MM/dd")
-        var betteamName:String!
-        let tempBetName = ToolsCode.codeByLRH(toolsCode)
-        if tempBetName == "L" {
-            betteamName = String(orderCellModel.N_VISIT_NAME)
-        }else if tempBetName == "R" {
-            betteamName = String(orderCellModel.N_HOME_NAME)
-        }
-        if playType == "DX"{
-            betteamName = tempBetName == "L" ? "大" : "小"
-        }
-        
-        let betInfo:BetInfoModel = BetInfoModel()//下注model
-        betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
-        betInfo.playType = mPlayType == "2" ? "ZD"+playType : playType
-        betInfo.lr = ToolsCode.codeByLRH(toolsCode)
-        betInfo.ballType = orderCellModel.N_LX
-        betInfo.courtType = "1"
-        betInfo.id = String(orderCellModel.N_ID)
-        betInfo.tid = tid
-        betInfo.rate = String(format: "%.3f", (orderCellModel.valueForKey(tempRate)?.floatValue)!)
-        betInfo.vh = String(orderCellModel.N_VH)
-        betInfo.strlet = String(orderCellModel.N_LET)
-        betInfo.hbl = hbl
-        betInfo.hfs = hfs
-        betInfo.hlx = hlx
-        betInfo.homename = String(orderCellModel.N_HOME_NAME)
-        betInfo.visitname = String(orderCellModel.N_VISIT_NAME)
-        betInfo.betteamName = betteamName
-        betInfo.date = gameDate
-        betInfo.dzxx = "10"//USER??????????????????????????????????????????????????????????????
-        betInfo.dMoney = "10"
-        if ((tempType != "DY") && (tempType != "H") && (tempType != "DS")) {
+        if ((betInfo.playType == "RF") || (betInfo.playType == "DX")) {
+            let tempType:String = ToolsCode.codeByPlayType(toolsCode)
             betInfo.score = ToolsCode.getBallHead((orderCellModel.valueForKey("N_\(tempType)FS")?.integerValue)!, bl: (orderCellModel.valueForKey("N_\(tempType)BL")?.integerValue)!, lx: (orderCellModel.valueForKey("N_\(tempType)LX")?.integerValue)!)
         }else{
             betInfo.score = "0"
