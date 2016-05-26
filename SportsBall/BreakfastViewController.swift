@@ -171,6 +171,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
+        betInfo.Index = String(toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
             let betManger = BetListManager.sharedManager
@@ -449,6 +450,14 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         alertCart = initCartClear()
         //赛事资料
         getFootballMatch()
+    }
+    
+    //刷新tableView
+    override func viewDidAppear(animated: Bool) {
+        if contentView.subviews.count == 2 {
+            let tableView:TableView = self.mContentView.subviews[1] as! TableView
+            tableView.reloadData()
+        }
     }
     
     //ios隐藏状态栏
