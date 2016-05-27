@@ -27,12 +27,22 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["2":"滚球"],["3":"让球"],["3":"综合过关"]]
     var orderHeight:CGFloat = 109
+    var isPass:Bool = false
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
+        isPass = false
+        isMultiselect = false
+        let dics:Dictionary<String,String> = menuArray[2]
+        for (keyTemp,valueTemp) in dics {
+            if valueTemp == value{
+                isPass = true
+                isMultiselect = true
+            }
+        }
+        
         mPlayType = key
         mUnionID = ""
-        isMultiselect = false
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
         getOtherMatch()
@@ -51,7 +61,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
                 orderHeight = 109
             }
             let basketInfo:NSMutableArray = stringToDictionary(strResult)
-            addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType)
+            addControls(basketInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType,isPass: isPass)
         }else if(strType == checkBetResult){
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
@@ -93,8 +103,10 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     //显示购物车
     func cartShow(){
-        if(isMultiselect){
+        if(isMultiselect && isPass == false){
             showCart()
+        } else if(isMultiselect && isPass == true){
+            showPassCart()
         }
     }
     //联盟选择
@@ -146,10 +158,17 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         }
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
+        betInfo.Index = String(toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
             let betManger = BetListManager.sharedManager
             let objInfo = betInfo
+            if isPass {
+//                let selCommon = synchronizationData(objInfo)
+//                if selCommon {//前面已经选择了同一场比赛
+                    onlySelect(objInfo)
+//                }
+            }
             betManger.betList.append(objInfo)
         }else{
             alertView.show(self)//显示即时下注popuWin

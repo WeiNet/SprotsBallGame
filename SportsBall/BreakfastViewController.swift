@@ -27,6 +27,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     var alertCart:UIAlertController!
     var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["1":"单式"],["2":"滚球"],["3":"综合过关"],["4":"波胆"],["5":"半全场"],["6":"入球数"]]
     var orderHeight:CGFloat = 216
+    var isPass:Bool = false
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
@@ -57,7 +58,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = stringToDictionary(strResult)
-            addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType)
+            addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType,isPass: isPass)
         }else if(strType == checkBetResult){//检验选中的赔率是不是最新的
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)

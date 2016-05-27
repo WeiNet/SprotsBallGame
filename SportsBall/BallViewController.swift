@@ -98,7 +98,7 @@ class BallViewController: UIViewController {
     
     
     //主窗体添加购物车、赛事列表、即时/复合下注
-    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat,playType:String){
+    func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat,playType:String,isPass:Bool){
         mContentView = contentView
         if contentView.subviews.count > 0 {
             for view in contentView.subviews {
@@ -116,8 +116,9 @@ class BallViewController: UIViewController {
         
         if (playType != "2") {
             let cartButtonView = NSBundle.mainBundle().loadNibNamed("CartButtonView" , owner: nil, options: nil).first as? CartButtonView
-//            cartButtonView?.frame.size.width = width
-//            cartButtonView?.frame.size.height = 48
+            if isPass {
+                cartButtonView?.segment.hidden = true
+            }
             cartButtonView?.frame = CGRect(x: 0, y: 0, width: width, height: 48)
             cartButtonView?.delegate = cartDelegate
             cartButtonView?.segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
@@ -189,7 +190,8 @@ class BallViewController: UIViewController {
     }
     
     //购物车删除资料同步下注页面
-    func synchronizationData(betinfo:BetInfo){
+    func synchronizationData(betinfo:BetInfo)->Bool{
+        var selCommon = false
         if mContentView.subviews.count == 2 {
             let tableView:TableView = mContentView.subviews[1] as! TableView
             let infoArray:NSMutableArray = tableView.infoArray
@@ -202,14 +204,66 @@ class BallViewController: UIViewController {
                         let orderCellModel:OrderCellModel = order as! OrderCellModel
                         if(orderCellModel.N_VISIT_NAME == betinfo.visitname
                             && orderCellModel.N_HOME_NAME == betinfo.homename){
+                            selCommon = true
                             let sel = ToolsCode.codeBy(Int(betinfo.Index)!)
                             let selName:String = sel + "_SEL"
-                            orderCellModel.setValue(false, forKey: selName)
-                            return//匹配一个就可以结束
+                            let select = orderCellModel.valueForKey(selName) as! Bool
+                            if select {
+                                orderCellModel.setValue(false, forKey: selName)
+                                selCommon = false
+                                return selCommon//匹配一个就可以结束
+                            }
                         }
                     }
                 }
             }
+        }
+        return selCommon
+    }
+    
+    //过关选择同一场赛事只可以一个赔率
+    func onlySelect(betinfo:BetInfo){
+        
+        let betManger:BetListManager = BetListManager.sharedManager
+        let betList:[BetInfo] = betManger.betList
+        let count:Int = betList.count
+        for(var i = 0;i < count;i++ ){
+            if(betList[i].visitname == betinfo.visitname
+                && betList[i].visitname == betinfo.homename){
+                betManger.betList.removeAtIndex(i)
+            }
+        }
+        
+        if mContentView.subviews.count == 2 {
+            let tableView:TableView = mContentView.subviews[1] as! TableView
+            let infoArray:NSMutableArray = tableView.infoArray
+            if infoArray.count > 0 {
+                for info in infoArray {
+                    let infoTemp:UnionTitleInfo = info as! UnionTitleInfo
+                    let unionTitleModel:UnionTitleModel = infoTemp.unionTitleModel
+                    for order in unionTitleModel.orderCellModels {
+                        //开始比较
+                        let orderCellModel:OrderCellModel = order as! OrderCellModel
+                        if(orderCellModel.N_VISIT_NAME == betinfo.visitname
+                            && orderCellModel.N_HOME_NAME == betinfo.homename){
+                            
+                            orderCellModel.N_LDYPL_SEL = false
+                            orderCellModel.N_HJPL_SEL = false
+                            orderCellModel.N_RDYPL_SEL = false
+                            
+                            orderCellModel.N_LRFPL_SEL = false
+                            orderCellModel.N_RRFPL_SEL = false
+                            
+                            orderCellModel.N_DXDPL_SEL = false
+                            orderCellModel.N_DXXPL_SEL = false
+                            
+                            orderCellModel.N_DSSPL_SEL = false
+                            orderCellModel.N_DSDPL_SEL = false
+                        }
+                    }
+                }
+            }
+            tableView.reloadData()
         }
     }
     
@@ -235,7 +289,7 @@ class BallViewController: UIViewController {
         return alertCart
     }
     
-    //显示购物车
+    //显示多笔下注购物车
     func showCart(){
         let betManger = BetListManager.sharedManager
         if(betManger.betList.count > 0){
@@ -246,6 +300,19 @@ class BallViewController: UIViewController {
             alertMessage("至少选择一场比赛", carrier: self)
         }
     }
+    
+    //显示过关下注购物车
+    func showPassCart(){
+        let betManger = BetListManager.sharedManager
+        if(betManger.betList.count > 1){
+            let sb = UIStoryboard(name: "Main", bundle:nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("PassShopingViewController") as! PassShopingViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            alertMessage("至少选择两场比赛", carrier: self)
+        }
+    }
+
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
     func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
