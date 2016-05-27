@@ -186,7 +186,8 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
             var betmoney1=jsonResult[1] as! NSNumber
             var paymoney1=jsonResult[2] as! NSNumber
             var payCount=Double(betmoney1)+Double(paymoney1)
-            jsonDetail.addObjectsFromArray(arryDetail as [AnyObject])
+//            jsonDetail.addObjectsFromArray(arryDetail as [AnyObject])
+            jsonDetail=arryDetail
              self.betMoney.text="\(jsonResult[1])"
             self.payMoney.text="\(payCount)"
             print(jsonResult[1].classForCoder)
