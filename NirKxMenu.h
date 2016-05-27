@@ -24,7 +24,7 @@
 
 
 + (instancetype) menuItem:(NSString *) title
-//                    image:(UIImage *) image
+                    image:(UIImage *) image
                    target:(id)target
                    action:(SEL) action;
 

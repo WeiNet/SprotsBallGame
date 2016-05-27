@@ -66,18 +66,18 @@
 @implementation KxMenuItem
 
 + (instancetype) menuItem:(NSString *) title
-//                    image:(UIImage *) image
+                    image:(UIImage *) image
                    target:(id)target
                    action:(SEL) action
 {
     return [[KxMenuItem alloc] init:title
-            //                              image:image
+                                          image:image
                              target:target
                              action:action];
 }
 
 - (id) init:(NSString *) title
-//      image:(UIImage *) image
+      image:(UIImage *) image
      target:(id)target
      action:(SEL) action
 {
@@ -87,7 +87,7 @@
     if (self) {
         
         _title = title;
-        //        _image = image;
+        _image = image;
         _target = target;
         _action = action;
     }

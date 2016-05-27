@@ -31,15 +31,15 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         if(dateArry.isEmpty){
             return}
         
-        let menuArray = [KxMenuItem.init("\(dateArry[0])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[1])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[2])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[3])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[4])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[5])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[6])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[7])", target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[8])", target: self, action: "respondOfMenu:")
+        let menuArray = [KxMenuItem.init("\(dateArry[0])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[1])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[2])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[3])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[4])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[5])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[6])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[7])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[8])",image: UIImage(named: ""), target: self, action: "respondOfMenu:")
             
             
         ]
