@@ -9,7 +9,7 @@
 import UIKit
 
 class BallViewController: UIViewController {
-
+    var mContentView:UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -99,6 +99,7 @@ class BallViewController: UIViewController {
     
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat,playType:String){
+        mContentView = contentView
         if contentView.subviews.count > 0 {
             for view in contentView.subviews {
                 view.removeFromSuperview()
@@ -187,12 +188,44 @@ class BallViewController: UIViewController {
         }
     }
     
+    //购物车删除资料同步下注页面
+    func synchronizationData(betinfo:BetInfo){
+        if mContentView.subviews.count == 2 {
+            let tableView:TableView = mContentView.subviews[1] as! TableView
+            let infoArray:NSMutableArray = tableView.infoArray
+            if infoArray.count > 0 {
+                for info in infoArray {
+                    let infoTemp:UnionTitleInfo = info as! UnionTitleInfo
+                    let unionTitleModel:UnionTitleModel = infoTemp.unionTitleModel
+                    for order in unionTitleModel.orderCellModels {
+                        //开始比较
+                        let orderCellModel:OrderCellModel = order as! OrderCellModel
+                        if(orderCellModel.N_VISIT_NAME == betinfo.visitname
+                            && orderCellModel.N_HOME_NAME == betinfo.homename){
+                            let sel = ToolsCode.codeBy(Int(betinfo.Index)!)
+                            let selName:String = sel + "_SEL"
+                            orderCellModel.setValue(false, forKey: selName)
+                            return//匹配一个就可以结束
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     //初始化购物车清空Alert
     func initCartClear()->UIAlertController{
         let alertCart:UIAlertController = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
         
         let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
             let betManger = BetListManager.sharedManager
+            for bet in betManger.betList {
+                self.synchronizationData(bet)
+            }
+            if self.mContentView.subviews.count == 2 {
+                let tableView:TableView = self.mContentView.subviews[1] as! TableView
+                tableView.reloadData()
+            }
             betManger.betList.removeAll(keepCapacity: false)
         }
         let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -242,7 +275,7 @@ class BallViewController: UIViewController {
         var hlx:String = "0"
         var hbl:String = "0"
         let tempType = ToolsCode.codeByPlayType(toolsCode)
-        if (tempType == "RF") && (tempType == "DX") {
+        if (tempType == "RF") || (tempType == "DX") {
             hfs = String(orderCellModel.valueForKey("N_\(tempType)FS")!)
             hlx = String(orderCellModel.valueForKey("N_\(tempType)LX")!)
             hbl = String(orderCellModel.valueForKey("N_\(tempType)BL")!)
@@ -251,7 +284,7 @@ class BallViewController: UIViewController {
             id = String(orderCellModel.N_ID2)
             let1 = String(orderCellModel.N_LET2)
             let tempType2 = ToolsCode.codeByPlayType(toolsCode)
-            if (tempType == "RF") && (tempType == "DX") {
+            if (tempType == "RF") || (tempType == "DX") {
                 hfs = String(orderCellModel.valueForKey("N_\(tempType2)FS2")!)
                 hlx = String(orderCellModel.valueForKey("N_\(tempType2)LX2")!)
                 hbl = String(orderCellModel.valueForKey("N_\(tempType2)BL2")!)
@@ -268,7 +301,7 @@ class BallViewController: UIViewController {
         let betInfo:BetInfoModel = BetInfoModel()//下注model
         betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
         betInfo.playType = playType
-        betInfo.lr = ToolsCode.codeByLRH(toolsCode)
+        betInfo.lr = (tempBetName == "H" ? "R" : tempBetName)
         betInfo.ballType = orderCellModel.N_LX
         betInfo.courtType = courtType
         betInfo.id = id
@@ -289,9 +322,16 @@ class BallViewController: UIViewController {
     
     //第二次设定BetInfo属性，主要填入限额等
     func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfoModel,alertView:SwiftCustomAlertView,isMultiselect:Bool){
+        print(betInfoJson[0])
+        betInfo.hbl = String(betInfoJson[0].objectForKey("newBl")!)
+        betInfo.hfs = String(betInfoJson[0].objectForKey("newFs")!)
+        betInfo.isjzf = String(betInfoJson[0].objectForKey("newjzf") == nil ?betInfoJson[0].objectForKey("isjzf")! : betInfoJson[0].objectForKey("newjzf")!)
+        betInfo.strlet = String(betInfoJson[0].objectForKey("newLet")!)
+        betInfo.hlx = String(betInfoJson[0].objectForKey("newLx")!)
+        betInfo.vh = String(betInfoJson[0].objectForKey("newVh")!)
         betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)
+        
         betInfo.yssj = String(betInfoJson[0].objectForKey("yssj")!)
-        betInfo.isjzf = String(betInfoJson[0].objectForKey("isjzf")!)
         betInfo.jzf = String(betInfoJson[0].objectForKey("jzf")!)
         betInfo.allianceName = String(betInfoJson[0].objectForKey("allianceName")!)
         let dzxx = String(betInfoJson[0].objectForKey("dzxx")!)
@@ -319,6 +359,7 @@ class BallViewController: UIViewController {
             alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
             alertView.myView.limits.text = dzxx + "~" + dzsx
             alertView.myView.max.text = dzsx
+            alertView.myView.strPlayType = betInfo.playType
         }
     }
 }

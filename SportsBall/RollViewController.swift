@@ -197,6 +197,9 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         }else{
             betInfo.score = "0"
         }
+        if (mPlayType == "2") {//滚球
+            betInfo.playType = "ZD" + betInfo.playType
+        }
         return betInfo
     }
     

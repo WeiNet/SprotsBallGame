@@ -54,8 +54,8 @@ class PassView: OrderView {
         R_RFView.tag = ToolsCode.RRFView
         N_LDXBLView.tag = ToolsCode.LDXBLView
         N_RDXBLView.tag = ToolsCode.RDXBLView
-        N_DSSPLView.tag = ToolsCode.LDSBLView
-        N_DSDPLView.tag = ToolsCode.RDSBLView
+        N_DSSPLView.tag = ToolsCode.DSSPLView
+        N_DSDPLView.tag = ToolsCode.DSDPLView
     }
     //注册点击事件
     override func addGestureRecognizer(){
@@ -81,7 +81,7 @@ class PassView: OrderView {
             if ((iTag>=ToolsCode.LDYPL && iTag<=ToolsCode.RDYPL)){
                 ToolsCode.setLblFontBackground(view as! UILabel,selected: !select)
             }else if((iTag>=ToolsCode.LRFView && iTag<=ToolsCode.RRFView)
-                || (iTag>=ToolsCode.LDSBLView && iTag<=ToolsCode.RDSBLView)){
+                || (iTag>=ToolsCode.DSSPLView && iTag<=ToolsCode.DSDPLView)){
                 ToolsCode.setBackground(view,select:!select)
             }else if((iTag>=ToolsCode.LDXBLView && iTag<=ToolsCode.RDXBLView)){
                 ToolsCode.setBackground2(view,select: !select)

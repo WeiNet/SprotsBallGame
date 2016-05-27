@@ -25,8 +25,8 @@ struct ToolsCode {
     static var LDXBLView2:Int = 56673//半场、左队、大小
     static var RDXBLView2:Int = 56674//半场、右队、大小
     
-    static var LDSBLView:Int = 56675//单双、左队、双
-    static var RDSBLView:Int = 56676//单双、右队、单
+    static var DSSPLView:Int = 56675//单双、左队、双
+    static var DSDPLView:Int = 56676//单双、右队、单
     
     static var RQSPL01View:Int = 56677//入球数0-1
     static var RQSPL23View:Int = 56678//入球数2-3
@@ -107,9 +107,9 @@ struct ToolsCode {
         case RDXBLView2:
             controlName = "N_DXXPL2"
             
-        case LDSBLView:
+        case DSSPLView:
             controlName = "N_DSSPL"
-        case RDSBLView:
+        case DSDPLView:
             controlName = "N_DSDPL"
             
         case RQSPL01View:
@@ -206,11 +206,11 @@ struct ToolsCode {
     static func codeByLRH(code : Int) -> String {
         var controlLRH:String = ""
         switch(code){
-        case LDYPL,LRFView,LDXBLView,LDYPL2,LRFView2,LDXBLView2,LDSBLView:
+        case LDYPL,LRFView,LDXBLView,LDYPL2,LRFView2,LDXBLView2,DSDPLView:
             controlLRH = "L"
         case HJPL,HJPL2:
             controlLRH = "H"
-        case RDYPL,RRFView,RDXBLView,RDYPL2,RRFView2,RDXBLView2,RDSBLView:
+        case RDYPL,RRFView,RDXBLView,RDYPL2,RRFView2,RDXBLView2,DSSPLView:
             controlLRH = "R"
         default:
             controlLRH = ""
@@ -230,7 +230,7 @@ struct ToolsCode {
             controlPlayType = "RF"
         case LDXBLView,RDXBLView,LDXBLView2,RDXBLView2:
             controlPlayType = "DX"
-        case LDSBLView,RDSBLView:
+        case DSDPLView,DSSPLView:
             controlPlayType = "DS"
         default:
             controlPlayType = ""

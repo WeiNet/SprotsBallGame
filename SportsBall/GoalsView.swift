@@ -35,8 +35,8 @@ class GoalsView: OrderView {
         N_RQSPL46View.userInteractionEnabled = true
         N_RQSPL7View.userInteractionEnabled = true
         
-        N_DSSPLView.tag = ToolsCode.RDSBLView
-        N_DSDPLView.tag = ToolsCode.LDSBLView
+        N_DSSPLView.tag = ToolsCode.DSSPLView
+        N_DSDPLView.tag = ToolsCode.DSDPLView
         N_RQSPL01View.tag = ToolsCode.RQSPL01View
         N_RQSPL23View.tag = ToolsCode.RQSPL23View
         N_RQSPL46View.tag = ToolsCode.RQSPL46View
