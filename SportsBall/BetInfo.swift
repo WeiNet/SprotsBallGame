@@ -49,7 +49,7 @@ class BetInfo: NSObject {
         var strBetInfoModel:String = "{"
         strBetInfoModel.appendContentsOf("\"allianceName\":\"\(allianceName)\",")
         strBetInfoModel.appendContentsOf("\"ballType\":\"\(ballType)\",")
-        strBetInfoModel.appendContentsOf("\"betteamName\":\"\(betteamName)\"")
+        strBetInfoModel.appendContentsOf("\"betteamName\":\"\(betteamName)\",")
         strBetInfoModel.appendContentsOf("\"courtType\":\"\(courtType)\",")
         strBetInfoModel.appendContentsOf("\"dMoney\":\"\(dMoney)\",")
         strBetInfoModel.appendContentsOf("\"date\":\"\(date)\",")
@@ -77,7 +77,7 @@ class BetInfo: NSObject {
         strBetInfoModel.appendContentsOf("\"yssj\":\"\(yssj)\",")
         strBetInfoModel.appendContentsOf("\"strbet\":\"\(strbet)\",")
         strBetInfoModel.appendContentsOf("\"score\":\"\(score)\",")
-        strBetInfoModel.appendContentsOf("\"ballhead\":\"\(ballhead)\",")
+        strBetInfoModel.appendContentsOf("\"ballhead\":\"\(ballhead)\"")
         strBetInfoModel.appendContentsOf("}")
         return strBetInfoModel
     }
