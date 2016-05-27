@@ -19,8 +19,8 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             getResult()
     }
     
-    var setNameArry=["问题反馈","关于"]
-    var setImge=["feedback_log","about_log"]
+    var setNameArry=["派彩结果","关于"]
+    var setImge=["betrecod_log","about_log"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="个人中心"

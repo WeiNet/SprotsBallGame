@@ -3,7 +3,7 @@
 //  NirKxMenu
 //
 //  Created by Nirvana on 9/25/15.
-//  Copyright © 2015 NSNirvana. All rights reserved.
+//  Copyright © 2015 abel. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -42,8 +42,7 @@
     return self;
 }
 
-// thank horaceho https://github.com/horaceho
-// for his solution described in https://github.com/kolyvan/kxmenu/issues/9
+
 
 - (void)singleTap:(UITapGestureRecognizer *)recognizer
 {
@@ -65,18 +64,18 @@
 @implementation KxMenuItem
 
 + (instancetype) menuItem:(NSString *) title
-                    image:(UIImage *) image
+//                    image:(UIImage *) image
                    target:(id)target
                    action:(SEL) action
 {
     return [[KxMenuItem alloc] init:title
-                              image:image
+            //                              image:image
                              target:target
                              action:action];
 }
 
 - (id) init:(NSString *) title
-      image:(UIImage *) image
+//      image:(UIImage *) image
      target:(id)target
      action:(SEL) action
 {
@@ -86,7 +85,7 @@
     if (self) {
         
         _title = title;
-        _image = image;
+        //        _image = image;
         _target = target;
         _action = action;
     }
@@ -439,7 +438,7 @@ typedef enum {
     
     const CGFloat titleWidth = maxItemWidth - titleX - kMarginX *2;
     
-        UIImage *selectedImage = [KxMenuView selectedImage:(CGSize){maxItemWidth, maxItemHeight + 2}];
+    UIImage *selectedImage = [KxMenuView selectedImage:(CGSize){maxItemWidth, maxItemHeight + 2}];
     //配置：分隔线是与内容等宽还是与菜单等宽
     int insets = 0;
     
@@ -487,7 +486,7 @@ typedef enum {
                        action:@selector(performAction:)
              forControlEvents:UIControlEventTouchUpInside];
             
-                        [button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
+            [button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
             
             [itemView addSubview:button];
         }
