@@ -3,7 +3,7 @@
 //  NirKxMenu
 //
 //  Created by Nirvana on 9/25/15.
-//  Copyright © 2015 NSNirvana. All rights reserved.
+//  Copyright © 2015 Abel . All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -18,8 +18,11 @@
 @property (readwrite, nonatomic, strong) UIColor *foreColor;
 @property (readwrite, nonatomic) NSTextAlignment alignment;
 
+
+
+
 + (instancetype) menuItem:(NSString *) title
-                    image:(UIImage *) image
+//                    image:(UIImage *) image
                    target:(id)target
                    action:(SEL) action;
 

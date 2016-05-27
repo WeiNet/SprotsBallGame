@@ -28,8 +28,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
         activityView.startAnimating()
         activityView.hidesWhenStopped=true
-        self.title="游戏纪录"
-       self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.leftBarButtonItem = nil
         tableViewList.delegate=self
         tableViewList.dataSource=self
         conn.delegate=self

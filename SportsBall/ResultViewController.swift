@@ -12,7 +12,7 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="派彩结果"
+       
 
         // Do any additional setup after loading the view.
     }
