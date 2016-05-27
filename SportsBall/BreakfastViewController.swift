@@ -371,9 +371,9 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             }
         } else{//入球数
             switch(toolsCode){
-            case ToolsCode.LDSBLView:
+            case ToolsCode.DSSPLView:
                 betInfo.ballhead = "s"
-            case ToolsCode.RDSBLView:
+            case ToolsCode.DSDPLView:
                 betInfo.ballhead = "d"
             case ToolsCode.RQSPL01View:
                 betInfo.ballhead = "0-1"

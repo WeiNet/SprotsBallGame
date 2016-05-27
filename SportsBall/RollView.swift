@@ -46,8 +46,8 @@ class RollView: UIView,GestureDelegate {
         N_RRFBLView.tag = ToolsCode.RRFView
         N_LDXBLView.tag = ToolsCode.LDXBLView
         N_RDXBLView.tag = ToolsCode.RDXBLView
-        N_DSSPLView.tag = ToolsCode.LDSBLView
-        N_DSDPLView.tag = ToolsCode.RDSBLView
+        N_DSSPLView.tag = ToolsCode.DSSPLView
+        N_DSDPLView.tag = ToolsCode.DSDPLView
     }
     
     //注册点击事件
@@ -73,7 +73,7 @@ class RollView: UIView,GestureDelegate {
                 ToolsCode.setBackground(view,select:!select)
             }else if((iTag>=ToolsCode.LDXBLView && iTag<=ToolsCode.RDXBLView)){
                 ToolsCode.setBackground2(view,select: !select)
-            }else if((iTag>=ToolsCode.LDSBLView && iTag<=ToolsCode.RDSBLView)){
+            }else if((iTag>=ToolsCode.DSSPLView && iTag<=ToolsCode.DSDPLView)){
                 ToolsCode.setBackground(view,select: !select)
             }
         }
