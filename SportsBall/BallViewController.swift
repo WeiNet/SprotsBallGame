@@ -322,9 +322,14 @@ class BallViewController: UIViewController {
     
     //第二次设定BetInfo属性，主要填入限额等
     func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfoModel,alertView:SwiftCustomAlertView,isMultiselect:Bool){
-        betInfo.isLive = String(betInfoJson[0].objectForKey("isLive")!)
+        betInfo.hbl = String(betInfoJson[0].objectForKey("newBl")!)
+        betInfo.hfs = String(betInfoJson[0].objectForKey("newFs")!)
+        betInfo.isjzf = String(betInfoJson[0].objectForKey("newjzf") == nil ?betInfoJson[0].objectForKey("isjzf")! : betInfoJson[0].objectForKey("newjzf")!)
+        betInfo.strlet = String(betInfoJson[0].objectForKey("newLet")!)
+        betInfo.hlx = String(betInfoJson[0].objectForKey("newLx")!)
+        betInfo.vh = String(betInfoJson[0].objectForKey("newVh")!)
+        
         betInfo.yssj = String(betInfoJson[0].objectForKey("yssj")!)
-        betInfo.isjzf = String(betInfoJson[0].objectForKey("isjzf")!)
         betInfo.jzf = String(betInfoJson[0].objectForKey("jzf")!)
         betInfo.allianceName = String(betInfoJson[0].objectForKey("allianceName")!)
         let dzxx = String(betInfoJson[0].objectForKey("dzxx")!)
