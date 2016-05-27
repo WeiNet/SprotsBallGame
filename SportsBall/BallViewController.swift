@@ -30,6 +30,7 @@ class BallViewController: UIViewController {
         for menu in menuArray {
             for (key,value) in menu {
                 let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                    BetListManager.sharedManager.clearBetList()
                     self.clickMenuItem(key, value: value)
                 })
                 alertMenu.addAction(item)
