@@ -324,36 +324,40 @@ struct ToolsCode {
     static func setBackground(view:UIView,select: Bool){
         let lbl0 = view.subviews[0] as! UILabel
         let lbl1 = view.subviews[1] as! UILabel
-        setLblFontBackground2(lbl0,selected: select)
-        setLblFontBackground(lbl1,selected: select)
+        setLblFontBackground2(lbl0,selected: select,view:view)
+        setLblFontBackground(lbl1,selected: select,view:view)
     }
     //大小球的背景设定
     static func setBackground2(view:UIView,select: Bool){
         let lbl0 = view.subviews[0] as! UILabel
         let lbl1 = view.subviews[1] as! UILabel
         let lbl2 = view.subviews[2] as! UILabel
-        setLblFontBackground(lbl0,selected: select)
-        setLblFontBackground2(lbl1,selected: select)
-        setLblFontBackground(lbl2,selected: select)
+        setLblFontBackground(lbl0,selected: select,view:view)
+        setLblFontBackground2(lbl1,selected: select,view:view)
+        setLblFontBackground(lbl2,selected: select,view:view)
     }
     //白色红底
-    static func setLblFontBackground(lable:UILabel,selected: Bool){
+    static func setLblFontBackground(lable:UILabel,selected: Bool,view:UIView){
         if selected {
             lable.textColor = hexStringToColor("#FFFFFF")
-            lable.backgroundColor = hexStringToColor("#FF4646")
+            view.backgroundColor = hexStringToColor("#FF4646")
+//            lable.backgroundColor = hexStringToColor("#FF4646")
         }else{
             lable.textColor = hexStringToColor("#464646")
-            lable.backgroundColor = hexStringToColor("#FAFAFA")
+            view.backgroundColor = hexStringToColor("#FAFAFA")
+//            lable.backgroundColor = hexStringToColor("#FAFAFA")
         }
     }
     //金色红底
-    static func setLblFontBackground2(lable:UILabel,selected: Bool){
+    static func setLblFontBackground2(lable:UILabel,selected: Bool,view:UIView){
         if selected {
             lable.textColor = hexStringToColor("#FFFF00")
-            lable.backgroundColor = hexStringToColor("#FF4646")
+            view.backgroundColor = hexStringToColor("#FF4646")
+//            lable.backgroundColor = hexStringToColor("#FF4646")
         }else{
             lable.textColor = hexStringToColor("#008C23")
-            lable.backgroundColor = hexStringToColor("#FAFAFA")
+            view.backgroundColor = hexStringToColor("#FAFAFA")
+//            lable.backgroundColor = hexStringToColor("#FAFAFA")
         }
     }
     //16进制转UIColor
