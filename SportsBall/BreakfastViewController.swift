@@ -31,9 +31,18 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
+        isPass = false
+        isMultiselect = false
+        let dics:Dictionary<String,String> = menuArray[3]
+        for (keyTemp,valueTemp) in dics {
+            if valueTemp == value{
+                isPass = true
+                isMultiselect = true
+            }
+        }
+        
         mPlayType = key
         mUnionID = ""
-        isMultiselect = false
         let view:HeaderView = headerView.subviews[0] as! HeaderView
         view.btnTitle.setTitle(value, forState: UIControlState.Normal)
         if (mPlayType == "0" || mPlayType == "1" || mPlayType == "2") {//早盘/单式/滚球
@@ -99,8 +108,10 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //显示购物车
     func cartShow(){
-        if(isMultiselect){
+        if(isMultiselect && isPass == false){
             showCart()
+        } else if(isMultiselect && isPass == true){
+            showPassCart()
         }
     }
     //联盟选择
@@ -177,6 +188,9 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         if(isMultiselect){
             let betManger = BetListManager.sharedManager
             let objInfo = betInfo
+            if isPass {
+                onlySelect(objInfo)
+            }
             betManger.betList.append(objInfo)
         }else{
             alertView.show(self)//显示即时下注popuWin

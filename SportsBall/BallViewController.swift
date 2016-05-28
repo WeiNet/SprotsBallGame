@@ -191,8 +191,7 @@ class BallViewController: UIViewController {
     }
     
     //购物车删除资料同步下注页面
-    func synchronizationData(betinfo:BetInfo)->Bool{
-        var selCommon = false
+    func synchronizationData(betinfo:BetInfo){
         if mContentView.subviews.count == 2 {
             let tableView:TableView = mContentView.subviews[1] as! TableView
             let infoArray:NSMutableArray = tableView.infoArray
@@ -205,21 +204,18 @@ class BallViewController: UIViewController {
                         let orderCellModel:OrderCellModel = order as! OrderCellModel
                         if(orderCellModel.N_VISIT_NAME == betinfo.visitname
                             && orderCellModel.N_HOME_NAME == betinfo.homename){
-                            selCommon = true
                             let sel = ToolsCode.codeBy(Int(betinfo.Index)!)
                             let selName:String = sel + "_SEL"
                             let select = orderCellModel.valueForKey(selName) as! Bool
                             if select {
                                 orderCellModel.setValue(false, forKey: selName)
-                                selCommon = false
-                                return selCommon//匹配一个就可以结束
+                                return //匹配一个就可以结束
                             }
                         }
                     }
                 }
             }
         }
-        return selCommon
     }
     
     //过关选择同一场赛事只可以一个赔率
@@ -230,7 +226,7 @@ class BallViewController: UIViewController {
         let count:Int = betList.count
         for(var i = 0;i < count;i++ ){
             if(betList[i].visitname == betinfo.visitname
-                && betList[i].visitname == betinfo.homename){
+                && betList[i].homename == betinfo.homename){
                 betManger.betList.removeAtIndex(i)
             }
         }
