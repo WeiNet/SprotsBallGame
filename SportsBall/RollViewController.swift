@@ -164,10 +164,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
             let betManger = BetListManager.sharedManager
             let objInfo = betInfo
             if isPass {
-//                let selCommon = synchronizationData(objInfo)
-//                if selCommon {//前面已经选择了同一场比赛
-                    onlySelect(objInfo)
-//                }
+                onlySelect(objInfo)
             }
             betManger.betList.append(objInfo)
         }else{
