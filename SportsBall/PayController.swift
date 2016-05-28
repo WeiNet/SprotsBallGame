@@ -43,6 +43,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
             
             
         ]
+       
         
         //配置一：基础配置
         KxMenu.setTitleFont(UIFont(name: "HelveticaNeue", size: 15))
