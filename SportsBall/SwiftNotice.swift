@@ -277,7 +277,7 @@ class SwiftNotice: NSObject {
         // 定义 ok 的 UIAlertAction
         let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
             (action: UIAlertAction!) -> Void in
-            print("you choose ok")
+//            print("you choose ok")
         }
         alert.addAction(okAction)
         carrier.presentViewController(alert, animated: true, completion: nil)

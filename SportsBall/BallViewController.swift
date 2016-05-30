@@ -60,7 +60,6 @@ class BallViewController: UIViewController {
         let info = ToolsCode.toJsonArray(strResult)
         let unionJson = info[1]
         if unionJson.count == 0 {//没有资料
-            print("没有资料")
             return aryUnionInfo
         }
         let objCount:Int = unionJson.count - 1
@@ -405,7 +404,6 @@ class BallViewController: UIViewController {
     
     //第二次设定BetInfo属性，主要填入限额等
     func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfoModel,alertView:SwiftCustomAlertView,isMultiselect:Bool){
-        print(betInfoJson[0])
         betInfo.hbl = String(betInfoJson[0].objectForKey("newBl")!)
         betInfo.hfs = String(betInfoJson[0].objectForKey("newFs")!)
         betInfo.isjzf = String(betInfoJson[0].objectForKey("newjzf") == nil ?betInfoJson[0].objectForKey("isjzf")! : betInfoJson[0].objectForKey("newjzf")!)

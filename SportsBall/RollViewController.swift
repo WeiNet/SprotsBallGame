@@ -180,7 +180,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     //即时下注付款取消协议
     func  selecttCancelButtonAlertView(){
-        print("selecttCancelButtonAlertView")
     }
     
     //即时/复合下注选择改变事件
@@ -261,7 +260,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         common.matchingElement = addBetResult
         var strParam:String = "<AddBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strpara>\(betInfo.toString())</strpara>")
-        print(betInfo.toString())
         strParam.appendContentsOf("</AddBet>")
         common.getResult(strParam,strResultName: addBetResult)
     }

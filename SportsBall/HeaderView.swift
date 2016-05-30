@@ -22,26 +22,21 @@ import UIKit
     
     @IBOutlet var btnTitle: UIButton!
     @IBAction func back(sender: UIButton) {
-        print("点击back")
         delegate.backClick!()
     }
     
     @IBAction func refresh(sender: UIButton) {
-        print("用户点击refresh")
         delegate.refreshClick!()
     }
     
     @IBAction func title(sender: AnyObject) {
-        print("用户点击title")
         delegate.titleViewClick!()
     }
     @IBAction func union(sender: UIButton) {
-        print("用户点击union")
         delegate.unionClick!()
     }
     
     @IBAction func explain(sender: UIButton) {
-        print("用户点击explain")
         delegate.explainClick!()
     }
 }

@@ -17,8 +17,6 @@
 		1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA561CCEF707002A62DC /* BreakfastView.xib */; };
 		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177D3F541CED603D00ED6875 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3F531CED603D00ED6875 /* OrderView.swift */; };
-		177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E69461CA3E5D300141CBF /* RollViewContrller.swift */; };
-		177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 177E76FA1CA3ED8400141CBF /* PropertyList.plist */; };
 		1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A11CEC406400D356D0 /* FluctuantView.swift */; };
 		1798F2A41CEC5C5F00D356D0 /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A31CEC5C5F00D356D0 /* PassView.swift */; };
 		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
@@ -33,11 +31,8 @@
 		17C6EC091CD197F000DF71E1 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC081CD197F000DF71E1 /* RollViewController.swift */; };
 		17C6EC0B1CD1982E00DF71E1 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C6EC0A1CD1982E00DF71E1 /* RollView.xib */; };
 		17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */; };
-		17C6EC101CD1B42C00DF71E1 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */; };
 		17D751D21CEBFF7D00A52040 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D11CEBFF7D00A52040 /* GoalsView.swift */; };
 		17D751D41CEC07DB00A52040 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D31CEC07DB00A52040 /* FieldView.swift */; };
-		17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */; };
-		17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
 		17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */; };
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
@@ -48,7 +43,6 @@
 		17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */; };
 		17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */; };
 		17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62261CB8CDEE009070E6 /* ToolsCode.swift */; };
-		17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62281CB8CE22009070E6 /* MyTableView.swift */; };
 		17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E287321CE96FC500B26CA6 /* BallViewController.swift */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
@@ -114,8 +108,6 @@
 		1779BA561CCEF707002A62DC /* BreakfastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreakfastView.xib; sourceTree = "<group>"; };
 		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177D3F531CED603D00ED6875 /* OrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
-		177E69461CA3E5D300141CBF /* RollViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewContrller.swift; sourceTree = "<group>"; };
-		177E76FA1CA3ED8400141CBF /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
 		1798F2A11CEC406400D356D0 /* FluctuantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluctuantView.swift; sourceTree = "<group>"; };
 		1798F2A31CEC5C5F00D356D0 /* PassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
@@ -130,11 +122,8 @@
 		17C6EC081CD197F000DF71E1 /* RollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
 		17C6EC0A1CD1982E00DF71E1 /* RollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollView.xib; sourceTree = "<group>"; };
 		17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
-		17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		17D751D11CEBFF7D00A52040 /* GoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		17D751D31CEC07DB00A52040 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
-		17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellRollView.swift; sourceTree = "<group>"; };
-		17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCellRollView.xib; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
 		17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
@@ -145,7 +134,6 @@
 		17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleModel.swift; sourceTree = "<group>"; };
 		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
 		17DA62261CB8CDEE009070E6 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
-		17DA62281CB8CE22009070E6 /* MyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
 		17E287321CE96FC500B26CA6 /* BallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallViewController.swift; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
@@ -222,7 +210,6 @@
 				17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */,
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
-				17C6EC0F1CD1B42C00DF71E1 /* Ball.swift */,
 				177D3F531CED603D00ED6875 /* OrderView.swift */,
 				17E287321CE96FC500B26CA6 /* BallViewController.swift */,
 				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
@@ -323,19 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				17DA620F1CB8CC7A009070E6 /* Model */,
-				17DA620E1CB8CC74009070E6 /* View */,
 			);
 			name = Roll;
-			sourceTree = "<group>";
-		};
-		17DA620E1CB8CC74009070E6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				17DA62281CB8CE22009070E6 /* MyTableView.swift */,
-				17DA62101CB8CDAF009070E6 /* OrderCellRollView.swift */,
-				17DA62111CB8CDAF009070E6 /* OrderCellRollView.xib */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		17DA620F1CB8CC7A009070E6 /* Model */ = {
@@ -391,8 +367,6 @@
 				462BEDF51C8682E300E451E4 /* Info.plist */,
 				462BEE171C86861D00E451E4 /* StartViewController.swift */,
 				462BEE181C86861D00E451E4 /* StartViewController.xib */,
-				177E69461CA3E5D300141CBF /* RollViewContrller.swift */,
-				177E76FA1CA3ED8400141CBF /* PropertyList.plist */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
@@ -590,9 +564,7 @@
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */,
 				179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */,
-				177E76FB1CA3ED8400141CBF /* PropertyList.plist in Resources */,
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
-				17DA62171CB8CDAF009070E6 /* OrderCellRollView.xib in Resources */,
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
 				1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
@@ -636,8 +608,6 @@
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
 				17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */,
-				17DA62291CB8CE22009070E6 /* MyTableView.swift in Sources */,
-				17C6EC101CD1B42C00DF71E1 /* Ball.swift in Sources */,
 				46B9A02D1CEB1C1D006A5F4C /* Reachability.swift in Sources */,
 				17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */,
 				464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */,
@@ -647,7 +617,6 @@
 				462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */,
 				17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */,
 				46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */,
-				17DA62161CB8CDAF009070E6 /* OrderCellRollView.swift in Sources */,
 				463295DF1CBB8C4D000EFEA9 /* ShopingViewController.swift in Sources */,
 				462BEDEC1C8682E300E451E4 /* SecondViewController.swift in Sources */,
 				462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */,
@@ -677,7 +646,6 @@
 				17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */,
 				177D3F541CED603D00ED6875 /* OrderView.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
-				177E69471CA3E5D300141CBF /* RollViewContrller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
