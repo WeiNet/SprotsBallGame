@@ -43,7 +43,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
            
         }else{
             delegate?.setResult("WebError",strType: "Error")
-
+            return
         }
         
         //判断连接类型
@@ -54,6 +54,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
            
         }else {
             delegate?.setResult("WebError",strType: "Error")
+            return 
         }
        
         let request = NSMutableURLRequest(URL: url)
@@ -88,7 +89,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
             
         }else{
             delegate?.setResult("WebError",strType: "Error")
-            
+            return
         }
         
         //判断连接类型
@@ -99,6 +100,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
             
         }else {
             delegate?.setResult("WebError",strType: "Error")
+            return
         }
         
         let request = NSMutableURLRequest(URL: url)
