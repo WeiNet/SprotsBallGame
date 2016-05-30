@@ -167,12 +167,13 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         }
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
-        checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
             if isPass {
                 onlySelect(betInfo)
             }
+            checkBet(betInfo)//检验选取的赔率是不是最新的
         }else{
+            checkBet(betInfo)//检验选取的赔率是不是最新的
             alertView.show(self)//显示即时下注popuWin
         }
         return isMultiselect
