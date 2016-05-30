@@ -187,8 +187,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
-        
-        checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
             onlySelect(betInfo)
             checkBet(betInfo)//检验选取的赔率是不是最新的
