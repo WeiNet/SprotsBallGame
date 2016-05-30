@@ -39,8 +39,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
             KxMenuItem.init("\(dateArry[5])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
             KxMenuItem.init("\(dateArry[6])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
             KxMenuItem.init("\(dateArry[7])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
-            KxMenuItem.init("\(dateArry[8])",image: UIImage(named: ""), target: self, action: "respondOfMenu:")
-            
+           
             
         ]
        
@@ -122,6 +121,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         var zdh=jsonDetail[indexPath.row].objectForKey("N_XZDH")as! String
         var xzje=jsonDetail[indexPath.row].objectForKey("N_XZJE")
         var hyjg=jsonDetail[indexPath.row].objectForKey("N_HYJG")
+        var time=jsonDetail[indexPath.row].objectForKey("N_XZRQ")as! String
         if(xznr.containsString("足球")){
             image.image=UIImage(named: "football")
         }else{
@@ -135,7 +135,8 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         labelNumber.text=zdh
        labelYT.text="\(xzje!)"
         labelResult.text="\(hyjg!)"
-        labelTime.text="22/22/2016"
+         labelTime.text=ToolsCode.formatterDate(time,format: "MM/dd HH:mm")
+       
         print(xzje)
         print(hyjg)
         return cell!
@@ -144,7 +145,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
     func getDate(){
         
         var strParam:String = "<GetDate xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<inum>9</inum>")
+        strParam.appendContentsOf("<inum>8</inum>")
         strParam.appendContentsOf("</GetDate>")
         conn.getResult(strParam,strResultName: "GetDateResult")
     }
