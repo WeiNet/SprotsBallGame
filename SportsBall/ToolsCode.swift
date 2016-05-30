@@ -324,36 +324,52 @@ struct ToolsCode {
     static func setBackground(view:UIView,select: Bool){
         let lbl0 = view.subviews[0] as! UILabel
         let lbl1 = view.subviews[1] as! UILabel
-        setLblFontBackground2(lbl0,selected: select)
-        setLblFontBackground(lbl1,selected: select)
+        setFont3(lbl0,selected: select)
+        setFont2(lbl1,selected: select)
+        setViewBackground(view,selected: select)
     }
     //大小球的背景设定
     static func setBackground2(view:UIView,select: Bool){
         let lbl0 = view.subviews[0] as! UILabel
         let lbl1 = view.subviews[1] as! UILabel
         let lbl2 = view.subviews[2] as! UILabel
-        setLblFontBackground(lbl0,selected: select)
-        setLblFontBackground2(lbl1,selected: select)
-        setLblFontBackground(lbl2,selected: select)
+        setFont2(lbl0,selected: select)
+        setFont3(lbl1,selected: select)
+        setFont2(lbl2,selected: select)
+        setViewBackground(view,selected: select)
     }
     //白色红底
-    static func setLblFontBackground(lable:UILabel,selected: Bool){
+    static func setFont1(lable:UILabel,selected: Bool){
         if selected {
-            lable.textColor = hexStringToColor("#FFFFFF")
             lable.backgroundColor = hexStringToColor("#FF4646")
+            lable.textColor = hexStringToColor("#FFFFFF")
         }else{
-            lable.textColor = hexStringToColor("#464646")
             lable.backgroundColor = hexStringToColor("#FAFAFA")
+            lable.textColor = hexStringToColor("#464646")
         }
     }
-    //金色红底
-    static func setLblFontBackground2(lable:UILabel,selected: Bool){
+    //红底
+    static func setViewBackground(view:UIView,selected: Bool){
+        if selected {
+            view.backgroundColor = hexStringToColor("#FF4646")
+        }else{
+            view.backgroundColor = hexStringToColor("#FAFAFA")
+        }
+    }
+    //白色
+    static func setFont2(lable:UILabel,selected: Bool){
+        if selected {
+            lable.textColor = hexStringToColor("#FFFFFF")
+        }else{
+            lable.textColor = hexStringToColor("#464646")
+        }
+    }
+    //金色
+    static func setFont3(lable:UILabel,selected: Bool){
         if selected {
             lable.textColor = hexStringToColor("#FFFF00")
-            lable.backgroundColor = hexStringToColor("#FF4646")
         }else{
             lable.textColor = hexStringToColor("#008C23")
-            lable.backgroundColor = hexStringToColor("#FAFAFA")
         }
     }
     //16进制转UIColor

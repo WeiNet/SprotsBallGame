@@ -110,7 +110,7 @@ class BreakfastView: OrderView {
             orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if ((iTag>=ToolsCode.LDYPL && iTag<=ToolsCode.RDYPL)
                 || (iTag>=ToolsCode.LDYPL2 && iTag<=ToolsCode.RDYPL2)){
-                ToolsCode.setLblFontBackground(view as! UILabel,selected: !select)
+                ToolsCode.setFont1(view as! UILabel,selected: !select)
             }else if((iTag>=ToolsCode.LRFView && iTag<=ToolsCode.RRFView)
                 || (iTag>=ToolsCode.LRFView2 && iTag<=ToolsCode.RRFView2)){
                 ToolsCode.setBackground(view,select:!select)
@@ -204,17 +204,17 @@ class BreakfastView: OrderView {
     }
     //背景的填充
     override func fillBackground(){
-        ToolsCode.setLblFontBackground(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
-        ToolsCode.setLblFontBackground(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
-        ToolsCode.setLblFontBackground(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        ToolsCode.setFont1(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        ToolsCode.setFont1(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        ToolsCode.setFont1(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
         ToolsCode.setBackground(L_RFView,select: orderCellModel.N_LRFPL_SEL)
         ToolsCode.setBackground(R_RFView,select: orderCellModel.N_RRFPL_SEL)
         ToolsCode.setBackground2(N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
         ToolsCode.setBackground2(N_RDXBLView,select: orderCellModel.N_DXXPL_SEL)
         
-        ToolsCode.setLblFontBackground(N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
-        ToolsCode.setLblFontBackground(N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
-        ToolsCode.setLblFontBackground(N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
+        ToolsCode.setFont1(N_LDYPL2, selected: orderCellModel.N_LDYPL2_SEL)
+        ToolsCode.setFont1(N_HJPL2, selected: orderCellModel.N_HJPL2_SEL)
+        ToolsCode.setFont1(N_RDYPL2, selected: orderCellModel.N_RDYPL2_SEL)
         ToolsCode.setBackground(L_RFView2,select: orderCellModel.N_LRFPL2_SEL)
         ToolsCode.setBackground(R_RFView2,select: orderCellModel.N_RRFPL2_SEL)
         ToolsCode.setBackground2(N_LDXBLView2,select: orderCellModel.N_DXDPL2_SEL)

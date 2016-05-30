@@ -79,7 +79,7 @@ class PassView: OrderView {
             let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
             orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if ((iTag>=ToolsCode.LDYPL && iTag<=ToolsCode.RDYPL)){
-                ToolsCode.setLblFontBackground(view as! UILabel,selected: !select)
+                ToolsCode.setFont1(view as! UILabel,selected: !select)
             }else if((iTag>=ToolsCode.LRFView && iTag<=ToolsCode.RRFView)
                 || (iTag>=ToolsCode.DSSPLView && iTag<=ToolsCode.DSDPLView)){
                 ToolsCode.setBackground(view,select:!select)
@@ -140,9 +140,9 @@ class PassView: OrderView {
     }
     //背景的填充
     override func fillBackground(){
-        ToolsCode.setLblFontBackground(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
-        ToolsCode.setLblFontBackground(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
-        ToolsCode.setLblFontBackground(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
+        ToolsCode.setFont1(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)
+        ToolsCode.setFont1(N_HJPL, selected: orderCellModel.N_HJPL_SEL)
+        ToolsCode.setFont1(N_RDYPL, selected: orderCellModel.N_RDYPL_SEL)
         ToolsCode.setBackground(L_RFView,select: orderCellModel.N_LRFPL_SEL)
         ToolsCode.setBackground(R_RFView,select: orderCellModel.N_RRFPL_SEL)
         ToolsCode.setBackground2(N_LDXBLView,select: orderCellModel.N_DXDPL_SEL)
