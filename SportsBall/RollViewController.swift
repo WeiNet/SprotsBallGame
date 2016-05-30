@@ -168,7 +168,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
         checkBet(betInfo)//检验选取的赔率是不是最新的
-        if(isMultiselect && isPass){
+        if(isMultiselect){
             if isPass {
                 onlySelect(betInfo)
             }
