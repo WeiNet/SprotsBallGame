@@ -65,6 +65,11 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         if(strType == "Error" || strResult == ""){
             return
         }
+        if(strType == "WebError" || strResult == "Error"){
+            let message = "网络连接异常!"
+            alertMessage(message, carrier: self)
+            return
+        }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = stringToDictionary(strResult)
             addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType,isPass: isPass)
@@ -187,11 +192,12 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
+        checkBet(betInfo)//检验选取的赔率是不是最新的
         if(isMultiselect){
-            onlySelect(betInfo)
-            checkBet(betInfo)//检验选取的赔率是不是最新的
+            if isPass {
+                onlySelect(betInfo)
+            }
         }else{
-            checkBet(betInfo)//检验选取的赔率是不是最新的
             alertView.show(self)//显示即时下注popuWin
         }
         return isMultiselect
@@ -430,7 +436,11 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         strParam.appendContentsOf("<hlx>\(betInfo.hlx)</hlx>")
         strParam.appendContentsOf("<hbl>\(betInfo.hbl)</hbl>")
         strParam.appendContentsOf("</CheckBet>")
-        common.getResult(strParam,strResultName: checkBetResult)
+        if !isMultiselect {
+            common.getResult(strParam,strResultName: checkBetResult)
+        }else {
+            common.getSynchronousRequest(strParam,strResultName: checkBetResult)
+        }
     }
     
     //取得赛事注单赔率
