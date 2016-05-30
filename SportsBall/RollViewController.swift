@@ -54,6 +54,11 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         if(strType == "Error" || strResult == ""){
             return
         }
+        if(strType == "WebError" || strResult == "Error"){
+            let message = "网络连接异常!"
+            alertMessage(message, carrier: self)
+            return
+        }
         if(strType == getOtherMatchResult){
             if(mPlayType == "2"){
                 orderHeight = 72
