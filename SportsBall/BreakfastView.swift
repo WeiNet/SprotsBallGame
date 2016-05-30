@@ -102,11 +102,11 @@ class BreakfastView: OrderView {
     override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
+        let name = ToolsCode.codeBy(iTag)
+        let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
         //赔率点击回调方法
-        let isMore:Bool = delegate.orderClickDelegate(orderCellModel, toolsCode: iTag)
+        let isMore:Bool = delegate.orderClickDelegate(orderCellModel, toolsCode: iTag,isSel: select)
         if isMore {
-            let name = ToolsCode.codeBy(iTag)
-            let select = orderCellModel.valueForKey("\(name)_SEL") as! Bool
             orderCellModel.setValue(!select, forKey: "\(name)_SEL")
             if ((iTag>=ToolsCode.LDYPL && iTag<=ToolsCode.RDYPL)
                 || (iTag>=ToolsCode.LDYPL2 && iTag<=ToolsCode.RDYPL2)){

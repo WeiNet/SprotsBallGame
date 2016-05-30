@@ -150,24 +150,23 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     //点击赔率点击事件的协议
-    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int)->Bool{
+    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int,isSel: Bool)->Bool{
         let tempRate = ToolsCode.codeBy(toolsCode)
         let rate = orderCellModel.valueForKey(tempRate)?.floatValue
         if (rate == 0){
             return false
         }
+        if isSel {
+            cleanOdds(orderCellModel,toolsCode: toolsCode)
+            return isMultiselect
+        }
         
         betInfo = fullBetInfo(orderCellModel,toolsCode:toolsCode)
-        betInfo.Index = String(toolsCode)
-        checkBet(betInfo)//检验选取的赔率是不是最新的
-        if(isMultiselect){
-            let betManger = BetListManager.sharedManager
-            let objInfo = betInfo
-            if isPass {
-                onlySelect(objInfo)
-            }
-            betManger.betList.append(objInfo)
+        if(isMultiselect && isPass){
+            onlySelect(betInfo)
+            checkBet(betInfo)//检验选取的赔率是不是最新的
         }else{
+            checkBet(betInfo)//检验选取的赔率是不是最新的
             alertView.show(self)//显示即时下注popuWin
         }
         return isMultiselect
@@ -181,7 +180,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     //即时下注付款取消协议
     func  selecttCancelButtonAlertView(){
-        print("selecttCancelButtonAlertView")
     }
     
     //即时/复合下注选择改变事件
@@ -189,6 +187,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         switch sender.selectedSegmentIndex {
         case 0 :
             isMultiselect = false
+            clearAllOdds()
         case 1 :
             isMultiselect = true
         default:
@@ -261,7 +260,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         common.matchingElement = addBetResult
         var strParam:String = "<AddBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strpara>\(betInfo.toString())</strpara>")
-        print(betInfo.toString())
         strParam.appendContentsOf("</AddBet>")
         common.getResult(strParam,strResultName: addBetResult)
     }

@@ -243,7 +243,6 @@ struct ToolsCode {
         let error:AnyObject = "is not a valid json object"
         //首先判断能不能转换
         if (!NSJSONSerialization.isValidJSONObject(strResult)) {
-            print("is not a valid json object")
             return error
         }
         //利用OC的json库转换成OC的NSData，
