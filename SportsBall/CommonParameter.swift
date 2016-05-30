@@ -76,8 +76,53 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
                 self.xmlParser.shouldResolveExternalEntities = true
             }
         }
+    
+    }
+    func getSynchronousRequest(strParam:String ,strResultName:String){
+        let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
+        self.matchingElement=strResultName
+        let reachability = Reachability.reachabilityForInternetConnection()
         
+        //判断连接状态
+        if reachability!.isReachable(){
+            
+        }else{
+            delegate?.setResult("WebError",strType: "Error")
+            
+        }
         
+        //判断连接类型
+        if reachability!.isReachableViaWiFi() {
+            
+            
+        }else if reachability!.isReachableViaWWAN() {
+            
+        }else {
+            delegate?.setResult("WebError",strType: "Error")
+        }
+        
+        let request = NSMutableURLRequest(URL: url)
+        var msgLength = String(soapMsg.characters.count)
+        
+        request.HTTPMethod = "POST"
+        request.HTTPBody = soapMsg.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        request.addValue("application/soap+xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue(msgLength, forHTTPHeaderField: "Content-Length")
+        var response: NSURLResponse?
+        do {
+            let dataResult = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+           
+                self.xmlParser = NSXMLParser(data: dataResult)
+                self.xmlParser.delegate = self
+                self.xmlParser.parse()
+                self.xmlParser.shouldResolveExternalEntities = true
+           
+            
+        } catch (let e) {
+            print(e)
+        }
+       
+    
     }
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if(elementName==matchingElement){

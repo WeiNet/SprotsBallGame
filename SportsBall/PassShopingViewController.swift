@@ -46,16 +46,14 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
             if(betList?.isEmpty==false){
                 betList?.removeAll()
                 self.tableList.reloadData()
-//                textKyje.text="0.0"
+
             }
         }
     }
     @IBOutlet weak var tableList: UITableView!
     
   
-//    @IBOutlet weak var textKyje: UILabel!
-    
-//    @IBOutlet weak var textBalance: UILabel!
+
     @IBAction func payChlick(sender: UIButton) {
         var jsonObject: [AnyObject] = []
         
@@ -80,7 +78,7 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
         setViewBackground()
         getBalanceResult()//取得账户余额
-        countMoney()//计算投注金额和可赢金额
+       
     }
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)    }
@@ -101,18 +99,12 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
             cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "shopingcell")
         }
         cell?.backgroundColor=UIColor.whiteColor()
-        var textMoney=UITextField(frame: CGRect(x: 170, y: 71, width: 97, height: 30))
+
         var btnDel=UIButton(frame: CGRect(x: 316, y: 80, width: 73, height: 53))
         btnDel.setImage(UIImage(named: "ibtn_delete_item"), forState: UIControlState.Normal)
         btnDel.setImage(UIImage(named: "ibtn_delete_select"), forState: UIControlState.Selected)
         btnDel.tag=indexPath.row
-        textMoney.clearButtonMode=UITextFieldViewMode.WhileEditing
-        textMoney.tag=indexPath.row
-        textMoney.keyboardType=UIKeyboardType.NumberPad
-        textMoney.borderStyle=UITextBorderStyle.Line
-        textMoney.backgroundColor=UIColor.whiteColor()
-        textMoney.delegate=self
-        cell!.addSubview(textMoney)
+
         cell?.addSubview(btnDel)
         var lableV=cell?.viewWithTag(5) as! UILabel
         var lableH=cell?.viewWithTag(6) as! UILabel
@@ -128,9 +120,6 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         lableRate.text=betList![indexPath.row].rate
         lableKY.text=betList![indexPath.row].kyje
         lableDC.text=betList![indexPath.row].dcsx
-        textMoney.text=betList![indexPath.row].dMoney
-        lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
-        textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingDidEnd)
         btnDel.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchDown)
         return cell!
         
@@ -148,39 +137,10 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         var intTag=sender.tag
         betList?.removeAtIndex(intTag)
         self.tableList.reloadData()
-        countMoney()
-        
-    }
-    //计算可赢金额方法
-    func changeMoney(sender:UITextField){
-        var intTag=sender.tag
-        var objBet=betList![intTag]
-        objBet.dMoney=sender.text!
-        var betMoney=Double(objBet.dMoney)
-        var dRate=Double(objBet.rate)
-        var winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
-        objBet.kyje="\(winMoney)"
-        betList![intTag]=objBet
-        print(sender.tag)
-        countMoney()
-        
-    }
-    
-    func countMoney(){
-        var betMoney:Double=0
-        var betKYJE:Double=0
-        for objBet in betList!{
-            if(objBet.dMoney != ""){
-                betMoney += Double(objBet.dMoney)!
-            }
-            if(objBet.kyje != ""){
-                betKYJE += Double(objBet.kyje)!
-            }
-            
-        }
       
-//        textKyje.text="\(betKYJE)"
+        
     }
+   
     
     //转json方法
     func toJSONString(jsonObject: [AnyObject])->NSString{
