@@ -218,7 +218,21 @@ class BallViewController: UIViewController {
         }
     }
     
-    //过关选择同一场赛事只可以一个赔率
+    //清除已经选中的赔率
+    func cleanOdds(orderCellModel:OrderCellModel,toolsCode: Int){
+        let betManger:BetListManager = BetListManager.sharedManager
+        let betList:[BetInfo] = betManger.betList
+        let count:Int = betList.count
+        for(var i = 0;i < count;i++ ){
+            if(betList[i].visitname == orderCellModel.N_VISIT_NAME
+                && betList[i].homename == orderCellModel.N_HOME_NAME
+                && betList[i].Index == String(toolsCode)){
+                betManger.betList.removeAtIndex(i)
+            }
+        }
+    }
+    
+    //过关下注，删除同一场赛事前面选中的赔率
     func onlySelect(betinfo:BetInfo){
         
         let betManger:BetListManager = BetListManager.sharedManager
@@ -263,21 +277,25 @@ class BallViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    //清除已经选中的所有赔率
+    func clearAllOdds(){
+        let betManger = BetListManager.sharedManager
+        for bet in betManger.betList {
+            self.synchronizationData(bet)
+        }
+        if self.mContentView.subviews.count == 2 {
+            let tableView:TableView = self.mContentView.subviews[1] as! TableView
+            tableView.reloadData()
+        }
+        betManger.betList.removeAll(keepCapacity: false)
+    }
     
     //初始化购物车清空Alert
     func initCartClear()->UIAlertController{
         let alertCart:UIAlertController = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
         
         let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
-            let betManger = BetListManager.sharedManager
-            for bet in betManger.betList {
-                self.synchronizationData(bet)
-            }
-            if self.mContentView.subviews.count == 2 {
-                let tableView:TableView = self.mContentView.subviews[1] as! TableView
-                tableView.reloadData()
-            }
-            betManger.betList.removeAll(keepCapacity: false)
+            self.clearAllOdds()
         }
         let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
         
@@ -363,6 +381,7 @@ class BallViewController: UIViewController {
         let tempRate = ToolsCode.codeBy(toolsCode)
         
         let betInfo:BetInfoModel = BetInfoModel()//下注model
+        betInfo.Index = String(toolsCode)
         betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
         betInfo.playType = playType
         betInfo.lr = (tempBetName == "H" ? "R" : tempBetName)
@@ -424,6 +443,9 @@ class BallViewController: UIViewController {
             alertView.myView.limits.text = dzxx + "~" + dzsx
             alertView.myView.max.text = dzsx
             alertView.myView.strPlayType = betInfo.playType
+        } else {
+            let betManger = BetListManager.sharedManager
+            betManger.betList.append(betInfo)
         }
     }
 }
