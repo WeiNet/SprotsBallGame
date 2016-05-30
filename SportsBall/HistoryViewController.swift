@@ -91,15 +91,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         labType.text=xzdh
         labOut.text="已投"+String(stringInterpolationSegment: xzje)
         labin.text="可赢"+String(stringInterpolationSegment: kyje)
-        var now = NSDate()
-        // Date 转 String
-        
-        // 方式2：自定义日期格式进行转换
-        var dateFormatter2 = NSDateFormatter()
-        dateFormatter2.dateFormat = "yyyy-MM-dd"
-        // Date 转 String
-        var nowString = dateFormatter2.stringFromDate(now)
-        labTime.text=nowString
+        labTime.text=ToolsCode.formatterDate(time,format: "MM/dd HH:mm")
         return cell!
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

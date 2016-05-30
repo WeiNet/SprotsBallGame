@@ -16,8 +16,15 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
     let button = UIButton(type: UIButtonType.Custom)
     var textViewMoney=UITextField()
     
+    @IBOutlet weak var view1: UIView!
+    
+    @IBOutlet weak var view2: UIView!
+    
+    @IBOutlet weak var view3: UIView!
+    
     @IBAction func btnSelectClick(sender: UIBarButtonItem) {
     }
+    
     //清除按钮
     @IBAction func btnClear(sender: AnyObject) {
         let alertView = UIAlertView()
@@ -39,16 +46,16 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
             if(betList?.isEmpty==false){
                 betList?.removeAll()
                 self.tableList.reloadData()
-                textKyje.text="0.0"
+//                textKyje.text="0.0"
             }
         }
     }
     @IBOutlet weak var tableList: UITableView!
     
   
-    @IBOutlet weak var textKyje: UILabel!
+//    @IBOutlet weak var textKyje: UILabel!
     
-    @IBOutlet weak var textBalance: UILabel!
+//    @IBOutlet weak var textBalance: UILabel!
     @IBAction func payChlick(sender: UIButton) {
         var jsonObject: [AnyObject] = []
         
@@ -71,6 +78,7 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         button.frame = CGRectMake(0, 163, 106, 53)
         button.adjustsImageWhenHighlighted = false
         button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
+        setViewBackground()
         getBalanceResult()//取得账户余额
         countMoney()//计算投注金额和可赢金额
     }
@@ -171,7 +179,7 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
             
         }
       
-        textKyje.text="\(betKYJE)"
+//        textKyje.text="\(betKYJE)"
     }
     
     //转json方法
@@ -199,7 +207,7 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         if(strType=="GetCreditResult"){
             NSLog(strResult)
             var result = ( strResult as NSString ).floatValue;
-            textBalance.text="\(result*10000)"
+//            textBalance.text="\(result*10000)"
         }
         
     }
@@ -279,6 +287,15 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
         strParam.appendContentsOf("</GetCredit>")
         comm.getResult(strParam,strResultName: "GetCreditResult")
+    }
+    func setViewBackground(){
+        
+        self.view1.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1).CGColor;
+        self.view1.layer.borderWidth = 1
+        self.view2.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1).CGColor;
+        self.view2.layer.borderWidth = 1
+        self.view3.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1).CGColor;
+        self.view3.layer.borderWidth = 1
     }
     
 }
