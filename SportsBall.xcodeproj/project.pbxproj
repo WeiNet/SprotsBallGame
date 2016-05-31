@@ -37,7 +37,6 @@
 		17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */; };
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
 		17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */; };
-		17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */; };
 		17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */; };
 		17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */; };
 		17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */; };
@@ -128,7 +127,6 @@
 		17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
 		17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
-		17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInfoModel.swift; sourceTree = "<group>"; };
 		17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellModel.swift; sourceTree = "<group>"; };
 		17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleInfo.swift; sourceTree = "<group>"; };
 		17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleModel.swift; sourceTree = "<group>"; };
@@ -317,7 +315,6 @@
 		17DA620F1CB8CC7A009070E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				17DA621C1CB8CDDC009070E6 /* BetInfoModel.swift */,
 				17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */,
 				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
 				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
@@ -626,7 +623,6 @@
 				17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
 				17C6EC091CD197F000DF71E1 /* RollViewController.swift in Sources */,
-				17DA62211CB8CDDC009070E6 /* BetInfoModel.swift in Sources */,
 				462BEE1D1C86958000E451E4 /* Other.swift in Sources */,
 				464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */,
 				17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */,
