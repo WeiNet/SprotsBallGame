@@ -15,7 +15,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     @IBOutlet var contentView: UIView!
     
     var common=CommonParameter()//网络请求
-    var betInfo:BetInfoModel = BetInfoModel()//下注model
+    var betInfo:BetInfo = BetInfo()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//0:早盘；1：单式；2：滚球
     var mUnionID = ""
@@ -228,8 +228,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
-    override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
-        var betInfo:BetInfoModel = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
+    override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfo{
+        var betInfo:BetInfo = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
         if (mPlayType == "0" || mPlayType == "1") {//早盘/单式
             
         } else if (mPlayType == "2") {//滚球
@@ -421,7 +421,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     
     //检验赔率是不是最新的
-    func checkBet(betInfo:BetInfoModel){
+    func checkBet(betInfo:BetInfo){
         common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")

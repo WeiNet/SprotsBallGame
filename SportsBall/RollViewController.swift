@@ -15,7 +15,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     @IBOutlet var contentView: UIView!
     
     var common=CommonParameter()//网络请求
-    var betInfo:BetInfoModel = BetInfoModel()//下注model
+    var betInfo:BetInfo = BetInfo()//下注model
     let alertView = SwiftCustomAlertView()//即时下注popu页面
     var mPlayType = "2"//2：滚球；3：让球、综合过关
     var mUnionID = ""
@@ -203,8 +203,8 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
-    override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
-        let betInfo:BetInfoModel = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
+    override func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfo{
+        let betInfo:BetInfo = super.fullBetInfo(orderCellModel, toolsCode: toolsCode)
         if (betInfo.playType == "DS") {
             let tempBetName = ToolsCode.codeByLRH(toolsCode)
             if (tempBetName == "L") {
@@ -243,7 +243,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     //检验赔率是不是最新的
-    func checkBet(betInfo:BetInfoModel){
+    func checkBet(betInfo:BetInfo){
         common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
