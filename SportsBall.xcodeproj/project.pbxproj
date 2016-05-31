@@ -71,6 +71,11 @@
 		4641573D1CD9F0A900838F32 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 4641573C1CD9F0A900838F32 /* HTML */; };
 		464245DB1CB63EA900C77849 /* ProblemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464245D91CB63EA900C77849 /* ProblemController.swift */; };
 		464245DC1CB63EA900C77849 /* ProblemFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */; };
+		466B3C601CFD30A700944C1F /* Ionicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B3C5F1CFD30A700944C1F /* Ionicons.swift */; };
+		466B3C621CFD318F00944C1F /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B3C611CFD318F00944C1F /* UIDropDown.swift */; };
+		466B3C651CFD3E0800944C1F /* Md5+Extension..swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B3C641CFD3E0800944C1F /* Md5+Extension..swift */; };
+		466B3C681CFD5CF200944C1F /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B3C671CFD5CF200944C1F /* Tool.swift */; };
+		466B3C6A1CFD886C00944C1F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B3C691CFD886C00944C1F /* UserInfo.swift */; };
 		46B9A02D1CEB1C1D006A5F4C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9A02C1CEB1C1D006A5F4C /* Reachability.swift */; };
 		46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */; };
 		46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C02DED1C8E780F007F6A50 /* ResultViewController.swift */; };
@@ -169,6 +174,11 @@
 		4641573C1CD9F0A900838F32 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		464245D91CB63EA900C77849 /* ProblemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemController.swift; sourceTree = "<group>"; };
 		464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemFeedbackViewController.swift; sourceTree = "<group>"; };
+		466B3C5F1CFD30A700944C1F /* Ionicons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ionicons.swift; sourceTree = "<group>"; };
+		466B3C611CFD318F00944C1F /* UIDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDropDown.swift; sourceTree = "<group>"; };
+		466B3C641CFD3E0800944C1F /* Md5+Extension..swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Md5+Extension..swift"; sourceTree = "<group>"; };
+		466B3C671CFD5CF200944C1F /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		466B3C691CFD886C00944C1F /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		46B9A02C1CEB1C1D006A5F4C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCenterView.swift; sourceTree = "<group>"; };
 		46C02DED1C8E780F007F6A50 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +357,9 @@
 		462BEDE61C8682E300E451E4 /* SportsBall */ = {
 			isa = PBXGroup;
 			children = (
+				466B3C661CFD5CCB00944C1F /* Tool */,
+				466B3C631CFD3D8E00944C1F /* Extension */,
+				466B3C581CFD2F4D00944C1F /* UIDropDown */,
 				4641573C1CD9F0A900838F32 /* HTML */,
 				1779BA491CCEF38F002A62DC /* match */,
 				1779BA4E1CCEF445002A62DC /* tableview */,
@@ -432,6 +445,7 @@
 				463295DC1CBB847A000EFEA9 /* BetInfo.swift */,
 				463295DA1CBB7F46000EFEA9 /* BetList.swift */,
 				462E11F81CB786BA00619A55 /* Bean_Questions.swift */,
+				466B3C691CFD886C00944C1F /* UserInfo.swift */,
 			);
 			name = Mode;
 			sourceTree = "<group>";
@@ -444,6 +458,31 @@
 				463E26311CF2D97100CE6F01 /* SportsBall-Bridging-Header.h */,
 			);
 			name = OC;
+			sourceTree = "<group>";
+		};
+		466B3C581CFD2F4D00944C1F /* UIDropDown */ = {
+			isa = PBXGroup;
+			children = (
+				466B3C5F1CFD30A700944C1F /* Ionicons.swift */,
+				466B3C611CFD318F00944C1F /* UIDropDown.swift */,
+			);
+			name = UIDropDown;
+			sourceTree = "<group>";
+		};
+		466B3C631CFD3D8E00944C1F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				466B3C641CFD3E0800944C1F /* Md5+Extension..swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		466B3C661CFD5CCB00944C1F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				466B3C671CFD5CF200944C1F /* Tool.swift */,
+			);
+			name = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +634,8 @@
 				1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */,
 				463295DD1CBB847A000EFEA9 /* BetInfo.swift in Sources */,
 				4641573B1CD9909F00838F32 /* HelpController.swift in Sources */,
+				466B3C681CFD5CF200944C1F /* Tool.swift in Sources */,
+				466B3C601CFD30A700944C1F /* Ionicons.swift in Sources */,
 				46DC74021CEC0E8600604D9B /* PassShopingViewController.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
 				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
@@ -602,6 +643,7 @@
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
 				1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
+				466B3C6A1CFD886C00944C1F /* UserInfo.swift in Sources */,
 				46C02DF21C8E789F007F6A50 /* GameHelpViewController.swift in Sources */,
 				46C02DEE1C8E780F007F6A50 /* ResultViewController.swift in Sources */,
 				17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */,
@@ -633,9 +675,11 @@
 				463EEB921CEAA99800708630 /* PayController.swift in Sources */,
 				463E26341CF2D97100CE6F01 /* NirKxMenu.m in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
+				466B3C651CFD3E0800944C1F /* Md5+Extension..swift in Sources */,
 				1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
+				466B3C621CFD318F00944C1F /* UIDropDown.swift in Sources */,
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
 				170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */,
 				17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */,
