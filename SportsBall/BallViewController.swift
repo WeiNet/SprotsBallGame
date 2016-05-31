@@ -329,7 +329,7 @@ class BallViewController: UIViewController {
 
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
-    func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfoModel{
+    func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfo{
         var id:String = String(orderCellModel.N_ID)
         var let1:String = String(orderCellModel.N_LET)
         var courtType:String = "1"
@@ -379,7 +379,7 @@ class BallViewController: UIViewController {
         }
         let tempRate = ToolsCode.codeBy(toolsCode)
         
-        let betInfo:BetInfoModel = BetInfoModel()//下注model
+        let betInfo:BetInfo = BetInfo()//下注model
         betInfo.Index = String(toolsCode)
         betInfo.strUser = "DEMOFZ-0P0P00"//USER??????????????????????????????????????????????????????????????
         betInfo.playType = playType
@@ -403,7 +403,7 @@ class BallViewController: UIViewController {
     }
     
     //第二次设定BetInfo属性，主要填入限额等
-    func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfoModel,alertView:SwiftCustomAlertView,isMultiselect:Bool){
+    func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfo,alertView:SwiftCustomAlertView,isMultiselect:Bool){
         betInfo.hbl = String(betInfoJson[0].objectForKey("newBl")!)
         betInfo.hfs = String(betInfoJson[0].objectForKey("newFs")!)
         betInfo.isjzf = String(betInfoJson[0].objectForKey("newjzf") == nil ?betInfoJson[0].objectForKey("isjzf")! : betInfoJson[0].objectForKey("newjzf")!)
