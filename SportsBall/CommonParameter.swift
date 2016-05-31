@@ -79,6 +79,55 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         }
     
     }
+    func getMoneyAddressResult(strParam:String ,strResultName:String){
+        let moneyAddressUrl:NSURL=NSURL(string:WebServiceMoneyAddress)!
+        let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
+        //        self.strRequestType=strType//设置请求类型
+        self.matchingElement=strResultName
+        let reachability = Reachability.reachabilityForInternetConnection()
+        
+        //判断连接状态
+        if reachability!.isReachable(){
+            
+        }else{
+            delegate?.setResult("WebError",strType: "Error")
+            return
+        }
+        
+        //判断连接类型
+        if reachability!.isReachableViaWiFi() {
+            
+            
+        }else if reachability!.isReachableViaWWAN() {
+            
+        }else {
+            delegate?.setResult("WebError",strType: "Error")
+            return
+        }
+        
+        let request = NSMutableURLRequest(URL: moneyAddressUrl)
+        var msgLength = String(soapMsg.characters.count)
+        
+        request.HTTPMethod = "POST"
+        request.HTTPBody = soapMsg.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        request.addValue("application/soap+xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue(msgLength, forHTTPHeaderField: "Content-Length")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (resp, data, error) -> Void in
+            //            print(resp)
+            if let e = error {
+                print(e)
+            }
+            if  let d = data {
+                //                print(NSString(data: d , encoding: NSUTF8StringEncoding))
+                self.xmlParser = NSXMLParser(data: d)
+                self.xmlParser.delegate = self
+                self.xmlParser.parse()
+                self.xmlParser.shouldResolveExternalEntities = true
+            }
+        }
+        
+    }
+
     func getSynchronousRequest(strParam:String ,strResultName:String){
         let soapMsg = getSoapMsg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (strParam)
         self.matchingElement=strResultName

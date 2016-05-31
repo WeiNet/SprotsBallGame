@@ -15,7 +15,7 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
     var intRowIndex:Int = 0
     let button = UIButton(type: UIButtonType.Custom)
     var textViewMoney=UITextField()
-    
+    var drop: UIDropDown!
     @IBOutlet weak var view1: UIView!
     
     @IBOutlet weak var view2: UIView!
@@ -77,8 +77,17 @@ class PassShopingViewController: UIViewController,UITableViewDataSource,UITableV
         button.adjustsImageWhenHighlighted = false
         button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
         setViewBackground()
+        addDropDownView()
         getBalanceResult()//取得账户余额
        
+    }
+    func addDropDownView(){
+        drop = UIDropDown(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
+        drop.center = CGPoint(x: CGRectGetMidX(self.view.frame), y: CGRectGetMidY(self.view.frame))
+//        drop.delegate = self
+        drop.options = ["Mexico", "EUA", "England", "France", "Germany", "Spain", "Italy", "Canada"]
+        drop.placeholder = "Select a country..."
+        self.view.addSubview(drop)
     }
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)    }

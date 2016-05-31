@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SportsBall" customModuleProvider="target">
             <connections>
                 <outlet property="btnLog" destination="lO1-Gh-nmK" id="opU-7a-9g9"/>
+                <outlet property="textUserNumber" destination="ulp-tq-hx8" id="fGw-0d-744"/>
+                <outlet property="textUserPW" destination="Qco-KF-tUi" id="54J-Gp-ogR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +21,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loginlogo" translatesAutoresizingMaskIntoConstraints="NO" id="zK8-v0-vDz">
                     <rect key="frame" x="136" y="113" width="264" height="128"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="用户名" adjustsFontSizeToFit="NO" minimumFontSize="40" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-tq-hx8">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="账号@站名首字母缩写" adjustsFontSizeToFit="NO" minimumFontSize="40" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-tq-hx8">
                     <rect key="frame" x="124" y="321" width="300" height="30"/>
                     <attributedString key="attributedText"/>
                     <textInputTraits key="textInputTraits"/>
@@ -36,7 +38,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-KF-tUi">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-KF-tUi">
                     <rect key="frame" x="124" y="381" width="300" height="30"/>
                     <attributedString key="attributedText"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
