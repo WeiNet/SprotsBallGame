@@ -223,7 +223,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         case 1 :
             isMultiselect = true
         default:
-            print("default")
+            print("defaul")
         }
     }
     
