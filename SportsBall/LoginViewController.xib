@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SportsBall" customModuleProvider="target">
             <connections>
+                <outlet property="activityView" destination="fuW-Pj-rgf" id="jbZ-3L-tdO"/>
                 <outlet property="btnLog" destination="lO1-Gh-nmK" id="opU-7a-9g9"/>
                 <outlet property="textUserNumber" destination="ulp-tq-hx8" id="fGw-0d-744"/>
                 <outlet property="textUserPW" destination="Qco-KF-tUi" id="54J-Gp-ogR"/>
@@ -63,6 +64,13 @@
                         <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="T1G-Sr-iFx"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fuW-Pj-rgf">
+                    <rect key="frame" x="249" y="289" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="NSt-tp-mHq"/>
+                        <constraint firstAttribute="height" constant="20" id="qJk-Qh-PRQ"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -78,6 +86,7 @@
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="GZF-Fn-XQQ"/>
                 <constraint firstAttribute="trailing" secondItem="Qco-KF-tUi" secondAttribute="trailing" constant="30" id="Ifd-6y-Yyi"/>
                 <constraint firstItem="oSW-Yg-tGe" firstAttribute="top" secondItem="Bf0-Ui-c4H" secondAttribute="bottom" id="J12-uP-ZbM"/>
+                <constraint firstItem="fuW-Pj-rgf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J2T-zq-wYn"/>
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="top" secondItem="Bf0-Ui-c4H" secondAttribute="top" id="LXZ-pA-Uj5"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="centerY" secondItem="oSW-Yg-tGe" secondAttribute="centerY" id="Mqw-H1-1eO"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="top" secondItem="ulp-tq-hx8" secondAttribute="bottom" constant="20" id="NS3-vL-SM4"/>
@@ -87,6 +96,7 @@
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="centerY" secondItem="Bf0-Ui-c4H" secondAttribute="centerY" id="YtH-IG-Npo"/>
                 <constraint firstAttribute="trailing" secondItem="lO1-Gh-nmK" secondAttribute="trailing" constant="30" id="bPu-JH-6n9"/>
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="leading" secondItem="Bf0-Ui-c4H" secondAttribute="trailing" constant="41" id="nDg-YS-vCK"/>
+                <constraint firstItem="fuW-Pj-rgf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rab-i9-AoG"/>
                 <constraint firstItem="ulp-tq-hx8" firstAttribute="top" secondItem="zK8-v0-vDz" secondAttribute="bottom" constant="60" id="uPT-vY-z7s"/>
                 <constraint firstAttribute="trailing" secondItem="ulp-tq-hx8" secondAttribute="trailing" constant="30" id="uho-vw-ux2"/>
                 <constraint firstItem="Qco-KF-tUi" firstAttribute="leading" secondItem="oSW-Yg-tGe" secondAttribute="trailing" constant="41" id="unw-YC-IMb"/>
