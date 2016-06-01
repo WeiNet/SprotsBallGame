@@ -56,7 +56,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         }
         if(strType == "WebError" || strResult == "Error"){
             let message = "网络连接异常!"
-            alertMessage(message, carrier: self)
+            alertMessage(message)
             return
         }
         if(strType == getOtherMatchResult){
@@ -73,7 +73,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
-            alertMessage(message, carrier: self)
+            alertMessage(message)
         }
     }
     

@@ -314,7 +314,7 @@ class BallViewController: UIViewController {
             let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            alertMessage("至少选择一场比赛", carrier: self)
+            alertMessage("至少选择一场比赛")
         }
     }
     
@@ -326,7 +326,7 @@ class BallViewController: UIViewController {
             let vc = sb.instantiateViewControllerWithIdentifier("PassShopingViewController") as! PassShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            alertMessage("至少选择两场比赛", carrier: self)
+            alertMessage("至少选择两场比赛")
         }
     }
 

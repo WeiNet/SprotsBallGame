@@ -52,8 +52,8 @@ extension UIViewController {
     func clearAllNotice() {
         SwiftNotice.clear()
     }
-    func alertMessage(message:String,carrier:UIViewController){
-        SwiftNotice.alertMessage(message,carrier:carrier)
+    func alertMessage(message:String){
+        SwiftNotice.alertMessage(message,carrier: self)
     }
 }
 
@@ -131,7 +131,8 @@ class SwiftNotice: NSObject {
     static func wait(imageNames: Array<UIImage> = Array<UIImage>(), timeInterval: Int = 0) {
         let frame = CGRectMake(0, 0, 78, 78)
         let window = UIWindow()
-        window.backgroundColor = UIColor.clearColor()
+//        window.backgroundColor = UIColor.clearColor()
+        window.alpha = 0.5
         let mainView = UIView()
         mainView.layer.cornerRadius = 12
         mainView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha: 0.8)
@@ -158,12 +159,13 @@ class SwiftNotice: NSObject {
             mainView.addSubview(ai)
         }
         
-        window.frame = frame
+//        window.frame = frame
         mainView.frame = frame
+        mainView.center = getRealCenter()
         
         window.windowLevel = UIWindowLevelAlert
-        window.center = getRealCenter()
-        // change orientation
+//        window.center = getRealCenter()
+        // change orientation 
         window.transform = CGAffineTransformMakeRotation(CGFloat(degree * M_PI / 180))
         window.hidden = false
         window.addSubview(mainView)

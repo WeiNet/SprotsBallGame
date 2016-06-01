@@ -67,7 +67,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         if(strType == "WebError" || strResult == "Error"){
             let message = "网络连接异常!"
-            alertMessage(message, carrier: self)
+            alertMessage(message)
             return
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
@@ -79,7 +79,9 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
-            alertMessage(message, carrier: self)
+            alertMessage(message)
+//            successNotice(message, autoClear: true)
+//            noticeSuccess(message, autoClear: true, autoClearTime: 10)
         }
     }
     //返回
