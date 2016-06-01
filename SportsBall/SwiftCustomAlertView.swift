@@ -88,8 +88,17 @@ class SwiftCustomAlertView: UIView {
     
     //计算可赢金额方法
     func changeMoney(sender:UITextField){
-        let money = (myView.money.text == "" ? "0" : myView.money.text)
-        let betMoney = Double(money!)
+        var money = "0"
+        if myView.money.text == "" {
+            money = "0"
+            myView.okButton.enabled = false
+            myView.okButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        }else{
+            money = myView.money.text!
+            myView.okButton.enabled = true
+            myView.okButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        }
+        let betMoney = Double(money)
         let dRate = Double(myView.rate.text!)
         myView.gain.text = String(calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!))
     }
