@@ -30,7 +30,7 @@ class SwiftCustomAlertView: UIView {
     
     private var viewX:Double!
     private var viewY:Double!
-    private var viewWidth: Double = 350.0
+    private var viewWidth: Double = 0
     private var viewHeight: Double = 214.0
     
     @IBOutlet var cancelButton: UIButton!
@@ -64,6 +64,7 @@ class SwiftCustomAlertView: UIView {
     
     func showWin(view: UIView,viewDelegate myDelegate: SwiftCustomAlertViewDelegate) {
         let viewWin = view.frame.size
+        viewWidth = Double(viewWin.width) - 40
         viewX = (Double(viewWin.width) - viewWidth)/2
         viewY = (Double(viewWin.height) - viewHeight)/2
         //加载设计好的XIB
@@ -71,10 +72,11 @@ class SwiftCustomAlertView: UIView {
         
         myView.layer.cornerRadius = CGFloat(cornerRadius)
         myView.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
+        ToolsCode.setCornerRadius(myView)
         //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
-        bottom.alpha = 0.8
+        bottom.alpha = 0.5
         view.addSubview(bottom)
         myView.bottom = bottom
         myView.delegate = myDelegate

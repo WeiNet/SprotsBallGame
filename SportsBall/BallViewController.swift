@@ -173,11 +173,14 @@ class BallViewController: UIViewController {
         //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
-        bottom.alpha = 0.8
+        bottom.alpha = 0.5
         
+        let viewWidth:Double = Double(view.frame.size.width) - 50
+        let viewHeight:Double = Double(view.frame.size.height) - 60
         let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
-        myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
+        myView?.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
         myView?.center = self.view.center
+        ToolsCode.setCornerRadius(myView!)
         
         if myView != nil {
             let window: UIWindow = UIApplication.sharedApplication().keyWindow!

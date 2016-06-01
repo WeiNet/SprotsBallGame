@@ -397,4 +397,9 @@ struct ToolsCode {
         
         return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
     }
+    //设定圆角半径
+    static func setCornerRadius(myView:UIView){
+        myView.layer.masksToBounds = true
+        myView.layer.cornerRadius = 10// 自己修改为所需的圆角弧度
+    }
 }
