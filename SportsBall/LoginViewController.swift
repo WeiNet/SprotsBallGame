@@ -12,6 +12,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     var tmpString: String = String()
     var common=CommonParameter()//网络请求
     
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     @IBOutlet weak var btnLog: UIButton!
     
@@ -24,9 +25,9 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         common.delegate=self
         self.textUserNumber.delegate=self
         self.textUserPW.delegate=self
-        
+//        self.activityView.
         self.navigationController?.navigationBarHidden=true
-        
+        self.activityView.hidesWhenStopped=true
         
         // Do any additional setup after loading the view.
     }
@@ -49,6 +50,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
             Tool.showMsg("密码不能为空")
             return
         }
+        self.activityView.startAnimating()
         loginMoney()
         
 
@@ -91,13 +93,16 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         
     }
     func setResult(strResult: String,strType:String) {
-       
-//        if(strType=="Error"){
-//            Tool.showMsg("系统错误")
-//            return
-//        }
+        
+        self.activityView.stopAnimating()
+        if(strType=="Error" && strResult=="WebError"){
+            Tool.showMsg("网络错误，请检查网络")
+           
+            return
+        }
         if(strResult==""){
              Tool.showMsg("系统错误")
+           
             return
         }
         if(strType=="GetDQUserResult"){
@@ -127,6 +132,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
                 Tool.showMsg("用户名或密码错误")
                 return
             }
+            
             UserInfoManager.sharedManager.setUserID(strUserID)
             UserInfoManager.sharedManager.setUserName(strUserName)
             UserInfoManager.sharedManager.setCredit(strCredit)
