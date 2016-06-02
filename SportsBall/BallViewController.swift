@@ -439,10 +439,14 @@ class BallViewController: UIViewController {
             alertView.myView.home.text = betInfo.homename
             let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
             let betteamName = String(betInfoJson[0].objectForKey("betteamName")!)
-            alertView.myView.betText.text =  betteamName+"  @ "+String(format: "%.3f", newRate.floatValue)
+            let newRateTemp = String(format: "%.3f", newRate.floatValue)
+            alertView.myView.betText.text =  betteamName+"  @ " + newRateTemp
             alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
-            alertView.myView.limits.text = dzxx + "~" + dzsx
             alertView.myView.max.text = dzsx
+            alertView.myView.limits.text = dzxx + "~" + dzsx
+            alertView.myView.iMin = Int(dzxx)!
+            alertView.myView.iMax = Int(dzsx)!
+            alertView.myView.gain.text = alertView.myView.calculateWinMoney(betInfo.playType,intBet: 10,dRale: Double(newRateTemp)!)
             alertView.myView.strPlayType = betInfo.playType
         } else {
             let betManger = BetListManager.sharedManager

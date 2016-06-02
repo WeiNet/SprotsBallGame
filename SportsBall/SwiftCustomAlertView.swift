@@ -40,6 +40,8 @@ class SwiftCustomAlertView: UIView {
     var bottom:UIView!
     var myView:SwiftCustomAlertView!
     var strPlayType:String!
+    var iMin:Int = 0
+    var iMax:Int = 0
     
     weak var delegate: SwiftCustomAlertViewDelegate?
     
@@ -88,35 +90,35 @@ class SwiftCustomAlertView: UIView {
     
     //计算可赢金额方法
     func changeMoney(sender:UITextField){
-        var money = "0"
-        if myView.money.text == "" {
-            money = "0"
+        var money = (myView.money.text == "" ? "0" : myView.money.text)
+        if (myView.iMin > Int(money!)) {
             myView.okButton.enabled = false
             myView.okButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
         }else{
             money = myView.money.text!
+            if (myView.iMax < Int(money!)){
+                myView.money.text = String(myView.iMax)
+                money = myView.money.text!
+            }
             myView.okButton.enabled = true
             myView.okButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         }
-        let betMoney = Double(money)
+        let betMoney = Double(money!)
         let dRate = Double(myView.rate.text!)
-        myView.gain.text = String(calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!))
+        myView.gain.text = calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!)
     }
     
     //计算可赢金额
-    func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->Double{
+    func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->String{
         var winbet:Double=0.0
         switch(strPlayType){
-        case "ZDRF","ZDDX","RF","DX":
-            winbet = intBet * dRale;
-            break
-        case "ZDDS","ZDDY","DS","DY","HJ":
-            winbet = intBet * dRale - intBet;
+        case "RF","ZDRF","DX","ZDDX","DS","ZDDS":
+            winbet = intBet * dRale
             break
         default:
-            winbet = intBet * dRale - intBet;
+            winbet = intBet * dRale - intBet
             break
         }
-        return winbet
+        return String(format: "%.2f",winbet)
     }
 }
