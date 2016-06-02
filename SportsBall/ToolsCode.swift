@@ -397,9 +397,87 @@ struct ToolsCode {
         
         return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
     }
+    
     //设定圆角半径
     static func setCornerRadius(myView:UIView){
         myView.layer.masksToBounds = true
         myView.layer.cornerRadius = 10// 自己修改为所需的圆角弧度
+    }
+    
+    //计算可赢金额
+    static func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->String{
+        var winbet:Double=0.0
+        switch(strPlayType){
+        case "RF","ZDRF","DX","ZDDX","DS","ZDDS":
+            winbet = intBet * dRale
+            break
+        default:
+            winbet = intBet * dRale - intBet
+            break
+        }
+        return String(format: "%.2f",winbet)
+    }
+    
+    //注单文本显示
+    static func orderText(betInfo:BetInfo)->String{
+        var orderText:String = ""
+        let strPlayType:String = betInfo.playType
+        let betteamName:String = betInfo.betteamName
+        let rate:String = betInfo.rate
+        if(betInfo.playType == ""){
+            return orderText
+        }
+        switch(strPlayType){
+        case "HJ","ZDHJ":
+            orderText = "和局 @"+rate
+        case "DY","ZDDY":
+            orderText = "独赢 "+betteamName+" @"+rate
+        case "RF","ZDRF":
+            let head = ToolsCode.getBallHead(Int(betInfo.hfs)!, bl: Int(betInfo.hbl)!, lx: Int(betInfo.hlx)!)
+            orderText = head+" "+betteamName+" @"+rate
+        case "DX","ZDDX":
+            let head = ToolsCode.getBallHead(Int(betInfo.hfs)!, bl: Int(betInfo.hbl)!, lx: Int(betInfo.hlx)!)
+            orderText = head+" "+betteamName+" @"+rate
+        case "DS","DS":
+            orderText = betteamName+" @"+rate
+        default:
+            orderText = ""
+        }
+        if(strPlayType.containsString("BD")){
+            orderText = betteamName+" "+betInfo.ballhead+" @"+rate
+            if(betInfo.ballhead == "5:"){
+                orderText = "其它 @"+rate
+            }
+        }
+        if(strPlayType.containsString("RQS")){
+            if(betInfo.ballhead == "d" || betInfo.ballhead == "s"){
+                orderText = "总入球数 "+(betInfo.ballhead=="d" ?"单":"双")+" @"+rate
+            }else{
+                orderText = "总入球数 "+betInfo.ballhead+" @"+rate
+            }
+        }
+        if(strPlayType.containsString("BQC")){
+            orderText = "半全场 "+betInfo.ballhead+" @"+rate
+        }
+        return orderText
+    }
+    
+    //tableView没有资料显示
+    static func tableViewDisplayWitMsg(tableView: UITableView,rowCount:Int,message:String="暂无竟猜赛事"){
+        if (rowCount == 0) {
+            // 没有数据的时候，UILabel的显示样式
+            let messageLabel:UILabel = UILabel()
+            messageLabel.text = message;
+            messageLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+            messageLabel.textColor = UIColor.lightGrayColor()
+            messageLabel.textAlignment = NSTextAlignment.Center
+            messageLabel.sizeToFit()
+            
+            tableView.backgroundView = messageLabel;
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        } else {
+            tableView.backgroundView = nil;
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        }
     }
 }

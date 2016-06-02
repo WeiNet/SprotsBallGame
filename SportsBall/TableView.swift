@@ -124,26 +124,8 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     //联盟显示多少行
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         throwError()
-        tableViewDisplayWitMsg("暂无竟猜赛事", rowCount: infoArray.count)
+        ToolsCode.tableViewDisplayWitMsg(self, rowCount: infoArray.count)
         return infoArray.count
-    }
-    
-    func tableViewDisplayWitMsg(message:String,rowCount:Int){
-        if (rowCount == 0) {
-            // 没有数据的时候，UILabel的显示样式
-            let messageLabel:UILabel = UILabel()
-            messageLabel.text = message;
-            messageLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-            messageLabel.textColor = UIColor.lightGrayColor()
-            messageLabel.textAlignment = NSTextAlignment.Center
-            messageLabel.sizeToFit()
-            
-            self.backgroundView = messageLabel;
-            self.separatorStyle = UITableViewCellSeparatorStyle.None
-        } else {
-            self.backgroundView = nil;
-            self.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        }
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -105,20 +105,8 @@ class SwiftCustomAlertView: UIView {
         }
         let betMoney = Double(money!)
         let dRate = Double(myView.rate.text!)
-        myView.gain.text = calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!)
+        myView.gain.text = ToolsCode.calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!)
     }
     
-    //计算可赢金额
-    func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->String{
-        var winbet:Double=0.0
-        switch(strPlayType){
-        case "RF","ZDRF","DX","ZDDX","DS","ZDDS":
-            winbet = intBet * dRale
-            break
-        default:
-            winbet = intBet * dRale - intBet
-            break
-        }
-        return String(format: "%.2f",winbet)
-    }
+
 }
