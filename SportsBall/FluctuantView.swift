@@ -132,6 +132,7 @@ class FluctuantView: OrderView {
         
         N_BDZPL5View.tag = ToolsCode.BDZPL5View
     }
+    
     //注册点击事件
     override func addGestureRecognizer(){
         N_BDZPL10View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -164,6 +165,7 @@ class FluctuantView: OrderView {
         
         N_BDZPL5View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
+    
     override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
@@ -176,6 +178,7 @@ class FluctuantView: OrderView {
             ToolsCode.setBackground(view,select:!select)
         }
     }
+    
     //注单赋值前清空重用控件
     override func clear(){
         N_BDZPL10.text = ""
@@ -208,6 +211,7 @@ class FluctuantView: OrderView {
         
         N_BDZPL5.text = ""
     }
+    
     //资料的显示
     override func showData(){
         N_BDZPL10.text = orderCellModel.N_BDZPL10 != nil ? String(orderCellModel.N_BDZPL10.floatValue) : ""
@@ -240,6 +244,7 @@ class FluctuantView: OrderView {
         
         N_BDZPL5.text = orderCellModel.N_BDKPL5 != nil ? String(orderCellModel.N_BDKPL5.floatValue) : ""
     }
+    
     //背景的填充
     override func fillBackground(){
         ToolsCode.setBackground(N_BDZPL10View,select: orderCellModel.N_BDZPL10_SEL)

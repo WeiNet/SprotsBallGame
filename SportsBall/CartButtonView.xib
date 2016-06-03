@@ -8,14 +8,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CartButtonView" customModule="SportsBall" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-fh-loK">
-                    <rect key="frame" x="0.0" y="0.0" width="70" height="48"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-fh-loK">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="46" id="49j-oj-FfS"/>
-                        <constraint firstAttribute="width" constant="70" id="gKL-48-jz8"/>
+                        <constraint firstAttribute="width" constant="70" id="9TX-hb-T8j"/>
+                        <constraint firstAttribute="height" constant="40" id="ToH-mQ-SXV"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="清空">
@@ -25,20 +25,19 @@
                         <action selector="clear:" destination="iN0-l3-epB" eventType="touchUpInside" id="2J4-7Q-NqJ"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JQy-kz-ssS">
-                    <rect key="frame" x="125" y="10" width="150" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JQy-kz-ssS">
+                    <rect key="frame" x="125" y="6" width="150" height="29"/>
                     <segments>
                         <segment title="单笔下注"/>
                         <segment title="多笔下注"/>
                     </segments>
                     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-zl-esp">
-                    <rect key="frame" x="330" y="0.0" width="70" height="48"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-zl-esp">
+                    <rect key="frame" x="330" y="0.0" width="70" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="46" id="1kY-E7-iaa"/>
-                        <constraint firstAttribute="width" constant="70" id="AGa-uN-pxu"/>
+                        <constraint firstAttribute="height" constant="40" id="J9r-nT-5TW"/>
+                        <constraint firstAttribute="width" constant="70" id="fnx-fI-5Mp"/>
                     </constraints>
                     <state key="normal" image="cart"/>
                     <connections>
@@ -48,14 +47,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="L1J-zl-esp" secondAttribute="bottom" id="4mJ-ZL-Sfv"/>
-                <constraint firstItem="JQy-kz-ssS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ato-5h-2YR"/>
-                <constraint firstItem="JQy-kz-ssS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Hmh-hM-HyZ"/>
-                <constraint firstItem="Uuu-fh-loK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I5a-1e-Sjc"/>
-                <constraint firstItem="L1J-zl-esp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="L8U-iL-1nY"/>
-                <constraint firstAttribute="bottom" secondItem="Uuu-fh-loK" secondAttribute="bottom" id="Mvy-7d-xnV"/>
-                <constraint firstAttribute="trailing" secondItem="L1J-zl-esp" secondAttribute="trailing" id="ZxB-NV-s01"/>
-                <constraint firstItem="Uuu-fh-loK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dQu-SE-rWk"/>
+                <constraint firstItem="Uuu-fh-loK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kon-r2-hnS"/>
+                <constraint firstAttribute="trailing" secondItem="L1J-zl-esp" secondAttribute="trailing" id="ooh-gB-fuz"/>
+                <constraint firstItem="JQy-kz-ssS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="reS-FI-5O1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

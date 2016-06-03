@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -69,12 +69,10 @@
                                     <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="上海绿地" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-Gk-KdK">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="上海绿地" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-Gk-KdK">
                                     <rect key="frame" x="284" y="0.0" width="198" height="32"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="228" id="6TY-se-wkD"/>
                                         <constraint firstAttribute="height" constant="32" id="guZ-TH-Wa7"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="228" id="w1L-G5-72n"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,10 +93,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwm-jq-4hv">
-                            <rect key="frame" x="0.0" y="74" width="482" height="50"/>
+                            <rect key="frame" x="0.0" y="74" width="482" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="青岛中能 主胜 @2.406" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGC-fc-HSv">
-                                    <rect key="frame" x="10" y="0.0" width="320" height="25"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="青岛中能 主胜 @2.406" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGC-fc-HSv">
+                                    <rect key="frame" x="10" y="0.0" width="320" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="37z-0g-eSB"/>
                                     </constraints>
@@ -107,7 +105,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="赔率:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlv-8n-Xu4">
-                                    <rect key="frame" x="10" y="25" width="45" height="23"/>
+                                    <rect key="frame" x="10" y="32" width="45" height="23"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="23" id="n1b-7A-DwV"/>
                                     </constraints>
@@ -115,8 +113,8 @@
                                     <color key="textColor" red="0.52549019607843139" green="0.52549019607843139" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-9Z-F0R">
-                                    <rect key="frame" x="55" y="25" width="42" height="23"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="333.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-9Z-F0R">
+                                    <rect key="frame" x="55" y="32" width="65" height="23"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="23" id="3Tb-nc-8IW"/>
                                     </constraints>
@@ -125,7 +123,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="可赢:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lp-oV-JSO">
-                                    <rect key="frame" x="110" y="25" width="45" height="23"/>
+                                    <rect key="frame" x="110" y="32" width="45" height="23"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="23" id="AoR-U1-6R8"/>
                                     </constraints>
@@ -134,7 +132,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzr-4T-yE3">
-                                    <rect key="frame" x="155" y="25" width="42" height="23"/>
+                                    <rect key="frame" x="155" y="32" width="42" height="23"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="23" id="Dcy-CW-NXS"/>
                                     </constraints>
@@ -143,27 +141,30 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iMb-9e-5c7">
-                                    <rect key="frame" x="417" y="10" width="58" height="30"/>
+                                    <rect key="frame" x="417" y="15" width="58" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="58" id="ca6-Ez-Wls"/>
                                     </constraints>
                                     <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="27P-x8-GNV"/>
+                                <constraint firstAttribute="height" constant="55" id="27P-x8-GNV"/>
                                 <constraint firstItem="wlv-8n-Xu4" firstAttribute="leading" secondItem="UGC-fc-HSv" secondAttribute="leading" id="54N-VA-pVK"/>
+                                <constraint firstItem="iMb-9e-5c7" firstAttribute="leading" secondItem="UGC-fc-HSv" secondAttribute="trailing" constant="10" id="AZZ-Ho-CJF"/>
+                                <constraint firstItem="UGC-fc-HSv" firstAttribute="leading" secondItem="qwm-jq-4hv" secondAttribute="leading" constant="10" id="Eal-hM-fC1"/>
                                 <constraint firstItem="wHn-9Z-F0R" firstAttribute="leading" secondItem="wlv-8n-Xu4" secondAttribute="trailing" id="gNG-CJ-v3Q"/>
                                 <constraint firstItem="hzr-4T-yE3" firstAttribute="leading" secondItem="4Lp-oV-JSO" secondAttribute="trailing" id="opw-LJ-1bL"/>
+                                <constraint firstItem="iMb-9e-5c7" firstAttribute="centerY" secondItem="qwm-jq-4hv" secondAttribute="centerY" id="s92-Ma-eAK"/>
                                 <constraint firstAttribute="trailing" secondItem="iMb-9e-5c7" secondAttribute="trailing" constant="10" id="xSV-b2-p9r"/>
                                 <constraint firstItem="4Lp-oV-JSO" firstAttribute="leading" secondItem="wHn-9Z-F0R" secondAttribute="trailing" constant="13" id="zjh-pG-YJn"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7u-Mc-Nzr">
-                            <rect key="frame" x="0.0" y="125" width="482" height="40"/>
+                            <rect key="frame" x="0.0" y="130" width="482" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="本场比赛可下注:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKv-3y-vdu">
                                     <rect key="frame" x="10" y="0.0" width="90" height="40"/>
@@ -212,7 +213,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZ0-so-9jL">
-                            <rect key="frame" x="0.0" y="166" width="240" height="48"/>
+                            <rect key="frame" x="0.0" y="171" width="240" height="48"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="jIA-Ck-wxQ"/>
@@ -225,7 +226,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxX-CQ-KKK">
-                            <rect key="frame" x="242" y="166" width="240" height="48"/>
+                            <rect key="frame" x="242" y="171" width="240" height="48"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="ifR-EK-trB"/>

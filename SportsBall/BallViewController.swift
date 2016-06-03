@@ -10,9 +10,9 @@ import UIKit
 
 class BallViewController: UIViewController {
     var mContentView:UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -23,9 +23,6 @@ class BallViewController: UIViewController {
     
     //创建玩法菜单
     func createMenu(title:String,message:String,menuArray: Array<Dictionary<String,String>>)->UIAlertController{
-//        if(menuArray.count <= 0){
-//            return nil
-//        }
         let alertMenu:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         for menu in menuArray {
             for (key,value) in menu {
@@ -96,7 +93,6 @@ class BallViewController: UIViewController {
         return aryUnionInfo
     }
     
-    
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat,playType:String,isPass:Bool){
         mContentView = contentView
@@ -119,31 +115,16 @@ class BallViewController: UIViewController {
             if isPass {
                 cartButtonView?.segment.hidden = true
             }
-            cartButtonView?.frame = CGRect(x: 0, y: 0, width: width, height: 48)
+            cartButtonView?.frame = CGRect(x: 0, y: 0, width: width, height: 40)
             cartButtonView?.delegate = cartDelegate
             cartButtonView?.segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
             contentView.addSubview(cartButtonView!)
             //添加购物车控件后Y轴空出
-            startY = startY + 48
-            height = height - 48
+            startY = startY + 40
+            height = height - 40
         }
         
-//        if (playType != "2") {
-//            //先创建一个数组用于设置分段控件的标题
-//            let appsArray:[String] = ["即时下注","复合下注"]
-//            let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
-//            segment.frame = CGRect(x: (width-180)/2, y: height + 75, width: 180, height: 20)
-//            //默认选中下标为0的
-//            segment.selectedSegmentIndex = 0
-//            //设置标题颜色
-//            segment.tintColor = UIColor.redColor()
-//            //添加事件，当segment改变时，触发 Parent
-//            segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
-//            mainView.addSubview(segment)
-//            height = height - 26
-//        }
-        
-        let cgr = CGRect(x: 0, y: startY, width: width, height: height)// - 20 - 36)
+        let cgr = CGRect(x: 0, y: startY, width: width, height: height)
         let tableView = TableView(frame: cgr)
         tableView.initDelegate(showUnion)
         tableView.orderHeight = orderHeight
@@ -173,11 +154,14 @@ class BallViewController: UIViewController {
         //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
-        bottom.alpha = 0.8
+        bottom.alpha = 0.5
         
+        let viewWidth:Double = Double(view.frame.size.width) - 50
+        let viewHeight:Double = Double(view.frame.size.height) - 60
         let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
-        myView?.frame = CGRect(x: 0, y: 0, width: 350, height: 600)
+        myView?.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
         myView?.center = self.view.center
+        ToolsCode.setCornerRadius(myView!)
         
         if myView != nil {
             let window: UIWindow = UIApplication.sharedApplication().keyWindow!
@@ -276,6 +260,7 @@ class BallViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
     //清除已经选中的所有赔率
     func clearAllOdds(){
         let betManger = BetListManager.sharedManager
@@ -311,7 +296,7 @@ class BallViewController: UIViewController {
             let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            alertMessage("至少选择一场比赛", carrier: self)
+            alertMessage("至少选择一场比赛")
         }
     }
     
@@ -323,10 +308,9 @@ class BallViewController: UIViewController {
             let vc = sb.instantiateViewControllerWithIdentifier("PassShopingViewController") as! PassShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            alertMessage("至少选择两场比赛", carrier: self)
+            alertMessage("至少选择两场比赛")
         }
     }
-
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
     func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfo{
@@ -420,7 +404,6 @@ class BallViewController: UIViewController {
         let dzsx = String(betInfoJson[0].objectForKey("dzsx")!)
         betInfo.dzsx = dzsx
         betInfo.dcsx = String(betInfoJson[0].objectForKey("dcsx")!)
-        //        betInfo.courtType = String(betInfoJson[0].objectForKey("courtType")!)
         if(!isMultiselect){
             alertView.myView.visit.text = betInfo.visitname + "[主]"
             let isScore = String(betInfoJson[0].objectForKey("isjzf")!)
@@ -435,15 +418,29 @@ class BallViewController: UIViewController {
             }
             alertView.myView.home.text = betInfo.homename
             let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
-            let betteamName = String(betInfoJson[0].objectForKey("betteamName")!)
-            alertView.myView.betText.text =  betteamName+"  @ "+String(format: "%.3f", newRate.floatValue)
+            let newRateTemp = String(format: "%.3f", newRate.floatValue)
+            alertView.myView.betText.text = ToolsCode.orderText(betInfo)
             alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
-            alertView.myView.limits.text = dzxx + "~" + dzsx
             alertView.myView.max.text = dzsx
+            alertView.myView.limits.text = dzxx + "~" + dzsx
+            alertView.myView.iMin = Int(dzxx)!
+            alertView.myView.iMax = Int(dzsx)!
+            alertView.myView.gain.text = ToolsCode.calculateWinMoney(betInfo.playType,intBet: 10,dRale: Double(newRateTemp)!)
             alertView.myView.strPlayType = betInfo.playType
         } else {
             let betManger = BetListManager.sharedManager
             betManger.betList.append(betInfo)
         }
+    }
+    
+    //ios隐藏状态栏
+    override func prefersStatusBarHidden() -> Bool {
+        //UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        return true
+    }
+
+    //ios隐藏导航栏
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

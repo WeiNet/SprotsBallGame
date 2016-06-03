@@ -67,7 +67,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }
         if(strType == "WebError" || strResult == "Error"){
             let message = "网络连接异常!"
-            alertMessage(message, carrier: self)
+            alertMessage(message)
             return
         }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
@@ -79,7 +79,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
-            alertMessage(message, carrier: self)
+            alertMessage(message)
         }
     }
     //返回
@@ -223,7 +223,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         case 1 :
             isMultiselect = true
         default:
-            print("default")
+            print("defaul")
         }
     }
     
@@ -413,8 +413,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>20000</strPageSize>")
         strParam.appendContentsOf("<strUser></strUser>")
-        //0:早盘；1：单式；2：滚球
-        //        strParam.appendContentsOf("<strType>2</strType>")
         strParam.appendContentsOf("<strType>\(mPlayType)</strType>")
         strParam.appendContentsOf("</GetFootballMatch>")
         common.getResult(strParam,strResultName: getFootballMatchResult)
@@ -424,7 +422,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         super.viewDidLoad()
         //头部
         let headerView = NSBundle.mainBundle().loadNibNamed("HeaderView" , owner: nil, options: nil).first as? HeaderView
-        headerView?.frame.size.height = 48
+        headerView?.frame.size.height = 42
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
@@ -440,15 +438,5 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             let tableView:TableView = self.mContentView.subviews[1] as! TableView
             tableView.reloadData()
         }
-    }
-    
-    //ios隐藏状态栏
-    override func prefersStatusBarHidden() -> Bool {
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-        return true
-    }
-    //ios隐藏导航栏
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

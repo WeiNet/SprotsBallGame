@@ -31,6 +31,7 @@ class FieldView: OrderView {
     @IBOutlet var N_BQCKKView: UIView!
     @IBOutlet var N_BQCKK: UILabel!
     /*******************************注单控件*******************************/
+    
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     override func userInteractionEnabled(){
         N_BQCZZView.userInteractionEnabled = true
@@ -53,6 +54,7 @@ class FieldView: OrderView {
         N_BQCKHView.tag = ToolsCode.BQCKHView
         N_BQCKKView.tag = ToolsCode.BQCKKView
     }
+    
     //注册点击事件
     override func addGestureRecognizer(){
         N_BQCZZView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -65,6 +67,7 @@ class FieldView: OrderView {
         N_BQCKHView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_BQCKKView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
+    
     override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
@@ -77,6 +80,7 @@ class FieldView: OrderView {
             ToolsCode.setBackground(view,select:!select)
         }
     }
+    
     //注单赋值前清空重用控件
     override func clear(){
         N_BQCZZ.text = ""
@@ -89,6 +93,7 @@ class FieldView: OrderView {
         N_BQCKH.text = ""
         N_BQCKK.text = ""
     }
+    
     //资料的显示
     override func showData(){
         N_BQCZZ.text = orderCellModel.N_BQCZZ != nil ? String(orderCellModel.N_BQCZZ.floatValue) : ""
@@ -101,6 +106,7 @@ class FieldView: OrderView {
         N_BQCKH.text = orderCellModel.N_BQCKH != nil ? String(orderCellModel.N_BQCKH.floatValue) : ""
         N_BQCKK.text = orderCellModel.N_BQCKK != nil ? String(orderCellModel.N_BQCKK.floatValue) : ""
     }
+    
     //背景的填充
     override func fillBackground(){
         ToolsCode.setBackground(N_BQCZZView,select: orderCellModel.N_BQCZZ_SEL)

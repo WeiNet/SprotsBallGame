@@ -12,7 +12,7 @@ import UIKit
     optional func  selectOkButtonalertView()
     optional func  selecttCancelButtonAlertView()
 }
-//即时下注popuWin
+//单笔下注popuWin
 class SwiftCustomAlertView: UIView {
     
     @IBOutlet var visit: UILabel!
@@ -30,7 +30,7 @@ class SwiftCustomAlertView: UIView {
     
     private var viewX:Double!
     private var viewY:Double!
-    private var viewWidth: Double = 350.0
+    private var viewWidth: Double = 0
     private var viewHeight: Double = 214.0
     
     @IBOutlet var cancelButton: UIButton!
@@ -40,6 +40,8 @@ class SwiftCustomAlertView: UIView {
     var bottom:UIView!
     var myView:SwiftCustomAlertView!
     var strPlayType:String!
+    var iMin:Int = 0
+    var iMax:Int = 0
     
     weak var delegate: SwiftCustomAlertViewDelegate?
     
@@ -64,6 +66,7 @@ class SwiftCustomAlertView: UIView {
     
     func showWin(view: UIView,viewDelegate myDelegate: SwiftCustomAlertViewDelegate) {
         let viewWin = view.frame.size
+        viewWidth = Double(viewWin.width) - 40
         viewX = (Double(viewWin.width) - viewWidth)/2
         viewY = (Double(viewWin.height) - viewHeight)/2
         //加载设计好的XIB
@@ -71,10 +74,11 @@ class SwiftCustomAlertView: UIView {
         
         myView.layer.cornerRadius = CGFloat(cornerRadius)
         myView.frame = CGRect(x: viewX, y: viewY - 50, width: viewWidth, height: viewHeight)
+        ToolsCode.setCornerRadius(myView)
         //在XIB的后面加入一个透明的View
         let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         bottom.backgroundColor = UIColor.blackColor()
-        bottom.alpha = 0.8
+        bottom.alpha = 0.5
         view.addSubview(bottom)
         myView.bottom = bottom
         myView.delegate = myDelegate
@@ -86,26 +90,21 @@ class SwiftCustomAlertView: UIView {
     
     //计算可赢金额方法
     func changeMoney(sender:UITextField){
-        let money = (myView.money.text == "" ? "0" : myView.money.text)
+        var money = (myView.money.text == "" ? "0" : myView.money.text)
+        if (myView.iMin > Int(money!)) {
+            myView.okButton.enabled = false
+            myView.okButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        }else{
+            money = myView.money.text!
+            if (myView.iMax < Int(money!)){
+                myView.money.text = String(myView.iMax)
+                money = myView.money.text!
+            }
+            myView.okButton.enabled = true
+            myView.okButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        }
         let betMoney = Double(money!)
         let dRate = Double(myView.rate.text!)
-        myView.gain.text = String(calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!))
-    }
-    
-    //计算可赢金额
-    func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->Double{
-        var winbet:Double=0.0
-        switch(strPlayType){
-        case "ZDRF","ZDDX","RF","DX":
-            winbet = intBet * dRale;
-            break
-        case "ZDDS","ZDDY","DS","DY","HJ":
-            winbet = intBet * dRale - intBet;
-            break
-        default:
-            winbet = intBet * dRale - intBet;
-            break
-        }
-        return winbet
+        myView.gain.text = ToolsCode.calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!)
     }
 }

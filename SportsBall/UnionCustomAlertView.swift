@@ -28,6 +28,7 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     var delegate:UnionDelegate!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        ToolsCode.tableViewDisplayWitMsg(tableView, rowCount: arrayUnionVO.count, message: "无联盟信息")
         return arrayUnionVO.count
     }
 
