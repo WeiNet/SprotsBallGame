@@ -40,18 +40,19 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     
     
     @IBAction func loginClick(sender: UIButton) {
-        if(self.textUserNumber.text==""){
-        
-            Tool.showMsg("帐号不能为空")
-         return
-        }
-        if(self.textUserPW.text==""){
-            
-            Tool.showMsg("密码不能为空")
-            return
-        }
-        self.activityView.startAnimating()
-        loginMoney()
+//        if(self.textUserNumber.text==""){
+//        
+//            Tool.showMsg("帐号不能为空")
+//         return
+//        }
+//        if(self.textUserPW.text==""){
+//            
+//            Tool.showMsg("密码不能为空")
+//            return
+//        }
+//        self.activityView.startAnimating()
+//        loginMoney()
+        jumpPage()
         
 
         
