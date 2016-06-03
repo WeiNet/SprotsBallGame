@@ -12,6 +12,7 @@ class RollView: UIView,GestureDelegate {
     var orderCellModel:OrderCellModel!//当前View对应的资料
     var delegate:OrderDelegate!
     
+    /*******************************注单控件*******************************/
     @IBOutlet var upperView: UIView!
     @IBOutlet var belowView: UIView!
     
@@ -33,6 +34,8 @@ class RollView: UIView,GestureDelegate {
     @IBOutlet var N_DSSPL: UILabel!
     @IBOutlet var N_DSDPLView: UIView!
     @IBOutlet var N_DSDPL: UILabel!
+    /*******************************注单控件*******************************/
+    
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     func userInteractionEnabled(){
         N_LRFBLView.userInteractionEnabled = true

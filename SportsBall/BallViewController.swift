@@ -10,9 +10,9 @@ import UIKit
 
 class BallViewController: UIViewController {
     var mContentView:UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -23,9 +23,6 @@ class BallViewController: UIViewController {
     
     //创建玩法菜单
     func createMenu(title:String,message:String,menuArray: Array<Dictionary<String,String>>)->UIAlertController{
-//        if(menuArray.count <= 0){
-//            return nil
-//        }
         let alertMenu:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         for menu in menuArray {
             for (key,value) in menu {
@@ -96,7 +93,6 @@ class BallViewController: UIViewController {
         return aryUnionInfo
     }
     
-    
     //主窗体添加购物车、赛事列表、即时/复合下注
     func addControls(showUnion:NSMutableArray,contentView:UIView,mainView:UIView,delegate:BindDelegate,cartDelegate:CartButtonDelegate,orderHeight:CGFloat,playType:String,isPass:Bool){
         mContentView = contentView
@@ -119,31 +115,16 @@ class BallViewController: UIViewController {
             if isPass {
                 cartButtonView?.segment.hidden = true
             }
-            cartButtonView?.frame = CGRect(x: 0, y: 0, width: width, height: 48)
+            cartButtonView?.frame = CGRect(x: 0, y: 0, width: width, height: 40)
             cartButtonView?.delegate = cartDelegate
             cartButtonView?.segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
             contentView.addSubview(cartButtonView!)
             //添加购物车控件后Y轴空出
-            startY = startY + 48
-            height = height - 48
+            startY = startY + 40
+            height = height - 40
         }
         
-//        if (playType != "2") {
-//            //先创建一个数组用于设置分段控件的标题
-//            let appsArray:[String] = ["即时下注","复合下注"]
-//            let segment:UISegmentedControl = UISegmentedControl(items: appsArray)
-//            segment.frame = CGRect(x: (width-180)/2, y: height + 75, width: 180, height: 20)
-//            //默认选中下标为0的
-//            segment.selectedSegmentIndex = 0
-//            //设置标题颜色
-//            segment.tintColor = UIColor.redColor()
-//            //添加事件，当segment改变时，触发 Parent
-//            segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)
-//            mainView.addSubview(segment)
-//            height = height - 26
-//        }
-        
-        let cgr = CGRect(x: 0, y: startY, width: width, height: height)// - 20 - 36)
+        let cgr = CGRect(x: 0, y: startY, width: width, height: height)
         let tableView = TableView(frame: cgr)
         tableView.initDelegate(showUnion)
         tableView.orderHeight = orderHeight
@@ -279,6 +260,7 @@ class BallViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
     //清除已经选中的所有赔率
     func clearAllOdds(){
         let betManger = BetListManager.sharedManager
@@ -329,7 +311,6 @@ class BallViewController: UIViewController {
             alertMessage("至少选择两场比赛")
         }
     }
-
     
     //第一次填入BetInfoModel属性用于检验最新赔率，检验完成才有其他属性
     func fullBetInfo(orderCellModel:OrderCellModel,toolsCode:Int)->BetInfo{
@@ -450,5 +431,16 @@ class BallViewController: UIViewController {
             let betManger = BetListManager.sharedManager
             betManger.betList.append(betInfo)
         }
+    }
+    
+    //ios隐藏状态栏
+    override func prefersStatusBarHidden() -> Bool {
+        //UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        return true
+    }
+
+    //ios隐藏导航栏
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

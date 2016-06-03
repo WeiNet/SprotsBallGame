@@ -27,7 +27,6 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
     var orderHeight:CGFloat = 216
     var bindDelegate:BindDelegate!
     
-    
     //初始化TableView
     func initDelegate(aryUnionInfo:NSArray){
         self.dataSource = self

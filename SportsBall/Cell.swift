@@ -48,6 +48,7 @@ class Cell: UITableViewCell {
     func titleTap(sender: UITapGestureRecognizer) {
         self.toggleOpen(true)
     }
+    
     func toggleOpen(userAction: Bool) {
         if userAction {
             if orderView.hidden {

@@ -10,7 +10,8 @@ import UIKit
 
 //页面 实例化
 protocol OrderDelegate: NSObjectProtocol {
-    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int,isSel:Bool)->Bool//赔率点击事件,返回true为多选
+     //赔率点击事件,返回true为多选
+    func orderClickDelegate(orderCellModel:OrderCellModel,toolsCode: Int,isSel:Bool)->Bool
 }
 
 class OrderView: UIView ,GestureDelegate {

@@ -12,7 +12,7 @@ import UIKit
     optional func  selectOkButtonalertView()
     optional func  selecttCancelButtonAlertView()
 }
-//即时下注popuWin
+//单笔下注popuWin
 class SwiftCustomAlertView: UIView {
     
     @IBOutlet var visit: UILabel!
@@ -107,6 +107,4 @@ class SwiftCustomAlertView: UIView {
         let dRate = Double(myView.rate.text!)
         myView.gain.text = ToolsCode.calculateWinMoney(myView.strPlayType,intBet: betMoney!,dRale: dRate!)
     }
-    
-
 }

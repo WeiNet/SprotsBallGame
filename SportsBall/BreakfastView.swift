@@ -80,6 +80,7 @@ class BreakfastView: OrderView {
         N_LDXBLView2.tag = ToolsCode.LDXBLView2
         N_RDXBLView2.tag = ToolsCode.RDXBLView2
     }
+    
     //注册点击事件
     override func addGestureRecognizer(){
         N_LDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -99,6 +100,7 @@ class BreakfastView: OrderView {
         N_LDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_RDXBLView2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
+    
     override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
@@ -120,6 +122,7 @@ class BreakfastView: OrderView {
             }
         }
     }
+    
     //注单赋值前清空重用控件
     override func clear(){
         N_LDYPL.text = ""
@@ -151,6 +154,7 @@ class BreakfastView: OrderView {
         N_DXDPL2.text = ""
         N_DXXPL2.text = ""
     }
+    
     //资料的显示
     override func showData(){
         //全场赌赢不允许下注-->OPEN 该盘口不锁定
@@ -177,7 +181,6 @@ class BreakfastView: OrderView {
             N_DXXPL.text = orderCellModel.N_DXXPL != nil ? String(format: "%.3f", orderCellModel.N_DXXPL.floatValue) : ""
         }
         
-        
         //半场赌赢不允许下注-->OPEN 该盘口不锁定
         if (orderCellModel.N_DY_OPEN2 != nil && String(orderCellModel.N_DY_OPEN2) != "1"){
             N_LDYPL2.text = orderCellModel.N_LDYPL2 != nil ? String(format: "%.3f", orderCellModel.N_LDYPL2.floatValue) : ""
@@ -202,6 +205,7 @@ class BreakfastView: OrderView {
             N_DXXPL2.text = orderCellModel.N_DXXPL2 != nil ? String(format: "%.3f", orderCellModel.N_DXXPL2.floatValue) : ""
         }
     }
+    
     //背景的填充
     override func fillBackground(){
         ToolsCode.setFont1(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)

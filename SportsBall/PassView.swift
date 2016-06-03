@@ -35,6 +35,7 @@ class PassView: OrderView {
     @IBOutlet var N_DSSPLView: UIView!
     @IBOutlet var N_DSSPL: UILabel!
     /*******************************注单控件*******************************/
+    
     //启动用户交互事件，设定Tag用于区别点击时所在的控件
     override func userInteractionEnabled(){
         N_LDYPL.userInteractionEnabled = true
@@ -57,6 +58,7 @@ class PassView: OrderView {
         N_DSSPLView.tag = ToolsCode.DSSPLView
         N_DSDPLView.tag = ToolsCode.DSDPLView
     }
+    
     //注册点击事件
     override func addGestureRecognizer(){
         N_LDYPL.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
@@ -69,6 +71,7 @@ class PassView: OrderView {
         N_DSSPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
         N_DSDPLView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "orderTap:"))
     }
+    
     override func orderTap(sender: UITapGestureRecognizer) {
         let view = sender.view! as UIView
         let iTag = view.tag
@@ -88,6 +91,7 @@ class PassView: OrderView {
             }
         }
     }
+    
     //注单赋值前清空重用控件
     override func clear(){
         N_LDYPL.text = ""
@@ -107,6 +111,7 @@ class PassView: OrderView {
         N_DSSPL.text = ""
         N_DSDPL.text = ""
     }
+    
     //资料的显示
     override func showData(){
         //全场赌赢不允许下注-->OPEN 该盘口不锁定
@@ -138,6 +143,7 @@ class PassView: OrderView {
             N_DSDPL.text = orderCellModel.N_DSDPL != nil ? String(format: "%.3f", orderCellModel.N_DSDPL.floatValue) : ""
         }
     }
+    
     //背景的填充
     override func fillBackground(){
         ToolsCode.setFont1(N_LDYPL, selected: orderCellModel.N_LDYPL_SEL)

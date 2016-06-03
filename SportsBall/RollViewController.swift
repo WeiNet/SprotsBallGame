@@ -279,7 +279,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         super.viewDidLoad()
         //头部
         let headerView = NSBundle.mainBundle().loadNibNamed("HeaderView" , owner: nil, options: nil).first as? HeaderView
-        headerView?.frame.size.height = 48
+        headerView?.frame.size.height = 42
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
@@ -288,15 +288,4 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         //赛事资料
         getOtherMatch()
     }
-    
-    //ios隐藏状态栏
-    override func prefersStatusBarHidden() -> Bool {
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-        return true
-    }
-    //ios隐藏导航栏
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
 }
