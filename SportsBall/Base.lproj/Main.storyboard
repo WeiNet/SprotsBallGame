@@ -280,6 +280,8 @@
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ipX-tR-yij" secondAttribute="trailing" id="BMO-JX-Cpy"/>
+                                    <constraint firstItem="ipX-tR-yij" firstAttribute="leading" secondItem="cyV-D0-lW9" secondAttribute="trailing" id="CzU-SH-MaQ"/>
+                                    <constraint firstItem="cyV-D0-lW9" firstAttribute="leading" secondItem="uFn-NT-VnF" secondAttribute="trailing" id="LDe-9h-YMt"/>
                                     <constraint firstAttribute="height" constant="40" id="PDt-Nj-K3O"/>
                                     <constraint firstItem="uFn-NT-VnF" firstAttribute="leading" secondItem="P8T-yc-byp" secondAttribute="leading" id="Vcj-FD-vpA"/>
                                     <constraint firstItem="ipX-tR-yij" firstAttribute="top" secondItem="P8T-yc-byp" secondAttribute="top" constant="-16" id="hKd-uu-Uud"/>
