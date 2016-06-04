@@ -33,6 +33,7 @@
 		17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */; };
 		17D751D21CEBFF7D00A52040 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D11CEBFF7D00A52040 /* GoalsView.swift */; };
 		17D751D41CEC07DB00A52040 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D31CEC07DB00A52040 /* FieldView.swift */; };
+		17D843C11D01710F00BD7170 /* OnlineUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D843C01D01710F00BD7170 /* OnlineUser.swift */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
 		17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */; };
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
@@ -128,6 +129,7 @@
 		17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		17D751D11CEBFF7D00A52040 /* GoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		17D751D31CEC07DB00A52040 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		17D843C01D01710F00BD7170 /* OnlineUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUser.swift; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
 		17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
 				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
 				170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */,
+				17D843C01D01710F00BD7170 /* OnlineUser.swift */,
 				17B3445A1CC08F91002638FC /* header */,
 				1779BA4B1CCEF3F2002A62DC /* football */,
 				17C6EC071CD196CF00DF71E1 /* basketball */,
@@ -638,6 +641,7 @@
 				466B3C601CFD30A700944C1F /* Ionicons.swift in Sources */,
 				46DC74021CEC0E8600604D9B /* PassShopingViewController.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
+				17D843C11D01710F00BD7170 /* OnlineUser.swift in Sources */,
 				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
 				1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */,
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
