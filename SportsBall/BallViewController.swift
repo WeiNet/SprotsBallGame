@@ -205,8 +205,8 @@ class BallViewController: UIViewController {
     func cleanOdds(orderCellModel:OrderCellModel,toolsCode: Int){
         let betManger:BetListManager = BetListManager.sharedManager
         let betList:[BetInfo] = betManger.betList
-        let count:Int = betList.count
-        for(var i = 0;i < count;i++ ){
+        let count:Int = betList.count - 1
+        for(var i = count;i > 0;i-- ){
             if(betList[i].visitname == orderCellModel.N_VISIT_NAME
                 && betList[i].homename == orderCellModel.N_HOME_NAME
                 && betList[i].Index == String(toolsCode)){
@@ -220,8 +220,8 @@ class BallViewController: UIViewController {
         
         let betManger:BetListManager = BetListManager.sharedManager
         let betList:[BetInfo] = betManger.betList
-        let count:Int = betList.count
-        for(var i = 0;i < count;i++ ){
+        let count:Int = betList.count - 1
+        for(var i = count;i > 0;i-- ){
             if(betList[i].visitname == betinfo.visitname
                 && betList[i].homename == betinfo.homename){
                 betManger.betList.removeAtIndex(i)
