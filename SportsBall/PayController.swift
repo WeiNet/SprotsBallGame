@@ -31,6 +31,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         if(dateArry.isEmpty){
             return}
         
+       
         let menuArray = [KxMenuItem.init("\(dateArry[0])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
             KxMenuItem.init("\(dateArry[1])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
             KxMenuItem.init("\(dateArry[2])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
