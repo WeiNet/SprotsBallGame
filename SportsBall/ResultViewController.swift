@@ -8,20 +8,23 @@
 
 import UIKit
 //开奖结果
-class ResultViewController: UIViewController,ResultDelegate {
+class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,ResultDelegate,UnionDelegate,UnionTitleViewDelegate {
     
     @IBOutlet var btnBallType: UIButton!
+    @IBOutlet var tableView: UITableView!
+    
     var common = CommonParameter()//网络请求
+    var infoArray:NSMutableArray!//与UnionTitleInfo的数组对应
     var unionID:String = ""
     var date:String = ""
     var ballType:String = "0"
+    let unionIdentifier = "unionIdentifier"
     let getDateResult:String = "GetDateResult"
     let getMatchResultResult:String = "GetMatchResultResult"
     var alertMenu:UIAlertController!
-    var dateArray: Array<Dictionary<String,String>> = Array<Dictionary<String,String>>()
-    var typeArray: Array<Dictionary<String,String>> = [["足球":"0"],["篮球":"1"]]
+    var dateArray:Array<Dictionary<String,String>> = Array<Dictionary<String,String>>()
+    var typeArray:Array<Dictionary<String,String>> = [["足球":"0"],["篮球":"1"]]
     var onclickFlag:String = ""
-    
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
@@ -58,6 +61,37 @@ class ResultViewController: UIViewController,ResultDelegate {
     
     //联盟选择
     @IBAction func union(sender: AnyObject) {
+        showUnion(self)
+    }
+    
+    //联盟选择回调
+    func unionClickDelegate(keys:String){
+        unionID = keys
+        GetMatchResult()
+    }
+    
+    //显示联盟选择页面
+    func showUnion(delegate:UnionDelegate){
+        //在XIB的后面加入一个透明的View
+        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        bottom.backgroundColor = UIColor.blackColor()
+        bottom.alpha = 0.5
+        
+        let viewWidth:Double = Double(view.frame.size.width) - 50
+        let viewHeight:Double = Double(view.frame.size.height) - 60
+        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
+        myView?.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
+        myView?.center = self.view.center
+        ToolsCode.setCornerRadius(myView!)
+        
+        if myView != nil {
+            let window: UIWindow = UIApplication.sharedApplication().keyWindow!
+            window.addSubview(bottom)
+            myView?.backgroundView = bottom
+            myView?.delegate = delegate
+            window.addSubview(myView!)
+            window.bringSubviewToFront(myView!)
+        }
     }
     
     //创建日期alert
@@ -80,11 +114,15 @@ class ResultViewController: UIViewController,ResultDelegate {
     func clickMenuItem(key:String,value:String){
         if(onclickFlag == "date"){
             date = value
-            GetMatchResult()
         }else if(onclickFlag == "ballType"){
+            if(value == "0"){
+                btnBallType.selected = false
+            }else{
+                btnBallType.selected = true
+            }
             ballType = value
-            GetMatchResult()
         }
+        GetMatchResult()
     }
     
     //创建日期选项菜单
@@ -95,9 +133,75 @@ class ResultViewController: UIViewController,ResultDelegate {
             let dic:Dictionary<String,String> = ["\(dateTemp[0])年\(dateTemp[1])月\(dateTemp[2])日":result]
             dateArray.append(dic)
         }
-        alertMenu = createMenu("足球玩法", message: "请选择玩法", menuArray: dateArray)
         date = resultArray[0]
         GetMatchResult()
+    }
+    
+    //联盟展开
+    func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionOpened: Int){
+    }
+    
+    //联盟关闭
+    func sectionHeaderUnion(unionTitleView: UnionTitleView, sectionClosed: Int){
+    }
+    
+    //联盟显示多少行
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        ToolsCode.tableViewDisplayWitMsg(tableView, rowCount: infoArray.count)
+//        return infoArray.count
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // 返回指定的section header视图
+        let union: UnionTitleView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(unionIdentifier) as! UnionTitleView
+//        let infos:UnionTitleInfo = infoArray[section] as! UnionTitleInfo
+        
+        union.unionIndex = section
+        union.delegate = self
+        union.frame.size.width = tableView.frame.width
+//        union.name.text = "★\(infos.unionTitleModel.name!)"
+//        union.count.text = "X\(infos.unionTitleModel.count!)"
+//        union.headerOpen = infos.unionTitleModel.unionOpen
+//        union.btnDisclosure.selected = !infos.unionTitleModel.unionOpen
+//        infos.unionTitleView = union
+        
+        return union
+    }
+    
+    //每个联盟下面Cell显示多少行，有联盟的打开和关闭决定
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        let infos:UnionTitleInfo = infoArray[section] as! UnionTitleInfo
+//        let sectionOpen = infos.unionTitleModel.unionOpen
+//        let count = infos.unionTitleModel.orderCellModels.count
+//        
+//        return sectionOpen ? Int(count) : 0
+        return 3
+    }
+    
+    //tableView中的Cell视图的创建加载--------由页面自己写
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+//        let footballResultView = NSBundle.mainBundle().loadNibNamed("FootballResultView1" , owner: nil, options: nil).first as! FootballResultView1
+//        footballResultView.frame.size.width = tableView.frame.size.width
+//        
+//        return footballResultView
+        
+        let basktballResultView = NSBundle.mainBundle().loadNibNamed("BasktballResultView1" , owner: nil, options: nil).first as! BasktballResultView1
+        basktballResultView.frame.size.width = tableView.frame.size.width
+        
+        basktballResultView.selectionStyle = UITableViewCellSelectionStyle.None
+        return basktballResultView
+    }
+    
+    //设定每个Cell的高度
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        if(ballType == "0"){
+//            return 100
+//        }else{
+//            return 131
+//        }
+        return 131
     }
     
     //取得赛事结果时间
@@ -126,6 +230,15 @@ class ResultViewController: UIViewController,ResultDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        btnBallType.setImage(UIImage(named: "ball0"), forState: UIControlState.Normal)
+        btnBallType.setImage(UIImage(named: "ball1"), forState: UIControlState.Selected)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.sectionHeaderHeight = CGFloat(38)// 联盟高度
+        //联盟xib加载
+        let unionNib: UINib = UINib(nibName: "UnionTitleView", bundle: nil)
+        tableView.registerNib(unionNib, forHeaderFooterViewReuseIdentifier: unionIdentifier)
         
         getDate()
     }

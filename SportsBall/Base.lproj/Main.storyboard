@@ -327,6 +327,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="btnBallType" destination="uFn-NT-VnF" id="oqB-QP-dBz"/>
+                        <outlet property="tableView" destination="HA6-mv-Puh" id="B5r-L6-g0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heL-kB-xle" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,5 +1,5 @@
 //
-//  FootballResultView.swift
+//  FootballResultView1.swift
 //  SportsBall
 //
 //  Created by Brook on 16/6/6.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class FootballResultView: UIView {
+class FootballResultView1: UITableViewCell {
+
     @IBOutlet var N_VISIT_NAME: UILabel!
     @IBOutlet var N_HOME_NAME: UILabel!
     @IBOutlet var N_GAMEDATE: UILabel!
@@ -16,4 +17,16 @@ class FootballResultView: UIView {
     @IBOutlet var N_UP_HOME_RESULT: UILabel!
     @IBOutlet var N_VISIT_RESULT: UILabel!
     @IBOutlet var N_HOME_RESULT: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
 }
