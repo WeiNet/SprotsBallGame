@@ -11,8 +11,8 @@
 		170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */; };
 		170226E21CE6B19E00EA6AF6 /* AllUnionVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */; };
 		1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */; };
-		175171CD1D0501C60056AD4B /* BasktballResultView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175171CC1D0501C60056AD4B /* BasktballResultView2.xib */; };
-		175171CF1D0501FC0056AD4B /* FootballResultView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175171CE1D0501FC0056AD4B /* FootballResultView2.xib */; };
+		175171CD1D0501C60056AD4B /* BasktballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175171CC1D0501C60056AD4B /* BasktballResultView.xib */; };
+		175171CF1D0501FC0056AD4B /* FootballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175171CE1D0501FC0056AD4B /* FootballResultView.xib */; };
 		1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA511CCEF6BD002A62DC /* Cell.swift */; };
 		1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA521CCEF6BD002A62DC /* Cell.xib */; };
 		1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA551CCEF707002A62DC /* BreakfastView.swift */; };
@@ -109,8 +109,8 @@
 		170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionCustomAlertView.swift; sourceTree = "<group>"; };
 		170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUnionVO.swift; sourceTree = "<group>"; };
 		1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastViewController.swift; sourceTree = "<group>"; };
-		175171CC1D0501C60056AD4B /* BasktballResultView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView2.xib; sourceTree = "<group>"; };
-		175171CE1D0501FC0056AD4B /* FootballResultView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView2.xib; sourceTree = "<group>"; };
+		175171CC1D0501C60056AD4B /* BasktballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView.xib; sourceTree = "<group>"; };
+		175171CE1D0501FC0056AD4B /* FootballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView.xib; sourceTree = "<group>"; };
 		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		1779BA551CCEF707002A62DC /* BreakfastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 		175171CB1D0501690056AD4B /* view */ = {
 			isa = PBXGroup;
 			children = (
-				175171CC1D0501C60056AD4B /* BasktballResultView2.xib */,
-				175171CE1D0501FC0056AD4B /* FootballResultView2.xib */,
+				175171CC1D0501C60056AD4B /* BasktballResultView.xib */,
+				175171CE1D0501FC0056AD4B /* FootballResultView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -612,8 +612,8 @@
 				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
 				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
-				175171CF1D0501FC0056AD4B /* FootballResultView2.xib in Resources */,
-				175171CD1D0501C60056AD4B /* BasktballResultView2.xib in Resources */,
+				175171CF1D0501FC0056AD4B /* FootballResultView.xib in Resources */,
+				175171CD1D0501C60056AD4B /* BasktballResultView.xib in Resources */,
 				4641573D1CD9F0A900838F32 /* HTML in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
