@@ -243,6 +243,9 @@
                                             <constraint firstAttribute="height" constant="72" id="Yzh-ZS-Nf3"/>
                                         </constraints>
                                         <state key="normal" image="ball0"/>
+                                        <connections>
+                                            <action selector="ballType:" destination="hDp-MU-1AP" eventType="touchUpInside" id="nhw-Zx-xGr"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyV-D0-lW9">
                                         <rect key="frame" x="72" y="0.0" width="456" height="40"/>
@@ -256,6 +259,9 @@
                                                 <state key="normal" title="2016年06月04日">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="date:" destination="hDp-MU-1AP" eventType="touchUpInside" id="N1c-EV-bAS"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-hR-eNl">
                                                 <rect key="frame" x="222" y="31" width="12" height="8"/>
@@ -275,6 +281,9 @@
                                             <constraint firstAttribute="width" constant="72" id="mOq-yX-SEF"/>
                                         </constraints>
                                         <state key="normal" image="legen"/>
+                                        <connections>
+                                            <action selector="union:" destination="hDp-MU-1AP" eventType="touchUpInside" id="Kvg-8R-b1G"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -316,6 +325,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="开奖结果" image="m3" id="D0b-yb-CAI"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="btnBallType" destination="uFn-NT-VnF" id="oqB-QP-dBz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heL-kB-xle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
