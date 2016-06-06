@@ -17,10 +17,10 @@
 		1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA561CCEF707002A62DC /* BreakfastView.xib */; };
 		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177D3F541CED603D00ED6875 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3F531CED603D00ED6875 /* OrderView.swift */; };
-		1782A6211D05601900444075 /* FootballResultView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A61F1D05601900444075 /* FootballResultView1.swift */; };
-		1782A6221D05601900444075 /* FootballResultView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6201D05601900444075 /* FootballResultView1.xib */; };
-		1782A6251D05603000444075 /* BasktballResultView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6231D05603000444075 /* BasktballResultView1.swift */; };
-		1782A6261D05603000444075 /* BasktballResultView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6241D05603000444075 /* BasktballResultView1.xib */; };
+		1782A6211D05601900444075 /* FootballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A61F1D05601900444075 /* FootballResultView.swift */; };
+		1782A6221D05601900444075 /* FootballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6201D05601900444075 /* FootballResultView.xib */; };
+		1782A6251D05603000444075 /* BasktballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6231D05603000444075 /* BasktballResultView.swift */; };
+		1782A6261D05603000444075 /* BasktballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6241D05603000444075 /* BasktballResultView.xib */; };
 		1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A11CEC406400D356D0 /* FluctuantView.swift */; };
 		1798F2A41CEC5C5F00D356D0 /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A31CEC5C5F00D356D0 /* PassView.swift */; };
 		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
@@ -117,10 +117,10 @@
 		1779BA561CCEF707002A62DC /* BreakfastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreakfastView.xib; sourceTree = "<group>"; };
 		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177D3F531CED603D00ED6875 /* OrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
-		1782A61F1D05601900444075 /* FootballResultView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballResultView1.swift; sourceTree = "<group>"; };
-		1782A6201D05601900444075 /* FootballResultView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView1.xib; sourceTree = "<group>"; };
-		1782A6231D05603000444075 /* BasktballResultView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasktballResultView1.swift; sourceTree = "<group>"; };
-		1782A6241D05603000444075 /* BasktballResultView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView1.xib; sourceTree = "<group>"; };
+		1782A61F1D05601900444075 /* FootballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballResultView.swift; sourceTree = "<group>"; };
+		1782A6201D05601900444075 /* FootballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView.xib; sourceTree = "<group>"; };
+		1782A6231D05603000444075 /* BasktballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasktballResultView.swift; sourceTree = "<group>"; };
+		1782A6241D05603000444075 /* BasktballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView.xib; sourceTree = "<group>"; };
 		1798F2A11CEC406400D356D0 /* FluctuantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluctuantView.swift; sourceTree = "<group>"; };
 		1798F2A31CEC5C5F00D356D0 /* PassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
@@ -225,10 +225,10 @@
 		175171CB1D0501690056AD4B /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1782A6201D05601900444075 /* FootballResultView1.xib */,
-				1782A61F1D05601900444075 /* FootballResultView1.swift */,
-				1782A6241D05603000444075 /* BasktballResultView1.xib */,
-				1782A6231D05603000444075 /* BasktballResultView1.swift */,
+				1782A6201D05601900444075 /* FootballResultView.xib */,
+				1782A61F1D05601900444075 /* FootballResultView.swift */,
+				1782A6241D05603000444075 /* BasktballResultView.xib */,
+				1782A6231D05603000444075 /* BasktballResultView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -622,8 +622,8 @@
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */,
-				1782A6261D05603000444075 /* BasktballResultView1.xib in Resources */,
-				1782A6221D05601900444075 /* FootballResultView1.xib in Resources */,
+				1782A6261D05603000444075 /* BasktballResultView.xib in Resources */,
+				1782A6221D05601900444075 /* FootballResultView.xib in Resources */,
 				179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */,
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
@@ -667,7 +667,7 @@
 				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
 				1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */,
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
-				1782A6251D05603000444075 /* BasktballResultView1.swift in Sources */,
+				1782A6251D05603000444075 /* BasktballResultView.swift in Sources */,
 				1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				466B3C6A1CFD886C00944C1F /* UserInfo.swift in Sources */,
@@ -710,7 +710,7 @@
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
 				170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */,
 				17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */,
-				1782A6211D05601900444075 /* FootballResultView1.swift in Sources */,
+				1782A6211D05601900444075 /* FootballResultView.swift in Sources */,
 				17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */,
 				177D3F541CED603D00ED6875 /* OrderView.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,

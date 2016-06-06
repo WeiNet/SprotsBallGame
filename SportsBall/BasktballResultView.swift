@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasktballResultView1: UITableViewCell {
+class BasktballResultView: UITableViewCell {
 
     @IBOutlet var N_VISIT_NAME: UILabel!
     @IBOutlet var N_HOME_NAME: UILabel!

@@ -182,12 +182,12 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //tableView中的Cell视图的创建加载--------由页面自己写
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-//        let footballResultView = NSBundle.mainBundle().loadNibNamed("FootballResultView1" , owner: nil, options: nil).first as! FootballResultView1
+//        let footballResultView = NSBundle.mainBundle().loadNibNamed("FootballResultView" , owner: nil, options: nil).first as! FootballResultView
 //        footballResultView.frame.size.width = tableView.frame.size.width
 //        
 //        return footballResultView
         
-        let basktballResultView = NSBundle.mainBundle().loadNibNamed("BasktballResultView1" , owner: nil, options: nil).first as! BasktballResultView1
+        let basktballResultView = NSBundle.mainBundle().loadNibNamed("BasktballResultView" , owner: nil, options: nil).first as! BasktballResultView
         basktballResultView.frame.size.width = tableView.frame.size.width
         
         basktballResultView.selectionStyle = UITableViewCellSelectionStyle.None

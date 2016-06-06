@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FootballResultView1: UITableViewCell {
+class FootballResultView: UITableViewCell {
 
     @IBOutlet var N_VISIT_NAME: UILabel!
     @IBOutlet var N_HOME_NAME: UILabel!
