@@ -21,6 +21,9 @@
 		1782A6221D05601900444075 /* FootballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6201D05601900444075 /* FootballResultView.xib */; };
 		1782A6251D05603000444075 /* BasktballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6231D05603000444075 /* BasktballResultView.swift */; };
 		1782A6261D05603000444075 /* BasktballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6241D05603000444075 /* BasktballResultView.xib */; };
+		1782A6281D06670E00444075 /* ResultTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6271D06670E00444075 /* ResultTitleModel.swift */; };
+		1782A62A1D06675500444075 /* ResultCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6291D06675500444075 /* ResultCellModel.swift */; };
+		1782A62C1D066B6B00444075 /* ResultTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */; };
 		1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A11CEC406400D356D0 /* FluctuantView.swift */; };
 		1798F2A41CEC5C5F00D356D0 /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A31CEC5C5F00D356D0 /* PassView.swift */; };
 		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
@@ -121,6 +124,9 @@
 		1782A6201D05601900444075 /* FootballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView.xib; sourceTree = "<group>"; };
 		1782A6231D05603000444075 /* BasktballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasktballResultView.swift; sourceTree = "<group>"; };
 		1782A6241D05603000444075 /* BasktballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView.xib; sourceTree = "<group>"; };
+		1782A6271D06670E00444075 /* ResultTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTitleModel.swift; sourceTree = "<group>"; };
+		1782A6291D06675500444075 /* ResultCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCellModel.swift; sourceTree = "<group>"; };
+		1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTitleInfo.swift; sourceTree = "<group>"; };
 		1798F2A11CEC406400D356D0 /* FluctuantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluctuantView.swift; sourceTree = "<group>"; };
 		1798F2A31CEC5C5F00D356D0 /* PassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
@@ -352,6 +358,9 @@
 				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
 				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
+				1782A6271D06670E00444075 /* ResultTitleModel.swift */,
+				1782A6291D06675500444075 /* ResultCellModel.swift */,
+				1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -688,6 +697,7 @@
 				462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */,
 				4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */,
 				462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */,
+				1782A6281D06670E00444075 /* ResultTitleModel.swift in Sources */,
 				46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */,
 				17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
@@ -703,8 +713,10 @@
 				463E26341CF2D97100CE6F01 /* NirKxMenu.m in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
 				466B3C651CFD3E0800944C1F /* Md5+Extension..swift in Sources */,
+				1782A62A1D06675500444075 /* ResultCellModel.swift in Sources */,
 				1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
+				1782A62C1D066B6B00444075 /* ResultTitleInfo.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
 				466B3C621CFD318F00944C1F /* UIDropDown.swift in Sources */,
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
