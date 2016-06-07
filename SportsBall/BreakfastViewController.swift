@@ -63,6 +63,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     func setResult(strResult: String,strType:String)  {
         clearAllNotice()
         if(strType == "Error" || strResult == ""){
+            let message = "系统错误！"
+            alertMessage(message)
             return
         }
         if(strType == "WebError" || strResult == "Error"){

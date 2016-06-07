@@ -31,6 +31,8 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func setResult(strResult: String,strType:String)  {
         
         if(strType == "Error" || strResult == ""){
+            let message = "系统错误！"
+            alertMessage(message)
             return
         }
         if(strType == "WebError" || strResult == "Error"){
