@@ -260,7 +260,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="date:" destination="hDp-MU-1AP" eventType="touchUpInside" id="N1c-EV-bAS"/>
+                                                    <action selector="date:" destination="hDp-MU-1AP" eventType="touchUpInside" id="rzd-Qn-4pB"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-hR-eNl">
@@ -327,6 +327,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="btnBallType" destination="uFn-NT-VnF" id="oqB-QP-dBz"/>
+                        <outlet property="btnTitle" destination="caa-Rg-vYq" id="oea-Iv-eRt"/>
                         <outlet property="tableView" destination="HA6-mv-Puh" id="B5r-L6-g0f"/>
                     </connections>
                 </viewController>

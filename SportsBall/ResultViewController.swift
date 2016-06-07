@@ -11,6 +11,7 @@ import UIKit
 class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,ResultDelegate,UnionDelegate,UnionTitleViewDelegate {
     
     @IBOutlet var btnBallType: UIButton!
+    @IBOutlet var btnTitle: UIButton!
     @IBOutlet var tableView: UITableView!
     
     var common = CommonParameter()//网络请求
@@ -42,6 +43,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }else if(strType == getMatchResultResult){
             clearAllNotice()
             print(strResult)
+            tableView.reloadData()
         }
     }
     
@@ -67,7 +69,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //联盟选择回调
     func unionClickDelegate(keys:String){
         unionID = keys
-        GetMatchResult()
+        getMatchResult()
     }
     
     //显示联盟选择页面
@@ -114,6 +116,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func clickMenuItem(key:String,value:String){
         if(onclickFlag == "date"){
             date = value
+            btnTitle.titleLabel?.text = key
         }else if(onclickFlag == "ballType"){
             if(value == "0"){
                 btnBallType.selected = false
@@ -122,7 +125,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
             }
             ballType = value
         }
-        GetMatchResult()
+        getMatchResult()
     }
     
     //创建日期选项菜单
@@ -134,7 +137,10 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
             dateArray.append(dic)
         }
         date = resultArray[0]
-        GetMatchResult()
+        let dateTemp2:[String] = resultArray[0].componentsSeparatedByString("/")
+        let strTitle:String = "\(dateTemp2[0])年\(dateTemp2[1])月\(dateTemp2[2])日"
+        btnTitle.titleLabel?.text = strTitle
+        getMatchResult()
     }
     
     //联盟展开
@@ -174,34 +180,32 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
 //        let infos:UnionTitleInfo = infoArray[section] as! UnionTitleInfo
 //        let sectionOpen = infos.unionTitleModel.unionOpen
 //        let count = infos.unionTitleModel.orderCellModels.count
-//        
+        
 //        return sectionOpen ? Int(count) : 0
         return 3
     }
     
-    //tableView中的Cell视图的创建加载--------由页面自己写
+    //tableView中的Cell视图的创建加载
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-//        let footballResultView = NSBundle.mainBundle().loadNibNamed("FootballResultView" , owner: nil, options: nil).first as! FootballResultView
-//        footballResultView.frame.size.width = tableView.frame.size.width
-//        
-//        return footballResultView
-        
-        let basktballResultView = NSBundle.mainBundle().loadNibNamed("BasktballResultView" , owner: nil, options: nil).first as! BasktballResultView
-        basktballResultView.frame.size.width = tableView.frame.size.width
-        
-        basktballResultView.selectionStyle = UITableViewCellSelectionStyle.None
-        return basktballResultView
+        if(ballType == "0"){
+            let footballResultView = NSBundle.mainBundle().loadNibNamed("FootballResultView" , owner: nil, options: nil).first as! FootballResultView
+            footballResultView.frame.size.width = tableView.frame.size.width
+            return footballResultView
+        }else{
+            let basktballResultView = NSBundle.mainBundle().loadNibNamed("BasktballResultView" , owner: nil, options: nil).first as! BasktballResultView
+            basktballResultView.frame.size.width = tableView.frame.size.width
+            basktballResultView.selectionStyle = UITableViewCellSelectionStyle.None
+            return basktballResultView
+        }
     }
     
     //设定每个Cell的高度
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        if(ballType == "0"){
-//            return 100
-//        }else{
-//            return 131
-//        }
-        return 131
+        if(ballType == "0"){
+            return 100
+        }else{
+            return 131
+        }
     }
     
     //取得赛事结果时间
@@ -215,7 +219,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     //取得赛事结果
-    func GetMatchResult(){
+    func getMatchResult(){
         common.matchingElement = getMatchResultResult
         var strParam:String = "<GetMatchResult xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strLM>\(unionID)</strLM>")
