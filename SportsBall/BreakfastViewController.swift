@@ -63,6 +63,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     func setResult(strResult: String,strType:String)  {
         clearAllNotice()
         if(strType == "Error" || strResult == ""){
+            let message = "系统错误！"
+            alertMessage(message)
             return
         }
         if(strType == "WebError" || strResult == "Error"){
@@ -374,15 +376,15 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         var strParam:String = "<AddBet xmlns=\"http://tempuri.org/\">"
         strParam.appendContentsOf("<strpara>\(betInfo.toString())</strpara>")
         strParam.appendContentsOf("</AddBet>")
-        print(betInfo.toString())
         common.getResult(strParam,strResultName: addBetResult)
     }
     
     //检验赔率是不是最新的
     func checkBet(betInfo:BetInfo){
+        let user:UserInfoManager = UserInfoManager.sharedManager
         common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(user.getUserID())</strUser>")
         strParam.appendContentsOf("<lr>\(betInfo.lr)</lr>")
         strParam.appendContentsOf("<ballType>\(betInfo.ballType)</ballType>")
         strParam.appendContentsOf("<playType>\(betInfo.playType)</playType>")
@@ -405,6 +407,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     //取得赛事注单赔率
     func getFootballMatch(){
         pleaseWait()
+        let user:UserInfoManager = UserInfoManager.sharedManager
         common.delegate = self
         common.matchingElement = getFootballMatchResult
         var strParam:String = "<GetFootballMatch xmlns=\"http://tempuri.org/\">";
@@ -412,7 +415,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         strParam.appendContentsOf("<strSort>0</strSort>")
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>20000</strPageSize>")
-        strParam.appendContentsOf("<strUser></strUser>")
+        strParam.appendContentsOf("<strUser>\(user.getUserID())</strUser>")
         strParam.appendContentsOf("<strType>\(mPlayType)</strType>")
         strParam.appendContentsOf("</GetFootballMatch>")
         common.getResult(strParam,strResultName: getFootballMatchResult)

@@ -17,6 +17,13 @@
 		1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA561CCEF707002A62DC /* BreakfastView.xib */; };
 		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177D3F541CED603D00ED6875 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3F531CED603D00ED6875 /* OrderView.swift */; };
+		1782A6211D05601900444075 /* FootballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A61F1D05601900444075 /* FootballResultView.swift */; };
+		1782A6221D05601900444075 /* FootballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6201D05601900444075 /* FootballResultView.xib */; };
+		1782A6251D05603000444075 /* BasktballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6231D05603000444075 /* BasktballResultView.swift */; };
+		1782A6261D05603000444075 /* BasktballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6241D05603000444075 /* BasktballResultView.xib */; };
+		1782A6281D06670E00444075 /* ResultTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6271D06670E00444075 /* ResultTitleModel.swift */; };
+		1782A62A1D06675500444075 /* ResultCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6291D06675500444075 /* ResultCellModel.swift */; };
+		1782A62C1D066B6B00444075 /* ResultTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */; };
 		1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A11CEC406400D356D0 /* FluctuantView.swift */; };
 		1798F2A41CEC5C5F00D356D0 /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A31CEC5C5F00D356D0 /* PassView.swift */; };
 		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
@@ -33,6 +40,7 @@
 		17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */; };
 		17D751D21CEBFF7D00A52040 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D11CEBFF7D00A52040 /* GoalsView.swift */; };
 		17D751D41CEC07DB00A52040 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D31CEC07DB00A52040 /* FieldView.swift */; };
+		17D843C11D01710F00BD7170 /* OnlineUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D843C01D01710F00BD7170 /* OnlineUser.swift */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
 		17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */; };
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
@@ -113,6 +121,13 @@
 		1779BA561CCEF707002A62DC /* BreakfastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreakfastView.xib; sourceTree = "<group>"; };
 		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177D3F531CED603D00ED6875 /* OrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		1782A61F1D05601900444075 /* FootballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballResultView.swift; sourceTree = "<group>"; };
+		1782A6201D05601900444075 /* FootballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView.xib; sourceTree = "<group>"; };
+		1782A6231D05603000444075 /* BasktballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasktballResultView.swift; sourceTree = "<group>"; };
+		1782A6241D05603000444075 /* BasktballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView.xib; sourceTree = "<group>"; };
+		1782A6271D06670E00444075 /* ResultTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTitleModel.swift; sourceTree = "<group>"; };
+		1782A6291D06675500444075 /* ResultCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCellModel.swift; sourceTree = "<group>"; };
+		1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTitleInfo.swift; sourceTree = "<group>"; };
 		1798F2A11CEC406400D356D0 /* FluctuantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluctuantView.swift; sourceTree = "<group>"; };
 		1798F2A31CEC5C5F00D356D0 /* PassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
@@ -129,6 +144,7 @@
 		17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		17D751D11CEBFF7D00A52040 /* GoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		17D751D31CEC07DB00A52040 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		17D843C01D01710F00BD7170 /* OnlineUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUser.swift; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
 		17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
@@ -214,9 +230,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		175171CB1D0501690056AD4B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1782A6201D05601900444075 /* FootballResultView.xib */,
+				1782A61F1D05601900444075 /* FootballResultView.swift */,
+				1782A6241D05603000444075 /* BasktballResultView.xib */,
+				1782A6231D05603000444075 /* BasktballResultView.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		1779BA491CCEF38F002A62DC /* match */ = {
 			isa = PBXGroup;
 			children = (
+				175171CB1D0501690056AD4B /* view */,
 				17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */,
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
 				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
@@ -225,6 +253,7 @@
 				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
 				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
 				170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */,
+				17D843C01D01710F00BD7170 /* OnlineUser.swift */,
 				17B3445A1CC08F91002638FC /* header */,
 				1779BA4B1CCEF3F2002A62DC /* football */,
 				17C6EC071CD196CF00DF71E1 /* basketball */,
@@ -331,6 +360,9 @@
 				17DA621E1CB8CDDC009070E6 /* UnionTitleInfo.swift */,
 				17DA621F1CB8CDDC009070E6 /* UnionTitleModel.swift */,
 				17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */,
+				1782A6271D06670E00444075 /* ResultTitleModel.swift */,
+				1782A6291D06675500444075 /* ResultCellModel.swift */,
+				1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -602,6 +634,8 @@
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */,
+				1782A6261D05603000444075 /* BasktballResultView.xib in Resources */,
+				1782A6221D05601900444075 /* FootballResultView.xib in Resources */,
 				179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */,
 				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
@@ -641,9 +675,11 @@
 				466B3C601CFD30A700944C1F /* Ionicons.swift in Sources */,
 				46DC74021CEC0E8600604D9B /* PassShopingViewController.swift in Sources */,
 				462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */,
+				17D843C11D01710F00BD7170 /* OnlineUser.swift in Sources */,
 				1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */,
 				1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */,
 				17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */,
+				1782A6251D05603000444075 /* BasktballResultView.swift in Sources */,
 				1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */,
 				46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */,
 				466B3C6A1CFD886C00944C1F /* UserInfo.swift in Sources */,
@@ -664,6 +700,7 @@
 				462BEE191C86861D00E451E4 /* StartViewController.swift in Sources */,
 				4635A90B1CA1350E00CFBBC8 /* ResultDelegate.swift in Sources */,
 				462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */,
+				1782A6281D06670E00444075 /* ResultTitleModel.swift in Sources */,
 				46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */,
 				17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */,
 				462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */,
@@ -680,13 +717,16 @@
 				463E26341CF2D97100CE6F01 /* NirKxMenu.m in Sources */,
 				17DA62241CB8CDDC009070E6 /* UnionTitleModel.swift in Sources */,
 				466B3C651CFD3E0800944C1F /* Md5+Extension..swift in Sources */,
+				1782A62A1D06675500444075 /* ResultCellModel.swift in Sources */,
 				1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
+				1782A62C1D066B6B00444075 /* ResultTitleInfo.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
 				466B3C621CFD318F00944C1F /* UIDropDown.swift in Sources */,
 				17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */,
 				170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */,
 				17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */,
+				1782A6211D05601900444075 /* FootballResultView.swift in Sources */,
 				17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */,
 				177D3F541CED603D00ED6875 /* OrderView.swift in Sources */,
 				46C02DF01C8E7844007F6A50 /* HistoryViewController.swift in Sources */,
