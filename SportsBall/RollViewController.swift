@@ -226,6 +226,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     
     func getOtherMatch(){
+        let user:UserInfoManager = UserInfoManager.sharedManager
         pleaseWait()
         common.delegate = self
         common.matchingElement = getOtherMatchResult
@@ -234,7 +235,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         strParam.appendContentsOf("<strSort>0</strSort>")
         strParam.appendContentsOf("<strPageIndex>1</strPageIndex>")
         strParam.appendContentsOf("<strPageSize>1000</strPageSize>")
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(user.getUserID())</strUser>")
         strParam.appendContentsOf("<strType>\(mPlayType)</strType>")
         strParam.appendContentsOf("<strCourtType>1</strCourtType>")
         strParam.appendContentsOf("<strBall>b_bk</strBall>")
@@ -244,9 +245,10 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     
     //检验赔率是不是最新的
     func checkBet(betInfo:BetInfo){
+        let user:UserInfoManager = UserInfoManager.sharedManager
         common.matchingElement = checkBetResult
         var strParam:String = "<CheckBet xmlns=\"http://tempuri.org/\">"
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(user.getUserID())</strUser>")
         strParam.appendContentsOf("<lr>\(betInfo.lr)</lr>")
         strParam.appendContentsOf("<ballType>\(betInfo.ballType)</ballType>")
         strParam.appendContentsOf("<playType>\(betInfo.playType)</playType>")

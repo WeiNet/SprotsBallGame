@@ -44,8 +44,9 @@ class OnlineUser: NSObject,ResultDelegate {
     
     //修改在线会员状态
     private func ModifyOnlineUser(){
+        let user:UserInfoManager = UserInfoManager.sharedManager
         var strParam:String = "<ModifyOnlineUser xmlns=\"http://tempuri.org/\">"
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(user.getUserID())</strUser>")
         strParam.appendContentsOf("</ModifyOnlineUser>")
         common.getResult(strParam,strResultName: modifyOnlineUserResponse)
     }
