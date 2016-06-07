@@ -23,9 +23,9 @@
         var alertMenu:UIAlertController!
         var alertSubMenu:UIAlertController!
         var betType=0//下注方式，0为单注，1为连碰
+        var touchFlag=true//连碰标志
         
         @IBOutlet weak var singleButton: UIButton!
-        
         
         @IBOutlet weak var btnSelect: UIButton!
         
@@ -86,16 +86,29 @@
                 alertView.show()
                 return
             }
+            if(touchFlag==false){
+                let alertView = UIAlertView()
+                alertView.title = "系统提示"
+                alertView.message = "无连碰，请重新选择！"
+                alertView.addButtonWithTitle("确定")
+                alertView.show()
+                return
+            }
             var objBetPara=BetPara()
 //            objBetPara.USER=UserInfoManager.sharedManager.getUserName()
             objBetPara.USER="DEMOFZ-0P0P00"
-            objBetPara.money=self.textBetMoney.text!
-            objBetPara.moneySum=self.textBetMoney.text!
+          
             if(betType==0)
             {
+                objBetPara.money=self.textBetMoney.text!
+                objBetPara.moneySum=self.textBetMoney.text!
             objBetPara.inum="\(betList!.count)"
             }
             else{
+                var strTeamCount=(teamCount.text! as NSString).substringFromIndex(3)
+                var sumMoney=Double(strTeamCount)!*Double(self.textBetMoney.text!)!
+                objBetPara.money=self.textBetMoney.text!
+                objBetPara.moneySum="\(sumMoney)"
                 var strInum=btnSelect.titleLabel?.text!
                objBetPara.inum="\((strInum! as NSString).substringToIndex(1))"
             }
@@ -373,17 +386,22 @@
         //玩法菜单选项响应事件
         func clickMenuItem(key:String){
             
-            switch(key){
-            case "0":
+            print("点击项\(key)")
+            
+            
+            if(key=="0"){
+                self.touchFlag=true
                 betType=0
-                singleButton.titleLabel?.text="单注"
+                singleButton.setTitle("单注", forState: UIControlState.Normal)
                 var arry=getSpinnerItem("0")
                 btnSelect.titleLabel?.text=arry[0]["0"]
                 createSubMenu(arry)
                 teamCount.text="组数1"
-                
-                break
-            case "1":
+            
+            return
+            
+            }
+            if(key=="1"){
                 betType=1
                 singleButton.titleLabel?.text="连碰"
                 var arry11 = getSpinnerItem("1")
@@ -392,12 +410,10 @@
                 var intTeamCount=(content as NSString).substringToIndex(1)
                 teamCount.text="组数:\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
                 createSubMenu(arry11)
-                break
-            default:
-                print(key)
-                break
-                
-            }
+                return
+                }
+            
+            
             
         }
         
@@ -423,6 +439,7 @@
         func clickSubMenuItem(value:String){
             if betType==0{
                 singleButton.titleLabel?.text="单注"
+                self.touchFlag=true
             }
             else{
                 singleButton.titleLabel?.text="连碰"
@@ -462,6 +479,7 @@
                 if strPosition=="0"{
                     arryMenu.append(["0":"过关限制"])
                 }else{
+                    self.touchFlag=false
                     arryMenu.append(["0":"无连碰"])
                     
                 }
@@ -471,6 +489,7 @@
                     arryMenu.append(["0":"\(key)串1"])
                     
                 }else{
+                     self.touchFlag=false
                     arryMenu.append(["0":"无连碰"])
                 }
                 break

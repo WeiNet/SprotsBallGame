@@ -1050,11 +1050,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984646.935516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
             landmarkName = "PassShopingViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1098,11 +1098,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984646.935516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "487"
-            endingLineNumber = "487"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
             landmarkName = "getSpinnerItem(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1114,11 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984646.935516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "482"
-            endingLineNumber = "482"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
             landmarkName = "getSpinnerItem(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1130,43 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
-            landmarkName = "clickMenuItem(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "clickMenuItem(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1178,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1194,23 +1162,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "setResult(_:strType:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
@@ -1226,11 +1178,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "setResult(_:strType:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsBall/PassShopingViewController.swift"
+            timestampString = "486984249.91104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1242,11 +1210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "setResult(_:strType:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1258,7 +1226,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486976819.657233"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -1274,7 +1242,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
-                  timestampString = "486978502.931719"
+                  timestampString = "486984647.969889"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -1289,7 +1257,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
-                  timestampString = "486978502.932017"
+                  timestampString = "486984647.970222"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -1306,11 +1274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486976980.16018"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "payChlick(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1322,11 +1290,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "payChlick(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1338,13 +1306,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
-            timestampString = "486978501.86357"
+            timestampString = "486984249.91104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "payChlick(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsBall/PassShopingViewController.swift"
+            timestampString = "486984249.91104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "payChlick(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Dead and Owned To Guaranteed&gt; of SportsBall.PassShopingViewController.payChlick (SportsBall.PassShopingViewController)(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "SportsBall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
+                  timestampString = "486984647.976303"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "848">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Dead and Owned To Guaranteed&gt; of SportsBall.PassShopingViewController.payChlick (SportsBall.PassShopingViewController)(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "SportsBall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
+                  timestampString = "486984647.97674"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "966">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
