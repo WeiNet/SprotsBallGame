@@ -24,7 +24,7 @@ class ProblemController: UIViewController,UITableViewDataSource,UITableViewDeleg
         refresh.addTarget(self, action: "refreshResult", forControlEvents: UIControlEvents.ValueChanged)
         self.title="问题反馈"
         self.tableViewList.addSubview(refresh)
-    navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "我要反馈", style: UIBarButtonItemStyle.Bordered, target: self, action: "back"), animated: true)
+        navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "我要反馈", style: UIBarButtonItemStyle.Bordered, target: self, action: "back"), animated: true)
         self.connection.delegate=self
         getResult()
        

@@ -87,10 +87,27 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if(indexPath.row==1){
+            var objbet=BetInfo()
+            objbet.homename="A"
+            objbet.visitname="B"
+            BetListManager.sharedManager.betList.append(objbet)
+            var objbet1=BetInfo()
+            objbet1.homename="C"
+            objbet1.visitname="D"
+            BetListManager.sharedManager.betList.append(objbet1)
+            var objbet3=BetInfo()
+            objbet3.homename="C"
+            objbet3.visitname="D"
+            BetListManager.sharedManager.betList.append(objbet3)
+            var objbet4=BetInfo()
+            objbet4.homename="C"
+            objbet4.visitname="D"
+            BetListManager.sharedManager.betList.append(objbet4)
             
-            
-            var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
+            var vcAbout = sb.instantiateViewControllerWithIdentifier("PassShopingViewController") as! PassShopingViewController
             self.navigationController?.pushViewController(vcAbout, animated: true)
+//            var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
+//            self.navigationController?.pushViewController(vcAbout, animated: true)
             
         }
         

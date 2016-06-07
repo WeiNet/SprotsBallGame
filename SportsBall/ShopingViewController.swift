@@ -263,7 +263,7 @@
         }
         //批次下注方法
         func addBet(strPar:NSString){
-            
+            print(strPar)
             var strParam:String = "<BatchAddBet xmlns=\"http://tempuri.org/\">";
             strParam.appendContentsOf("<strpara>\(strPar)</strpara>")
             strParam.appendContentsOf("<isBeting>false</isBeting>")

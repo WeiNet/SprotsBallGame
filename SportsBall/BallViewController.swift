@@ -306,6 +306,7 @@ class BallViewController: UIViewController {
         if(betManger.betList.count > 1){
             let sb = UIStoryboard(name: "Main", bundle:nil)
             let vc = sb.instantiateViewControllerWithIdentifier("PassShopingViewController") as! PassShopingViewController
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             alertMessage("至少选择两场比赛")

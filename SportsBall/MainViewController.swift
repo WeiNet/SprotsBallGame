@@ -37,13 +37,13 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
                self.view.addSubview(circleView)
         
         
-        
+//        
 //        let tempButton = UIButton(frame: CGRectMake(0, 300, self.view.frame.size.width, 20))
 //        tempButton.backgroundColor = UIColor.redColor()
 //        tempButton.setTitle("appendImage", forState: UIControlState.Normal)
 //        tempButton.addTarget(self, action: Selector("setImage:"), forControlEvents: UIControlEvents.TouchUpInside)
 //        self.view.addSubview(tempButton)
-
+//
         // Do any additional setup after loading the view.
     }
 
