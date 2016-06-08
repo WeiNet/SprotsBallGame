@@ -203,7 +203,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         
         intIndexPage++
         var strParam:String = "<GetBetsDetail xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
         strParam.appendContentsOf("<strBallType>all</strBallType>")
         strParam.appendContentsOf("<strDate>\(mdate)</strDate>")
         strParam.appendContentsOf("<iPageindex>\(intIndexPage)</iPageindex>")

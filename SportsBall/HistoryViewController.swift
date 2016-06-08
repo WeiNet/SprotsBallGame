@@ -41,7 +41,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func funcRefresh(){
         intIndexPage++
         var strParam:String = "<GetUncountBet xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
         strParam.appendContentsOf("<iPageindex>\(intIndexPage)</iPageindex>")
         strParam.appendContentsOf("<iPageSize>100</iPageSize>")
         strParam.appendContentsOf("</GetUncountBet>")

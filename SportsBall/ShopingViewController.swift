@@ -19,6 +19,7 @@
         
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
+            self.navigationController?.popViewControllerAnimated(true)
         }
         
         @IBOutlet weak var switchStatus: UISwitch!
@@ -334,7 +335,7 @@
         //取得账户余额
         func getBalanceResult(){
             var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
-            strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+            strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
             strParam.appendContentsOf("</GetCredit>")
             comm.getResult(strParam,strResultName: "GetCreditResult")
         }

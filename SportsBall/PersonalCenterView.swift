@@ -19,6 +19,30 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             getResult()
     }
     
+    
+    @IBAction func btnSignoutClick(sender: AnyObject) {
+        let alertView = UIAlertView()
+        alertView.title = "系统提示"
+        alertView.message = "确定要清除吗？"
+        alertView.addButtonWithTitle("取消")
+        alertView.addButtonWithTitle("确定")
+        alertView.cancelButtonIndex=0
+        alertView.delegate=self;
+        alertView.show()
+       
+
+    }
+    //弹出框
+    func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+        if(buttonIndex==alertView.cancelButtonIndex){
+            print("点击了取消")
+        }
+        else
+        {
+            var vc = LoginViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     var setNameArry=["派彩结果","关于"]
     var setImge=["betrecod_log","about_log"]
     override func viewDidLoad() {
@@ -62,7 +86,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     func getResult(){
         
         var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
+        strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
         strParam.appendContentsOf("</GetCredit>")
         conn.getResult(strParam,strResultName: "GetCreditResult")
         

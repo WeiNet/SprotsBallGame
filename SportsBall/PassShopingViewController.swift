@@ -37,6 +37,7 @@
         @IBOutlet weak var view3: UIView!
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
+              self.navigationController?.popViewControllerAnimated(true)
         }
         
         @IBOutlet weak var textBetMoney: UITextField!
@@ -95,8 +96,8 @@
                 return
             }
             var objBetPara=BetPara()
-//            objBetPara.USER=UserInfoManager.sharedManager.getUserName()
-            objBetPara.USER="DEMOFZ-0P0P00"
+            objBetPara.USER=UserInfoManager.sharedManager.getUserID()
+          
           
             if(betType==0)
             {
@@ -349,12 +350,13 @@
             
         }
         //取得账户余额
-        func getBalanceResult(){
-            var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
-            strParam.appendContentsOf("<strUser>DEMOFZ-0P0P00</strUser>")
-            strParam.appendContentsOf("</GetCredit>")
+    func getBalanceResult(){
+        
+        var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
+        strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
+        strParam.appendContentsOf("</GetCredit>")
             comm.getResult(strParam,strResultName: "GetCreditResult")
-        }
+    }
         func setViewBackground(){
             
             self.view1.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1).CGColor;
