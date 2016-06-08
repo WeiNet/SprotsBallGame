@@ -184,7 +184,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
         
         if (strResult != "") {
             strResult = ""
-            delegate?.setResult(parseError.debugDescription,strType: "Error")
+//            delegate?.setResult(parseError.debugDescription,strType: "Error")
         }
     }
     func parser(parser: NSXMLParser, foundCharacters string: String) {

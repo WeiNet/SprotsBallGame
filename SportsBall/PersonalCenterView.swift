@@ -12,6 +12,8 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     var conn=CommonParameter()
     
     @IBOutlet weak var resultText: UILabel!
+    
+    @IBOutlet weak var userNameText: UILabel!
     @IBOutlet weak var tableViewList: UITableView!
     
   		@IBAction func btnRefresh(sender: UIButton) {
@@ -23,7 +25,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBAction func btnSignoutClick(sender: AnyObject) {
         let alertView = UIAlertView()
         alertView.title = "系统提示"
-        alertView.message = "确定要清除吗？"
+        alertView.message = "确定要退出吗？"
         alertView.addButtonWithTitle("取消")
         alertView.addButtonWithTitle("确定")
         alertView.cancelButtonIndex=0
@@ -98,8 +100,15 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
         if(strResult==""){
             return
         }
+        if(strType == "WebError" || strResult == "Error"){
+            let message = "网络连接异常!"
+            alertMessage(message)
+            return
+        }
         var result = ( strResult as NSString ).floatValue;
         resultText.text="\(result*10000)"
+        userNameText.text=UserInfoManager.sharedManager.getUserName()
+        
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        
@@ -111,27 +120,9 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if(indexPath.row==1){
-            var objbet=BetInfo()
-            objbet.homename="A"
-            objbet.visitname="B"
-            BetListManager.sharedManager.betList.append(objbet)
-            var objbet1=BetInfo()
-            objbet1.homename="C"
-            objbet1.visitname="D"
-            BetListManager.sharedManager.betList.append(objbet1)
-            var objbet3=BetInfo()
-            objbet3.homename="C"
-            objbet3.visitname="D"
-            BetListManager.sharedManager.betList.append(objbet3)
-            var objbet4=BetInfo()
-            objbet4.homename="C"
-            objbet4.visitname="D"
-            BetListManager.sharedManager.betList.append(objbet4)
-            
-            var vcAbout = sb.instantiateViewControllerWithIdentifier("PassShopingViewController") as! PassShopingViewController
+           
+            var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
             self.navigationController?.pushViewController(vcAbout, animated: true)
-//            var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
-//            self.navigationController?.pushViewController(vcAbout, animated: true)
             
         }
         
