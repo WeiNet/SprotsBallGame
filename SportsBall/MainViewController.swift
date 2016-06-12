@@ -134,6 +134,12 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         }else if(indexPath.row == 1){
             let uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("RollView") 
             self.navigationController?.pushViewController(uiView, animated: true)
+        }else{
+            let alertView = UIAlertView()
+            alertView.title = "系统提示"
+            alertView.message = "暂停销售"
+            alertView.addButtonWithTitle("确定")
+            alertView.show()
         }
     }
     override func viewWillAppear(animated: Bool) {

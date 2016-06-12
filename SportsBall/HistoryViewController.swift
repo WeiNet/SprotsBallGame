@@ -104,7 +104,11 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if(strResult==""){
         return
         }
-       
+        if(strType == "WebError" || strResult == "Error"){
+            let message = "网络连接异常!"
+            alertMessage(message)
+            return
+        }
         activityView.stopAnimating()
         refresh.endRefreshing()
         NSLog(strResult)
