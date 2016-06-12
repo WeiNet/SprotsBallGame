@@ -112,8 +112,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     func explainClick(){
         let navigationViews = self.navigationController!.viewControllers
         let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
-        tabBar.selectedIndex = 3
-        let helpVC:HelpController = tabBar.viewControllers![3] as! HelpController
+        tabBar.selectedIndex = 4
+        let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
         helpVC.loadWebView("rule_zq")
         self.navigationController?.popViewControllerAnimated(true)
     }
