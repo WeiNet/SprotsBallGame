@@ -13,10 +13,10 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     
  
     @IBOutlet weak var tableData: UITableView!
+    @IBOutlet var segment: UISegmentedControl!//add Brook
     
     var gameName=["足球竞赛","篮球竞赛","棒球竞赛","排球竞赛"]
     var gameImage=["football","baseketball","baseball","vallyball"]
-    var viewName = ["Roll","Roll","Roll","Roll"]
     //当前屏幕对象
     var screenObject=UIScreen.mainScreen().bounds
 
@@ -35,7 +35,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
                self.view.addSubview(circleView)
-        
+        segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)//add Brook
         
 //        
 //        let tempButton = UIButton(frame: CGRectMake(0, 300, self.view.frame.size.width, 20))
@@ -69,7 +69,20 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         print(currentIndxe, terminator: "");
     }
     
-
+    //今日/早盘选择改变事件 add Brook
+    func segmentChange(sender: UISegmentedControl){
+        let storyboard = UIStoryboard(name: "Main", bundle:nil)
+        let uiView:BreakfastViewController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView") as! BreakfastViewController
+        switch sender.selectedSegmentIndex {
+        case 0 :
+            uiView.mPlayType = "1"
+        case 1 :
+            uiView.mPlayType = "0"
+        default:
+            print("defaul")
+        }
+        self.navigationController?.pushViewController(uiView, animated: true)
+    }
     
 
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -114,12 +127,12 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     
     //Item点击事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var storyboard = UIStoryboard(name: "Main", bundle:nil)
+        let storyboard = UIStoryboard(name: "Main", bundle:nil)
         if(indexPath.row == 0){
-            var uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView") as! UIViewController
+            let uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("BreakfastView")
             self.navigationController?.pushViewController(uiView, animated: true)
         }else if(indexPath.row == 1){
-            var uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("RollView") as! UIViewController
+            let uiView:UIViewController = storyboard.instantiateViewControllerWithIdentifier("RollView") 
             self.navigationController?.pushViewController(uiView, animated: true)
         }else{
             let alertView = UIAlertView()

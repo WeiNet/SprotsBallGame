@@ -62,16 +62,24 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
         clearAllNotice()
-        if(strType == "Error" || strResult == ""){
-            let message = "系统错误！"
-            alertMessage(message)
+        if(strType=="Error" && strResult=="WebError"){
+            alertMessage("网络错误，请检查网络")
             return
         }
-        if(strType == "WebError" || strResult == "Error"){
-            let message = "网络连接异常!"
-            alertMessage(message)
+        if(strResult==""){
+            alertMessage("系统错误")
             return
         }
+//        if(strType == "Error" || strResult == ""){
+//            let message = "系统错误！"
+//            alertMessage(message)
+//            return
+//        }
+//        if(strType == "WebError" || strResult == "Error"){
+//            let message = "网络连接异常!"
+//            alertMessage(message)
+//            return
+//        }
         if(strType == getFootballMatchResult){//页面首次加载获取资料
             let aryUnionInfo:NSMutableArray = stringToDictionary(strResult)
             addControls(aryUnionInfo, contentView: contentView, mainView: mainView, delegate: self,cartDelegate:self,orderHeight: orderHeight,playType:mPlayType,isPass: isPass)
@@ -104,8 +112,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     func explainClick(){
         let navigationViews = self.navigationController!.viewControllers
         let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
-        tabBar.selectedIndex = 3
-        let helpVC:HelpController = tabBar.viewControllers![3] as! HelpController
+        tabBar.selectedIndex = 4
+        let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
         helpVC.loadWebView("rule_zq")
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -429,10 +437,24 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
+        initView(mPlayType)
+        
         alertMenu = createMenu("足球玩法", message: "请选择玩法", menuArray: menuArray)
         alertCart = initCartClear()
         //赛事资料
         getFootballMatch()
+    }
+    
+    func initView(playType:String){
+        let view:HeaderView = headerView.subviews[0] as! HeaderView
+        for array in menuArray{
+            let dics:Dictionary<String,String> = array
+            for (keyTemp,valueTemp) in dics{
+                if playType == keyTemp{
+                    view.btnTitle.setTitle(valueTemp, forState: UIControlState.Normal)
+                }
+            }
+        }
     }
     
     //刷新tableView

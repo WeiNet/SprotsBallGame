@@ -51,16 +51,24 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
         clearAllNotice()
-        if(strType == "Error" || strResult == ""){
-            let message = "系统错误！"
-            alertMessage(message)
+        if(strType=="Error" && strResult=="WebError"){
+            alertMessage("网络错误，请检查网络")
             return
         }
-        if(strType == "WebError" || strResult == "Error"){
-            let message = "网络连接异常!"
-            alertMessage(message)
+        if(strResult==""){
+            alertMessage("系统错误")
             return
         }
+//        if(strType == "Error" || strResult == ""){
+//            let message = "系统错误！"
+//            alertMessage(message)
+//            return
+//        }
+//        if(strType == "WebError" || strResult == "Error"){
+//            let message = "网络连接异常!"
+//            alertMessage(message)
+//            return
+//        }
         if(strType == getOtherMatchResult){
             if(mPlayType == "2"){
                 orderHeight = 72
@@ -99,8 +107,8 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     func explainClick(){
         let navigationViews = self.navigationController!.viewControllers
         let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
-        tabBar.selectedIndex = 3
-        let helpVC:HelpController = tabBar.viewControllers![3] as! HelpController
+        tabBar.selectedIndex = 4
+        let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
         helpVC.loadWebView("rule_lq")
         self.navigationController?.popViewControllerAnimated(true)
     }
