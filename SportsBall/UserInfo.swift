@@ -12,6 +12,7 @@ class UserInfoManager: NSObject {
     var strUserName=""
     var strUserID=""
     var strCredit=0.0
+    var strUrl=""
     private static let instance = UserInfoManager()
     /// 全局统一访问入口
     public class var sharedManager: UserInfoManager {
@@ -22,7 +23,7 @@ class UserInfoManager: NSObject {
         
     }
     func setUserName(strName:String){
-    strUserName=strName
+        strUserName=strName
     }
     func getUserID()->String{
         return strUserID
@@ -38,6 +39,13 @@ class UserInfoManager: NSObject {
     func setCredit(strUserCredit:Double){
         strCredit=strUserCredit
     }
-    
+    func getUrl()->String{
+        return strUrl
+        
+    }
+    func setUrl(url:String){
+        strUrl=url
+    }
+
     
 }

@@ -34,7 +34,8 @@ public let HomeCollectionCellAnimationDuration: NSTimeInterval = 1.0
 //webservice配置地址
 //public let WebServiceAddress="http://192.168.30.9:302/MobileApp.asmx"
 public let httpAddress="http://192.168.30.134:8080/Sports_Betting/"
-public let WebServiceAddress="http://gttest16.com/MobileApp.asmx"
+public let XMWebServiceAddress="http://gttest16.com/MobileApp.asmx"
+public let TWWebServiceAddress="http://gttest16.com/MobileApp.asmx"
 public let WebServiceMoneyAddress="http://ts.gttest16.com/lotteryUser.asmx"
 
 

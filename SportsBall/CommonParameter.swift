@@ -15,7 +15,6 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
     var strResult=""
     var matchingElement="LoginResult"
     var elementIsFound=false
-    var url:NSURL=NSURL(string:WebServiceAddress)!
     var delegate:ResultDelegate?
     func getSoapMsg(strParame:String)->String{
         
@@ -56,7 +55,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
             delegate?.setResult("WebError",strType: "Error")
             return 
         }
-       
+        var url:NSURL=NSURL(string:UserInfoManager.sharedManager.getUrl())!
         let request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         
@@ -151,7 +150,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
             delegate?.setResult("WebError",strType: "Error")
             return
         }
-        
+        var url:NSURL=NSURL(string:UserInfoManager.sharedManager.getUrl())!
         let request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         

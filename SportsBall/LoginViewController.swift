@@ -65,8 +65,6 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         var strAccount=self.textUserNumber.text?.uppercaseString
         var strArry=strAccount!.componentsSeparatedByString("@")
         var strNew=strArry[0]+(self.textUserPW.text?.uppercaseString)!+"QWEQAZ"
-        
-       print(strNew.md5)
         var strParam:String = "<GetDQUser xmlns=\"http://tempuri.org/\">";
         strParam.appendContentsOf("<strUserName>\(self.textUserNumber.text!)</strUserName>")
         strParam.appendContentsOf("<strPassword>\(self.textUserPW.text!)</strPassword>")
@@ -107,15 +105,20 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
             return
         }
         if(strType=="GetDQUserResult"){
-            print(strResult)
+           
             if(strResult=="2"||strResult=="1"){
              Tool.showMsg("用户名或密码错误")
             return
             }
              var strArry=strResult.componentsSeparatedByString("@")
-            if(strArry.count<2){
+            if(strArry.count<3){
             Tool.showMsg("用户名或密码错误")
                 return
+            }
+            if(strArry[2]=="1"){
+                UserInfoManager.sharedManager.setUrl(XMWebServiceAddress)
+            }else{
+                UserInfoManager.sharedManager.setUrl(TWWebServiceAddress)
             }
             login(strArry[0], strPW: strArry[1])
             
