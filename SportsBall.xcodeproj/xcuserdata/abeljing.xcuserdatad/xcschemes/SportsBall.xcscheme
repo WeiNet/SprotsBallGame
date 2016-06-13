@@ -20,6 +20,20 @@
                ReferencedContainer = "container:SportsBall.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "462BEDF91C8682E300E451E4"
+               BuildableName = "SportsBallTests.xctest"
+               BlueprintName = "SportsBallTests"
+               ReferencedContainer = "container:SportsBall.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
