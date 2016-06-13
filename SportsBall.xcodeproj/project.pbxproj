@@ -244,16 +244,16 @@
 		1779BA491CCEF38F002A62DC /* match */ = {
 			isa = PBXGroup;
 			children = (
-				175171CB1D0501690056AD4B /* view */,
-				17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */,
-				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
-				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
-				177D3F531CED603D00ED6875 /* OrderView.swift */,
 				17E287321CE96FC500B26CA6 /* BallViewController.swift */,
-				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
-				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
+				17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */,
+				177D3F531CED603D00ED6875 /* OrderView.swift */,
 				170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */,
 				17D843C01D01710F00BD7170 /* OnlineUser.swift */,
+				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
+				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
+				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
+				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
+				175171CB1D0501690056AD4B /* view */,
 				17B3445A1CC08F91002638FC /* header */,
 				1779BA4B1CCEF3F2002A62DC /* football */,
 				17C6EC071CD196CF00DF71E1 /* basketball */,
@@ -300,8 +300,8 @@
 		1779BA4F1CCEF452002A62DC /* header */ = {
 			isa = PBXGroup;
 			children = (
-				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
 				17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */,
+				17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */,
 			);
 			name = header;
 			sourceTree = "<group>";
@@ -309,8 +309,8 @@
 		1779BA501CCEF45E002A62DC /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				1779BA511CCEF6BD002A62DC /* Cell.swift */,
 				1779BA521CCEF6BD002A62DC /* Cell.xib */,
+				1779BA511CCEF6BD002A62DC /* Cell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -327,8 +327,8 @@
 		17B3445B1CC08FA8002638FC /* view */ = {
 			isa = PBXGroup;
 			children = (
-				17B3445C1CC0903D002638FC /* HeaderView.swift */,
 				17B3445E1CC0906F002638FC /* HeaderView.xib */,
+				17B3445C1CC0903D002638FC /* HeaderView.swift */,
 				17B181091CC6152800CF3054 /* CartButtonView.xib */,
 				17B1810B1CC618EA00CF3054 /* CartButtonView.swift */,
 			);
@@ -339,8 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				17C6EC081CD197F000DF71E1 /* RollViewController.swift */,
-				17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */,
 				17C6EC0A1CD1982E00DF71E1 /* RollView.xib */,
+				17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */,
 			);
 			name = basketball;
 			sourceTree = "<group>";
