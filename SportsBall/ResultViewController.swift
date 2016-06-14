@@ -86,7 +86,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 if union.N_NO == String(matchJson[index].objectForKey("N_LMNO")!) {
                     let resultCellModel:ResultCellModel = ResultCellModel()
                     //给注单属性赋值
-                    resultCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : NSArray])
+                    resultCellModel.setValuesForKeysWithDictionary(matchJson[index] as [String : NSArray])
                     aryResultCellModel.append(resultCellModel)
                 }
             }
