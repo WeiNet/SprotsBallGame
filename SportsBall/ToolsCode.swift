@@ -257,14 +257,14 @@ struct ToolsCode {
     
     //转成json数组格式
     //格式：[{"ID":1,"Name":"元台禅寺","LineID":1},{"ID":2,"Name":"田坞里山塘","LineID":1},{"ID":3,"Name":"滴水石","LineID":1}]
-    static func toJsonArray(strResult:String)->AnyObject{
-        
+    static func toJsonArray(strResult:String)->NSArray{
+        var jsonArr = NSArray()
         if strResult == ""{
-            return ""
+            return jsonArr
         }
         let data = strResult.dataUsingEncoding(NSUTF8StringEncoding)
         
-        let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
+        jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
                                                                   options: NSJSONReadingOptions.MutableContainers) as! NSArray
         
         return jsonArr

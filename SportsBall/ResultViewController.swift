@@ -59,7 +59,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
         allUnionVO.arrayUnionVO.removeAll(keepCapacity: false)
         var aryUnionVO:Array<UnionTitleVO> = Array()
-        let info = ToolsCode.toJsonArray(strResult)
+        let info:NSArray = ToolsCode.toJsonArray(strResult)
         let unionJson = info[1]
         if unionJson.count == 0 {//没有资料
             return aryUnionInfo
@@ -86,7 +86,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 if union.N_NO == String(matchJson[index].objectForKey("N_LMNO")!) {
                     let resultCellModel:ResultCellModel = ResultCellModel()
                     //给注单属性赋值
-                    resultCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
+                    resultCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : NSArray])
                     aryResultCellModel.append(resultCellModel)
                 }
             }

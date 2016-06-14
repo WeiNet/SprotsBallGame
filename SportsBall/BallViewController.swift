@@ -54,7 +54,7 @@ class BallViewController: UIViewController {
         let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
         allUnionVO.arrayUnionVO.removeAll(keepCapacity: false)
         var aryUnionVO:Array<UnionTitleVO> = Array()
-        let info = ToolsCode.toJsonArray(strResult)
+        let info:NSArray = ToolsCode.toJsonArray(strResult)
         let unionJson = info[1]
         if unionJson.count == 0 {//没有资料
             return aryUnionInfo
@@ -80,7 +80,7 @@ class BallViewController: UIViewController {
                 if union.N_NO == String(matchJson[index].objectForKey("N_LMNO")!) {
                     let orderCellModel:OrderCellModel = OrderCellModel()
                     //给注单属性赋值
-                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
+                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : NSArray])
                     aryOrderCellModel.append(orderCellModel)
                 }
             }
