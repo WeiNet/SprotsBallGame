@@ -87,7 +87,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
                     
                     let resultCellModel:ResultCellModel = ResultCellModel()
                     //给注单属性赋值
-                    resultCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : NSArray])
+                    resultCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
                     aryResultCellModel.append(resultCellModel)
                 }
             }

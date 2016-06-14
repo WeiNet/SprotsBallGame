@@ -81,7 +81,7 @@ class BallViewController: UIViewController {
                     
                     let orderCellModel:OrderCellModel = OrderCellModel()
                     //给注单属性赋值
-                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : NSArray])
+                    orderCellModel.setValuesForKeysWithDictionary(matchJson[index] as! [String : AnyObject])
                     aryOrderCellModel.append(orderCellModel)
                 }
             }
