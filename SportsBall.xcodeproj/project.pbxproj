@@ -52,6 +52,7 @@
 		17EFB7D21D115213002F34E2 /* GoalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7D41D115213002F34E2 /* GoalsView.xib */; };
 		17EFB7DB1D11521C002F34E2 /* PassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7DD1D11521C002F34E2 /* PassView.xib */; };
 		17EFB7E41D115228002F34E2 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7E61D115228002F34E2 /* RollView.xib */; };
+		17EFB7F11D123FE8002F34E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7F31D123FE8002F34E2 /* Localizable.strings */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -198,6 +199,10 @@
 		17EFB7E81D11522A002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RollView.strings"; sourceTree = "<group>"; };
 		17EFB7EA1D11522B002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RollView.strings"; sourceTree = "<group>"; };
 		17EFB7EC1D11522C002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RollView.strings; sourceTree = "<group>"; };
+		17EFB7F21D123FE8002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		17EFB7F41D123FEB002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		17EFB7F51D123FEC002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		17EFB7F61D123FED002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -453,6 +458,7 @@
 				462BEDF51C8682E300E451E4 /* Info.plist */,
 				462BEE171C86861D00E451E4 /* StartViewController.swift */,
 				462BEE181C86861D00E451E4 /* StartViewController.xib */,
+				17EFB7F31D123FE8002F34E2 /* Localizable.strings */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
 				17EFB7C01D1151FB002F34E2 /* FluctuantView.xib in Resources */,
+				17EFB7F11D123FE8002F34E2 /* Localizable.strings in Resources */,
 				17EFB7A51D11519E002F34E2 /* BasktballResultView.xib in Resources */,
 				17EFB79C1D115195002F34E2 /* FootballResultView.xib in Resources */,
 				17EFB7C91D115208002F34E2 /* FieldView.xib in Resources */,
@@ -940,6 +947,17 @@
 				17EFB7EC1D11522C002F34E2 /* en */,
 			);
 			name = RollView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7F31D123FE8002F34E2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7F21D123FE8002F34E2 /* Base */,
+				17EFB7F41D123FEB002F34E2 /* zh-Hans */,
+				17EFB7F51D123FEC002F34E2 /* zh-Hant */,
+				17EFB7F61D123FED002F34E2 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		462BEDED1C8682E300E451E4 /* Main.storyboard */ = {

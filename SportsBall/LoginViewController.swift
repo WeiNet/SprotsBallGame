@@ -42,7 +42,8 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     @IBAction func loginClick(sender: UIButton) {
         if(self.textUserNumber.text==""){
         
-            Tool.showMsg("帐号不能为空")
+//            Tool.showMsg("帐号不能为空")
+            Tool.showMsg(NSLocalizedString("EmptyAccount", comment: ""))
          return
         }
         if(self.textUserPW.text==""){
