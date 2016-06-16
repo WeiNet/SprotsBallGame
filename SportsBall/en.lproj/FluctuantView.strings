@@ -48,7 +48,7 @@
 "7Nf-EQ-01M.text" = "31";
 
 /* Class = "UILabel"; text = "平"; ObjectID = "8H2-91-lLN"; */
-"8H2-91-lLN.text" = "平";
+"8H2-91-lLN.text" = "draw";
 
 /* Class = "UILabel"; text = "4:2"; ObjectID = "CwM-nO-Mqg"; */
 "CwM-nO-Mqg.text" = "4:2";
@@ -93,7 +93,7 @@
 "W6p-oe-SL1.text" = "4:0";
 
 /* Class = "UILabel"; text = "客"; ObjectID = "XEi-JD-8Wz"; */
-"XEi-JD-8Wz.text" = "客";
+"XEi-JD-8Wz.text" = "guest";
 
 /* Class = "UILabel"; text = "201"; ObjectID = "Yvi-7K-9HR"; */
 "Yvi-7K-9HR.text" = "201";
@@ -111,7 +111,7 @@
 "blO-TC-AWV.text" = "201";
 
 /* Class = "UILabel"; text = "主"; ObjectID = "hKg-Xc-5cQ"; */
-"hKg-Xc-5cQ.text" = "主";
+"hKg-Xc-5cQ.text" = "home";
 
 /* Class = "UILabel"; text = "201"; ObjectID = "iOa-ZP-BXL"; */
 "iOa-ZP-BXL.text" = "201";
@@ -144,7 +144,7 @@
 "pMd-hh-df0.text" = "201";
 
 /* Class = "UILabel"; text = "其它N:N"; ObjectID = "pbh-nj-kux"; */
-"pbh-nj-kux.text" = "其它N:N";
+"pbh-nj-kux.text" = "otherN:N";
 
 /* Class = "UILabel"; text = "28"; ObjectID = "qb7-Ik-17l"; */
 "qb7-Ik-17l.text" = "28";

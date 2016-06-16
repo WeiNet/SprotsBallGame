@@ -1,15 +1,15 @@
 
 /* Class = "UILabel"; text = "★选择联盟"; ObjectID = "44K-SY-W9Y"; */
-"44K-SY-W9Y.text" = "★选择联盟";
+"44K-SY-W9Y.text" = "★select alliance";
 
 /* Class = "UIButton"; normalTitle = "确定"; ObjectID = "6ha-7d-Lwt"; */
-"6ha-7d-Lwt.normalTitle" = "确定";
+"6ha-7d-Lwt.normalTitle" = "OK";
 
 /* Class = "UILabel"; text = "全部联盟"; ObjectID = "8Pm-ae-Dsi"; */
-"8Pm-ae-Dsi.text" = "全部联盟";
+"8Pm-ae-Dsi.text" = "all alliance";
 
 /* Class = "UILabel"; text = "可以选择多个联盟"; ObjectID = "D63-Fo-CcM"; */
-"D63-Fo-CcM.text" = "可以选择多个联盟";
+"D63-Fo-CcM.text" = "Can choose a number of alliances";
 
 /* Class = "UIButton"; normalTitle = "取消"; ObjectID = "JkP-q4-Hz1"; */
-"JkP-q4-Hz1.normalTitle" = "取消";
+"JkP-q4-Hz1.normalTitle" = "cancel";

@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "总分"; ObjectID = "22g-NK-57c"; */
-"22g-NK-57c.text" = "总分";
+"22g-NK-57c.text" = "score";
 
 /* Class = "UILabel"; text = "0-1"; ObjectID = "DI6-Cb-IcY"; */
 "DI6-Cb-IcY.text" = "0-1";
@@ -21,7 +21,7 @@
 "Oc2-6T-Kku.text" = "2.74";
 
 /* Class = "UILabel"; text = "双"; ObjectID = "PAz-hI-giD"; */
-"PAz-hI-giD.text" = "双";
+"PAz-hI-giD.text" = "even";
 
 /* Class = "UILabel"; text = "1.91"; ObjectID = "aHU-nI-942"; */
 "aHU-nI-942.text" = "1.91";
@@ -33,7 +33,7 @@
 "heh-M3-AYZ.text" = "1.99";
 
 /* Class = "UILabel"; text = "单"; ObjectID = "kjr-Db-RG8"; */
-"kjr-Db-RG8.text" = "单";
+"kjr-Db-RG8.text" = "odd";
 
 /* Class = "UILabel"; text = "4"; ObjectID = "zNn-sp-Kse"; */
 "zNn-sp-Kse.text" = "4";

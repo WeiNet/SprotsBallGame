@@ -3,7 +3,7 @@
 "0Mf-qH-jiz.text" = "0.850";
 
 /* Class = "UILabel"; text = "大小"; ObjectID = "3Dz-fN-nJi"; */
-"3Dz-fN-nJi.text" = "大小";
+"3Dz-fN-nJi.text" = "big small";
 
 /* Class = "UILabel"; text = "0.700"; ObjectID = "CrG-JC-Mfq"; */
 "CrG-JC-Mfq.text" = "0.700";
@@ -12,7 +12,7 @@
 "DwG-MD-WWL.text" = "0.700";
 
 /* Class = "UILabel"; text = "让球"; ObjectID = "EqY-qH-kRL"; */
-"EqY-qH-kRL.text" = "让球";
+"EqY-qH-kRL.text" = "let";
 
 /* Class = "UILabel"; text = "2.5"; ObjectID = "HC8-zP-Dim"; */
 "HC8-zP-Dim.text" = "2.5";
@@ -21,13 +21,13 @@
 "IX4-Oi-7Jl.text" = "0.560";
 
 /* Class = "UILabel"; text = "大"; ObjectID = "W3T-5k-vbF"; */
-"W3T-5k-vbF.text" = "大";
+"W3T-5k-vbF.text" = "big";
 
 /* Class = "UILabel"; text = "小"; ObjectID = "Xh6-ou-XPo"; */
-"Xh6-ou-XPo.text" = "小";
+"Xh6-ou-XPo.text" = "small";
 
 /* Class = "UILabel"; text = "单双"; ObjectID = "ZMN-1p-RzZ"; */
-"ZMN-1p-RzZ.text" = "单双";
+"ZMN-1p-RzZ.text" = "single";
 
 /* Class = "UILabel"; text = "207.5"; ObjectID = "cIJ-gn-DuY"; */
 "cIJ-gn-DuY.text" = "207.5";
