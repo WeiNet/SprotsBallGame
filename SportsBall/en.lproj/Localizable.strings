@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  SportsBall
+
+  Created by Brook on 16/6/16.
+  Copyright © 2016年 abel jing. All rights reserved.
+*/
+EmptyAccount = "Empty Account";
+EmptyPassword = "Empty Password";

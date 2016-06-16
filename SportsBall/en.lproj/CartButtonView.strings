@@ -1,0 +1,9 @@
+
+/* Class = "UISegmentedControl"; JQy-kz-ssS.segmentTitles[0] = "单笔下注"; ObjectID = "JQy-kz-ssS"; */
+"JQy-kz-ssS.segmentTitles[0]" = "single";
+
+/* Class = "UISegmentedControl"; JQy-kz-ssS.segmentTitles[1] = "多笔下注"; ObjectID = "JQy-kz-ssS"; */
+"JQy-kz-ssS.segmentTitles[1]" = "multi";
+
+/* Class = "UIButton"; normalTitle = "清空"; ObjectID = "Uuu-fh-loK"; */
+"Uuu-fh-loK.normalTitle" = "clean";

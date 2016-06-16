@@ -7,42 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170226DA1CDC375D00EA6AF6 /* UnionCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */; };
 		170226DE1CDC46D000EA6AF6 /* UnionCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */; };
 		170226E21CE6B19E00EA6AF6 /* AllUnionVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */; };
 		1711E86E1CCF5431006FC5E7 /* BreakfastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */; };
 		1779BA531CCEF6BD002A62DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA511CCEF6BD002A62DC /* Cell.swift */; };
 		1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA521CCEF6BD002A62DC /* Cell.xib */; };
 		1779BA571CCEF707002A62DC /* BreakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA551CCEF707002A62DC /* BreakfastView.swift */; };
-		1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1779BA561CCEF707002A62DC /* BreakfastView.xib */; };
 		1779BA5A1CCEF8E3002A62DC /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779BA591CCEF8E3002A62DC /* TableView.swift */; };
 		177D3F541CED603D00ED6875 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3F531CED603D00ED6875 /* OrderView.swift */; };
 		1782A6211D05601900444075 /* FootballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A61F1D05601900444075 /* FootballResultView.swift */; };
-		1782A6221D05601900444075 /* FootballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6201D05601900444075 /* FootballResultView.xib */; };
 		1782A6251D05603000444075 /* BasktballResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6231D05603000444075 /* BasktballResultView.swift */; };
-		1782A6261D05603000444075 /* BasktballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1782A6241D05603000444075 /* BasktballResultView.xib */; };
 		1782A6281D06670E00444075 /* ResultTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6271D06670E00444075 /* ResultTitleModel.swift */; };
 		1782A62A1D06675500444075 /* ResultCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A6291D06675500444075 /* ResultCellModel.swift */; };
 		1782A62C1D066B6B00444075 /* ResultTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */; };
 		1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A11CEC406400D356D0 /* FluctuantView.swift */; };
 		1798F2A41CEC5C5F00D356D0 /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798F2A31CEC5C5F00D356D0 /* PassView.swift */; };
-		179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF631CEAAAD200CA0384 /* FluctuantView.xib */; };
-		179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF651CEAC9FD00CA0384 /* FieldView.xib */; };
-		179DBF681CEAF50500CA0384 /* GoalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF671CEAF50500CA0384 /* GoalsView.xib */; };
-		179DBF6A1CEB048100CA0384 /* PassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DBF691CEB048100CA0384 /* PassView.xib */; };
-		17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B181091CC6152800CF3054 /* CartButtonView.xib */; };
 		17B1810C1CC618EA00CF3054 /* CartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1810B1CC618EA00CF3054 /* CartButtonView.swift */; };
 		17B3445D1CC0903D002638FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3445C1CC0903D002638FC /* HeaderView.swift */; };
 		17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B3445E1CC0906F002638FC /* HeaderView.xib */; };
 		17C6EC061CD0BC8500DF71E1 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */; };
 		17C6EC091CD197F000DF71E1 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC081CD197F000DF71E1 /* RollViewController.swift */; };
-		17C6EC0B1CD1982E00DF71E1 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C6EC0A1CD1982E00DF71E1 /* RollView.xib */; };
 		17C6EC0D1CD1A57D00DF71E1 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */; };
 		17D751D21CEBFF7D00A52040 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D11CEBFF7D00A52040 /* GoalsView.swift */; };
 		17D751D41CEC07DB00A52040 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D751D31CEC07DB00A52040 /* FieldView.swift */; };
 		17D843C11D01710F00BD7170 /* OnlineUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D843C01D01710F00BD7170 /* OnlineUser.swift */; };
 		17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */; };
-		17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */; };
 		17DA621A1CB8CDAF009070E6 /* UnionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */; };
 		17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */; };
 		17DA62221CB8CDDC009070E6 /* OrderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */; };
@@ -51,6 +40,19 @@
 		17DA62251CB8CDDC009070E6 /* UnionTitleVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */; };
 		17DA62271CB8CDEE009070E6 /* ToolsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA62261CB8CDEE009070E6 /* ToolsCode.swift */; };
 		17E287331CE96FC500B26CA6 /* BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E287321CE96FC500B26CA6 /* BallViewController.swift */; };
+		17EFB7811D114F92002F34E2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7831D114F92002F34E2 /* LoginViewController.xib */; };
+		17EFB78A1D115140002F34E2 /* SwiftCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB78C1D115140002F34E2 /* SwiftCustomAlertView.xib */; };
+		17EFB7931D11514A002F34E2 /* UnionCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7951D11514A002F34E2 /* UnionCustomAlertView.xib */; };
+		17EFB79C1D115195002F34E2 /* FootballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB79E1D115195002F34E2 /* FootballResultView.xib */; };
+		17EFB7A51D11519E002F34E2 /* BasktballResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7A71D11519E002F34E2 /* BasktballResultView.xib */; };
+		17EFB7AE1D1151C6002F34E2 /* CartButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7B01D1151C6002F34E2 /* CartButtonView.xib */; };
+		17EFB7B71D1151EE002F34E2 /* BreakfastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7B91D1151EE002F34E2 /* BreakfastView.xib */; };
+		17EFB7C01D1151FB002F34E2 /* FluctuantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7C21D1151FB002F34E2 /* FluctuantView.xib */; };
+		17EFB7C91D115208002F34E2 /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7CB1D115208002F34E2 /* FieldView.xib */; };
+		17EFB7D21D115213002F34E2 /* GoalsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7D41D115213002F34E2 /* GoalsView.xib */; };
+		17EFB7DB1D11521C002F34E2 /* PassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7DD1D11521C002F34E2 /* PassView.xib */; };
+		17EFB7E41D115228002F34E2 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7E61D115228002F34E2 /* RollView.xib */; };
+		17EFB7F11D123FE8002F34E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7F31D123FE8002F34E2 /* Localizable.strings */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -65,7 +67,6 @@
 		462BEE1D1C86958000E451E4 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE1C1C86958000E451E4 /* Other.swift */; };
 		462BEE1F1C86972A00E451E4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */; };
 		462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE231C86C1C700E451E4 /* LoginViewController.swift */; };
-		462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462BEE241C86C1C700E451E4 /* LoginViewController.xib */; };
 		462BEE3B1C89276900E451E4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEE391C89276900E451E4 /* MainViewController.swift */; };
 		462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E11F81CB786BA00619A55 /* Bean_Questions.swift */; };
 		462EAD771CB8DF1F00B5D14F /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462EAD761CB8DF1F00B5D14F /* AboutController.swift */; };
@@ -111,42 +112,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionCustomAlertView.xib; sourceTree = "<group>"; };
 		170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionCustomAlertView.swift; sourceTree = "<group>"; };
 		170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUnionVO.swift; sourceTree = "<group>"; };
 		1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastViewController.swift; sourceTree = "<group>"; };
 		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		1779BA551CCEF707002A62DC /* BreakfastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
-		1779BA561CCEF707002A62DC /* BreakfastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreakfastView.xib; sourceTree = "<group>"; };
 		1779BA591CCEF8E3002A62DC /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		177D3F531CED603D00ED6875 /* OrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		1782A61F1D05601900444075 /* FootballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballResultView.swift; sourceTree = "<group>"; };
-		1782A6201D05601900444075 /* FootballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootballResultView.xib; sourceTree = "<group>"; };
 		1782A6231D05603000444075 /* BasktballResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasktballResultView.swift; sourceTree = "<group>"; };
-		1782A6241D05603000444075 /* BasktballResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasktballResultView.xib; sourceTree = "<group>"; };
 		1782A6271D06670E00444075 /* ResultTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTitleModel.swift; sourceTree = "<group>"; };
 		1782A6291D06675500444075 /* ResultCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCellModel.swift; sourceTree = "<group>"; };
 		1782A62B1D066B6B00444075 /* ResultTitleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTitleInfo.swift; sourceTree = "<group>"; };
 		1798F2A11CEC406400D356D0 /* FluctuantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluctuantView.swift; sourceTree = "<group>"; };
 		1798F2A31CEC5C5F00D356D0 /* PassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
-		179DBF631CEAAAD200CA0384 /* FluctuantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluctuantView.xib; sourceTree = "<group>"; };
-		179DBF651CEAC9FD00CA0384 /* FieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
-		179DBF671CEAF50500CA0384 /* GoalsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalsView.xib; sourceTree = "<group>"; };
-		179DBF691CEB048100CA0384 /* PassView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassView.xib; sourceTree = "<group>"; };
-		17B181091CC6152800CF3054 /* CartButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartButtonView.xib; sourceTree = "<group>"; };
 		17B1810B1CC618EA00CF3054 /* CartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButtonView.swift; sourceTree = "<group>"; };
 		17B3445C1CC0903D002638FC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		17B3445E1CC0906F002638FC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		17C6EC051CD0BC8500DF71E1 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		17C6EC081CD197F000DF71E1 /* RollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
-		17C6EC0A1CD1982E00DF71E1 /* RollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollView.xib; sourceTree = "<group>"; };
 		17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		17D751D11CEBFF7D00A52040 /* GoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		17D751D31CEC07DB00A52040 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		17D843C01D01710F00BD7170 /* OnlineUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUser.swift; sourceTree = "<group>"; };
 		17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomAlertView.swift; sourceTree = "<group>"; };
-		17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftCustomAlertView.xib; sourceTree = "<group>"; };
 		17DA62141CB8CDAF009070E6 /* UnionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleView.swift; sourceTree = "<group>"; };
 		17DA62151CB8CDAF009070E6 /* UnionTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleView.xib; sourceTree = "<group>"; };
 		17DA621D1CB8CDDC009070E6 /* OrderCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellModel.swift; sourceTree = "<group>"; };
@@ -155,6 +145,64 @@
 		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
 		17DA62261CB8CDEE009070E6 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
 		17E287321CE96FC500B26CA6 /* BallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallViewController.swift; sourceTree = "<group>"; };
+		17EFB7771D114829002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		17EFB7781D114829002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		17EFB77B1D114871002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		17EFB77C1D114871002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		17EFB77F1D114899002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		17EFB7801D114899002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		17EFB7821D114F92002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
+		17EFB7851D114F96002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		17EFB7871D114F98002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		17EFB7891D114F99002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginViewController.strings; sourceTree = "<group>"; };
+		17EFB78B1D115140002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SwiftCustomAlertView.xib; sourceTree = "<group>"; };
+		17EFB78E1D115142002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SwiftCustomAlertView.strings"; sourceTree = "<group>"; };
+		17EFB7901D115143002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SwiftCustomAlertView.strings"; sourceTree = "<group>"; };
+		17EFB7921D115144002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SwiftCustomAlertView.strings; sourceTree = "<group>"; };
+		17EFB7941D11514A002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/UnionCustomAlertView.xib; sourceTree = "<group>"; };
+		17EFB7971D11514B002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnionCustomAlertView.strings"; sourceTree = "<group>"; };
+		17EFB7991D11514C002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UnionCustomAlertView.strings"; sourceTree = "<group>"; };
+		17EFB79B1D11514D002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UnionCustomAlertView.strings; sourceTree = "<group>"; };
+		17EFB79D1D115195002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FootballResultView.xib; sourceTree = "<group>"; };
+		17EFB7A01D115197002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FootballResultView.strings"; sourceTree = "<group>"; };
+		17EFB7A21D115198002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FootballResultView.strings"; sourceTree = "<group>"; };
+		17EFB7A41D115199002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FootballResultView.strings; sourceTree = "<group>"; };
+		17EFB7A61D11519E002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BasktballResultView.xib; sourceTree = "<group>"; };
+		17EFB7A91D1151A0002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BasktballResultView.strings"; sourceTree = "<group>"; };
+		17EFB7AB1D1151A1002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BasktballResultView.strings"; sourceTree = "<group>"; };
+		17EFB7AD1D1151A2002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BasktballResultView.strings; sourceTree = "<group>"; };
+		17EFB7AF1D1151C6002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CartButtonView.xib; sourceTree = "<group>"; };
+		17EFB7B21D1151CA002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CartButtonView.strings"; sourceTree = "<group>"; };
+		17EFB7B41D1151CB002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CartButtonView.strings"; sourceTree = "<group>"; };
+		17EFB7B61D1151CD002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CartButtonView.strings; sourceTree = "<group>"; };
+		17EFB7B81D1151EE002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BreakfastView.xib; sourceTree = "<group>"; };
+		17EFB7BB1D1151F1002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BreakfastView.strings"; sourceTree = "<group>"; };
+		17EFB7BD1D1151F2002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BreakfastView.strings"; sourceTree = "<group>"; };
+		17EFB7BF1D1151F4002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BreakfastView.strings; sourceTree = "<group>"; };
+		17EFB7C11D1151FB002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FluctuantView.xib; sourceTree = "<group>"; };
+		17EFB7C41D1151FF002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FluctuantView.strings"; sourceTree = "<group>"; };
+		17EFB7C61D115200002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FluctuantView.strings"; sourceTree = "<group>"; };
+		17EFB7C81D115202002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FluctuantView.strings; sourceTree = "<group>"; };
+		17EFB7CA1D115208002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FieldView.xib; sourceTree = "<group>"; };
+		17EFB7CD1D11520A002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FieldView.strings"; sourceTree = "<group>"; };
+		17EFB7CF1D11520B002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FieldView.strings"; sourceTree = "<group>"; };
+		17EFB7D11D11520C002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FieldView.strings; sourceTree = "<group>"; };
+		17EFB7D31D115213002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GoalsView.xib; sourceTree = "<group>"; };
+		17EFB7D61D115215002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GoalsView.strings"; sourceTree = "<group>"; };
+		17EFB7D81D115216002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/GoalsView.strings"; sourceTree = "<group>"; };
+		17EFB7DA1D115217002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GoalsView.strings; sourceTree = "<group>"; };
+		17EFB7DC1D11521C002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassView.xib; sourceTree = "<group>"; };
+		17EFB7DF1D11521E002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PassView.strings"; sourceTree = "<group>"; };
+		17EFB7E11D11521F002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/PassView.strings"; sourceTree = "<group>"; };
+		17EFB7E31D115220002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassView.strings; sourceTree = "<group>"; };
+		17EFB7E51D115228002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RollView.xib; sourceTree = "<group>"; };
+		17EFB7E81D11522A002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RollView.strings"; sourceTree = "<group>"; };
+		17EFB7EA1D11522B002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RollView.strings"; sourceTree = "<group>"; };
+		17EFB7EC1D11522C002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RollView.strings; sourceTree = "<group>"; };
+		17EFB7F21D123FE8002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		17EFB7F41D123FEB002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		17EFB7F51D123FEC002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		17EFB7F61D123FED002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +223,6 @@
 		462BEE1C1C86958000E451E4 /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		462BEE1E1C86972A00E451E4 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		462BEE231C86C1C700E451E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		462BEE241C86C1C700E451E4 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		462BEE391C89276900E451E4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		462E11F81CB786BA00619A55 /* Bean_Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bean_Questions.swift; sourceTree = "<group>"; };
 		462EAD761CB8DF1F00B5D14F /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
@@ -233,9 +280,9 @@
 		175171CB1D0501690056AD4B /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1782A6201D05601900444075 /* FootballResultView.xib */,
+				17EFB79E1D115195002F34E2 /* FootballResultView.xib */,
 				1782A61F1D05601900444075 /* FootballResultView.swift */,
-				1782A6241D05603000444075 /* BasktballResultView.xib */,
+				17EFB7A71D11519E002F34E2 /* BasktballResultView.xib */,
 				1782A6231D05603000444075 /* BasktballResultView.swift */,
 			);
 			name = view;
@@ -249,9 +296,9 @@
 				177D3F531CED603D00ED6875 /* OrderView.swift */,
 				170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */,
 				17D843C01D01710F00BD7170 /* OnlineUser.swift */,
-				17DA62131CB8CDAF009070E6 /* SwiftCustomAlertView.xib */,
+				17EFB78C1D115140002F34E2 /* SwiftCustomAlertView.xib */,
 				17DA62121CB8CDAF009070E6 /* SwiftCustomAlertView.swift */,
-				170226D91CDC375D00EA6AF6 /* UnionCustomAlertView.xib */,
+				17EFB7951D11514A002F34E2 /* UnionCustomAlertView.xib */,
 				170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */,
 				175171CB1D0501690056AD4B /* view */,
 				17B3445A1CC08F91002638FC /* header */,
@@ -273,15 +320,15 @@
 			isa = PBXGroup;
 			children = (
 				1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */,
-				1779BA561CCEF707002A62DC /* BreakfastView.xib */,
+				17EFB7B91D1151EE002F34E2 /* BreakfastView.xib */,
 				1779BA551CCEF707002A62DC /* BreakfastView.swift */,
-				179DBF631CEAAAD200CA0384 /* FluctuantView.xib */,
+				17EFB7C21D1151FB002F34E2 /* FluctuantView.xib */,
 				1798F2A11CEC406400D356D0 /* FluctuantView.swift */,
-				179DBF651CEAC9FD00CA0384 /* FieldView.xib */,
+				17EFB7CB1D115208002F34E2 /* FieldView.xib */,
 				17D751D31CEC07DB00A52040 /* FieldView.swift */,
-				179DBF671CEAF50500CA0384 /* GoalsView.xib */,
+				17EFB7D41D115213002F34E2 /* GoalsView.xib */,
 				17D751D11CEBFF7D00A52040 /* GoalsView.swift */,
-				179DBF691CEB048100CA0384 /* PassView.xib */,
+				17EFB7DD1D11521C002F34E2 /* PassView.xib */,
 				1798F2A31CEC5C5F00D356D0 /* PassView.swift */,
 			);
 			name = football;
@@ -329,7 +376,7 @@
 			children = (
 				17B3445E1CC0906F002638FC /* HeaderView.xib */,
 				17B3445C1CC0903D002638FC /* HeaderView.swift */,
-				17B181091CC6152800CF3054 /* CartButtonView.xib */,
+				17EFB7B01D1151C6002F34E2 /* CartButtonView.xib */,
 				17B1810B1CC618EA00CF3054 /* CartButtonView.swift */,
 			);
 			name = view;
@@ -339,7 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				17C6EC081CD197F000DF71E1 /* RollViewController.swift */,
-				17C6EC0A1CD1982E00DF71E1 /* RollView.xib */,
+				17EFB7E61D115228002F34E2 /* RollView.xib */,
 				17C6EC0C1CD1A57D00DF71E1 /* RollView.swift */,
 			);
 			name = basketball;
@@ -411,6 +458,7 @@
 				462BEDF51C8682E300E451E4 /* Info.plist */,
 				462BEE171C86861D00E451E4 /* StartViewController.swift */,
 				462BEE181C86861D00E451E4 /* StartViewController.xib */,
+				17EFB7F31D123FE8002F34E2 /* Localizable.strings */,
 			);
 			path = SportsBall;
 			sourceTree = "<group>";
@@ -447,7 +495,7 @@
 				464245D91CB63EA900C77849 /* ProblemController.swift */,
 				464245DA1CB63EA900C77849 /* ProblemFeedbackViewController.swift */,
 				462BEE231C86C1C700E451E4 /* LoginViewController.swift */,
-				462BEE241C86C1C700E451E4 /* LoginViewController.xib */,
+				17EFB7831D114F92002F34E2 /* LoginViewController.xib */,
 				462BEE391C89276900E451E4 /* MainViewController.swift */,
 				46C02DEB1C8E778D007F6A50 /* PersonalCenterView.swift */,
 				46C02DED1C8E780F007F6A50 /* ResultViewController.swift */,
@@ -605,8 +653,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
+				en,
 			);
 			mainGroup = 462BEDDB1C8682E300E451E4;
 			productRefGroup = 462BEDE51C8682E300E451E4 /* Products */;
@@ -625,26 +675,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				170226DA1CDC375D00EA6AF6 /* UnionCustomAlertView.xib in Resources */,
-				462BEE261C86C1C700E451E4 /* LoginViewController.xib in Resources */,
-				179DBF681CEAF50500CA0384 /* GoalsView.xib in Resources */,
+				17EFB7931D11514A002F34E2 /* UnionCustomAlertView.xib in Resources */,
+				17EFB7811D114F92002F34E2 /* LoginViewController.xib in Resources */,
+				17EFB7D21D115213002F34E2 /* GoalsView.xib in Resources */,
 				1779BA541CCEF6BD002A62DC /* Cell.xib in Resources */,
 				17B3445F1CC0906F002638FC /* HeaderView.xib in Resources */,
-				17B1810A1CC6152800CF3054 /* CartButtonView.xib in Resources */,
+				17EFB7AE1D1151C6002F34E2 /* CartButtonView.xib in Resources */,
 				4641573D1CD9F0A900838F32 /* HTML in Resources */,
 				462BEDF41C8682E300E451E4 /* LaunchScreen.storyboard in Resources */,
 				462BEE1A1C86861D00E451E4 /* StartViewController.xib in Resources */,
-				179DBF641CEAAAD200CA0384 /* FluctuantView.xib in Resources */,
-				1782A6261D05603000444075 /* BasktballResultView.xib in Resources */,
-				1782A6221D05601900444075 /* FootballResultView.xib in Resources */,
-				179DBF661CEAC9FD00CA0384 /* FieldView.xib in Resources */,
-				17DA62191CB8CDAF009070E6 /* SwiftCustomAlertView.xib in Resources */,
+				17EFB7C01D1151FB002F34E2 /* FluctuantView.xib in Resources */,
+				17EFB7F11D123FE8002F34E2 /* Localizable.strings in Resources */,
+				17EFB7A51D11519E002F34E2 /* BasktballResultView.xib in Resources */,
+				17EFB79C1D115195002F34E2 /* FootballResultView.xib in Resources */,
+				17EFB7C91D115208002F34E2 /* FieldView.xib in Resources */,
+				17EFB78A1D115140002F34E2 /* SwiftCustomAlertView.xib in Resources */,
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
-				1779BA581CCEF707002A62DC /* BreakfastView.xib in Resources */,
+				17EFB7B71D1151EE002F34E2 /* BreakfastView.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
-				17C6EC0B1CD1982E00DF71E1 /* RollView.xib in Resources */,
-				179DBF6A1CEB048100CA0384 /* PassView.xib in Resources */,
+				17EFB7E41D115228002F34E2 /* RollView.xib in Resources */,
+				17EFB7DB1D11521C002F34E2 /* PassView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,10 +817,156 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		17EFB7831D114F92002F34E2 /* LoginViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7821D114F92002F34E2 /* Base */,
+				17EFB7851D114F96002F34E2 /* zh-Hans */,
+				17EFB7871D114F98002F34E2 /* zh-Hant */,
+				17EFB7891D114F99002F34E2 /* en */,
+			);
+			name = LoginViewController.xib;
+			sourceTree = "<group>";
+		};
+		17EFB78C1D115140002F34E2 /* SwiftCustomAlertView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB78B1D115140002F34E2 /* Base */,
+				17EFB78E1D115142002F34E2 /* zh-Hans */,
+				17EFB7901D115143002F34E2 /* zh-Hant */,
+				17EFB7921D115144002F34E2 /* en */,
+			);
+			name = SwiftCustomAlertView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7951D11514A002F34E2 /* UnionCustomAlertView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7941D11514A002F34E2 /* Base */,
+				17EFB7971D11514B002F34E2 /* zh-Hans */,
+				17EFB7991D11514C002F34E2 /* zh-Hant */,
+				17EFB79B1D11514D002F34E2 /* en */,
+			);
+			name = UnionCustomAlertView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB79E1D115195002F34E2 /* FootballResultView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB79D1D115195002F34E2 /* Base */,
+				17EFB7A01D115197002F34E2 /* zh-Hans */,
+				17EFB7A21D115198002F34E2 /* zh-Hant */,
+				17EFB7A41D115199002F34E2 /* en */,
+			);
+			name = FootballResultView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7A71D11519E002F34E2 /* BasktballResultView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7A61D11519E002F34E2 /* Base */,
+				17EFB7A91D1151A0002F34E2 /* zh-Hans */,
+				17EFB7AB1D1151A1002F34E2 /* zh-Hant */,
+				17EFB7AD1D1151A2002F34E2 /* en */,
+			);
+			name = BasktballResultView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7B01D1151C6002F34E2 /* CartButtonView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7AF1D1151C6002F34E2 /* Base */,
+				17EFB7B21D1151CA002F34E2 /* zh-Hans */,
+				17EFB7B41D1151CB002F34E2 /* zh-Hant */,
+				17EFB7B61D1151CD002F34E2 /* en */,
+			);
+			name = CartButtonView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7B91D1151EE002F34E2 /* BreakfastView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7B81D1151EE002F34E2 /* Base */,
+				17EFB7BB1D1151F1002F34E2 /* zh-Hans */,
+				17EFB7BD1D1151F2002F34E2 /* zh-Hant */,
+				17EFB7BF1D1151F4002F34E2 /* en */,
+			);
+			name = BreakfastView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7C21D1151FB002F34E2 /* FluctuantView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7C11D1151FB002F34E2 /* Base */,
+				17EFB7C41D1151FF002F34E2 /* zh-Hans */,
+				17EFB7C61D115200002F34E2 /* zh-Hant */,
+				17EFB7C81D115202002F34E2 /* en */,
+			);
+			name = FluctuantView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7CB1D115208002F34E2 /* FieldView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7CA1D115208002F34E2 /* Base */,
+				17EFB7CD1D11520A002F34E2 /* zh-Hans */,
+				17EFB7CF1D11520B002F34E2 /* zh-Hant */,
+				17EFB7D11D11520C002F34E2 /* en */,
+			);
+			name = FieldView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7D41D115213002F34E2 /* GoalsView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7D31D115213002F34E2 /* Base */,
+				17EFB7D61D115215002F34E2 /* zh-Hans */,
+				17EFB7D81D115216002F34E2 /* zh-Hant */,
+				17EFB7DA1D115217002F34E2 /* en */,
+			);
+			name = GoalsView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7DD1D11521C002F34E2 /* PassView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7DC1D11521C002F34E2 /* Base */,
+				17EFB7DF1D11521E002F34E2 /* zh-Hans */,
+				17EFB7E11D11521F002F34E2 /* zh-Hant */,
+				17EFB7E31D115220002F34E2 /* en */,
+			);
+			name = PassView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7E61D115228002F34E2 /* RollView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7E51D115228002F34E2 /* Base */,
+				17EFB7E81D11522A002F34E2 /* zh-Hans */,
+				17EFB7EA1D11522B002F34E2 /* zh-Hant */,
+				17EFB7EC1D11522C002F34E2 /* en */,
+			);
+			name = RollView.xib;
+			sourceTree = "<group>";
+		};
+		17EFB7F31D123FE8002F34E2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17EFB7F21D123FE8002F34E2 /* Base */,
+				17EFB7F41D123FEB002F34E2 /* zh-Hans */,
+				17EFB7F51D123FEC002F34E2 /* zh-Hant */,
+				17EFB7F61D123FED002F34E2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		462BEDED1C8682E300E451E4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				462BEDEE1C8682E300E451E4 /* Base */,
+				17EFB7771D114829002F34E2 /* zh-Hans */,
+				17EFB77B1D114871002F34E2 /* zh-Hant */,
+				17EFB77F1D114899002F34E2 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -778,6 +975,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				462BEDF31C8682E300E451E4 /* Base */,
+				17EFB7781D114829002F34E2 /* zh-Hans */,
+				17EFB77C1D114871002F34E2 /* zh-Hant */,
+				17EFB7801D114899002F34E2 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
