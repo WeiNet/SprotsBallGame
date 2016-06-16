@@ -24,10 +24,10 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBAction func btnSignoutClick(sender: AnyObject) {
         let alertView = UIAlertView()
-        alertView.title = "系统提示"
-        alertView.message = "确定要退出吗？"
-        alertView.addButtonWithTitle("取消")
-        alertView.addButtonWithTitle("确定")
+        alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+        alertView.message = NSLocalizedString("Logout", comment: "")
+        alertView.addButtonWithTitle(NSLocalizedString("Cancel", comment: ""))
+        alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
         alertView.cancelButtonIndex=0
         alertView.delegate=self;
         alertView.show()
@@ -45,11 +45,12 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    var setNameArry=["派彩结果","关于"]
+    var setNameArry=[NSLocalizedString("PayoutResults", comment: ""),
+                     NSLocalizedString("About", comment: "")]
     var setImge=["betrecod_log","about_log"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="个人中心"
+        self.title=NSLocalizedString("PersonalCenter", comment: "")
         self.navigationController?.navigationBarHidden=true
         self.tableViewList.dataSource=self
         self.tableViewList.delegate=self
@@ -101,8 +102,7 @@ class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSo
             return
         }
         if(strType == "WebError" || strResult == "Error"){
-            let message = "网络连接异常!"
-            alertMessage(message)
+            alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         var result = ( strResult as NSString ).floatValue;

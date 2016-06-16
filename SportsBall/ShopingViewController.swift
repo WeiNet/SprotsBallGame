@@ -38,10 +38,10 @@
         //清除按钮
         @IBAction func btnClear(sender: AnyObject) {
             let alertView = UIAlertView()
-            alertView.title = "系统提示"
-            alertView.message = "确定要清除吗？"
-            alertView.addButtonWithTitle("取消")
-            alertView.addButtonWithTitle("确定")
+            alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+            alertView.message = NSLocalizedString("ClearCart", comment: "")
+            alertView.addButtonWithTitle(NSLocalizedString("Cancel", comment: ""))
+            alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
             alertView.cancelButtonIndex=0
             alertView.delegate=self;
             alertView.show()
@@ -80,7 +80,7 @@
             
         }
         override func viewDidLoad() {
-            self.title="购物车"
+            self.title=NSLocalizedString("ShopCart", comment: "")
             
            
             self.tableList.dataSource=self
@@ -236,17 +236,17 @@
                 }
                 if(strErrorCode=="24"){
                     let alertView = UIAlertView()
-                    alertView.title = "系统提示"
-                    alertView.message = "余额不足"
-                    alertView.addButtonWithTitle("确定")
+                    alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+                    alertView.message = NSLocalizedString("LackMoney", comment: "")
+                    alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
                      alertView.show()
                     return
                 }
                 if(strSuccess=="0"){
                     let alertView = UIAlertView()
-                    alertView.title = "系统提示"
+                    alertView.title = NSLocalizedString("SystemPrompt", comment: "")
                     alertView.message = msg
-                    alertView.addButtonWithTitle("确定")
+                    alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
                     alertView.show()
                     return
                 }else{

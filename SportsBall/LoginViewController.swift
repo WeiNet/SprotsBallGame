@@ -41,14 +41,11 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     
     @IBAction func loginClick(sender: UIButton) {
         if(self.textUserNumber.text==""){
-        
-//            Tool.showMsg("帐号不能为空")
             Tool.showMsg(NSLocalizedString("EmptyAccount", comment: ""))
          return
         }
         if(self.textUserPW.text==""){
-            
-            Tool.showMsg("密码不能为空")
+            Tool.showMsg(NSLocalizedString("EmptyPassword", comment: ""))
             return
         }
         self.activityView.startAnimating()
@@ -93,27 +90,24 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         
     }
     func setResult(strResult: String,strType:String) {
-        
         self.activityView.stopAnimating()
         if(strType=="Error" && strResult=="WebError"){
-            Tool.showMsg("网络错误，请检查网络")
-           
+            Tool.showMsg(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         if(strResult==""){
-             Tool.showMsg("系统错误")
-           
+            Tool.showMsg(NSLocalizedString("SystemError", comment: ""))
             return
         }
         if(strType=="GetDQUserResult"){
-           
+            
             if(strResult=="2"||strResult=="1"){
-             Tool.showMsg("用户名或密码错误")
-            return
+                Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))
+                return
             }
-             var strArry=strResult.componentsSeparatedByString("@")
+            var strArry=strResult.componentsSeparatedByString("@")
             if(strArry.count<3){
-            Tool.showMsg("用户名或密码错误")
+                Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))
                 return
             }
             if(strArry[2]=="1"){
@@ -134,7 +128,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
             var strUserID=jsonResult["UserID"]as! String
             var strCredit=jsonResult["Credit"]as! Double
             if(strFlag==0){
-                Tool.showMsg("用户名或密码错误")
+                Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))
                 return
             }
             
@@ -145,10 +139,6 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
                         
             return
         }
-       
-        
-        
-        
     }
     func jumpPage(){
         var sb = UIStoryboard(name: "Main", bundle:nil)

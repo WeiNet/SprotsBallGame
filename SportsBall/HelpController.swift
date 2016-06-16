@@ -12,7 +12,7 @@ class HelpController: UIViewController {
     
     var alertMenu:UIAlertController!
     @IBOutlet weak var webView: UIWebView!
-   var menuArray: Array<Dictionary<String,String>> = [["0":"体育规则"],["2":"足球"],["1":"篮球"]]
+   var menuArray: Array<Dictionary<String,String>> = [["0":NSLocalizedString("SportsComment", comment: "")],["2":NSLocalizedString("Foot", comment: "")],["1":NSLocalizedString("Baseket", comment: "")]]
     override func viewDidLoad() {
         view.backgroundColor=UIColor.whiteColor()
         loadWebView("QA_sport");
@@ -47,7 +47,7 @@ class HelpController: UIViewController {
         if(menuArray.count <= 0){
             return
         }
-        alertMenu = UIAlertController(title: "游戏玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+        alertMenu = UIAlertController(title: NSLocalizedString("GameType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         for menu in menuArray {
             for (key,value) in menu {
                 let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
@@ -56,7 +56,7 @@ class HelpController: UIViewController {
                 alertMenu.addAction(item)
             }
         }
-        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
         alertMenu.addAction(cancel)
     }
     //玩法菜单选项响应事件

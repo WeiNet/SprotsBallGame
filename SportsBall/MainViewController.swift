@@ -15,7 +15,10 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     @IBOutlet weak var tableData: UITableView!
     @IBOutlet var segment: UISegmentedControl!//add Brook
     
-    var gameName=["足球竞赛","篮球竞赛","棒球竞赛","排球竞赛"]
+    var gameName=[NSLocalizedString("Football", comment: ""),
+                  NSLocalizedString("Baseketball", comment: ""),
+                  NSLocalizedString("Baseball", comment: ""),
+                  NSLocalizedString("Vallyball", comment: "")]
     var gameImage=["football","baseketball","baseball","vallyball"]
     //当前屏幕对象
     var screenObject=UIScreen.mainScreen().bounds
@@ -105,9 +108,9 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         var labText=cell!.viewWithTag(2)as! UILabel
         labText.text=gameName[indexPath.row]
         var labTextDetail=cell!.viewWithTag(3)as! UILabel
-        labTextDetail.text="赢的千万大奖"
+        labTextDetail.text=NSLocalizedString("WinMillion", comment: "")
     var labTextBottom=cell?.viewWithTag(4)as! UILabel
-        labTextBottom.text="有态度看实时"
+        labTextBottom.text=NSLocalizedString("AttitudeLook", comment: "")
         
 //        cell!.imageView?.image=UIImage(named: gameImage[indexPath.row])
 //        cell!.textLabel?.text=gameName[indexPath.row]
@@ -136,9 +139,9 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
             self.navigationController?.pushViewController(uiView, animated: true)
         }else{
             let alertView = UIAlertView()
-            alertView.title = "系统提示"
-            alertView.message = "暂停销售"
-            alertView.addButtonWithTitle("确定")
+            alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+            alertView.message = NSLocalizedString("SuspendSales", comment: "")
+            alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
             alertView.show()
         }
     }

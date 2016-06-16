@@ -80,7 +80,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         self.tableList.dataSource=self
         self.tableList.delegate=self
         conn.delegate=self
-        refresh.attributedTitle=NSAttributedString(string: "下拉刷新")
+        refresh.attributedTitle=NSAttributedString(string: NSLocalizedString("DownRefresh", comment: ""))
         refresh.addTarget(self, action: "funcRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableList.addSubview(refresh)
         getDate()
@@ -177,8 +177,8 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
 //                jsonDetail=[]
 //                self.tableList.reloadData()
                 var alert = UIAlertView()
-                alert.title = "系统信息"
-                alert.message = "已加载完成"
+                alert.title = NSLocalizedString("SystemPrompt", comment: "")
+                alert.message = NSLocalizedString("FinishedLoading", comment: "")
                 alert.addButtonWithTitle("Cancel")
                
                 alert.show()

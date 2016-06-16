@@ -11,7 +11,7 @@ import UIKit
 class AboutController: UIViewController {
     
     override func viewDidLoad() {
-        self.title="关于"
+        self.title=NSLocalizedString("About", comment: "")
         
      
         

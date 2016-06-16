@@ -33,7 +33,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableViewList.dataSource=self
         conn.delegate=self
         
-        refresh.attributedTitle=NSAttributedString(string: "下拉刷新")
+        refresh.attributedTitle=NSAttributedString(string: NSLocalizedString("DownRefresh", comment: ""))
         refresh.addTarget(self, action: "funcRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableViewList.addSubview(refresh)
         funcRefresh()
@@ -89,8 +89,8 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
             documentAttributes: nil)
         labDetil.attributedText = attrStr
         labType.text=xzdh
-        labOut.text="已投"+String(stringInterpolationSegment: xzje)
-        labin.text="可赢"+String(stringInterpolationSegment: kyje)
+        labOut.text=NSLocalizedString("Betting", comment: "")+String(stringInterpolationSegment: xzje)
+        labin.text=NSLocalizedString("Win", comment: "")+String(stringInterpolationSegment: kyje)
         labTime.text=ToolsCode.formatterDate(time,format: "MM/dd HH:mm")
         return cell!
     }
@@ -105,8 +105,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return
         }
         if(strType == "WebError" || strResult == "Error"){
-            let message = "网络连接异常!"
-            alertMessage(message)
+            alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         activityView.stopAnimating()
@@ -117,8 +116,8 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
             options: NSJSONReadingOptions.MutableContainers) as! NSArray
         if(jsonArr.count==0){
             var alert = UIAlertView()
-            alert.title = "系统信息"
-            alert.message = "已加载完成"
+            alert.title = NSLocalizedString("SystemPrompt", comment: "")
+            alert.message = NSLocalizedString("FinishedLoading", comment: "")
             alert.addButtonWithTitle("Cancel")
             //            alert.addButtonWithTitle("OK")
             alert.show()

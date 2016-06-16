@@ -24,20 +24,19 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     let getMatchResultResult:String = "GetMatchResultResult"
     var alertMenu:UIAlertController!
     var dateArray:Array<Dictionary<String,String>> = Array<Dictionary<String,String>>()
-    var typeArray:Array<Dictionary<String,String>> = [["足球":"0"],["篮球":"1"]]
+    var typeArray:Array<Dictionary<String,String>> = [[NSLocalizedString("Foot", comment: ""):"0"],
+                                                      [NSLocalizedString("Baseket", comment: ""):"1"]]
     var onclickFlag:String = ""
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
         
         if(strType == "Error" || strResult == ""){
-            let message = "系统错误！"
-            alertMessage(message)
+            alertMessage(NSLocalizedString("SystemError", comment: ""))
             return
         }
         if(strType == "WebError" || strResult == "Error"){
-            let message = "网络连接异常!"
-            alertMessage(message)
+            alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         if(strType == getDateResult){
@@ -106,14 +105,14 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //球类型选择
     @IBAction func ballType(sender: UIButton) {
         onclickFlag = "ballType"
-        alertMenu = createMenu("球类", message: "请选择球类", menuArray: typeArray)
+        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: typeArray)
         self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     
     //日期选择
     @IBAction func date(sender: AnyObject) {
         onclickFlag = "date"
-        alertMenu = createMenu("日期", message: "请选择日期", menuArray: dateArray)
+        alertMenu = createMenu(NSLocalizedString("Date", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: dateArray)
         self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     
@@ -163,7 +162,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 alertMenu.addAction(item)
             }
         }
-        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
         alertMenu.addAction(cancel)
         return alertMenu
     }
@@ -187,14 +186,17 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //创建日期选项菜单
     func createMenuDate(strResult: String){
         let resultArray = strResult.componentsSeparatedByString(",")
+        let Year:String = NSLocalizedString("Cancel", comment: "")
+        let Month:String = NSLocalizedString("Cancel", comment: "")
+        let Day:String = NSLocalizedString("Cancel", comment: "")
         for result in resultArray {
             let dateTemp:[String] = result.componentsSeparatedByString("/")
-            let dic:Dictionary<String,String> = ["\(dateTemp[0])年\(dateTemp[1])月\(dateTemp[2])日":result]
+            let dic:Dictionary<String,String> = [dateTemp[0]+Year+dateTemp[1]+Month+dateTemp[2]+Day:result]
             dateArray.append(dic)
         }
         date = resultArray[0]
         let dateTemp2:[String] = resultArray[0].componentsSeparatedByString("/")
-        let strTitle:String = "\(dateTemp2[0])年\(dateTemp2[1])月\(dateTemp2[2])日"
+        let strTitle:String = dateTemp2[0]+Year+dateTemp2[1]+Month+dateTemp2[2]+Day
         btnTitle.titleLabel?.text = strTitle
         getMatchResult()
     }

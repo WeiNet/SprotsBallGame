@@ -22,9 +22,9 @@
        
         static func showMsg(strMsg:String){
             let alertView = UIAlertView()
-            alertView.title = "系统提示"
+            alertView.title = NSLocalizedString("SystemPrompt", comment: "")
             alertView.message = strMsg 
-            alertView.addButtonWithTitle("确定")
+            alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
             alertView.show()}
         
     }

@@ -12,7 +12,7 @@
         var betManger:BetListManager?
         var betList:[BetInfo]?
         var comm=CommonParameter()
-        var menuArray: Array<Dictionary<String,String>> = [["0":"单注"],["1":"连碰"]]
+        var menuArray: Array<Dictionary<String,String>> = [["0":NSLocalizedString("SingleNote", comment: "")],["1":NSLocalizedString("EvenTouch", comment: "")]]
         var intRowIndex:Int = 0
         let button = UIButton(type: UIButtonType.Custom)
         
@@ -52,10 +52,10 @@
         //清除按钮
         @IBAction func btnClear(sender: AnyObject) {
             let alertView = UIAlertView()
-            alertView.title = "系统提示"
-            alertView.message = "确定要清除吗？"
-            alertView.addButtonWithTitle("取消")
-            alertView.addButtonWithTitle("确定")
+            alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+            alertView.message = NSLocalizedString("ClearCart", comment: "")
+            alertView.addButtonWithTitle(NSLocalizedString("Cancel", comment: ""))
+            alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
             alertView.cancelButtonIndex=0
             alertView.delegate=self;
             alertView.show()
@@ -81,17 +81,17 @@
         @IBAction func payChlick(sender: UIButton) {
             if(self.textBetMoney.text!==""){
                 let alertView = UIAlertView()
-                alertView.title = "系统提示"
-                alertView.message = "请输入下注金额"
-                alertView.addButtonWithTitle("确定")
+                alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+                alertView.message = NSLocalizedString("PleaseAmount", comment: "")
+                alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
                 alertView.show()
                 return
             }
             if(touchFlag==false){
                 let alertView = UIAlertView()
-                alertView.title = "系统提示"
-                alertView.message = "无连碰，请重新选择！"
-                alertView.addButtonWithTitle("确定")
+                alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+                alertView.message = NSLocalizedString("NoTouchPlease", comment: "")
+                alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
                 alertView.show()
                 return
             }
@@ -127,7 +127,7 @@
         
         
         override func viewDidLoad() {
-            self.title="购物车"
+            self.title=NSLocalizedString("ShopCart", comment: "")
             betManger=BetListManager.sharedManager
             betList=betManger!.getBetList()
             self.tableList.dataSource=self
@@ -242,7 +242,7 @@
                 
                 var result = ( strResult as NSString ).floatValue;
                 textBanlance.text="\(result*10000)"
-                btnSelect.setTitle("\(betList!.count)串1", forState: UIControlState.Normal)
+                btnSelect.setTitle("\(betList!.count)"+NSLocalizedString("String1", comment: ""), forState: UIControlState.Normal)
             }
             if(strType=="AddGGBetResult"){
                 
@@ -259,17 +259,17 @@
                 }
                 if(strErrorCode=="24"){
                     let alertView = UIAlertView()
-                    alertView.title = "系统提示"
-                    alertView.message = "余额不足"
-                    alertView.addButtonWithTitle("确定")
+                    alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+                    alertView.message = NSLocalizedString("LackMoney", comment: "")
+                    alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
                     alertView.show()
                     return
                 }
                 if(strSuccess=="0"){
                     let alertView = UIAlertView()
-                    alertView.title = "系统提示"
+                    alertView.title = NSLocalizedString("SystemPrompt", comment: "")
                     alertView.message = msg
-                    alertView.addButtonWithTitle("确定")
+                    alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
                     alertView.show()
                     return
                 }else{
@@ -372,7 +372,7 @@
             if(menuArray.count <= 0){
                 return
             }
-            alertMenu = UIAlertController(title: "游戏玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+            alertMenu = UIAlertController(title: NSLocalizedString("GameType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             for menu in menuArray {
                 for (key,value) in menu {
                     let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
@@ -381,7 +381,7 @@
                     alertMenu.addAction(item)
                 }
             }
-            let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+            let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
             alertMenu.addAction(cancel)
         }
         
@@ -394,23 +394,23 @@
             if(key=="0"){
                 self.touchFlag=true
                 betType=0
-                singleButton.setTitle("单注", forState: UIControlState.Normal)
+                singleButton.setTitle(NSLocalizedString("SingleNote", comment: ""), forState: UIControlState.Normal)
                 var arry=getSpinnerItem("0")
                 btnSelect.titleLabel?.text=arry[0]["0"]
                 createSubMenu(arry)
-                teamCount.text="组数1"
+                teamCount.text=NSLocalizedString("Group", comment: "")+":1"
             
             return
             
             }
             if(key=="1"){
                 betType=1
-                singleButton.titleLabel?.text="连碰"
+                singleButton.titleLabel?.text=NSLocalizedString("EvenTouch", comment: "")
                 var arry11 = getSpinnerItem("1")
                 var content:String=arry11[0]["0"]!
                 btnSelect.titleLabel?.text=content
                 var intTeamCount=(content as NSString).substringToIndex(1)
-                teamCount.text="组数:\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
+                teamCount.text=NSLocalizedString("Group", comment: "")+":\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
                 createSubMenu(arry11)
                 return
                 }
@@ -424,7 +424,7 @@
             if(menuArray.count <= 0){
                 return
             }
-            alertSubMenu = UIAlertController(title: "游戏玩法", message: "请选取玩法", preferredStyle: UIAlertControllerStyle.Alert)
+            alertSubMenu = UIAlertController(title: NSLocalizedString("GameType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             for menu in menuArray {
                 for (key,value) in menu {
                     let item = UIAlertAction(title: value, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
@@ -433,22 +433,22 @@
                     alertSubMenu.addAction(item)
                 }
             }
-            let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+            let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
             alertSubMenu.addAction(cancel)
         }
         
         //玩法菜单选项响应事件
         func clickSubMenuItem(value:String){
             if betType==0{
-                singleButton.titleLabel?.text="单注"
+                singleButton.titleLabel?.text=NSLocalizedString("SingleNote", comment: "")
                 self.touchFlag=true
             }
             else{
-                singleButton.titleLabel?.text="连碰"
+                singleButton.titleLabel?.text=NSLocalizedString("EvenTouch", comment: "")
             }
             btnSelect.titleLabel?.text=value
             var intTeamCount=(value as NSString).substringToIndex(1)
-            teamCount.text="组数:\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
+            teamCount.text=NSLocalizedString("Group", comment: "")+":\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
         }
         
         //组合数计算
@@ -479,20 +479,20 @@
             switch(key){
             case 0,1:
                 if strPosition=="0"{
-                    arryMenu.append(["0":"过关限制"])
+                    arryMenu.append(["0":NSLocalizedString("Limit", comment: "")])
                 }else{
                     self.touchFlag=false
-                    arryMenu.append(["0":"无连碰"])
+                    arryMenu.append(["0":NSLocalizedString("NoTouch", comment: "")])
                     
                 }
                 break
             case 2:
                 if strPosition=="0"{
-                    arryMenu.append(["0":"\(key)串1"])
+                    arryMenu.append(["0":"\(key)"+NSLocalizedString("String1", comment: "")])
                     
                 }else{
                      self.touchFlag=false
-                    arryMenu.append(["0":"无连碰"])
+                    arryMenu.append(["0":NSLocalizedString("NoTouch", comment: "")])
                 }
                 break
             default:
@@ -500,13 +500,13 @@
                 for(var i=key,j=0;i>2&&j<3;i--,j++){
                     
                     if strPosition=="0"{
-                        arryMenu.append(["0":"\(key)串1"])
+                        arryMenu.append(["0":"\(key)"+NSLocalizedString("String1", comment: "")])
                         break
                         
                     }
                     
                     if(strPosition=="1"){
-                        arryMenu.append(["0":"\(i-1)串1"])
+                        arryMenu.append(["0":"\(i-1)"+NSLocalizedString("String1", comment: "")])
                     }
                 }
                 
