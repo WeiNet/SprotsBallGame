@@ -463,7 +463,7 @@ struct ToolsCode {
     }
     
     //tableView没有资料显示
-    static func tableViewDisplayWitMsg(tableView: UITableView,rowCount:Int,message:String="暂无竟猜赛事"){
+    static func tableViewDisplayWitMsg(tableView: UITableView,rowCount:Int,message:String=NSLocalizedString("NoGames", comment: "")){
         if (rowCount == 0) {
             // 没有数据的时候，UILabel的显示样式
             let messageLabel:UILabel = UILabel()
