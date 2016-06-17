@@ -186,9 +186,9 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //创建日期选项菜单
     func createMenuDate(strResult: String){
         let resultArray = strResult.componentsSeparatedByString(",")
-        let Year:String = NSLocalizedString("Cancel", comment: "")
-        let Month:String = NSLocalizedString("Cancel", comment: "")
-        let Day:String = NSLocalizedString("Cancel", comment: "")
+        let Year:String = NSLocalizedString("Year", comment: "")
+        let Month:String = NSLocalizedString("Month", comment: "")
+        let Day:String = NSLocalizedString("Day", comment: "")
         for result in resultArray {
             let dateTemp:[String] = result.componentsSeparatedByString("/")
             let dic:Dictionary<String,String> = [dateTemp[0]+Year+dateTemp[1]+Month+dateTemp[2]+Day:result]
