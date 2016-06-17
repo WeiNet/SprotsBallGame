@@ -1,21 +1,8 @@
-
-/* Class = "UILabel"; text = "上海绿地"; ObjectID = "2HH-Gk-KdK"; */
-"2HH-Gk-KdK.text" = "上海绿地";
-
-/* Class = "UILabel"; text = "5001"; ObjectID = "3wO-wp-3WH"; */
-"3wO-wp-3WH.text" = "5001";
-
 /* Class = "UILabel"; text = "可赢:"; ObjectID = "4Lp-oV-JSO"; */
 "4Lp-oV-JSO.text" = "可赢:";
 
 /* Class = "UILabel"; text = "单注下注限额:"; ObjectID = "C7G-wT-d9f"; */
 "C7G-wT-d9f.text" = "单注下注限额:";
-
-/* Class = "UILabel"; text = "青岛中能[主]"; ObjectID = "PsP-XL-S5M"; */
-"PsP-XL-S5M.text" = "青岛中能[主]";
-
-/* Class = "UILabel"; text = "青岛中能 主胜 @2.406"; ObjectID = "UGC-fc-HSv"; */
-"UGC-fc-HSv.text" = "青岛中能 主胜 @2.406";
 
 /* Class = "UIButton"; normalTitle = "付款"; ObjectID = "UxX-CQ-KKK"; */
 "UxX-CQ-KKK.normalTitle" = "付款";
@@ -23,32 +10,11 @@
 /* Class = "UIButton"; normalTitle = "取消"; ObjectID = "VZ0-so-9jL"; */
 "VZ0-so-9jL.normalTitle" = "取消";
 
-/* Class = "UILabel"; text = "VS"; ObjectID = "gv1-8T-0hM"; */
-"gv1-8T-0hM.text" = "VS";
-
-/* Class = "UILabel"; text = "16"; ObjectID = "hzr-4T-yE3"; */
-"hzr-4T-yE3.text" = "16";
-
-/* Class = "UITextField"; text = "10"; ObjectID = "iMb-9e-5c7"; */
-"iMb-9e-5c7.text" = "10";
-
-/* Class = "UILabel"; text = "999"; ObjectID = "iR1-O1-xKv"; */
-"iR1-O1-xKv.text" = "999";
-
-/* Class = "UILabel"; text = "10-5001"; ObjectID = "izx-VD-qBA"; */
-"izx-VD-qBA.text" = "10-5001";
-
 /* Class = "UILabel"; text = "即时注单"; ObjectID = "oUz-qx-Mrs"; */
 "oUz-qx-Mrs.text" = "即时注单";
 
-/* Class = "UILabel"; text = "999"; ObjectID = "uXE-aM-9zH"; */
-"uXE-aM-9zH.text" = "999";
-
 /* Class = "UILabel"; text = "本场比赛可下注:"; ObjectID = "vKv-3y-vdu"; */
 "vKv-3y-vdu.text" = "本场比赛可下注:";
-
-/* Class = "UILabel"; text = "333.000"; ObjectID = "wHn-9Z-F0R"; */
-"wHn-9Z-F0R.text" = "333.000";
 
 /* Class = "UILabel"; text = "赔率:"; ObjectID = "wlv-8n-Xu4"; */
 "wlv-8n-Xu4.text" = "赔率:";

@@ -1,102 +1,35 @@
-
-/* Class = "UILabel"; text = "2.5/3"; ObjectID = "5jG-Yv-yAA"; */
-"5jG-Yv-yAA.text" = "2.5/3";
-
-/* Class = "UILabel"; text = "2.5/3"; ObjectID = "6V8-1a-pdw"; */
-"6V8-1a-pdw.text" = "2.5/3";
-
-/* Class = "UILabel"; text = "1/1.5"; ObjectID = "Afp-Gt-x46"; */
-"Afp-Gt-x46.text" = "1/1.5";
-
-/* Class = "UILabel"; text = "0.980"; ObjectID = "BSE-fF-uci"; */
-"BSE-fF-uci.text" = "0.980";
-
-/* Class = "UILabel"; text = "-"; ObjectID = "EoN-o1-E50"; */
-"EoN-o1-E50.text" = "-";
-
-/* Class = "UILabel"; text = "0.910"; ObjectID = "HKe-1J-i5C"; */
-"HKe-1J-i5C.text" = "0.910";
-
-/* Class = "UILabel"; text = "0.910"; ObjectID = "JXL-sn-M23"; */
-"JXL-sn-M23.text" = "0.910";
-
-/* Class = "UILabel"; text = "1/1.5"; ObjectID = "K1f-VY-RLB"; */
-"K1f-VY-RLB.text" = "1/1.5";
-
-/* Class = "UILabel"; text = "0.860"; ObjectID = "Kpq-cP-3i4"; */
-"Kpq-cP-3i4.text" = "0.860";
-
 /* Class = "UILabel"; text = "大"; ObjectID = "M35-Fh-SYY"; */
-"M35-Fh-SYY.text" = "big";
-
-/* Class = "UILabel"; text = "3.400"; ObjectID = "Mkl-0S-iNw"; */
-"Mkl-0S-iNw.text" = "3.400";
+"M35-Fh-SYY.text" = "b";
 
 /* Class = "UILabel"; text = "小"; ObjectID = "OBu-Od-18y"; */
-"OBu-Od-18y.text" = "small";
+"OBu-Od-18y.text" = "s";
 
 /* Class = "UILabel"; text = "独赢"; ObjectID = "OoL-Iz-7P9"; */
 "OoL-Iz-7P9.text" = "win";
 
 /* Class = "UILabel"; text = "小"; ObjectID = "PvQ-Md-egb"; */
-"PvQ-Md-egb.text" = "small";
-
-/* Class = "UILabel"; text = "3.400"; ObjectID = "Smd-JW-ZbF"; */
-"Smd-JW-ZbF.text" = "3.400";
+"PvQ-Md-egb.text" = "s";
 
 /* Class = "UILabel"; text = "半场"; ObjectID = "T36-KL-1Ow"; */
-"T36-KL-1Ow.text" = "half court";
+"T36-KL-1Ow.text" = "half";
 
 /* Class = "UILabel"; text = "独赢"; ObjectID = "VJh-Gf-hWC"; */
 "VJh-Gf-hWC.text" = "win";
-
-/* Class = "UILabel"; text = "-"; ObjectID = "Xd2-VR-od7"; */
-"Xd2-VR-od7.text" = "-";
-
-/* Class = "UILabel"; text = "1.800"; ObjectID = "XiB-ua-OZR"; */
-"XiB-ua-OZR.text" = "1.800";
-
-/* Class = "UILabel"; text = "0.860"; ObjectID = "YYV-ph-cTo"; */
-"YYV-ph-cTo.text" = "0.860";
 
 /* Class = "UILabel"; text = "让球"; ObjectID = "bsD-2R-oj0"; */
 "bsD-2R-oj0.text" = "let";
 
 /* Class = "UILabel"; text = "全场"; ObjectID = "cOv-Bz-3zG"; */
-"cOv-Bz-3zG.text" = "full court";
+"cOv-Bz-3zG.text" = "all";
 
 /* Class = "UILabel"; text = "大小"; ObjectID = "div-GL-pIu"; */
-"div-GL-pIu.text" = "big small";
-
-/* Class = "UILabel"; text = "3.700"; ObjectID = "gVB-KX-dqg"; */
-"gVB-KX-dqg.text" = "3.700";
+"div-GL-pIu.text" = "size";
 
 /* Class = "UILabel"; text = "大小"; ObjectID = "gl6-uf-aoJ"; */
-"gl6-uf-aoJ.text" = "big small";
-
-/* Class = "UILabel"; text = "2.5/3"; ObjectID = "ngf-Yb-Nun"; */
-"ngf-Yb-Nun.text" = "2.5/3";
-
-/* Class = "UILabel"; text = "3.700"; ObjectID = "oBi-2A-m0m"; */
-"oBi-2A-m0m.text" = "3.700";
-
-/* Class = "UILabel"; text = "0.910"; ObjectID = "q2r-9p-JuL"; */
-"q2r-9p-JuL.text" = "0.910";
+"gl6-uf-aoJ.text" = "size";
 
 /* Class = "UILabel"; text = "大"; ObjectID = "uEI-xy-wFe"; */
-"uEI-xy-wFe.text" = "big";
-
-/* Class = "UILabel"; text = "2.5/3"; ObjectID = "ude-E9-Nus"; */
-"ude-E9-Nus.text" = "2.5/3";
-
-/* Class = "UILabel"; text = "1.800"; ObjectID = "uga-vD-CWF"; */
-"uga-vD-CWF.text" = "1.800";
-
-/* Class = "UILabel"; text = "0.910"; ObjectID = "uja-D3-s84"; */
-"uja-D3-s84.text" = "0.910";
-
-/* Class = "UILabel"; text = "0.980"; ObjectID = "usY-VM-MkY"; */
-"usY-VM-MkY.text" = "0.980";
+"uEI-xy-wFe.text" = "b";
 
 /* Class = "UILabel"; text = "让球"; ObjectID = "zQP-aw-vVf"; */
 "zQP-aw-vVf.text" = "let";

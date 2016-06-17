@@ -1,39 +1,8 @@
-
 /* Class = "UILabel"; text = "总分"; ObjectID = "22g-NK-57c"; */
 "22g-NK-57c.text" = "score";
 
-/* Class = "UILabel"; text = "0-1"; ObjectID = "DI6-Cb-IcY"; */
-"DI6-Cb-IcY.text" = "0-1";
-
-/* Class = "UILabel"; text = "44"; ObjectID = "EQO-N4-D3r"; */
-"EQO-N4-D3r.text" = "44";
-
-/* Class = "UILabel"; text = "4-6"; ObjectID = "EVN-yG-zpv"; */
-"EVN-yG-zpv.text" = "4-6";
-
-/* Class = "UILabel"; text = "2-3"; ObjectID = "JSB-Ie-yOC"; */
-"JSB-Ie-yOC.text" = "2-3";
-
-/* Class = "UILabel"; text = "1.8"; ObjectID = "K1u-6t-UQO"; */
-"K1u-6t-UQO.text" = "1.8";
-
-/* Class = "UILabel"; text = "2.74"; ObjectID = "Oc2-6T-Kku"; */
-"Oc2-6T-Kku.text" = "2.74";
-
 /* Class = "UILabel"; text = "双"; ObjectID = "PAz-hI-giD"; */
-"PAz-hI-giD.text" = "even";
-
-/* Class = "UILabel"; text = "1.91"; ObjectID = "aHU-nI-942"; */
-"aHU-nI-942.text" = "1.91";
-
-/* Class = "UILabel"; text = "≥7"; ObjectID = "fcV-3w-zR9"; */
-"fcV-3w-zR9.text" = "≥7";
-
-/* Class = "UILabel"; text = "1.99"; ObjectID = "heh-M3-AYZ"; */
-"heh-M3-AYZ.text" = "1.99";
+"PAz-hI-giD.text" = "e";
 
 /* Class = "UILabel"; text = "单"; ObjectID = "kjr-Db-RG8"; */
-"kjr-Db-RG8.text" = "odd";
-
-/* Class = "UILabel"; text = "4"; ObjectID = "zNn-sp-Kse"; */
-"zNn-sp-Kse.text" = "4";
+"kjr-Db-RG8.text" = "o";
