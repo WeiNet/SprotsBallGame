@@ -6,7 +6,7 @@
 "1xO-mU-LEw.text" = "group：1";
 
 /* Class = "UILabel"; text = "总投注金额"; ObjectID = "3wh-h7-zeo"; */
-"3wh-h7-zeo.text" = "total betting amount";
+"3wh-h7-zeo.text" = "bet";
 
 /* Class = "UIBarButtonItem"; title = "清除"; ObjectID = "4GR-w5-VbL"; */
 "4GR-w5-VbL.title" = "clean";
@@ -15,13 +15,13 @@
 "5w0-ze-gvW.text" = "0";
 
 /* Class = "UITabBarItem"; title = "我的订单"; ObjectID = "6BP-uC-1JX"; */
-"6BP-uC-1JX.title" = "my order";
+"6BP-uC-1JX.title" = "order";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "7YV-5s-wYA"; */
 "7YV-5s-wYA.text" = "0";
 
 /* Class = "UILabel"; text = "可赢金额"; ObjectID = "7cX-UC-jGW"; */
-"7cX-UC-jGW.text" = "money to be won";
+"7cX-UC-jGW.text" = "win";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "7if-Ad-qRb"; */
 "7if-Ad-qRb.text" = "Label";
@@ -36,7 +36,7 @@
 "9OF-eU-JfA.text" = "odds change reminder";
 
 /* Class = "UITabBarItem"; title = "开奖结果"; ObjectID = "D0b-yb-CAI"; */
-"D0b-yb-CAI.title" = "lottery results";
+"D0b-yb-CAI.title" = "results";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "Dim-4g-4fT"; */
 "Dim-4g-4fT.title" = "Title";
@@ -63,7 +63,7 @@
 "Jdr-Ga-4k1.text" = "Label";
 
 /* Class = "UILabel"; text = "总派彩结果"; ObjectID = "Jiw-Ow-x9e"; */
-"Jiw-Ow-x9e.text" = "total payout results";
+"Jiw-Ow-x9e.text" = "results";
 
 /* Class = "UIButton"; normalTitle = "已是当前最新版本"; ObjectID = "L6L-eb-EFO"; */
 "L6L-eb-EFO.normalTitle" = "is currently the latest version";
@@ -87,7 +87,7 @@
 "Pnc-Fk-VJl.text" = "odds";
 
 /* Class = "UILabel"; text = "已投"; ObjectID = "PuQ-Bw-xK9"; */
-"PuQ-Bw-xK9.text" = "betting";
+"PuQ-Bw-xK9.text" = "bet";
 
 /* Class = "UILabel"; text = "A"; ObjectID = "RpX-SB-2Xk"; */
 "RpX-SB-2Xk.text" = "A";
@@ -99,10 +99,10 @@
 "Tbm-86-V8Y.title" = "home";
 
 /* Class = "UILabel"; text = "投注金额"; ObjectID = "Tmt-Pm-YF0"; */
-"Tmt-Pm-YF0.text" = "betting amount";
+"Tmt-Pm-YF0.text" = "bet";
 
 /* Class = "UILabel"; text = "投注金额"; ObjectID = "VJC-65-KZM"; */
-"VJC-65-KZM.text" = "betting amount";
+"VJC-65-KZM.text" = "bet";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Xsx-o0-JbW"; */
 "Xsx-o0-JbW.text" = "Label";
@@ -120,13 +120,13 @@
 "Ys5-tJ-Pf0.text" = "Label";
 
 /* Class = "UILabel"; text = "派彩结果"; ObjectID = "bGn-pE-jDC"; */
-"bGn-pE-jDC.text" = "payout results";
+"bGn-pE-jDC.text" = "payout";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "bhC-D6-CuD"; */
 "bhC-D6-CuD.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "两串一"; ObjectID = "c8j-IA-9pW"; */
-"c8j-IA-9pW.normalTitle" = "Two series one";
+"c8j-IA-9pW.normalTitle" = "Two to one";
 
 /* Class = "UILabel"; text = "本场比赛可下注"; ObjectID = "cMN-ht-P5c"; */
 "cMN-ht-P5c.text" = "can bet";
@@ -162,10 +162,10 @@
 "ieO-fo-SQl.text" = "Label";
 
 /* Class = "UISegmentedControl"; j9p-3R-Nru.segmentTitles[0] = "今日赛事"; ObjectID = "j9p-3R-Nru"; */
-"j9p-3R-Nru.segmentTitles[0]" = "today's event";
+"j9p-3R-Nru.segmentTitles[0]" = "today";
 
 /* Class = "UISegmentedControl"; j9p-3R-Nru.segmentTitles[1] = "足球早盘"; ObjectID = "j9p-3R-Nru"; */
-"j9p-3R-Nru.segmentTitles[1]" = "football early";
+"j9p-3R-Nru.segmentTitles[1]" = "morning";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "jBr-31-7gS"; */
 "jBr-31-7gS.text" = "0";
@@ -192,7 +192,7 @@
 "o5L-2i-Ygd.title" = "personal";
 
 /* Class = "UILabel"; text = "账户余额"; ObjectID = "obH-0u-yA4"; */
-"obH-0u-yA4.text" = "account money";
+"obH-0u-yA4.text" = "money";
 
 /* Class = "UIBarButtonItem"; title = "添加自选"; ObjectID = "oyc-BN-oUF"; */
 "oyc-BN-oUF.title" = "add";
@@ -213,7 +213,7 @@
 "rmJ-V4-Yt0.text" = "limit";
 
 /* Class = "UILabel"; text = "可赢金额"; ObjectID = "rvp-Pa-PUP"; */
-"rvp-Pa-PUP.text" = "money to be won";
+"rvp-Pa-PUP.text" = "win";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "sgd-kt-uwf"; */
 "sgd-kt-uwf.text" = "Label";
@@ -237,7 +237,7 @@
 "uES-V4-CJ4.text" = "Label";
 
 /* Class = "UILabel"; text = "账户余额"; ObjectID = "uxl-DO-69J"; */
-"uxl-DO-69J.text" = "account money";
+"uxl-DO-69J.text" = "money";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "v68-cF-1kb"; */
 "v68-cF-1kb.text" = "0";
@@ -249,7 +249,7 @@
 "vbc-Uh-9Hj.text" = "limit";
 
 /* Class = "UIButton"; normalTitle = "单注"; ObjectID = "vno-eT-Xhy"; */
-"vno-eT-Xhy.normalTitle" = "single note";
+"vno-eT-Xhy.normalTitle" = "single";
 
 /* Class = "UIButton"; normalTitle = "退出"; ObjectID = "wWc-Gq-Mkp"; */
 "wWc-Gq-Mkp.normalTitle" = "exit";
@@ -258,7 +258,7 @@
 "waf-tG-aHX.title" = "clean";
 
 /* Class = "UINavigationItem"; title = "我的订单"; ObjectID = "xnD-co-cwC"; */
-"xnD-co-cwC.title" = "my order";
+"xnD-co-cwC.title" = "order";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "xxC-IF-Mor"; */
 "xxC-IF-Mor.text" = "Label";
