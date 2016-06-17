@@ -33,7 +33,7 @@ class BallViewController: UIViewController {
                 alertMenu.addAction(item)
             }
         }
-        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
         alertMenu.addAction(cancel)
         return alertMenu
         
@@ -277,12 +277,12 @@ class BallViewController: UIViewController {
     
     //初始化购物车清空Alert
     func initCartClear()->UIAlertController{
-        let alertCart:UIAlertController = UIAlertController(title: "清空提示", message: "是否清除购物车注单？", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertCart:UIAlertController = UIAlertController(title: NSLocalizedString("SystemPrompt", comment: ""), message: NSLocalizedString("ClearCart", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
-        let cancel = UIAlertAction(title: "清除", style: UIAlertActionStyle.Default) { (UIAlertAction) in
+        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Default) { (UIAlertAction) in
             self.clearAllOdds()
         }
-        let ok = UIAlertAction(title: "保存", style: UIAlertActionStyle.Cancel, handler: nil)
+        let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
         
         alertCart.addAction(ok)
         alertCart.addAction(cancel)
@@ -297,7 +297,7 @@ class BallViewController: UIViewController {
             let vc = sb.instantiateViewControllerWithIdentifier("ShopingViewController") as! ShopingViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            alertMessage("至少选择一场比赛")
+            alertMessage(NSLocalizedString("LeastOne", comment: ""))
         }
     }
     
@@ -310,7 +310,7 @@ class BallViewController: UIViewController {
             
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            alertMessage("至少选择两场比赛")
+            alertMessage(NSLocalizedString("LeastTwo", comment: ""))
         }
     }
     

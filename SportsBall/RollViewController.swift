@@ -25,7 +25,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     let addBetResult:String = "AddBetResult"
     var alertMenu:UIAlertController!
     var alertCart:UIAlertController!
-    var menuArray: Array<Dictionary<String,String>> = [["2":"滚球"],["3":"让球"],["3":"综合过关"]]
+    var menuArray: Array<Dictionary<String,String>> = [["2":NSLocalizedString("Grounder", comment: "")],["3":NSLocalizedString("Let", comment: "")],["3":NSLocalizedString("Integrated", comment: "")]]
     var orderHeight:CGFloat = 109
     var isPass:Bool = false
 
@@ -52,11 +52,11 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     func setResult(strResult: String,strType:String)  {
         clearAllNotice()
         if(strType=="Error" && strResult=="WebError"){
-            alertMessage("网络错误，请检查网络")
+            alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         if(strResult==""){
-            alertMessage("系统错误")
+            alertMessage(NSLocalizedString("SystemError", comment: ""))
             return
         }
 //        if(strType == "Error" || strResult == ""){
@@ -295,7 +295,7 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
-        alertMenu = createMenu("篮球玩法", message: "请选择玩法", menuArray: menuArray)
+        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: menuArray)
         alertCart = initCartClear()
         //赛事资料
         getOtherMatch()

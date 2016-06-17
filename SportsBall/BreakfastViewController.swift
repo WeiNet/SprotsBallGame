@@ -25,7 +25,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     let addBetResult:String = "AddBetResult"
     var alertMenu:UIAlertController!
     var alertCart:UIAlertController!
-    var menuArray: Array<Dictionary<String,String>> = [["0":"早盘"],["1":"单式"],["2":"滚球"],["3":"综合过关"],["4":"波胆"],["5":"半全场"],["6":"入球数"]]
+    var menuArray: Array<Dictionary<String,String>> = [["0":NSLocalizedString("Morning", comment: "")],["1":NSLocalizedString("Single", comment: "")],["2":NSLocalizedString("Grounder", comment: "")],["3":NSLocalizedString("Integrated", comment: "")],["4":NSLocalizedString("Fluctuant", comment: "")],["5":NSLocalizedString("Half", comment: "")],["6":NSLocalizedString("Goals", comment: "")]]
     var orderHeight:CGFloat = 216
     var isPass:Bool = false
 
@@ -63,11 +63,11 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     func setResult(strResult: String,strType:String)  {
         clearAllNotice()
         if(strType=="Error" && strResult=="WebError"){
-            alertMessage("网络错误，请检查网络")
+            alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         if(strResult==""){
-            alertMessage("系统错误")
+            alertMessage(NSLocalizedString("SystemError", comment: ""))
             return
         }
 //        if(strType == "Error" || strResult == ""){
@@ -439,7 +439,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         
         initView(mPlayType)
         
-        alertMenu = createMenu("足球玩法", message: "请选择玩法", menuArray: menuArray)
+        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: menuArray)
         alertCart = initCartClear()
         //赛事资料
         getFootballMatch()

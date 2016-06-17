@@ -271,13 +271,13 @@ class SwiftNotice: NSObject {
         alertMessage("",message:message,carrier:carrier)
     }
     static func alertMessage(title:String,message:String,carrier:UIViewController){
-        var titleTemp = "系统提示"
+        var titleTemp = NSLocalizedString("SystemPrompt", comment: "")
         if(title != ""){
             titleTemp = title
         }
         let alert:UIAlertController = UIAlertController(title: titleTemp, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         // 定义 ok 的 UIAlertAction
-        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default){
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default){
             (action: UIAlertAction!) -> Void in
 //            print("you choose ok")
         }

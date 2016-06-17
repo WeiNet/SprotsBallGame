@@ -33,8 +33,7 @@ class OnlineUser: NSObject,ResultDelegate {
             return
         }
         if(strType == "WebError" || strResult == "Error"){
-            let message = "网络连接异常!"
-            print(message)
+            print("网络连接异常!")
             return
         }
         if(strType == modifyOnlineUserResponse){
