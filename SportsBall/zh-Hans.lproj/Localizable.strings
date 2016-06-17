@@ -5,7 +5,7 @@
   Created by Brook on 16/6/16.
   Copyright © 2016年 abel jing. All rights reserved.
 */
-AccountEmpty = "帐号不能为空";
+EmptyAccount = "帐号不能为空";
 EmptyPassword = "密码不能为空";
 NetworkError = "网络错误，请检查网络";
 SystemError = "系统错误";
