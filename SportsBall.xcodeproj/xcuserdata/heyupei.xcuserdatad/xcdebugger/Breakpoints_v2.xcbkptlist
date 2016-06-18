@@ -26,22 +26,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/ResultViewController.swift"
-            timestampString = "487843299.282809"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "clickMenuItem(_:value:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsBall/ResultViewController.swift"
             timestampString = "487843624.716034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
