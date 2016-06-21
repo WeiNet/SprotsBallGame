@@ -143,6 +143,10 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         return cell!
         
     }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+        return 150.0
+    }
+    
     func getDate(){
         
         var strParam:String = "<GetDate xmlns=\"http://tempuri.org/\">";
