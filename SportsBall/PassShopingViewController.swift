@@ -68,8 +68,12 @@
             else
             {
                 if(betList?.isEmpty==false){
+                    
                     betList?.removeAll()
                     self.tableList.reloadData()
+                    let navigationViews = self.navigationController!.viewControllers
+                    let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
+                    tabBar.clearAllOdds()
                     
                 }
             }
@@ -209,13 +213,11 @@
             if(BetListManager.sharedManager.betList.count==0){
                 return
             }
-            let objBall=BallViewController()
-            objBall.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
-            betList?.removeAtIndex(intTag)
-            BetListManager.sharedManager.setList(betList!)
+            BetListManager.sharedManager.delectListRow(intTag)
             self.tableList.reloadData()
-            
-            
+            let navigationViews = self.navigationController!.viewControllers
+            let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
+            tabBar.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
             
         }
         
