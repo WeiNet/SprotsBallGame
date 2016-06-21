@@ -53,11 +53,12 @@
             }
             else
             {
-                BetListManager.sharedManager.clearBetList()
-                self.tableList.reloadData()
+//                BetListManager.sharedManager.clearBetList()
+                
                 let navigationViews = self.navigationController!.viewControllers
                 let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
                 tabBar.clearAllOdds()
+                self.tableList.reloadData()
                 textBetMoneyt.text="0.0"
                 textKyje.text="0.0"
                
@@ -166,11 +167,12 @@
             if(BetListManager.sharedManager.betList.count==0){
             return
              }
-            BetListManager.sharedManager.delectListRow(intTag)
-            self.tableList.reloadData()
+            
             let navigationViews = self.navigationController!.viewControllers
             let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
             tabBar.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
+            BetListManager.sharedManager.delectListRow(intTag)
+            self.tableList.reloadData()
             countMoney()
             
         }
