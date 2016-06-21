@@ -33,10 +33,12 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func setResult(strResult: String,strType:String)  {
         
         if(strType == "Error" || strResult == ""){
+            clearAllNotice()
             alertMessage(NSLocalizedString("SystemError", comment: ""))
             return
         }
         if(strType == "WebError" || strResult == "Error"){
+            clearAllNotice()
             alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
