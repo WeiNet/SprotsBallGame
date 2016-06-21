@@ -32,6 +32,10 @@ class BetListManager: NSObject {
     betList.removeAtIndex(introw)
     
     }
+    func getBetInfo(introw:Int)->BetInfo{
+      return betList[introw]
+    }
+    
 
 
 

@@ -37,7 +37,7 @@
         @IBOutlet weak var view3: UIView!
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
-              self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewControllerAnimated(true)
         }
         
         @IBOutlet weak var textBetMoney: UITextField!
@@ -97,13 +97,13 @@
             }
             var objBetPara=BetPara()
             objBetPara.USER=UserInfoManager.sharedManager.getUserID()
-          
-          
+            
+            
             if(betType==0)
             {
                 objBetPara.money=self.textBetMoney.text!
                 objBetPara.moneySum=self.textBetMoney.text!
-            objBetPara.inum="\(betList!.count)"
+                objBetPara.inum="\(betList!.count)"
             }
             else{
                 var strTeamCount=(teamCount.text! as NSString).substringFromIndex(3)
@@ -111,7 +111,7 @@
                 objBetPara.money=self.textBetMoney.text!
                 objBetPara.moneySum="\(sumMoney)"
                 var strInum=btnSelect.titleLabel?.text!
-               objBetPara.inum="\((strInum! as NSString).substringToIndex(1))"
+                objBetPara.inum="\((strInum! as NSString).substringToIndex(1))"
             }
             var jsonObject: [AnyObject] = []
             
@@ -206,10 +206,15 @@
         func deleteRow(sender:UIButton){
             
             var intTag=sender.tag
+            if(BetListManager.sharedManager.betList.count==0){
+                return
+            }
+            let objBall=BallViewController()
+            objBall.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
             betList?.removeAtIndex(intTag)
             BetListManager.sharedManager.setList(betList!)
             self.tableList.reloadData()
-           
+            
             
             
         }
@@ -276,7 +281,7 @@
                     
                     jumpPage()
                 }
-
+                
             }
             
             
@@ -350,13 +355,13 @@
             
         }
         //取得账户余额
-    func getBalanceResult(){
-        
-        var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
-        strParam.appendContentsOf("</GetCredit>")
+        func getBalanceResult(){
+            
+            var strParam:String = "<GetCredit xmlns=\"http://tempuri.org/\">";
+            strParam.appendContentsOf("<strUser>\(UserInfoManager.sharedManager.getUserID())</strUser>")
+            strParam.appendContentsOf("</GetCredit>")
             comm.getResult(strParam,strResultName: "GetCreditResult")
-    }
+        }
         func setViewBackground(){
             
             self.view1.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1).CGColor;
@@ -399,9 +404,9 @@
                 btnSelect.titleLabel?.text=arry[0]["0"]
                 createSubMenu(arry)
                 teamCount.text=NSLocalizedString("Group", comment: "")+":1"
-            
-            return
-            
+                
+                return
+                
             }
             if(key=="1"){
                 betType=1
@@ -413,7 +418,7 @@
                 teamCount.text=NSLocalizedString("Group", comment: "")+":\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
                 createSubMenu(arry11)
                 return
-                }
+            }
             
             
             
@@ -491,7 +496,7 @@
                     arryMenu.append(["0":"\(key)"+NSLocalizedString("String1", comment: "")])
                     
                 }else{
-                     self.touchFlag=false
+                    self.touchFlag=false
                     arryMenu.append(["0":NSLocalizedString("NoTouch", comment: "")])
                 }
                 break

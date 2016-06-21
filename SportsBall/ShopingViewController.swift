@@ -55,6 +55,8 @@
             {
                 BetListManager.sharedManager.clearBetList()
                 self.tableList.reloadData()
+                let objBall=BallViewController()
+                objBall.clearAllOdds()
                 textBetMoneyt.text="0.0"
                 textKyje.text="0.0"
                
@@ -159,10 +161,15 @@
         }
         //删除方法
         func deleteRow(sender:UIButton){
-            
-            var intTag:Int=sender.tag
+             var intTag:Int=sender.tag
+            if(BetListManager.sharedManager.betList.count==0){
+            return
+             }
+            let objBall=BallViewController()
+            objBall.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
             BetListManager.sharedManager.delectListRow(intTag)
             self.tableList.reloadData()
+           
             countMoney()
             
         }
