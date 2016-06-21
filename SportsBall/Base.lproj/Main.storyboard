@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -2317,17 +2317,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrR-nX-1Q8">
-                                                    <rect key="frame" x="530" y="30" width="42" height="21"/>
+                                                    <rect key="frame" x="502" y="30" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hBN-Nb-dC5"/>
-                                                        <constraint firstAttribute="width" constant="42" id="xwu-Pv-Ilh"/>
+                                                        <constraint firstAttribute="width" constant="70" id="xwu-Pv-Ilh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBd-RW-e3Q">
-                                                    <rect key="frame" x="98" y="30" width="402" height="41"/>
+                                                    <rect key="frame" x="98" y="59" width="394" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2339,9 +2339,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-fo-SQl">
-                                                    <rect key="frame" x="530" y="76" width="42" height="12"/>
+                                                    <rect key="frame" x="502" y="76" width="70" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -2358,11 +2358,16 @@
                                                 <constraint firstItem="smi-8a-XiR" firstAttribute="leading" secondItem="toT-cP-hoJ" secondAttribute="leadingMargin" id="mbn-Rv-WgH"/>
                                                 <constraint firstItem="SrR-nX-1Q8" firstAttribute="top" secondItem="toT-cP-hoJ" secondAttribute="topMargin" constant="22" id="qzp-cD-tIr"/>
                                                 <constraint firstItem="SrR-nX-1Q8" firstAttribute="firstBaseline" secondItem="LBd-RW-e3Q" secondAttribute="firstBaseline" id="tXV-4w-2Ec"/>
-                                                <constraint firstItem="SrR-nX-1Q8" firstAttribute="leading" secondItem="LBd-RW-e3Q" secondAttribute="trailing" constant="30" id="ujy-yH-7xc"/>
+                                                <constraint firstItem="SrR-nX-1Q8" firstAttribute="leading" secondItem="LBd-RW-e3Q" secondAttribute="trailing" constant="10" id="ujy-yH-7xc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="SrR-nX-1Q8" secondAttribute="trailing" constant="5" id="x2Q-k3-rah"/>
                                                 <constraint firstItem="ieO-fo-SQl" firstAttribute="centerY" secondItem="xxC-IF-Mor" secondAttribute="centerY" id="yOv-2c-9Cd"/>
                                                 <constraint firstItem="xxC-IF-Mor" firstAttribute="top" secondItem="smi-8a-XiR" secondAttribute="bottom" constant="10" id="zVi-L0-jKW"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="tXV-4w-2Ec"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
