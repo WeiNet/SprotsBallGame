@@ -11,7 +11,7 @@
 "VZ0-so-9jL.normalTitle" = "cancel";
 
 /* Class = "UILabel"; text = "即时注单"; ObjectID = "oUz-qx-Mrs"; */
-"oUz-qx-Mrs.text" = "immediate note";
+"oUz-qx-Mrs.text" = "single note";
 
 /* Class = "UILabel"; text = "本场比赛可下注:"; ObjectID = "vKv-3y-vdu"; */
 "vKv-3y-vdu.text" = "can bet:";

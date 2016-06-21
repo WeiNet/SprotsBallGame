@@ -11,7 +11,7 @@
 "VZ0-so-9jL.normalTitle" = "取消";
 
 /* Class = "UILabel"; text = "即时注单"; ObjectID = "oUz-qx-Mrs"; */
-"oUz-qx-Mrs.text" = "即时注单";
+"oUz-qx-Mrs.text" = "单笔下注";
 
 /* Class = "UILabel"; text = "本场比赛可下注:"; ObjectID = "vKv-3y-vdu"; */
 "vKv-3y-vdu.text" = "本场比赛可下注:";
