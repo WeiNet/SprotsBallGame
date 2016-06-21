@@ -279,10 +279,10 @@ class BallViewController: UIViewController {
     func initCartClear()->UIAlertController{
         let alertCart:UIAlertController = UIAlertController(title: NSLocalizedString("SystemPrompt", comment: ""), message: NSLocalizedString("ClearCart", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
-        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Default) { (UIAlertAction) in
+        let cancel = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default) { (UIAlertAction) in
             self.clearAllOdds()
         }
-        let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
+        let ok = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil)
         
         alertCart.addAction(ok)
         alertCart.addAction(cancel)
