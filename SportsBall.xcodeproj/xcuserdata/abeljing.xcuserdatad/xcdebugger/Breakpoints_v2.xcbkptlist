@@ -1537,38 +1537,6 @@
             endingLineNumber = "57"
             landmarkName = "alertView(_:clickedButtonAtIndex:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of SportsBall.ShopingViewController.alertView (__ObjC.UIAlertView, clickedButtonAtIndex : Swift.Int) -&gt; ()"
-                  moduleName = "SportsBall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/ShopingViewController.swift"
-                  timestampString = "488180251.489222"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "275">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of SportsBall.ShopingViewController.alertView (__ObjC.UIAlertView, clickedButtonAtIndex : Swift.Int) -&gt; ()"
-                  moduleName = "SportsBall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/ShopingViewController.swift"
-                  timestampString = "488180251.48945"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "340">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
