@@ -1553,6 +1553,38 @@
             endingLineNumber = "40"
             landmarkName = "btnSelectClick(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SportsBall.PassShopingViewController.btnSelectClick (__ObjC.UIBarButtonItem) -&gt; ()"
+                  moduleName = "SportsBall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
+                  timestampString = "488255257.770057"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc SportsBall.PassShopingViewController.btnSelectClick (__ObjC.UIBarButtonItem) -&gt; ()"
+                  moduleName = "SportsBall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
+                  timestampString = "488255257.770263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "17">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
