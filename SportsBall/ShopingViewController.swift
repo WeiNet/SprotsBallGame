@@ -17,6 +17,7 @@
         let button = UIButton(type: UIButtonType.Custom)
         var textViewMoney=UITextField()
         
+        @IBOutlet weak var activityView: UIActivityIndicatorView!
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
             self.navigationController?.popViewControllerAnimated(true)
@@ -72,6 +73,7 @@
         
         @IBOutlet weak var textBalance: UILabel!
         @IBAction func payChlick(sender: UIButton) {
+             self.activityView.startAnimating()
             var jsonObject: [AnyObject] = []
             
             for objbet in BetListManager.sharedManager.getBetList(){
@@ -85,8 +87,6 @@
         }
         override func viewDidLoad() {
             self.title=NSLocalizedString("ShopCart", comment: "")
-            
-           
             self.tableList.dataSource=self
             self.tableList.delegate=self
             comm.delegate=self
@@ -233,6 +233,7 @@
             }
             
             if(strType=="BatchAddBetResult"){
+                self.activityView.stopAnimating()
                 var msg=""
                 var strSuccess=""
                 var strErrorCode=""

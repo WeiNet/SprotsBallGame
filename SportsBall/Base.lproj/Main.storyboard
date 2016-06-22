@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -2375,6 +2375,10 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dGb-bH-tPQ">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                                <color key="color" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -2405,6 +2409,7 @@
                             <constraint firstItem="cX2-xZ-ciT" firstAttribute="leading" secondItem="IeQ-mm-ehR" secondAttribute="leadingMargin" constant="-20" id="IYD-qa-eWT"/>
                             <constraint firstItem="cX2-xZ-ciT" firstAttribute="top" secondItem="emp-b1-4q0" secondAttribute="bottom" constant="10" id="Iis-Jq-agX"/>
                             <constraint firstItem="o84-fq-rGf" firstAttribute="top" secondItem="YPY-X0-are" secondAttribute="bottom" constant="77" id="JRo-av-bde"/>
+                            <constraint firstItem="dGb-bH-tPQ" firstAttribute="centerY" secondItem="IeQ-mm-ehR" secondAttribute="centerY" id="JsI-kY-Vhb"/>
                             <constraint firstItem="YPY-X0-are" firstAttribute="width" secondItem="E4A-sV-5ct" secondAttribute="width" id="KKX-LA-lz4"/>
                             <constraint firstItem="o84-fq-rGf" firstAttribute="top" secondItem="UvO-hZ-gmI" secondAttribute="bottom" id="KTU-Tm-t0T"/>
                             <constraint firstItem="dq8-qJ-RjC" firstAttribute="top" secondItem="CtG-dX-cHV" secondAttribute="bottom" constant="8" id="Kj2-Kg-d9W"/>
@@ -2445,6 +2450,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UvO-hZ-gmI" secondAttribute="trailing" constant="-20" id="pS1-Ip-h0W"/>
                             <constraint firstItem="YPY-X0-are" firstAttribute="top" secondItem="CtG-dX-cHV" secondAttribute="bottom" constant="8" id="q1F-om-Ddm"/>
                             <constraint firstItem="UvO-hZ-gmI" firstAttribute="bottom" secondItem="o84-fq-rGf" secondAttribute="top" id="qpg-wF-cS7"/>
+                            <constraint firstItem="dGb-bH-tPQ" firstAttribute="centerX" secondItem="IeQ-mm-ehR" secondAttribute="centerX" id="rg5-kw-VTO"/>
                             <constraint firstItem="E4A-sV-5ct" firstAttribute="bottom" secondItem="YPY-X0-are" secondAttribute="bottom" id="u2x-zz-hvL"/>
                             <constraint firstItem="E4A-sV-5ct" firstAttribute="top" secondItem="CtG-dX-cHV" secondAttribute="bottom" constant="8" id="uCl-F4-mde"/>
                             <constraint firstItem="YPY-X0-are" firstAttribute="leading" secondItem="E4A-sV-5ct" secondAttribute="trailing" constant="1" id="uSb-72-hly"/>
@@ -2518,6 +2524,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="activityView" destination="dGb-bH-tPQ" id="Kuf-7j-lMU"/>
                         <outlet property="switchStatus" destination="gab-cw-a81" id="COU-7i-OVh"/>
                         <outlet property="tableList" destination="CtG-dX-cHV" id="pZz-J2-Wyl"/>
                         <outlet property="textBalance" destination="7YV-5s-wYA" id="AXy-Fr-yFu"/>

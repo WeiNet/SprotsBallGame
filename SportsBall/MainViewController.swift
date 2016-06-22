@@ -32,7 +32,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBarHidden=true
 //        self.title = "CirCle"
         self.automaticallyAdjustsScrollViewInsets = false
-        let imageArray: [UIImage!] = [UIImage(named: "ad2"), UIImage(named: "loop2"), UIImage(named: "loop3")]
+        let imageArray: [UIImage!] = [UIImage(named: "ad1"), UIImage(named: "ad3"), UIImage(named: "ad1")]
         
         self.circleView = CirCleView(frame: CGRectMake(0, 20, self.view.frame.size.width, 150), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
