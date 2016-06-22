@@ -1,8 +1,39 @@
+
+/* Class = "UILabel"; text = "上海绿地"; ObjectID = "BcD-ik-dSS"; */
+"BcD-ik-dSS.text" = "上海绿地";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "KIl-Lz-Gia"; */
+"KIl-Lz-Gia.text" = "0";
+
 /* Class = "UILabel"; text = "全场"; ObjectID = "LOX-h2-YYv"; */
 "LOX-h2-YYv.text" = "全场";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "NpF-b2-Q91"; */
+"NpF-b2-Q91.text" = "0";
 
 /* Class = "UILabel"; text = "下半场"; ObjectID = "Ofk-4B-jLU"; */
 "Ofk-4B-jLU.text" = "下半场";
 
+/* Class = "UILabel"; text = "VS"; ObjectID = "RVh-r4-uAG"; */
+"RVh-r4-uAG.text" = "VS";
+
+/* Class = "UILabel"; text = "青岛中能[主]"; ObjectID = "YTd-mA-8qk"; */
+"YTd-mA-8qk.text" = "青岛中能[主]";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ZqD-l4-mUR"; */
+"ZqD-l4-mUR.text" = "0";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "av5-ID-0cY"; */
+"av5-ID-0cY.text" = "2";
+
 /* Class = "UILabel"; text = "上半场"; ObjectID = "c97-1W-USd"; */
 "c97-1W-USd.text" = "上半场";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "dyO-hZ-5y6"; */
+"dyO-hZ-5y6.text" = "2";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "kCg-Qk-Mxg"; */
+"kCg-Qk-Mxg.text" = "1";
+
+/* Class = "UILabel"; text = "2016/06/06"; ObjectID = "nwS-sr-Rui"; */
+"nwS-sr-Rui.text" = "2016/06/06";

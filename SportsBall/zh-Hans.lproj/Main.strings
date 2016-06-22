@@ -1,0 +1,285 @@
+
+/* Class = "UINavigationItem"; title = "个人中心"; ObjectID = "0m5-Ly-U0C"; */
+"0m5-Ly-U0C.title" = "个人中心";
+
+/* Class = "UILabel"; text = "组数：1"; ObjectID = "1xO-mU-LEw"; */
+"1xO-mU-LEw.text" = "组数：1";
+
+/* Class = "UILabel"; text = "总投注金额"; ObjectID = "3wh-h7-zeo"; */
+"3wh-h7-zeo.text" = "总投注金额";
+
+/* Class = "UIBarButtonItem"; title = "清除"; ObjectID = "4GR-w5-VbL"; */
+"4GR-w5-VbL.title" = "清除";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "5w0-ze-gvW"; */
+"5w0-ze-gvW.text" = "0";
+
+/* Class = "UITabBarItem"; title = "我的订单"; ObjectID = "6BP-uC-1JX"; */
+"6BP-uC-1JX.title" = "我的订单";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "7YV-5s-wYA"; */
+"7YV-5s-wYA.text" = "0";
+
+/* Class = "UILabel"; text = "可赢金额"; ObjectID = "7cX-UC-jGW"; */
+"7cX-UC-jGW.text" = "可赢金额";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7if-Ad-qRb"; */
+"7if-Ad-qRb.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "付款"; ObjectID = "8SD-NP-dsb"; */
+"8SD-NP-dsb.normalTitle" = "付款";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "933-6e-LUO"; */
+"933-6e-LUO.text" = "Label";
+
+/* Class = "UILabel"; text = "赔率改变提醒"; ObjectID = "9OF-eU-JfA"; */
+"9OF-eU-JfA.text" = "赔率改变提醒";
+
+/* Class = "UITabBarItem"; title = "开奖结果"; ObjectID = "D0b-yb-CAI"; */
+"D0b-yb-CAI.title" = "开奖结果";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "Dim-4g-4fT"; */
+"Dim-4g-4fT.title" = "Title";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "E1a-v6-khs"; */
+"E1a-v6-khs.text" = "0";
+
+/* Class = "UILabel"; text = "20000"; ObjectID = "E1p-nw-yMU"; */
+"E1p-nw-yMU.text" = "20000";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gsd-7H-BiV"; */
+"Gsd-7H-BiV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HPY-EW-ay8"; */
+"HPY-EW-ay8.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HrD-Vg-Uw9"; */
+"HrD-Vg-Uw9.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IAy-nb-3Aa"; */
+"IAy-nb-3Aa.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Jdr-Ga-4k1"; */
+"Jdr-Ga-4k1.text" = "Label";
+
+/* Class = "UILabel"; text = "总派彩结果"; ObjectID = "Jiw-Ow-x9e"; */
+"Jiw-Ow-x9e.text" = "总派彩结果";
+
+/* Class = "UIButton"; normalTitle = "已是当前最新版本"; ObjectID = "L6L-eb-EFO"; */
+"L6L-eb-EFO.normalTitle" = "已是当前最新版本";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LBd-RW-e3Q"; */
+"LBd-RW-e3Q.text" = "Label";
+
+/* Class = "UILabel"; text = "VS"; ObjectID = "LqN-wP-XAk"; */
+"LqN-wP-XAk.text" = "VS";
+
+/* Class = "UILabel"; text = "金额："; ObjectID = "LzB-rY-apY"; */
+"LzB-rY-apY.text" = "金额：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ngg-fq-kPo"; */
+"Ngg-fq-kPo.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PPS-ox-2iE"; */
+"PPS-ox-2iE.text" = "Label";
+
+/* Class = "UILabel"; text = "赔率"; ObjectID = "Pnc-Fk-VJl"; */
+"Pnc-Fk-VJl.text" = "赔率";
+
+/* Class = "UILabel"; text = "已投"; ObjectID = "PuQ-Bw-xK9"; */
+"PuQ-Bw-xK9.text" = "已投";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "RpX-SB-2Xk"; */
+"RpX-SB-2Xk.text" = "A";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SrR-nX-1Q8"; */
+"SrR-nX-1Q8.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "Tbm-86-V8Y"; */
+"Tbm-86-V8Y.title" = "首页";
+
+/* Class = "UILabel"; text = "投注金额"; ObjectID = "Tmt-Pm-YF0"; */
+"Tmt-Pm-YF0.text" = "投注金额";
+
+/* Class = "UILabel"; text = "投注金额"; ObjectID = "VJC-65-KZM"; */
+"VJC-65-KZM.text" = "投注金额";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Xsx-o0-JbW"; */
+"Xsx-o0-JbW.text" = "Label";
+
+/* Class = "UILabel"; text = "单注下注限额"; ObjectID = "Y9G-NT-klC"; */
+"Y9G-NT-klC.text" = "单注下注限额";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YVV-MZ-5PT"; */
+"YVV-MZ-5PT.text" = "Label";
+
+/* Class = "UILabel"; text = "赔率改变提醒"; ObjectID = "Yof-5s-LYp"; */
+"Yof-5s-LYp.text" = "赔率改变提醒";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ys5-tJ-Pf0"; */
+"Ys5-tJ-Pf0.text" = "Label";
+
+/* Class = "UILabel"; text = "派彩结果"; ObjectID = "bGn-pE-jDC"; */
+"bGn-pE-jDC.text" = "派彩结果";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bhC-D6-CuD"; */
+"bhC-D6-CuD.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "两串一"; ObjectID = "c8j-IA-9pW"; */
+"c8j-IA-9pW.normalTitle" = "两串一";
+
+/* Class = "UILabel"; text = "本场比赛可下注"; ObjectID = "cMN-ht-P5c"; */
+"cMN-ht-P5c.text" = "本场比赛可下注";
+
+/* Class = "UIButton"; normalTitle = "2016年06月04日"; ObjectID = "caa-Rg-vYq"; */
+"caa-Rg-vYq.normalTitle" = "2016年06月04日";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "cfd-2q-RgB"; */
+"cfd-2q-RgB.title" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "d6q-xm-fv4"; */
+"d6q-xm-fv4.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "das-tV-bhy"; */
+"das-tV-bhy.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eDN-GX-I0P"; */
+"eDN-GX-I0P.text" = "Label";
+
+/* Class = "UILabel"; text = "本场比赛可下注"; ObjectID = "fHy-Ge-2FS"; */
+"fHy-Ge-2FS.text" = "本场比赛可下注";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "fL6-RN-L7b"; */
+"fL6-RN-L7b.text" = "0";
+
+/* Class = "UILabel"; text = "10-15000"; ObjectID = "gY9-08-pJO"; */
+"gY9-08-pJO.text" = "10-15000";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "gYm-r9-wdk"; */
+"gYm-r9-wdk.title" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ieO-fo-SQl"; */
+"ieO-fo-SQl.text" = "Label";
+
+/* Class = "UISegmentedControl"; j9p-3R-Nru.segmentTitles[0] = "今日赛事"; ObjectID = "j9p-3R-Nru"; */
+"j9p-3R-Nru.segmentTitles[0]" = "今日赛事";
+
+/* Class = "UISegmentedControl"; j9p-3R-Nru.segmentTitles[1] = "足球早盘"; ObjectID = "j9p-3R-Nru"; */
+"j9p-3R-Nru.segmentTitles[1]" = "足球早盘";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "jBr-31-7gS"; */
+"jBr-31-7gS.text" = "0";
+
+/* Class = "UIBarButtonItem"; title = "添加自选"; ObjectID = "kSc-PD-0jF"; */
+"kSc-PD-0jF.title" = "添加自选";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "key-J2-Oru"; */
+"key-J2-Oru.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "刷新"; ObjectID = "lJ4-yN-Wvs"; */
+"lJ4-yN-Wvs.normalTitle" = "刷新";
+
+/* Class = "UINavigationItem"; title = "游戏说明"; ObjectID = "mKE-Jt-Xoa"; */
+"mKE-Jt-Xoa.title" = "游戏说明";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "mco-G3-OXZ"; */
+"mco-G3-OXZ.text" = "A";
+
+/* Class = "UILabel"; text = "可赢"; ObjectID = "ml7-Bj-PyE"; */
+"ml7-Bj-PyE.text" = "可赢";
+
+/* Class = "UITabBarItem"; title = "个人中心"; ObjectID = "o5L-2i-Ygd"; */
+"o5L-2i-Ygd.title" = "个人中心";
+
+/* Class = "UILabel"; text = "账户余额"; ObjectID = "obH-0u-yA4"; */
+"obH-0u-yA4.text" = "账户余额";
+
+/* Class = "UIBarButtonItem"; title = "添加自选"; ObjectID = "oyc-BN-oUF"; */
+"oyc-BN-oUF.title" = "添加自选";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pCH-ds-cP1"; */
+"pCH-ds-cP1.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "付款"; ObjectID = "qLF-fx-NsJ"; */
+"qLF-fx-NsJ.normalTitle" = "付款";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "r2f-ik-KJv"; */
+"r2f-ik-KJv.text" = "Label";
+
+/* Class = "UILabel"; text = "过关方式"; ObjectID = "rWb-mF-uoy"; */
+"rWb-mF-uoy.text" = "过关方式";
+
+/* Class = "UILabel"; text = "单注下注限额"; ObjectID = "rmJ-V4-Yt0"; */
+"rmJ-V4-Yt0.text" = "单注下注限额";
+
+/* Class = "UILabel"; text = "可赢金额"; ObjectID = "rvp-Pa-PUP"; */
+"rvp-Pa-PUP.text" = "可赢金额";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sgd-kt-uwf"; */
+"sgd-kt-uwf.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "游戏说明"; ObjectID = "srP-u8-y6g"; */
+"srP-u8-y6g.title" = "游戏说明";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "st2-LB-HIV"; */
+"st2-LB-HIV.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "sxr-z5-8Qv"; */
+"sxr-z5-8Qv.text" = "0";
+
+/* Class = "UILabel"; text = "B"; ObjectID = "tcw-35-hpY"; */
+"tcw-35-hpY.text" = "B";
+
+/* Class = "UILabel"; text = "Abel"; ObjectID = "td6-2r-uSm"; */
+"td6-2r-uSm.text" = "Abel";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uES-V4-CJ4"; */
+"uES-V4-CJ4.text" = "Label";
+
+/* Class = "UILabel"; text = "账户余额"; ObjectID = "uxl-DO-69J"; */
+"uxl-DO-69J.text" = "账户余额";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "v68-cF-1kb"; */
+"v68-cF-1kb.text" = "0";
+
+/* Class = "UILabel"; text = "幸运彩票1.0"; ObjectID = "vbU-mk-jFK"; */
+"vbU-mk-jFK.text" = "幸运彩票1.0";
+
+/* Class = "UILabel"; text = "单注下注限额"; ObjectID = "vbc-Uh-9Hj"; */
+"vbc-Uh-9Hj.text" = "单注下注限额";
+
+/* Class = "UIButton"; normalTitle = "单注"; ObjectID = "vno-eT-Xhy"; */
+"vno-eT-Xhy.normalTitle" = "单注";
+
+/* Class = "UIButton"; normalTitle = "退出"; ObjectID = "wWc-Gq-Mkp"; */
+"wWc-Gq-Mkp.normalTitle" = "退出";
+
+/* Class = "UIBarButtonItem"; title = "清除"; ObjectID = "waf-tG-aHX"; */
+"waf-tG-aHX.title" = "清除";
+
+/* Class = "UINavigationItem"; title = "我的订单"; ObjectID = "xnD-co-cwC"; */
+"xnD-co-cwC.title" = "我的订单";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xxC-IF-Mor"; */
+"xxC-IF-Mor.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "y7F-Tz-dmY"; */
+"y7F-Tz-dmY.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yGg-tq-UFR"; */
+"yGg-tq-UFR.text" = "Label";
+
+/* Class = "UILabel"; text = "VS"; ObjectID = "yJk-7J-Guc"; */
+"yJk-7J-Guc.text" = "VS";
+
+/* Class = "UILabel"; text = "赔率"; ObjectID = "ykd-Vm-fEE"; */
+"ykd-Vm-fEE.text" = "赔率";
+
+/* Class = "UILabel"; text = "可赢"; ObjectID = "ynl-Ph-yWM"; */
+"ynl-Ph-yWM.text" = "可赢";
+
+/* Class = "UILabel"; text = "B"; ObjectID = "zXd-OY-neX"; */
+"zXd-OY-neX.text" = "B";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zrz-MI-N7b"; */
+"zrz-MI-N7b.text" = "Label";

@@ -115,6 +115,20 @@
 		170226DD1CDC46D000EA6AF6 /* UnionCustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionCustomAlertView.swift; sourceTree = "<group>"; };
 		170226E11CE6B19E00EA6AF6 /* AllUnionVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUnionVO.swift; sourceTree = "<group>"; };
 		1711E86D1CCF5431006FC5E7 /* BreakfastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastViewController.swift; sourceTree = "<group>"; };
+		1715EC291D1A321500C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SwiftCustomAlertView.strings"; sourceTree = "<group>"; };
+		1715EC2A1D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnionCustomAlertView.strings"; sourceTree = "<group>"; };
+		1715EC2B1D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FootballResultView.strings"; sourceTree = "<group>"; };
+		1715EC2C1D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BasktballResultView.strings"; sourceTree = "<group>"; };
+		1715EC2D1D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CartButtonView.strings"; sourceTree = "<group>"; };
+		1715EC2E1D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BreakfastView.strings"; sourceTree = "<group>"; };
+		1715EC2F1D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FluctuantView.strings"; sourceTree = "<group>"; };
+		1715EC301D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FieldView.strings"; sourceTree = "<group>"; };
+		1715EC311D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GoalsView.strings"; sourceTree = "<group>"; };
+		1715EC321D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PassView.strings"; sourceTree = "<group>"; };
+		1715EC331D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RollView.strings"; sourceTree = "<group>"; };
+		1715EC341D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		1715EC351D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		1715EC361D1A321600C7E3CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1779BA511CCEF6BD002A62DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1779BA521CCEF6BD002A62DC /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		1779BA551CCEF707002A62DC /* BreakfastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
@@ -145,62 +159,47 @@
 		17DA62201CB8CDDC009070E6 /* UnionTitleVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionTitleVO.swift; sourceTree = "<group>"; };
 		17DA62261CB8CDEE009070E6 /* ToolsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCode.swift; sourceTree = "<group>"; };
 		17E287321CE96FC500B26CA6 /* BallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallViewController.swift; sourceTree = "<group>"; };
-		17EFB7771D114829002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		17EFB7781D114829002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		17EFB77B1D114871002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		17EFB77C1D114871002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		17EFB77F1D114899002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		17EFB7801D114899002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		17EFB7821D114F92002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
-		17EFB7851D114F96002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
 		17EFB7871D114F98002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
 		17EFB7891D114F99002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginViewController.strings; sourceTree = "<group>"; };
 		17EFB78B1D115140002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SwiftCustomAlertView.xib; sourceTree = "<group>"; };
-		17EFB78E1D115142002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SwiftCustomAlertView.strings"; sourceTree = "<group>"; };
 		17EFB7901D115143002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SwiftCustomAlertView.strings"; sourceTree = "<group>"; };
 		17EFB7921D115144002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SwiftCustomAlertView.strings; sourceTree = "<group>"; };
 		17EFB7941D11514A002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/UnionCustomAlertView.xib; sourceTree = "<group>"; };
-		17EFB7971D11514B002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnionCustomAlertView.strings"; sourceTree = "<group>"; };
 		17EFB7991D11514C002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UnionCustomAlertView.strings"; sourceTree = "<group>"; };
 		17EFB79B1D11514D002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UnionCustomAlertView.strings; sourceTree = "<group>"; };
 		17EFB79D1D115195002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FootballResultView.xib; sourceTree = "<group>"; };
-		17EFB7A01D115197002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FootballResultView.strings"; sourceTree = "<group>"; };
 		17EFB7A21D115198002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FootballResultView.strings"; sourceTree = "<group>"; };
 		17EFB7A41D115199002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FootballResultView.strings; sourceTree = "<group>"; };
 		17EFB7A61D11519E002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BasktballResultView.xib; sourceTree = "<group>"; };
-		17EFB7A91D1151A0002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BasktballResultView.strings"; sourceTree = "<group>"; };
 		17EFB7AB1D1151A1002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BasktballResultView.strings"; sourceTree = "<group>"; };
 		17EFB7AD1D1151A2002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BasktballResultView.strings; sourceTree = "<group>"; };
 		17EFB7AF1D1151C6002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CartButtonView.xib; sourceTree = "<group>"; };
-		17EFB7B21D1151CA002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CartButtonView.strings"; sourceTree = "<group>"; };
 		17EFB7B41D1151CB002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CartButtonView.strings"; sourceTree = "<group>"; };
 		17EFB7B61D1151CD002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CartButtonView.strings; sourceTree = "<group>"; };
 		17EFB7B81D1151EE002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BreakfastView.xib; sourceTree = "<group>"; };
-		17EFB7BB1D1151F1002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BreakfastView.strings"; sourceTree = "<group>"; };
 		17EFB7BD1D1151F2002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BreakfastView.strings"; sourceTree = "<group>"; };
 		17EFB7BF1D1151F4002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BreakfastView.strings; sourceTree = "<group>"; };
 		17EFB7C11D1151FB002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FluctuantView.xib; sourceTree = "<group>"; };
-		17EFB7C41D1151FF002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FluctuantView.strings"; sourceTree = "<group>"; };
 		17EFB7C61D115200002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FluctuantView.strings"; sourceTree = "<group>"; };
 		17EFB7C81D115202002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FluctuantView.strings; sourceTree = "<group>"; };
 		17EFB7CA1D115208002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FieldView.xib; sourceTree = "<group>"; };
-		17EFB7CD1D11520A002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FieldView.strings"; sourceTree = "<group>"; };
 		17EFB7CF1D11520B002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FieldView.strings"; sourceTree = "<group>"; };
 		17EFB7D11D11520C002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FieldView.strings; sourceTree = "<group>"; };
 		17EFB7D31D115213002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GoalsView.xib; sourceTree = "<group>"; };
-		17EFB7D61D115215002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GoalsView.strings"; sourceTree = "<group>"; };
 		17EFB7D81D115216002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/GoalsView.strings"; sourceTree = "<group>"; };
 		17EFB7DA1D115217002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GoalsView.strings; sourceTree = "<group>"; };
 		17EFB7DC1D11521C002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassView.xib; sourceTree = "<group>"; };
-		17EFB7DF1D11521E002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PassView.strings"; sourceTree = "<group>"; };
 		17EFB7E11D11521F002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/PassView.strings"; sourceTree = "<group>"; };
 		17EFB7E31D115220002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassView.strings; sourceTree = "<group>"; };
 		17EFB7E51D115228002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RollView.xib; sourceTree = "<group>"; };
-		17EFB7E81D11522A002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RollView.strings"; sourceTree = "<group>"; };
 		17EFB7EA1D11522B002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RollView.strings"; sourceTree = "<group>"; };
 		17EFB7EC1D11522C002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RollView.strings; sourceTree = "<group>"; };
 		17EFB7F21D123FE8002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		17EFB7F41D123FEB002F34E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		17EFB7F51D123FEC002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		17EFB7F61D123FED002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
@@ -654,9 +653,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				"zh-Hans",
 				"zh-Hant",
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 462BEDDB1C8682E300E451E4;
 			productRefGroup = 462BEDE51C8682E300E451E4 /* Products */;
@@ -821,9 +820,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7821D114F92002F34E2 /* Base */,
-				17EFB7851D114F96002F34E2 /* zh-Hans */,
 				17EFB7871D114F98002F34E2 /* zh-Hant */,
 				17EFB7891D114F99002F34E2 /* en */,
+				1715EC341D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = LoginViewController.xib;
 			sourceTree = "<group>";
@@ -832,9 +831,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB78B1D115140002F34E2 /* Base */,
-				17EFB78E1D115142002F34E2 /* zh-Hans */,
 				17EFB7901D115143002F34E2 /* zh-Hant */,
 				17EFB7921D115144002F34E2 /* en */,
+				1715EC291D1A321500C7E3CA /* zh-Hans */,
 			);
 			name = SwiftCustomAlertView.xib;
 			sourceTree = "<group>";
@@ -843,9 +842,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7941D11514A002F34E2 /* Base */,
-				17EFB7971D11514B002F34E2 /* zh-Hans */,
 				17EFB7991D11514C002F34E2 /* zh-Hant */,
 				17EFB79B1D11514D002F34E2 /* en */,
+				1715EC2A1D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = UnionCustomAlertView.xib;
 			sourceTree = "<group>";
@@ -854,9 +853,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB79D1D115195002F34E2 /* Base */,
-				17EFB7A01D115197002F34E2 /* zh-Hans */,
 				17EFB7A21D115198002F34E2 /* zh-Hant */,
 				17EFB7A41D115199002F34E2 /* en */,
+				1715EC2B1D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = FootballResultView.xib;
 			sourceTree = "<group>";
@@ -865,9 +864,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7A61D11519E002F34E2 /* Base */,
-				17EFB7A91D1151A0002F34E2 /* zh-Hans */,
 				17EFB7AB1D1151A1002F34E2 /* zh-Hant */,
 				17EFB7AD1D1151A2002F34E2 /* en */,
+				1715EC2C1D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = BasktballResultView.xib;
 			sourceTree = "<group>";
@@ -876,9 +875,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7AF1D1151C6002F34E2 /* Base */,
-				17EFB7B21D1151CA002F34E2 /* zh-Hans */,
 				17EFB7B41D1151CB002F34E2 /* zh-Hant */,
 				17EFB7B61D1151CD002F34E2 /* en */,
+				1715EC2D1D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = CartButtonView.xib;
 			sourceTree = "<group>";
@@ -887,9 +886,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7B81D1151EE002F34E2 /* Base */,
-				17EFB7BB1D1151F1002F34E2 /* zh-Hans */,
 				17EFB7BD1D1151F2002F34E2 /* zh-Hant */,
 				17EFB7BF1D1151F4002F34E2 /* en */,
+				1715EC2E1D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = BreakfastView.xib;
 			sourceTree = "<group>";
@@ -898,9 +897,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7C11D1151FB002F34E2 /* Base */,
-				17EFB7C41D1151FF002F34E2 /* zh-Hans */,
 				17EFB7C61D115200002F34E2 /* zh-Hant */,
 				17EFB7C81D115202002F34E2 /* en */,
+				1715EC2F1D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = FluctuantView.xib;
 			sourceTree = "<group>";
@@ -909,9 +908,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7CA1D115208002F34E2 /* Base */,
-				17EFB7CD1D11520A002F34E2 /* zh-Hans */,
 				17EFB7CF1D11520B002F34E2 /* zh-Hant */,
 				17EFB7D11D11520C002F34E2 /* en */,
+				1715EC301D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = FieldView.xib;
 			sourceTree = "<group>";
@@ -920,9 +919,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7D31D115213002F34E2 /* Base */,
-				17EFB7D61D115215002F34E2 /* zh-Hans */,
 				17EFB7D81D115216002F34E2 /* zh-Hant */,
 				17EFB7DA1D115217002F34E2 /* en */,
+				1715EC311D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = GoalsView.xib;
 			sourceTree = "<group>";
@@ -931,9 +930,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7DC1D11521C002F34E2 /* Base */,
-				17EFB7DF1D11521E002F34E2 /* zh-Hans */,
 				17EFB7E11D11521F002F34E2 /* zh-Hant */,
 				17EFB7E31D115220002F34E2 /* en */,
+				1715EC321D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = PassView.xib;
 			sourceTree = "<group>";
@@ -942,9 +941,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7E51D115228002F34E2 /* Base */,
-				17EFB7E81D11522A002F34E2 /* zh-Hans */,
 				17EFB7EA1D11522B002F34E2 /* zh-Hant */,
 				17EFB7EC1D11522C002F34E2 /* en */,
+				1715EC331D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = RollView.xib;
 			sourceTree = "<group>";
@@ -953,7 +952,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				17EFB7F21D123FE8002F34E2 /* Base */,
-				17EFB7F41D123FEB002F34E2 /* zh-Hans */,
 				17EFB7F51D123FEC002F34E2 /* zh-Hant */,
 				17EFB7F61D123FED002F34E2 /* en */,
 			);
@@ -964,9 +962,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				462BEDEE1C8682E300E451E4 /* Base */,
-				17EFB7771D114829002F34E2 /* zh-Hans */,
 				17EFB77B1D114871002F34E2 /* zh-Hant */,
 				17EFB77F1D114899002F34E2 /* en */,
+				1715EC351D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -975,9 +973,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				462BEDF31C8682E300E451E4 /* Base */,
-				17EFB7781D114829002F34E2 /* zh-Hans */,
 				17EFB77C1D114871002F34E2 /* zh-Hant */,
 				17EFB7801D114899002F34E2 /* en */,
+				1715EC361D1A321600C7E3CA /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

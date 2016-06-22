@@ -1,14 +1,39 @@
+
+/* Class = "UILabel"; text = "1.8"; ObjectID = "1Vm-uZ-YCr"; */
+"1Vm-uZ-YCr.text" = "1.8";
+
 /* Class = "UILabel"; text = "和/客"; ObjectID = "1su-aZ-q1U"; */
 "1su-aZ-q1U.text" = "和/客";
 
 /* Class = "UILabel"; text = "主/主"; ObjectID = "5Ub-UT-sYO"; */
 "5Ub-UT-sYO.text" = "主/主";
 
+/* Class = "UILabel"; text = "1.8"; ObjectID = "7fX-aE-DwI"; */
+"7fX-aE-DwI.text" = "1.8";
+
 /* Class = "UILabel"; text = "和/主"; ObjectID = "8lO-Yw-W2f"; */
 "8lO-Yw-W2f.text" = "和/主";
 
+/* Class = "UILabel"; text = "4"; ObjectID = "949-xC-0uN"; */
+"949-xC-0uN.text" = "4";
+
+/* Class = "UILabel"; text = "44"; ObjectID = "NDY-LL-ajs"; */
+"NDY-LL-ajs.text" = "44";
+
+/* Class = "UILabel"; text = "2.74"; ObjectID = "QUm-hT-IAB"; */
+"QUm-hT-IAB.text" = "2.74";
+
+/* Class = "UILabel"; text = "4.5"; ObjectID = "XKl-un-Zks"; */
+"XKl-un-Zks.text" = "4.5";
+
 /* Class = "UILabel"; text = "客/主"; ObjectID = "fGH-2h-Xsn"; */
 "fGH-2h-Xsn.text" = "客/主";
+
+/* Class = "UILabel"; text = "1.91"; ObjectID = "fYi-Fn-0NK"; */
+"fYi-Fn-0NK.text" = "1.91";
+
+/* Class = "UILabel"; text = "44"; ObjectID = "h8p-MH-j7h"; */
+"h8p-MH-j7h.text" = "44";
 
 /* Class = "UILabel"; text = "和/和"; ObjectID = "i9L-Ht-9YX"; */
 "i9L-Ht-9YX.text" = "和/和";
@@ -24,6 +49,9 @@
 
 /* Class = "UILabel"; text = "客/和"; ObjectID = "xiV-lY-k4p"; */
 "xiV-lY-k4p.text" = "客/和";
+
+/* Class = "UILabel"; text = "4"; ObjectID = "yKh-W7-UHF"; */
+"yKh-W7-UHF.text" = "4";
 
 /* Class = "UILabel"; text = "主/客"; ObjectID = "znz-5x-abt"; */
 "znz-5x-abt.text" = "主/客";
