@@ -174,6 +174,8 @@ class BallViewController: UIViewController {
         }
     }
     
+    
+    
     //购物车删除资料同步下注页面
     func synchronizationData(betinfo:BetInfo){
         if mContentView.subviews.count == 2 {
