@@ -27,7 +27,6 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var typeArray:Array<Dictionary<String,String>> = [[NSLocalizedString("Foot", comment: ""):"0"],
                                                       [NSLocalizedString("Baseket", comment: ""):"1"]]
     var onclickFlag:String = ""
-    var titleDate:String = ""
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
@@ -108,7 +107,6 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //球类型选择
     @IBAction func ballType(sender: UIButton) {
         onclickFlag = "ballType"
-        titleDate = (btnTitle.titleLabel?.text)!
         alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: typeArray)
         self.presentViewController(alertMenu, animated: true, completion: nil)
     }
@@ -175,9 +173,8 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func clickMenuItem(key:String,value:String){
         if(onclickFlag == "date"){
             date = value
-            btnTitle.titleLabel?.text = key
+            btnTitle.setTitle(key, forState: UIControlState.Normal)
         }else if(onclickFlag == "ballType"){
-            btnTitle.titleLabel?.text = titleDate
             if(value == "0"){
                 btnBallType.selected = false
             }else{
@@ -202,7 +199,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
         date = resultArray[0]
         let dateTemp2:[String] = resultArray[0].componentsSeparatedByString("/")
         let strTitle:String = dateTemp2[0]+Year+dateTemp2[1]+Month+dateTemp2[2]+Day
-        btnTitle.titleLabel?.text = strTitle
+        btnTitle.setTitle(strTitle, forState: UIControlState.Normal)
         getMatchResult()
     }
     
