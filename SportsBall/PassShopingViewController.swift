@@ -37,6 +37,7 @@
         @IBOutlet weak var view3: UIView!
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
+          
             self.navigationController?.popViewControllerAnimated(true)
         }
         
@@ -47,7 +48,13 @@
         }
         
         @IBAction func subTypeClick(sender: UIButton) {
-            self.presentViewController(alertSubMenu, animated: true, completion: nil)
+            
+            if(betType==1&&betList?.count<=2)
+            {
+                return
+            }
+            
+         self.presentViewController(alertSubMenu, animated: true, completion: nil)
         }
         //清除按钮
         @IBAction func btnClear(sender: AnyObject) {
@@ -81,6 +88,14 @@
         
         
         @IBAction func payChlick(sender: UIButton) {
+            if(betList?.count<2){
+                let alertView = UIAlertView()
+                alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+                alertView.message = "必须选择两场比赛"
+                alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
+                alertView.show()
+                return
+            }
             if(self.textBetMoney.text!==""){
                 let alertView = UIAlertView()
                 alertView.title = NSLocalizedString("SystemPrompt", comment: "")
@@ -185,7 +200,7 @@
             var lableKY=cell?.viewWithTag(11) as! UILabel
             var lableDC=cell?.viewWithTag(12) as! UILabel
             var lableDZ=cell?.viewWithTag(13) as! UILabel
-            
+            lableDZ.text=betList![indexPath.row].dzxx+"-"+betList![indexPath.row].dzsx
             lableV.text=betList![indexPath.row].visitname
             lableH.text=betList![indexPath.row].homename
             lableBetTeam.text=betList![indexPath.row].betteamName
@@ -216,7 +231,19 @@
             let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
             tabBar.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
             BetListManager.sharedManager.delectListRow(intTag)
+            betList?.removeAtIndex(intTag)
             self.tableList.reloadData()
+            if(betType==0){
+                if(betList?.count<2){
+                   btnSelect.setTitle(NSLocalizedString("Limit", comment: ""), forState: UIControlState.Normal)
+                    
+                }else{
+                       btnSelect.setTitle("\(betList!.count)"+NSLocalizedString("String1", comment: ""), forState: UIControlState.Normal)
+                }
+                
+          
+            }
+           
         }
         
         
@@ -278,7 +305,9 @@
                     alertView.show()
                     return
                 }else{
-                    
+                    let navigationViews = self.navigationController!.viewControllers
+                    let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
+                    tabBar.clearAllOdds()
                     jumpPage()
                 }
                 
@@ -413,14 +442,18 @@
                 singleButton.titleLabel?.text=NSLocalizedString("EvenTouch", comment: "")
                 var arry11 = getSpinnerItem("1")
                 var content:String=arry11[0]["0"]!
-                btnSelect.titleLabel?.text=content
+//                btnSelect.titleLabel?.text=content
+                btnSelect.setTitle(content, forState: UIControlState.Normal)
+                btnSelect.titleLabel!.adjustsFontSizeToFitWidth=true
+                
+                if(betList?.count<=2){
+                    return
+                }
                 var intTeamCount=(content as NSString).substringToIndex(1)
                 teamCount.text=NSLocalizedString("Group", comment: "")+":\(betCount((betList?.count)!,pNumber: Int(intTeamCount)!))"
                 createSubMenu(arry11)
                 return
             }
-            
-            
             
         }
         

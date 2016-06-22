@@ -260,7 +260,9 @@
                     alertView.show()
                     return
                 }else{
-                    
+                    let navigationViews = self.navigationController!.viewControllers
+                    let tabBar:BallViewController = navigationViews[navigationViews.count - 2] as! BallViewController
+                    tabBar.clearAllOdds()
                     jumpPage()
                 }
                 
