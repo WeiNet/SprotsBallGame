@@ -111,7 +111,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         if(cell==nil){
             cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: identify)
         }
-        
+        if(jsonDetail.count>0){
         var image=cell?.viewWithTag(2) as! UIImageView
         var labelDetail=cell?.viewWithTag(3) as! UILabel
         var labelYT=cell?.viewWithTag(4)as! UILabel
@@ -134,12 +134,13 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
             documentAttributes: nil)
         labelDetail.attributedText = attrStr
         labelNumber.text=zdh
-       labelYT.text="\(xzje!)"
-        labelResult.text="\(hyjg!)"
-         labelTime.text=ToolsCode.formatterDate(time,format: "MM/dd HH:mm")
+        labelYT.text="\(Double(xzje! as! NSNumber))"
+        labelResult.text="\(Double(hyjg! as! NSNumber))"
+        labelTime.text=ToolsCode.formatterDate(time,format: "MM/dd HH:mm")
        
         print(xzje)
         print(hyjg)
+        }
         return cell!
         
     }
@@ -178,8 +179,10 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
             refresh.endRefreshing()
             if(jsonResult[0] as! NSObject==[]){
                 
-//                jsonDetail=[]
-//                self.tableList.reloadData()
+                jsonDetail=[]
+                self.tableList.reloadData()
+                self.betMoney.text="0.0"
+                self.payMoney.text="0.0"
                 var alert = UIAlertView()
                 alert.title = NSLocalizedString("SystemPrompt", comment: "")
                 alert.message = NSLocalizedString("FinishedLoading", comment: "")
@@ -211,7 +214,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
         strParam.appendContentsOf("<strBallType>all</strBallType>")
         strParam.appendContentsOf("<strDate>\(mdate)</strDate>")
         strParam.appendContentsOf("<iPageindex>\(intIndexPage)</iPageindex>")
-        strParam.appendContentsOf("<iPageSize>100</iPageSize>")
+        strParam.appendContentsOf("<iPageSize>100000</iPageSize>")
         strParam.appendContentsOf("</GetBetsDetail>")
         conn.getResult(strParam,strResultName: "GetBetsDetailResult")
         
