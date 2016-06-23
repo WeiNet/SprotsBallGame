@@ -326,7 +326,7 @@ class BallViewController: UIViewController {
         let playType:String = ToolsCode.codeByPlayType(toolsCode)
         var betteamName:String!
         var tid:String!
-        let tempBetName = ToolsCode.codeByLRH(toolsCode)
+        var tempBetName = ToolsCode.codeByLRH(toolsCode)
         if tempBetName == "L" {
             betteamName = String(orderCellModel.N_VISIT_NAME)
             tid = String(orderCellModel.N_VISIT)
@@ -335,7 +335,7 @@ class BallViewController: UIViewController {
             tid = String(orderCellModel.N_HOME)
         }else{
             betteamName = "和局"
-            
+            tempBetName = "和局"
             tid = "0"
         }
         if playType == "DX"{
