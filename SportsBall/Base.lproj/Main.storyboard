@@ -1422,7 +1422,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vno-eT-Xhy">
-                                <rect key="frame" x="131" y="501" width="47" height="28"/>
+                                <rect key="frame" x="90" y="501" width="88" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="单注"/>
                                 <connections>
@@ -1598,7 +1598,7 @@
                             <constraint firstItem="rmJ-V4-Yt0" firstAttribute="top" secondItem="c8j-IA-9pW" secondAttribute="bottom" constant="20" id="9yv-3C-4AF"/>
                             <constraint firstItem="rWb-mF-uoy" firstAttribute="leading" secondItem="aE6-jS-5DV" secondAttribute="leadingMargin" id="BCS-qN-3vK"/>
                             <constraint firstItem="rWb-mF-uoy" firstAttribute="centerY" secondItem="c8j-IA-9pW" secondAttribute="centerY" id="BVa-NI-UoP"/>
-                            <constraint firstItem="vno-eT-Xhy" firstAttribute="leading" secondItem="rWb-mF-uoy" secondAttribute="trailing" constant="41" id="Bfx-4i-wAC"/>
+                            <constraint firstItem="vno-eT-Xhy" firstAttribute="leading" secondItem="rWb-mF-uoy" secondAttribute="trailing" id="Bfx-4i-wAC"/>
                             <constraint firstItem="BVk-ra-KZw" firstAttribute="leading" secondItem="gh1-W7-dHv" secondAttribute="leading" id="CTJ-Dx-ft2"/>
                             <constraint firstItem="vno-eT-Xhy" firstAttribute="baseline" secondItem="c8j-IA-9pW" secondAttribute="baseline" id="Cg1-1R-Pex"/>
                             <constraint firstItem="1xO-mU-LEw" firstAttribute="centerY" secondItem="rWb-mF-uoy" secondAttribute="centerY" id="Dhu-ec-Fw5"/>
@@ -1686,6 +1686,7 @@
                                 <exclude reference="9AN-cD-Hv4"/>
                                 <exclude reference="Cg1-1R-Pex"/>
                                 <exclude reference="FGO-wU-e7r"/>
+                                <exclude reference="SCk-iH-EXU"/>
                                 <exclude reference="Umh-8q-tSb"/>
                                 <exclude reference="VYW-PD-gT0"/>
                                 <exclude reference="gmG-Z7-UAw"/>
