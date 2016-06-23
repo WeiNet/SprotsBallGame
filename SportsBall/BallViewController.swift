@@ -335,6 +335,7 @@ class BallViewController: UIViewController {
             tid = String(orderCellModel.N_HOME)
         }else{
             betteamName = "和局"
+            
             tid = "0"
         }
         if playType == "DX"{
