@@ -32,6 +32,8 @@ class UnionTitleView: UITableViewHeaderFooterView {
         // 单击手势识别
         let tapGesture = UITapGestureRecognizer(target: self, action: "btnTap:")
         self.addGestureRecognizer(tapGesture)
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: "btnTap:")
+        self.btnDisclosure.addGestureRecognizer(tapGesture2)
     }
     
     func btnTap(sender: UITapGestureRecognizer) {
