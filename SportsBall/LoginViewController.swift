@@ -28,8 +28,8 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
 //        self.activityView.
         self.navigationController?.navigationBarHidden=true
         self.activityView.hidesWhenStopped=true
-        self.textUserNumber.text="0p0p00@demo"
-        self.textUserPW.text="aa1234"
+//        self.textUserNumber.text="0p0p00@demo"
+//        self.textUserPW.text="aa1234"
         
         // Do any additional setup after loading the view.
     }
