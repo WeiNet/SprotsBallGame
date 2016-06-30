@@ -143,6 +143,8 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         }
     }
     func jumpPage(){
+        let onlineUser:OnlineUser = OnlineUser.getOnlineUserInstance()
+        onlineUser.ThreadStart()
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
         self.navigationController?.pushViewController(vc, animated: true)
