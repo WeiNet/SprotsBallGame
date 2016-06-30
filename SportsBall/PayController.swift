@@ -183,12 +183,12 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
                 self.tableList.reloadData()
                 self.betMoney.text="0.0"
                 self.payMoney.text="0.0"
-                var alert = UIAlertView()
-                alert.title = NSLocalizedString("SystemPrompt", comment: "")
-                alert.message = NSLocalizedString("FinishedLoading", comment: "")
-                alert.addButtonWithTitle("Cancel")
-               
-                alert.show()
+//                var alert = UIAlertView()
+//                alert.title = NSLocalizedString("SystemPrompt", comment: "")
+//                alert.message = NSLocalizedString("FinishedLoading", comment: "")
+//                alert.addButtonWithTitle("Cancel")
+//               
+//                alert.show()
                 return
             }
            

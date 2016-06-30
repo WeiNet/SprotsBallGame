@@ -115,12 +115,12 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let jsonArr = try! NSJSONSerialization.JSONObjectWithData(data!,
             options: NSJSONReadingOptions.MutableContainers) as! NSArray
         if(jsonArr.count==0){
-            var alert = UIAlertView()
-            alert.title = NSLocalizedString("SystemPrompt", comment: "")
-            alert.message = NSLocalizedString("FinishedLoading", comment: "")
-            alert.addButtonWithTitle("Cancel")
-            //            alert.addButtonWithTitle("OK")
-            alert.show()
+//            var alert = UIAlertView()
+//            alert.title = NSLocalizedString("SystemPrompt", comment: "")
+//            alert.message = NSLocalizedString("FinishedLoading", comment: "")
+//            alert.addButtonWithTitle("Cancel")
+//            //            alert.addButtonWithTitle("OK")
+//            alert.show()
             return
         }
         
