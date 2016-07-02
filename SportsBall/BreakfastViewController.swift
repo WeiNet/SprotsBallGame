@@ -106,7 +106,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //联盟打开
     func unionClick(){
-        showUnion(self)
+        showAlert(self)
+        //showUnion(self)
     }
     //规则说明
     func explainClick(){
