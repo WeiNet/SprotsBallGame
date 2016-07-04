@@ -1546,12 +1546,12 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
-                  timestampString = "489304636.627785"
+                  timestampString = "489305300.108262"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "17">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1561,12 +1561,12 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
-                  timestampString = "489304636.628186"
+                  timestampString = "489305300.108391"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "17">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1594,12 +1594,12 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/RollViewController.swift"
-                  timestampString = "489304636.630412"
+                  timestampString = "489305300.10955"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "2459">
+                  offsetFromSymbolStart = "1820">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1609,12 +1609,12 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/RollViewController.swift"
-                  timestampString = "489304636.630908"
+                  timestampString = "489305300.109689"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
-                  offsetFromSymbolStart = "2522">
+                  offsetFromSymbolStart = "1848">
                </Location>
             </Locations>
          </BreakpointContent>
