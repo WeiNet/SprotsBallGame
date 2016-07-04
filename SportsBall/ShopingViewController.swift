@@ -233,6 +233,7 @@
             }
             
             if(strType=="BatchAddBetResult"){
+                
                 self.activityView.stopAnimating()
                 var msg=""
                 var strSuccess=""
@@ -245,6 +246,19 @@
                     strSuccess=String(infoArr[index].objectForKey("bSucceed")!)
                     strErrorCode=String(infoArr[index].objectForKey("iErroCode")!)
                 }
+                if(strErrorCode=="10001"){
+                    
+                    Tool.showMsg("系统正在维护，如有不便之处请见谅！维护时间为:\n"+msg)
+                    var vc = LoginViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    return
+                }
+                if(strErrorCode=="10002"){
+                    Tool.showMsg("你的账号在异地登陆，请及时修改密码")
+                    var vc = LoginViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    return
+                }
                 if(strErrorCode=="24"){
                     let alertView = UIAlertView()
                     alertView.title = NSLocalizedString("SystemPrompt", comment: "")
@@ -253,6 +267,7 @@
                      alertView.show()
                     return
                 }
+                
                 if(strSuccess=="0"){
                     let alertView = UIAlertView()
                     alertView.title = NSLocalizedString("SystemPrompt", comment: "")
