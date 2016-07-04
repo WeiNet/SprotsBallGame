@@ -55,9 +55,6 @@ extension UIViewController {
     func alertMessage(message:String){
         SwiftNotice.alertMessage(message,carrier: self)
     }
-    func showAlert(Parent:UIViewController,name:String="UnionCustomAlertView",width:Int=50,height:Int=60){
-        SwiftNotice.showAlert(Parent, name: name, width: width, height: height)
-    }
 }
 
 enum NoticeType{
@@ -267,28 +264,6 @@ class SwiftNotice: NSObject {
             return CGPoint(x: rv.center.y, y: rv.center.x)
         } else {
             return rv.center
-        }
-    }
-    
-    static func showAlert(Parent:UIViewController,name:String="UnionCustomAlertView",width:Int=50,height:Int=60){
-        //在XIB的后面加入一个透明的View
-        let bottom:UIView = UIView(frame: CGRect(x: 0, y: 0, width: Parent.view.frame.size.width, height: Parent.view.frame.size.height))
-        bottom.backgroundColor = UIColor.blackColor()
-        bottom.alpha = 0.5
-        
-        let viewWidth:Double = Double(Parent.view.frame.size.width) - 50
-        let viewHeight:Double = Double(Parent.view.frame.size.height) - 60
-        let myView = NSBundle.mainBundle().loadNibNamed("UnionCustomAlertView", owner: self, options: nil).first as? UnionCustomAlertView
-        myView?.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
-        myView?.center = Parent.view.center
-        ToolsCode.setCornerRadius(myView!)
-        
-        if myView != nil {
-            let window: UIWindow = UIApplication.sharedApplication().keyWindow!
-            window.addSubview(bottom)
-            myView?.backgroundView = bottom
-            window.addSubview(myView!)
-            window.bringSubviewToFront(myView!)
         }
     }
     
