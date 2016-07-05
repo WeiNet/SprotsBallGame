@@ -10,6 +10,7 @@ import UIKit
 
 class AllUnionVO: NSObject {
     var arrayUnionVO:Array<UnionTitleVO> = Array()
+    var selNO = ""
     
     private static let allUnionVOInstance = AllUnionVO()
     

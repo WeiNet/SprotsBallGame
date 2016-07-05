@@ -26,6 +26,8 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     var arrayUnionVO:Array<UnionTitleVO>!
     var dicUnionNO:Dictionary<String ,Bool> = Dictionary<String ,Bool>()
     var delegate:UnionDelegate!
+    var selAllClik:Bool = true
+    var selNO = ""
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         ToolsCode.tableViewDisplayWitMsg(tableView, rowCount: arrayUnionVO.count, message: NSLocalizedString("NoAlliance", comment: ""))
@@ -35,6 +37,20 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell:UITableViewCell = UITableViewCell(frame: CGRect(x: 0, y: 0, width: 350, height: 48))
         var image:UIImage?
+        if (selNO != ""){
+            let dateTemp:[String] = selNO.componentsSeparatedByString(",")
+            if(arrayUnionVO.count != 0 && dateTemp.count == arrayUnionVO.count){
+                selAllButton.selected = true
+            }
+            for(var i=0;i<dateTemp.count;i++){
+                let nowNO = arrayUnionVO[indexPath.row].N_NO as String
+                if (nowNO == dateTemp[i]){
+                    dicUnionNO[arrayUnionVO[indexPath.row].N_NO as String] = true
+                    selNO = selNO.stringByReplacingOccurrencesOfString("\(dateTemp[i])", withString: "")
+                }
+                selNO = selNO.stringByReplacingOccurrencesOfString(",,", withString: ",")
+            }
+        }
         if dicUnionNO.keys.contains(arrayUnionVO[indexPath.row].N_NO as String) {
             image = UIImage(named:"checkbox_off")
         } else {
@@ -44,7 +60,6 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
         cell.textLabel?.text = arrayUnionVO[indexPath.row].N_LMMC as String
         //点击不改变整行Cell的颜色
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
         return cell
     }
     
@@ -107,11 +122,12 @@ class UnionCustomAlertView: UIView,UITableViewDataSource,UITableViewDelegate {
         selAllView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "checkboxClick:"))
         selAllButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "checkboxClick:"))
         
+        let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
+        arrayUnionVO = allUnionVO.arrayUnionVO
+        selNO = allUnionVO.selNO
         unionTable.userInteractionEnabled = true
         unionTable.dataSource = self
         unionTable.delegate = self
-        let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
-        arrayUnionVO = allUnionVO.arrayUnionVO
         self.superclass
     }
 }

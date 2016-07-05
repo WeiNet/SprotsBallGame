@@ -41,6 +41,8 @@ class BallViewController: UIViewController {
     
     //玩法菜单选项响应事件
     func clickMenuItem(key:String,value:String){
+        let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
+        allUnionVO.selNO = ""
 //        mPlayType = key
 //        let view:HeaderView = headerView.subviews[0] as! HeaderView
 //        view.btnTitle.setTitle(value, forState: UIControlState.Normal)
