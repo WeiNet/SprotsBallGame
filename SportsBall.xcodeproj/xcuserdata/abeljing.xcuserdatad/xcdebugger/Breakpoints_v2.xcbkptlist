@@ -1158,7 +1158,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
@@ -1238,7 +1238,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/PassShopingViewController.swift"
@@ -1546,7 +1546,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
-                  timestampString = "489305300.108262"
+                  timestampString = "489318287.483987"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
@@ -1561,7 +1561,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/PassShopingViewController.swift"
-                  timestampString = "489305300.108391"
+                  timestampString = "489318287.48411"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
@@ -1594,7 +1594,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/RollViewController.swift"
-                  timestampString = "489305300.10955"
+                  timestampString = "489318287.485144"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -1609,7 +1609,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/RollViewController.swift"
-                  timestampString = "489305300.109689"
+                  timestampString = "489318287.485267"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -1617,6 +1617,38 @@
                   offsetFromSymbolStart = "1848">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsBall/PassShopingViewController.swift"
+            timestampString = "489317256.740227"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "payChlick(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsBall/PassShopingViewController.swift"
+            timestampString = "489317545.461972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "setResult(_:strType:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

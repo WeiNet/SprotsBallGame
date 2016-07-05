@@ -171,7 +171,7 @@
             </objects>
             <point key="canvasLocation" x="826" y="-651"/>
         </scene>
-        <!--Title-->
+        <!--首页-->
         <scene sceneID="E1k-Ee-ipr">
             <objects>
                 <viewController id="66g-h8-cIZ" customClass="MainViewController" customModule="SportsBall" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,14 +184,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j9p-3R-Nru">
-                                <rect key="frame" x="100" y="180" width="400" height="29"/>
+                                <rect key="frame" x="100" y="220" width="400" height="29"/>
                                 <segments>
                                     <segment title="今日赛事"/>
                                     <segment title="足球早盘"/>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="167" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VGL-Xy-yhq">
-                                <rect key="frame" x="20" y="218" width="560" height="333"/>
+                                <rect key="frame" x="20" y="258" width="560" height="298"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -337,19 +337,57 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmL-ae-IAv">
+                                <rect key="frame" x="0.0" y="15" width="600" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="游戏大厅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-ZC-X6G">
+                                        <rect key="frame" x="5" y="12" width="87" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="87" id="X8e-0D-y9u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke6-1O-WdY">
+                                        <rect key="frame" x="554" y="5" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="eSe-HG-Jna"/>
+                                        </constraints>
+                                        <state key="normal" title="公告">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnNoticeClick:" destination="66g-h8-cIZ" eventType="touchUpInside" id="zMh-jU-kI1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ke6-1O-WdY" secondAttribute="trailing" id="5Dr-XH-TZG"/>
+                                    <constraint firstItem="ke6-1O-WdY" firstAttribute="centerY" secondItem="XmL-ae-IAv" secondAttribute="centerY" id="N4J-py-82E"/>
+                                    <constraint firstItem="lD2-ZC-X6G" firstAttribute="leading" secondItem="XmL-ae-IAv" secondAttribute="leading" constant="5" id="NMT-sZ-mWT"/>
+                                    <constraint firstAttribute="height" constant="40" id="caf-La-uG1"/>
+                                    <constraint firstItem="lD2-ZC-X6G" firstAttribute="centerY" secondItem="XmL-ae-IAv" secondAttribute="centerY" id="gPe-Ep-OaS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="j9p-3R-Nru" firstAttribute="top" secondItem="Ail-H6-Iev" secondAttribute="bottom" constant="160" id="6I8-E1-egS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XmL-ae-IAv" secondAttribute="trailing" constant="-20" id="1Q2-Zj-2mF"/>
+                            <constraint firstItem="j9p-3R-Nru" firstAttribute="top" secondItem="Ail-H6-Iev" secondAttribute="bottom" constant="200" id="6I8-E1-egS"/>
+                            <constraint firstItem="XmL-ae-IAv" firstAttribute="leading" secondItem="Z5I-Pi-Bhx" secondAttribute="leadingMargin" constant="-20" id="A5E-Ez-0Qb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VGL-Xy-yhq" secondAttribute="trailing" id="Ae3-Fn-i8b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j9p-3R-Nru" secondAttribute="trailing" constant="80" id="E9o-jc-wpo"/>
                             <constraint firstItem="j9p-3R-Nru" firstAttribute="leading" secondItem="Z5I-Pi-Bhx" secondAttribute="leadingMargin" constant="80" id="PMn-oj-o8m"/>
                             <constraint firstItem="VGL-Xy-yhq" firstAttribute="top" secondItem="j9p-3R-Nru" secondAttribute="bottom" constant="10" id="eMH-Fh-0w0"/>
                             <constraint firstItem="Kfd-He-Slr" firstAttribute="top" secondItem="VGL-Xy-yhq" secondAttribute="bottom" id="iRO-p4-gJR"/>
+                            <constraint firstItem="XmL-ae-IAv" firstAttribute="top" secondItem="Z5I-Pi-Bhx" secondAttribute="topMargin" constant="15" id="jKW-x9-mkd"/>
                             <constraint firstItem="VGL-Xy-yhq" firstAttribute="leading" secondItem="Z5I-Pi-Bhx" secondAttribute="leadingMargin" id="ssF-vU-yVm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="首页" image="m1" id="Tbm-86-V8Y"/>
-                    <navigationItem key="navigationItem" title="Title" id="gYm-r9-wdk"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="segment" destination="j9p-3R-Nru" id="q6Y-HB-foU"/>
                         <outlet property="tableData" destination="VGL-Xy-yhq" id="o2p-16-lkR"/>

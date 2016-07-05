@@ -14,6 +14,12 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
  
     @IBOutlet weak var tableData: UITableView!
     @IBOutlet var segment: UISegmentedControl!//add Brook
+    @IBAction func btnNoticeClick(sender: UIButton) {
+        let uiView:UIViewController = NoticeViewController()
+        self.navigationController?.pushViewController(uiView, animated: true)
+        
+    }
+    
     
     var gameName=[NSLocalizedString("Football", comment: ""),
                   NSLocalizedString("Baseketball", comment: ""),
@@ -34,7 +40,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         self.automaticallyAdjustsScrollViewInsets = false
         let imageArray: [UIImage!] = [UIImage(named: "ad1"), UIImage(named: "ad3"), UIImage(named: "ad1")]
         
-        self.circleView = CirCleView(frame: CGRectMake(0, 20, self.view.frame.size.width, 150), imageArray: imageArray)
+        self.circleView = CirCleView(frame: CGRectMake(0, 55, self.view.frame.size.width, 150), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
                self.view.addSubview(circleView)
