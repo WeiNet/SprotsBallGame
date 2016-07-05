@@ -31,6 +31,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
+        super.clickMenuItem(key, value: value);
         isPass = false
         isMultiselect = false
         let dics:Dictionary<String,String> = menuArray[3]
@@ -98,6 +99,7 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //刷新
     func refreshClick(){
+        mUnionID = ""
         getFootballMatch()
     }
     //标题点击，玩法选取
@@ -132,6 +134,8 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     //联盟选择
     func unionClickDelegate(keys:String){
         mUnionID = keys
+        let allUnionVO:AllUnionVO = AllUnionVO.getAllUnionVOInstance()
+        allUnionVO.selNO = keys;
         getFootballMatch()
     }
     //绑定队伍标题
