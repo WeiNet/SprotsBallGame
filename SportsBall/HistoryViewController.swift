@@ -36,7 +36,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         refresh.attributedTitle=NSAttributedString(string: NSLocalizedString("DownRefresh", comment: ""))
         refresh.addTarget(self, action: "funcRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableViewList.addSubview(refresh)
-        funcRefresh()
+       
     }
     func funcRefresh(){
         intIndexPage++
@@ -137,6 +137,9 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.intIndexPage=0
+        self.jsonResult.removeAllObjects()
+        funcRefresh()
     }
 
     

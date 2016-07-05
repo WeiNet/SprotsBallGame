@@ -154,13 +154,13 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
                  var strErrorCode=jsonResult["iErroCode"] as! NSNumber
                  var strErrorMsg=jsonResult["sErroMessage"] as!String
                 if(strErrorCode==10001){
-                
-                    Tool.showMsg("系统正在维护，如有不便之处请见谅！维护时间为:\n"+strErrorMsg)
+                Tool.showMsg(NSLocalizedString("Maintain", comment: "")+strErrorMsg)
+                    
                     return
                 }
                 else if(strErrorCode==10002){
                     
-                    Tool.showMsg("你的账号在异地登陆，请及时修改密码")
+                    Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
                     return
                 }else{
                     Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))

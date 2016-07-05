@@ -1,6 +1,7 @@
 
 /* Class = "UILabel"; text = "账号"; ObjectID = "Bf0-Ui-c4H"; */
 "Bf0-Ui-c4H.text" = "账号";
+"Hw7-KD-a59.text" = "记住密码";
 
 /* Class = "UITextField"; placeholder = "请输入密码"; ObjectID = "Qco-KF-tUi"; */
 "Qco-KF-tUi.placeholder" = "请输入密码";
@@ -13,3 +14,4 @@
 
 /* Class = "UITextField"; placeholder = "账号@站名首字母缩写"; ObjectID = "ulp-tq-hx8"; */
 "ulp-tq-hx8.placeholder" = "账号@站名首字母缩写";
+"Hw7-KD-a59.text" = "记住密码";

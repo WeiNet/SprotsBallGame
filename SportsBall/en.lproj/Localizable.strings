@@ -61,3 +61,5 @@ Half = "half";
 Goals = "goals";
 Let = "let";
 NoGames = "no guessing games";
+Maintain = "The system is being maintained:\n";
+LoginError = "Your account is in a different place!";

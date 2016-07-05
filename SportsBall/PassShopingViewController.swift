@@ -299,13 +299,13 @@
                 }
                 if(strErrorCode=="10001"){
                     
-                    Tool.showMsg("系统正在维护，如有不便之处请见谅！维护时间为:\n"+msg)
+                    Tool.showMsg(NSLocalizedString("Maintain", comment: "")+msg)
                     var vc = LoginViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     return
                 }
                 if(strErrorCode=="10002"){
-                    Tool.showMsg("你的账号在异地登陆，请及时修改密码")
+                 Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
                     var vc = LoginViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     return

@@ -73,7 +73,17 @@
         
         @IBOutlet weak var textBalance: UILabel!
         @IBAction func payChlick(sender: UIButton) {
-             self.activityView.startAnimating()
+           
+            if(BetListManager.sharedManager.getBetList().count==0){
+              
+                let alertView = UIAlertView()
+                alertView.title = NSLocalizedString("SystemPrompt", comment: "")
+                alertView.message = "必须选择两笔注单"
+                alertView.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
+                alertView.show()
+            return
+            }
+              self.activityView.startAnimating()
             var jsonObject: [AnyObject] = []
             
             for objbet in BetListManager.sharedManager.getBetList(){
@@ -196,10 +206,10 @@
         func countMoney(){
             var betMoney:Double=0
             var betKYJE:Double=0
-            if(BetListManager.sharedManager.getBetList().isEmpty){
-            
-            return
-            }
+//            if(BetListManager.sharedManager.getBetList().isEmpty){
+//            
+//            return
+//            }
             for objBet in  BetListManager.sharedManager.getBetList(){
                 if(objBet.dMoney != ""){
                     betMoney += Double(objBet.dMoney)!
@@ -248,13 +258,14 @@
                 }
                 if(strErrorCode=="10001"){
                     
-                    Tool.showMsg("系统正在维护，如有不便之处请见谅！维护时间为:\n"+msg)
+                    Tool.showMsg(NSLocalizedString("Maintain", comment: "")+msg)
+
                     var vc = LoginViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     return
                 }
                 if(strErrorCode=="10002"){
-                    Tool.showMsg("你的账号在异地登陆，请及时修改密码")
+                    Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
                     var vc = LoginViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     return
