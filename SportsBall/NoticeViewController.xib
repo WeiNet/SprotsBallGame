@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeViewController" customModule="SportsBall" customModuleProvider="target">
+            <connections>
+                <outlet property="activityView" destination="FEE-61-rXp" id="Rgc-lY-c1C"/>
+                <outlet property="noticeTableView" destination="7bs-e3-4h7" id="jDi-qy-VFq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4P-N4-T7O">
+                    <rect key="frame" x="0.0" y="15" width="600" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds7-iC-4ae">
+                            <rect key="frame" x="283" y="9" width="34" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0J-5g-Hub">
+                            <rect key="frame" x="0.0" y="-16" width="48" height="72"/>
+                            <state key="normal" image="back"/>
+                            <connections>
+                                <action selector="backClick:" destination="-1" eventType="touchUpInside" id="zE6-kB-IKz"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="42K-ab-9OQ"/>
+                        <constraint firstItem="C0J-5g-Hub" firstAttribute="centerY" secondItem="T4P-N4-T7O" secondAttribute="centerY" id="EmL-Af-htV"/>
+                        <constraint firstItem="ds7-iC-4ae" firstAttribute="centerY" secondItem="T4P-N4-T7O" secondAttribute="centerY" id="Izp-mP-3th"/>
+                        <constraint firstItem="C0J-5g-Hub" firstAttribute="leading" secondItem="T4P-N4-T7O" secondAttribute="leading" id="iV9-8H-9LC"/>
+                        <constraint firstItem="ds7-iC-4ae" firstAttribute="centerX" secondItem="T4P-N4-T7O" secondAttribute="centerX" id="yUa-6b-r1b"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="153" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-e3-4h7">
+                    <rect key="frame" x="0.0" y="60" width="600" height="535"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="185" id="UC3-vN-wd2"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="UC3-vN-wd2"/>
+                        </mask>
+                    </variation>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-61-rXp">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="T4P-N4-T7O" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="1sZ-YO-Db5"/>
+                <constraint firstAttribute="trailing" secondItem="T4P-N4-T7O" secondAttribute="trailing" id="3CD-Py-W5U"/>
+                <constraint firstAttribute="trailing" secondItem="T4P-N4-T7O" secondAttribute="trailing" id="3yq-va-N39"/>
+                <constraint firstItem="T4P-N4-T7O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Cc5-ZM-K2C"/>
+                <constraint firstAttribute="trailing" secondItem="T4P-N4-T7O" secondAttribute="trailing" constant="-20" id="FxG-s6-GYj"/>
+                <constraint firstItem="T4P-N4-T7O" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="ITF-S0-J7Z"/>
+                <constraint firstItem="T4P-N4-T7O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N3G-gf-cJk"/>
+                <constraint firstAttribute="bottom" secondItem="7bs-e3-4h7" secondAttribute="bottom" constant="5" id="OV6-gu-F6S"/>
+                <constraint firstItem="FEE-61-rXp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RhV-ax-f5H"/>
+                <constraint firstItem="7bs-e3-4h7" firstAttribute="top" secondItem="T4P-N4-T7O" secondAttribute="bottom" constant="5" id="SFp-Cd-PyD"/>
+                <constraint firstItem="7bs-e3-4h7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VcB-eK-VlA"/>
+                <constraint firstAttribute="trailing" secondItem="7bs-e3-4h7" secondAttribute="trailing" id="YGZ-KQ-mnw"/>
+                <constraint firstItem="FEE-61-rXp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="g03-sh-a4k"/>
+                <constraint firstItem="T4P-N4-T7O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-20" id="zR0-oG-bBP"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="1sZ-YO-Db5"/>
+                    <exclude reference="3yq-va-N39"/>
+                    <exclude reference="Cc5-ZM-K2C"/>
+                    <exclude reference="FxG-s6-GYj"/>
+                    <exclude reference="zR0-oG-bBP"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="48" height="72"/>
+    </resources>
+</document>

@@ -53,6 +53,10 @@
 		17EFB7DB1D11521C002F34E2 /* PassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7DD1D11521C002F34E2 /* PassView.xib */; };
 		17EFB7E41D115228002F34E2 /* RollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7E61D115228002F34E2 /* RollView.xib */; };
 		17EFB7F11D123FE8002F34E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17EFB7F31D123FE8002F34E2 /* Localizable.strings */; };
+		460F4B111D2A3ED700508867 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F4B0F1D2A3ED700508867 /* NoticeViewController.swift */; };
+		460F4B121D2A3ED700508867 /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460F4B101D2A3ED700508867 /* NoticeViewController.xib */; };
+		460F4B191D2A4FF300508867 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F4B171D2A4FF300508867 /* NoticeTableViewCell.swift */; };
+		460F4B1A1D2A4FF300508867 /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460F4B181D2A4FF300508867 /* NoticeTableViewCell.xib */; };
 		46290ED21CA2332F0028F1BF /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED01CA2332F0028F1BF /* CirCleView.swift */; };
 		46290ED31CA2332F0028F1BF /* CommonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46290ED11CA2332F0028F1BF /* CommonParameter.swift */; };
 		462BEDE81C8682E300E451E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BEDE71C8682E300E451E4 /* AppDelegate.swift */; };
@@ -203,6 +207,10 @@
 		17EFB7F21D123FE8002F34E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		17EFB7F51D123FEC002F34E2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		17EFB7F61D123FED002F34E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		460F4B0F1D2A3ED700508867 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		460F4B101D2A3ED700508867 /* NoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
+		460F4B171D2A4FF300508867 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
+		460F4B181D2A4FF300508867 /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		46290ED01CA2332F0028F1BF /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 		46290ED11CA2332F0028F1BF /* CommonParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonParameter.swift; sourceTree = "<group>"; };
 		462BEDE41C8682E300E451E4 /* SportsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -506,6 +514,10 @@
 				4641573A1CD9909F00838F32 /* HelpController.swift */,
 				463EEB911CEAA99800708630 /* PayController.swift */,
 				46DC74011CEC0E8600604D9B /* PassShopingViewController.swift */,
+				460F4B0F1D2A3ED700508867 /* NoticeViewController.swift */,
+				460F4B101D2A3ED700508867 /* NoticeViewController.xib */,
+				460F4B171D2A4FF300508867 /* NoticeTableViewCell.swift */,
+				460F4B181D2A4FF300508867 /* NoticeTableViewCell.xib */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -693,8 +705,10 @@
 				17DA621B1CB8CDAF009070E6 /* UnionTitleView.xib in Resources */,
 				17EFB7B71D1151EE002F34E2 /* BreakfastView.xib in Resources */,
 				462BEDF11C8682E300E451E4 /* Assets.xcassets in Resources */,
+				460F4B121D2A3ED700508867 /* NoticeViewController.xib in Resources */,
 				462BEDEF1C8682E300E451E4 /* Main.storyboard in Resources */,
 				17EFB7E41D115228002F34E2 /* RollView.xib in Resources */,
+				460F4B1A1D2A4FF300508867 /* NoticeTableViewCell.xib in Resources */,
 				17EFB7DB1D11521C002F34E2 /* PassView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,6 +759,7 @@
 				17D751D21CEBFF7D00A52040 /* GoalsView.swift in Sources */,
 				17D751D41CEC07DB00A52040 /* FieldView.swift in Sources */,
 				462BEE251C86C1C700E451E4 /* LoginViewController.swift in Sources */,
+				460F4B191D2A4FF300508867 /* NoticeTableViewCell.swift in Sources */,
 				17DA62231CB8CDDC009070E6 /* UnionTitleInfo.swift in Sources */,
 				46C02DEC1C8E778D007F6A50 /* PersonalCenterView.swift in Sources */,
 				463295DF1CBB8C4D000EFEA9 /* ShopingViewController.swift in Sources */,
@@ -772,6 +787,7 @@
 				1782A62A1D06675500444075 /* ResultCellModel.swift in Sources */,
 				1798F2A21CEC406400D356D0 /* FluctuantView.swift in Sources */,
 				17DA62181CB8CDAF009070E6 /* SwiftCustomAlertView.swift in Sources */,
+				460F4B111D2A3ED700508867 /* NoticeViewController.swift in Sources */,
 				1782A62C1D066B6B00444075 /* ResultTitleInfo.swift in Sources */,
 				462E11F91CB786BA00619A55 /* Bean_Questions.swift in Sources */,
 				466B3C621CFD318F00944C1F /* UIDropDown.swift in Sources */,

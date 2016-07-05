@@ -89,8 +89,25 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
         }else if(strType == addBetResult){
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
+            let strErrorCode=(resultJson[0].objectForKey("iErroCode")!) as! NSNumber
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
-            alertMessage(message)
+            if(strErrorCode==10001){
+                
+                Tool.showMsg("系统正在维护，如有不便之处请见谅！维护时间为:\n"+message)
+                var vc = LoginViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+                return
+            }
+            else if(strErrorCode==10002){
+                Tool.showMsg("你的账号在异地登陆，请及时修改密码")
+                var vc = LoginViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+                return
+            }else{
+                alertMessage(message)
+            }
+
         }
     }
     //返回
