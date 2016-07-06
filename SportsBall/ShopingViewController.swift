@@ -183,7 +183,7 @@
             tabBar.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
             BetListManager.sharedManager.delectListRow(intTag)
             self.tableList.reloadData()
-            countMoney()
+           intCountMoney()
             
         }
         //计算可赢金额方法
@@ -199,29 +199,11 @@
             objList[intTag]=objBet
             BetListManager.sharedManager.setList(objList)
             print(sender.tag)
-            countMoney()
+            intCountMoney()
             
         }
         
-        func countMoney(){
-            var betMoney:Double=0
-            var betKYJE:Double=0
-//            if(BetListManager.sharedManager.getBetList().isEmpty){
-//            
-//            return
-//            }
-            for objBet in  BetListManager.sharedManager.getBetList(){
-                if(objBet.dMoney != ""){
-                    betMoney += Double(objBet.dMoney)!
-                }
-                if(objBet.kyje != ""){
-                    betKYJE += Double(objBet.kyje)!
-                }
-                
-            }
-            textBetMoneyt.text="\(betMoney)"
-            textKyje.text="\(betKYJE)"
-        }
+     
         func intCountMoney(){
             var betMoney:Double=0
             var betKYJE:Double=0
