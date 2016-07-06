@@ -1923,7 +1923,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本场比赛可下注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-Ge-2FS">
-                                                    <rect key="frame" x="19" y="161" width="88" height="21"/>
+                                                    <rect key="frame" x="19" y="161" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1957,7 +1957,7 @@
                                                 <constraint firstItem="IAy-nb-3Aa" firstAttribute="baseline" secondItem="YVV-MZ-5PT" secondAttribute="baseline" id="FFA-12-smd"/>
                                                 <constraint firstItem="Xsx-o0-JbW" firstAttribute="leading" secondItem="91d-pJ-M3g" secondAttribute="leadingMargin" constant="11" id="GGb-Km-r8z"/>
                                                 <constraint firstItem="ml7-Bj-PyE" firstAttribute="top" secondItem="zXd-OY-neX" secondAttribute="bottom" constant="71" id="Imv-lC-CeE"/>
-                                                <constraint firstItem="IAy-nb-3Aa" firstAttribute="leading" secondItem="fHy-Ge-2FS" secondAttribute="trailing" constant="21" id="Jbi-JR-PUi"/>
+                                                <constraint firstItem="IAy-nb-3Aa" firstAttribute="leading" secondItem="fHy-Ge-2FS" secondAttribute="trailing" id="Jbi-JR-PUi"/>
                                                 <constraint firstItem="Pnc-Fk-VJl" firstAttribute="baseline" secondItem="key-J2-Oru" secondAttribute="baseline" id="LdN-FG-2oE"/>
                                                 <constraint firstItem="IAy-nb-3Aa" firstAttribute="firstBaseline" secondItem="YVV-MZ-5PT" secondAttribute="firstBaseline" id="R4U-iR-wZM"/>
                                                 <constraint firstItem="933-6e-LUO" firstAttribute="leading" secondItem="ml7-Bj-PyE" secondAttribute="trailing" constant="31" id="USW-Rp-lRd"/>

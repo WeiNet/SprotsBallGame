@@ -106,7 +106,7 @@
             button.adjustsImageWhenHighlighted = false
             button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
             getBalanceResult()//取得账户余额
-            countMoney()//计算投注金额和可赢金额
+            intCountMoney()//初始化计算投注金额和可赢金额
         }
         override func viewWillAppear(animated: Bool) {
             navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -222,7 +222,26 @@
             textBetMoneyt.text="\(betMoney)"
             textKyje.text="\(betKYJE)"
         }
-        
+        func intCountMoney(){
+            var betMoney:Double=0
+            var betKYJE:Double=0
+            //            if(BetListManager.sharedManager.getBetList().isEmpty){
+            //
+            //            return
+            //            }
+            for objBet in  BetListManager.sharedManager.getBetList(){
+                if(objBet.dMoney != ""){
+                    betMoney += Double(objBet.dMoney)!
+                }
+                let betMoney=Double(objBet.dMoney)
+                let dRate=Double(objBet.rate)
+                let winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
+                    betKYJE += winMoney
+            }
+            textBetMoneyt.text="\(betMoney)"
+            textKyje.text="\(betKYJE)"
+        }
+
         //转json方法
         func toJSONString(jsonObject: [AnyObject])->NSString{
             
