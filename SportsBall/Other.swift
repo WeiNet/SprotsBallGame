@@ -37,6 +37,7 @@ public let httpAddress="http://192.168.30.134:8080/Sports_Betting/"
 public let XMWebServiceAddress="http://gttest16.com/MobileApp.asmx"
 public let TWWebServiceAddress="http://gttest16.com/MobileApp.asmx"
 public let WebServiceMoneyAddress="http://ts.gttest16.com/lotteryUser.asmx"
+public let ImageURL="http://210.244.18.110:8082/sportballdownload/"
 
 
 

@@ -38,34 +38,21 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBarHidden=true
 //        self.title = "CirCle"
         self.automaticallyAdjustsScrollViewInsets = false
-        let imageArray: [UIImage!] = [UIImage(named: "ad1"), UIImage(named: "ad3"), UIImage(named: "ad1")]
+        let imageArray: [UIImage!] = [UIImage(named: "ad1")]
         
         self.circleView = CirCleView(frame: CGRectMake(0, 55, self.view.frame.size.width, 150), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
                self.view.addSubview(circleView)
         segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)//add Brook
-        
-//        
-//        let tempButton = UIButton(frame: CGRectMake(0, 300, self.view.frame.size.width, 20))
-//        tempButton.backgroundColor = UIColor.redColor()
-//        tempButton.setTitle("appendImage", forState: UIControlState.Normal)
-//        tempButton.addTarget(self, action: Selector("setImage:"), forControlEvents: UIControlEvents.TouchUpInside)
-//        self.view.addSubview(tempButton)
-//
-        // Do any additional setup after loading the view.
+        circleView.urlImageArray = ["\(ImageURL)"+"ad1.jpg","\(ImageURL)"+"ad2.jpg","\(ImageURL)"+"ad3.jpg"]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /********************************** Privite Methods ***************************************/
-     //MARK:- Privite Methods
-    func setImage(sender: UIButton) {
-        //        circleView.imageArray = [UIImage(named: "first.jpg"), UIImage(named: "third.jpg")]
-        circleView.urlImageArray = ["http://pic1.nipic.com/2008-09-08/200898163242920_2.jpg"]
-    }
+    
     
     
     
