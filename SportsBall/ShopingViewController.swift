@@ -106,7 +106,7 @@
             button.adjustsImageWhenHighlighted = false
             button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
             getBalanceResult()//取得账户余额
-            countMoney()//计算投注金额和可赢金额
+            intCountMoney()//初始化计算投注金额和可赢金额
         }
         override func viewWillAppear(animated: Bool) {
             navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -183,7 +183,7 @@
             tabBar.synchronizationData(BetListManager.sharedManager.getBetInfo(intTag))
             BetListManager.sharedManager.delectListRow(intTag)
             self.tableList.reloadData()
-            countMoney()
+           intCountMoney()
             
         }
         //计算可赢金额方法
@@ -199,30 +199,31 @@
             objList[intTag]=objBet
             BetListManager.sharedManager.setList(objList)
             print(sender.tag)
-            countMoney()
+            intCountMoney()
             
         }
         
-        func countMoney(){
+     
+        func intCountMoney(){
             var betMoney:Double=0
             var betKYJE:Double=0
-//            if(BetListManager.sharedManager.getBetList().isEmpty){
-//            
-//            return
-//            }
+            //            if(BetListManager.sharedManager.getBetList().isEmpty){
+            //
+            //            return
+            //            }
             for objBet in  BetListManager.sharedManager.getBetList(){
                 if(objBet.dMoney != ""){
                     betMoney += Double(objBet.dMoney)!
                 }
-                if(objBet.kyje != ""){
-                    betKYJE += Double(objBet.kyje)!
-                }
-                
+                let betMoney=Double(objBet.dMoney)
+                let dRate=Double(objBet.rate)
+                let winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
+                    betKYJE += winMoney
             }
             textBetMoneyt.text="\(betMoney)"
             textKyje.text="\(betKYJE)"
         }
-        
+
         //转json方法
         func toJSONString(jsonObject: [AnyObject])->NSString{
             
