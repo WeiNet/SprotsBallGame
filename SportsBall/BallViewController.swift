@@ -399,7 +399,7 @@ class BallViewController: UIViewController {
     func fullBetInfo2(betInfoJson:AnyObject,betInfo:BetInfo,alertView:SwiftCustomAlertView,isMultiselect:Bool){
         betInfo.hbl = String(betInfoJson[0].objectForKey("newBl")!)
         betInfo.hfs = String(betInfoJson[0].objectForKey("newFs")!)
-        betInfo.isjzf = String(betInfoJson[0].objectForKey("newjzf") == nil ?betInfoJson[0].objectForKey("isjzf")! : betInfoJson[0].objectForKey("newjzf")!)
+        betInfo.isjzf = String(String(betInfoJson[0].objectForKey("newJzf")!) == "<null>" ? betInfoJson[0].objectForKey("isjzf")! : betInfoJson[0].objectForKey("newJzf")!)
         betInfo.strlet = String(betInfoJson[0].objectForKey("newLet")!)
         betInfo.hlx = String(betInfoJson[0].objectForKey("newLx")!)
         betInfo.vh = String(betInfoJson[0].objectForKey("newVh")!)
@@ -428,6 +428,7 @@ class BallViewController: UIViewController {
             alertView.myView.home.text = betInfo.homename
             let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
             let newRateTemp = String(format: "%.3f", newRate.floatValue)
+            betInfo.rate = newRateTemp
             alertView.myView.betText.text = ToolsCode.orderText(betInfo)
             alertView.myView.rate.text = String(format: "%.3f", newRate.floatValue)
             alertView.myView.max.text = dzsx
