@@ -26,7 +26,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Udr-Em-ch8"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.83898237179487178" green="0.0" blue="0.0078543478694420577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -370,7 +370,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ke6-1O-WdY" secondAttribute="trailing" id="5Dr-XH-TZG"/>
                                     <constraint firstItem="ke6-1O-WdY" firstAttribute="centerY" secondItem="XmL-ae-IAv" secondAttribute="centerY" id="N4J-py-82E"/>
@@ -470,7 +470,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ipX-tR-yij" secondAttribute="trailing" id="BMO-JX-Cpy"/>
                                     <constraint firstItem="ipX-tR-yij" firstAttribute="leading" secondItem="cyV-D0-lW9" secondAttribute="trailing" id="CzU-SH-MaQ"/>
@@ -533,7 +533,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOR-kk-sCb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jAv-oZ-SKs"/>
                                 </constraints>
@@ -581,7 +581,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-1V-zFF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="5QH-R8-Bi9"/>
                                 </constraints>
@@ -630,7 +630,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="25o-oZ-vMy" secondAttribute="height" multiplier="207:22" id="04d-PV-g4P"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.83898237180000002" green="0.0" blue="0.0078543478689999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -747,7 +747,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Eah-na-EEp"/>
                                     <constraint firstItem="BTJ-rd-y3W" firstAttribute="centerX" secondItem="N2e-7G-J7u" secondAttribute="centerX" id="GoJ-VD-Gj0"/>
@@ -1541,7 +1541,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8SD-NP-dsb" firstAttribute="top" secondItem="gh1-W7-dHv" secondAttribute="top" constant="15" id="2kc-6V-K3O"/>
                                     <constraint firstAttribute="trailing" secondItem="8SD-NP-dsb" secondAttribute="trailing" id="4LN-Qh-mgc"/>
@@ -2069,7 +2069,7 @@
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="gab-cw-a81" secondAttribute="bottom" constant="15" id="4fQ-gz-w0Q"/>
                                     <constraint firstItem="Yof-5s-LYp" firstAttribute="top" secondItem="UvO-hZ-gmI" secondAttribute="top" constant="25" id="5aZ-uY-W8Z"/>
@@ -2792,7 +2792,7 @@
                             </activityIndicatorView>
                             <navigationBar contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojx-Ou-YRl">
                                 <rect key="frame" x="-20" y="20" width="630" height="44"/>
-                                <color key="barTintColor" red="0.83898237180000002" green="0.0" blue="0.0078543478689999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>

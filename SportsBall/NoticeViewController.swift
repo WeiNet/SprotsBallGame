@@ -30,6 +30,8 @@ class NoticeViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         refresh.attributedTitle=NSAttributedString(string: NSLocalizedString("DownRefresh", comment: ""))
         refresh.addTarget(self, action: "funcRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        noticeTableView.estimatedRowHeight = 100.0
+        noticeTableView.rowHeight==UITableViewAutomaticDimension
         noticeTableView.addSubview(refresh)
         activityView.startAnimating()
         funcRefresh()
@@ -63,12 +65,17 @@ class NoticeViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? NoticeTableViewCell
             
         }
+//        cell.lableContent.sizeToFit()
          var strContent=jsonResult[indexPath.row].objectForKey("N_NR_CN")as! String
         var strTime=jsonResult[indexPath.row].objectForKey("N_FBSJ")as! String
         cell.lableContent.text=strContent
         cell.lableTime.text=ToolsCode.formatterDate(strTime,format: "YYYY/MM/dd HH:mm")
         
         return cell
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+       
+        return 230
     }
     func setResult(strResult: String, strType: String) {
         if(strType=="Error"){
