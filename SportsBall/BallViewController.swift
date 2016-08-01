@@ -444,10 +444,10 @@ class BallViewController: UIViewController {
     }
     
     //ios隐藏状态栏
-    override func prefersStatusBarHidden() -> Bool {
-        //UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-        return true
-    }
+//    override func prefersStatusBarHidden() -> Bool {
+//        //UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+//        return true
+//    }
 
     //ios隐藏导航栏
     override func viewWillAppear(animated: Bool) {
