@@ -28,24 +28,46 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     var menuArray: Array<Dictionary<String,String>> = [["2":NSLocalizedString("Grounder", comment: "")],["3":NSLocalizedString("Let", comment: "")],["3":NSLocalizedString("Integrated", comment: "")]]
     var orderHeight:CGFloat = 109
     var isPass:Bool = false
+    var otherMenuArray:Array<Dictionary<String,String>> = [["0":NSLocalizedString("Result", comment: "")],
+                                                           ["1":NSLocalizedString("Explain", comment: "")]]
+    var menuType:String = "";
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
-        isPass = false
-        isMultiselect = false
-        let dics:Dictionary<String,String> = menuArray[2]
-        for (keyTemp,valueTemp) in dics {
-            if valueTemp == value{
-                isPass = true
-                isMultiselect = true
+        if (menuType == "play"){
+            isPass = false
+            isMultiselect = false
+            let dics:Dictionary<String,String> = menuArray[2]
+            for (keyTemp,valueTemp) in dics {
+                if valueTemp == value{
+                    isPass = true
+                    isMultiselect = true
+                }
             }
-        }
         
-        mPlayType = key
-        mUnionID = ""
-        let view:HeaderView = headerView.subviews[0] as! HeaderView
-        view.btnTitle.setTitle(value, forState: UIControlState.Normal)
-        getOtherMatch()
+            mPlayType = key
+            mUnionID = ""
+            let view:HeaderView = headerView.subviews[0] as! HeaderView
+            view.btnTitle.setTitle(value, forState: UIControlState.Normal)
+            getOtherMatch()
+        }else if(menuType == "otherMenuArray"){
+            let navigationViews = self.navigationController!.viewControllers
+            let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
+            if(key == "0"){
+                tabBar.selectedIndex = 2
+                let ResultVC:ResultViewController = tabBar.viewControllers![2] as! ResultViewController
+                ResultVC.btnBallType.selected = true
+                ResultVC.ballType = "1"
+                if (ResultVC.loadData){
+                    ResultVC.getMatchResult()
+                }
+            }else{
+                tabBar.selectedIndex = 4
+                let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
+                helpVC.loadWebView("rule_lq")
+            }
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     //远端回传资料响应协议
@@ -115,6 +137,8 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     //标题点击，玩法选取
     func titleViewClick(){
+        menuType = "play"
+        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: menuArray)
         self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //联盟打开
@@ -123,12 +147,9 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
     }
     //规则说明
     func explainClick(){
-        let navigationViews = self.navigationController!.viewControllers
-        let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
-        tabBar.selectedIndex = 4
-        let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
-        helpVC.loadWebView("rule_lq")
-        self.navigationController?.popViewControllerAnimated(true)
+        menuType = "otherMenuArray"
+        alertMenu = createMenu(NSLocalizedString("Menu", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: otherMenuArray)
+        self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //清空购物清单
     func cartClear(){
@@ -313,7 +334,6 @@ class RollViewController: BallViewController,ResultDelegate,HeaderViewDelegate,B
         headerView?.delegate = self
         self.headerView.addSubview(headerView!)
         
-        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: menuArray)
         alertCart = initCartClear()
         //赛事资料
         getOtherMatch()

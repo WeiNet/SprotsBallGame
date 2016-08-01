@@ -28,36 +28,58 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     var menuArray: Array<Dictionary<String,String>> = [["0":NSLocalizedString("Morning", comment: "")],["1":NSLocalizedString("Single", comment: "")],["2":NSLocalizedString("Grounder", comment: "")],["3":NSLocalizedString("Integrated", comment: "")],["4":NSLocalizedString("Fluctuant", comment: "")],["5":NSLocalizedString("Half", comment: "")],["6":NSLocalizedString("Goals", comment: "")]]
     var orderHeight:CGFloat = 216
     var isPass:Bool = false
+    var otherMenuArray:Array<Dictionary<String,String>> = [["0":NSLocalizedString("Result", comment: "")],
+                                                      ["1":NSLocalizedString("Explain", comment: "")]]
+    var menuType:String = "";
 
     //玩法菜单选项响应事件
     override func clickMenuItem(key:String,value:String){
-        super.clickMenuItem(key, value: value);
-        isPass = false
-        isMultiselect = false
-        let dics:Dictionary<String,String> = menuArray[3]
-        for (keyTemp,valueTemp) in dics {
-            if valueTemp == value{
-                isPass = true
-                isMultiselect = true
+        if (menuType == "play"){
+            super.clickMenuItem(key, value: value);
+            isPass = false
+            isMultiselect = false
+            let dics:Dictionary<String,String> = menuArray[3]
+            for (keyTemp,valueTemp) in dics {
+                if valueTemp == value{
+                    isPass = true
+                    isMultiselect = true
+                }
             }
-        }
         
-        mPlayType = key
-        mUnionID = ""
-        let view:HeaderView = headerView.subviews[0] as! HeaderView
-        view.btnTitle.setTitle(value, forState: UIControlState.Normal)
-        if (mPlayType == "0" || mPlayType == "1" || mPlayType == "2") {//早盘/单式/滚球
-            orderHeight = 216
-        } else if (mPlayType == "3") {//综合过关
-            orderHeight = 131
-        } else if (mPlayType == "4") {//波胆
-            orderHeight = 192
-        } else if (mPlayType == "5") {//半全场
-            orderHeight = 101
-        } else{//入球数
-            orderHeight = 60
+            mPlayType = key
+            mUnionID = ""
+            let view:HeaderView = headerView.subviews[0] as! HeaderView
+            view.btnTitle.setTitle(value, forState: UIControlState.Normal)
+            if (mPlayType == "0" || mPlayType == "1" || mPlayType == "2") {//早盘/单式/滚球
+                orderHeight = 216
+            } else if (mPlayType == "3") {//综合过关
+                orderHeight = 131
+            } else if (mPlayType == "4") {//波胆
+                orderHeight = 192
+            } else if (mPlayType == "5") {//半全场
+                orderHeight = 101
+            } else{//入球数
+                orderHeight = 60
+            }
+            getFootballMatch()
+        }else if(menuType == "otherMenuArray"){
+            let navigationViews = self.navigationController!.viewControllers
+            let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
+            if(key == "0"){
+                tabBar.selectedIndex = 2
+                let ResultVC:ResultViewController = tabBar.viewControllers![2] as! ResultViewController
+                ResultVC.btnBallType.selected = false
+                ResultVC.ballType = "0"
+                if (ResultVC.loadData){
+                    ResultVC.getMatchResult()
+                }
+            }else{
+                tabBar.selectedIndex = 4
+                let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
+                helpVC.loadWebView("rule_zq")
+            }
+            self.navigationController?.popViewControllerAnimated(true)
         }
-        getFootballMatch()
     }
     
     //远端回传资料响应协议
@@ -121,20 +143,20 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     }
     //标题点击，玩法选取
     func titleViewClick(){
+        menuType = "play"
+        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: menuArray)
         self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //联盟打开
     func unionClick(){
         showUnion(self)
     }
+    
     //规则说明
     func explainClick(){
-        let navigationViews = self.navigationController!.viewControllers
-        let tabBar:UITabBarController = navigationViews[navigationViews.count - 2] as! UITabBarController
-        tabBar.selectedIndex = 4
-        let helpVC:HelpController = tabBar.viewControllers![4] as! HelpController
-        helpVC.loadWebView("rule_zq")
-        self.navigationController?.popViewControllerAnimated(true)
+        menuType = "otherMenuArray"
+        alertMenu = createMenu(NSLocalizedString("Menu", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: otherMenuArray)
+        self.presentViewController(alertMenu, animated: true, completion: nil)
     }
     //清空购物清单
     func cartClear(){
@@ -460,7 +482,6 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
         
         initView(mPlayType)
         
-        alertMenu = createMenu(NSLocalizedString("BallType", comment: ""), message: NSLocalizedString("PleaseSelect", comment: ""), menuArray: menuArray)
         alertCart = initCartClear()
         //赛事资料
         getFootballMatch()

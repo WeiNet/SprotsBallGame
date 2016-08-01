@@ -27,18 +27,16 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var typeArray:Array<Dictionary<String,String>> = [[NSLocalizedString("Foot", comment: ""):"0"],
                                                       [NSLocalizedString("Baseket", comment: ""):"1"]]
     var onclickFlag:String = ""
+    var loadData:Bool=false
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
-        
-        if(strType == "Error" || strResult == ""){
-            clearAllNotice()
-            alertMessage(NSLocalizedString("SystemError", comment: ""))
+        if(strType=="Error" && strResult=="WebError"){
+            alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
-        if(strType == "WebError" || strResult == "Error"){
-            clearAllNotice()
-            alertMessage(NSLocalizedString("NetworkError", comment: ""))
+        if(strResult==""){
+            alertMessage(NSLocalizedString("SystemError", comment: ""))
             return
         }
         if(strType == getDateResult){
@@ -341,6 +339,7 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     //取得赛事结果
     func getMatchResult(){
+        loadData = true
         pleaseWait()
         common.matchingElement = getMatchResultResult
         var strParam:String = "<GetMatchResult xmlns=\"http://tempuri.org/\">"
