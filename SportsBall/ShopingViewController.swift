@@ -244,7 +244,7 @@
             }
             
             if(strType=="BatchAddBetResult"){
-                
+                print(strResult)
                 self.activityView.stopAnimating()
                 var msg=""
                 var strSuccess=""
