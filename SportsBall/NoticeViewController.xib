@@ -26,7 +26,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0J-5g-Hub">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0J-5g-Hub">
                             <rect key="frame" x="0.0" y="-16" width="48" height="72"/>
                             <state key="normal" image="back"/>
                             <connections>
@@ -34,7 +34,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.1216843571" green="0.60819310900000001" blue="0.0126630076" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="42K-ab-9OQ"/>
                         <constraint firstItem="C0J-5g-Hub" firstAttribute="centerY" secondItem="T4P-N4-T7O" secondAttribute="centerY" id="EmL-Af-htV"/>

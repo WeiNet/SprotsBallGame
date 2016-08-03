@@ -56,6 +56,7 @@ class CommonParameter: NSObject ,NSXMLParserDelegate,NSURLConnectionDataDelegate
             return 
         }
         var url:NSURL=NSURL(string:UserInfoManager.sharedManager.getUrl())!
+        print(url)
         let request = NSMutableURLRequest(URL: url)
         var msgLength = String(soapMsg.characters.count)
         
