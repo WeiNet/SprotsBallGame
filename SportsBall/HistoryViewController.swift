@@ -62,6 +62,10 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if(cell==nil){
             cell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: identify)
         }
+        if(jsonResult.count==0)
+        {
+            return cell!
+        }
         var image=cell!.viewWithTag(7)as!UIImageView
         var labTime=cell!.viewWithTag(2)as! UILabel
         var labDetil=cell!.viewWithTag(3)as! UILabel

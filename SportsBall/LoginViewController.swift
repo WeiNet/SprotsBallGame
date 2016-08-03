@@ -138,9 +138,9 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
                 return
             }
             if(strArry[2]=="1"){
-                UserInfoManager.sharedManager.setUrl(XMWebServiceAddress)
+                UserInfoManager.sharedManager.setUrl(TestWebServiceAddress)
             }else{
-                UserInfoManager.sharedManager.setUrl(TWWebServiceAddress)
+                UserInfoManager.sharedManager.setUrl(TestWebServiceAddress)
             }
             login(strArry[0], strPW: strArry[1])
             
