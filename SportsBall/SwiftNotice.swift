@@ -40,6 +40,7 @@ extension UIViewController {
     func infoNotice(text: String, autoClear: Bool = true) {
         SwiftNotice.showNoticeWithText(NoticeType.info, text: text, autoClear: autoClear, autoClearTime: 3)
     }
+    
     func notice(text: String, type: NoticeType, autoClear: Bool, autoClearTime: Int = 3) {
         SwiftNotice.showNoticeWithText(type, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
