@@ -380,4 +380,16 @@ class ResultViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    //去掉UItableview headerview黏性
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if(scrollView == self.tableView){
+            let settionHeaderHeight:CGFloat = 38;
+            if (scrollView.contentOffset.y <= settionHeaderHeight && scrollView.contentOffset.y >= 0){
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)
+            }else if(scrollView.contentOffset.y >= settionHeaderHeight){
+                scrollView.contentInset = UIEdgeInsetsMake(-settionHeaderHeight, 0, 0, 0)
+            }
+        }
+    }
 }
