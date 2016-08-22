@@ -16,7 +16,9 @@
         var flag=false
         let button = UIButton(type: UIButtonType.Custom)
         var textViewMoney=UITextField()
-        
+        var kMaxLength: Int {
+            return 5
+        }
         @IBOutlet weak var activityView: UIActivityIndicatorView!
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
@@ -135,6 +137,7 @@
             btnDel.setImage(UIImage(named: "ibtn_delete_item"), forState: UIControlState.Normal)
             btnDel.setImage(UIImage(named: "ibtn_delete_select"), forState: UIControlState.Selected)
             btnDel.tag=indexPath.row
+          
             textMoney.clearButtonMode=UITextFieldViewMode.WhileEditing
             textMoney.tag=indexPath.row
             textMoney.keyboardType=UIKeyboardType.NumberPad
@@ -160,6 +163,7 @@
             textMoney.text=BetListManager.sharedManager.getBetList()[indexPath.row].dMoney
             lableDZ.text=BetListManager.sharedManager.getBetList()[indexPath.row].dzxx+"-"+BetListManager.sharedManager.getBetList()[indexPath.row].dzsx
             textMoney.addTarget(self, action: "changeMoney:", forControlEvents: UIControlEvents.EditingDidEnd)
+            textMoney.addTarget(self, action: "limitLength:", forControlEvents: UIControlEvents.EditingChanged)
             btnDel.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchDown)
             return cell!
             
@@ -186,19 +190,44 @@
            intCountMoney()
             
         }
+        func limitLength(sender:UITextField){
+            
+            if sender.text?.characters.count >= kMaxLength {
+                sender.text = sender.text?.substringToIndex((sender.text?.startIndex.advancedBy(4))!)
+                
+            }
+
+        
+        }
         //计算可赢金额方法
         func changeMoney(sender:UITextField){
+            
             var intTag=sender.tag
             var objList=BetListManager.sharedManager.getBetList()
             var objBet=objList[intTag]
+            if(sender.text==""){
+                
+                objBet.dMoney="10"
+                var dRate=Double(objBet.rate)
+                var winMoney=calculateWinMoney(objBet.playType,intBet:10,dRale: dRate!)
+                  objBet.kyje="\(winMoney)"
+//                 self.tableList.reloadData()
+            return
+            }
             objBet.dMoney=sender.text!
+            var betdzsx=Double(objBet.dzsx)
             var betMoney=Double(objBet.dMoney)
+            if(betMoney>betdzsx){
+                sender.text="\(betdzsx!)"
+                objBet.dMoney="\(betdzsx!)"
+            }
             var dRate=Double(objBet.rate)
             var winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
             objBet.kyje="\(winMoney)"
             objList[intTag]=objBet
             BetListManager.sharedManager.setList(objList)
             print(sender.tag)
+            self.tableList.reloadData()
             intCountMoney()
             
         }
@@ -207,10 +236,10 @@
         func intCountMoney(){
             var betMoney:Double=0
             var betKYJE:Double=0
-            //            if(BetListManager.sharedManager.getBetList().isEmpty){
-            //
-            //            return
-            //            }
+//                        if(BetListManager.sharedManager.getBetList().isEmpty){
+//            
+//                        return
+//                        }
             for objBet in  BetListManager.sharedManager.getBetList(){
                 if(objBet.dMoney != ""){
                     betMoney += Double(objBet.dMoney)!

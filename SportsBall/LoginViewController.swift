@@ -29,17 +29,20 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         self.navigationController?.navigationBarHidden=true
         self.activityView.hidesWhenStopped=true
         self.btnRememberPW.setImage(UIImage(named:"check_false"),forState: UIControlState.Normal)
-         self.btnRememberPW.setImage(UIImage(named:"check_ok"),forState: UIControlState.Selected)
+        self.btnRememberPW.setImage(UIImage(named:"check_ok"),forState: UIControlState.Selected)
         self.btnRememberPW.addTarget(self, action:"rememberClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        let flag = NSUserDefaults.standardUserDefaults().stringForKey("flag")
-        if(flag=="true"){
-    var userName = NSUserDefaults.standardUserDefaults().stringForKey("userName")
-    var userPW = NSUserDefaults.standardUserDefaults().stringForKey("userPW")
+        let flag1 = NSUserDefaults.standardUserDefaults().stringForKey("flag")
+        if(flag1=="true"){
+            var userName = NSUserDefaults.standardUserDefaults().stringForKey("userName")
+            var userPW = NSUserDefaults.standardUserDefaults().stringForKey("userPW")
             textUserNumber.text=userName
             textUserPW.text=userPW
             self.btnRememberPW.selected=true
+            self.flag=true
+            
         }else{
-        self.btnRememberPW.selected=false
+            self.btnRememberPW.selected=false
+            self.flag=false
             
         }
         
@@ -47,12 +50,12 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     }
     
     func rememberClick(btn:UIButton){
-    
-     btn.selected = !btn.selected
-        if(btn.selected){
-       
-            flag=true
         
+        btn.selected = !btn.selected
+        if(btn.selected){
+            
+            flag=true
+            
         }else{
             setUserInfo("", strPW: "", strFlag: "false")
             flag=false
@@ -68,7 +71,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     @IBAction func loginClick(sender: UIButton) {
         if(self.textUserNumber.text==""){
             Tool.showMsg(NSLocalizedString("EmptyAccount", comment: ""))
-         return
+            return
         }
         if(self.textUserPW.text==""){
             Tool.showMsg(NSLocalizedString("EmptyPassword", comment: ""))
@@ -76,9 +79,9 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         }
         self.activityView.startAnimating()
         loginMoney()
-//        jumpPage()
+        //        jumpPage()
         
-
+        
         
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -95,7 +98,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         strParam.appendContentsOf("<strMd5>\(strNew.md5)</strMd5>")
         strParam.appendContentsOf("</GetDQUser>")
         common.getMoneyAddressResult(strParam,strResultName: "GetDQUserResult")
-    
+        
     }
     func login(strUserName:String,strPW:String){
         print(getIPAddresses()[0])
@@ -117,7 +120,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         
     }
     func setResult(strResult: String,strType:String) {
-        self.activityView.stopAnimating()
+      
         if(strType=="Error" && strResult=="WebError"){
             Tool.showMsg(NSLocalizedString("NetworkError", comment: ""))
             return
@@ -129,11 +132,13 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         if(strType=="GetDQUserResult"){
             
             if(strResult=="2"||strResult=="1"){
+                 self.activityView.stopAnimating()
                 Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))
                 return
             }
             var strArry=strResult.componentsSeparatedByString("@")
             if(strArry.count<3){
+                 self.activityView.stopAnimating()
                 Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))
                 return
             }
@@ -147,14 +152,15 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
             return
         }
         if(strType=="LoginResult"){
+              self.activityView.stopAnimating()
             print(strResult)
             var jsonResult:NSMutableDictionary=Tool.toJson(strResult)
-                var strFlag=jsonResult["bSucceed"] as! NSNumber
+            var strFlag=jsonResult["bSucceed"] as! NSNumber
             if(strFlag==0){
-                 var strErrorCode=jsonResult["iErroCode"] as! NSNumber
-                 var strErrorMsg=jsonResult["sErroMessage"] as!String
+                var strErrorCode=jsonResult["iErroCode"] as! NSNumber
+                var strErrorMsg=jsonResult["sErroMessage"] as!String
                 if(strErrorCode==10001){
-                Tool.showMsg(NSLocalizedString("Maintain", comment: "")+strErrorMsg)
+                    Tool.showMsg(NSLocalizedString("Maintain", comment: "")+strErrorMsg)
                     
                     return
                 }
@@ -170,15 +176,15 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
             var strUserName=jsonResult["UserName"]as! String
             var strUserID=jsonResult["UserID"]as! String
             var strCredit=jsonResult["Credit"]as! Double
-
+            
             if(flag){
-             setUserInfo(textUserNumber.text!, strPW: textUserPW.text!, strFlag: "true")
+                setUserInfo(textUserNumber.text!, strPW: textUserPW.text!, strFlag: "true")
             }
             UserInfoManager.sharedManager.setUserID(strUserID)
             UserInfoManager.sharedManager.setUserName(strUserName)
             UserInfoManager.sharedManager.setCredit(strCredit)
-           jumpPage()
-                        
+            jumpPage()
+            
             return
         }
     }
@@ -194,13 +200,13 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     func setUserInfo(strUserName:String,strPW:String,strFlag:String){
-    NSUserDefaults.standardUserDefaults().setValue(strUserName, forKey: "userName")
-    NSUserDefaults.standardUserDefaults().setValue(strPW, forKey: "userPW")
-    NSUserDefaults.standardUserDefaults().setValue(strFlag, forKey: "flag")
+        NSUserDefaults.standardUserDefaults().setValue(strUserName, forKey: "userName")
+        NSUserDefaults.standardUserDefaults().setValue(strPW, forKey: "userPW")
+        NSUserDefaults.standardUserDefaults().setValue(strFlag, forKey: "flag")
     }
     
     
-     func getIPAddresses() -> [String] {
+    func getIPAddresses() -> [String] {
         var addresses = [String]()
         
         // Get list of all interfaces on the local machine:
