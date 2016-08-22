@@ -45,7 +45,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         circleView.delegate = self
                self.view.addSubview(circleView)
         segment.addTarget(self, action: "segmentChange:", forControlEvents: UIControlEvents.ValueChanged)//add Brook
-        circleView.urlImageArray = ["\(ImageURL)"+"ad1.jpg","\(ImageURL)"+"ad2.jpg","\(ImageURL)"+"ad3.jpg"]
+        circleView.urlImageArray = ["\(ImageURL)"+"ad2.jpg","\(ImageURL)"+"ad3.jpg"]
     }
 
     override func didReceiveMemoryWarning() {

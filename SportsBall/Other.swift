@@ -36,7 +36,9 @@ public let HomeCollectionCellAnimationDuration: NSTimeInterval = 1.0
 public let httpAddress="http://192.168.30.134:8080/Sports_Betting/"
 public let XMWebServiceAddress="http://dqp.po888.net/MobileApp.asmx"
 public let TWWebServiceAddress="http://dqt.po888.net/MobileApp.asmx"
-public let WebServiceMoneyAddress="http://ts.gttest16.com/lotteryUser.asmx"
+public let TestWebServiceAddress="http://gttest16.com/MobileApp.asmx"
+
+public let WebServiceMoneyAddress="http://tstest.gttest16.com/lotteryUser.asmx"
 public let ImageURL="http://210.244.18.110:8082/sportballdownload/"
 
 

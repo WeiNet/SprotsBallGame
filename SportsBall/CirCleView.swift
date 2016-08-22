@@ -103,7 +103,12 @@ class CirCleView: UIView, UIScrollViewDelegate {
         self.addSubview(contentScrollView)
         
         self.currentImageView = UIImageView()
-        currentImageView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.width, 200)
+        currentImageView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.width, 150)
+      
+        
+        //自适应图片宽高比例
+//        currentImageView.contentMode = UIViewContentModeScaleAspectFit;
+         currentImageView.contentMode = UIViewContentMode.ScaleAspectFit;
         currentImageView.userInteractionEnabled = true
         currentImageView.contentMode = UIViewContentMode.ScaleToFill
         currentImageView.clipsToBounds = true

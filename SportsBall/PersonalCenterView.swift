@@ -5,9 +5,9 @@
     //  Created by abel jing on 16/3/8.
     //  Copyright © 2016年 abel jing. All rights reserved.
     //
-
+    
     import UIKit
-
+    
     class PersonalCenterView: UIViewController,UITableViewDelegate,UITableViewDataSource,ResultDelegate {
         var conn=CommonParameter()
         
@@ -18,9 +18,9 @@
         @IBOutlet weak var userNameText: UILabel!
         @IBOutlet weak var tableViewList: UITableView!
         
-            @IBAction func btnRefresh(sender: UIButton) {
-                
-                getResult()
+        @IBAction func btnRefresh(sender: UIButton) {
+            
+            getResult()
         }
         
         
@@ -33,8 +33,8 @@
             alertView.cancelButtonIndex=0
             alertView.delegate=self;
             alertView.show()
-           
-
+            
+            
         }
         //弹出框
         func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex: Int){
@@ -50,19 +50,19 @@
         var setNameArry=[NSLocalizedString("PayoutResults", comment: ""),
                          NSLocalizedString("About", comment: "")]
         var setImge=["betrecod_log","about_log"]
-    override func viewDidLoad() {
+        override func viewDidLoad() {
             super.viewDidLoad()
-     self.title=NSLocalizedString("PersonalCenter", comment: "")
+            self.title=NSLocalizedString("PersonalCenter", comment: "")
             self.navigationController?.navigationBarHidden=true
-    self.tableViewList.dataSource=self
+            self.tableViewList.dataSource=self
             self.tableViewList.delegate=self
             self.conn.delegate=self
             getResult()
-        
-        topView.layer.cornerRadius = 15;//设置那个圆角的有多圆
-//        topView.layer.borderWidth = 10;//设置边框的宽度，当然可以不要
-        // topView.layer.borderColor =
-        topView.layer.masksToBounds = true;
+            
+            topView.layer.cornerRadius = 15;//设置那个圆角的有多圆
+            //        topView.layer.borderWidth = 10;//设置边框的宽度，当然可以不要
+            // topView.layer.borderColor =
+            topView.layer.masksToBounds = true;
             
         }
         
@@ -101,6 +101,7 @@
             
         }
         func setResult(strResult: String,strType:String) {
+            print(strResult)
             if(strType=="Error"){
                 return
             }
@@ -117,8 +118,8 @@
             
         }
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-           
-          
+            
+            
             
             var sb = UIStoryboard(name: "Main", bundle:nil)
             if(indexPath.row==0){
@@ -126,7 +127,7 @@
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if(indexPath.row==1){
-               
+                
                 var vcAbout = sb.instantiateViewControllerWithIdentifier("AboutController") as! AboutController
                 self.navigationController?.pushViewController(vcAbout, animated: true)
                 
@@ -137,9 +138,9 @@
         
         override func viewWillAppear(animated: Bool) {
             navigationController?.setNavigationBarHidden(true, animated: animated)
-            
+            self.getResult()
         }
         
         
         
-       }
+    }
