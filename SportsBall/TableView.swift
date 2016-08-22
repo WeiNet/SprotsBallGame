@@ -196,4 +196,16 @@ class TableView: UITableView,UITableViewDataSource,UITableViewDelegate,ShowDeleg
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
+    
+    //去掉UItableview headerview黏性
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if(scrollView == self){
+            let settionHeaderHeight:CGFloat = 38;
+            if (scrollView.contentOffset.y <= settionHeaderHeight && scrollView.contentOffset.y >= 0){
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)
+            }else if(scrollView.contentOffset.y >= settionHeaderHeight){
+                scrollView.contentInset = UIEdgeInsetsMake(-settionHeaderHeight, 0, 0, 0)
+            }
+        }
+    }
 }

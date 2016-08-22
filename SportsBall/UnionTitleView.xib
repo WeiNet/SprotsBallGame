@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -63,7 +63,7 @@
                     <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="s8O-Ul-0sh" firstAttribute="leading" secondItem="glq-Lw-Ar4" secondAttribute="leading" id="KsP-2z-TpF"/>
-                        <constraint firstItem="s8O-Ul-0sh" firstAttribute="top" secondItem="glq-Lw-Ar4" secondAttribute="top" constant="1" id="WJ7-LS-XG9"/>
+                        <constraint firstItem="s8O-Ul-0sh" firstAttribute="top" secondItem="glq-Lw-Ar4" secondAttribute="top" id="WJ7-LS-XG9"/>
                         <constraint firstAttribute="bottom" secondItem="s8O-Ul-0sh" secondAttribute="bottom" constant="1" id="evq-JP-txW"/>
                         <constraint firstAttribute="trailing" secondItem="s8O-Ul-0sh" secondAttribute="trailing" id="swe-ve-4wv"/>
                     </constraints>
@@ -72,7 +72,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="glq-Lw-Ar4" firstAttribute="leading" secondItem="g2y-4N-YrK" secondAttribute="leading" id="WAT-0f-tfJ"/>
-                <constraint firstItem="glq-Lw-Ar4" firstAttribute="top" secondItem="g2y-4N-YrK" secondAttribute="top" constant="1" id="jDh-wy-8iR"/>
+                <constraint firstItem="glq-Lw-Ar4" firstAttribute="top" secondItem="g2y-4N-YrK" secondAttribute="top" id="jDh-wy-8iR"/>
                 <constraint firstAttribute="trailing" secondItem="glq-Lw-Ar4" secondAttribute="trailing" id="l7Q-cG-RSK"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
