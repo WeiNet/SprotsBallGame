@@ -22,10 +22,10 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     
     
     var gameName=[NSLocalizedString("Football", comment: ""),
-                  NSLocalizedString("Baseketball", comment: ""),
-                  NSLocalizedString("Baseball", comment: ""),
-                  NSLocalizedString("Vallyball", comment: "")]
-    var gameImage=["football","baseketball","baseball","vallyball"]
+                  NSLocalizedString("Baseketball", comment: "")]
+//                  NSLocalizedString("Baseball", comment: ""),
+//                  NSLocalizedString("Vallyball", comment: "")]
+    var gameImage=["football","baseketball"]//,"baseball","vallyball"]
     //当前屏幕对象
     var screenObject=UIScreen.mainScreen().bounds
 
@@ -102,7 +102,7 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
         labText.text=gameName[indexPath.row]
         var labTextDetail=cell!.viewWithTag(3)as! UILabel
         labTextDetail.text=NSLocalizedString("WinMillion", comment: "")
-    var labTextBottom=cell?.viewWithTag(4)as! UILabel
+        var labTextBottom=cell?.viewWithTag(4)as! UILabel
         labTextBottom.text=NSLocalizedString("AttitudeLook", comment: "")
         
 //        cell!.imageView?.image=UIImage(named: gameImage[indexPath.row])

@@ -40,8 +40,11 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
             KxMenuItem.init("\(dateArry[5])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
             KxMenuItem.init("\(dateArry[6])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
             KxMenuItem.init("\(dateArry[7])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
-           
-            
+            KxMenuItem.init("\(dateArry[8])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[9])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[10])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[11])",image: UIImage(named: ""), target: self, action: "respondOfMenu:"),
+            KxMenuItem.init("\(dateArry[12])",image: UIImage(named: ""), target: self, action: "respondOfMenu:")
         ]
        
         
@@ -151,7 +154,7 @@ class PayController: UIViewController,UITableViewDataSource,UITableViewDelegate,
     func getDate(){
         
         var strParam:String = "<GetDate xmlns=\"http://tempuri.org/\">";
-        strParam.appendContentsOf("<inum>8</inum>")
+        strParam.appendContentsOf("<inum>13</inum>")
         strParam.appendContentsOf("</GetDate>")
         conn.getResult(strParam,strResultName: "GetDateResult")
     }
