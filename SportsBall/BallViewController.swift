@@ -134,6 +134,7 @@ class BallViewController: UIViewController {
         tableView.orderHeight = orderHeight
         tableView.bindDelegate = delegate
         contentView.addSubview(tableView)
+        clearAllNotice()
     }
     
     //绑定队伍标题
@@ -212,7 +213,7 @@ class BallViewController: UIViewController {
         let betManger:BetListManager = BetListManager.sharedManager
         let betList:[BetInfo] = betManger.betList
         let count:Int = betList.count - 1
-        for(var i = count;i > 0;i-- ){
+        for(var i = count;i >= 0;i-- ){
             if(betList[i].visitname == orderCellModel.N_VISIT_NAME
                 && betList[i].homename == orderCellModel.N_HOME_NAME
                 && betList[i].Index == String(toolsCode)){
@@ -227,7 +228,7 @@ class BallViewController: UIViewController {
         let betManger:BetListManager = BetListManager.sharedManager
         let betList:[BetInfo] = betManger.betList
         let count:Int = betList.count - 1
-        for(var i = count;i > 0;i-- ){
+        for(var i = count;i >= 0;i-- ){
             if(betList[i].visitname == betinfo.visitname
                 && betList[i].homename == betinfo.homename){
                 betManger.betList.removeAtIndex(i)
@@ -426,7 +427,8 @@ class BallViewController: UIViewController {
                 alertView.myView.N_HOME_JZF.text = ""
             }
             alertView.myView.home.text = betInfo.homename
-            let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            var newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            newRate = newRate == "0" ? betInfo.rate : newRate
             let newRateTemp = String(format: "%.3f", newRate.floatValue)
             betInfo.rate = newRateTemp
             alertView.myView.betText.text = ToolsCode.orderText(betInfo)

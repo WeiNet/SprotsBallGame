@@ -84,12 +84,13 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
     
     //远端回传资料响应协议
     func setResult(strResult: String,strType:String)  {
-        clearAllNotice()
         if(strType=="Error" && strResult=="WebError"){
+            clearAllNotice()
             alertMessage(NSLocalizedString("NetworkError", comment: ""))
             return
         }
         if(strResult==""){
+            clearAllNotice()
             alertMessage(NSLocalizedString("SystemError", comment: ""))
             return
         }
@@ -110,26 +111,21 @@ class BreakfastViewController: BallViewController,ResultDelegate,HeaderViewDeleg
             let betInfoJson = ToolsCode.toJsonArray("[\(strResult)]")
             fullBetInfo2(betInfoJson, betInfo: betInfo, alertView: alertView, isMultiselect: isMultiselect)
         }else if(strType == addBetResult){
+            clearAllNotice()
             let resultJson = ToolsCode.toJsonArray("[\(strResult)]")
             let strErrorCode=(resultJson[0].objectForKey("iErroCode")!) as! NSNumber
             let message = String(resultJson[0].objectForKey("sErroMessage")!)
             if(strErrorCode==10001){
-                
                 Tool.showMsg(NSLocalizedString("Maintain", comment: "")+message)
                 var vc = LoginViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                return
-            }
-            else if(strErrorCode==10002){
-              Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
+            }else if(strErrorCode==10002){
+                Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
                 var vc = LoginViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
-                return
             }else{
                 alertMessage(message)
             }
-
         }
     }
     //返回
