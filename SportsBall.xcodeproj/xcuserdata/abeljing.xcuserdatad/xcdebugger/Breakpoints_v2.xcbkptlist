@@ -202,7 +202,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/CommonParameter.swift"
-                  timestampString = "494753713.13266"
+                  timestampString = "494755443.998079"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "140"
@@ -217,7 +217,7 @@
                   moduleName = "SportsBall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/abeljing/Documents/Project/SprotsBallGame/SportsBall/CommonParameter.swift"
-                  timestampString = "494753713.133038"
+                  timestampString = "494755443.99825"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "140"
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/ShopingViewController.swift"
-            timestampString = "494753712.023922"
+            timestampString = "494755443.874118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
             landmarkName = "addBet(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,39 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/ShopingViewController.swift"
-            timestampString = "494753712.023922"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
-            landmarkName = "setResult(_:strType:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsBall/ShopingViewController.swift"
-            timestampString = "494753712.023922"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "setResult(_:strType:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsBall/ShopingViewController.swift"
-            timestampString = "494753712.023922"
+            timestampString = "494755443.874118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "297"
@@ -394,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/ShopingViewController.swift"
-            timestampString = "494753712.023922"
+            timestampString = "494755443.874118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "setResult(_:strType:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,11 +378,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsBall/ShopingViewController.swift"
-            timestampString = "494753712.023922"
+            timestampString = "494755443.874118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "setResult(_:strType:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsBall/ShopingViewController.swift"
+            timestampString = "494755443.874118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "setResult(_:strType:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsBall/ShopingViewController.swift"
+            timestampString = "494755443.874118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "setResult(_:strType:)"
             landmarkType = "5">
          </BreakpointContent>

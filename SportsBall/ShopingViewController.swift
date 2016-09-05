@@ -262,7 +262,10 @@
                 let betMoney=Double(objBet.dMoney)
                 let dRate=Double(objBet.rate)
                 let winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
+                objBet.kyje="\(winMoney)"
                     betKYJE += winMoney
+//                BetListManager.sharedManager.getBetList()
+                
             }
             textBetMoneyt.text="\(betMoney)"
             textKyje.text="\(betKYJE)"
