@@ -134,6 +134,7 @@ class BallViewController: UIViewController {
         tableView.orderHeight = orderHeight
         tableView.bindDelegate = delegate
         contentView.addSubview(tableView)
+        clearAllNotice()
     }
     
     //绑定队伍标题
@@ -426,7 +427,8 @@ class BallViewController: UIViewController {
                 alertView.myView.N_HOME_JZF.text = ""
             }
             alertView.myView.home.text = betInfo.homename
-            let newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            var newRate = String(betInfoJson[0].objectForKey("newRate")!) as NSString
+            newRate = newRate == "0" ? betInfo.rate : newRate
             let newRateTemp = String(format: "%.3f", newRate.floatValue)
             betInfo.rate = newRateTemp
             alertView.myView.betText.text = ToolsCode.orderText(betInfo)
