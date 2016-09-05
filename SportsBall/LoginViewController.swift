@@ -20,9 +20,9 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     
     @IBOutlet weak var btnRememberPW: UIButton!
     @IBOutlet weak var textUserPW: UITextField!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         common.delegate=self
         self.textUserNumber.delegate=self
         self.textUserPW.delegate=self
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
             self.flag=false
             
         }
-        
+      
         
     }
     
@@ -86,8 +86,12 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true
+        return true 
     }
+ 
+    
+
+
     func loginMoney(){
         var strAccount=self.textUserNumber.text?.uppercaseString
         var strArry=strAccount!.componentsSeparatedByString("@")
@@ -236,6 +240,10 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
         }
         return addresses
     }
+   
+    
+    
+    
     
 }
 

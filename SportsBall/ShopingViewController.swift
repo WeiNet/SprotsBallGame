@@ -109,6 +109,18 @@
             button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
             getBalanceResult()//取得账户余额
             intCountMoney()//初始化计算投注金额和可赢金额
+             view.addGestureRecognizer(UITapGestureRecognizer(target:self, action:"handleTap:"))
+        }
+        func handleTap(sender: UITapGestureRecognizer) {
+            if sender.state == .Ended {
+//                print("收回键盘")
+//                UIView.animateWithDuration(0.4, animations: {
+//                    self.view.frame.origin.y = 0
+//                })
+                textViewMoney.resignFirstResponder()
+                
+            }
+            sender.cancelsTouchesInView = false
         }
         override func viewWillAppear(animated: Bool) {
             navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -193,7 +205,7 @@
         func limitLength(sender:UITextField){
             
             if sender.text?.characters.count >= kMaxLength {
-                sender.text = sender.text?.substringToIndex((sender.text?.startIndex.advancedBy(4))!)
+                sender.text = sender.text?.substringToIndex((sender.text?.startIndex.advancedBy(5))!)
                 
             }
 
@@ -205,24 +217,27 @@
             var intTag=sender.tag
             var objList=BetListManager.sharedManager.getBetList()
             var objBet=objList[intTag]
-            if(sender.text==""){
+            var strbetMoney=sender.text=="" ? "0" : sender.text
+            var dbetMoney=Double(strbetMoney!)
+            if(dbetMoney==0){
                 
                 objBet.dMoney="10"
                 var dRate=Double(objBet.rate)
                 var winMoney=calculateWinMoney(objBet.playType,intBet:10,dRale: dRate!)
                   objBet.kyje="\(winMoney)"
-//                 self.tableList.reloadData()
+                self.tableList.reloadData()
             return
             }
             objBet.dMoney=sender.text!
-            var betdzsx=Double(objBet.dzsx)
-            var betMoney=Double(objBet.dMoney)
+            var betdzsx=Double(objBet.dzsx)!
+            var betMoney=Double(objBet.dMoney)!
             if(betMoney>betdzsx){
-                sender.text="\(betdzsx!)"
-                objBet.dMoney="\(betdzsx!)"
+                sender.text="\(betdzsx)"
+                objBet.dMoney="\(betdzsx)"
+              betMoney=betdzsx
             }
             var dRate=Double(objBet.rate)
-            var winMoney=calculateWinMoney(objBet.playType,intBet: betMoney!,dRale: dRate!)
+            var winMoney=calculateWinMoney(objBet.playType,intBet: betMoney,dRale: dRate!)
             objBet.kyje="\(winMoney)"
             objList[intTag]=objBet
             BetListManager.sharedManager.setList(objList)
@@ -348,7 +363,10 @@
         //文本框开始输入方法
         func textFieldDidBeginEditing(textField: UITextField) {
             textViewMoney=textField
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+//            UIView.animateWithDuration(0.4, animations: {
+//                self.view.frame.origin.y = -220
+//            })
+//            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
             
         }
         
@@ -360,6 +378,7 @@
                 self.button.hidden = false
                 let keyBoardWindow = UIApplication.sharedApplication().windows.last
                 self.button.frame = CGRectMake(0, (keyBoardWindow?.frame.size.height)!-53, 106, 53)
+            
                 keyBoardWindow?.addSubview(self.button)
                 keyBoardWindow?.bringSubviewToFront(self.button)
                 
