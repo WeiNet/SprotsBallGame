@@ -22,10 +22,10 @@ class MainViewController: UIViewController ,CirCleViewDelegate,UITableViewDataSo
     
     
     var gameName=[NSLocalizedString("Football", comment: ""),
-                  NSLocalizedString("Baseketball", comment: "")]
-//                  NSLocalizedString("Baseball", comment: ""),
-//                  NSLocalizedString("Vallyball", comment: "")]
-    var gameImage=["football","baseketball"]//,"baseball","vallyball"]
+                  NSLocalizedString("Baseketball", comment: ""),
+                  NSLocalizedString("Baseball", comment: ""),
+                  NSLocalizedString("Vallyball", comment: "")]
+    var gameImage=["football","baseketball","baseball","vallyball"]
     //当前屏幕对象
     var screenObject=UIScreen.mainScreen().bounds
 
