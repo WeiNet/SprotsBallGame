@@ -146,10 +146,12 @@ class LoginViewController: UIViewController,NSXMLParserDelegate,ResultDelegate,U
                 Tool.showMsg(NSLocalizedString("UserPasswordError", comment: ""))
                 return
             }
+            //1为厦门站
+            //2为台湾站
             if(strArry[2]=="1"){
-                UserInfoManager.sharedManager.setUrl(TestWebServiceAddress)
+                UserInfoManager.sharedManager.setUrl(XMWebServiceAddress)
             }else{
-                UserInfoManager.sharedManager.setUrl(TestWebServiceAddress)
+                UserInfoManager.sharedManager.setUrl(TWWebServiceAddress)
             }
             login(strArry[0], strPW: strArry[1])
             

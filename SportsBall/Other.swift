@@ -38,7 +38,8 @@ public let XMWebServiceAddress="http://dqp.po888.net/MobileApp.asmx"
 public let TWWebServiceAddress="http://dqt.po888.net/MobileApp.asmx"
 public let TestWebServiceAddress="http://gttest16.com/MobileApp.asmx"
 
-public let WebServiceMoneyAddress="http://tstest.gttest16.com/lotteryUser.asmx"
+//public let WebServiceMoneyAddress="http://tstest.gttest16.com/lotteryUser.asmx"
+public let WebServiceMoneyAddress="http://ts.gttest16.com/lotteryUser.asmx"
 public let ImageURL="http://210.244.18.110:8082/sportballdownload/"
 
 

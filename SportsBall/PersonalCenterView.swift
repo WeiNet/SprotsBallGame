@@ -112,7 +112,7 @@
                 alertMessage(NSLocalizedString("NetworkError", comment: ""))
                 return
             }
-            var result = ( strResult as NSString ).floatValue;
+            var result = ( strResult as NSString ).doubleValue;
             resultText.text="\(result*10000)"
             userNameText.text=UserInfoManager.sharedManager.getUserName()
             
