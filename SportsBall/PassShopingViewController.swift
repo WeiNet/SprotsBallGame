@@ -14,7 +14,7 @@
         var comm=CommonParameter()
         var menuArray: Array<Dictionary<String,String>> = [["0":NSLocalizedString("SingleNote", comment: "")],["1":NSLocalizedString("EvenTouch", comment: "")]]
         var intRowIndex:Int = 0
-        let button = UIButton(type: UIButtonType.Custom)
+//        let button = UIButton(type: UIButtonType.Custom)
         
         @IBOutlet weak var textBanlance: UILabel!
         
@@ -151,20 +151,31 @@
             self.tableList.delegate=self
             self.textBetMoney.delegate=self
             comm.delegate=self
-            button.setTitle("Return", forState: UIControlState.Normal)
-            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-            button.frame = CGRectMake(0, 163, 106, 53)
-            button.adjustsImageWhenHighlighted = false
-            button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
+//            button.setTitle("Return", forState: UIControlState.Normal)
+//            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+//            button.frame = CGRectMake(0, 163, 106, 53)
+//            button.adjustsImageWhenHighlighted = false
+//            button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
             setViewBackground()
             getBalanceResult()//取得账户余额
             createMenu(menuArray)
             createSubMenu(getSpinnerItem("0"))
-            
+            view.addGestureRecognizer(UITapGestureRecognizer(target:self, action:"handleTap:"))
             
             
         }
-        
+        func handleTap(sender: UITapGestureRecognizer) {
+            if sender.state == .Ended {
+                //                print("收回键盘")
+                //                UIView.animateWithDuration(0.4, animations: {
+                //                    self.view.frame.origin.y = 0
+                //                })
+                textViewMoney.resignFirstResponder()
+                
+            }
+            sender.cancelsTouchesInView = false
+        }
+
         override func viewWillAppear(animated: Bool) {
             navigationController?.setNavigationBarHidden(false, animated: animated)
             
@@ -343,39 +354,39 @@
         //文本框开始输入方法
         func textFieldDidBeginEditing(textField: UITextField) {
             textViewMoney=textField
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+//            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
             
         }
         
         //键盘显示
-        func keyboardWillShow(note : NSNotification) -> Void{
-            
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                
-                self.button.hidden = false
-                let keyBoardWindow = UIApplication.sharedApplication().windows.last
-                self.button.frame = CGRectMake(0, (keyBoardWindow?.frame.size.height)!-53, 106, 53)
-                keyBoardWindow?.addSubview(self.button)
-                keyBoardWindow?.bringSubviewToFront(self.button)
-                
-                UIView.animateWithDuration(((note.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)?.doubleValue)!, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                    
-                    self.view.frame = CGRectOffset(self.view.frame, 0, 0)
-                    }, completion: { (complete) -> Void in
-                        print("Complete")
-                })
-            }
-            
-        }
-        //return
-        func Done(sender : UIButton){
-            
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                
-                self.textViewMoney.resignFirstResponder()
-                
-            }
-        }
+//        func keyboardWillShow(note : NSNotification) -> Void{
+//            
+//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//                
+//                self.button.hidden = false
+//                let keyBoardWindow = UIApplication.sharedApplication().windows.last
+//                self.button.frame = CGRectMake(0, (keyBoardWindow?.frame.size.height)!-53, 106, 53)
+//                keyBoardWindow?.addSubview(self.button)
+//                keyBoardWindow?.bringSubviewToFront(self.button)
+//                
+//                UIView.animateWithDuration(((note.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)?.doubleValue)!, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+//                    
+//                    self.view.frame = CGRectOffset(self.view.frame, 0, 0)
+//                    }, completion: { (complete) -> Void in
+//                        print("Complete")
+//                })
+//            }
+//            
+//        }
+//        //return
+//        func Done(sender : UIButton){
+//            
+//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//                
+//                self.textViewMoney.resignFirstResponder()
+//                
+//            }
+//        }
         
         //计算可赢金额
         func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->Double{
