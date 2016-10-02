@@ -9,12 +9,14 @@
     import UIKit
     
     class PassShopingViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,ResultDelegate,UITextFieldDelegate {
+        
+        @IBOutlet weak var textCountMoney: UILabel!
         var betManger:BetListManager?
         var betList:[BetInfo]?
         var comm=CommonParameter()
         var menuArray: Array<Dictionary<String,String>> = [["0":NSLocalizedString("SingleNote", comment: "")],["1":NSLocalizedString("EvenTouch", comment: "")]]
         var intRowIndex:Int = 0
-//        let button = UIButton(type: UIButtonType.Custom)
+        //        let button = UIButton(type: UIButtonType.Custom)
         
         @IBOutlet weak var textBanlance: UILabel!
         
@@ -24,7 +26,10 @@
         var alertSubMenu:UIAlertController!
         var betType=0//下注方式，0为单注，1为连碰
         var touchFlag=true//连碰标志
-        
+        var kMaxLength: Int {
+            return 5
+        }
+        var countRate=0.0//总赔率
         @IBOutlet weak var singleButton: UIButton!
         
         @IBOutlet weak var btnSelect: UIButton!
@@ -37,7 +42,7 @@
         @IBOutlet weak var view3: UIView!
         
         @IBAction func btnSelectClick(sender: UIBarButtonItem) {
-          
+            
             self.navigationController?.popViewControllerAnimated(true)
         }
         
@@ -47,6 +52,31 @@
             
         }
         
+        @IBAction func textBetEditChange(sender: UITextField) {
+            if sender.text?.characters.count >= kMaxLength {
+                sender.text = sender.text?.substringToIndex((sender.text?.startIndex.advancedBy(5))!)
+                var betMoney=sender.text=="" ? "0" : sender.text
+                if(Double(betMoney!)!>15000)
+                {
+                    sender.text="\(15000)"
+                }
+                
+            }
+        }
+        @IBAction func textBetEditDidEnd(sender: UITextField) {
+            if(self.betType==0){
+                var winMoney = 0.0
+                var betMoney=sender.text=="" ? "0" : sender.text
+                winMoney=Double(betMoney!)!*self.countRate
+                self.textKY.text=String(format: "%.2f", winMoney)
+            }else{
+                var strTeamCount=(teamCount.text! as NSString).substringFromIndex(3)
+                var sumMoney=Double(strTeamCount)!*Double(self.textBetMoney.text!)!
+                self.textKY.text="\(sumMoney)"
+            }
+        }
+        
+        
         @IBAction func subTypeClick(sender: UIButton) {
             
             if(betType==1&&betList?.count<=2)
@@ -54,7 +84,7 @@
                 return
             }
             
-         self.presentViewController(alertSubMenu, animated: true, completion: nil)
+            self.presentViewController(alertSubMenu, animated: true, completion: nil)
         }
         //清除按钮
         @IBAction func btnClear(sender: AnyObject) {
@@ -151,13 +181,14 @@
             self.tableList.delegate=self
             self.textBetMoney.delegate=self
             comm.delegate=self
-//            button.setTitle("Return", forState: UIControlState.Normal)
-//            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-//            button.frame = CGRectMake(0, 163, 106, 53)
-//            button.adjustsImageWhenHighlighted = false
-//            button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
+            //            button.setTitle("Return", forState: UIControlState.Normal)
+            //            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            //            button.frame = CGRectMake(0, 163, 106, 53)
+            //            button.adjustsImageWhenHighlighted = false
+            //            button.addTarget(self, action: "Done:", forControlEvents: UIControlEvents.TouchUpInside)
             setViewBackground()
             getBalanceResult()//取得账户余额
+            getRate()
             createMenu(menuArray)
             createSubMenu(getSpinnerItem("0"))
             view.addGestureRecognizer(UITapGestureRecognizer(target:self, action:"handleTap:"))
@@ -166,16 +197,16 @@
         }
         func handleTap(sender: UITapGestureRecognizer) {
             if sender.state == .Ended {
-                //                print("收回键盘")
-                //                UIView.animateWithDuration(0.4, animations: {
-                //                    self.view.frame.origin.y = 0
-                //                })
+                print("收回键盘")
+                UIView.animateWithDuration(0.4, animations: {
+                    self.view.frame.origin.y = 0
+                })
                 textViewMoney.resignFirstResponder()
                 
             }
             sender.cancelsTouchesInView = false
         }
-
+        
         override func viewWillAppear(animated: Bool) {
             navigationController?.setNavigationBarHidden(false, animated: animated)
             
@@ -246,15 +277,15 @@
             self.tableList.reloadData()
             if(betType==0){
                 if(betList?.count<2){
-                   btnSelect.setTitle(NSLocalizedString("Limit", comment: ""), forState: UIControlState.Normal)
+                    btnSelect.setTitle(NSLocalizedString("Limit", comment: ""), forState: UIControlState.Normal)
                     
                 }else{
-                       btnSelect.setTitle("\(betList!.count)"+NSLocalizedString("String1", comment: ""), forState: UIControlState.Normal)
+                    btnSelect.setTitle("\(betList!.count)"+NSLocalizedString("String1", comment: ""), forState: UIControlState.Normal)
                 }
                 
-          
+                
             }
-           
+            
         }
         
         
@@ -316,7 +347,7 @@
                     return
                 }
                 if(strErrorCode=="10002"){
-                 Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
+                    Tool.showMsg(NSLocalizedString("LoginError", comment: ""))
                     var vc = LoginViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     return
@@ -354,39 +385,43 @@
         //文本框开始输入方法
         func textFieldDidBeginEditing(textField: UITextField) {
             textViewMoney=textField
-//            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+            UIView.animateWithDuration(0.4, animations: {
+                self.view.frame.origin.y = -220
+            })
+            //            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
             
         }
         
+        
         //键盘显示
-//        func keyboardWillShow(note : NSNotification) -> Void{
-//            
-//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                
-//                self.button.hidden = false
-//                let keyBoardWindow = UIApplication.sharedApplication().windows.last
-//                self.button.frame = CGRectMake(0, (keyBoardWindow?.frame.size.height)!-53, 106, 53)
-//                keyBoardWindow?.addSubview(self.button)
-//                keyBoardWindow?.bringSubviewToFront(self.button)
-//                
-//                UIView.animateWithDuration(((note.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)?.doubleValue)!, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-//                    
-//                    self.view.frame = CGRectOffset(self.view.frame, 0, 0)
-//                    }, completion: { (complete) -> Void in
-//                        print("Complete")
-//                })
-//            }
-//            
-//        }
-//        //return
-//        func Done(sender : UIButton){
-//            
-//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                
-//                self.textViewMoney.resignFirstResponder()
-//                
-//            }
-//        }
+        //        func keyboardWillShow(note : NSNotification) -> Void{
+        //
+        //            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        //
+        //                self.button.hidden = false
+        //                let keyBoardWindow = UIApplication.sharedApplication().windows.last
+        //                self.button.frame = CGRectMake(0, (keyBoardWindow?.frame.size.height)!-53, 106, 53)
+        //                keyBoardWindow?.addSubview(self.button)
+        //                keyBoardWindow?.bringSubviewToFront(self.button)
+        //
+        //                UIView.animateWithDuration(((note.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)?.doubleValue)!, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+        //
+        //                    self.view.frame = CGRectOffset(self.view.frame, 0, 0)
+        //                    }, completion: { (complete) -> Void in
+        //                        print("Complete")
+        //                })
+        //            }
+        //
+        //        }
+        //        //return
+        //        func Done(sender : UIButton){
+        //
+        //            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        //
+        //                self.textViewMoney.resignFirstResponder()
+        //
+        //            }
+        //        }
         
         //计算可赢金额
         func calculateWinMoney (strPlayType:String,intBet:Double,dRale:Double)->Double{
@@ -447,9 +482,10 @@
         func clickMenuItem(key:String){
             
             print("点击项\(key)")
-            
+            clearText()//清空下注金额和可赢金额
             
             if(key=="0"){
+                self.textCountMoney.text="可赢金额"
                 self.touchFlag=true
                 betType=0
                 singleButton.setTitle(NSLocalizedString("SingleNote", comment: ""), forState: UIControlState.Normal)
@@ -462,11 +498,12 @@
                 
             }
             if(key=="1"){
+                self.textCountMoney.text="总金额"
                 betType=1
                 singleButton.titleLabel?.text=NSLocalizedString("EvenTouch", comment: "")
                 var arry11 = getSpinnerItem("1")
                 var content:String=arry11[0]["0"]!
-//                btnSelect.titleLabel?.text=content
+                //                btnSelect.titleLabel?.text=content
                 btnSelect.setTitle(content, forState: UIControlState.Normal)
                 btnSelect.titleLabel!.adjustsFontSizeToFitWidth=true
                 
@@ -577,6 +614,25 @@
             }
             
             return arryMenu
+        }
+        //计算过关赔率
+        func  getRate(){
+            
+            var rate:Double=1
+            for objBet in  BetListManager.sharedManager.getBetList(){
+                var type=objBet.playType
+                if(type=="DS"||type=="DY"||type=="HJ"){
+                    
+                    rate*=Double(objBet.rate)!
+                }else{
+                    rate*=Double(objBet.rate)!+1
+                }
+            }
+            countRate=rate-1
+        }
+        func clearText(){
+            self.textBetMoney.text=""
+            self.textKY.text="0"
         }
         
         func jumpPage(){

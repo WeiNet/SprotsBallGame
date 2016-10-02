@@ -1212,7 +1212,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-SB-2Xk">
-                                                    <rect key="frame" x="8" y="18" width="146" height="21"/>
+                                                    <rect key="frame" x="9" y="18" width="145" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ooq-ot-PZG"/>
                                                     </constraints>
@@ -1230,7 +1230,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-Tz-dmY">
-                                                    <rect key="frame" x="19" y="61" width="151" height="16"/>
+                                                    <rect key="frame" x="20" y="61" width="151" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="151" id="4CW-3G-vcf"/>
                                                     </constraints>
@@ -1239,7 +1239,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykd-Vm-fEE">
-                                                    <rect key="frame" x="19" y="110" width="42" height="21"/>
+                                                    <rect key="frame" x="20" y="110" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EvC-Ee-Qde"/>
                                                         <constraint firstAttribute="width" constant="42" id="Yye-kC-bV6"/>
@@ -1249,7 +1249,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPY-EW-ay8">
-                                                    <rect key="frame" x="60" y="110" width="149" height="21"/>
+                                                    <rect key="frame" x="61" y="110" width="148" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1297,13 +1297,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本场比赛可下注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMN-ht-P5c">
-                                                    <rect key="frame" x="19" y="147" width="100" height="33"/>
+                                                    <rect key="frame" x="20" y="147" width="120" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="2H6-cd-Yc3"/>
+                                                        <constraint firstAttribute="width" constant="120" id="tV1-ur-BQd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2H6-cd-Yc3"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-35-hpY">
                                                     <rect key="frame" x="202" y="18" width="216" height="21"/>
@@ -1336,7 +1342,7 @@
                                                 <constraint firstItem="ykd-Vm-fEE" firstAttribute="firstBaseline" secondItem="HPY-EW-ay8" secondAttribute="firstBaseline" id="dXn-qd-FWd"/>
                                                 <constraint firstItem="Ys5-tJ-Pf0" firstAttribute="baseline" secondItem="sgd-kt-uwf" secondAttribute="baseline" id="dg1-lN-346"/>
                                                 <constraint firstItem="y7F-Tz-dmY" firstAttribute="top" secondItem="RpX-SB-2Xk" secondAttribute="bottom" constant="22" id="fR2-f3-ElR"/>
-                                                <constraint firstItem="sgd-kt-uwf" firstAttribute="leading" secondItem="cMN-ht-P5c" secondAttribute="trailing" constant="21" id="gYa-Ek-Opm"/>
+                                                <constraint firstItem="sgd-kt-uwf" firstAttribute="leading" secondItem="cMN-ht-P5c" secondAttribute="trailing" id="gYa-Ek-Opm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="uES-V4-CJ4" secondAttribute="trailing" constant="86" id="ifB-oU-chX"/>
                                                 <constraint firstItem="Y9G-NT-klC" firstAttribute="leading" secondItem="sgd-kt-uwf" secondAttribute="trailing" constant="8" symbolic="YES" id="kaj-bC-NwF"/>
                                                 <constraint firstItem="uES-V4-CJ4" firstAttribute="firstBaseline" secondItem="ynl-Ph-yWM" secondAttribute="firstBaseline" id="kb0-fM-436"/>
@@ -1412,6 +1418,10 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="textBetEditChange:" destination="3NB-TE-W3T" eventType="editingChanged" id="jgY-c6-6xN"/>
+                                            <action selector="textBetEditDidEnd:" destination="3NB-TE-W3T" eventType="editingDidEnd" id="9Vn-WB-sTx"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投注金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-Pm-YF0">
                                         <rect key="frame" x="43" y="5" width="52" height="16"/>
@@ -1593,7 +1603,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYT-bl-mKH">
                                 <rect key="frame" x="276" y="594" width="138" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可赢金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-Pa-PUP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-Pa-PUP">
                                         <rect key="frame" x="35" y="10" width="68" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="68" id="sRp-Ij-WzR"/>
@@ -1785,6 +1795,7 @@
                         <outlet property="teamCount" destination="1xO-mU-LEw" id="36o-Fy-e1H"/>
                         <outlet property="textBanlance" destination="sxr-z5-8Qv" id="6Pr-eD-sjn"/>
                         <outlet property="textBetMoney" destination="knQ-D4-nBX" id="4ML-VY-f2S"/>
+                        <outlet property="textCountMoney" destination="rvp-Pa-PUP" id="LNQ-F1-G22"/>
                         <outlet property="textKY" destination="fL6-RN-L7b" id="1X0-d4-k3o"/>
                         <outlet property="view1" destination="BVk-ra-KZw" id="gLY-zP-utz"/>
                         <outlet property="view2" destination="9ta-ln-a6o" id="oLa-Ow-Y7Z"/>
